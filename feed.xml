@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ClojureScript</title>
+    <description>The Clojure to JavaScript compiler.
+</description>
+    <link>http://cljsinfo.github.io/</link>
+    <atom:link href="http://cljsinfo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 16 Aug 2015 15:26:08 -0500</pubDate>
+    <lastBuildDate>Sun, 16 Aug 2015 15:26:08 -0500</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>r1.7.48</title>
+        <description>&lt;p&gt;This release updates the Google Closure Compiler and Library
+dependencies to the latest. It also addresses a REPL regression, adds
+a goog-define helper macro for goog.define interop, and includes
+various other small fixes, changes and enhancements.&lt;/p&gt;
+
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;1.7.48&lt;/h2&gt;
+
+&lt;h2&gt;Enhancements&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;provide goog-define macro to support proper use of goog.define&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1177&quot;&gt;CLJS-1177&lt;/a&gt;: A compiler support for non-Closure transforms (JSX, etc)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1296&quot;&gt;CLJS-1296&lt;/a&gt;: browser REPL should queue prints before connection then flush after connection&lt;/li&gt;
+&lt;li&gt;add :dump-core compiler option for cljs.js config&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1386&quot;&gt;CLJS-1386&lt;/a&gt;: Symbols should be added to the constants table&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Changes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bump Closure Compiler dependency&lt;/li&gt;
+&lt;li&gt;Bump Closure Library dependency&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1392&quot;&gt;CLJS-1392&lt;/a&gt;: cljs.repl/source regression&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1391&quot;&gt;CLJS-1391&lt;/a&gt;: Error when building for target :nodejs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1388&quot;&gt;CLJS-1388&lt;/a&gt;: Stacktrace element handling for :output-dir w/o file/line/column&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1311&quot;&gt;CLJS-1311&lt;/a&gt;: Improve error reporting when converting JavaScript modules&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1387&quot;&gt;CLJS-1387&lt;/a&gt;: support local Closure libs that conform to classpath&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 05 Aug 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/08/05/r1.7.48/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/08/05/r1.7.48/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r1.7.28 - Optional Self Hosting</title>
+        <description>&lt;p&gt;ClojureScript now has a proper version number. This version number is
+designed to reflect feature parity with Clojure.&lt;/p&gt;
+
+&lt;p&gt;The primary new feature of this release is optional
+self hosting. ClojureScript can now run either on the JVM or directly on
+JavaScript. Please refer to the docstrings in the new cljs.js
+namespace for details on this functionality. cljs.js is designed to
+enable new use cases (iOS, Android, interactive tutorials, snippet
+sharing) not well served by the default compilation model.&lt;/p&gt;
+
+&lt;p&gt;The release also includes numerous bug fixes and enhancements.&lt;/p&gt;
+
+&lt;p&gt;This release also bumps the Clojure dependency to 1.7.0 and
+tools.reader to 0.10.0-alpha3.&lt;/p&gt;
+
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;1.7.28&lt;/h2&gt;
+
+&lt;h2&gt;Enhancements&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New namespace cljs.js provides analysis, compilation, and eval&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1360&quot;&gt;CLJS-1360&lt;/a&gt;: Refactor JS module processing to work with recent Google Closure compiler changes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1282&quot;&gt;CLJS-1282&lt;/a&gt;: Add a :pprint option to the default reporter in cljs.test&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1308&quot;&gt;CLJS-1308&lt;/a&gt;: :analyze-path should be extended to take a vector of paths&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1230&quot;&gt;CLJS-1230&lt;/a&gt;: ES 2015 Module Processing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1231&quot;&gt;CLJS-1231&lt;/a&gt;: AMD Module Processing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1092&quot;&gt;CLJS-1092&lt;/a&gt;: CommonJS Module processing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Changes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1376&quot;&gt;CLJS-1376&lt;/a&gt;: Printing in a tagged literal data form&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-836&quot;&gt;CLJS-836&lt;/a&gt;: Replace seq-based iterators with direct iterator for all non-seq collections that use SeqIterator&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1367&quot;&gt;CLJS-1367&lt;/a&gt;: Expose default-warning-handler and warning-enabled?&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1267&quot;&gt;CLJS-1267&lt;/a&gt;: Added the :end-test-all-vars and :end-test-vars events to have end events for all cljs.test api functions&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1337&quot;&gt;CLJS-1337&lt;/a&gt;: Move parse ns side-effects into a separate compiler pass&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1247&quot;&gt;CLJS-1247&lt;/a&gt;: Split out error printing from regular printing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1329&quot;&gt;CLJS-1329&lt;/a&gt;: Support for reading #js tagged literals in bootstrap&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1191&quot;&gt;CLJS-1191&lt;/a&gt;: rebased patch Update clojure.walk to the current version on clojure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1321&quot;&gt;CLJS-1321&lt;/a&gt;: remove getNamespace &amp;amp; getName method calls from defrecord&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1281&quot;&gt;CLJS-1281&lt;/a&gt;: Preserve test order&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-934&quot;&gt;CLJS-934&lt;/a&gt;: In the REPL return vars after defs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1316&quot;&gt;CLJS-1316&lt;/a&gt; let does not detect invalid binding vector when it contains destructuring&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1033&quot;&gt;CLJS-1033&lt;/a&gt;: take a drop accept nil as n argument&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1324&quot;&gt;CLJS-1324&lt;/a&gt;: Compiler fails to raise warning/error when invoking a keyword without arguments&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1352&quot;&gt;CLJS-1352&lt;/a&gt;: cljs.js: Allow conditional readers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1348&quot;&gt;CLJS-1348&lt;/a&gt;: meta is printing for def at REPL&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1342&quot;&gt;CLJS-1342&lt;/a&gt;: cljs.reader/read-string should throw Error when not called with string&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1341&quot;&gt;CLJS-1341&lt;/a&gt;: Fix CommonJS conversion bug&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1333&quot;&gt;CLJS-1333&lt;/a&gt;: Analyze meta on quoted symbols&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1210&quot;&gt;CLJS-1210&lt;/a&gt;: Javascript built-in arguments replaces nil arguments locally defined by let&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1248&quot;&gt;CLJS-1248&lt;/a&gt;: alter-meta! does not work on vars&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1276&quot;&gt;CLJS-1276&lt;/a&gt;: var equality differs from Clojure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1310&quot;&gt;CLJS-1310&lt;/a&gt;: ns libspec error message misses :import&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-428&quot;&gt;CLJS-428&lt;/a&gt;: Added step to escape docstrings with */ and associated test&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1331&quot;&gt;CLJS-1331&lt;/a&gt;: Regex literal emits invalid JS&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1338&quot;&gt;CLJS-1338&lt;/a&gt;: NPE in confirm-var-exists if suffix is &amp;quot;..&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1319&quot;&gt;CLJS-1319&lt;/a&gt;: Cannot locate module namespace when filename contains dash&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1317&quot;&gt;CLJS-1317&lt;/a&gt;: Incremental compilation issues for :nodejs target&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1227&quot;&gt;CLJS-1227&lt;/a&gt; Raise error when if form has more than 4 statements&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1306&quot;&gt;CLJS-1306&lt;/a&gt;: Browser REPL :asset-path with leading slash breaks source map support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1290&quot;&gt;CLJS-1290&lt;/a&gt;: :refer does not work with Closure JS namespaces&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1307&quot;&gt;CLJS-1307&lt;/a&gt;: Doc for ns missing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1301&quot;&gt;CLJS-1301&lt;/a&gt;: local :foreign-libs are not picked up the first time browser REPL is started&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 31 Jul 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/07/31/r1.7.28-optional-self-hosting/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/07/31/r1.7.28-optional-self-hosting/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-3308 - Fixes and Enhancements</title>
+        <description>&lt;p&gt;This release bumps the Clojure dependecy to 1.7.0-RC1 and includes fixes and minor
+enhancements.&lt;/p&gt;
+
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;0.0-3308&lt;/h2&gt;
+
+&lt;h2&gt;Changes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Clojure 1.7.0-RC1 dependency&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1292&quot;&gt;CLJS-1292&lt;/a&gt;: Add IPrintWithWriter implementation for TaggedLiteral&lt;/li&gt;
+&lt;li&gt;add cljs.core/random-uuid&lt;/li&gt;
+&lt;li&gt;flush immediately when forwarding Node process out &amp;amp; err&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1256&quot;&gt;CLJS-1256&lt;/a&gt; cache UUID hash value&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1226&quot;&gt;CLJS-1226&lt;/a&gt;: Added the :end-run-test event to cljs.test and a dummy event handler for it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Fixes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1200&quot;&gt;CLJS-1200&lt;/a&gt;: compare behaves differently from Clojure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1293&quot;&gt;CLJS-1293&lt;/a&gt;: Warning settings not conveyed via REPL&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1291&quot;&gt;CLJS-1291&lt;/a&gt;: pprint whitespace/letter checks are incomplete&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1288&quot;&gt;CLJS-1288&lt;/a&gt;: compiler doesn&amp;#39;t emit &amp;quot;goog.require&amp;quot; for foreign library when optimization level is not set&lt;/li&gt;
+&lt;li&gt;check that we actually read something in cjls.repl.server/read-request&lt;/li&gt;
+&lt;li&gt;clarify cljs.test/run-tests docstring&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1285&quot;&gt;CLJS-1285&lt;/a&gt;: load-file regression&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1284&quot;&gt;CLJS-1284&lt;/a&gt;: IndexedSeq -seq implementation incorrect for i &amp;gt;= alength of internal array&lt;/li&gt;
+&lt;li&gt;finish &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1176&quot;&gt;CLJS-1176&lt;/a&gt;, remove stray .isAlive method call&lt;/li&gt;
+&lt;li&gt;add zero arity &lt;code&gt;newline&lt;/code&gt; to match Clojure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1206&quot;&gt;CLJS-1206&lt;/a&gt;: Images in HTML don&amp;#39;t show up when served from localhost:9000&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1272&quot;&gt;CLJS-1272&lt;/a&gt;: :include-macros description inaccurate in require&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1275&quot;&gt;CLJS-1275&lt;/a&gt;: Corrected :test-paths in project.clj&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1270&quot;&gt;CLJS-1270&lt;/a&gt;: Docstring for delay not printed by cljs.repl/doc&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1268&quot;&gt;CLJS-1268&lt;/a&gt;: cljc support for cljs.closure/compile-file&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1269&quot;&gt;CLJS-1269&lt;/a&gt;: realized? docstring refers to promise and future&lt;/li&gt;
+&lt;li&gt;match Clojure behavior for get on string / array. Need to coerce key into int.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1263&quot;&gt;CLJS-1263&lt;/a&gt;: :libs regression, can no longer specify specific files&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1209&quot;&gt;CLJS-1209&lt;/a&gt;: Reduce produces additional final nil when used w/ eduction&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1261&quot;&gt;CLJS-1261&lt;/a&gt;: source fn fails for fns with conditional code&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 01 Jun 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/06/01/r3308-fixes-and-enhancements/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/06/01/r3308-fixes-and-enhancements/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-3255 - Pretty Printer and Latest Closure Compiler/Library</title>
+        <description>&lt;p&gt;A big thanks goes out to Jonathan Boston and Shaun Lebron for this
+release. Thanks to their efforts ClojureScript now includes a full
+port of clojure.pprint under the cljs.pprint namespace. This was the
+last major namespace in need of porting to ClojureScript.&lt;/p&gt;
+
+&lt;p&gt;The release also bumps several dependencies: Clojure 1.7.0-beta2,
+tools.reader 0.9.2, Closure Compiler v20150505, and Closure Library
+0.0-20150505-021ed5b3.&lt;/p&gt;
+
+&lt;p&gt;This release also fixes some regressions around async testing,
+docstring REPL support, arglist meta, and more.&lt;/p&gt;
+
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;0.0-3255&lt;/h2&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Update Closure Library dependency&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1252&quot;&gt;CLJS-1252&lt;/a&gt;: Update Closure Compiler Dependency to v20150505&lt;/li&gt;
+&lt;li&gt;.clj -&amp;gt; .cljc for important analysis / compilation bits&lt;/li&gt;
+&lt;li&gt;add public cljs.compiler.api namespace&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1224&quot;&gt;CLJS-1224&lt;/a&gt;: cljs.repl: Memoize stack frame mapping&lt;/li&gt;
+&lt;li&gt;depend on tools.reader 0.9.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Enhancements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;add cljs.pprint/pp macro&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-710&quot;&gt;CLJS-710&lt;/a&gt;: port clojure.pprint&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1178&quot;&gt;CLJS-1178&lt;/a&gt;: Compiler does not know Math ns is not not-native&lt;/li&gt;
+&lt;li&gt;add getBasis methods to deftype and defrecord ctors a la Clojure JVM&lt;/li&gt;
+&lt;li&gt;support ^long and ^double type hints&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;fix cljs-1198 async testing regression&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1254&quot;&gt;CLJS-1254&lt;/a&gt;: Update REPL browser agent detection &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1253&quot;&gt;CLJS-1253&lt;/a&gt;: Create/Use
+new Closure Library Release&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1225&quot;&gt;CLJS-1225&lt;/a&gt;: Variadic function with same name as parent function gives
+runtime error in advanced compile mode.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1246&quot;&gt;CLJS-1246&lt;/a&gt;: Add cljs.core/record? predicate.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1239&quot;&gt;CLJS-1239&lt;/a&gt;: Make eduction variadic.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1244&quot;&gt;CLJS-1244&lt;/a&gt;: tagged-literal precondition check missing wrapping vector&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1243&quot;&gt;CLJS-1243&lt;/a&gt;: Add TaggedLiteral type &amp;amp; related fns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1240&quot;&gt;CLJS-1240&lt;/a&gt;: Add cljs.core/var?&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1214&quot;&gt;CLJS-1214&lt;/a&gt;: :arglists meta has needless quoting &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1232&quot;&gt;CLJS-1232&lt;/a&gt;: bad
+arglists for doc, regression&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1212&quot;&gt;CLJS-1212&lt;/a&gt;: Error in set ctor for &amp;gt; 8-entry map literal&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1218&quot;&gt;CLJS-1218&lt;/a&gt;: Syntax quoting an alias created with :require-macros
+throws ClassCastException&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1213&quot;&gt;CLJS-1213&lt;/a&gt;: cljs.analyzer incorrectly marks all defs as tests when
+eliding test metadata&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-742&quot;&gt;CLJS-742&lt;/a&gt;: Compilation with :output-file option set fails&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 08 May 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/05/08/r3255-pretty-printer/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/05/08/r3255-pretty-printer/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-3211</title>
+        <description>&lt;p&gt;This release is a bugfix release addressing some regressions as well
+as introducing some further REPL refinements.&lt;/p&gt;
+
+&lt;p&gt;As usual feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;0.0-3211&lt;/h2&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1205&quot;&gt;CLJS-1205&lt;/a&gt;: Conditional reading in REPLs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1204&quot;&gt;CLJS-1204&lt;/a&gt;: cljs.build.api/watch can now take compilation inputs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1203&quot;&gt;CLJS-1203&lt;/a&gt;: standard way to pass multiple directories to build&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1216&quot;&gt;CLJS-1216&lt;/a&gt;: incorrect max fixed arity for fns both multi-arity and variadic &lt;/li&gt;
+&lt;li&gt;cljs.analyzer/parse-ns did not bind &lt;em&gt;cljs-file&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1201&quot;&gt;CLJS-1201&lt;/a&gt;: compare broken for IIndexed collections&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1202&quot;&gt;CLJS-1202&lt;/a&gt;: cljs.repl/load-file is not additive&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1199&quot;&gt;CLJS-1199&lt;/a&gt;: array-map should skip dropped elements of IndexedSeq&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1197&quot;&gt;CLJS-1197&lt;/a&gt;: load-file does not reload associated macro namespace&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 23 Apr 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/04/23/r3211/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/04/23/r3211/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-3196 - Conditional Reading, REPLs, and Code Motion</title>
+        <description>&lt;p&gt;This release is intended to coincide with Clojure 1.7.0-beta1. Besides
+conditional reading support, it includes a number of improvements and
+bug fixes around REPLs. Piggieback (and thus nREPL) integration has
+been greatly enhanced. Also notable is significantly improved cross
+module code motion under :modules.&lt;/p&gt;
+
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;0.0-3196&lt;/h2&gt;
+
+&lt;h3&gt;Enhancements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Conditional reading&lt;/li&gt;
+&lt;li&gt;map clojure.core/in-ns to REPL in-ns special for existing tools&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1171&quot;&gt;CLJS-1171&lt;/a&gt;: map clojure.repl/doc, clojure.repl/source, clojure.repl/dir&lt;/li&gt;
+&lt;li&gt;add macroexpand and macroexpand-1 macros&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1019&quot;&gt;CLJS-1019&lt;/a&gt;: REPL source map caching support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1154&quot;&gt;CLJS-1154&lt;/a&gt;: Unmunged function names for stacktrace&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Clojure 1.7.0-beta1 dependency&lt;/li&gt;
+&lt;li&gt;tools.reader 0.9.1 dependency&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1188&quot;&gt;CLJS-1188&lt;/a&gt;: multi-arity fns hinder cross-module code motion&lt;/li&gt;
+&lt;li&gt;cljs.test needs to default to sync&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1184&quot;&gt;CLJS-1184&lt;/a&gt;: log module building activity under verbose&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1175&quot;&gt;CLJS-1175&lt;/a&gt;: CLJS defmulti doesn&amp;#39;t exhibit same defonce behavior as Clojure&amp;#39;s defmulti, suggesting an even better reloading behavior&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1176&quot;&gt;CLJS-1176&lt;/a&gt;: redirect node REPL output through &lt;em&gt;out&lt;/em&gt; and &lt;em&gt;err&lt;/em&gt;, not System/out, System/err&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1144&quot;&gt;CLJS-1144&lt;/a&gt; - expose defaul-dispatch-val and dispatch-fn multifn accessors&lt;/li&gt;
+&lt;li&gt;CLJ-1172: supply main entry points for all standard REPLs&lt;/li&gt;
+&lt;li&gt;less noisy REPL prompt&lt;/li&gt;
+&lt;li&gt;add docstrings &amp;amp; validation to macroexpand &amp;amp; macroexpand-1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1192&quot;&gt;CLJS-1192&lt;/a&gt;: eliminate JDK8 API dependency in cljs.repl.node&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1158&quot;&gt;CLJS-1158&lt;/a&gt;: Regression: compiler fails to see symbols defined in another namespace&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1189&quot;&gt;CLJS-1189&lt;/a&gt;: array-map will return PersistentHashMap if applied to more than (.-HASHMAP-THRESHOLD PersistentArrayMap) pairs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1183&quot;&gt;CLJS-1183&lt;/a&gt;: load-file doesn&amp;#39;t copy source to output directory&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1187&quot;&gt;CLJS-1187&lt;/a&gt;: var ast contains internal nodes with bad analysis :context&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1182&quot;&gt;CLJS-1182&lt;/a&gt;: semantics of load-file should be require + implicit :reload&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1179&quot;&gt;CLJS-1179&lt;/a&gt;: strange load-file behavior&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-808&quot;&gt;CLJS-808&lt;/a&gt;: Warning from &lt;code&gt;find-classpath-lib&lt;/code&gt; mistakenly included in generated source&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1169&quot;&gt;CLJS-1169&lt;/a&gt;: cannot use REPL load-file on files that declare single segment namespaces&lt;/li&gt;
+&lt;li&gt;don&amp;#39;t use print unless printing the result of eval&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1162&quot;&gt;CLJS-1162&lt;/a&gt;: Failure to printStackTrace when REPL initialized&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1161&quot;&gt;CLJS-1161&lt;/a&gt;: actually print error stack traces to &lt;em&gt;err&lt;/em&gt;, allow higher-level rebindings of &lt;em&gt;cljs-ns&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-841&quot;&gt;CLJS-841&lt;/a&gt;: cljs.closure/build file locks&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1156&quot;&gt;CLJS-1156&lt;/a&gt;: load-file fails with :make-reader issue&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1152&quot;&gt;CLJS-1152&lt;/a&gt;: (require &amp;#39;some.ns :reload) causes printing to stop working in browser REPL&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1157&quot;&gt;CLJS-1157&lt;/a&gt;: Stacktrace unmunging blindly use locals&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1155&quot;&gt;CLJS-1155&lt;/a&gt;: REPL :watch support does not play nicely with :cljs/quit&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1137&quot;&gt;CLJS-1137&lt;/a&gt;: :cljs/quit fails to actually quit in browser REPL&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1148&quot;&gt;CLJS-1148&lt;/a&gt;: ClojureScript REPL must maintain eval/print pairing&lt;/li&gt;
+&lt;li&gt;make quit-prompt configurable&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1149&quot;&gt;CLJS-1149&lt;/a&gt;: cljs.repl/repl needs to support :compiler-env option&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1140&quot;&gt;CLJS-1140&lt;/a&gt;: typo in cljs.repl/repl, &lt;code&gt;:need-prompt prompt&lt;/code&gt; instead of &lt;code&gt;:need-prompt need-prompt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 10 Apr 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/04/10/r3196-conditional-reading-repls-and-code-motion/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/04/10/r3196-conditional-reading-repls-and-code-motion/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-3126 - fix for minor REPL regression</title>
+        <description>&lt;p&gt;This release just fixes a minor REPL related regression.&lt;/p&gt;
+
+&lt;h2&gt;0.0-3126&lt;/h2&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Need to wrap REPL -setup calls in cljs.compiler/with-core-cljs&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 18 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/03/18/r3126-fix-for-minor-repl-regression/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/03/18/r3126-fix-for-minor-repl-regression/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-3115</title>
+        <description>&lt;p&gt;This release is a bugfix release addressing several long outstanding
+issues as well as a number of problems that cropped up around improved
+REPLs and compile times.&lt;/p&gt;
+
+&lt;p&gt;As usual feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;0.0-3115&lt;/h2&gt;
+
+&lt;h3&gt;Enhancements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-806&quot;&gt;CLJS-806&lt;/a&gt;: support ^:const&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1115&quot;&gt;CLJS-1115&lt;/a&gt;: Reusable repl-bootstrap! fn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-667&quot;&gt;CLJS-667&lt;/a&gt;: validate extend-type and extend-protocol shape&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1112&quot;&gt;CLJS-1112&lt;/a&gt;: :repl-requires option for REPL evaluation environment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1111&quot;&gt;CLJS-1111&lt;/a&gt;: browser REPL should have no side effects until -setup&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1085&quot;&gt;CLJS-1085&lt;/a&gt;: Allow to pass test environment to cljs.test/run-all-tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-867&quot;&gt;CLJS-867&lt;/a&gt;: extend-type with Object methods requires multi-arity style definition&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1118&quot;&gt;CLJS-1118&lt;/a&gt;: cljs.repl/doc support for protocols&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-889&quot;&gt;CLJS-889&lt;/a&gt;: re-pattern works on strings containing \u2028 or \u2029&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-109&quot;&gt;CLJS-109&lt;/a&gt;: Compiler errors/warnings should be displayed when cljs namespace &amp;#39;package&amp;#39; names start with an unacceptable javascript symbol&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-891&quot;&gt;CLJS-891&lt;/a&gt;: Defs in &amp;quot;parent&amp;quot; namespaces clash with &amp;quot;child&amp;quot; namespaces with the same name?&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-813&quot;&gt;CLJS-813&lt;/a&gt;: Warn about reserved JS keyword usage in namespace names&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-876&quot;&gt;CLJS-876&lt;/a&gt;: merged sourcemap doesn&amp;#39;t account for output-wrapper&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1062&quot;&gt;CLJS-1062&lt;/a&gt;: Incorrect deftype/defrecord definition leads to complex error messages&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1120&quot;&gt;CLJS-1120&lt;/a&gt;: analyze-deps does not appear to work when analyzing analysis caches&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1119&quot;&gt;CLJS-1119&lt;/a&gt;: constant table emission logic is incorrect&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-977&quot;&gt;CLJS-977&lt;/a&gt;: implement IKVReduce in Subvec&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1117&quot;&gt;CLJS-1117&lt;/a&gt;: Dependencies in JARs don&amp;#39;t use cached analysis&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-689&quot;&gt;CLJS-689&lt;/a&gt;: js/-Infinity munges to _Infinity&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1114&quot;&gt;CLJS-1114&lt;/a&gt;: browser REPL script loading race condition&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1110&quot;&gt;CLJS-1110&lt;/a&gt;: cljs.closure/watch needs to print errors to &lt;em&gt;err&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1101&quot;&gt;CLJS-1101&lt;/a&gt; cljs.test might throw when trying to detect file-and-line&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1090&quot;&gt;CLJS-1090&lt;/a&gt;: macros imported from clojure.core missing docs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1108&quot;&gt;CLJS-1108&lt;/a&gt;: :modules :output-to needs to create directories&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1095&quot;&gt;CLJS-1095&lt;/a&gt;: UUID to implement IComparable&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1096&quot;&gt;CLJS-1096&lt;/a&gt;: Update js/Date -equiv and -compare semantics based on Date.valueOf() value&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1102&quot;&gt;CLJS-1102&lt;/a&gt; clojure.test should print column number of exception when available&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 16 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/03/16/r3115/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/03/16/r3115/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-3058 - Enhanced REPLs, faster compile times</title>
+        <description>&lt;p&gt;This is a significant enhancement release around REPLs and compile times.&lt;/p&gt;
+
+&lt;p&gt;All builtin REPLs (Nashorn, Node.js, Rhino and the browser REPL) now
+support the helper functions normally available via clojure.repl,
+these include: doc, find-doc, apropos, dir, source, and pst.  All of the
+builtins REPL now also support source mapped stacktraces.&lt;/p&gt;
+
+&lt;p&gt;This release also includes many enhancements around compile times.&lt;/p&gt;
+
+&lt;p&gt;ClojureScript now ships with a default :optimizations setting of
+:none. Implicit now when using :none is source map generation and analysis
+caching. Analysis caching significantly speeds up compile times.&lt;/p&gt;
+
+&lt;p&gt;The standard library (cljs.core) is now AOTed compiled to JavaScript
+along with an AOTed analysis dump and an AOTed source map. This
+dramatically cuts down on cold start compile times. The standard
+library is never actually ever analyzed or compiled in your own
+builds. The result is particularly dramatic for REPLs.&lt;/p&gt;
+
+&lt;p&gt;ClojureScript is also now available for the first time as a standalone
+AOTed JAR. The Quick Start introduction has been rewritten in terms of
+the standalone JAR:
+&lt;a href=&quot;https://github.com/clojure/clojurescript/wiki/Quick-Start&quot;&gt;https://github.com/clojure/clojurescript/wiki/Quick-Start&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The new Quick Start is essential reading even if you are a relatively
+experienced ClojureScript developer.&lt;/p&gt;
+
+&lt;p&gt;As usual feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;0.0-3058&lt;/h2&gt;
+
+&lt;h3&gt;Enhancements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;browser REPL source mapping for Firefox, Safari, Chrome&lt;/li&gt;
+&lt;li&gt;macro support in REPL special functions&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-897&quot;&gt;CLJS-897&lt;/a&gt;: AOT core.cljs &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-899&quot;&gt;CLJS-899&lt;/a&gt;: AOT cache core.cljs analysis&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1078&quot;&gt;CLJS-1078&lt;/a&gt;: Nashorn REPL should use persistent code cache&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1079&quot;&gt;CLJS-1079&lt;/a&gt;: add way to execute arbitrary fn upon watch build completion&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1034&quot;&gt;CLJS-1034&lt;/a&gt;: Support REPL-defined functions in stacktrace infrastructure&lt;/li&gt;
+&lt;li&gt;source mapping for Rhino&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1071&quot;&gt;CLJS-1071&lt;/a&gt;: support symbol keys in :closure-defines&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1014&quot;&gt;CLJS-1014&lt;/a&gt;: Support Closure Defines under :none&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1068&quot;&gt;CLJS-1068&lt;/a&gt;: node target define&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1069&quot;&gt;CLJS-1069&lt;/a&gt;: Generic :jsdoc support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1030&quot;&gt;CLJS-1030&lt;/a&gt;: add &lt;code&gt;cljs.repl/pst&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add &lt;code&gt;cljs.repl/apropos&lt;/code&gt;, &lt;code&gt;cljs.repl/find-doc&lt;/code&gt;, &lt;code&gt;cljs.repl/dir&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;fix &lt;code&gt;cljs.analyzer.api/all-ns&lt;/code&gt; docstring&lt;/li&gt;
+&lt;li&gt;add &lt;code&gt;cljs.analyzer.api/ns-publics&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1055&quot;&gt;CLJS-1055&lt;/a&gt;: cljs.repl/doc should support namespaces and special forms&lt;/li&gt;
+&lt;li&gt;Add ClojureScript special form doc map&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1054&quot;&gt;CLJS-1054&lt;/a&gt;: add clojure.repl/source functionality to cljs.repl&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1053&quot;&gt;CLJS-1053&lt;/a&gt;: REPLs need import special fn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;move :init up in cljs.repl/repl&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1087&quot;&gt;CLJS-1087&lt;/a&gt;: with-out-str unexpectedly affected by &lt;em&gt;print-newline&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1093&quot;&gt;CLJS-1093&lt;/a&gt;: Better compiler defaults&lt;/li&gt;
+&lt;li&gt;Bump deps latest Closure Compiler, Rhino 1.7R5, data.json 0.2.6, tool.reader 0.8.16&lt;/li&gt;
+&lt;li&gt;more sensible error if cljs.repl/repl arguments after the first incorrectly supplied&lt;/li&gt;
+&lt;li&gt;default REPLs to :cache-analysis true&lt;/li&gt;
+&lt;li&gt;default :output-dir for Nashorn and Node REPLs&lt;/li&gt;
+&lt;li&gt;change ES6 Map &lt;code&gt;get&lt;/code&gt; support to take additional &lt;code&gt;not-found&lt;/code&gt; parameter&lt;/li&gt;
+&lt;li&gt;deprecate clojure.reflect namespace now that REPLs are significantly enhanced, static vars, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;stop blowing away cljs.user in browser REPL so REPL fns/macros remain available&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1098&quot;&gt;CLJS-1098&lt;/a&gt;: Browser REPL needs to support :reload and :reload-all&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1097&quot;&gt;CLJS-1097&lt;/a&gt;: source map url for AOTed cljs.core is wrong&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1094&quot;&gt;CLJS-1094&lt;/a&gt;: read option not used by cljs.repl/repl*&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1089&quot;&gt;CLJS-1089&lt;/a&gt;: AOT analysis cache has bad :file paths&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1057&quot;&gt;CLJS-1057&lt;/a&gt;: Nashorn REPL should not use EDN rep for errors&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1086&quot;&gt;CLJS-1086&lt;/a&gt;: Keyword constants should have stable names&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-964&quot;&gt;CLJS-964&lt;/a&gt;: Redefining exists? does not emit a warning like redefining array? does.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-937&quot;&gt;CLJS-937&lt;/a&gt;: local fn name should be lexically munged&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1082&quot;&gt;CLJS-1082&lt;/a&gt;: analysis memoization bug&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-978&quot;&gt;CLJS-978&lt;/a&gt;: Analysis caching doesn&amp;#39;t account for constants table&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-865&quot;&gt;CLJS-865&lt;/a&gt;: remove &lt;code&gt;cljs.js-deps/goog-resource&lt;/code&gt; hack&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1077&quot;&gt;CLJS-1077&lt;/a&gt;: analyze-deps infinite recursive loop&lt;/li&gt;
+&lt;li&gt;manually set *e in Rhino on JS exception&lt;/li&gt;
+&lt;li&gt;REPL options merging needs to be more disciplined&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1072&quot;&gt;CLJS-1072&lt;/a&gt;: Calling .hasOwnProperty(&amp;quot;source&amp;quot;) in Clojurescript&amp;#39;s string/replace will break with ES6&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1064&quot;&gt;CLJS-1064&lt;/a&gt;: ex-info is not printable&lt;/li&gt;
+&lt;li&gt;Fix REPLs emitting code into .repl directory&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1066&quot;&gt;CLJS-1066&lt;/a&gt;: Rhino REPL regression&lt;/li&gt;
+&lt;li&gt;be more disciplined about ints in murmur3 code&lt;/li&gt;
+&lt;li&gt;Node.js REPL should work even if :output-dir not supplied&lt;/li&gt;
+&lt;li&gt;Nashorn environment doesn&amp;#39;t supply console, setup printing correctly&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 09 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/03/09/r3058-enhanced-repls-faster-compile-times/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/03/09/r3058-enhanced-repls-faster-compile-times/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r0.0-2913 - Google Closure Modules, improved nREPL support</title>
+        <description>&lt;p&gt;This release comes with two very big enhancements.&lt;/p&gt;
+
+&lt;p&gt;The first is support for Google Closure Modules via the :modules build
+option. Google Closure Modules permits splitting advanced compiled
+builds into optimal smaller pieces for faster page
+loads. ClojureScript&amp;#39;s Google Closure Module support is fully
+:foreign-libs aware. Source mapping for modules is also fully
+supported.&lt;/p&gt;
+
+&lt;p&gt;The feature is described in more detail here:
+&lt;a href=&quot;https://github.com/clojure/clojurescript/wiki/Compiler-Options#modules&quot;&gt;https://github.com/clojure/clojurescript/wiki/Compiler-Options#modules&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The second big change is a fundamental rearchitecting of ClojureScript
+REPLs. ClojureScript REPLs now support a set of options similar to
+those taken by &lt;code&gt;clojure.main/repl&lt;/code&gt; with small changes to account for
+different JavaScript evaluation environments. Many third party REPLs
+like Figwheel, Weasel, and Ambly are either unaffected or have already
+accounted for these changes. However current tooling leveraging
+Piggieback will likely present an inferior experience as Piggieback was
+designed to work around the previous limitations of ClojureScript
+REPLs. Now that ClojureScript REPLs are more like the standard Clojure
+REPL it should be far simpler to add proper interruptible-eval and
+load-file nREPL middleware so that existing tooling around nREPL can
+more easily integrate ClojureScript REPLs as first class citizens.&lt;/p&gt;
+
+&lt;p&gt;Feedback on both of these enhancements is very welcome!&lt;/p&gt;
+
+&lt;p&gt;There are also many smaller fixes around REPL command line behavior,
+the Nashorn REPL, :foreign-libs resource finding issues, the full
+list follows:&lt;/p&gt;
+
+&lt;h2&gt;0.0-2913&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support custom :output-to for :cljs-base module&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;0.0-2911&lt;/h2&gt;
+
+&lt;h3&gt;Enhancements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1042&quot;&gt;CLJS-1042&lt;/a&gt;: Google Closure Modules :source-map support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1041&quot;&gt;CLJS-1041&lt;/a&gt;: Google Closure Modules :foreign-libs support&lt;/li&gt;
+&lt;li&gt;Google Closure Modules support via :modules&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1040&quot;&gt;CLJS-1040&lt;/a&gt;: Source-mapped script stack frames for the Nashorn repl&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-960&quot;&gt;CLJS-960&lt;/a&gt;: On carriage return REPLs should always show new REPL prompt&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-941&quot;&gt;CLJS-941&lt;/a&gt;: Warn when a symbol is defined multiple times in a file&lt;/li&gt;
+&lt;li&gt;REPLs now support parameterization a la clojure.main/repl&lt;/li&gt;
+&lt;li&gt;all REPLs analyze cljs.core before entering loop&lt;/li&gt;
+&lt;li&gt;can emit :closure-source-map option for preserving JS-&amp;gt;JS map&lt;/li&gt;
+&lt;li&gt;REPLs can now merge new REPL/compiler options via -setup&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-998&quot;&gt;CLJS-998&lt;/a&gt;: Nashorn REPL does not support require special fn&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1052&quot;&gt;CLJS-1052&lt;/a&gt;: Cannot require ns from within the ns at the REPL for reloading purposes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-975&quot;&gt;CLJS-975&lt;/a&gt;: preserve :reload &amp;amp; :reload-all in ns macro sugar&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1039&quot;&gt;CLJS-1039&lt;/a&gt;: Under Emacs source directory watching triggers spurious recompilation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1046&quot;&gt;CLJS-1046&lt;/a&gt;: static vars do not respect user compile time metadata&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-989&quot;&gt;CLJS-989&lt;/a&gt;: ClojureScript REPL loops on EOF signal&lt;/li&gt;
+&lt;li&gt;fix DCE regression for trivial programs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1036&quot;&gt;CLJS-1036&lt;/a&gt;: use getResources not findResources in get-upstream-deps*&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 21 Feb 2015 00:00:00 -0600</pubDate>
+        <link>http://cljsinfo.github.io/2015/02/21/r2913-google-closure-modules-improved-nrepl-support/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/02/21/r2913-google-closure-modules-improved-nrepl-support/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

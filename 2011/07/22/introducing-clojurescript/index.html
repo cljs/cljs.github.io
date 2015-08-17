@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Introducing ClojureScript</title>
+  <meta name="description" content="The Clojure/core team is proud to introduce an important addition to the Clojure language ecosystem. ClojureScript is a new compiler for Clojure that targets...">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://cljsinfo.github.io/2011/07/22/introducing-clojurescript/">
+  <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+    <div class="container">
+
+      <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/img/logo-light.svg"></a>
+
+    <div class="title-block">
+      <div class="title">ClojureScript</div>
+      <div class="subtitle">early website draft</div>
+    </div>
+
+    <nav class="site-nav">
+      <a class="page-link " href="/about">About</a>
+      <a class="page-link " href="/docs">Docs</a>
+      <a class="page-link active" href="/news">News</a>
+      <a class="page-link " href="/community">Community</a>
+    </nav>
+
+    <nav class="site-nav-ext">
+      <a class="page-link-ext" href="https://github.com/clojure/clojurescript">GitHub</a>
+      <a class="page-link-ext" href="http://dev.clojure.org/jira/browse/CLJS">Jira</a>
+      <a class="page-link-ext" href="http://clojure.org">Clo<i>j</i>ure <img width="24px" src="/img/clojure-icon.gif"></a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+      <div class="wrapper nosidebar newsContent">
+
+  <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">Introducing ClojureScript</h1>
+      <p class="post-meta">Jul 22, 2011
+       by Stuart Sierra
+      
+      <a href="http://clojure.com/blog/2011/07/22/introducing-clojurescript.html">on Clojure.com/blog</a>
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
+
+      
+
+      <p>The <a href="http://clojure.com/">Clojure/core</a> team is proud to introduce an important addition to the Clojure language ecosystem. <a href="https://github.com/clojure/clojurescript">ClojureScript</a> is a new compiler for Clojure that targets JavaScript.</p>
+
+<p>A <a href="https://youtu.be/tVooR-dF_Ag">video recording of the ClojureScript announcement</a> is available, along with <a href="http://cloud.github.com/downloads/clojure/clojurescript/clojurescript%20slides.pdf">slides (PDF) from the presentation</a>.</p>
+
+<h3>Why JavaScript</h3>
+
+<p>The Clojure language was first <a href="http://clojure.org/rationale#Rationale-Languages%20and%20Platforms">built on the Java Virtual Machine</a> because of its reach and power on server platforms. For non-server platforms, nothing has greater reach than JavaScript. It&#39;s been called the <a href="http://www.hanselman.com/blog/JavaScriptisAssemblyLanguagefortheWebPart2MadnessorjustInsanity.aspx">assembly language of the Web</a>. But beyond Web browsers, JavaScript can be found in <a href="http://arstechnica.com/apple/news/2011/06/ios-5-brings-nitro-speed-to-home-screen-web-apps.ars">mobile devices</a>, <a href="http://developer.boxee.tv/JavaScript_API#Preface">set-top boxes</a>, and <a href="http://wiki.services.openoffice.org/wiki/Documentation/DevGuide/Scripting/Scripting_Framework">desktop applications</a>. JavaScript has even made inroads on the server in <a href="http://couchdb.apache.org/">databases</a> and <a href="http://nodejs.org/">Web servers</a>. As a result of this reach, a lot of work has gone into making JavaScript engines performant, including JIT-compilation into native code.</p>
+
+<p>But JavaScript&#39;s weakness remains the language itself. Although it has some powerful features such as first-class functions, JavaScript is noted more for its flaws than for its strengths. It was never designed to be a language for large applications.</p>
+
+<p>What if we had a modern, robust, powerful language that could reach to all the places that JavaScript does? This is the goal of ClojureScript.</p>
+
+<h3>Where We Are</h3>
+
+<p>Try it out! Follow the Quick Start instructions on the <a href="https://github.com/clojure/clojurescript/wiki">ClojureScript wiki</a>.</p>
+
+<p>Here&#39;s a partial list of what has been implemented so far:</p>
+
+<ul>
+<li>  Protocols and <code>deftype</code></li>
+<li>  Namespaces</li>
+<li>  Functions: <code>fn</code>, <code>defn</code>, multiple-arities, variadics</li>
+<li>  Destructuring</li>
+<li>  Higher-order functions: <code>map</code>, <code>reduce</code>, <code>filter</code>, ...</li>
+<li>  Data structures: lists, maps, vectors, sets</li>
+<li>  Data manipulation functions: <code>conj</code>, <code>assoc</code>, <code>update-in</code>,...</li>
+<li>  Sequences and sequence functions: <code>first</code>, <code>rest</code>, ...</li>
+<li>  Macros: <code>assert</code>, <code>cond</code>, <code>doto</code>, <code>loop</code>, <code>-&gt;</code> and <code>-&gt;&gt;</code>, ...</li>
+<li>  Metadata</li>
+<li>  Reader in ClojureScript (think JSON but better)</li>
+<li>  Regular expressions</li>
+<li>  Atoms</li>
+<li>  Core libraries: <code>clojure.string</code>, <code>clojure.set</code>, <code>clojure.zip</code>, ...</li>
+<li>  REPL using JDK-embedded JavaScript (Rhino)</li>
+</ul>
+
+<p>ClojureScript is currently in Alpha status. The compiler and core libraries are usable for developing applications, but expect to find bugs and missing pieces of functionality. ClojureScript aims to be a complete implementation of the Clojure language, but some parts aren&#39;t finished yet.</p>
+
+<p>Some parts of the Clojure language have no direct analog in ClojureScript, in particular the concurrency primitives, since JavaScript is single-threaded. There may also be edge cases where the requirements of the JavaScript environment force ClojureScript to have slightly different semantics from Clojure. We will document these differences as we find them.</p>
+
+<p>Obviously, any code making interop calls to Java, as most existing Clojure libraries do, will not work in ClojureScript. Code written in pure Clojure will <strong>probably</strong> work in ClojureScript with minor adjustments. For example, <a href="https://github.com/clojure/clojure/blob/master/src/clj/clojure/zip.clj">clojure.zip in Clojure</a> and <a href="https://github.com/clojure/clojurescript/blob/master/src/cljs/clojure/zip.cljs">clojure.zip in ClojureScript</a> are nearly identical. With a little effort, purely algorithmic code can be made portable between implementations. However, trying to abstract over all the differences among host platforms has never been a goal of Clojure, nor will it be a goal of ClojureScript.</p>
+
+<p>We have a <a href="http://dev.clojure.org/jira/browse/CLJS">ClojureScript JIRA instance</a> set up to track bugs. As with Clojure itself, submitting patches requires signing the <a href="http://clojure.org/contributing">Clojure Contributor Agreement</a>. We can only accept patches through JIRA, not GitHub pull requests.</p>
+
+<h3>The Relationship to Google Closure</h3>
+
+<p>Google has led the way in developing rich client-side applications in JavaScript. Because Google needs the Web to succeed as an application-delivery platform, they have released some of their JavaScript tools as open source under the name <strong>Closure</strong>. The homophonic name clash is unfortunate, but not something we can do anything about.</p>
+
+<p><a href="http://code.google.com/closure/">Google Closure</a> is a suite of tools for delivering complex JavaScript applications to memory-constrained devices over slow connections. It consists of three parts: a large library of JavaScript classes and functions, a client-side templating system, and an optimizing JavaScript compiler. These parts are designed to work in symbiosis.</p>
+
+<p>The Google Closure compiler is a sophisticated JavaScript-to-JavaScript compiler that performs whole-program analysis to inline and rearrange code for optimal performance on modern JavaScript runtimes. Most importantly, it eliminates unused or unreachable code. The Google Closure compiler makes it possible to have a large library of JavaScript functions written in a straightforward manner without concern for code size, and to deliver minified versions of only the code your application needs. However, taking full advantage of the Google Closure compiler requires adherence to strict conventions for JavaScript source code.</p>
+
+<p>The ClojureScript compiler emits JavaScript which follows Google Closure&#39;s code conventions, and then invokes the Google Closure compiler to generate compact, optimized JavaScript for delivery to clients. ClojureScript also makes use of the Google Closure library for capabilities such as event handling, DOM manipulation, and user interface widgets.</p>
+
+<p>It is possible to use ClojureScript with JavaScript libraries other than Google Closure, but those libraries typically do not follow the conventions of the Google Closure compiler and therefore will not be able to take full advantage of its optimizations.</p>
+
+<h3>What ClojureScript is Not</h3>
+
+<p><strong>ClojureScript is not Clojure implemented in JavaScript.</strong></p>
+
+<p>The Clojure community has tried various ways of generating JavaScript from Clojure in the past. One <a href="https://github.com/clojure/clojure-contrib/tree/master/clojurescript">early attempt by Chris Houser</a>, also called ClojureScript, used JavaScript as a implementation language for the core data structures and compiler, the way the current version of Clojure uses Java.</p>
+
+<p>The new ClojureScript does not take this approach. Instead, ClojureScript is written entirely in <strong>Clojure</strong>, as a compiler which emits JavaScript and a large library of functions. Therefore, ClojureScript does not aim to provide a complete development environment in JavaScript. There is no <code>eval</code> and no runtime access to the ClojureScript compiler from within ClojureScript.</p>
+
+<p><strong>ClojureScript is not JavaScript with Clojure syntax.</strong></p>
+
+<p>Another approach sometimes used to overcome JavaScript&#39;s syntactic shortcomings is to layer another syntax on top of it while keeping all of the JavaScript language semantics. <a href="http://common-lisp.net/project/parenscript/">Parenscript</a> and <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a> are examples of this approach.</p>
+
+<p>ClojureScript has the same language semantics as Clojure, not JavaScript. The ClojureScript compiler emits JavaScript, similar to the way the Clojure compiler emits Java bytecode.</p>
+
+<h3>How We Got Here</h3>
+
+<p>ClojureScript was initially developed by Rich Hickey, creator of Clojure. Members of the Clojure/core team, along with others invited from the Clojure community, have participated in the development of the compiler.</p>
+
+<h3>Where to Learn More</h3>
+
+<ul>
+<li>  <a href="https://github.com/clojure/clojurescript/wiki">ClojureScript Wiki</a></li>
+<li>  Meet Clojure and ClojureScript developers at <a href="http://clojure-conj.org/">Clojure-Conj</a>, November 10-12, 2011</li>
+<li>  <a href="http://groups.google.com/group/clojure">Clojure Mailing List</a></li>
+<li>  #clojure IRC on <a href="http://freenode.net/">Freenode</a></li>
+</ul>
+
+    </article>
+  </div>
+
+</div>
+
+
+      <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <hr>
+
+    <div class="community-note">
+      <i class="fa fa-tree"></i>
+      website created by the community.<br>
+      <a class="acknowledgements-link" href="/acknowledgements">acknowledgements</a>
+    </div>
+
+    <div class="cljs-legal">
+      ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br>
+      Copyright © Rich Hickey
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+  </body>
+
+</html>

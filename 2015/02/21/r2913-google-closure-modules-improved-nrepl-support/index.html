@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>r0.0-2913 - Google Closure Modules, improved nREPL support</title>
+  <meta name="description" content="This release comes with two very big enhancements.">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://cljsinfo.github.io/2015/02/21/r2913-google-closure-modules-improved-nrepl-support/">
+  <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+    <div class="container">
+
+      <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/img/logo-light.svg"></a>
+
+    <div class="title-block">
+      <div class="title">ClojureScript</div>
+      <div class="subtitle">early website draft</div>
+    </div>
+
+    <nav class="site-nav">
+      <a class="page-link " href="/about">About</a>
+      <a class="page-link " href="/docs">Docs</a>
+      <a class="page-link active" href="/news">News</a>
+      <a class="page-link " href="/community">Community</a>
+    </nav>
+
+    <nav class="site-nav-ext">
+      <a class="page-link-ext" href="https://github.com/clojure/clojurescript">GitHub</a>
+      <a class="page-link-ext" href="http://dev.clojure.org/jira/browse/CLJS">Jira</a>
+      <a class="page-link-ext" href="http://clojure.org">Clo<i>j</i>ure <img width="24px" src="/img/clojure-icon.gif"></a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+      <div class="wrapper nosidebar newsContent">
+
+  <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-2913 - Google Closure Modules, improved nREPL support</h1>
+      <p class="post-meta">Feb 21, 2015
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/n_8WHnlcOGI/1kmATGABVi0J">on Google Groups</a>
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
+
+      
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-2913"]</code></pre>
+      </p>
+      
+
+      <p>This release comes with two very big enhancements.</p>
+
+<p>The first is support for Google Closure Modules via the :modules build
+option. Google Closure Modules permits splitting advanced compiled
+builds into optimal smaller pieces for faster page
+loads. ClojureScript&#39;s Google Closure Module support is fully
+:foreign-libs aware. Source mapping for modules is also fully
+supported.</p>
+
+<p>The feature is described in more detail here:
+<a href="https://github.com/clojure/clojurescript/wiki/Compiler-Options#modules">https://github.com/clojure/clojurescript/wiki/Compiler-Options#modules</a></p>
+
+<p>The second big change is a fundamental rearchitecting of ClojureScript
+REPLs. ClojureScript REPLs now support a set of options similar to
+those taken by <code>clojure.main/repl</code> with small changes to account for
+different JavaScript evaluation environments. Many third party REPLs
+like Figwheel, Weasel, and Ambly are either unaffected or have already
+accounted for these changes. However current tooling leveraging
+Piggieback will likely present an inferior experience as Piggieback was
+designed to work around the previous limitations of ClojureScript
+REPLs. Now that ClojureScript REPLs are more like the standard Clojure
+REPL it should be far simpler to add proper interruptible-eval and
+load-file nREPL middleware so that existing tooling around nREPL can
+more easily integrate ClojureScript REPLs as first class citizens.</p>
+
+<p>Feedback on both of these enhancements is very welcome!</p>
+
+<p>There are also many smaller fixes around REPL command line behavior,
+the Nashorn REPL, :foreign-libs resource finding issues, the full
+list follows:</p>
+
+<h2>0.0-2913</h2>
+
+<ul>
+<li>Support custom :output-to for :cljs-base module</li>
+</ul>
+
+<h2>0.0-2911</h2>
+
+<h3>Enhancements</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1042">CLJS-1042</a>: Google Closure Modules :source-map support</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1041">CLJS-1041</a>: Google Closure Modules :foreign-libs support</li>
+<li>Google Closure Modules support via :modules</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1040">CLJS-1040</a>: Source-mapped script stack frames for the Nashorn repl</li>
+</ul>
+
+<h3>Changes</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-960">CLJS-960</a>: On carriage return REPLs should always show new REPL prompt</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-941">CLJS-941</a>: Warn when a symbol is defined multiple times in a file</li>
+<li>REPLs now support parameterization a la clojure.main/repl</li>
+<li>all REPLs analyze cljs.core before entering loop</li>
+<li>can emit :closure-source-map option for preserving JS-&gt;JS map</li>
+<li>REPLs can now merge new REPL/compiler options via -setup</li>
+</ul>
+
+<h3>Fixes</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-998">CLJS-998</a>: Nashorn REPL does not support require special fn</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1052">CLJS-1052</a>: Cannot require ns from within the ns at the REPL for reloading purposes</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-975">CLJS-975</a>: preserve :reload &amp; :reload-all in ns macro sugar</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1039">CLJS-1039</a>: Under Emacs source directory watching triggers spurious recompilation</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1046">CLJS-1046</a>: static vars do not respect user compile time metadata</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-989">CLJS-989</a>: ClojureScript REPL loops on EOF signal</li>
+<li>fix DCE regression for trivial programs</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1036">CLJS-1036</a>: use getResources not findResources in get-upstream-deps*</li>
+</ul>
+
+    </article>
+  </div>
+
+</div>
+
+
+      <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <hr>
+
+    <div class="community-note">
+      <i class="fa fa-tree"></i>
+      website created by the community.<br>
+      <a class="acknowledgements-link" href="/acknowledgements">acknowledgements</a>
+    </div>
+
+    <div class="cljs-legal">
+      ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br>
+      Copyright © Rich Hickey
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+  </body>
+
+</html>

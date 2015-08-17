@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>r0.0-2227</title>
+  <meta name="description" content="Enhancementsoptimized caseCLJS-802: Add :pseudo-names compiler optionCLJS-795: 10X performance enchancement for multimethodsCLJS-801: str macro emits unoptim...">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://cljsinfo.github.io/2014/05/22/r2227/">
+  <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+    <div class="container">
+
+      <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/img/logo-light.svg"></a>
+
+    <div class="title-block">
+      <div class="title">ClojureScript</div>
+      <div class="subtitle">early website draft</div>
+    </div>
+
+    <nav class="site-nav">
+      <a class="page-link " href="/about">About</a>
+      <a class="page-link " href="/docs">Docs</a>
+      <a class="page-link active" href="/news">News</a>
+      <a class="page-link " href="/community">Community</a>
+    </nav>
+
+    <nav class="site-nav-ext">
+      <a class="page-link-ext" href="https://github.com/clojure/clojurescript">GitHub</a>
+      <a class="page-link-ext" href="http://dev.clojure.org/jira/browse/CLJS">Jira</a>
+      <a class="page-link-ext" href="http://clojure.org">Clo<i>j</i>ure <img width="24px" src="/img/clojure-icon.gif"></a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+      <div class="wrapper nosidebar newsContent">
+
+  <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-2227</h1>
+      <p class="post-meta">May 22, 2014
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/QOW4HbctqE8/IlEw_bxqH9wJ">on Google Groups</a>
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
+
+      
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-2227"]</code></pre>
+      </p>
+      
+
+      <h2>Enhancements</h2>
+
+<ul>
+<li>optimized case</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-802">CLJS-802</a>: Add :pseudo-names compiler option</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-795">CLJS-795</a>: 10X performance enchancement for multimethods</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-801">CLJS-801</a>: str macro emits unoptimizable js code</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-656">CLJS-656</a>: search classpath for goog-style JavaScript dependencies</li>
+</ul>
+
+<h2>Fixes</h2>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-792">CLJS-792</a>: Implement IReduce on PersistentArrayMap</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-804">CLJS-804</a>: Binding <em>print-length</em> breaks str</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-775">CLJS-775</a>: Fix cljs.reader cljs.reader parses radix form of int literals</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-805">CLJS-805</a>: add-watch returns map of watch fns instead of watched reference</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-787">CLJS-787</a>: cljs.reader does not read blank string as nil</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-784">CLJS-784</a>: Fix *Map.-conj for map-entry seqs, that don&#39;t implement INext</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-784">CLJS-784</a>: make conj on maps behave as it does in Clojure</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-793">CLJS-793</a>: fix memoize (non-truthy values don&#39;t get cached)</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-800">CLJS-800</a>: PersistentQueueSeq extended to IPrintWithWriter</li>
+</ul>
+
+    </article>
+  </div>
+
+</div>
+
+
+      <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <hr>
+
+    <div class="community-note">
+      <i class="fa fa-tree"></i>
+      website created by the community.<br>
+      <a class="acknowledgements-link" href="/acknowledgements">acknowledgements</a>
+    </div>
+
+    <div class="cljs-legal">
+      ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br>
+      Copyright © Rich Hickey
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+  </body>
+
+</html>
