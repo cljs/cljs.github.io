@@ -225,6 +225,22 @@ html, body {
   .site-footer .cljs-legal {
     float: right; }
 
+.hero {
+  padding: 40px 0;
+  background-image: linear-gradient(-90deg, #414958, #647087);
+  text-align: center; }
+  .hero .hero-logo {
+    width: 80px;
+    opacity: 0.9; }
+  .hero .hero-title {
+    color: #EBEBEB;
+    font-size: 42px;
+    font-weight: 300; }
+  .hero .hero-quote {
+    font-style: italic;
+    font-size: 18px;
+    color: #B2E3E7; }
+
 /**
  * Site Inner Content (main body)
  */
