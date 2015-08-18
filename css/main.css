@@ -210,7 +210,7 @@ html, body {
   left: 0;
   right: 0;
   height: 110px;
-  padding: 22px; }
+  padding-top: 22px; }
   .site-footer hr {
     border: 0;
     border-bottom: 1px solid #dadada;
