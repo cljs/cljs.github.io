@@ -149,8 +149,7 @@ html, body {
  */
 .site-header {
   background: #fff;
-  height: 90px;
-  margin-top: 18px; }
+  height: 90px; }
   .site-header .logo {
     display: inline-block;
     height: 66px;
