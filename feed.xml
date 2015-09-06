@@ -6,9 +6,33 @@
 </description>
     <link>http://cljsinfo.github.io/</link>
     <atom:link href="http://cljsinfo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Aug 2015 13:09:08 -0500</pubDate>
-    <lastBuildDate>Tue, 18 Aug 2015 13:09:08 -0500</lastBuildDate>
+    <pubDate>Sun, 06 Sep 2015 16:40:47 -0500</pubDate>
+    <lastBuildDate>Sun, 06 Sep 2015 16:40:47 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>r1.7.122 (minor fixes)</title>
+        <description>&lt;p&gt;Fixes symbol and keyword clash under advanced compilation. Fixes meta
+preservation regression in clojure.walk.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Aug 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/08/29/r1.7.122-minor-fixes/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/08/29/r1.7.122-minor-fixes/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>r1.7.58 (Windows fix)</title>
+        <description>&lt;p&gt;Fixes Windows regression around Closure-style library support when the library
+conforms to the classpath.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Aug 2015 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2015/08/05/r1.7.58-windows-fix/</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/08/05/r1.7.58-windows-fix/</guid>
+        
+        
+      </item>
     
       <item>
         <title>r1.7.48</title>
@@ -441,192 +465,6 @@ REPLs and compile times.&lt;/p&gt;
         <pubDate>Mon, 16 Mar 2015 00:00:00 -0500</pubDate>
         <link>http://cljsinfo.github.io/2015/03/16/r3115/</link>
         <guid isPermaLink="true">http://cljsinfo.github.io/2015/03/16/r3115/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>r0.0-3058 - Enhanced REPLs, faster compile times</title>
-        <description>&lt;p&gt;This is a significant enhancement release around REPLs and compile times.&lt;/p&gt;
-
-&lt;p&gt;All builtin REPLs (Nashorn, Node.js, Rhino and the browser REPL) now
-support the helper functions normally available via clojure.repl,
-these include: doc, find-doc, apropos, dir, source, and pst.  All of the
-builtins REPL now also support source mapped stacktraces.&lt;/p&gt;
-
-&lt;p&gt;This release also includes many enhancements around compile times.&lt;/p&gt;
-
-&lt;p&gt;ClojureScript now ships with a default :optimizations setting of
-:none. Implicit now when using :none is source map generation and analysis
-caching. Analysis caching significantly speeds up compile times.&lt;/p&gt;
-
-&lt;p&gt;The standard library (cljs.core) is now AOTed compiled to JavaScript
-along with an AOTed analysis dump and an AOTed source map. This
-dramatically cuts down on cold start compile times. The standard
-library is never actually ever analyzed or compiled in your own
-builds. The result is particularly dramatic for REPLs.&lt;/p&gt;
-
-&lt;p&gt;ClojureScript is also now available for the first time as a standalone
-AOTed JAR. The Quick Start introduction has been rewritten in terms of
-the standalone JAR:
-&lt;a href=&quot;https://github.com/clojure/clojurescript/wiki/Quick-Start&quot;&gt;https://github.com/clojure/clojurescript/wiki/Quick-Start&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The new Quick Start is essential reading even if you are a relatively
-experienced ClojureScript developer.&lt;/p&gt;
-
-&lt;p&gt;As usual feedback welcome!&lt;/p&gt;
-
-&lt;h2&gt;0.0-3058&lt;/h2&gt;
-
-&lt;h3&gt;Enhancements&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;browser REPL source mapping for Firefox, Safari, Chrome&lt;/li&gt;
-&lt;li&gt;macro support in REPL special functions&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-897&quot;&gt;CLJS-897&lt;/a&gt;: AOT core.cljs &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-899&quot;&gt;CLJS-899&lt;/a&gt;: AOT cache core.cljs analysis&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1078&quot;&gt;CLJS-1078&lt;/a&gt;: Nashorn REPL should use persistent code cache&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1079&quot;&gt;CLJS-1079&lt;/a&gt;: add way to execute arbitrary fn upon watch build completion&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1034&quot;&gt;CLJS-1034&lt;/a&gt;: Support REPL-defined functions in stacktrace infrastructure&lt;/li&gt;
-&lt;li&gt;source mapping for Rhino&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1071&quot;&gt;CLJS-1071&lt;/a&gt;: support symbol keys in :closure-defines&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1014&quot;&gt;CLJS-1014&lt;/a&gt;: Support Closure Defines under :none&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1068&quot;&gt;CLJS-1068&lt;/a&gt;: node target define&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1069&quot;&gt;CLJS-1069&lt;/a&gt;: Generic :jsdoc support&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1030&quot;&gt;CLJS-1030&lt;/a&gt;: add &lt;code&gt;cljs.repl/pst&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;add &lt;code&gt;cljs.repl/apropos&lt;/code&gt;, &lt;code&gt;cljs.repl/find-doc&lt;/code&gt;, &lt;code&gt;cljs.repl/dir&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;fix &lt;code&gt;cljs.analyzer.api/all-ns&lt;/code&gt; docstring&lt;/li&gt;
-&lt;li&gt;add &lt;code&gt;cljs.analyzer.api/ns-publics&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1055&quot;&gt;CLJS-1055&lt;/a&gt;: cljs.repl/doc should support namespaces and special forms&lt;/li&gt;
-&lt;li&gt;Add ClojureScript special form doc map&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1054&quot;&gt;CLJS-1054&lt;/a&gt;: add clojure.repl/source functionality to cljs.repl&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1053&quot;&gt;CLJS-1053&lt;/a&gt;: REPLs need import special fn&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Changes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;move :init up in cljs.repl/repl&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1087&quot;&gt;CLJS-1087&lt;/a&gt;: with-out-str unexpectedly affected by &lt;em&gt;print-newline&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1093&quot;&gt;CLJS-1093&lt;/a&gt;: Better compiler defaults&lt;/li&gt;
-&lt;li&gt;Bump deps latest Closure Compiler, Rhino 1.7R5, data.json 0.2.6, tool.reader 0.8.16&lt;/li&gt;
-&lt;li&gt;more sensible error if cljs.repl/repl arguments after the first incorrectly supplied&lt;/li&gt;
-&lt;li&gt;default REPLs to :cache-analysis true&lt;/li&gt;
-&lt;li&gt;default :output-dir for Nashorn and Node REPLs&lt;/li&gt;
-&lt;li&gt;change ES6 Map &lt;code&gt;get&lt;/code&gt; support to take additional &lt;code&gt;not-found&lt;/code&gt; parameter&lt;/li&gt;
-&lt;li&gt;deprecate clojure.reflect namespace now that REPLs are significantly enhanced, static vars, etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Fixes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;stop blowing away cljs.user in browser REPL so REPL fns/macros remain available&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1098&quot;&gt;CLJS-1098&lt;/a&gt;: Browser REPL needs to support :reload and :reload-all&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1097&quot;&gt;CLJS-1097&lt;/a&gt;: source map url for AOTed cljs.core is wrong&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1094&quot;&gt;CLJS-1094&lt;/a&gt;: read option not used by cljs.repl/repl*&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1089&quot;&gt;CLJS-1089&lt;/a&gt;: AOT analysis cache has bad :file paths&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1057&quot;&gt;CLJS-1057&lt;/a&gt;: Nashorn REPL should not use EDN rep for errors&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1086&quot;&gt;CLJS-1086&lt;/a&gt;: Keyword constants should have stable names&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-964&quot;&gt;CLJS-964&lt;/a&gt;: Redefining exists? does not emit a warning like redefining array? does.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-937&quot;&gt;CLJS-937&lt;/a&gt;: local fn name should be lexically munged&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1082&quot;&gt;CLJS-1082&lt;/a&gt;: analysis memoization bug&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-978&quot;&gt;CLJS-978&lt;/a&gt;: Analysis caching doesn&amp;#39;t account for constants table&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-865&quot;&gt;CLJS-865&lt;/a&gt;: remove &lt;code&gt;cljs.js-deps/goog-resource&lt;/code&gt; hack&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1077&quot;&gt;CLJS-1077&lt;/a&gt;: analyze-deps infinite recursive loop&lt;/li&gt;
-&lt;li&gt;manually set *e in Rhino on JS exception&lt;/li&gt;
-&lt;li&gt;REPL options merging needs to be more disciplined&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1072&quot;&gt;CLJS-1072&lt;/a&gt;: Calling .hasOwnProperty(&amp;quot;source&amp;quot;) in Clojurescript&amp;#39;s string/replace will break with ES6&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1064&quot;&gt;CLJS-1064&lt;/a&gt;: ex-info is not printable&lt;/li&gt;
-&lt;li&gt;Fix REPLs emitting code into .repl directory&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1066&quot;&gt;CLJS-1066&lt;/a&gt;: Rhino REPL regression&lt;/li&gt;
-&lt;li&gt;be more disciplined about ints in murmur3 code&lt;/li&gt;
-&lt;li&gt;Node.js REPL should work even if :output-dir not supplied&lt;/li&gt;
-&lt;li&gt;Nashorn environment doesn&amp;#39;t supply console, setup printing correctly&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 09 Mar 2015 00:00:00 -0500</pubDate>
-        <link>http://cljsinfo.github.io/2015/03/09/r3058-enhanced-repls-faster-compile-times/</link>
-        <guid isPermaLink="true">http://cljsinfo.github.io/2015/03/09/r3058-enhanced-repls-faster-compile-times/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>r0.0-2913 - Google Closure Modules, improved nREPL support</title>
-        <description>&lt;p&gt;This release comes with two very big enhancements.&lt;/p&gt;
-
-&lt;p&gt;The first is support for Google Closure Modules via the :modules build
-option. Google Closure Modules permits splitting advanced compiled
-builds into optimal smaller pieces for faster page
-loads. ClojureScript&amp;#39;s Google Closure Module support is fully
-:foreign-libs aware. Source mapping for modules is also fully
-supported.&lt;/p&gt;
-
-&lt;p&gt;The feature is described in more detail here:
-&lt;a href=&quot;https://github.com/clojure/clojurescript/wiki/Compiler-Options#modules&quot;&gt;https://github.com/clojure/clojurescript/wiki/Compiler-Options#modules&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The second big change is a fundamental rearchitecting of ClojureScript
-REPLs. ClojureScript REPLs now support a set of options similar to
-those taken by &lt;code&gt;clojure.main/repl&lt;/code&gt; with small changes to account for
-different JavaScript evaluation environments. Many third party REPLs
-like Figwheel, Weasel, and Ambly are either unaffected or have already
-accounted for these changes. However current tooling leveraging
-Piggieback will likely present an inferior experience as Piggieback was
-designed to work around the previous limitations of ClojureScript
-REPLs. Now that ClojureScript REPLs are more like the standard Clojure
-REPL it should be far simpler to add proper interruptible-eval and
-load-file nREPL middleware so that existing tooling around nREPL can
-more easily integrate ClojureScript REPLs as first class citizens.&lt;/p&gt;
-
-&lt;p&gt;Feedback on both of these enhancements is very welcome!&lt;/p&gt;
-
-&lt;p&gt;There are also many smaller fixes around REPL command line behavior,
-the Nashorn REPL, :foreign-libs resource finding issues, the full
-list follows:&lt;/p&gt;
-
-&lt;h2&gt;0.0-2913&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Support custom :output-to for :cljs-base module&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;0.0-2911&lt;/h2&gt;
-
-&lt;h3&gt;Enhancements&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1042&quot;&gt;CLJS-1042&lt;/a&gt;: Google Closure Modules :source-map support&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1041&quot;&gt;CLJS-1041&lt;/a&gt;: Google Closure Modules :foreign-libs support&lt;/li&gt;
-&lt;li&gt;Google Closure Modules support via :modules&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1040&quot;&gt;CLJS-1040&lt;/a&gt;: Source-mapped script stack frames for the Nashorn repl&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Changes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-960&quot;&gt;CLJS-960&lt;/a&gt;: On carriage return REPLs should always show new REPL prompt&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-941&quot;&gt;CLJS-941&lt;/a&gt;: Warn when a symbol is defined multiple times in a file&lt;/li&gt;
-&lt;li&gt;REPLs now support parameterization a la clojure.main/repl&lt;/li&gt;
-&lt;li&gt;all REPLs analyze cljs.core before entering loop&lt;/li&gt;
-&lt;li&gt;can emit :closure-source-map option for preserving JS-&amp;gt;JS map&lt;/li&gt;
-&lt;li&gt;REPLs can now merge new REPL/compiler options via -setup&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Fixes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-998&quot;&gt;CLJS-998&lt;/a&gt;: Nashorn REPL does not support require special fn&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1052&quot;&gt;CLJS-1052&lt;/a&gt;: Cannot require ns from within the ns at the REPL for reloading purposes&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-975&quot;&gt;CLJS-975&lt;/a&gt;: preserve :reload &amp;amp; :reload-all in ns macro sugar&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1039&quot;&gt;CLJS-1039&lt;/a&gt;: Under Emacs source directory watching triggers spurious recompilation&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1046&quot;&gt;CLJS-1046&lt;/a&gt;: static vars do not respect user compile time metadata&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-989&quot;&gt;CLJS-989&lt;/a&gt;: ClojureScript REPL loops on EOF signal&lt;/li&gt;
-&lt;li&gt;fix DCE regression for trivial programs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1036&quot;&gt;CLJS-1036&lt;/a&gt;: use getResources not findResources in get-upstream-deps*&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 21 Feb 2015 00:00:00 -0600</pubDate>
-        <link>http://cljsinfo.github.io/2015/02/21/r2913-google-closure-modules-improved-nrepl-support/</link>
-        <guid isPermaLink="true">http://cljsinfo.github.io/2015/02/21/r2913-google-closure-modules-improved-nrepl-support/</guid>
         
         
       </item>
