@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ClojureScript</title>
-  <meta name="description" content="The Clojure to JavaScript compiler.
-">
+  <title>r0.0-2173</title>
+  <meta name="description" content="Changes &amp; Enhancements:">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://cljsinfo.github.io/">
+  <link rel="canonical" href="http://cljsinfo.github.io/2014/02/21/r2173.html">
   <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
@@ -52,7 +51,7 @@
     <nav class="site-nav">
       <a class="page-link " href="/about.html">About</a>
       <a class="page-link " href="/docs.html">Docs</a>
-      <a class="page-link " href="/news.html">News</a>
+      <a class="page-link active" href="/news.html">News</a>
       <a class="page-link " href="/community.html">Community</a>
     </nav>
 
@@ -68,21 +67,50 @@
 </header>
 
 
-      <div class="hero">
-  <div class="wrapper">
-    <img class="hero-logo" src="/img/cljs-white.svg">
-    <div class="hero-title">ClojureScript</div>
-    <div class="hero-quote">"Clojure rocks, and JavaScript reaches."</div>
-  </div>
-</div>
+      <div class="wrapper nosidebar newsContent">
 
-
-<div class="wrapper nosidebar pageContent">
   <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-2173</h1>
+      <p class="post-meta">Feb 21, 2014
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/jW8IN9jySYo/DBPrDLLQi1sJ">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
 
       
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-2173"]</code></pre>
+      </p>
+      
 
+      <p>Changes &amp; Enhancements:</p>
+
+<ul>
+<li>IAtom marker protocol</li>
+<li>IReset &amp; ISwap protocols</li>
+<li>ClojureScript compiler can be AOTed</li>
+</ul>
+
+<p>Bug Fixes:</p>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-765">CLJS-765</a>: IReversible for Subvec</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-615">CLJS-615</a>: Warnings when library does not exist</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-767">CLJS-767</a>: fix (assoc [0] nil 1)</li>
+<li>Use catch :default in browser REPL &amp; reflect</li>
+<li>Permit nodejs targets to have a preamble</li>
+</ul>
+
+    </article>
   </div>
+
 </div>
 
 

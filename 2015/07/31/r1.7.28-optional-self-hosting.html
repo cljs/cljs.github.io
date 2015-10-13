@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>r1.7.28 - Optional Self Hosting</title>
+  <meta name="description" content="ClojureScript now has a proper version number. This version number isdesigned to reflect feature parity with Clojure.">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://cljsinfo.github.io/2015/07/31/r1.7.28-optional-self-hosting.html">
+  <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+    <div class="container">
+
+      <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/img/cljs-white.svg"></a>
+
+    <div class="title-block">
+      <div class="title">ClojureScript</div>
+      <div class="subtitle">early website draft</div>
+    </div>
+
+    <nav class="site-nav">
+      <a class="page-link " href="/about.html">About</a>
+      <a class="page-link " href="/docs.html">Docs</a>
+      <a class="page-link active" href="/news.html">News</a>
+      <a class="page-link " href="/community.html">Community</a>
+    </nav>
+
+    <nav class="site-nav-ext">
+      <a class="page-link-ext" href="https://github.com/clojure/clojurescript">GitHub</a>
+      <a class="page-link-ext" href="http://dev.clojure.org/jira/browse/CLJS">Jira</a>
+      <a class="page-link-ext" href="http://clojure.org">Clo<i>j</i>ure <img width="24px" src="/img/clojure-icon.gif"></a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+      <div class="wrapper nosidebar newsContent">
+
+  <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r1.7.28 - Optional Self Hosting</h1>
+      <p class="post-meta">Jul 31, 2015
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/Z6xD9UthbvQ/gsLMbURGAgAJ">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
+
+      
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "1.7.28"]</code></pre>
+      </p>
+      
+
+      <p>ClojureScript now has a proper version number. This version number is
+designed to reflect feature parity with Clojure.</p>
+
+<p>The primary new feature of this release is optional
+self hosting. ClojureScript can now run either on the JVM or directly on
+JavaScript. Please refer to the docstrings in the new cljs.js
+namespace for details on this functionality. cljs.js is designed to
+enable new use cases (iOS, Android, interactive tutorials, snippet
+sharing) not well served by the default compilation model.</p>
+
+<p>The release also includes numerous bug fixes and enhancements.</p>
+
+<p>This release also bumps the Clojure dependency to 1.7.0 and
+tools.reader to 0.10.0-alpha3.</p>
+
+<p>As always feedback welcome!</p>
+
+<h2>1.7.28</h2>
+
+<h2>Enhancements</h2>
+
+<ul>
+<li>New namespace cljs.js provides analysis, compilation, and eval</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1360">CLJS-1360</a>: Refactor JS module processing to work with recent Google Closure compiler changes</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1282">CLJS-1282</a>: Add a :pprint option to the default reporter in cljs.test</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1308">CLJS-1308</a>: :analyze-path should be extended to take a vector of paths</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1230">CLJS-1230</a>: ES 2015 Module Processing</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1231">CLJS-1231</a>: AMD Module Processing</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1092">CLJS-1092</a>: CommonJS Module processing</li>
+</ul>
+
+<h2>Changes</h2>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1376">CLJS-1376</a>: Printing in a tagged literal data form</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-836">CLJS-836</a>: Replace seq-based iterators with direct iterator for all non-seq collections that use SeqIterator</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1367">CLJS-1367</a>: Expose default-warning-handler and warning-enabled?</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1267">CLJS-1267</a>: Added the :end-test-all-vars and :end-test-vars events to have end events for all cljs.test api functions</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1337">CLJS-1337</a>: Move parse ns side-effects into a separate compiler pass</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1247">CLJS-1247</a>: Split out error printing from regular printing</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1329">CLJS-1329</a>: Support for reading #js tagged literals in bootstrap</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1191">CLJS-1191</a>: rebased patch Update clojure.walk to the current version on clojure</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1321">CLJS-1321</a>: remove getNamespace &amp; getName method calls from defrecord</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1281">CLJS-1281</a>: Preserve test order</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-934">CLJS-934</a>: In the REPL return vars after defs</li>
+</ul>
+
+<h2>Fixes</h2>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1316">CLJS-1316</a> let does not detect invalid binding vector when it contains destructuring</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1033">CLJS-1033</a>: take a drop accept nil as n argument</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1324">CLJS-1324</a>: Compiler fails to raise warning/error when invoking a keyword without arguments</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1352">CLJS-1352</a>: cljs.js: Allow conditional readers</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1348">CLJS-1348</a>: meta is printing for def at REPL</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1342">CLJS-1342</a>: cljs.reader/read-string should throw Error when not called with string</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1341">CLJS-1341</a>: Fix CommonJS conversion bug</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1333">CLJS-1333</a>: Analyze meta on quoted symbols</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1210">CLJS-1210</a>: Javascript built-in arguments replaces nil arguments locally defined by let</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1248">CLJS-1248</a>: alter-meta! does not work on vars</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1276">CLJS-1276</a>: var equality differs from Clojure</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1310">CLJS-1310</a>: ns libspec error message misses :import</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-428">CLJS-428</a>: Added step to escape docstrings with */ and associated test</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1331">CLJS-1331</a>: Regex literal emits invalid JS</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1338">CLJS-1338</a>: NPE in confirm-var-exists if suffix is &quot;..&quot;</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1319">CLJS-1319</a>: Cannot locate module namespace when filename contains dash</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1317">CLJS-1317</a>: Incremental compilation issues for :nodejs target</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1227">CLJS-1227</a> Raise error when if form has more than 4 statements</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1306">CLJS-1306</a>: Browser REPL :asset-path with leading slash breaks source map support</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1290">CLJS-1290</a>: :refer does not work with Closure JS namespaces</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1307">CLJS-1307</a>: Doc for ns missing</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1301">CLJS-1301</a>: local :foreign-libs are not picked up the first time browser REPL is started</li>
+</ul>
+
+    </article>
+  </div>
+
+</div>
+
+
+      <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <hr>
+
+    <div class="community-note">
+      <i class="fa fa-tree"></i>
+      website created by the community.<br>
+      <a class="acknowledgements-link" href="/acknowledgements">acknowledgements</a>
+    </div>
+
+    <div class="cljs-legal">
+      ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br>
+      Copyright © Rich Hickey
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+  </body>
+
+</html>

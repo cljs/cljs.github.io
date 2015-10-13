@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ClojureScript</title>
-  <meta name="description" content="The Clojure to JavaScript compiler.
-">
+  <title>r0.0-2234</title>
+  <meta name="description" content="This release fixes a critical bug around the case statement. This will be the last ClojureScript release before we move to support only Clojure 1.6.0. ">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://cljsinfo.github.io/">
+  <link rel="canonical" href="http://cljsinfo.github.io/2014/06/13/r2234.html">
   <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
@@ -52,7 +51,7 @@
     <nav class="site-nav">
       <a class="page-link " href="/about.html">About</a>
       <a class="page-link " href="/docs.html">Docs</a>
-      <a class="page-link " href="/news.html">News</a>
+      <a class="page-link active" href="/news.html">News</a>
       <a class="page-link " href="/community.html">Community</a>
     </nav>
 
@@ -68,21 +67,48 @@
 </header>
 
 
-      <div class="hero">
-  <div class="wrapper">
-    <img class="hero-logo" src="/img/cljs-white.svg">
-    <div class="hero-title">ClojureScript</div>
-    <div class="hero-quote">"Clojure rocks, and JavaScript reaches."</div>
-  </div>
-</div>
+      <div class="wrapper nosidebar newsContent">
 
-
-<div class="wrapper nosidebar pageContent">
   <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-2234</h1>
+      <p class="post-meta">Jun 13, 2014
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/KN20FwoyoZ8/BZlGWNTnQxUJ">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
 
       
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-2234"]</code></pre>
+      </p>
+      
 
+      <p>This release fixes a critical bug around the <code>case</code> statement. This 
+will be the last ClojureScript release before we move to support only 
+Clojure 1.6.0. </p>
+
+<h2>0.0-2234</h2>
+
+<h3>Fixes</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-812">CLJS-812</a>: Recur from case statement generated invalid JavaScript </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-811">CLJS-811</a>: use the correct class loader in cljs.js-deps/goog-resource </li>
+<li>fix fns with metadata under advanced compilation </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-809">CLJS-809</a>: dissoc :file metadata introduced by tools.reader 0.8.4 </li>
+<li>mark cljs.reader vars as ^:dynamic to avoid compiler warnings </li>
+</ul>
+
+    </article>
   </div>
+
 </div>
 
 

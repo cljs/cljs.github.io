@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ClojureScript</title>
-  <meta name="description" content="The Clojure to JavaScript compiler.
-">
+  <title>r0.0-2322 - Safari Hashing Fix</title>
+  <meta name="description" content="The primary reason for this release is a critical hashing bug in Safari clients that surfaced due to the Murmur3 work. ">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://cljsinfo.github.io/">
+  <link rel="canonical" href="http://cljsinfo.github.io/2014/08/27/r2322-safari-hashing-fix.html">
   <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
@@ -52,7 +51,7 @@
     <nav class="site-nav">
       <a class="page-link " href="/about.html">About</a>
       <a class="page-link " href="/docs.html">Docs</a>
-      <a class="page-link " href="/news.html">News</a>
+      <a class="page-link active" href="/news.html">News</a>
       <a class="page-link " href="/community.html">Community</a>
     </nav>
 
@@ -68,21 +67,48 @@
 </header>
 
 
-      <div class="hero">
-  <div class="wrapper">
-    <img class="hero-logo" src="/img/cljs-white.svg">
-    <div class="hero-title">ClojureScript</div>
-    <div class="hero-quote">"Clojure rocks, and JavaScript reaches."</div>
-  </div>
-</div>
+      <div class="wrapper nosidebar newsContent">
 
-
-<div class="wrapper nosidebar pageContent">
   <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-2322 - Safari Hashing Fix</h1>
+      <p class="post-meta">Aug 27, 2014
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/n0sfFX09Vbw/9Icme54Z-X0J">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
 
       
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-2322"]</code></pre>
+      </p>
+      
 
+      <p>The primary reason for this release is a critical hashing bug 
+in Safari clients that surfaced due to the Murmur3 work. </p>
+
+<h3>Fixes</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-839">CLJS-839</a>: Mobile Safari Math.imul issue </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-845">CLJS-845</a>: incorrect behavior of <code>sequence</code> when given multiple collections </li>
+<li>count check in equiv-sequential if both arguments are ICounted </li>
+<li>only keep the param names when storing :method-params instead of the 
+entire param AST </li>
+<li>preserve var metadata for deftype* and defrecord* </li>
+<li>preserve var metadata when creating deftype/record factory fns </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-831">CLJS-831</a>: Extending EventType to js/Element breaks Nashorn </li>
+</ul>
+
+    </article>
   </div>
+
 </div>
 
 

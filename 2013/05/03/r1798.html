@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ClojureScript</title>
-  <meta name="description" content="The Clojure to JavaScript compiler.
-">
+  <title>r0.0-1798</title>
+  <meta name="description" content="artifact: http://search.maven.org/#artifactdetails%7Corg.clojure%7Cclojurescript%7C0.0-1798%7Cjar">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://cljsinfo.github.io/">
+  <link rel="canonical" href="http://cljsinfo.github.io/2013/05/03/r1798.html">
   <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
@@ -52,7 +51,7 @@
     <nav class="site-nav">
       <a class="page-link " href="/about.html">About</a>
       <a class="page-link " href="/docs.html">Docs</a>
-      <a class="page-link " href="/news.html">News</a>
+      <a class="page-link active" href="/news.html">News</a>
       <a class="page-link " href="/community.html">Community</a>
     </nav>
 
@@ -68,21 +67,69 @@
 </header>
 
 
-      <div class="hero">
-  <div class="wrapper">
-    <img class="hero-logo" src="/img/cljs-white.svg">
-    <div class="hero-title">ClojureScript</div>
-    <div class="hero-quote">"Clojure rocks, and JavaScript reaches."</div>
-  </div>
-</div>
+      <div class="wrapper nosidebar newsContent">
 
-
-<div class="wrapper nosidebar pageContent">
   <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-1798</h1>
+      <p class="post-meta">May 3, 2013
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojure/9mtwpYTx6RI/MHacS_AdinEJ">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
 
       
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-1798"]</code></pre>
+      </p>
+      
 
+      <p>artifact: <a href="http://search.maven.org/#artifactdetails%7Corg.clojure%7Cclojurescript%7C0.0-1798%7Cjar">http://search.maven.org/#artifactdetails%7Corg.clojure%7Cclojurescript%7C0.0-1798%7Cjar</a></p>
+
+<p>Git log: <a href="https://github.com/clojure/clojurescript/compare/r1586...r1798">https://github.com/clojure/clojurescript/compare/r1586...r1798</a></p>
+
+<h2>Enhancements</h2>
+
+<ul>
+<li>Code size improvements, (.log js/console &quot;Hello world!&quot;) now
+generates ~100 LOC of pretty printed advanced compiled JavaScript</li>
+<li>Source map merging, can produce composition source map, source map</li>
+<li>Optimize PersistentArrayMaps</li>
+</ul>
+
+<h2>Changes</h2>
+
+<ul>
+<li>Symbols are no longer JavaScript strings, support metadata</li>
+</ul>
+
+<h2>Fixes</h2>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-367">CLJS-367</a>: chunked seq support in for and doseq, comprehension benchmarks</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-496">CLJS-496</a>: better implementation of <code>char</code></li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-495">CLJS-495</a>: add exists? macro</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-493">CLJS-493</a>: get should accept any type</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-492">CLJS-492</a>: avoid producing unnecessary calls to next in emit-apply-to</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-491">CLJS-491</a>: avoid layered subvecs</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-488">CLJS-488</a>: resolve aliased keywords properly</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-438">CLJS-438</a>: import new threading macros from 1.5</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-482">CLJS-482</a>: bind <em>out</em> as the target of Rhino REPL env printing</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-484">CLJS-484</a>: Throw exception instead of trying to throw string in defmulti compiler macro</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-468">CLJS-468</a>: Implement IKVReduce for nil, Test reduce-kv and fold with nil</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-477">CLJS-477</a>: Vararg fns break when first vararg is undefined.</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-473">CLJS-473</a>: cljs.closure/add-dep-string calls wrong munge</li>
+</ul>
+
+    </article>
   </div>
+
 </div>
 
 

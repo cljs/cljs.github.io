@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>r0.0-2014 - source maps, incremental compilation, and internal changes</title>
+  <meta name="description" content="There are a number of significant enhancements in thisrelease. We finally have relative source maps! This should be bigfor people integrating ClojureScript w...">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://cljsinfo.github.io/2013/11/06/r2014-source-maps-incremental-compilation-and-internal-changes.html">
+  <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+    <div class="container">
+
+      <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/img/cljs-white.svg"></a>
+
+    <div class="title-block">
+      <div class="title">ClojureScript</div>
+      <div class="subtitle">early website draft</div>
+    </div>
+
+    <nav class="site-nav">
+      <a class="page-link " href="/about.html">About</a>
+      <a class="page-link " href="/docs.html">Docs</a>
+      <a class="page-link active" href="/news.html">News</a>
+      <a class="page-link " href="/community.html">Community</a>
+    </nav>
+
+    <nav class="site-nav-ext">
+      <a class="page-link-ext" href="https://github.com/clojure/clojurescript">GitHub</a>
+      <a class="page-link-ext" href="http://dev.clojure.org/jira/browse/CLJS">Jira</a>
+      <a class="page-link-ext" href="http://clojure.org">Clo<i>j</i>ure <img width="24px" src="/img/clojure-icon.gif"></a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+      <div class="wrapper nosidebar newsContent">
+
+  <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-2014 - source maps, incremental compilation, and internal changes</h1>
+      <p class="post-meta">Nov 6, 2013
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/isf7k35pThA/CXyJr4v4seYJ">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
+
+      
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-2014"]</code></pre>
+      </p>
+      
+
+      <p>There are a number of significant enhancements in this
+release. We finally have relative source maps! This should be big
+for people integrating ClojureScript with existing web
+based workflows.</p>
+
+<p>Under the hood Chas Emerick has improved how the analyzer works making
+it thread safe. This make the compiler considerably more robust and
+eliminates some race conditions in the browser REPL support.</p>
+
+<p>Incremental compilation is enhanced both with and without source
+maps. In particular we now tag ClojureScript compiled JavaScript files
+with the version of the compiler used - this should make transitioning
+to a new version of the compiler considerably less frustrating - stale
+files will get compiled.</p>
+
+<p>For those people using the compiler internals directly you will likely
+encounter breakage. If anyone feels inclined to outline a more stable
+interface to internals please get involved in leading an incremental
+process towards a stable and flexible API for tool builders.</p>
+
+<p>Enhancements:</p>
+
+<ul>
+<li>relative source map paths, all original sources will be copied to
+:ouput-dir this should make integrating with web workflow much simpler.</li>
+<li>runtime obtainable compiler version number, <em>clojurescript-version</em> now
+available at runtime as a string</li>
+</ul>
+
+<p>Bug fixes:</p>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-643">CLJS-643</a>: make the ClojureScript compiler (more) idempotent</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-662">CLJS-662</a>: CLJS files compiled from JARs get lost from source map</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-661">CLJS-661</a>: (try ... (catch :default e ...) ...)</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-627">CLJS-627</a>: Add warnings on function arity problems</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-654">CLJS-654</a>: Quit repljs on ^D, don&#39;t loop on nil</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-659">CLJS-659</a>: tag compiled files with compiler version</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-642">CLJS-642</a>: deftype/record should not emit goog.provide</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-648">CLJS-648</a>: persistent assoc/conj on a transient-created collision node</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-631">CLJS-631</a>: Use ana/namespaces for shadowing vars</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-641">CLJS-641</a>: js* overflow for large inputs</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-645">CLJS-645</a>: parse-ns needs to include &#39;constants-table as a dep</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-646">CLJS-646</a>: single segment namespaces and reify don&#39;t work</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-521">CLJS-521</a>: pass along entire repl environment when loading dependencies</li>
+</ul>
+
+    </article>
+  </div>
+
+</div>
+
+
+      <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <hr>
+
+    <div class="community-note">
+      <i class="fa fa-tree"></i>
+      website created by the community.<br>
+      <a class="acknowledgements-link" href="/acknowledgements">acknowledgements</a>
+    </div>
+
+    <div class="cljs-legal">
+      ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br>
+      Copyright © Rich Hickey
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+  </body>
+
+</html>

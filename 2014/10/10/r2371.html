@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ClojureScript</title>
-  <meta name="description" content="The Clojure to JavaScript compiler.
-">
+  <title>r0.0-2371</title>
+  <meta name="description" content="This release includes minor fixes, faster collection iterators, and stays in sync with the latest transducers changes in Clojure master. ">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://cljsinfo.github.io/">
+  <link rel="canonical" href="http://cljsinfo.github.io/2014/10/10/r2371.html">
   <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
@@ -52,7 +51,7 @@
     <nav class="site-nav">
       <a class="page-link " href="/about.html">About</a>
       <a class="page-link " href="/docs.html">Docs</a>
-      <a class="page-link " href="/news.html">News</a>
+      <a class="page-link active" href="/news.html">News</a>
       <a class="page-link " href="/community.html">Community</a>
     </nav>
 
@@ -68,21 +67,44 @@
 </header>
 
 
-      <div class="hero">
-  <div class="wrapper">
-    <img class="hero-logo" src="/img/cljs-white.svg">
-    <div class="hero-title">ClojureScript</div>
-    <div class="hero-quote">"Clojure rocks, and JavaScript reaches."</div>
-  </div>
-</div>
+      <div class="wrapper nosidebar newsContent">
 
-
-<div class="wrapper nosidebar pageContent">
   <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-2371</h1>
+      <p class="post-meta">Oct 10, 2014
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/tigdfow0w9A/kb7UC-iZmI0J">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
 
       
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-2371"]</code></pre>
+      </p>
+      
 
+      <p>This release includes minor fixes, faster collection iterators, and 
+stays in sync with the latest transducers changes in Clojure master. </p>
+
+<h3>Fixes</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-862">CLJS-862</a>: fix inconsistent re-pattern </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-866">CLJS-866</a>: Faulty ns macro desugaring </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-869">CLJS-869</a>: When preamble is not found in source directory, compiler 
+does not report it </li>
+</ul>
+
+    </article>
   </div>
+
 </div>
 
 

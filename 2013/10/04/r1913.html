@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ClojureScript</title>
-  <meta name="description" content="The Clojure to JavaScript compiler.
-">
+  <title>r0.0-1913</title>
+  <meta name="description" content="Enhancements: ">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://cljsinfo.github.io/">
+  <link rel="canonical" href="http://cljsinfo.github.io/2013/10/04/r1913.html">
   <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
@@ -52,7 +51,7 @@
     <nav class="site-nav">
       <a class="page-link " href="/about.html">About</a>
       <a class="page-link " href="/docs.html">Docs</a>
-      <a class="page-link " href="/news.html">News</a>
+      <a class="page-link active" href="/news.html">News</a>
       <a class="page-link " href="/community.html">Community</a>
     </nav>
 
@@ -68,21 +67,45 @@
 </header>
 
 
-      <div class="hero">
-  <div class="wrapper">
-    <img class="hero-logo" src="/img/cljs-white.svg">
-    <div class="hero-title">ClojureScript</div>
-    <div class="hero-quote">"Clojure rocks, and JavaScript reaches."</div>
-  </div>
-</div>
+      <div class="wrapper nosidebar newsContent">
 
-
-<div class="wrapper nosidebar pageContent">
   <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r0.0-1913</h1>
+      <p class="post-meta">Oct 4, 2013
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/leynEQDaoyk/xVdm5XpG6nEJ">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
 
       
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "0.0-1913"]</code></pre>
+      </p>
+      
 
+      <p>Enhancements: </p>
+
+<ul>
+<li>Under incremental compilation reset the namespace for the file, this way you get var warnings for example when functions get renamed</li>
+<li>ns refers and uses for libs and macros are now checked - warning now issued if var does not exist</li>
+</ul>
+
+<p>Fixes:</p>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-600">CLJS-600</a> &amp; <a href="http://dev.clojure.org/jira/browse/CLJS-604">CLJS-604</a>: LazySeq regression</li>
+</ul>
+
+    </article>
   </div>
+
 </div>
 
 

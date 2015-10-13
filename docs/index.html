@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Docs</title>
+  <title>API/Syntax Docs</title>
   <meta name="description" content="The Clojure to JavaScript compiler.
 ">
 
@@ -50,10 +50,10 @@
     </div>
 
     <nav class="site-nav">
-      <a class="page-link " href="/about">About</a>
-      <a class="page-link active" href="/docs">Docs</a>
-      <a class="page-link " href="/news">News</a>
-      <a class="page-link " href="/community">Community</a>
+      <a class="page-link " href="/about.html">About</a>
+      <a class="page-link active" href="/docs.html">Docs</a>
+      <a class="page-link " href="/news.html">News</a>
+      <a class="page-link " href="/community.html">Community</a>
     </nav>
 
     <nav class="site-nav-ext">
@@ -72,21 +72,171 @@
   <div class="inner-content">
 
     <article class="post-content">
-      <p>The <a href="https://github.com/clojure/clojurescript/wiki">ClojureScript Wiki</a> is the most active source of documentation for
-ClojureScript.  Integration with this source is TBD, but the following
-sources will soon be integrated in some form here:</p>
+      <h1>ClojureScript API/Syntax</h1>
 
-<p><dl>
-<dt>Complete Book</dt>
-<dd><em><a href="https://leanpub.com/clojurescript-unraveled">ClojureScript Unraveled</a></em> by Andrey Antukh and Alejandro Gómez</dd></p>
+<p><div id="release">
+<div id="version"><strong>1.7.122</strong> <a href="/docs/versions.html">all</a></div>
+<div id="date">2015-08-29</div>
+<div id="clojure"><a href="http://clojure.github.io/clojure/branch-master/index.html"><img valign="middle" width="24px" src="http://i.imgur.com/1GjPKvB.png"> Clojure 1.7.0</a></div>
+<div id="gclosure"><a href="http://google.github.io/closure-library/api/"><img valign="middle" width="18px" src="http://i.imgur.com/yGyeE7k.png"> Closure Lib 0.0-20150805-acd8b553</a></div>
+</div></p>
 
-<p><dt>Reference Docs</dt>
-<dd><a href="https://github.com/cljsinfo/cljs-api-docs/blob/catalog/INDEX.md">API/Syntax Reference</a> by Shaun LeBron</dd></p>
+<p>This is a versioned API and syntax reference for ClojureScript, auto-generated
+by <a href="https://github.com/cljsinfo/cljs-api-docs">this project</a>, and <em>supplemented
+with your help</em> by curated descriptions, examples, and cross-refs.</p>
 
-<p><dt>Cheatsheet</dt>
-<dd><a href="http://cljs.info/cheatsheet/">ClojureScript Cheatsheet</a> by Chris Oakman</dd></p>
+<p><strong><a href="https://github.com/cljsinfo/cljs-api-docs#offline-docset-for-dash">Offline version available here</a></strong></p>
 
-<p></dl></p>
+<h2>Syntax</h2>
+
+<p><a href="syntax-forms">syntax forms</a></p>
+
+<h2>Library API</h2>
+
+<p>The core ClojureScript library.</p>
+
+<table><thead>
+<tr>
+<th>Namespace</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="/docs/library/special.html">special forms</a></td>
+<td>special forms (not in a namespace)</td>
+</tr>
+<tr>
+<td><a href="/docs/library/specialrepl.html">special forms (repl)</a></td>
+<td>REPL special forms (not in a namespace)</td>
+</tr>
+<tr>
+<td><a href="/docs/library/cljs.core.html">cljs.core</a></td>
+<td>fundamental library of the ClojureScript language</td>
+</tr>
+<tr>
+<td><a href="/docs/library/cljs.js.html">cljs.js</a></td>
+<td>compile/analyze ClojureScript code at runtime</td>
+</tr>
+<tr>
+<td><a href="/docs/library/cljs.nodejs.html">cljs.nodejs</a></td>
+<td>nodejs support functions</td>
+</tr>
+<tr>
+<td><a href="/docs/library/cljs.pprint.html">cljs.pprint</a></td>
+<td>a pretty-printer for printing data structures</td>
+</tr>
+<tr>
+<td><a href="/docs/library/cljs.reader.html">cljs.reader</a></td>
+<td>a reader to parse text and produce data structures</td>
+</tr>
+<tr>
+<td><a href="/docs/library/cljs.repl.html">cljs.repl (library)</a></td>
+<td>macros auto-imported into a ClojureScript REPL</td>
+</tr>
+<tr>
+<td><a href="/docs/library/cljs.test.html">cljs.test</a></td>
+<td>a unit-testing framework</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.browser.dom.html">clojure.browser.dom</a></td>
+<td>browser DOM library, wrapping <a href="http://www.closurecheatsheet.com/dom">goog.dom</a></td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.browser.event.html">clojure.browser.event</a></td>
+<td>browser event library, wrapping <a href="http://www.closurecheatsheet.com/events">goog.events</a></td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.browser.net.html">clojure.browser.net</a></td>
+<td>network communication library, wrapping <a href="http://www.closurecheatsheet.com/net">goog.net</a></td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.browser.repl.html">clojure.browser.repl</a></td>
+<td>evaluate compiled cljs in a browser. send results back to server</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.core.reducers.html">clojure.core.reducers</a></td>
+<td>a library for reduction and parallel folding (parallelism not supported)</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.data.html">clojure.data</a></td>
+<td>non-core data functions</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.reflect.html">clojure.reflect</a></td>
+<td>DEPRECATED. Do not use, superceded by REPL enhancements.</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.set.html">clojure.set</a></td>
+<td>set operations such as union/intersection</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.string.html">clojure.string</a></td>
+<td>string operations</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.walk.html">clojure.walk</a></td>
+<td>a generic tree walker for Clojure data structures</td>
+</tr>
+<tr>
+<td><a href="/docs/library/clojure.zip.html">clojure.zip</a></td>
+<td>functional hierarchical zipper, w/ navigation/editing/enumeration</td>
+</tr>
+</tbody></table>
+
+<h2>Compiler API</h2>
+
+<p>ClojureScript analysis and compilation.</p>
+
+<p>This is currently not indexing the whole compiler, just the parts that are
+expected to be public and stable.</p>
+
+<table><thead>
+<tr>
+<th>Namespace</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="/docs/compiler/cljs.analyzer.api.html">cljs.analyzer.api</a></td>
+<td>programmatic access to the analyzer (producing AST)</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.build.api.html">cljs.build.api</a></td>
+<td>programmatic access to project-building facilities</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.compiler.api.html">cljs.compiler.api</a></td>
+<td>programmatic access to the compiler (emitting JS)</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.repl.html">cljs.repl (compiler)</a></td>
+<td>REPL (read eval print loop)</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.repl.browser.html">cljs.repl.browser</a></td>
+<td>browser-connected REPL</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.repl.nashorn.html">cljs.repl.nashorn</a></td>
+<td>Nashorn REPL (JS on Java 8)</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.repl.node.html">cljs.repl.node</a></td>
+<td>Node.js REPL</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.repl.reflect.html">cljs.repl.reflect</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.repl.rhino.html">cljs.repl.rhino</a></td>
+<td>Rhino REPL (JS on Java 6+)</td>
+</tr>
+<tr>
+<td><a href="/docs/compiler/cljs.repl.server.html">cljs.repl.server</a></td>
+<td></td>
+</tr>
+</tbody></table>
 
     </article>
 
