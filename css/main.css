@@ -174,7 +174,8 @@ html, body {
     display: inline-block;
     margin-left: 64px; }
   .site-header .site-nav-ext {
-    float: right; }
+    display: inline-block;
+    margin-left: 80px; }
   .site-header .page-link, .site-header .page-link-ext {
     display: inline-block;
     padding-left: 10px;

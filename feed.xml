@@ -6,9 +6,72 @@
 </description>
     <link>http://cljsinfo.github.io/</link>
     <atom:link href="http://cljsinfo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Oct 2015 13:55:10 -0500</pubDate>
-    <lastBuildDate>Tue, 13 Oct 2015 13:55:10 -0500</lastBuildDate>
+    <pubDate>Fri, 06 Nov 2015 10:25:56 -0600</pubDate>
+    <lastBuildDate>Fri, 06 Nov 2015 10:25:56 -0600</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>r1.7.170 - Enhanced Build Pipeline</title>
+        <description>&lt;p&gt;This release includes a major refactor of the build pipeline thanks to
+Juho Teperi. This change along with some greatly simplified
+recompilation logic will mean much faster cold build times for larger
+projects (some users have already reported &amp;gt;10X).&lt;/p&gt;
+
+&lt;p&gt;This is a breaking change for existing tooling. You will need to
+upgrade lein-cljsbuild, lein-figwheel, and boot-cljs if you intend to
+adopt this version of ClojureScript. All the mentioned tools have
+already accounted for this change. Refer to the appropriate
+documentation for your tooling to determine which version number you
+should adopt.&lt;/p&gt;
+
+&lt;p&gt;Other interesting changes and fixes include newer Google Closure
+Compiler and Library dependencies, self hosting tweaks, a Google
+Closure modules (:modules compiler option) regression,
+improved warnings, and minor REPL enhancements.&lt;/p&gt;
+
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+
+&lt;h3&gt;Enhancements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Refactor build pipeline&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1478&quot;&gt;CLJS-1478&lt;/a&gt;: Self-host: Allow static-fns opt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate larger range of random UUIDs&lt;/li&gt;
+&lt;li&gt;make browser REPL file reloads less chatty&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1475&quot;&gt;CLJS-1475&lt;/a&gt;: indicate that cljs.reader/read is safe&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1470&quot;&gt;CLJS-1470&lt;/a&gt;: Bump GCL Dependency&lt;/li&gt;
+&lt;li&gt;bump Google Closure dep&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;in system-time check that js/process.hrtime is actually a thing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1228&quot;&gt;CLJS-1228&lt;/a&gt;: cljs.util/topo-sort is polynomial on larger dependency graphs&lt;/li&gt;
+&lt;li&gt;check that performance.now method actually exists&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1476&quot;&gt;CLJS-1476&lt;/a&gt;: Self-host: Protocol prefixing broken for three- (or more) segment namespaces&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1472&quot;&gt;CLJS-1472&lt;/a&gt; Patch for &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1467&quot;&gt;CLJS-1467&lt;/a&gt; causes regression for nodejscli&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1469&quot;&gt;CLJS-1469&lt;/a&gt; :modules regression&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1445&quot;&gt;CLJS-1445&lt;/a&gt;: Syntax error for var args in protocol methods&lt;/li&gt;
+&lt;li&gt;Warn if protocol impl methods do not match its protocol&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1451&quot;&gt;CLJS-1451&lt;/a&gt; Protocol impl do not support qualified method names&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1422&quot;&gt;CLJS-1422&lt;/a&gt;: cljs.js/eval-str fails for ns form on node.js with simple optimizations&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1423&quot;&gt;CLJS-1423&lt;/a&gt;: self-host: Requiring analyzer/compiler breaks unchecked Boolean&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1466&quot;&gt;CLJS-1466&lt;/a&gt;: Improperly munged output path for GClosure JavaScript&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1467&quot;&gt;CLJS-1467&lt;/a&gt;: Foreign Libraries not included when using :main with :simple or :advanced&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 06 Nov 2015 00:00:00 -0600</pubDate>
+        <link>http://cljsinfo.github.io/2015/11/06/r1.7.170-enhanced-build-pipeline.html</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2015/11/06/r1.7.170-enhanced-build-pipeline.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>r1.7.145</title>
@@ -458,25 +521,6 @@ module code motion under :modules.&lt;/p&gt;
         <pubDate>Fri, 10 Apr 2015 00:00:00 -0500</pubDate>
         <link>http://cljsinfo.github.io/2015/04/10/r3196-conditional-reading-repls-and-code-motion.html</link>
         <guid isPermaLink="true">http://cljsinfo.github.io/2015/04/10/r3196-conditional-reading-repls-and-code-motion.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>r0.0-3126 - fix for minor REPL regression</title>
-        <description>&lt;p&gt;This release just fixes a minor REPL related regression.&lt;/p&gt;
-
-&lt;h2&gt;0.0-3126&lt;/h2&gt;
-
-&lt;h3&gt;Fixes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Need to wrap REPL -setup calls in cljs.compiler/with-core-cljs&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 18 Mar 2015 00:00:00 -0500</pubDate>
-        <link>http://cljsinfo.github.io/2015/03/18/r3126-fix-for-minor-repl-regression.html</link>
-        <guid isPermaLink="true">http://cljsinfo.github.io/2015/03/18/r3126-fix-for-minor-repl-regression.html</guid>
         
         
       </item>
