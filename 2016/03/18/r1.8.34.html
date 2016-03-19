@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>r1.8.34</title>
+  <meta name="description" content="There are many minor fixes in this release around bootstrappedClojureScript. This release also fixes a subtle bug with thenew :parallel-build feature.">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://cljsinfo.github.io/2016/03/18/r1.8.34.html">
+  <link rel="alternate" type="application/rss+xml" title="ClojureScript" href="http://cljsinfo.github.io/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+    <div class="container">
+
+      <header class="site-header">
+
+  <div class="wrapper">
+
+    <a href="/"><img class="logo" src="/img/cljs-white.svg"></a>
+
+    <div class="title-block">
+      <div class="title">ClojureScript</div>
+      <div class="subtitle">early website draft</div>
+    </div>
+
+    <nav class="site-nav">
+      <a class="page-link " href="/about.html">About</a>
+      <a class="page-link " href="/docs.html">Docs</a>
+      <a class="page-link active" href="/news.html">News</a>
+      <a class="page-link " href="/community.html">Community</a>
+    </nav>
+
+    <nav class="site-nav-ext">
+      <a class="page-link-ext" href="https://github.com/clojure/clojurescript">GitHub</a>
+      <a class="page-link-ext" href="http://dev.clojure.org/jira/browse/CLJS">Jira</a>
+      <a class="page-link-ext" href="http://clojure.org">Clo<i>j</i>ure <img width="24px" src="/img/clojure-icon.gif"></a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+      <div class="wrapper nosidebar newsContent">
+
+  <div class="inner-content">
+    <header class="post-header">
+      <h1 class="post-title">r1.8.34</h1>
+      <p class="post-meta">Mar 18, 2016
+       by David Nolen
+      <a href="https://groups.google.com/d/msg/clojurescript/J2d_WNHrDr4/degpx-WyDAAJ">on Google Groups</a>
+      
+      
+      
+      </p>
+      <hr>
+    </header>
+
+    <article class="post-content">
+
+      
+      <p>Leiningen dependency information:
+      <pre><code>[org.clojure/clojurescript "1.8.34"]</code></pre>
+      </p>
+      
+
+      <p>There are many minor fixes in this release around bootstrapped
+ClojureScript. This release also fixes a subtle bug with the
+new :parallel-build feature.</p>
+
+<p>As always feedback welcome!</p>
+
+<h3>Changes</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1582">CLJS-1582</a>: Type-hint extend-type first arg for primitives</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1590">CLJS-1590</a>: split, split-lines differs from Clojure on empty string</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1594">CLJS-1594</a>: NaN and both infinities cannot be elements of a set</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1597">CLJS-1597</a>: Redundant IPrintWithWriter test in pr-writer-impl</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1583">CLJS-1583</a>: (hash (symbol &quot;/&quot;)) does not match (hash &#39;/)</li>
+<li>bump tools reader</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1492">CLJS-1492</a>: Warn when using :optimisations instead of :optimizations</li>
+<li>less cryptic error if :main doesn&#39;t correspond to any file</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-744">CLJS-744</a>: ISequential types should implement JS indexOf, lastIndexOf</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1411">CLJS-1411</a>: make-array signature differs from clojure</li>
+</ul>
+
+<h3>Fixes</h3>
+
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1589">CLJS-1589</a>: Self-host: case fail with nil</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1596">CLJS-1596</a>: Self-host: :load-macros and :analyze-deps don&#39;t work in cljs.js</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1420">CLJS-1420</a>: get-in behavior differs from Clojure by always deferring to the 3 arity fn</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1585">CLJS-1585</a>: Self-host: Alias-scoped keywords</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1577">CLJS-1577</a>: Self-host: syntax-quote resolves on dot forms</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1564">CLJS-1564</a>: Self-host: cached macro <em>loaded</em> update</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1584">CLJS-1584</a>: Self-host: core/str error with condp</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1521">CLJS-1521</a>: Self-host: Macro namespaces cannot be aliased</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1573">CLJS-1573</a>: Self-host: Invalid UTF escaping in cljs-in-cljs</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1570">CLJS-1570</a>: :parallel-build causes invalid truth check in cljs.reader/read-number</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1568">CLJS-1568</a>: LazyTransformer doesn&#39;t implement IMeta</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1578">CLJS-1578</a>: Corrupted Analysis Files Break Compilation</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1579">CLJS-1579</a>: cljs.source-map/invert-reverse-map discards gcol</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1580">CLJS-1580</a>: Self-host: goog.provide offsets source-maps</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1569">CLJS-1569</a>: IndexedSeq doesn&#39;t implement IWithMeta / IMeta</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1567">CLJS-1567</a>: make-array macro missing &gt; 2 arg arity</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1571">CLJS-1571</a>: Make special-symbol? true for &#39;var</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1555">CLJS-1555</a>: make-array macro missing 2 arg arity</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-970">CLJS-970</a>: generate assert message when compiling</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1565">CLJS-1565</a>: Self-host: whitespace optimization is broken</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1541">CLJS-1541</a>: Self-host: Cannot require &#39;cljs.js using cljs.jar</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1550">CLJS-1550</a>: Enhance docstring for extend-type wrt type-sym</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1551">CLJS-1551</a>: Self-host: assert-args dormant in macros</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1552">CLJS-1552</a>: doc for &amp; should match fn</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1488">CLJS-1488</a>: cljs.repl/source Cannot read source of cljs functions that use #js reader</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1557">CLJS-1557</a>: Make special-symbol? return true for catch and finally</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1542">CLJS-1542</a>: Self-host: cljs/compile-str not handling errors properly</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1318">CLJS-1318</a>: Fix typo in documentation of <code>specify</code></li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-620">CLJS-620</a>: Warnings are generated when using a macro in argument position</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1547">CLJS-1547</a>: Wrong output encoding when compile with goog.LOCALE</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1546">CLJS-1546</a>: cljs.core/run! does not always return nil</li>
+</ul>
+
+    </article>
+  </div>
+
+</div>
+
+
+      <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <hr>
+
+    <div class="community-note">
+      <i class="fa fa-tree"></i>
+      website created by the community.<br>
+      <a class="acknowledgements-link" href="/acknowledgements">acknowledgements</a>
+    </div>
+
+    <div class="cljs-legal">
+      ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br>
+      Copyright © Rich Hickey
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+  </body>
+
+</html>
