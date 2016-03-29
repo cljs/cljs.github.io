@@ -6,9 +6,32 @@
 </description>
     <link>http://cljsinfo.github.io/</link>
     <atom:link href="http://cljsinfo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Mar 2016 13:06:48 -0500</pubDate>
-    <lastBuildDate>Sat, 19 Mar 2016 13:06:48 -0500</lastBuildDate>
+    <pubDate>Tue, 29 Mar 2016 01:31:34 -0500</pubDate>
+    <lastBuildDate>Tue, 29 Mar 2016 01:31:34 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>r1.8.40</title>
+        <description>&lt;p&gt;This release addresses some minor unintentional interactions with 3rd party ClojureScript tooling like Figwheel.&lt;/p&gt;
+
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;1.8.40&lt;/h2&gt;
+
+&lt;h3&gt;Fixes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1603&quot;&gt;CLJS-1603&lt;/a&gt;: Only warn for misspelled comp/REPL opts&lt;/li&gt;
+&lt;li&gt;:warning-handlers missing for known compiler options&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1592&quot;&gt;CLJS-1592&lt;/a&gt;: Self-host: Robustness for core tests&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 28 Mar 2016 00:00:00 -0500</pubDate>
+        <link>http://cljsinfo.github.io/2016/03/28/r1.8.40.html</link>
+        <guid isPermaLink="true">http://cljsinfo.github.io/2016/03/28/r1.8.40.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>r1.8.34</title>
@@ -479,41 +502,6 @@ eliding test metadata&lt;/li&gt;
         <pubDate>Fri, 08 May 2015 00:00:00 -0500</pubDate>
         <link>http://cljsinfo.github.io/2015/05/08/r3255-pretty-printer.html</link>
         <guid isPermaLink="true">http://cljsinfo.github.io/2015/05/08/r3255-pretty-printer.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>r0.0-3211</title>
-        <description>&lt;p&gt;This release is a bugfix release addressing some regressions as well
-as introducing some further REPL refinements.&lt;/p&gt;
-
-&lt;p&gt;As usual feedback welcome!&lt;/p&gt;
-
-&lt;h2&gt;0.0-3211&lt;/h2&gt;
-
-&lt;h3&gt;Changes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1205&quot;&gt;CLJS-1205&lt;/a&gt;: Conditional reading in REPLs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1204&quot;&gt;CLJS-1204&lt;/a&gt;: cljs.build.api/watch can now take compilation inputs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1203&quot;&gt;CLJS-1203&lt;/a&gt;: standard way to pass multiple directories to build&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Fixes&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1216&quot;&gt;CLJS-1216&lt;/a&gt;: incorrect max fixed arity for fns both multi-arity and variadic &lt;/li&gt;
-&lt;li&gt;cljs.analyzer/parse-ns did not bind &lt;em&gt;cljs-file&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1201&quot;&gt;CLJS-1201&lt;/a&gt;: compare broken for IIndexed collections&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1202&quot;&gt;CLJS-1202&lt;/a&gt;: cljs.repl/load-file is not additive&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1199&quot;&gt;CLJS-1199&lt;/a&gt;: array-map should skip dropped elements of IndexedSeq&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1197&quot;&gt;CLJS-1197&lt;/a&gt;: load-file does not reload associated macro namespace&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 23 Apr 2015 00:00:00 -0500</pubDate>
-        <link>http://cljsinfo.github.io/2015/04/23/r3211.html</link>
-        <guid isPermaLink="true">http://cljsinfo.github.io/2015/04/23/r3211.html</guid>
         
         
       </item>
