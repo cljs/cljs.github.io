@@ -1,0 +1,62 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.core/ValSeq</h1><table><tr><td>type</td><td>Added in 0.0-1820</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/jvm/clojure/lang/APersistentMap.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/ValSeq</a></td></tr></table><ul><li><code>(ValSeq. mseq _meta)</code></li></ul><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L8079-L8140">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> ValSeq [<span class="hljs-comment">^not-native</span> mseq _meta]
+  Object
+  (<span class="hljs-name">toString</span> [coll]
+    (<span class="hljs-name">pr-str*</span> coll))
+  (<span class="hljs-name">equiv</span> [this other]
+    (<span class="hljs-name">-equiv</span> this other))
+  (<span class="hljs-name">indexOf</span> [coll x]
+    (<span class="hljs-name">-indexOf</span> coll x <span class="hljs-number">0</span>))
+  (<span class="hljs-name">indexOf</span> [coll x start]
+    (<span class="hljs-name">-indexOf</span> coll x start))
+  (<span class="hljs-name">lastIndexOf</span> [coll x]
+    (<span class="hljs-name">-lastIndexOf</span> coll x (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> coll)))
+  (<span class="hljs-name">lastIndexOf</span> [coll x start]
+    (<span class="hljs-name">-lastIndexOf</span> coll x start))
+
+  IMeta
+  (<span class="hljs-name">-meta</span> [coll] _meta)
+
+  IWithMeta
+  (<span class="hljs-name">-with-meta</span> [coll new-meta] (<span class="hljs-name">ValSeq.</span> mseq new-meta))
+
+  ISeqable
+  (<span class="hljs-name">-seq</span> [coll] coll)
+
+  ISequential
+  IEquiv
+  (<span class="hljs-name">-equiv</span> [coll other] (<span class="hljs-name">equiv-sequential</span> coll other))
+
+  ICollection
+  (<span class="hljs-name">-conj</span> [coll o]
+    (<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> o coll))
+
+  IEmptyableCollection
+  (<span class="hljs-name">-empty</span> [coll] (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name">.-EMPTY</span> List) _meta))
+
+  IHash
+  (<span class="hljs-name">-hash</span> [coll] (<span class="hljs-name">hash-ordered-coll</span> coll))
+
+  ISeq
+  (<span class="hljs-name">-first</span> [coll]
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [<span class="hljs-comment">^not-native</span> me (<span class="hljs-name">-first</span> mseq)]
+      (<span class="hljs-name">-val</span> me)))
+
+  (<span class="hljs-name">-rest</span> [coll]
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [nseq (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">satisfies?</span> INext mseq)
+                 (<span class="hljs-name">-next</span> mseq)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> mseq))]
+      (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> nseq)
+        (<span class="hljs-name">ValSeq.</span> nseq _meta)
+        ())))
+
+  INext
+  (<span class="hljs-name">-next</span> [coll]
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [nseq (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">satisfies?</span> INext mseq)
+                 (<span class="hljs-name">-next</span> mseq)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> mseq))]
+      (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> nseq)
+        (<span class="hljs-name">ValSeq.</span> nseq _meta))))
+
+  IReduce
+  (<span class="hljs-name">-reduce</span> [coll f] (<span class="hljs-name">seq-reduce</span> f coll))
+  (<span class="hljs-name">-reduce</span> [coll f start] (<span class="hljs-name">seq-reduce</span> f start coll)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/ValSeq.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

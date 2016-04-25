@@ -1,0 +1,77 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>#? reader conditional</h1><table><tr><td>syntax</td><td>Added in 0.0-3190</td><td><a href="http://clojure.org/reader#toc5"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> in clojure</a></td></tr></table><ul><li><code>#?(...)</code></li></ul><hr /><div><p>(Only allowed in <code>.cljc</code> files or the REPL)</p>
+<p>Allows the reader to conditionally select from the given list of forms
+depending on available &quot;feature&quot; keys.  For example:</p>
+<pre><code class="lang-clj">#?(:clj &quot;Clojure&quot;
+   :cljs &quot;ClojureScript&quot;)
+</code></pre>
+<p>ClojureScript&#39;s reader is configured with the <code>:cljs</code> feature key, making the
+expression above read as <code>&quot;ClojureScript&quot;</code>.  Clojure&#39;s reader is
+similarly configured with the <code>:clj</code> key.</p>
+<p>This essentially allows us to write portable code for use in both Clojure and
+ClojureScript.</p>
+<h2 id="for-macros">For Macros</h2>
+<p>Reader conditionals are especially important when writing macros in
+ClojureScript, since the macros may be handed off to Clojure for evaluation,
+depending on the ClojureScript compiler version:</p>
+<table>
+<thead>
+<tr>
+<th>compiler version</th>
+<th>macros evaluated by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ClojureScript JVM</td>
+<td>Clojure</td>
+</tr>
+<tr>
+<td>ClojureScript JS</td>
+<td>ClojureScript</td>
+</tr>
+</tbody>
+</table>
+<p>Thus, reader conditionals allow us to account for differences in both versions
+of the compiler.  See [doc:cljs.core/defmacro] for details.</p>
+</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">#?(:clj "Clojure" :cljs "ClojureScript")
+;;=&gt; "ClojureScript"
+</code></pre>
+<p>A function that works in Clojure and ClojureScript (<a href="https://github.com/lymingtonprecision/route-ccrs/blob/c579aea05504736f2cfbd31c3c755f7e25fdad77/src/route_ccrs/manufacturing_methods.cljc#L8-L10">source</a>):</p>
+<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> str-&gt;int [s]
+  #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name">java.lang.Integer/parseInt</span> s)
+     <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">js/parseInt</span> s)))
+
+(<span class="hljs-name">str-&gt;int</span> <span class="hljs-string">"123"</span>)
+<span class="hljs-comment">;;=&gt; 123</span>
+</code></pre>
+</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/syntax/cond-splicing">syntax/cond-splicing</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta1/src/main/clojure/clojure/tools/reader.clj#L496-L514">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-cond
+  [rdr _ opts pending-forms]
+  (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> opts (<span class="hljs-name">#</span>{<span class="hljs-symbol">:allow</span> <span class="hljs-symbol">:preserve</span>} (<span class="hljs-symbol">:read-cond</span> opts))))
+    (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">RuntimeException.</span> <span class="hljs-string">"Conditional read not allowed"</span>)))
+  (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [ch (<span class="hljs-name">read-char</span> rdr)]
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [splicing (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> ch \@)
+          ch (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> splicing (<span class="hljs-name">read-char</span> rdr) ch)]
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> splicing
+        (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> *read-delim*
+          (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"cond-splice not in list"</span>)))
+      (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [ch (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">whitespace?</span> ch) (<span class="hljs-name">read-past</span> whitespace? rdr) ch)]
+        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> ch \()
+          (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">RuntimeException.</span> <span class="hljs-string">"read-cond body must be a list"</span>))
+          (<span class="hljs-name">binding</span> [*suppress-read* (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> *suppress-read* (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:preserve</span> (<span class="hljs-symbol">:read-cond</span> opts)))]
+            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> *suppress-read*
+              (<span class="hljs-name">reader-conditional</span> (<span class="hljs-name">read-list</span> rdr ch opts pending-forms) splicing)
+              (<span class="hljs-name">read-cond-delimited</span> rdr splicing opts pending-forms))))
+        (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"EOF while reading character"</span>)))
+    (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"EOF while reading character"</span>)))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta1/src/main/clojure/clojure/tools/reader.clj#L764-L776">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
+  (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
+    \^ read-meta                <span class="hljs-comment">;deprecated</span>
+    \' (<span class="hljs-name">wrapping-reader</span> 'var)
+    \( read-fn
+    \= read-eval
+    \{ read-set
+    \&lt; (<span class="hljs-name">throwing-reader</span> <span class="hljs-string">"Unreadable form"</span>)
+    \<span class="hljs-string">" read-regex
+    \! read-comment
+    \_ read-discard
+    \? read-cond
+    nil))</span></code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/syntax/cond.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

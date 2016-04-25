@@ -1,0 +1,36 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>r0.0-2755 - Browser REPL, macros, and incremental compilation</h1><p>Feb 1, 2015 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/pJ_EYHkYAUs/mLi8XfiQxZsJ">on Google Groups</a></p><article><p>Leiningen dependency information:<pre><code>[org.clojure/clojurescript "0.0-2755"]</code></pre></p><p>(<a href="https://groups.google.com/d/msg/clojurescript/FoiqNV5nunQ/xoZ9mD94hpAJ">original Mailing List post</a>)</p>
+<p>Leiningen dependency information:</p>
+<pre><code>[org.clojure/clojurescript &quot;0.0-2755&quot;]
+</code></pre><p>This release fixes regressions to the browser REPL that resulted
+from the foreign dependencies enhancement.</p>
+<p>This release also includes two very big enhancements. The first
+is around macros. If your library does the following:</p>
+<pre><code>(ns foo.bar
+   (:require-macros foo.bar))
+</code></pre><p>Then users that require your library:</p>
+<pre><code>(ns bar.baz
+  (:require [foo.bar :as foo]))
+</code></pre><p>Will get  <code>foo.bar</code> macros automatically required and aliased
+to <code>foo</code>.</p>
+<p>The other big enhancement is true incremental compilation
+support. While we have had incremental compilation for some time
+it has suffered from the fact that we did not recompile dependent
+namespaces - this meant no compilation warnings and corrupted builds.</p>
+<p>With auto recompilation of dependent namespaces we eliminate
+many cases that previously would have required a clean.</p>
+<p>Feedback welcome!</p>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-948">CLJS-948</a>: simplify macro usage</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-927">CLJS-927</a>: real incremental compilation</li>
+<li>Browser REPL regressions</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-991">CLJS-991</a>: Wrong inference - inconsistent behavior?</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-993">CLJS-993</a>: binding macro returns non-nil with empty body</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-972">CLJS-972</a>: Node.js REPL eats errors in required ns when using require</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-986">CLJS-986</a>: Add :target to the list of build options that should trigger recompilation</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-976">CLJS-976</a>: Node REPL breaks from uncaught exceptions</li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

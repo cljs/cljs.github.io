@@ -1,0 +1,130 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.core/TransientVector</h1><table><tr><td>type</td><td>Added in 0.0-1211</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/jvm/clojure/lang/PersistentVector.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/TransientVector</a></td></tr></table><ul><li><code>(TransientVector. cnt shift root tail)</code></li></ul><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L5379-L5508">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> TransientVector [^<span class="hljs-symbol">:mutable</span> cnt
+                          ^<span class="hljs-symbol">:mutable</span> shift
+                          ^<span class="hljs-symbol">:mutable</span> root
+                          ^<span class="hljs-symbol">:mutable</span> tail]
+  ITransientCollection
+  (<span class="hljs-name">-conj!</span> [tcoll o]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-edit</span> root)
+      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> cnt (<span class="hljs-name">tail-off</span> tcoll)) <span class="hljs-number">32</span>)
+        (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> tail (<span class="hljs-name">bit-and</span> cnt <span class="hljs-number">0</span>x01f) o)
+            (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> cnt (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> cnt))
+            tcoll)
+        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [tail-node (<span class="hljs-name">VectorNode.</span> (<span class="hljs-name">.-edit</span> root) tail)
+              new-tail  (<span class="hljs-name">make-array</span> <span class="hljs-number">32</span>)]
+          (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-tail <span class="hljs-number">0</span> o)
+          (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> tail new-tail)
+          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name">bit-shift-right-zero-fill</span> cnt <span class="hljs-number">5</span>)
+                 (<span class="hljs-name">bit-shift-left</span> <span class="hljs-number">1</span> shift))
+            (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-root-array (<span class="hljs-name">make-array</span> <span class="hljs-number">32</span>)
+                  new-shift      (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> shift <span class="hljs-number">5</span>)]
+              (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-root-array <span class="hljs-number">0</span> root)
+              (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-root-array <span class="hljs-number">1</span> (<span class="hljs-name">new-path</span> (<span class="hljs-name">.-edit</span> root) shift tail-node))
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> root  (<span class="hljs-name">VectorNode.</span> (<span class="hljs-name">.-edit</span> root) new-root-array))
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> shift new-shift)
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> cnt   (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> cnt))
+              tcoll)
+            (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-root (<span class="hljs-name">tv-push-tail</span> tcoll shift root tail-node)]
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> root new-root)
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> cnt  (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> cnt))
+              tcoll))))
+      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"conj! after persistent!"</span>))))
+
+  (<span class="hljs-name">-persistent!</span> [tcoll]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-edit</span> root)
+      (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-edit</span> root) <span class="hljs-literal">nil</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [len (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> cnt (<span class="hljs-name">tail-off</span> tcoll))
+                trimmed-tail (<span class="hljs-name">make-array</span> len)]
+            (<span class="hljs-name">array-copy</span> tail <span class="hljs-number">0</span> trimmed-tail <span class="hljs-number">0</span> len)
+            (<span class="hljs-name">PersistentVector.</span> <span class="hljs-literal">nil</span> cnt shift root trimmed-tail <span class="hljs-literal">nil</span>)))
+      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"persistent! called twice"</span>))))
+
+  ITransientAssociative
+  (<span class="hljs-name">-assoc!</span> [tcoll key val]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">number?</span></span> key)
+      (<span class="hljs-name">-assoc-n!</span> tcoll key val)
+      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"TransientVector's key for assoc! must be a number."</span>))))
+
+  ITransientVector
+  (<span class="hljs-name">-assoc-n!</span> [tcoll n val]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-edit</span> root)
+      (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+        (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> <span class="hljs-number">0</span> n) (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> n cnt))
+        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> (<span class="hljs-name">tail-off</span> tcoll) n)
+          (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> tail (<span class="hljs-name">bit-and</span> n <span class="hljs-number">0</span>x01f) val)
+              tcoll)
+          (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-root
+                ((<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> go [level node]
+                   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [node (<span class="hljs-name">tv-ensure-editable</span> (<span class="hljs-name">.-edit</span> root) node)]
+                     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> level)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name">pv-aset</span> node (<span class="hljs-name">bit-and</span> n <span class="hljs-number">0</span>x01f) val)
+                           node)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [subidx (<span class="hljs-name">bit-and</span> (<span class="hljs-name">bit-shift-right-zero-fill</span> n level)
+                                             <span class="hljs-number">0</span>x01f)]
+                         (<span class="hljs-name">pv-aset</span> node subidx
+                                  (<span class="hljs-name">go</span> (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> level <span class="hljs-number">5</span>) (<span class="hljs-name">pv-aget</span> node subidx)))
+                         node))))
+                 shift root)]
+            (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> root new-root)
+            tcoll))
+        (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n cnt) (<span class="hljs-name">-conj!</span> tcoll val)
+        <span class="hljs-symbol">:else</span>
+        (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
+         (<span class="hljs-name">js/Error.</span>
+          (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Index "</span> n <span class="hljs-string">" out of bounds for TransientVector of length"</span> cnt))))
+      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"assoc! after persistent!"</span>))))
+
+  (<span class="hljs-name">-pop!</span> [tcoll]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-edit</span> root)
+      (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+        (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> cnt) (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"Can't pop empty vector"</span>))
+        (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> <span class="hljs-number">1</span> cnt)                       (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> cnt <span class="hljs-number">0</span>) tcoll)
+        (<span class="hljs-name"><span class="hljs-builtin-name">pos?</span></span> (<span class="hljs-name">bit-and</span> (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt) <span class="hljs-number">0</span>x01f)) (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> cnt (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt)) tcoll)
+        <span class="hljs-symbol">:else</span>
+        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-tail (<span class="hljs-name">unchecked-editable-array-for</span> tcoll (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> cnt <span class="hljs-number">2</span>))
+              new-root (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [nr (<span class="hljs-name">tv-pop-tail</span> tcoll shift root)]
+                         (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> nr)
+                           nr
+                           (<span class="hljs-name">VectorNode.</span> (<span class="hljs-name">.-edit</span> root) (<span class="hljs-name">make-array</span> <span class="hljs-number">32</span>))))]
+          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> <span class="hljs-number">5</span> shift) (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name">pv-aget</span> new-root <span class="hljs-number">1</span>)))
+            (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-root (<span class="hljs-name">tv-ensure-editable</span> (<span class="hljs-name">.-edit</span> root) (<span class="hljs-name">pv-aget</span> new-root <span class="hljs-number">0</span>))]
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> root  new-root)
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> shift (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> shift <span class="hljs-number">5</span>))
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> cnt   (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt))
+              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> tail  new-tail)
+              tcoll)
+            (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> root new-root)
+                (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> cnt  (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt))
+                (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> tail new-tail)
+                tcoll))))
+      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"pop! after persistent!"</span>))))
+
+  ICounted
+  (<span class="hljs-name">-count</span> [coll]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-edit</span> root)
+      cnt
+      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"count after persistent!"</span>))))
+
+  IIndexed
+  (<span class="hljs-name">-nth</span> [coll n]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-edit</span> root)
+      (<span class="hljs-name">aget</span> (<span class="hljs-name">array-for</span> coll n) (<span class="hljs-name">bit-and</span> n <span class="hljs-number">0</span>x01f))
+      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"nth after persistent!"</span>))))
+
+  (<span class="hljs-name">-nth</span> [coll n not-found]
+    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> <span class="hljs-number">0</span> n) (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> n cnt))
+      (<span class="hljs-name">-nth</span> coll n)
+      not-found))
+
+  ILookup
+  (<span class="hljs-name">-lookup</span> [coll k] (<span class="hljs-name">-lookup</span> coll k <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">-lookup</span> [coll k not-found] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">number?</span></span> k)
+                                (<span class="hljs-name">-nth</span> coll k not-found)
+                                not-found))
+
+  IFn
+  (<span class="hljs-name">-invoke</span> [coll k]
+    (<span class="hljs-name">-lookup</span> coll k))
+
+  (<span class="hljs-name">-invoke</span> [coll k not-found]
+    (<span class="hljs-name">-lookup</span> coll k not-found)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/TransientVector.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

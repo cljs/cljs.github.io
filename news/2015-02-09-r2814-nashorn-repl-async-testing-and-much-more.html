@@ -1,0 +1,33 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>0.0-2814 - Nashorn REPL, async testing, and much more</h1><p>Feb 9, 2015 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/KTOhX-QvpRo/j9-st6WUnI8J">on Google Groups</a></p><article><p>Leiningen dependency information:<pre><code>[org.clojure/clojurescript "0.0-2814"]</code></pre></p><p>There are numerous enhancements in this release including: a Nashorn
+REPL, Node.js 0.12 support, cljs.test async testing support,
+<code>cljs.closure/watch</code>, extra JSDoc annotation support, unified source
+mapping on client/server (thus REPLs!), and many small fixes.</p>
+<p>I&#39;m particularly excited about unified source mapping as this means we
+get a much better debugging experience on newer targets (for us) like iOS, see <a href="https://github.com/omcljs/ambly">https://github.com/omcljs/ambly</a></p>
+<h2 id="0-0-2814">0.0-2814</h2>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li>add simple source directory <code>cljs.closure/watch</code> watcher using java.nio</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1022">CLJS-1022</a>: Concatenate foreign dependencies safely</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-988">CLJS-988</a>: Support async testing in cljs.test</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1018">CLJS-1018</a>: Add support for cljs.core/<em>e Modify the JavaScript that is sent for evaluation to wrap in a try and then catch any exception thrown, assign it to </em>e, and then rethrow.</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1012">CLJS-1012</a>: Correct behavior when <em>print-length</em> is set to 0</li>
+<li>Added new :closure-extra-annotations compiler option allowing to define extra JSDoc annotation used by closure libraries.</li>
+<li>Mirrored source map support APIs on server/client</li>
+<li>Unified source mapping support in REPLs</li>
+<li>Nashorn REPL (thanks Pieter van Prooijen)</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1023">CLJS-1023</a>: regression, macro-autoload-ns? and ns-dependents need to throw on cyclic dependencies</li>
+<li>fix require with browser REPL, set base path to &quot;goog/&quot;</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1020">CLJS-1020</a>: off by one error in REPL source map support</li>
+<li>Node.js 0.12 support</li>
+<li>browser REPL needs to respect :output-dir</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1006">CLJS-1006</a>: Implicit dependency of clojure.browser.repl on cljs.repl</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1005">CLJS-1005</a>: Browser REPL creates &#39;out&#39; directory no matter what</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1003">CLJS-1003</a>: fix cljs.test run-tests do-report :summary issues</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1003">CLJS-1003</a>: Cannot pass custom env to run-tests</li>
+<li>Windows Node.js REPL issues</li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

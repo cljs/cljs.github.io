@@ -1,0 +1,54 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>1.7.145</h1><p>Oct 13, 2015 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/o7AF4XeksZ4/dlxxQ_p2CQAJ">on Google Groups</a></p><article><p>Leiningen dependency information:<pre><code>[org.clojure/clojurescript "1.7.145"]</code></pre></p><p>This release updates the Google Closure Compiler dependency and 
+includes many small enhancements and fixes.</p>
+<p>As always feedback welcome!</p>
+<h2 id="1-7-145">1.7.145</h2>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1455">CLJS-1455</a>: high resoluting timing where available</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1403">CLJS-1403</a>: Add updated Windows shell scripts</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1017">CLJS-1017</a>: support :main for :advanced and :simple builds</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1409">CLJS-1409</a>: allow basic type checking of protocols</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1404">CLJS-1404</a>: var resolution for @param and @return</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1395">CLJS-1395</a>: Node.js REPL debug port support</li>
+</ul>
+<h3 id="changes">Changes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1464">CLJS-1464</a>: docstrings for transducer arities</li>
+<li>Latest Google Closure Compiler dependency</li>
+<li>Node.js REPL sets <em>target</em></li>
+<li>add cljs.analyzer.api/get-js-index</li>
+<li>add goog.object to list of implicit namespaces</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1393">CLJS-1393</a>: turn <em>target</em> into goog-define</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li>UUID hashing</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1465">CLJS-1465</a>: fix <em>main-cli-fn</em> doc</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1456">CLJS-1456</a>: bad require forms at REPL can corrupt REPL session</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1449">CLJS-1449</a>: self host :require-macros bug</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1462">CLJS-1462</a>: self host regression</li>
+<li>Add header bits for Node.js under :none</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1457">CLJS-1457</a>: unicode symbol munging</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1442">CLJS-1442</a>: self host, docstring typos</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1441">CLJS-1441</a>: portable clojure.string</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1436">CLJS-1436</a>: self-host, dep ns not loaded</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1440">CLJS-1440</a>: self-host, eval support in Web Workers</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1400">CLJS-1400</a>: self-host, doseq broken</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1435">CLJS-1435</a>: self-host, bad lexical scope</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1434">CLJS-1434</a>: clojure.walk no longer preseves meta</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1432">CLJS-1432</a>: &#39;$ and &#39;. symbol collision under advanced</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1304">CLJS-1304</a>: c.string/replace differs from Clojure</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1430">CLJS-1430</a>: bad code gen for self host .toString method calls</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1353">CLJS-1353</a>: range inconsistent with Clojure</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1431">CLJS-1431</a>: load-file doc output missing arglists</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1433">CLJS-1433</a>: cljs.js/<em>eval-fn</em> passed nil :cache</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1299">CLJS-1299</a>: add more support for literals to cljs.reader</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1417">CLJS-1417</a>: cljs.js require macros failures</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1416">CLJS-1416</a>: cljs.util/last-modified leaks files</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1481">CLJS-1481</a>: self host defprotocol regression</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1414">CLJS-1414</a>: only munge @param &amp; @return if type checking</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1401">CLJS-1401</a>: unify runtime &amp; compile UUID hashing</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1395">CLJS-1395</a>: no trailing semicolons after JS comment</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1394">CLJS-1394</a>: reify gensyms can clash</li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

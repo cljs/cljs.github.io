@@ -1,0 +1,68 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.core/deftype</h1><table><tr><td>macro</td><td>Added in 0.0-927</td><td><a href="http://clojure.github.io/clojure/branch-master/clojure.core-api.html#clojure.core/deftype"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.core/deftype</a></td></tr></table><ul><li><code>(deftype t fields & impls)</code></li></ul><hr />Source docstring:<pre><code>(deftype name [fields*]  options* specs*)
+
+Currently there are no options.
+
+Each spec consists of a protocol or interface name followed by zero
+or more method bodies:
+
+protocol-or-Object
+(methodName [args*] body)*
+
+The type will have the (by default, immutable) fields named by
+fields, which can have type hints. Protocols and methods
+are optional. The only methods that can be supplied are those
+declared in the protocols/interfaces.  Note that method bodies are
+not closures, the local environment includes only the named fields,
+and those fields can be accessed directly. Fields can be qualified
+with the metadata :mutable true at which point (set! afield aval) will be
+supported in method bodies. Note well that mutable fields are extremely
+difficult to use correctly, and are present only to facilitate the building
+of higherlevel constructs, such as ClojureScript's reference types, in
+ClojureScript itself. They are for experts only - if the semantics and
+implications of :mutable are not immediately apparent to you, you should not
+be using them.
+
+Method definitions take the form:
+
+(methodname [args*] body)
+
+The argument and return types can be hinted on the arg and
+methodname symbols. If not supplied, they will be inferred, so type
+hints should be reserved for disambiguation.
+
+Methods should be supplied for all methods of the desired
+protocol(s). You can also define overrides for methods of Object. Note that
+a parameter must be supplied to correspond to the target object
+('this' in JavaScript parlance). Note also that recur calls to the method
+head should *not* pass the target object, it will be supplied
+automatically and can not be substituted.
+
+In the method bodies, the (unqualified) name can be used to name the
+class (for calls to new, instance? etc).
+
+One constructor will be defined, taking the designated fields.  Note
+that the field names __meta and __extmap are currently reserved and
+should not be used when defining your own types.
+
+Given (deftype TypeName ...), a factory function called ->TypeName
+will be defined, taking positional parameters for the fields</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/clojure/cljs/core.cljc#L1610-L1678">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> deftype
+  [t fields &amp; impls]
+  (<span class="hljs-name">validate-fields</span> <span class="hljs-string">"deftype"</span> t fields)
+  (<span class="hljs-name">core/let</span> [env &amp;env
+             r (<span class="hljs-symbol">:name</span> (<span class="hljs-name">cljs.analyzer/resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> env <span class="hljs-symbol">:locals</span>) t))
+             [fpps pmasks] (<span class="hljs-name">prepare-protocol-masks</span> env impls)
+             protocols (<span class="hljs-name">collect-protocols</span> impls env)
+             t (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> t assoc
+                 <span class="hljs-symbol">:protocols</span> protocols
+                 <span class="hljs-symbol">:skip-protocol-flag</span> fpps) ]
+    `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
+       (<span class="hljs-name">deftype*</span> ~t ~fields ~pmasks
+         ~(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> impls)
+            `(<span class="hljs-name"><span class="hljs-builtin-name">extend-type</span></span> ~t ~@(<span class="hljs-name">dt-&gt;et</span> t impls fields))))
+       (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-getBasis</span> ~t) (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [] '[~@fields]))
+       (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-cljs</span>$lang$type ~t) <span class="hljs-literal">true</span>)
+       (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-cljs</span>$lang$ctorStr ~t) ~(<span class="hljs-name">core/str</span> r))
+       (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-cljs</span>$lang$ctorPrWriter ~t) (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [this# writer# opt#] (<span class="hljs-name">-write</span> writer# ~(<span class="hljs-name">core/str</span> r))))
+
+       ~(<span class="hljs-name">build-positional-factory</span> t r fields)
+       ~t)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/deftype.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

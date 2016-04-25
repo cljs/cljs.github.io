@@ -1,0 +1,57 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>0.0-2644 - enhanced REPLs</h1><p>Jan 2, 2015 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/mRAED4TFlCM/VMi-AOQBzFQJ">on Google Groups</a></p><article><p>Leiningen dependency information:<pre><code>[org.clojure/clojurescript "0.0-2644"]</code></pre></p><p>This release is one of the most significant in a very long while - it includes 
+enhanced REPLs that are far closer to the experience provided by Clojure 
+itself. </p>
+<p>All REPLs when supplied with an <code>:output-dir</code> &amp; <code>:cache-analysis true</code> can 
+now boot rapidly - a second or less on newer hardware. </p>
+<p>All REPLs now support <code>in-ns</code>, <code>doc</code>, and <code>require</code>. </p>
+<p>There is a brand new Node.js based REPL that doesn&#39;t suffer from the performance 
+issues present in Rhino. As to why we didn&#39;t go with Nashorn - Nashorn loads 
+JavaScript 10X slower than Rhino or Node.js. </p>
+<p>The Node.js REPL ships with source mapping support and correctly handles 
+Node.js requires so that you can hot update namespaces as expected. </p>
+<p>There were a large number of changes to enhance the REPL experience so 
+there&#39;s likely edge cases we&#39;ve missed - feedback, bug fixes, and further 
+enhancement are incredibly welcome. </p>
+<p>For basic instructions on the running the REPLs from a checkout: </p>
+<p><a href="https://github.com/clojure/clojurescript/wiki/Quick-Start#local-clojurescript-repl">https://github.com/clojure/clojurescript/wiki/Quick-Start#local-clojurescript-repl</a> </p>
+<h2 id="0-0-2644">0.0-2644</h2>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li>Add Node.js REPL </li>
+<li>REPLs can now reuse build/analysis caching </li>
+<li>in-ns, require, doc support in REPLs </li>
+</ul>
+<h3 id="changes">Changes</h3>
+<ul>
+<li>add :verbose flag to compiler to output compiler activity </li>
+<li>add <em>load-macros</em> to cljs.analyzer to optionally disable macro loading </li>
+<li>errors during ns parsing always through </li>
+<li><code>cljs.util/compiled-by-version</code> needs to always return String </li>
+<li>pin Closure Compiler in bootstrap script </li>
+<li>refactor cljs.build.api namespace </li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-953">CLJS-953</a>: require REPL special fn can only take one argument </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-952">CLJS-952</a>: Bad type hinting on bit-test </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-947">CLJS-947</a>: REPL require of goog namespaces does not work </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-951">CLJS-951</a>: goog.require emitted multiple times under Node.js REPL </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-946">CLJS-946</a>: goog.require in REPLs will not reload recompiled libs </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-950">CLJS-950</a>: Revert adding compiled-by string to CLJS deps file </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-929">CLJS-929</a>: Minor fixes to test script </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-946">CLJS-946</a>: goog.require in REPLs will not reload recompiled libs </li>
+<li>add cljs.test/are macro </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-931">CLJS-931</a> : cljs.compiler/requires-compilation? ignores changes to 
+build options </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-943">CLJS-943</a>: REPL require special fn is brittle </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-941">CLJS-941</a>: Warn when a symbol is defined multiple times in a file </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-942">CLJS-942</a>: Randomized port for Node.js REPL if port not specified </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-675">CLJS-675</a>: QuickStart example not working properly </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-935">CLJS-935</a>: script/noderepljs leaves node running after exit </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-918">CLJS-918</a>: preserve :arglists metadata in analysis cache </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-907">CLJS-907</a>: False positives from arithmetic checks </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-919">CLJS-919</a> compare-and-set! relies on Atom record structure instead of protocols </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-920">CLJS-920</a> add-watch/remove-watch should return reference, as in Clojure </li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-921">CLJS-921</a>: cljs.repl/doc output includes namespace twice </li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

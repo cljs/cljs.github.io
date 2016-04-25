@@ -1,0 +1,69 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>special/catch</h1><table><tr><td>special form</td><td>Added in 0.0-927</td><td><a href="http://clojure.github.io/clojure/branch-master/clojure.core-api.html#clojure.core/catch"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.core/catch</a></td></tr></table><ul><li><code>(catch exception-type name expr*)</code></li></ul><hr /><div><p><code>catch</code> should be used inside of a <code>try</code> expression.</p>
+<p><code>exception-type</code> should be the type of exception thrown (usually <code>js/Error</code> or
+<code>js/Object</code>). When there is a match, the thrown exception will be bound to
+<code>name</code> inside of <code>expr*</code> and <code>expr*</code> will be evaluated and returned as the value
+of the <code>try</code> expression.</p>
+<p>Since JavaScript allows you to throw anything, <code>exception-type</code> can be set to
+<code>:default</code> to catch all types of exceptions.</p>
+</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/special/try">special/try</a></li><li><a href="/docs/special/finally">special/finally</a></li><li><a href="/docs/special/throw">special/throw</a></li></ul><hr />Source docstring:<pre><code>catch-clause => (catch classname name expr*)
+finally-clause => (finally expr*)
+Catches and handles JavaScript exceptions.</code></pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/clojure/cljs/analyzer.cljc#L1014-L1073">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
+  [op env [_ &amp; body <span class="hljs-symbol">:as</span> form] name _]
+  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [catchenv (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> env [<span class="hljs-symbol">:context</span>] #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> %) <span class="hljs-symbol">:return</span> %))
+        catch? (<span class="hljs-name">every-pred</span> seq? #(<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> %) 'catch))
+        default? (<span class="hljs-name">every-pred</span> catch? #(<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> %) <span class="hljs-symbol">:default</span>))
+        finally? (<span class="hljs-name">every-pred</span> seq? #(<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> %) 'finally))
+
+        {<span class="hljs-symbol">:keys</span> [body cblocks dblock fblock]}
+        (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [parser {<span class="hljs-symbol">:state</span> <span class="hljs-symbol">:start</span> <span class="hljs-symbol">:forms</span> body
+                       <span class="hljs-symbol">:body</span> [] <span class="hljs-symbol">:cblocks</span> [] <span class="hljs-symbol">:dblock</span> <span class="hljs-literal">nil</span> <span class="hljs-symbol">:fblock</span> <span class="hljs-literal">nil</span>}]
+          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq?</span></span> (<span class="hljs-symbol">:forms</span> parser))
+            (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[form &amp; forms*] (<span class="hljs-symbol">:forms</span> parser)
+                  parser* (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> parser <span class="hljs-symbol">:forms</span> forms*)]
+              (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> (<span class="hljs-symbol">:state</span> parser)
+                <span class="hljs-symbol">:start</span> (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+                         (<span class="hljs-name">catch?</span> form) (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> parser <span class="hljs-symbol">:state</span> <span class="hljs-symbol">:catches</span>))
+                         (<span class="hljs-name">finally?</span> form) (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> parser <span class="hljs-symbol">:state</span> <span class="hljs-symbol">:finally</span>))
+                         <span class="hljs-symbol">:else</span> (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> parser* [<span class="hljs-symbol">:body</span>] conj form)))
+                <span class="hljs-symbol">:catches</span> (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+                           (<span class="hljs-name">default?</span> form) (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> parser* <span class="hljs-symbol">:dblock</span> form <span class="hljs-symbol">:state</span> <span class="hljs-symbol">:finally</span>))
+                           (<span class="hljs-name">catch?</span> form) (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> parser* [<span class="hljs-symbol">:cblocks</span>] conj form))
+                           (<span class="hljs-name">finally?</span> form) (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> parser <span class="hljs-symbol">:state</span> <span class="hljs-symbol">:finally</span>))
+                           <span class="hljs-symbol">:else</span> (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Invalid try form"</span>)))
+                <span class="hljs-symbol">:finally</span> (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> parser* <span class="hljs-symbol">:fblock</span> form <span class="hljs-symbol">:state</span> <span class="hljs-symbol">:done</span>))
+                <span class="hljs-symbol">:done</span> (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Unexpected form after finally"</span>))))
+            parser))
+
+        finally (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> fblock)
+                  (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:statement</span>) `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> ~@(<span class="hljs-name"><span class="hljs-builtin-name">rest</span></span> fblock))))
+        e (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> cblocks) dblock) (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"e"</span>))
+        default (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [[_ _ name &amp; cb] dblock]
+                  `(<span class="hljs-name">cljs.core/let</span> [~name ~e] ~@cb)
+                  `(<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> ~e))
+        cblock (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> cblocks)
+                 `(<span class="hljs-name">cljs.core/cond</span>
+                   ~@(<span class="hljs-name"><span class="hljs-builtin-name">mapcat</span></span>
+                      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [[_ type name &amp; cb]]
+                        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> name (<span class="hljs-name"><span class="hljs-builtin-name">assert</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">namespace</span></span> name)) <span class="hljs-string">"Can't qualify symbol in catch"</span>))
+                        `[(<span class="hljs-name">cljs.core/instance?</span> ~type ~e)
+                          (<span class="hljs-name">cljs.core/let</span> [~name ~e] ~@cb)])
+                      cblocks)
+                   <span class="hljs-symbol">:else</span> ~default)
+                 default)
+        locals (<span class="hljs-symbol">:locals</span> catchenv)
+        locals (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> e
+                 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> locals e
+                        {<span class="hljs-symbol">:name</span> e
+                         <span class="hljs-symbol">:line</span> (<span class="hljs-name">get-line</span> e env)
+                         <span class="hljs-symbol">:column</span> (<span class="hljs-name">get-col</span> e env)})
+                 locals)
+        catch (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> cblock
+                (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> catchenv <span class="hljs-symbol">:locals</span> locals) cblock))
+        try (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> e finally) catchenv env) `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> ~@body))]
+
+    {<span class="hljs-symbol">:env</span> env <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:try</span> <span class="hljs-symbol">:form</span> form
+     <span class="hljs-symbol">:try</span> try
+     <span class="hljs-symbol">:finally</span> finally
+     <span class="hljs-symbol">:name</span> e
+     <span class="hljs-symbol">:catch</span> catch
+     <span class="hljs-symbol">:children</span> [try catch finally]}))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/special/catch.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

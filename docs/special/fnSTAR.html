@@ -1,0 +1,72 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>special/fn*</h1><table><tr><td>special form</td><td>Added in 0.0-927</td></tr></table><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/clojure/cljs/analyzer.cljc#L1288-L1359">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'fn*
+  [op env [_ &amp; args <span class="hljs-symbol">:as</span> form] name _]
+  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[name meths] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args))
+                       [(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args)]
+                       [name (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> args)])
+        <span class="hljs-comment">;; turn (fn [] ...) into (fn ([]...))</span>
+        meths        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> meths))
+                       (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> meths)
+                       meths)
+        locals       (<span class="hljs-symbol">:locals</span> env)
+        name-var     (<span class="hljs-name">fn-name-var</span> env locals name)
+        env          (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> name)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> env [<span class="hljs-symbol">:fn-scope</span>] conj name-var)
+                       env)
+        locals       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> locals))
+                              (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> name)))
+                       (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> locals name name-var)
+                       locals)
+        form-meta    (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> form)
+        type         (:<span class="hljs-symbol">:type</span> form-meta)
+        proto-impl   (:<span class="hljs-symbol">:protocol-impl</span> form-meta)
+        proto-inline (:<span class="hljs-symbol">:protocol-inline</span> form-meta)
+        menv         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> meths) <span class="hljs-number">1</span>)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>)
+                       env)
+        menv         (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> menv
+                       {<span class="hljs-symbol">:protocol-impl</span> proto-impl
+                        <span class="hljs-symbol">:protocol-inline</span> proto-inline})
+        methods      (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name">analyze-fn-method</span> menv locals % type) meths)
+        mfa          (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> max (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> <span class="hljs-symbol">:max-fixed-arity</span> methods))
+        variadic     (<span class="hljs-name"><span class="hljs-builtin-name">boolean</span></span> (<span class="hljs-name">some</span> <span class="hljs-symbol">:variadic</span> methods))
+        locals       (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> name)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> locals [name] assoc
+                         <span class="hljs-comment">;; <span class="hljs-doctag">TODO:</span> can we simplify? - David</span>
+                         <span class="hljs-symbol">:fn-var</span> <span class="hljs-literal">true</span>
+                         <span class="hljs-symbol">:variadic</span> variadic
+                         <span class="hljs-symbol">:max-fixed-arity</span> mfa
+                         <span class="hljs-symbol">:method-params</span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> <span class="hljs-symbol">:params</span> methods))
+                       locals)
+        methods      (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> name)
+                       <span class="hljs-comment">;; a second pass with knowledge of our function-ness/arity</span>
+                       <span class="hljs-comment">;; lets us optimize self calls</span>
+                       (<span class="hljs-name">analyze-fn-methods-pass2</span> menv locals type meths)
+                       methods)
+        form         (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> form dissoc :<span class="hljs-symbol">:protocol-impl</span> :<span class="hljs-symbol">:protocol-inline</span> :<span class="hljs-symbol">:type</span>)
+        js-doc       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> variadic)
+                       <span class="hljs-string">"@param {...*} var_args"</span>)
+        children     (<span class="hljs-name"><span class="hljs-builtin-name">mapv</span></span> <span class="hljs-symbol">:expr</span> methods)
+        ast          {<span class="hljs-symbol">:op</span> <span class="hljs-symbol">:fn</span>
+                      <span class="hljs-symbol">:env</span> env
+                      <span class="hljs-symbol">:form</span> form
+                      <span class="hljs-symbol">:name</span> name-var
+                      <span class="hljs-symbol">:methods</span> methods
+                      <span class="hljs-symbol">:variadic</span> variadic
+                      <span class="hljs-symbol">:tag</span> 'function
+                      <span class="hljs-symbol">:recur-frames</span> *recur-frames*
+                      <span class="hljs-symbol">:loop-lets</span> *loop-lets*
+                      <span class="hljs-symbol">:jsdoc</span> [js-doc]
+                      <span class="hljs-symbol">:max-fixed-arity</span> mfa
+                      <span class="hljs-symbol">:protocol-impl</span> proto-impl
+                      <span class="hljs-symbol">:protocol-inline</span> proto-inline
+                      <span class="hljs-symbol">:children</span> children}]
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [variadic-methods (<span class="hljs-name"><span class="hljs-builtin-name">filter</span></span> <span class="hljs-symbol">:variadic</span> methods)
+          variadic-params  (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> (<span class="hljs-symbol">:params</span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> variadic-methods)))
+          param-counts     (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">comp</span></span> count <span class="hljs-symbol">:params</span>) methods)]
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> <span class="hljs-number">1</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> variadic-methods))
+        (<span class="hljs-name">warning</span> <span class="hljs-symbol">:multiple-variadic-overloads</span> env {<span class="hljs-symbol">:name</span> name-var}))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> variadic-params) (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> variadic-params (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> <span class="hljs-number">1</span> mfa))))
+        (<span class="hljs-name">warning</span> <span class="hljs-symbol">:variadic-max-arity</span> env {<span class="hljs-symbol">:name</span> name-var}))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> (<span class="hljs-name">distinct</span> param-counts) param-counts)
+        (<span class="hljs-name">warning</span> <span class="hljs-symbol">:overload-arity</span> env {<span class="hljs-symbol">:name</span> name-var})))
+    (<span class="hljs-name">analyze-wrap-meta</span> ast)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/special/fnSTAR.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
