@@ -6,7 +6,7 @@ Sequences, <code>nth</code> takes O(n) time.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/first">cljs.core/first</a></li><li><a href="/docs/cljs.core/second">cljs.core/second</a></li><li><a href="/docs/cljs.core/nthnext">cljs.core/nthnext</a></li><li><a href="/docs/cljs.core/get">cljs.core/get</a></li></ul><hr />Source docstring:<pre><code>Returns the value at the index. get returns nil if index out of
 bounds, nth throws an exception unless not-found is supplied.  nth
 also works for strings, arrays, regex Matchers and Lists, and,
-in O(n) time, for sequences.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L1706-L1768">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> nth
+in O(n) time, for sequences.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/core.cljs#L1712-L1774">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> nth
   ([coll n]
     (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
       (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">number?</span></span> n))

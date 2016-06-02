@@ -3,7 +3,7 @@ fn [& args] ... and returns nil. This version of the formatter macro is
 designed to be used with *out* set to an appropriate Writer. In particular,
 this is meant to be used as part of a pretty printer dispatch method.
 
-format-in can be either a control string or a previously compiled format.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/pprint.clj#L133-L145">clojurescript:src/main/cljs/cljs/pprint.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> formatter-out
+format-in can be either a control string or a previously compiled format.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/pprint.clj#L133-L145">clojurescript:src/main/cljs/cljs/pprint.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> formatter-out
   [format-in]
   `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [format-in# ~format-in
          cf# (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">string?</span></span> format-in#) (<span class="hljs-name">cljs.pprint/cached-compile</span> format-in#) format-in#)]

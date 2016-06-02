@@ -21,7 +21,7 @@
 (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> <span class="hljs-string">"foo"</span>)
 <span class="hljs-comment">;;=&gt; "foo"</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/namespace">cljs.core/namespace</a></li></ul><hr />Source docstring:<pre><code>Returns the name String of a string, symbol or keyword.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L8528-L8535">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> name
+</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/namespace">cljs.core/namespace</a></li></ul><hr />Source docstring:<pre><code>Returns the name String of a string, symbol or keyword.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/core.cljs#L8534-L8541">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> name
   [x]
   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">implements?</span> INamed x)
     (<span class="hljs-name">-name</span> <span class="hljs-comment">^not-native</span> x)

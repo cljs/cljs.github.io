@@ -17,7 +17,7 @@ value of the atom is identical to <code>oldval</code>.</p>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/atom">cljs.core/atom</a></li><li><a href="/docs/cljs.core/resetBANG">cljs.core/reset!</a></li><li><a href="/docs/cljs.core/swapBANG">cljs.core/swap!</a></li></ul><hr />Source docstring:<pre><code>Atomically sets the value of atom to newval if and only if the
 current value of the atom is equal to oldval. Returns true if
-set happened, else false.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L4160-L4167">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compare-and-set!
+set happened, else false.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/core.cljs#L4166-L4173">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compare-and-set!
   [<span class="hljs-comment">^not-native</span> a oldval newval]
   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name">-deref</span> a) oldval)
     (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">reset!</span></span> a newval) <span class="hljs-literal">true</span>)

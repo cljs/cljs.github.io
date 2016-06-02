@@ -7,7 +7,7 @@ colls are ignored.</p>
 set of first items of each coll, followed by applying f to the set
 of second items in each coll, until any one of the colls is
 exhausted.  Any remaining items in other colls are ignored. Function
-f should accept number-of-colls arguments.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L4625-L4639">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> mapv
+f should accept number-of-colls arguments.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/core.cljs#L4631-L4645">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> mapv
   ([f coll]
      (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [v o] (<span class="hljs-name"><span class="hljs-builtin-name">conj!</span></span> v (<span class="hljs-name">f</span> o))) (<span class="hljs-name"><span class="hljs-builtin-name">transient</span></span> []) coll)
          persistent!))

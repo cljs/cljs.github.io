@@ -21,7 +21,7 @@ tcoll
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/transient">cljs.core/transient</a></li><li><a href="/docs/cljs.core/persistentBANG">cljs.core/persistent!</a></li></ul><hr />Source docstring:<pre><code>When applied to a transient map, adds mapping of key(s) to
 val(s). When applied to a transient vector, sets the val at index.
-Note - index must be <= (count vector). Returns coll.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L3511-L3521">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> assoc!
+Note - index must be <= (count vector). Returns coll.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/core.cljs#L3517-L3527">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> assoc!
   ([tcoll key val]
     (<span class="hljs-name">-assoc!</span> tcoll key val))
   ([tcoll key val &amp; kvs]

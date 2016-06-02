@@ -4,7 +4,7 @@ each element.</p>
 order they appeared in <code>coll</code>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/partition-by">cljs.core/partition-by</a></li><li><a href="/docs/cljs.core/frequencies">cljs.core/frequencies</a></li></ul><hr />Source docstring:<pre><code>Returns a map of the elements of coll keyed by the result of
 f on each element. The value at each key will be a vector of the
-corresponding elements, in the order they appeared in coll.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/cljs/cljs/core.cljs#L9664-L9674">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> group-by
+corresponding elements, in the order they appeared in coll.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/core.cljs#L9673-L9683">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> group-by
   [f coll]
   (<span class="hljs-name"><span class="hljs-builtin-name">persistent!</span></span>
     (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span>

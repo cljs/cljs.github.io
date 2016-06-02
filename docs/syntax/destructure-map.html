@@ -58,7 +58,7 @@ vectors][doc:syntax/destructure-vector].</p>
   (<span class="hljs-name">println</span> a b))
 <span class="hljs-comment">;; 1 2</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/syntax/destructure-vector">syntax/destructure-vector</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.8.51/src/main/clojure/cljs/core.cljc#L607-L676">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/syntax/destructure-vector">syntax/destructure-vector</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/clojure/cljs/core.cljc#L610-L679">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
   (<span class="hljs-name">core/let</span> [bents (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> bindings)
              pb (<span class="hljs-name">core/fn</span> pb [bvec b v]
                   (<span class="hljs-name">core/let</span> [pvec
