@@ -1,4 +1,23 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 02 Jun 2016 18:15:49 GMT</pubDate><lastBuildDate>Thu, 02 Jun 2016 18:15:49 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.8.51</title><description>&lt;p&gt;This release updates the Closure Compiler and tools.reader dependencies, fixes a race condition with :parallel-build, improves JS module integration, and includes a number of enhancements and fixes around optional self hosting. A big thanks to everyone who contributed!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 03 Jun 2016 04:19:08 GMT</pubDate><lastBuildDate>Fri, 03 Jun 2016 04:19:08 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.14 - clojure.spec port</title><description>&lt;p&gt;This release includes a complete and faithful port of clojure.spec to
+ClojureScript. The functionality resides in the new cljs.spec
+namespace. All features present in Clojure 1.9.0-alpha4 are
+implemented, including REPL support, testing support and macro
+checking.&lt;/p&gt;
+&lt;p&gt;As always feedback welcome.&lt;/p&gt;
+&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;clojure.spec ported to cljs.spec&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1649&quot;&gt;CLJS-1649&lt;/a&gt;: Possible issue with in cljs.reader or cljs.core/PersistentHashMap&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1647&quot;&gt;CLJS-1647&lt;/a&gt;: Rethrow exception from parallel-build&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1642&quot;&gt;CLJS-1642&lt;/a&gt;: cljs.core/reductions does not respect &amp;#39;reduced&amp;#39;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1635&quot;&gt;CLJS-1635&lt;/a&gt;: Var type implements IEquiv but not IHash&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1629&quot;&gt;CLJS-1629&lt;/a&gt;: Fix warning about duplicate test-pr-str&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1637&quot;&gt;CLJS-1637&lt;/a&gt;: Missing docstrings for a few vars&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Wed, 01 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-06-01-r1.9.14-clojure.spec-port</link></item><item><title>1.8.51</title><description>&lt;p&gt;This release updates the Closure Compiler and tools.reader dependencies, fixes a race condition with :parallel-build, improves JS module integration, and includes a number of enhancements and fixes around optional self hosting. A big thanks to everyone who contributed!&lt;/p&gt;
 &lt;p&gt;As always feedback welcome.&lt;/p&gt;
 &lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
 &lt;ul&gt;
@@ -268,40 +287,4 @@ tools.reader to 0.10.0-alpha3.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1307&quot;&gt;CLJS-1307&lt;/a&gt;: Doc for ns missing&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1301&quot;&gt;CLJS-1301&lt;/a&gt;: local :foreign-libs are not picked up the first time browser REPL is started&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 31 Jul 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-07-31-r1.7.28-optional-self-hosting</link></item><item><title>0.0-3308 - Fixes and Enhancements</title><description>&lt;p&gt;This release bumps the Clojure dependecy to 1.7.0-RC1 and includes fixes and minor
-enhancements.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h2 id=&quot;0-0-3308&quot;&gt;0.0-3308&lt;/h2&gt;
-&lt;h2 id=&quot;changes&quot;&gt;Changes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Clojure 1.7.0-RC1 dependency&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1292&quot;&gt;CLJS-1292&lt;/a&gt;: Add IPrintWithWriter implementation for TaggedLiteral&lt;/li&gt;
-&lt;li&gt;add cljs.core/random-uuid&lt;/li&gt;
-&lt;li&gt;flush immediately when forwarding Node process out &amp;amp; err&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1256&quot;&gt;CLJS-1256&lt;/a&gt; cache UUID hash value&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1226&quot;&gt;CLJS-1226&lt;/a&gt;: Added the :end-run-test event to cljs.test and a dummy event handler for it&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1200&quot;&gt;CLJS-1200&lt;/a&gt;: compare behaves differently from Clojure&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1293&quot;&gt;CLJS-1293&lt;/a&gt;: Warning settings not conveyed via REPL&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1291&quot;&gt;CLJS-1291&lt;/a&gt;: pprint whitespace/letter checks are incomplete&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1288&quot;&gt;CLJS-1288&lt;/a&gt;: compiler doesn&amp;#39;t emit &amp;quot;goog.require&amp;quot; for foreign library when optimization level is not set&lt;/li&gt;
-&lt;li&gt;check that we actually read something in cjls.repl.server/read-request&lt;/li&gt;
-&lt;li&gt;clarify cljs.test/run-tests docstring&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1285&quot;&gt;CLJS-1285&lt;/a&gt;: load-file regression&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1284&quot;&gt;CLJS-1284&lt;/a&gt;: IndexedSeq -seq implementation incorrect for i &amp;gt;= alength of internal array&lt;/li&gt;
-&lt;li&gt;finish &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1176&quot;&gt;CLJS-1176&lt;/a&gt;, remove stray .isAlive method call&lt;/li&gt;
-&lt;li&gt;add zero arity &lt;code&gt;newline&lt;/code&gt; to match Clojure&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1206&quot;&gt;CLJS-1206&lt;/a&gt;: Images in HTML don&amp;#39;t show up when served from localhost:9000&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1272&quot;&gt;CLJS-1272&lt;/a&gt;: :include-macros description inaccurate in require&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1275&quot;&gt;CLJS-1275&lt;/a&gt;: Corrected :test-paths in project.clj&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1270&quot;&gt;CLJS-1270&lt;/a&gt;: Docstring for delay not printed by cljs.repl/doc&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1268&quot;&gt;CLJS-1268&lt;/a&gt;: cljc support for cljs.closure/compile-file&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1269&quot;&gt;CLJS-1269&lt;/a&gt;: realized? docstring refers to promise and future&lt;/li&gt;
-&lt;li&gt;match Clojure behavior for get on string / array. Need to coerce key into int.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1263&quot;&gt;CLJS-1263&lt;/a&gt;: :libs regression, can no longer specify specific files&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1209&quot;&gt;CLJS-1209&lt;/a&gt;: Reduce produces additional final nil when used w/ eduction&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1261&quot;&gt;CLJS-1261&lt;/a&gt;: source fn fails for fns with conditional code&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Mon, 01 Jun 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-06-01-r3308-fixes-and-enhancements</link></item></channel></rss>
+</description><pubDate>Fri, 31 Jul 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-07-31-r1.7.28-optional-self-hosting</link></item></channel></rss>
