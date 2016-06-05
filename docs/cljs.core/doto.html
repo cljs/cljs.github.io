@@ -2,7 +2,7 @@
 value of x supplied at the front of the given arguments.  The forms
 are evaluated in order.  Returns x.
 
-(doto (new java.util.HashMap) (.put "a" 1) (.put "b" 2))</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L3724-L3739">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> doto
+(doto (new java.util.HashMap) (.put "a" 1) (.put "b" 2))</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha4/src/clj/clojure/core.clj#L3724-L3739">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> doto
   [x &amp; forms]
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [gx (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)]
       `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [~gx ~x]

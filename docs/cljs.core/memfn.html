@@ -2,7 +2,7 @@
 object and any args and calls the named instance method on the
 object passing the args. Use when you want to treat a Java method as
 a first-class fn. name may be type-hinted with the method receiver's
-type in order to avoid reflective calls.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L3741-L3752">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> memfn
+type in order to avoid reflective calls.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha4/src/clj/clojure/core.clj#L3741-L3752">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> memfn
   [name &amp; args]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [t (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"target"</span>)
             (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> name))]

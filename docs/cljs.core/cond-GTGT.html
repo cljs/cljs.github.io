@@ -13,7 +13,7 @@ after the first true test expression.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/-GT">cljs.core/-></a></li><li><a href="/docs/cljs.core/-GTGT">cljs.core/->></a></li><li><a href="/docs/cljs.core/cond-GT">cljs.core/cond-></a></li><li><a href="/docs/cljs.core/cond">cljs.core/cond</a></li></ul><hr />Source docstring:<pre><code>Takes an expression and a set of test/form pairs. Threads expr (via ->>)
 through each form for which the corresponding test expression
 is true.  Note that, unlike cond branching, cond->> threading does not short circuit
-after the first true test expression.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L7257-L7272">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> cond-&gt;&gt;
+after the first true test expression.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha4/src/clj/clojure/core.clj#L7274-L7289">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> cond-&gt;&gt;
   [expr &amp; clauses]
   (<span class="hljs-name"><span class="hljs-builtin-name">assert</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">even?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> clauses)))
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [g (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)

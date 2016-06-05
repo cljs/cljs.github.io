@@ -21,7 +21,7 @@ for the function.</p>
     (* a b c)))</pre></td></tr></tbody></table></div><hr /><h3>See Also:</h3><ul><li><a href="/docs/special/def">special/def</a></li><li><a href="/docs/cljs.core/defn-">cljs.core/defn-</a></li><li><a href="/docs/cljs.core/defmacro">cljs.core/defmacro</a></li><li><a href="/docs/cljs.core/fn">cljs.core/fn</a></li></ul><hr />Source docstring:<pre><code>Same as (def name (core/fn [params* ] exprs*)) or (def
  name (core/fn ([params* ] exprs*)+)) with any doc-string or attrs added
  to the var metadata. prepost-map defines a map with optional keys
- :pre and :post that contain collections of pre or post conditions.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/clojure/cljs/core.cljc#L2861-L2931">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span>
+ :pre and :post that contain collections of pre or post conditions.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/core.cljc#L2879-L2949">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span>
   <span class="hljs-comment">^{:doc "Same as (def name (core/fn [params* ] exprs*)) or (def
     name (core/fn ([params* ] exprs*)+)) with any doc-string or attrs added
     to the var metadata. prepost-map defines a map with optional keys
@@ -79,13 +79,13 @@ for the function.</p>
              (<span class="hljs-name">multi-arity-fn</span> name
                (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">comp/checking-types?</span>)
                  (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> m [<span class="hljs-symbol">:jsdoc</span>] conj <span class="hljs-string">"@param {...*} var_args"</span>)
-                 m) fdecl)
+                 m) fdecl (<span class="hljs-symbol">:def-emits-var</span> &amp;env))
 
              (<span class="hljs-name">variadic-fn?</span> fdecl)
              (<span class="hljs-name">variadic-fn</span> name
                (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">comp/checking-types?</span>)
                  (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> m [<span class="hljs-symbol">:jsdoc</span>] conj <span class="hljs-string">"@param {...*} var_args"</span>)
-                 m) fdecl)
+                 m) fdecl (<span class="hljs-symbol">:def-emits-var</span> &amp;env))
 
              <span class="hljs-symbol">:else</span>
              (<span class="hljs-name">core/list</span> 'def (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> name m)

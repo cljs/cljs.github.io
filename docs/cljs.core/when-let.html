@@ -2,7 +2,7 @@
 <code>x</code>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/if-let">cljs.core/if-let</a></li><li><a href="/docs/cljs.core/when">cljs.core/when</a></li><li><a href="/docs/cljs.core/when-not">cljs.core/when-not</a></li><li><a href="/docs/special/if">special/if</a></li><li><a href="/docs/cljs.core/when-first">cljs.core/when-first</a></li></ul><hr />Source docstring:<pre><code>bindings => binding-form test
 
-When test is true, evaluates body with binding-form bound to the value of test</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L1769-L1782">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> when-let
+When test is true, evaluates body with binding-form bound to the value of test</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha4/src/clj/clojure/core.clj#L1769-L1782">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> when-let
   [bindings &amp; body]
   (<span class="hljs-name">assert-args</span>
      (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> bindings) <span class="hljs-string">"a vector for its binding"</span>

@@ -3,7 +3,7 @@ keys.</p>
 <p>Returns nil if the key is not found, or <code>not-found</code> if supplied.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/assoc-in">cljs.core/assoc-in</a></li><li><a href="/docs/cljs.core/update-in">cljs.core/update-in</a></li><li><a href="/docs/cljs.core/find">cljs.core/find</a></li><li><a href="/docs/cljs.core/get">cljs.core/get</a></li></ul><hr />Source docstring:<pre><code>Returns the value in a nested associative structure,
 where ks is a sequence of keys. Returns nil if the key is not present,
-or the not-found value if supplied.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/cljs/cljs/core.cljs#L4678-L4697">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> get-in
+or the not-found value if supplied.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/cljs/cljs/core.cljs#L4678-L4697">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> get-in
   ([m ks]
      (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> get m ks))
   ([m ks not-found]

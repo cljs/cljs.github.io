@@ -82,7 +82,7 @@ is sugar for
 (:require [foo.core :as foo :refer [foo-fn]]
           [woz.core :as woz :refer [woz-fn]])
 (:require-macros [foo.core :as foo]
-                 [woz.core :as woz :refer [app jx]]))</code></pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/clojure/cljs/analyzer.cljc#L1890-L1986">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+                 [woz.core :as woz :refer [app jx]]))</code></pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/analyzer.cljc#L1904-L2000">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> name)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespaces must be named by a symbol."</span>)))

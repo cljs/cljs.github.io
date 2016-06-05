@@ -58,7 +58,7 @@ choose the function appropriate for each compiler&#39;s evaluation environment.<
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/syntax/syntax-quote">syntax/syntax-quote</a></li><li><a href="/docs/syntax/unquote">syntax/unquote</a></li><li><a href="/docs/cljs.core/macroexpand">cljs.core/macroexpand</a></li><li><a href="/docs/cljs.core/macroexpand-1">cljs.core/macroexpand-1</a></li></ul><hr />Source docstring:<pre><code>Like defn, but the resulting function name is declared as a
 macro and will be used as a macro by the compiler when it is
-called.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/clojure/cljs/core.cljc#L2936-L2977">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> defmacro
+called.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/core.cljc#L2954-L2995">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> defmacro
   [&amp;form &amp;env name &amp; args]
   (<span class="hljs-name">core/let</span> [prefix (<span class="hljs-name">core/loop</span> [p (<span class="hljs-name">core/list</span> (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> name assoc <span class="hljs-symbol">:macro</span> <span class="hljs-literal">true</span>)) args args]
                       (<span class="hljs-name">core/let</span> [f (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args)]

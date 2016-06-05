@@ -18,7 +18,7 @@ current result:</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/map">cljs.core/map</a></li></ul><hr />Source docstring:<pre><code>Maps an expression across an array a, using an index named idx, and
 return value named ret, initialized to a clone of a, then setting
 each element of ret to the evaluation of expr, returning the new
-array ret.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/clojure/cljs/core.cljc#L2471-L2484">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> amap
+array ret.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/core.cljc#L2487-L2500">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> amap
   [a idx ret expr]
   `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a# ~a
          ~ret (<span class="hljs-name">cljs.core/aclone</span> a#)]

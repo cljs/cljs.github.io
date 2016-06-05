@@ -10,7 +10,7 @@ form.</p>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/docs/cljs.core/-GT">cljs.core/-></a></li><li><a href="/docs/cljs.core/-GTGT">cljs.core/->></a></li><li><a href="/docs/cljs.core/cond-GT">cljs.core/cond-></a></li><li><a href="/docs/cljs.core/cond-GTGT">cljs.core/cond->></a></li><li><a href="/docs/cljs.core/some-GT">cljs.core/some-></a></li><li><a href="/docs/cljs.core/some-GTGT">cljs.core/some->></a></li></ul><hr />Source docstring:<pre><code>Binds name to expr, evaluates the first form in the lexical context
 of that binding, then binds name to that result, repeating for each
-successive form, returning the result of the last form.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L7274-L7284">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> as-&gt;
+successive form, returning the result of the last form.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha4/src/clj/clojure/core.clj#L7291-L7301">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> as-&gt;
   [expr name &amp; forms]
   `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [~name ~expr
          ~@(<span class="hljs-name">interleave</span> (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> name) (<span class="hljs-name"><span class="hljs-builtin-name">butlast</span></span> forms))]

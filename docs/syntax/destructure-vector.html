@@ -38,59 +38,75 @@ maps][doc:syntax/destructure-map].</p>
   (<span class="hljs-name">println</span> a b c))
 <span class="hljs-comment">;; 1 2 3</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/syntax/destructure-map">syntax/destructure-map</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.14/src/main/clojure/cljs/core.cljc#L610-L679">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/docs/syntax/destructure-map">syntax/destructure-map</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/core.cljc#L610-L695">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
   (<span class="hljs-name">core/let</span> [bents (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> bindings)
              pb (<span class="hljs-name">core/fn</span> pb [bvec b v]
                   (<span class="hljs-name">core/let</span> [pvec
                              (<span class="hljs-name">core/fn</span> [bvec b val]
-                               (<span class="hljs-name">core/let</span> [gvec (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"vec__"</span>)]
-                                 (<span class="hljs-name">core/loop</span> [ret (<span class="hljs-name">core/-&gt;</span> bvec (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> gvec) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> val))
+                               (<span class="hljs-name">core/let</span> [gvec (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"vec__"</span>)
+                                          gseq (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"seq__"</span>)
+                                          gfirst (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"first__"</span>)
+                                          has-rest (<span class="hljs-name">some</span> #{'&amp;} b)]
+                                 (<span class="hljs-name">core/loop</span> [ret (<span class="hljs-name">core/let</span> [ret (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> bvec gvec val)]
+                                                   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-rest
+                                                     (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> ret gseq (<span class="hljs-name">core/list</span> `seq gvec))
+                                                     ret))
                                              n <span class="hljs-number">0</span>
                                              bs b
                                              seen-rest? <span class="hljs-literal">false</span>]
                                    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> bs)
                                      (<span class="hljs-name">core/let</span> [firstb (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> bs)]
                                        (<span class="hljs-name">core/cond</span>
-                                         (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> firstb '&amp;) (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name">pb</span> ret (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> bs) (<span class="hljs-name">core/list</span> `nthnext gvec n))
-                                                         n
-                                                         (<span class="hljs-name"><span class="hljs-builtin-name">nnext</span></span> bs)
-                                                         <span class="hljs-literal">true</span>)
+                                         (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> firstb '&amp;) (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name">pb</span> ret (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> bs) gseq)
+                                                              n
+                                                              (<span class="hljs-name"><span class="hljs-builtin-name">nnext</span></span> bs)
+                                                              <span class="hljs-literal">true</span>)
                                          (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> firstb <span class="hljs-symbol">:as</span>) (<span class="hljs-name">pb</span> ret (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> bs) gvec)
                                          <span class="hljs-symbol">:else</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> seen-rest?
-                                                 (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
-                                                   #?(<span class="hljs-symbol">:clj</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> Exception <span class="hljs-string">"Unsupported binding form, only :as can follow &amp; parameter"</span>)
-                                                      <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> js/Error <span class="hljs-string">"Unsupported binding form, only :as can follow &amp; parameter"</span>)))
-                                                 (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name">pb</span> ret firstb (<span class="hljs-name">core/list</span> `nth gvec n <span class="hljs-literal">nil</span>))
-                                                   (<span class="hljs-name">core/inc</span> n)
-                                                   (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> bs)
-                                                   seen-rest?))))
+                                                 (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> #?(<span class="hljs-symbol">:clj</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> Exception <span class="hljs-string">"Unsupported binding form, only :as can follow &amp; parameter"</span>)
+                                                           <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> js/Error <span class="hljs-string">"Unsupported binding form, only :as can follow &amp; parameter"</span>)))
+                                                 (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name">pb</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-rest
+                                                              (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> ret
+                                                                    gfirst `(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> ~gseq)
+                                                                    gseq `(<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> ~gseq))
+                                                              ret)
+                                                            firstb
+                                                            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-rest
+                                                              gfirst
+                                                              (<span class="hljs-name">core/list</span> `nth gvec n <span class="hljs-literal">nil</span>)))
+                                                        (<span class="hljs-name">core/inc</span> n)
+                                                        (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> bs)
+                                                        seen-rest?))))
                                      ret))))
                              pmap
                              (<span class="hljs-name">core/fn</span> [bvec b v]
                                (<span class="hljs-name">core/let</span> [gmap (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"map__"</span>)
                                           defaults (<span class="hljs-symbol">:or</span> b)]
                                  (<span class="hljs-name">core/loop</span> [ret (<span class="hljs-name">core/-&gt;</span> bvec (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> gmap) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> v)
-                                                   (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> gmap) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">implements?</span> ISeq ~gmap) (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> cljs.core/hash-map ~gmap) ~gmap))
-                                                   ((<span class="hljs-name">core/fn</span> [ret]
-                                                      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:as</span> b)
-                                                        (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> ret (<span class="hljs-symbol">:as</span> b) gmap)
-                                                        ret))))
+                                                          (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> gmap) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">implements?</span> ISeq ~gmap) (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> cljs.core/hash-map ~gmap) ~gmap))
+                                                     ((<span class="hljs-name">core/fn</span> [ret]
+                                                        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:as</span> b)
+                                                          (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> ret (<span class="hljs-symbol">:as</span> b) gmap)
+                                                          ret))))
                                              bes (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span>
-                                                   (<span class="hljs-name">core/fn</span> [bes entry]
-                                                     (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> %<span class="hljs-number">1</span> %<span class="hljs-number">2</span> ((<span class="hljs-name"><span class="hljs-builtin-name">val</span></span> entry) %<span class="hljs-number">2</span>))
-                                                       (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> bes (<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> entry))
-                                                       ((<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> entry) bes)))
-                                                   (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> b <span class="hljs-symbol">:as</span> <span class="hljs-symbol">:or</span>)
-                                                   {<span class="hljs-symbol">:keys</span> #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">core/keyword?</span> %) % (<span class="hljs-name"><span class="hljs-builtin-name">keyword</span></span> (<span class="hljs-name">core/str</span> %))),
-                                                    <span class="hljs-symbol">:strs</span> core/str, <span class="hljs-symbol">:syms</span> #(<span class="hljs-name">core/list</span> `quote %)})]
+                                                  (<span class="hljs-name">core/fn</span> [bes entry]
+                                                    (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> %<span class="hljs-number">1</span> %<span class="hljs-number">2</span> ((<span class="hljs-name"><span class="hljs-builtin-name">val</span></span> entry) %<span class="hljs-number">2</span>))
+                                                            (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> bes (<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> entry))
+                                                            ((<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> entry) bes)))
+                                                  (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> b <span class="hljs-symbol">:as</span> <span class="hljs-symbol">:or</span>)
+                                                  {<span class="hljs-symbol">:keys</span> #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">core/keyword?</span> %) % (<span class="hljs-name"><span class="hljs-builtin-name">keyword</span></span> (<span class="hljs-name">core/str</span> %))),
+                                                   <span class="hljs-symbol">:strs</span> core/str, <span class="hljs-symbol">:syms</span> #(<span class="hljs-name">core/list</span> `quote %)})]
                                    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> bes)
                                      (<span class="hljs-name">core/let</span> [bb (<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> bes))
                                                 bk (<span class="hljs-name"><span class="hljs-builtin-name">val</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> bes))
-                                                has-default (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> defaults bb)]
-                                       (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name">pb</span> ret bb (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-default
-                                                           (<span class="hljs-name">core/list</span> 'cljs.core/get gmap bk (<span class="hljs-name">defaults</span> bb))
-                                                           (<span class="hljs-name">core/list</span> 'cljs.core/get gmap bk)))
-                                         (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> bes)))
+                                                bv (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> defaults bb)
+                                                     (<span class="hljs-name">core/list</span> 'cljs.core/get gmap bk (<span class="hljs-name">defaults</span> bb))
+                                                     (<span class="hljs-name">core/list</span> 'cljs.core/get gmap bk))]
+                                       (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name">core/cond</span>
+                                                (<span class="hljs-name">core/symbol?</span> bb) (<span class="hljs-name">core/-&gt;</span> ret (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">namespace</span></span> bb) (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> bb)) bb)) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> bv))
+                                                (<span class="hljs-name">core/keyword?</span> bb) (<span class="hljs-name">core/-&gt;</span> ret (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> bb)) bv))
+                                                <span class="hljs-symbol">:else</span> (<span class="hljs-name">pb</span> ret bb bv))
+                                              (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> bes)))
                                      ret))))]
                     (<span class="hljs-name">core/cond</span>
                       (<span class="hljs-name">core/symbol?</span> b) (<span class="hljs-name">core/-&gt;</span> bvec (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">namespace</span></span> b) (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> b)) b)) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> v))
@@ -98,8 +114,8 @@ maps][doc:syntax/destructure-map].</p>
                       (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> b) (<span class="hljs-name">pvec</span> bvec b v)
                       (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> b) (<span class="hljs-name">pmap</span> bvec b v)
                       <span class="hljs-symbol">:else</span> (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
-                              #?(<span class="hljs-symbol">:clj</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> Exception (<span class="hljs-name">core/str</span> <span class="hljs-string">"Unsupported binding form: "</span> b))
-                                 <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> js/Error (<span class="hljs-name">core/str</span> <span class="hljs-string">"Unsupported binding form: "</span> b)))))))
+                             #?(<span class="hljs-symbol">:clj</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> Exception (<span class="hljs-name">core/str</span> <span class="hljs-string">"Unsupported binding form: "</span> b))
+                                <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> js/Error (<span class="hljs-name">core/str</span> <span class="hljs-string">"Unsupported binding form: "</span> b)))))))
              process-entry (<span class="hljs-name">core/fn</span> [bvec b] (<span class="hljs-name">pb</span> bvec (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> b) (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> b)))]
     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">every?</span> core/symbol? (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> first bents))
       bindings
