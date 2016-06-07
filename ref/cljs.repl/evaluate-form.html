@@ -1,0 +1,66 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.repl/evaluate-form</h1><table><tr><td>function</td><td>Added in 0.0-927</td></tr></table><ul><li><code>(evaluate-form repl-env env filename form)</code></li><li><code>(evaluate-form repl-env env filename form wrap)</code></li><li><code>(evaluate-form repl-env env filename form wrap opts)</code></li></ul><hr />Source docstring:<pre><code>Evaluate a ClojureScript form in the JavaScript environment. Returns a
+string which is the ClojureScript return value. This string may or may
+not be readable by the Clojure reader.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/repl.cljc#L440-L506">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> evaluate-form
+  ([repl-env env filename form]
+    (<span class="hljs-name">evaluate-form</span> repl-env env filename form identity))
+  ([repl-env env filename form wrap]
+    (<span class="hljs-name">evaluate-form</span> repl-env env filename form wrap *repl-opts*))
+  ([repl-env env filename form wrap opts]
+   (<span class="hljs-name">binding</span> [ana/*cljs-file* filename]
+     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ast (<span class="hljs-name">ana/analyze</span> env form <span class="hljs-literal">nil</span> opts)
+           js (<span class="hljs-name">comp/emit-str</span> ast)
+           def-emits-var (<span class="hljs-symbol">:def-emits-var</span> opts)
+           wrap-js
+           <span class="hljs-comment">;; <span class="hljs-doctag">TODO:</span> check opts as well - David</span>
+           (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:source-map</span> repl-env)
+             (<span class="hljs-name">binding</span> [comp/*source-map-data*
+                       (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> {<span class="hljs-symbol">:source-map</span> (<span class="hljs-name"><span class="hljs-builtin-name">sorted-map</span></span>)
+                              <span class="hljs-symbol">:gen-col</span> <span class="hljs-number">0</span>
+                              <span class="hljs-symbol">:gen-line</span> <span class="hljs-number">0</span>})]
+               (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [js (<span class="hljs-name">comp/emit-str</span>
+                          (<span class="hljs-name">ana/no-warn</span>
+                            (<span class="hljs-name">ana/analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:repl-env</span> repl-env <span class="hljs-symbol">:def-emits-var</span> def-emits-var)
+                              (<span class="hljs-name">wrap</span> form) <span class="hljs-literal">nil</span> opts)))
+                     t (<span class="hljs-name">System/currentTimeMillis</span>)]
+                 (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> js
+                   <span class="hljs-string">"\n//# sourceURL=repl-"</span> t <span class="hljs-string">".js"</span>
+                   <span class="hljs-string">"\n//# sourceMappingURL=data:application/json;base64,"</span>
+                   (<span class="hljs-name">DatatypeConverter/printBase64Binary</span>
+                     (<span class="hljs-name">.getBytes</span>
+                       (<span class="hljs-name">sm/encode</span>
+                         {(<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"repl-"</span> t <span class="hljs-string">".cljs"</span>)
+                          (<span class="hljs-symbol">:source-map</span> @comp/*source-map-data*)}
+                         {<span class="hljs-symbol">:lines</span> (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> (<span class="hljs-symbol">:gen-line</span> @comp/*source-map-data*) <span class="hljs-number">3</span>)
+                          <span class="hljs-symbol">:file</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"repl-"</span> t <span class="hljs-string">".js"</span>)
+                          <span class="hljs-symbol">:sources-content</span>
+                          [(<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:source</span> (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> form))
+                             <span class="hljs-comment">;; handle strings / primitives without metadata</span>
+                             (<span class="hljs-name">with-out-str</span> (<span class="hljs-name"><span class="hljs-builtin-name">pr</span></span> form)))]})
+                       <span class="hljs-string">"UTF-8"</span>)))))
+             (<span class="hljs-name">comp/emit-str</span>
+               (<span class="hljs-name">ana/no-warn</span>
+                 (<span class="hljs-name">ana/analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:repl-env</span> repl-env <span class="hljs-symbol">:def-emits-var</span> def-emits-var)
+                   (<span class="hljs-name">wrap</span> form) <span class="hljs-literal">nil</span> opts))))]
+       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-symbol">:op</span> ast) <span class="hljs-symbol">:ns</span>)
+         (<span class="hljs-name">load-dependencies</span> repl-env
+           (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vals</span></span> (<span class="hljs-symbol">:requires</span> ast))
+             (<span class="hljs-name">distinct</span> (<span class="hljs-name"><span class="hljs-builtin-name">vals</span></span> (<span class="hljs-symbol">:uses</span> ast))))
+           opts))
+       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> *cljs-verbose*
+         (<span class="hljs-name">err-out</span> (<span class="hljs-name">println</span> js)))
+       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ret (<span class="hljs-name">-evaluate</span> repl-env filename (<span class="hljs-symbol">:line</span> (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> form)) wrap-js)]
+         (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> (<span class="hljs-symbol">:status</span> ret)
+           <span class="hljs-symbol">:error</span> (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
+                    (<span class="hljs-name">ex-info</span> (<span class="hljs-symbol">:value</span> ret)
+                      {<span class="hljs-symbol">:type</span> <span class="hljs-symbol">:js-eval-error</span>
+                       <span class="hljs-symbol">:error</span> ret
+                       <span class="hljs-symbol">:repl-env</span> repl-env
+                       <span class="hljs-symbol">:form</span> form}))
+           <span class="hljs-symbol">:exception</span> (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
+                        (<span class="hljs-name">ex-info</span> (<span class="hljs-symbol">:value</span> ret)
+                          {<span class="hljs-symbol">:type</span> <span class="hljs-symbol">:js-eval-exception</span>
+                           <span class="hljs-symbol">:error</span> ret
+                           <span class="hljs-symbol">:repl-env</span> repl-env
+                           <span class="hljs-symbol">:form</span> form
+                           <span class="hljs-symbol">:js</span> js}))
+           <span class="hljs-symbol">:success</span> (<span class="hljs-symbol">:value</span> ret)))))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.repl/evaluate-form.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

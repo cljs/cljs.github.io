@@ -1,0 +1,82 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.js/require</h1><table><tr><td>function</td><td>Added in 1.7.10</td></tr></table><ul><li><code>(require name cb)</code></li><li><code>(require name opts cb)</code></li><li><code>(require bound-vars name opts cb)</code></li><li><code>(require bound-vars name reload opts cb)</code></li></ul><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/cljs/cljs/js.cljs#L214-L295">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> require
+  ([name cb]
+    (<span class="hljs-name">require</span> name <span class="hljs-literal">nil</span> cb))
+  ([name opts cb]
+    (<span class="hljs-name">require</span> <span class="hljs-literal">nil</span> name opts cb))
+  ([bound-vars name opts cb]
+   (<span class="hljs-name">require</span> bound-vars name <span class="hljs-literal">nil</span> opts cb))
+  ([bound-vars name reload opts cb]
+   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [bound-vars (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
+                      {<span class="hljs-symbol">:*compiler*</span>     (<span class="hljs-name">env/default-compiler-env</span>)
+                       <span class="hljs-symbol">:*data-readers*</span> tags/*cljs-data-readers*
+                       <span class="hljs-symbol">:*load-macros*</span>  (<span class="hljs-symbol">:load-macros</span> opts <span class="hljs-literal">true</span>)
+                       <span class="hljs-symbol">:*analyze-deps*</span> (<span class="hljs-symbol">:analyze-deps</span> opts <span class="hljs-literal">true</span>)
+                       <span class="hljs-symbol">:*load-fn*</span>      (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:load</span> opts) *load-fn*)
+                       <span class="hljs-symbol">:*eval-fn*</span>      (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:eval</span> opts) *eval-fn*)}
+                      bound-vars)
+         aname (<span class="hljs-name">cond-&gt;</span> name (<span class="hljs-symbol">:macros-ns</span> opts) ana/macro-ns-name)]
+     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:reload</span> reload)
+       (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> *loaded* disj aname))
+     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:reload-all</span> reload)
+       (<span class="hljs-name"><span class="hljs-builtin-name">reset!</span></span> *loaded* #{}))
+     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:verbose</span> opts)
+       (<span class="hljs-name">debug-prn</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Loading "</span> name (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:macros-ns</span> opts) <span class="hljs-string">" macros"</span>) <span class="hljs-string">" namespace"</span>)))
+     (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> @*loaded* aname)
+       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [env (<span class="hljs-symbol">:*env*</span> bound-vars)]
+         (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
+           ((<span class="hljs-symbol">:*load-fn*</span> bound-vars)
+             {<span class="hljs-symbol">:name</span> name
+              <span class="hljs-symbol">:macros</span> (<span class="hljs-symbol">:macros-ns</span> opts)
+              <span class="hljs-symbol">:path</span> (<span class="hljs-name">ns-&gt;relpath</span> name)}
+             (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [resource]
+               (<span class="hljs-name"><span class="hljs-builtin-name">assert</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> resource) (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> resource))
+                 <span class="hljs-string">"*load-fn* may only return a map or nil"</span>)
+               (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> resource
+                 (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [{<span class="hljs-symbol">:keys</span> [lang source cache source-map]} resource]
+                   (<span class="hljs-name"><span class="hljs-builtin-name">condp</span></span> = lang
+                     <span class="hljs-symbol">:clj</span> (<span class="hljs-name">eval-str*</span> bound-vars source name opts
+                            (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [res]
+                              (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
+                                (<span class="hljs-name">cb</span> res)
+                                (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
+                                  (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> *loaded* conj aname)
+                                  (<span class="hljs-name">cb</span> {<span class="hljs-symbol">:value</span> <span class="hljs-literal">true</span>})))))
+                     <span class="hljs-symbol">:js</span> (<span class="hljs-name">process-macros-deps</span> bound-vars cache opts
+                           (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [res]
+                             (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
+                               (<span class="hljs-name">cb</span> res)
+                               (<span class="hljs-name">process-libs-deps</span> bound-vars cache opts
+                                 (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [res]
+                                   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
+                                     (<span class="hljs-name">cb</span> res)
+                                     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [res (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
+                                                 ((<span class="hljs-symbol">:*eval-fn*</span> bound-vars) resource)
+                                                 (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> cache
+                                                   (<span class="hljs-name">load-analysis-cache!</span>
+                                                     (<span class="hljs-symbol">:*compiler*</span> bound-vars) aname cache))
+                                                 (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> source-map
+                                                   (<span class="hljs-name">load-source-map!</span>
+                                                     (<span class="hljs-symbol">:*compiler*</span> bound-vars) aname source-map))
+                                                 (<span class="hljs-name">catch</span> <span class="hljs-symbol">:default</span> cause
+                                                   (<span class="hljs-name">wrap-error</span>
+                                                     (<span class="hljs-name">ana/error</span> env
+                                                       (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Could not require "</span> name) cause))))]
+                                       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
+                                         (<span class="hljs-name">cb</span> res)
+                                         (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
+                                           (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> *loaded* conj aname)
+                                           (<span class="hljs-name">cb</span> {<span class="hljs-symbol">:value</span> <span class="hljs-literal">true</span>}))))))))))
+                     (<span class="hljs-name">cb</span> (<span class="hljs-name">wrap-error</span>
+                           (<span class="hljs-name">ana/error</span> env
+                             (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Invalid :lang specified "</span> lang <span class="hljs-string">", only :clj or :js allowed"</span>))))))
+                 (<span class="hljs-name">cb</span> (<span class="hljs-name">wrap-error</span>
+                       (<span class="hljs-name">ana/error</span> env
+                         (<span class="hljs-name">ana/error-message</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:macros-ns</span> opts)
+                                              <span class="hljs-symbol">:undeclared-macros-ns</span>
+                                              <span class="hljs-symbol">:undeclared-ns</span>)
+                           {<span class="hljs-symbol">:ns-sym</span> name <span class="hljs-symbol">:js-provide</span> (<span class="hljs-name">cljs.core/name</span> name)})))))))
+           (<span class="hljs-name">catch</span> <span class="hljs-symbol">:default</span> cause
+             (<span class="hljs-name">cb</span> (<span class="hljs-name">wrap-error</span>
+                   (<span class="hljs-name">ana/error</span> env
+                     (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Could not require "</span> name) cause))))))
+       (<span class="hljs-name">cb</span> {<span class="hljs-symbol">:value</span> <span class="hljs-literal">true</span>})))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.js/require.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

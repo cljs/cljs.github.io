@@ -1,0 +1,86 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.repl/special-doc-map</h1><table><tr><td>var</td><td>Added in 0.0-2985</td></tr></table><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/repl.cljc#L1001-L1086">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> special-doc-map
+  '{. {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name">.instanceMethod</span> instance args*)
+               (<span class="hljs-name">.-instanceField</span> instance)]
+       <span class="hljs-symbol">:doc</span> <span class="hljs-string">"The instance member form works for methods and fields.
+  They all expand into calls to the dot operator at macroexpansion time."</span>}
+    ns {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> docstring? attr-map? references*)]
+        <span class="hljs-symbol">:doc</span> <span class="hljs-string">"You must currently use the ns form only with the following caveats
+
+    * You must use the :only form of :use
+    * :require supports :as and :refer
+      - both options can be skipped
+      - in this case a symbol can be used as a libspec directly
+        - that is, (:require lib.foo) and (:require [lib.foo]) are both
+          supported and mean the same thing
+      - prefix lists are not supported
+    * The only option for :refer-clojure is :exclude
+    * :import is available for importing Google Closure classes
+      - ClojureScript types and records should be brought in with :use
+        or :require :refer, not :import ed
+    * Macros are written in Clojure, and are referenced via the new
+      :require-macros / :use-macros options to ns
+      - :require-macros and :use-macros support the same forms that
+        :require and :use do
+
+  Implicit macro loading: If a namespace is required or used, and that
+  namespace itself requires or uses macros from its own namespace, then
+  the macros will be implicitly required or used using the same
+  specifications. This oftentimes leads to simplified library usage,
+  such that the consuming namespace need not be concerned about
+  explicitly distinguishing between whether certain vars are functions
+  or macros.
+
+  Inline macro specification: As a convenience, :require can be given
+  either :include-macros true or :refer-macros [syms...]. Both desugar
+  into forms which explicitly load the matching Clojure file containing
+  macros. (This works independently of whether the namespace being
+  required internally requires or uses its own macros.) For example:
+
+  (ns testme.core
+  (:require [foo.core :as foo :refer [foo-fn] :include-macros true]
+            [woz.core :as woz :refer [woz-fn] :refer-macros [app jx]]))
+
+  is sugar for
+
+  (ns testme.core
+  (:require [foo.core :as foo :refer [foo-fn]]
+            [woz.core :as woz :refer [woz-fn]])
+  (:require-macros [foo.core :as foo]
+                   [woz.core :as woz :refer [app jx]]))"</span>}
+    def {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> symbol doc-string? init?)]
+         <span class="hljs-symbol">:doc</span> <span class="hljs-string">"Creates and interns a global var with the name
+  of symbol in the current namespace (*ns*) or locates such a var if
+  it already exists.  If init is supplied, it is evaluated, and the
+  root binding of the var is set to the resulting value.  If init is
+  not supplied, the root binding of the var is unaffected."</span>}
+    do {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> exprs*)]
+        <span class="hljs-symbol">:doc</span> <span class="hljs-string">"Evaluates the expressions in order and returns the value of
+  the last. If no expressions are supplied, returns nil."</span>}
+    if {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> test then else?)]
+        <span class="hljs-symbol">:doc</span> <span class="hljs-string">"Evaluates test. If not the singular values nil or false,
+  evaluates and yields then, otherwise, evaluates and yields else. If
+  else is not supplied it defaults to nil."</span>}
+    new {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name">Constructor.</span> args*) (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> Constructor args*)]
+         <span class="hljs-symbol">:url</span> <span class="hljs-string">"java_interop#new"</span>
+         <span class="hljs-symbol">:doc</span> <span class="hljs-string">"The args, if any, are evaluated from left to right, and
+  passed to the JavaScript constructor. The constructed object is
+  returned."</span>}
+    quote {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">quote</span></span> form)]
+           <span class="hljs-symbol">:doc</span> <span class="hljs-string">"Yields the unevaluated form."</span>}
+    recur {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> exprs*)]
+           <span class="hljs-symbol">:doc</span> <span class="hljs-string">"Evaluates the exprs in order, then, in parallel, rebinds
+  the bindings of the recursion point to the values of the exprs.
+  Execution then jumps back to the recursion point, a loop or fn method."</span>}
+    set! {<span class="hljs-symbol">:forms</span>[(<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> var-symbol expr)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-</span> instance-expr instanceFieldName-symbol) expr)]
+          <span class="hljs-symbol">:url</span> <span class="hljs-string">"vars#set"</span>
+          <span class="hljs-symbol">:doc</span> <span class="hljs-string">"Used to set vars and JavaScript object fields"</span>}
+    throw {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> expr)]
+           <span class="hljs-symbol">:doc</span> <span class="hljs-string">"The expr is evaluated and thrown."</span>}
+    try {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">try</span></span> expr* catch-clause* finally-clause?)]
+         <span class="hljs-symbol">:doc</span> <span class="hljs-string">"catch-clause =&gt; (catch classname name expr*)
+  finally-clause =&gt; (finally expr*)
+  Catches and handles JavaScript exceptions."</span>}
+    var {<span class="hljs-symbol">:forms</span> [(<span class="hljs-name"><span class="hljs-builtin-name">var</span></span> symbol)]
+         <span class="hljs-symbol">:doc</span> <span class="hljs-string">"The symbol must resolve to a var, and the Var object
+itself (not its value) is returned. The reader macro #'x expands to (var x)."</span>}})</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.repl/special-doc-map.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

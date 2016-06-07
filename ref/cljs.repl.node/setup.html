@@ -1,0 +1,92 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.repl.node/setup</h1><table><tr><td>function</td><td>Added in 0.0-2629</td></tr></table><ul><li><code>(setup repl-env)</code></li><li><code>(setup repl-env opts)</code></li></ul><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/repl/node.clj#L99-L190">clojurescript:src/main/clojure/cljs/repl/node.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> setup
+  ([repl-env] (<span class="hljs-name">setup</span> repl-env <span class="hljs-literal">nil</span>))
+  ([repl-env opts]
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [output-dir   (<span class="hljs-name">io/file</span> (<span class="hljs-name">util/output-directory</span> opts))
+          _            (<span class="hljs-name">.mkdirs</span> output-dir)
+          of           (<span class="hljs-name">io/file</span> output-dir <span class="hljs-string">"node_repl.js"</span>)
+          _            (<span class="hljs-name">spit</span> of
+                         (<span class="hljs-name">string/replace</span> (<span class="hljs-name"><span class="hljs-builtin-name">slurp</span></span> (<span class="hljs-name">io/resource</span> <span class="hljs-string">"cljs/repl/node_repl.js"</span>))
+                           <span class="hljs-string">"var PORT = 5001;"</span>
+                           (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"var PORT = "</span> (<span class="hljs-symbol">:port</span> repl-env) <span class="hljs-string">";"</span>)))
+          xs           (<span class="hljs-name">cond-&gt;</span> [(<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> opts <span class="hljs-symbol">:node-command</span> <span class="hljs-string">"node"</span>)]
+                         (<span class="hljs-symbol">:debug-port</span> repl-env) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"--debug="</span> (<span class="hljs-symbol">:debug-port</span> repl-env))))
+          proc         (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> (<span class="hljs-name">ProcessBuilder.</span> (<span class="hljs-name"><span class="hljs-builtin-name">into-array</span></span> xs))
+                         (<span class="hljs-name">.redirectInput</span> of)
+                         .start)
+          _            (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name">.start</span> (<span class="hljs-name">Thread.</span> (<span class="hljs-name">bound-fn</span> [] (<span class="hljs-name">pipe</span> proc (<span class="hljs-name">.getInputStream</span> proc) *out*))))
+                           (<span class="hljs-name">.start</span> (<span class="hljs-name">Thread.</span> (<span class="hljs-name">bound-fn</span> [] (<span class="hljs-name">pipe</span> proc (<span class="hljs-name">.getErrorStream</span> proc) *err*)))))
+          env          (<span class="hljs-name">ana/empty-env</span>)
+          core         (<span class="hljs-name">io/resource</span> <span class="hljs-string">"cljs/core.cljs"</span>)
+          <span class="hljs-comment">;; represent paths as vectors so we can emit JS arrays, this is to</span>
+          <span class="hljs-comment">;; paper over Windows issues with minimum hassle - David</span>
+          path         (<span class="hljs-name">.getPath</span> (<span class="hljs-name">.getCanonicalFile</span> output-dir))
+          [fc &amp; cs]    (<span class="hljs-name"><span class="hljs-builtin-name">rest</span></span> (<span class="hljs-name">util/path-seq</span> path)) <span class="hljs-comment">;; remove leading empty string</span>
+          root         (<span class="hljs-name">.substring</span> path <span class="hljs-number">0</span> (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> (<span class="hljs-name">.indexOf</span> path fc) (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> fc)))
+          root-path    (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> root cs))
+          rewrite-path (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> root-path <span class="hljs-string">"goog"</span>)]
+      (<span class="hljs-name"><span class="hljs-builtin-name">reset!</span></span> (<span class="hljs-symbol">:proc</span> repl-env) proc)
+      (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [r <span class="hljs-literal">nil</span>]
+        (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> r <span class="hljs-string">"ready"</span>)
+          (<span class="hljs-name">Thread/sleep</span> <span class="hljs-number">50</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
+            (<span class="hljs-name"><span class="hljs-builtin-name">reset!</span></span> (<span class="hljs-symbol">:socket</span> repl-env) (<span class="hljs-name">socket</span> (<span class="hljs-symbol">:host</span> repl-env) (<span class="hljs-symbol">:port</span> repl-env)))
+            (<span class="hljs-name">catch</span> Exception e))
+          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> @(<span class="hljs-symbol">:socket</span> repl-env)
+            (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name">read-response</span> (<span class="hljs-symbol">:in</span> @(<span class="hljs-symbol">:socket</span> repl-env))))
+            (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> <span class="hljs-literal">nil</span>))))
+      <span class="hljs-comment">;; compile cljs.core &amp; its dependencies, goog/base.js must be available</span>
+      <span class="hljs-comment">;; for bootstrap to load, use new closure/compile as it can handle</span>
+      <span class="hljs-comment">;; resources in JARs</span>
+      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [core-js (<span class="hljs-name">closure/compile</span> core
+                      (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> opts
+                        <span class="hljs-symbol">:output-file</span>
+                        (<span class="hljs-name">closure/src-file-&gt;target-file</span> core)))
+            deps    (<span class="hljs-name">closure/add-dependencies</span> opts core-js)]
+        <span class="hljs-comment">;; output unoptimized code and the deps file</span>
+        <span class="hljs-comment">;; for all compiled namespaces</span>
+        (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> closure/output-unoptimized
+          (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> opts
+            <span class="hljs-symbol">:output-to</span> (<span class="hljs-name">.getPath</span> (<span class="hljs-name">io/file</span> output-dir <span class="hljs-string">"node_repl_deps.js"</span>)))
+          deps))
+      <span class="hljs-comment">;; bootstrap, replace __dirname as __dirname won't be set</span>
+      <span class="hljs-comment">;; properly due to how we are running it - David</span>
+      (<span class="hljs-name">node-eval</span> repl-env
+        (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">slurp</span></span> (<span class="hljs-name">io/resource</span> <span class="hljs-string">"cljs/bootstrap_node.js"</span>))
+          (<span class="hljs-name">string/replace</span> <span class="hljs-string">"path.resolve(__dirname, '..', 'base.js')"</span>
+            (<span class="hljs-name">platform-path</span> (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> rewrite-path <span class="hljs-string">"bootstrap"</span> <span class="hljs-string">".."</span> <span class="hljs-string">"base.js"</span>)))
+          (<span class="hljs-name">string/replace</span>
+            <span class="hljs-string">"path.join(\".\", \"..\", src)"</span>
+            (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"path.join("</span> (<span class="hljs-name">platform-path</span> rewrite-path) <span class="hljs-string">", src)"</span>))
+          (<span class="hljs-name">string/replace</span>
+            <span class="hljs-string">"var CLJS_ROOT = \".\";"</span>
+            (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"var CLJS_ROOT = "</span> (<span class="hljs-name">platform-path</span> root-path) <span class="hljs-string">";"</span>))))
+      <span class="hljs-comment">;; load the deps file so we can goog.require cljs.core etc.</span>
+      (<span class="hljs-name">node-eval</span> repl-env
+        (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"require("</span>
+             (<span class="hljs-name">platform-path</span> (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> root-path <span class="hljs-string">"node_repl_deps.js"</span>))
+             <span class="hljs-string">")"</span>))
+      <span class="hljs-comment">;; monkey-patch isProvided_ to avoid useless warnings - David</span>
+      (<span class="hljs-name">node-eval</span> repl-env
+        (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"goog.isProvided_ = function(x) { return false; };"</span>))
+      <span class="hljs-comment">;; monkey-patch goog.require, skip all the loaded checks</span>
+      (<span class="hljs-name">repl/evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
+        '(<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-require</span> js/goog)
+           (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [name]
+             (<span class="hljs-name">js/CLOSURE_IMPORT_SCRIPT</span>
+               (<span class="hljs-name">aget</span> (<span class="hljs-name"><span class="hljs-builtin-name">..</span></span> js/goog -dependencies_ -nameToPath) name)))))
+      <span class="hljs-comment">;; load cljs.core, setup printing</span>
+      (<span class="hljs-name">repl/evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
+        '(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
+           (<span class="hljs-name">.require</span> js/goog <span class="hljs-string">"cljs.core"</span>)
+           (<span class="hljs-name">enable-console-print!</span>)))
+      <span class="hljs-comment">;; redef goog.require to track loaded libs</span>
+      (<span class="hljs-name">repl/evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
+        '(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
+           (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *target* <span class="hljs-string">"nodejs"</span>)
+           (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *loaded-libs* #{<span class="hljs-string">"cljs.core"</span>})
+           (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-require</span> js/goog)
+             (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [name reload]
+               (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> *loaded-libs* name)) reload)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *loaded-libs* (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> *loaded-libs* #{}) name))
+                 (<span class="hljs-name">js/CLOSURE_IMPORT_SCRIPT</span>
+                   (<span class="hljs-name">aget</span> (<span class="hljs-name"><span class="hljs-builtin-name">..</span></span> js/goog -dependencies_ -nameToPath) name))))))))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.repl.node/setup.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

@@ -1,0 +1,164 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.repl/repl*</h1><table><tr><td>function</td><td>Added in 0.0-2629</td></tr></table><ul><li><code>(repl* repl-env {:keys [init need-prompt quit-prompt prompt flush read eval print caught reader print-no-newline source-map-inline wrap repl-requires compiler-env bind-err], :or {caught repl-caught, quit-prompt repl-quit-prompt, eval eval-cljs, print-no-newline print, flush flush, read repl-read, bind-err true, print println, source-map-inline true, prompt repl-prompt, repl-requires (quote [[cljs.repl :refer-macros [source doc find-doc apropos dir pst]] [cljs.pprint :refer [pprint] :refer-macros [pp]]]), reader (fn* [] (readers/source-logging-push-back-reader (PushbackReader. (io/reader *in*)) 1 "NO_SOURCE_FILE")), need-prompt (fn* [] (if (readers/indexing-reader? *in*) (== (readers/get-column-number *in*) 1) (identity true)))}, :as opts})</code></li></ul><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/clojure/cljs/repl.cljc#L761-L924">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> repl*
+  [repl-env {<span class="hljs-symbol">:keys</span> [init need-prompt quit-prompt prompt flush read eval print caught reader
+                    print-no-newline source-map-inline wrap repl-requires
+                    compiler-env bind-err]
+             <span class="hljs-symbol">:or</span> {need-prompt #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">readers/indexing-reader?</span> *in*)
+                                (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> (<span class="hljs-name">readers/get-column-number</span> *in*) <span class="hljs-number">1</span>)
+                                (<span class="hljs-name"><span class="hljs-builtin-name">identity</span></span> <span class="hljs-literal">true</span>))
+                  quit-prompt repl-quit-prompt
+                  prompt repl-prompt
+                  flush flush
+                  read repl-read
+                  eval eval-cljs
+                  print println
+                  caught repl-caught
+                  reader #(<span class="hljs-name">readers/source-logging-push-back-reader</span>
+                           (<span class="hljs-name">PushbackReader.</span> (<span class="hljs-name">io/reader</span> *in*))
+                           <span class="hljs-number">1</span> <span class="hljs-string">"NO_SOURCE_FILE"</span>)
+                  print-no-newline print
+                  source-map-inline <span class="hljs-literal">true</span>
+                  repl-requires '[[cljs.repl <span class="hljs-symbol">:refer-macros</span> [source doc find-doc apropos dir pst]]
+                                  [cljs.pprint <span class="hljs-symbol">:refer</span> [pprint] <span class="hljs-symbol">:refer-macros</span> [pp]]]
+                  bind-err <span class="hljs-literal">true</span>}
+             <span class="hljs-symbol">:as</span> opts}]
+  (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [[unknown-opt suggested-opt] (<span class="hljs-name">util/unknown-opts</span> (<span class="hljs-name">set</span> (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> opts)) (<span class="hljs-name">set/union</span> known-repl-opts cljsc/known-opts))]
+    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> suggested-opt
+      (<span class="hljs-name">println</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"WARNING: Unknown option '"</span> unknown-opt <span class="hljs-string">"'. Did you mean '"</span> suggested-opt <span class="hljs-string">"'?"</span>))))
+  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [repl-opts (<span class="hljs-name">-repl-options</span> repl-env)
+        repl-requires (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> repl-requires (<span class="hljs-symbol">:repl-requires</span> repl-opts))
+        {<span class="hljs-symbol">:keys</span> [analyze-path repl-verbose warn-on-undeclared special-fns static-fns] <span class="hljs-symbol">:as</span> opts
+         <span class="hljs-symbol">:or</span>   {warn-on-undeclared <span class="hljs-literal">true</span>}}
+        (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
+          {<span class="hljs-symbol">:cache-analysis</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:source-map</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:def-emits-var</span> <span class="hljs-literal">true</span>}
+          (<span class="hljs-name">cljsc/add-implicit-options</span>
+            (<span class="hljs-name">merge-with</span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [a b] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> b) a b))
+              repl-opts
+              opts
+              {<span class="hljs-symbol">:prompt</span> prompt
+               <span class="hljs-symbol">:need-prompt</span> need-prompt
+               <span class="hljs-symbol">:flush</span> flush
+               <span class="hljs-symbol">:read</span> read
+               <span class="hljs-symbol">:print</span> print
+               <span class="hljs-symbol">:caught</span> caught
+               <span class="hljs-symbol">:reader</span> reader
+               <span class="hljs-symbol">:print-no-newline</span> print-no-newline
+               <span class="hljs-symbol">:source-map-inline</span> source-map-inline})))
+        done? (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> <span class="hljs-literal">false</span>)]
+    (<span class="hljs-name">env/with-compiler-env</span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> compiler-env (<span class="hljs-name">env/default-compiler-env</span> opts))
+     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:source-map</span> opts)
+       (<span class="hljs-name">.start</span> (<span class="hljs-name">Thread.</span> (<span class="hljs-name">bound-fn</span> [] (<span class="hljs-name">read-source-map</span> <span class="hljs-string">"cljs/core.aot.js"</span>)))))
+     (<span class="hljs-name">binding</span> [ana/*unchecked-if* <span class="hljs-literal">false</span>
+               *err* (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> bind-err
+                       (<span class="hljs-name">cond-&gt;</span> *out*
+                         (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> PrintWriter *out*)) (<span class="hljs-name">PrintWriter.</span>))
+                       *err*)
+               ana/*cljs-ns* ana/*cljs-ns*
+               *cljs-verbose* repl-verbose
+               ana/*cljs-warnings*
+               (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [warnings (<span class="hljs-name">opts</span> <span class="hljs-symbol">:warnings</span> <span class="hljs-literal">true</span>)]
+                 (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
+                   ana/*cljs-warnings*
+                   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> warnings)
+                         (<span class="hljs-name"><span class="hljs-builtin-name">false?</span></span> warnings))
+                     (<span class="hljs-name"><span class="hljs-builtin-name">zipmap</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> ana/*cljs-warnings*) (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> warnings))
+                     warnings)
+                   (<span class="hljs-name"><span class="hljs-builtin-name">zipmap</span></span>
+                     [<span class="hljs-symbol">:unprovided</span> <span class="hljs-symbol">:undeclared-var</span>
+                      <span class="hljs-symbol">:undeclared-ns</span> <span class="hljs-symbol">:undeclared-ns-form</span>]
+                     (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">false?</span></span> warnings)
+                               <span class="hljs-literal">false</span>
+                               warn-on-undeclared)))))
+               ana/*cljs-static-fns* static-fns
+               *repl-opts* opts]
+       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [env {<span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span> <span class="hljs-symbol">:locals</span> {}}
+             special-fns (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> default-special-fns special-fns)
+             is-special-fn? (<span class="hljs-name">set</span> (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> special-fns))
+             request-prompt (<span class="hljs-name">Object.</span>)
+             request-exit (<span class="hljs-name">Object.</span>)
+             opts (<span class="hljs-name">comp/with-core-cljs</span> opts
+                    (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> []
+                      (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
+                        (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [merge-opts (<span class="hljs-symbol">:merge-opts</span> (<span class="hljs-name">-setup</span> repl-env opts))]
+                          (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> opts merge-opts)
+                          opts)
+                        (<span class="hljs-name">catch</span> Throwable e
+                          (<span class="hljs-name">caught</span> e repl-env opts)
+                          opts))))
+             opts (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:libs</span> opts) (<span class="hljs-symbol">:foreign-libs</span> opts))
+                    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [opts (<span class="hljs-name">cljsc/process-js-modules</span> opts)]
+                      (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* assoc <span class="hljs-symbol">:js-dependency-index</span> (<span class="hljs-name">deps/js-dependency-index</span> opts))
+                      opts)
+                    opts)
+             init (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> init
+                      #(<span class="hljs-name">evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
+                         (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
+                           `(~'ns ~'cljs.user
+                              (<span class="hljs-symbol">:require</span> ~@repl-requires))
+                           {<span class="hljs-symbol">:line</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:column</span> <span class="hljs-number">1</span>})
+                         identity opts))
+             read-eval-print
+             (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> []
+               (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [input (<span class="hljs-name">binding</span> [*ns* (<span class="hljs-name"><span class="hljs-builtin-name">create-ns</span></span> ana/*cljs-ns*)
+                                     reader/resolve-symbol ana/resolve-symbol
+                                     reader/*data-readers* tags/*cljs-data-readers*
+                                     reader/*alias-map*
+                                     (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> merge
+                                       ((<span class="hljs-name"><span class="hljs-builtin-name">juxt</span></span> <span class="hljs-symbol">:requires</span> <span class="hljs-symbol">:require-macros</span>)
+                                         (<span class="hljs-name">ana/get-namespace</span> ana/*cljs-ns*)))]
+                             (<span class="hljs-name"><span class="hljs-builtin-name">read</span></span> request-prompt request-exit))]
+                 (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> ({request-exit request-exit
+                       <span class="hljs-symbol">:cljs/quit</span> request-exit
+                       request-prompt request-prompt} input)
+                   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq?</span></span> input) (<span class="hljs-name">is-special-fn?</span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> input)))
+                     (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
+                       ((<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> special-fns (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> input)) repl-env env input opts)
+                       (<span class="hljs-name">print</span> <span class="hljs-literal">nil</span>))
+                     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [value (<span class="hljs-name"><span class="hljs-builtin-name">eval</span></span> repl-env env input opts)]
+                       (<span class="hljs-name">print</span> value))))))]
+         (<span class="hljs-name">comp/with-core-cljs</span> opts
+           (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> []
+             (<span class="hljs-name">binding</span> [*repl-opts* opts]
+               (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
+                 (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> analyze-path
+                   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> analyze-path)
+                     (<span class="hljs-name">run!</span> #(<span class="hljs-name">analyze-source</span> % opts) analyze-path)
+                     (<span class="hljs-name">analyze-source</span> analyze-path opts)))
+                 (<span class="hljs-name">init</span>)
+                 (<span class="hljs-name">catch</span> Throwable e
+                   (<span class="hljs-name">caught</span> e repl-env opts)))
+               (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [src (<span class="hljs-symbol">:watch</span> opts)]
+                 (<span class="hljs-name">.start</span>
+                   (<span class="hljs-name">Thread.</span>
+                     ((<span class="hljs-name">ns-resolve</span> 'clojure.core 'binding-conveyor-fn)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> []
+                         (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [log-file (<span class="hljs-name">io/file</span> (<span class="hljs-name">util/output-directory</span> opts) <span class="hljs-string">"watch.log"</span>)]
+                           (<span class="hljs-name">err-out</span> (<span class="hljs-name">println</span> <span class="hljs-string">"Watch compilation log available at:"</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> log-file)))
+                           (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
+                             (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [log-out (<span class="hljs-name">FileWriter.</span> log-file)]
+                               (<span class="hljs-name">binding</span> [*err* log-out
+                                         *out* log-out]
+                                 (<span class="hljs-name">cljsc/watch</span> src (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> opts <span class="hljs-symbol">:watch</span>)
+                                   env/*compiler* done?)))
+                             (<span class="hljs-name">catch</span> Throwable e
+                               (<span class="hljs-name">caught</span> e repl-env opts)))))))))
+               <span class="hljs-comment">;; let any setup async messages flush</span>
+               (<span class="hljs-name">Thread/sleep</span> <span class="hljs-number">50</span>)
+               (<span class="hljs-name">binding</span> [*in* (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> (<span class="hljs-symbol">:source-map-inline</span> opts))
+                                *in*
+                                (<span class="hljs-name">reader</span>))]
+                 (<span class="hljs-name">quit-prompt</span>)
+                 (<span class="hljs-name">prompt</span>)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">flush</span></span>)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> []
+                   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span>
+                     (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
+                       (<span class="hljs-name">identical?</span> (<span class="hljs-name">read-eval-print</span>) request-exit)
+                       (<span class="hljs-name">catch</span> Throwable e
+                         (<span class="hljs-name">caught</span> e repl-env opts)
+                         <span class="hljs-literal">nil</span>))
+                     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">need-prompt</span>)
+                       (<span class="hljs-name">prompt</span>)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">flush</span></span>))
+                     (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span>))))))))
+       (<span class="hljs-name"><span class="hljs-builtin-name">reset!</span></span> done? <span class="hljs-literal">true</span>)
+       (<span class="hljs-name">-tear-down</span> repl-env)))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.repl/replSTAR.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

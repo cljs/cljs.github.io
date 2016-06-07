@@ -1,0 +1,149 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.core/RedNode</h1><table><tr><td>type</td><td>Added in 0.0-1211</td></tr></table><ul><li><code>(RedNode. key val left right __hash)</code></li></ul><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/cljs/cljs/core.cljs#L7550-L7698">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> RedNode [key val left right ^<span class="hljs-symbol">:mutable</span> __hash]
+  Object
+  (<span class="hljs-name">add-left</span> [node ins]
+    (<span class="hljs-name">RedNode.</span> key val ins right <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">add-right</span> [node ins]
+    (<span class="hljs-name">RedNode.</span> key val left ins <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">remove-left</span> [node del]
+    (<span class="hljs-name">RedNode.</span> key val del right <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">remove-right</span> [node del]
+    (<span class="hljs-name">RedNode.</span> key val left del <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">blacken</span> [node]
+    (<span class="hljs-name">BlackNode.</span> key val left right <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">redden</span> [node]
+    (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"red-black tree invariant violation"</span>)))
+
+  (<span class="hljs-name">balance-left</span> [node parent]
+    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+      (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> RedNode left)
+      (<span class="hljs-name">RedNode.</span> key val
+                (<span class="hljs-name">.blacken</span> left)
+                (<span class="hljs-name">BlackNode.</span> (<span class="hljs-name">.-key</span> parent) (<span class="hljs-name">.-val</span> parent) right (<span class="hljs-name">.-right</span> parent) <span class="hljs-literal">nil</span>)
+                <span class="hljs-literal">nil</span>)
+
+      (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> RedNode right)
+      (<span class="hljs-name">RedNode.</span> (<span class="hljs-name">.-key</span> right) (<span class="hljs-name">.-val</span> right)
+                (<span class="hljs-name">BlackNode.</span> key val left (<span class="hljs-name">.-left</span> right) <span class="hljs-literal">nil</span>)
+                (<span class="hljs-name">BlackNode.</span> (<span class="hljs-name">.-key</span> parent) (<span class="hljs-name">.-val</span> parent)
+                            (<span class="hljs-name">.-right</span> right)
+                            (<span class="hljs-name">.-right</span> parent)
+                            <span class="hljs-literal">nil</span>)
+                <span class="hljs-literal">nil</span>)
+
+      <span class="hljs-symbol">:else</span>
+      (<span class="hljs-name">BlackNode.</span> (<span class="hljs-name">.-key</span> parent) (<span class="hljs-name">.-val</span> parent) node (<span class="hljs-name">.-right</span> parent) <span class="hljs-literal">nil</span>)))
+
+  (<span class="hljs-name">balance-right</span> [node parent]
+    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+      (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> RedNode right)
+      (<span class="hljs-name">RedNode.</span> key val
+                (<span class="hljs-name">BlackNode.</span> (<span class="hljs-name">.-key</span> parent) (<span class="hljs-name">.-val</span> parent)
+                            (<span class="hljs-name">.-left</span> parent)
+                            left
+                            <span class="hljs-literal">nil</span>)
+                (<span class="hljs-name">.blacken</span> right)
+                <span class="hljs-literal">nil</span>)
+
+      (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> RedNode left)
+      (<span class="hljs-name">RedNode.</span> (<span class="hljs-name">.-key</span> left) (<span class="hljs-name">.-val</span> left)
+                (<span class="hljs-name">BlackNode.</span> (<span class="hljs-name">.-key</span> parent) (<span class="hljs-name">.-val</span> parent)
+                            (<span class="hljs-name">.-left</span> parent)
+                            (<span class="hljs-name">.-left</span> left)
+                            <span class="hljs-literal">nil</span>)
+                (<span class="hljs-name">BlackNode.</span> key val (<span class="hljs-name">.-right</span> left) right <span class="hljs-literal">nil</span>)
+                <span class="hljs-literal">nil</span>)
+
+      <span class="hljs-symbol">:else</span>
+      (<span class="hljs-name">BlackNode.</span> (<span class="hljs-name">.-key</span> parent) (<span class="hljs-name">.-val</span> parent) (<span class="hljs-name">.-left</span> parent) node <span class="hljs-literal">nil</span>)))
+
+  (<span class="hljs-name">replace</span> [node key val left right]
+    (<span class="hljs-name">RedNode.</span> key val left right <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">kv-reduce</span> [node f init]
+    (<span class="hljs-name">tree-map-kv-reduce</span> node f init))
+
+  (<span class="hljs-name">indexOf</span> [coll x]
+    (<span class="hljs-name">-indexOf</span> coll x <span class="hljs-number">0</span>))
+  (<span class="hljs-name">indexOf</span> [coll x start]
+    (<span class="hljs-name">-indexOf</span> coll x start))
+  (<span class="hljs-name">lastIndexOf</span> [coll x]
+    (<span class="hljs-name">-lastIndexOf</span> coll x (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> coll)))
+  (<span class="hljs-name">lastIndexOf</span> [coll x start]
+    (<span class="hljs-name">-lastIndexOf</span> coll x start))
+
+  IMapEntry
+  (<span class="hljs-name">-key</span> [node] key)
+  (<span class="hljs-name">-val</span> [node] val)
+
+  IHash
+  (<span class="hljs-name">-hash</span> [coll] (<span class="hljs-name">caching-hash</span> coll hash-ordered-coll __hash))
+
+  IEquiv
+  (<span class="hljs-name">-equiv</span> [coll other] (<span class="hljs-name">equiv-sequential</span> coll other))
+
+  IMeta
+  (<span class="hljs-name">-meta</span> [node] <span class="hljs-literal">nil</span>)
+
+  IWithMeta
+  (<span class="hljs-name">-with-meta</span> [node meta]
+    (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> [key val] meta))
+
+  IStack
+  (<span class="hljs-name">-peek</span> [node] val)
+
+  (<span class="hljs-name">-pop</span> [node] [key])
+
+  ICollection
+  (<span class="hljs-name">-conj</span> [node o] [key val o])
+
+  IEmptyableCollection
+  (<span class="hljs-name">-empty</span> [node] [])
+
+  ISequential
+  ISeqable
+  (<span class="hljs-name">-seq</span> [node] (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> key val))
+
+  ICounted
+  (<span class="hljs-name">-count</span> [node] <span class="hljs-number">2</span>)
+
+  IIndexed
+  (<span class="hljs-name">-nth</span> [node n]
+    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">0</span>) key
+          (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">1</span>) val
+          <span class="hljs-symbol">:else</span>    <span class="hljs-literal">nil</span>))
+
+  (<span class="hljs-name">-nth</span> [node n not-found]
+    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">0</span>) key
+          (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">1</span>) val
+          <span class="hljs-symbol">:else</span>    not-found))
+
+  ILookup
+  (<span class="hljs-name">-lookup</span> [node k] (<span class="hljs-name">-nth</span> node k <span class="hljs-literal">nil</span>))
+  (<span class="hljs-name">-lookup</span> [node k not-found] (<span class="hljs-name">-nth</span> node k not-found))
+
+  IAssociative
+  (<span class="hljs-name">-assoc</span> [node k v]
+    (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> [key val] k v))
+
+  IVector
+  (<span class="hljs-name">-assoc-n</span> [node n v]
+    (<span class="hljs-name">-assoc-n</span> [key val] n v))
+
+  IReduce
+  (<span class="hljs-name">-reduce</span> [node f]
+    (<span class="hljs-name">ci-reduce</span> node f))
+
+  (<span class="hljs-name">-reduce</span> [node f start]
+    (<span class="hljs-name">ci-reduce</span> node f start))
+
+  IFn
+  (<span class="hljs-name">-invoke</span> [node k]
+    (<span class="hljs-name">-lookup</span> node k))
+
+  (<span class="hljs-name">-invoke</span> [node k not-found]
+    (<span class="hljs-name">-lookup</span> node k not-found)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/RedNode.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
