@@ -1,4 +1,34 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 14 Jun 2016 11:42:59 GMT</pubDate><lastBuildDate>Tue, 14 Jun 2016 11:42:59 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.36 - cljs.spec fixes & performance enhancements</title><description>&lt;p&gt;This release fixes a cljs.spec bug around instrumented multi-arity
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 18 Jun 2016 04:03:18 GMT</pubDate><lastBuildDate>Sat, 18 Jun 2016 04:03:18 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
+addresses an issue with Transit analysis caching, includes fixes for
+cljs.spec support under bootstrapped, bumps the Closure library
+dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1648&quot;&gt;CLJS-1648&lt;/a&gt;: Getting Source Info into ex-info data for Analysis Errors&lt;/li&gt;
+&lt;li&gt;cljs.spec updated to Clojure 1.9.0-alpha7 changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;bump Google Closure Library dep&lt;/li&gt;
+&lt;li&gt;AOT cljs.spec nses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1679&quot;&gt;CLJS-1679&lt;/a&gt;: Self-host: Incorporate spec tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1680&quot;&gt;CLJS-1680&lt;/a&gt;: Self-host: Don&amp;#39;t require items no longer provided by Closure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1654&quot;&gt;CLJS-1654&lt;/a&gt;: cljs.spec: var name in s/fdef non-conformance&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1655&quot;&gt;CLJS-1655&lt;/a&gt;: cljs.spec: conformer docstring indicates :clojure.spec/invalid&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1656&quot;&gt;CLJS-1656&lt;/a&gt;: Self-host: cljs.spec: speced-vars* fn not resolving&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1661&quot;&gt;CLJS-1661&lt;/a&gt;: cljs.spec: non-spec&amp;#39;ed fn var printing&lt;/li&gt;
+&lt;li&gt;compute read/write opts for transit if possible, handle JSValue&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1660&quot;&gt;CLJS-1660&lt;/a&gt;: cljs.spec: Always return var from instrument / unstrument&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1671&quot;&gt;CLJS-1671&lt;/a&gt;: Bad cljs.spec interactive instrumentation session&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1664&quot;&gt;CLJS-1664&lt;/a&gt;: The filename aux.cljs is a problem on windows.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1667&quot;&gt;CLJS-1667&lt;/a&gt;: bad describe* for and-spec-impl&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1699&quot;&gt;CLJS-1699&lt;/a&gt;: Self-host: s/fdef ns-qualify &lt;em&gt;ns&lt;/em&gt; name field access&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Fri, 17 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-06-17-r1.9.76</link></item><item><title>1.9.36 - cljs.spec fixes & performance enhancements</title><description>&lt;p&gt;This release fixes a cljs.spec bug around instrumented multi-arity
 fns. It also includes various fixes and performance enhancements from
 Clojure. Another performance related change is writing out analysis
 caches as Transit if transit-clj is available. This is automatic and
@@ -222,31 +252,4 @@ includes many small enhancements and fixes.&lt;/p&gt;
 preservation regression in clojure.walk.&lt;/p&gt;
 </description><pubDate>Sat, 29 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-08-29-r1.7.122-minor-fixes</link></item><item><title>1.7.58 (Windows fix)</title><description>&lt;p&gt;Fixes Windows regression around Closure-style library support when the library
 conforms to the classpath.&lt;/p&gt;
-</description><pubDate>Wed, 05 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-08-05-r1.7.58-windows-fix</link></item><item><title>1.7.48</title><description>&lt;p&gt;This release updates the Google Closure Compiler and Library
-dependencies to the latest. It also addresses a REPL regression, adds
-a goog-define helper macro for goog.define interop, and includes
-various other small fixes, changes and enhancements.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h2 id=&quot;1-7-48&quot;&gt;1.7.48&lt;/h2&gt;
-&lt;h2 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;provide goog-define macro to support proper use of goog.define&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1177&quot;&gt;CLJS-1177&lt;/a&gt;: A compiler support for non-Closure transforms (JSX, etc)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1296&quot;&gt;CLJS-1296&lt;/a&gt;: browser REPL should queue prints before connection then flush after connection&lt;/li&gt;
-&lt;li&gt;add :dump-core compiler option for cljs.js config&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1386&quot;&gt;CLJS-1386&lt;/a&gt;: Symbols should be added to the constants table&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;changes&quot;&gt;Changes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Bump Closure Compiler dependency&lt;/li&gt;
-&lt;li&gt;Bump Closure Library dependency&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1392&quot;&gt;CLJS-1392&lt;/a&gt;: cljs.repl/source regression&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1391&quot;&gt;CLJS-1391&lt;/a&gt;: Error when building for target :nodejs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1388&quot;&gt;CLJS-1388&lt;/a&gt;: Stacktrace element handling for :output-dir w/o file/line/column&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1311&quot;&gt;CLJS-1311&lt;/a&gt;: Improve error reporting when converting JavaScript modules&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1387&quot;&gt;CLJS-1387&lt;/a&gt;: support local Closure libs that conform to classpath&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Wed, 05 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-08-05-r1.7.48</link></item></channel></rss>
+</description><pubDate>Wed, 05 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-08-05-r1.7.58-windows-fix</link></item></channel></rss>

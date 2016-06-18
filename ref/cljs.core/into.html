@@ -2,7 +2,7 @@
 &quot;added&quot; using <code>conj</code>.</p>
 <p>A transducer may be supplied as <code>xform</code>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/ref/cljs.core/conj">cljs.core/conj</a></li></ul><hr />Source docstring:<pre><code>Returns a new coll consisting of to-coll with all of the items of
-from-coll conjoined. A transducer may be supplied.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/cljs/cljs/core.cljs#L4617-L4629">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> into
+from-coll conjoined. A transducer may be supplied.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.76/src/main/cljs/cljs/core.cljs#L4720-L4732">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> into
   ([to from]
      (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> to)
        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">implements?</span> IEditableCollection to)

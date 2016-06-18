@@ -13,7 +13,7 @@
 <span class="hljs-comment">;;=&gt; ()</span>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/ref/cljs.core/next">cljs.core/next</a></li><li><a href="/ref/cljs.core/first">cljs.core/first</a></li><li><a href="/ref/cljs.core/drop">cljs.core/drop</a></li><li><a href="/ref/cljs.core/pop">cljs.core/pop</a></li></ul><hr />Source docstring:<pre><code>Returns a possibly empty seq of the items after the first. Calls seq on its
-argument.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.36/src/main/cljs/cljs/core.cljs#L1125-L1136">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^seq</span> rest
+argument.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.76/src/main/cljs/cljs/core.cljs#L1127-L1138">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^seq</span> rest
   [coll]
   (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> coll)
     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">implements?</span> ISeq coll)
