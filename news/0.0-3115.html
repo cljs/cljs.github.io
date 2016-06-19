@@ -1,0 +1,42 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>0.0-3115</h1><p>Mar 16, 2015 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/e3gOEUJlkMc/PATUU2JaBl4J">on Google Groups</a></p><article><p>This release is a bugfix release addressing several long outstanding
+issues as well as a number of problems that cropped up around improved
+REPLs and compile times.</p>
+<p>As usual feedback welcome!</p>
+<h2 id="0-0-3115">0.0-3115</h2>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-806">CLJS-806</a>: support ^:const</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1115">CLJS-1115</a>: Reusable repl-bootstrap! fn</li>
+</ul>
+<h3 id="changes">Changes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-667">CLJS-667</a>: validate extend-type and extend-protocol shape</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1112">CLJS-1112</a>: :repl-requires option for REPL evaluation environment</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1111">CLJS-1111</a>: browser REPL should have no side effects until -setup</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1085">CLJS-1085</a>: Allow to pass test environment to cljs.test/run-all-tests</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-867">CLJS-867</a>: extend-type with Object methods requires multi-arity style definition</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1118">CLJS-1118</a>: cljs.repl/doc support for protocols</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-889">CLJS-889</a>: re-pattern works on strings containing \u2028 or \u2029</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-109">CLJS-109</a>: Compiler errors/warnings should be displayed when cljs namespace &#39;package&#39; names start with an unacceptable javascript symbol</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-891">CLJS-891</a>: Defs in &quot;parent&quot; namespaces clash with &quot;child&quot; namespaces with the same name?</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-813">CLJS-813</a>: Warn about reserved JS keyword usage in namespace names</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-876">CLJS-876</a>: merged sourcemap doesn&#39;t account for output-wrapper</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1062">CLJS-1062</a>: Incorrect deftype/defrecord definition leads to complex error messages</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1120">CLJS-1120</a>: analyze-deps does not appear to work when analyzing analysis caches</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1119">CLJS-1119</a>: constant table emission logic is incorrect</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-977">CLJS-977</a>: implement IKVReduce in Subvec</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1117">CLJS-1117</a>: Dependencies in JARs don&#39;t use cached analysis</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-689">CLJS-689</a>: js/-Infinity munges to _Infinity</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1114">CLJS-1114</a>: browser REPL script loading race condition</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1110">CLJS-1110</a>: cljs.closure/watch needs to print errors to <em>err</em></li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1101">CLJS-1101</a> cljs.test might throw when trying to detect file-and-line</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1090">CLJS-1090</a>: macros imported from clojure.core missing docs</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1108">CLJS-1108</a>: :modules :output-to needs to create directories</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1095">CLJS-1095</a>: UUID to implement IComparable</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1096">CLJS-1096</a>: Update js/Date -equiv and -compare semantics based on Date.valueOf() value</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1102">CLJS-1102</a> clojure.test should print column number of exception when available</li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

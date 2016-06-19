@@ -1,0 +1,91 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>0.0-2719 - JavaScript Dependencies</h1><p>Jan 24, 2015 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/pJ_EYHkYAUs/mLi8XfiQxZsJ">on Google Groups</a></p><article><p>ClojureScript is not an island, like Clojure on the JVM, ClojureScript
+embraces the many benefits provided by the host. However this goal
+has been hampered by another goal - the compilation stragey. Google
+Closure Compiler offers superior optimization and minification for
+ClojureScript while simultaneously making it considerably more
+difficult to integrate non-Closure compatible libraries. Using popular
+libraries like jQuery, React or D3 is an error prone process: &quot;which
+extern did I forget?&quot;, &quot;which script tag did I miss for development?&quot;,
+&quot;are these script tags in dependency order?&quot;.</p>
+<p>No more. 0.0-2719 delivers full support for non-Closure compatible
+libraries through some less known features that have been lurking
+around for almost three years - <code>deps.cljs</code> and the :foreign-libs
+compiler option.</p>
+<p><code>deps.cljs</code> is a simple EDN file provided at the root of a JAR that
+describes additional build information for the ClojureScript
+compiler. For example here is the <code>deps.cljs</code> for the React JAR I
+maintain:</p>
+<p>{
+ :foreign-libs [{:file     &quot;react/react.js&quot;
+                 :file-min &quot;react/react.min.js&quot;
+                 :provides [&quot;com.facebook.React&quot;]}
+                {:file     &quot;react/react_with_addons.js&quot;
+                 :file-min &quot;react/react_with_addons.min.js&quot;
+                 :provides [&quot;com.facebook.ReactWithAddons&quot;]}]
+ :externs [&quot;react/externs/react.js&quot;]
+}</p>
+<p>This file provides all the information ClojureScript needs to
+correctly manage the foreign dependency for you under all compilation
+modes and REPLs.</p>
+<p>In a REPL:</p>
+<p>   cljs.user&gt; (require &#39;com.facebook.React)
+   cljs.user&gt; (. js/React 
+                (renderToString 
+                  (. js/React (DOM.div nil &quot;Hello!&quot;))))</p>
+<p>In your project:</p>
+<p>   (ns foo.bar
+     (:require com.facebook.React))</p>
+<p>   (enable-console-print!)</p>
+<p>   (println
+     (. js/React
+       (renderToString
+         (. js/React (DOM.div nil &quot;Hello!&quot;)))))</p>
+<p>The above works under all compilation modes. There is no need to
+include React as a script tag under development, there is no need to put
+script tags in dependency order, there is no need to add React to
+:preamble under :advanced, and there is no need to explicitly provide
+:externs.</p>
+<p>All that is required is that JavaScript libraries be packaged in JARs
+with a <code>deps.cljs</code>.</p>
+<p>Some of you might reasonably ask why not a tool like Bower for this
+instead?  Bower requires an additional dependency on Node.js. While
+ClojureScript embraces Node.js as a useful target it is not a
+requirement to be productive. Bower manages dependencies, but in the
+Clojure world we have already embraced Maven for this task and have
+done the same for ClojureScript. Finally Bower does not address the
+problem of loading libraries at runtime. This is challenging to do -
+some JavaScript libraries adopt CommonJS, some AMD, and the most
+popular ones make no assumptions at all allowing users to simply use
+script tags as they have done for nearly two decades. The above
+solution addresses the issue for all ClojureScript users by
+eliminating paralysis of choice. Finally none of the above
+precludes Bower usage in any way whatsoever.</p>
+<p>This new feature addresses a long outstanding pain point with
+ClojureScript development. All that is required is that we take the
+time to properly package up the most popular JavaScript libraries that
+fill gaps not currently served by exising ClojureScript and Google
+Closure Library functionality.</p>
+<p>Please kick the tires and feedback is most welcome. This feature
+touched many bits of code so there are likely to be wrinkles and we want
+to get these ironed out as quickly as possible.</p>
+<h2 id="0-0-2719">0.0-2719</h2>
+<h3 id="changes">Changes</h3>
+<ul>
+<li>Full support for foreign dependencies</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-985">CLJS-985</a>: make ex-info not lose stack information</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-984">CLJS-984</a>: Update Node.js REPL support to use public API</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-963">CLJS-963</a>: do not bother computing goog/dep.js under :none</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-982">CLJS-982</a>: Var derefing should respect Clojure semantics</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-980">CLJS-980</a>: ClojureScript REPL stacktraces overrun prompt in many cases</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-979">CLJS-979</a>: ClojureScript REPL needs error handling for the special functions</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-971">CLJS-971</a>: :reload should work for require-macros special fn</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-980">CLJS-980</a>: ClojureScript REPL stacktraces overrun prompt in many cases</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-979">CLJS-979</a>: ClojureScript REPL needs error handling for the special functions</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-971">CLJS-971</a>: :reload should work for require-macros special fn</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-936">CLJS-936</a>: Multi arity bitwise operators</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-962">CLJS-962</a>: fix inconsistent hashing of empty collections</li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

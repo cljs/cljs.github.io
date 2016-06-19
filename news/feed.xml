@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 19 Jun 2016 04:09:06 GMT</pubDate><lastBuildDate>Sun, 19 Jun 2016 04:09:06 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 19 Jun 2016 17:52:05 GMT</pubDate><lastBuildDate>Sun, 19 Jun 2016 17:52:05 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
 addresses an issue with Transit analysis caching, includes fixes for
 cljs.spec support under bootstrapped, bumps the Closure library
 dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
@@ -28,7 +28,7 @@ dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1667&quot;&gt;CLJS-1667&lt;/a&gt;: bad describe* for and-spec-impl&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1699&quot;&gt;CLJS-1699&lt;/a&gt;: Self-host: s/fdef ns-qualify &lt;em&gt;ns&lt;/em&gt; name field access&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 17 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-06-17-r1.9.76</link></item><item><title>1.9.36 - cljs.spec fixes & performance enhancements</title><description>&lt;p&gt;This release fixes a cljs.spec bug around instrumented multi-arity
+</description><pubDate>Fri, 17 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.76</link></item><item><title>1.9.36 - cljs.spec fixes & performance enhancements</title><description>&lt;p&gt;This release fixes a cljs.spec bug around instrumented multi-arity
 fns. It also includes various fixes and performance enhancements from
 Clojure. Another performance related change is writing out analysis
 caches as Transit if transit-clj is available. This is automatic and
@@ -52,7 +52,7 @@ REPLs.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1663&quot;&gt;CLJS-1663&lt;/a&gt;: Calling instrumented multi-arity function causes exception&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1650&quot;&gt;CLJS-1650&lt;/a&gt;: &lt;code&gt;cljs.reader/read-map&lt;/code&gt; now returns array-map/hash-map based on the size of the sequence.&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 03 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-06-03-r1.9.36-cljs.spec-fixes-and-performance-enhancements</link></item><item><title>1.9.14 - clojure.spec port</title><description>&lt;p&gt;This release includes a complete and faithful port of clojure.spec to
+</description><pubDate>Fri, 03 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.36</link></item><item><title>1.9.14 - clojure.spec port</title><description>&lt;p&gt;This release includes a complete and faithful port of clojure.spec to
 ClojureScript. The functionality resides in the new cljs.spec
 namespace. All features present in Clojure 1.9.0-alpha4 are
 implemented, including REPL support, testing support and macro
@@ -71,7 +71,7 @@ checking.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1629&quot;&gt;CLJS-1629&lt;/a&gt;: Fix warning about duplicate test-pr-str&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1637&quot;&gt;CLJS-1637&lt;/a&gt;: Missing docstrings for a few vars&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Wed, 01 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-06-01-r1.9.14-clojure.spec-port</link></item><item><title>1.8.51</title><description>&lt;p&gt;This release updates the Closure Compiler and tools.reader dependencies, fixes a race condition with :parallel-build, improves JS module integration, and includes a number of enhancements and fixes around optional self hosting. A big thanks to everyone who contributed!&lt;/p&gt;
+</description><pubDate>Wed, 01 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.14</link></item><item><title>1.8.51</title><description>&lt;p&gt;This release updates the Closure Compiler and tools.reader dependencies, fixes a race condition with :parallel-build, improves JS module integration, and includes a number of enhancements and fixes around optional self hosting. A big thanks to everyone who contributed!&lt;/p&gt;
 &lt;p&gt;As always feedback welcome.&lt;/p&gt;
 &lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
 &lt;ul&gt;
@@ -92,7 +92,7 @@ checking.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1617&quot;&gt;CLJS-1617&lt;/a&gt;: inlined &lt;code&gt;list&lt;/code&gt; evaluation order&lt;/li&gt;
 &lt;li&gt;:parallel-build race condition&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Mon, 25 Apr 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-04-25-r1.8.51</link></item><item><title>1.8.40</title><description>&lt;p&gt;This release addresses some minor unintentional interactions with 3rd party ClojureScript tooling like Figwheel.&lt;/p&gt;
+</description><pubDate>Mon, 25 Apr 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.8.51</link></item><item><title>1.8.40</title><description>&lt;p&gt;This release addresses some minor unintentional interactions with 3rd party ClojureScript tooling like Figwheel.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;
@@ -100,7 +100,7 @@ checking.&lt;/p&gt;
 &lt;li&gt;:warning-handlers missing for known compiler options&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1592&quot;&gt;CLJS-1592&lt;/a&gt;: Self-host: Robustness for core tests&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Mon, 28 Mar 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-03-28-r1.8.40</link></item><item><title>1.8.34</title><description>&lt;p&gt;There are many minor fixes in this release around bootstrapped
+</description><pubDate>Mon, 28 Mar 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.8.40</link></item><item><title>1.8.34</title><description>&lt;p&gt;There are many minor fixes in this release around bootstrapped
 ClojureScript. This release also fixes a subtle bug with the
 new :parallel-build feature.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
@@ -151,7 +151,46 @@ new :parallel-build feature.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1547&quot;&gt;CLJS-1547&lt;/a&gt;: Wrong output encoding when compile with goog.LOCALE&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1546&quot;&gt;CLJS-1546&lt;/a&gt;: cljs.core/run! does not always return nil&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 18 Mar 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2016-03-18-r1.8.34</link></item><item><title>1.7.170 - Enhanced Build Pipeline</title><description>&lt;p&gt;This release includes a major refactor of the build pipeline thanks to
+</description><pubDate>Fri, 18 Mar 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.8.34</link></item><item><title>1.7.228 - parallel builds!</title><description>&lt;p&gt;The primary feature of this release is a new experimental compiler
+flag - :parallel-build. If set to true the compiler will leverage
+multiple threads to compile ClojureScript sources. Users have reported
+signifant gains for cold development and production builds.&lt;/p&gt;
+&lt;p&gt;This release also includes a variety of small fixes and changes.&lt;/p&gt;
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New experimental :parallel-build compiler option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1538&quot;&gt;CLJS-1538&lt;/a&gt;: Type hint some cljs.core predicates&lt;/li&gt;
+&lt;li&gt;Docstring typos&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1463&quot;&gt;CLJS-1463&lt;/a&gt;: (js-debugger) should generate nil-returning expression&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1516&quot;&gt;CLJS-1516&lt;/a&gt;: better error message when calling macros with arity&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1514&quot;&gt;CLJS-1514&lt;/a&gt;: Remove Alpha designators on &lt;em&gt;-watch and ex-&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;clojure.core/require is not thread safe, use locks&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1505&quot;&gt;CLJS-1505&lt;/a&gt;: Add tests to characterize &lt;code&gt;type&lt;/code&gt; and &lt;code&gt;instance?&lt;/code&gt; behavior&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1491&quot;&gt;CLJS-1491&lt;/a&gt;: Check :source-map is boolean when :optimizations :none&lt;/li&gt;
+&lt;li&gt;split sm/encode into 2 functions so JSON generation is optional&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1539&quot;&gt;CLJS-1539&lt;/a&gt;: Parallel compilation fails on circular dependencies&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1425&quot;&gt;CLJS-1425&lt;/a&gt;: self-host: cljs.js/eval cb argument inconsistent with docstring&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1425&quot;&gt;CLJS-1425&lt;/a&gt;: self-host: cljs.js/eval cb argument inconsistent with docstring&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1524&quot;&gt;CLJS-1524&lt;/a&gt;: Bad hashing for Cons&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1487&quot;&gt;CLJS-1487&lt;/a&gt;: Fix handling of timestamp comparison for dependencies in JARs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1498&quot;&gt;CLJS-1498&lt;/a&gt;: Fix parallel build logging&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1477&quot;&gt;CLJS-1477&lt;/a&gt;: Do not attempt to resolve &amp;quot;native&amp;quot; type symbols&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1236&quot;&gt;CLJS-1236&lt;/a&gt;: &lt;code&gt;constructor&lt;/code&gt; needs to munged if used as namespace segment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1330&quot;&gt;CLJS-1330&lt;/a&gt;: self-host: .toString on int needs parens&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1512&quot;&gt;CLJS-1512&lt;/a&gt;: Self-host: arithmetic form meta missing :numeric&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1506&quot;&gt;CLJS-1506&lt;/a&gt;: doc for referred fn displays alias ns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1504&quot;&gt;CLJS-1504&lt;/a&gt;: Self-host: Pseudo-namespace for macro namespace analysis
+metadata&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1483&quot;&gt;CLJS-1483&lt;/a&gt;: Minor DCE regression with advanced compilation mode&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Fri, 08 Jan 2016 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.228</link></item><item><title>1.7.170 - Enhanced Build Pipeline</title><description>&lt;p&gt;This release includes a major refactor of the build pipeline thanks to
 Juho Teperi. This change along with some greatly simplified
 recompilation logic will mean much faster cold build times for larger
 projects (some users have already reported &amp;gt;10X).&lt;/p&gt;
@@ -195,7 +234,7 @@ improved warnings, and minor REPL enhancements.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1466&quot;&gt;CLJS-1466&lt;/a&gt;: Improperly munged output path for GClosure JavaScript&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1467&quot;&gt;CLJS-1467&lt;/a&gt;: Foreign Libraries not included when using :main with :simple or :advanced&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 06 Nov 2015 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-11-06-r1.7.170-enhanced-build-pipeline</link></item><item><title>1.7.145</title><description>&lt;p&gt;This release updates the Google Closure Compiler dependency and 
+</description><pubDate>Fri, 06 Nov 2015 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.170</link></item><item><title>1.7.145</title><description>&lt;p&gt;This release updates the Google Closure Compiler dependency and 
 includes many small enhancements and fixes.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h2 id=&quot;1-7-145&quot;&gt;1.7.145&lt;/h2&gt;
@@ -248,8 +287,6 @@ includes many small enhancements and fixes.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1395&quot;&gt;CLJS-1395&lt;/a&gt;: no trailing semicolons after JS comment&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1394&quot;&gt;CLJS-1394&lt;/a&gt;: reify gensyms can clash&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Tue, 13 Oct 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-10-13-r1.7.145</link></item><item><title>1.7.122 (minor fixes)</title><description>&lt;p&gt;Fixes symbol and keyword clash under advanced compilation. Fixes meta
+</description><pubDate>Tue, 13 Oct 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.145</link></item><item><title>1.7.122 - (minor fixes)</title><description>&lt;p&gt;Fixes symbol and keyword clash under advanced compilation. Fixes meta
 preservation regression in clojure.walk.&lt;/p&gt;
-</description><pubDate>Sat, 29 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-08-29-r1.7.122-minor-fixes</link></item><item><title>1.7.58 (Windows fix)</title><description>&lt;p&gt;Fixes Windows regression around Closure-style library support when the library
-conforms to the classpath.&lt;/p&gt;
-</description><pubDate>Wed, 05 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/2015-08-05-r1.7.58-windows-fix</link></item></channel></rss>
+</description><pubDate>Sat, 29 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.122</link></item></channel></rss>

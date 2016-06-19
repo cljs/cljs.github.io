@@ -1,0 +1,45 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>0.0-2843 - Node, Node, Node</h1><p>Feb 12, 2015 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/9ZrGYIhRzqM/-6GM31HTz7wJ">on Google Groups</a></p><article><p>This release is primarily about outstanding Node.js target
+issues. Further changes have been made to support Node.js v0.12
+specifically around the deprecation of util.print. Node.js target now
+supports :main same as browser based :none builds. Node.js :simple and
+:advanced builds now set goog.global correctly ensuring that
+core.async works properly. The Node.js REPL should now work on slower
+machines. And all of these enhancements have been made with the
+Windows platform in mind.</p>
+<p>We&#39;ve also solidified and documented the new generic source mapping
+infrastructure for custom REPLs. Figwheel and Ambly are already taking
+advantage of this to great effect.</p>
+<p>Printing is now customizable in order to support custom printing in
+Chrome DevTools, there&#39;s some prototype work based on this happening
+here: <a href="https://github.com/binaryage/cljs-devtools-sample">https://github.com/binaryage/cljs-devtools-sample</a>.</p>
+<p>cljs.test now supports macro inference simplifying testing at a REPL.</p>
+<p>Full list of changes, fixes, and enhancements follows.</p>
+<p>Feedback welcome!</p>
+<h2 id="0-0-2843">0.0-2843</h2>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1032">CLJS-1032</a>: Node.js target should support :main</li>
+<li>require cljs.test macro ns in cljs.test to get macro inference goodness</li>
+<li>include :url entries to original sources in mapped stacktraces if it can be determined   from the classpath</li>
+<li>support custom mapped stacktrace printing</li>
+<li>provide data oriented stacktrace mapping api</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1025">CLJS-1025</a>: make REPL source mapping infrastructure generic</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1010">CLJS-1010</a>: Printing hook for cljs-devtools</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1016">CLJS-1016</a>: make &quot;...&quot; marker configurable</li>
+</ul>
+<h3 id="changes">Changes</h3>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-887">CLJS-887</a>: browser repl should serve CSS</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1031">CLJS-1031</a>: Get Closure Compiler over https in the bootstrap script</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li>cljs.nodejscli ns needs to set <code>goog.global</code> when <code>COMPILED</code> is true, this fixes the fundamental issues for ASYNC-110</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-967">CLJS-967</a>: &quot;java.net.ConnectException: Connection refused&quot; when running node repl</li>
+<li>pass relevant source map options in the incremental compile case</li>
+<li>add some missing source-map customization flags to optimized builds</li>
+<li>fix missed Rhino REPL regression, the surrounding REPL infrastructure creates cljs.user for us</li>
+<li>util.print has been deprecated in Node.js v0.12. Switch to console.log in Node.js REPLs.</li>
+<li>change <code>cljs.closure/watch</code> so it correctly watches all subdirectories do not recompile unless changed path is a file with .cljs or .js extension</li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

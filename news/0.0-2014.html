@@ -1,0 +1,40 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>0.0-2014 - source maps, incremental compilation, and internal changes</h1><p>Nov 6, 2013 by David Nolen <a href="https://groups.google.com/d/msg/clojurescript/isf7k35pThA/CXyJr4v4seYJ">on Google Groups</a></p><article><p>There are a number of significant enhancements in this
+release. We finally have relative source maps! This should be big
+for people integrating ClojureScript with existing web
+based workflows.</p>
+<p>Under the hood Chas Emerick has improved how the analyzer works making
+it thread safe. This make the compiler considerably more robust and
+eliminates some race conditions in the browser REPL support.</p>
+<p>Incremental compilation is enhanced both with and without source
+maps. In particular we now tag ClojureScript compiled JavaScript files
+with the version of the compiler used - this should make transitioning
+to a new version of the compiler considerably less frustrating - stale
+files will get compiled.</p>
+<p>For those people using the compiler internals directly you will likely
+encounter breakage. If anyone feels inclined to outline a more stable
+interface to internals please get involved in leading an incremental
+process towards a stable and flexible API for tool builders.</p>
+<p>Enhancements:</p>
+<ul>
+<li>relative source map paths, all original sources will be copied to
+:ouput-dir this should make integrating with web workflow much simpler.</li>
+<li>runtime obtainable compiler version number, <em>clojurescript-version</em> now
+available at runtime as a string</li>
+</ul>
+<p>Bug fixes:</p>
+<ul>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-643">CLJS-643</a>: make the ClojureScript compiler (more) idempotent</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-662">CLJS-662</a>: CLJS files compiled from JARs get lost from source map</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-661">CLJS-661</a>: (try ... (catch :default e ...) ...)</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-627">CLJS-627</a>: Add warnings on function arity problems</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-654">CLJS-654</a>: Quit repljs on ^D, don&#39;t loop on nil</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-659">CLJS-659</a>: tag compiled files with compiler version</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-642">CLJS-642</a>: deftype/record should not emit goog.provide</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-648">CLJS-648</a>: persistent assoc/conj on a transient-created collision node</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-631">CLJS-631</a>: Use ana/namespaces for shadowing vars</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-641">CLJS-641</a>: js* overflow for large inputs</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-645">CLJS-645</a>: parse-ns needs to include &#39;constants-table as a dep</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-646">CLJS-646</a>: single segment namespaces and reify don&#39;t work</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-521">CLJS-521</a>: pass along entire repl environment when loading dependencies</li>
+</ul>
+</article></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
