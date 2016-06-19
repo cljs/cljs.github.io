@@ -1,0 +1,56 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>Infinity</h1><table><tr><td>special symbol</td><td>Added in 0.0-1853</td></tr></table><ul><li><code>Infinity</code></li><li><code>-Infinity</code></li><li><code>+Infinity</code></li></ul><hr /><div><p>The IEEE 754 Floating Point representations of infinity.</p>
+<p><code>Infinity</code> = <code>+Infinity</code> = positive infinity</p>
+<p><code>-Infinity</code> = negative infinity</p>
+</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">Infinity
+;;=&gt; Infinity
+
++Infinity
+;;=&gt; Infinity
+
+-Infinity
+;;=&gt; -Infinity
+</code></pre>
+<p>Math with infinities:</p>
+<pre><code class="lang-clj">(/ <span class="hljs-number">1</span> <span class="hljs-number">0</span>)
+<span class="hljs-comment">;;=&gt; Infinity</span>
+
+(<span class="hljs-name">Math/log</span> <span class="hljs-number">0</span>)
+<span class="hljs-comment">;;=&gt; -Infinity</span>
+
+(<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> <span class="hljs-number">0</span> Infinity)
+<span class="hljs-comment">;;=&gt; NaN</span>
+</code></pre>
+<p>They are equivalent to the JavaScript symbols:</p>
+<pre><code class="lang-clj">js/Infinity
+;;=&gt; Infinity
+
+js/-Infinity
+;;=&gt; -Infinity
+</code></pre>
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/number">syntax/number</a></li><li><a href="/api/syntax/NaN">syntax/NaN</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta1/src/main/clojure/clojure/tools/reader.clj#L303-L329">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
+  [rdr initch]
+  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[line column] (<span class="hljs-name">starting-line-col-info</span> rdr)]
+    (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [token (<span class="hljs-name">read-token</span> rdr initch)]
+      (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> token
+
+        <span class="hljs-comment">;; special symbols</span>
+        <span class="hljs-string">"nil"</span> <span class="hljs-literal">nil</span>
+        <span class="hljs-string">"true"</span> <span class="hljs-literal">true</span>
+        <span class="hljs-string">"false"</span> <span class="hljs-literal">false</span>
+        <span class="hljs-string">"/"</span> '/
+        <span class="hljs-string">"NaN"</span> Double/NaN
+        <span class="hljs-string">"-Infinity"</span> Double/NEGATIVE_INFINITY
+        (<span class="hljs-string">"Infinity"</span> <span class="hljs-string">"+Infinity"</span>) Double/POSITIVE_INFINITY
+
+        (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [p (<span class="hljs-name">parse-symbol</span> token)]
+              (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">p</span> <span class="hljs-number">0</span>) (<span class="hljs-name">p</span> <span class="hljs-number">1</span>))
+                (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> line
+                  (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
+                   (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [file (<span class="hljs-name">get-file-name</span> rdr)]
+                     {<span class="hljs-symbol">:file</span> file})
+                   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[end-line end-column] (<span class="hljs-name">ending-line-col-info</span> rdr)]
+                     {<span class="hljs-symbol">:line</span> line
+                      <span class="hljs-symbol">:column</span> column
+                      <span class="hljs-symbol">:end-line</span> end-line
+                      <span class="hljs-symbol">:end-column</span> end-column})))))
+            (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Invalid token: "</span> token))))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/syntax/Infinity.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

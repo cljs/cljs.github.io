@@ -1,0 +1,77 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.core/clj->js</h1><table><tr><td>function</td><td>Added in 0.0-1552</td></tr></table><ul><li><code>(clj->js x)</code></li></ul><hr /><div><p>Recursively transforms ClojureScript values to JavaScript.</p>
+<table>
+<thead>
+<tr>
+<th>ClojureScript</th>
+<th></th>
+<th>JavaScript</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set</td>
+<td><code>#{}</code></td>
+<td>Array</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>Vector</td>
+<td><code>[]</code></td>
+<td>Array</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>List</td>
+<td><code>()</code></td>
+<td>Array</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>Keyword</td>
+<td><code>:foo</code></td>
+<td>String</td>
+<td><code>&quot;foo&quot;</code></td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td><code>bar</code></td>
+<td>String</td>
+<td><code>&quot;bar&quot;</code></td>
+</tr>
+<tr>
+<td>Map</td>
+<td><code>{}</code></td>
+<td>Object</td>
+<td><code>{}</code></td>
+</tr>
+</tbody>
+</table>
+</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name">clj-&gt;js</span> {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:bar</span> <span class="hljs-number">2</span>})
+<span class="hljs-comment">;;=&gt; #js {:foo 1, :bar 2}</span>
+
+(<span class="hljs-name">clj-&gt;js</span> [<span class="hljs-symbol">:foo</span> <span class="hljs-string">"bar"</span> 'baz])
+<span class="hljs-comment">;;=&gt; #js ["foo" "bar" "baz"]</span>
+
+(<span class="hljs-name">clj-&gt;js</span> [<span class="hljs-number">1</span> {<span class="hljs-symbol">:foo</span> <span class="hljs-string">"bar"</span>} <span class="hljs-number">4</span>])
+<span class="hljs-comment">;;=&gt; #js [1 #js {:foo "bar"} 4]</span>
+</code></pre>
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/js-GTclj">cljs.core/js->clj</a></li></ul><hr />Source docstring:<pre><code>Recursively transforms ClojureScript values to JavaScript.
+sets/vectors/lists become Arrays, Keywords and Symbol become Strings,
+Maps become Objects. Arbitrary keys are encoded to by key->js.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.76/src/main/cljs/cljs/core.cljs#L9674-L9693">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> clj-&gt;js
+   [x]
+   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> x)
+     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">satisfies?</span> IEncodeJS x)
+       (<span class="hljs-name">-clj-&gt;js</span> x)
+       (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+         (<span class="hljs-name"><span class="hljs-builtin-name">keyword?</span></span> x) (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> x)
+         (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> x) (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> x)
+         (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> x) (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [m (<span class="hljs-name">js-obj</span>)]
+                    (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [[k v] x]
+                      (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> m (<span class="hljs-name">key-&gt;js</span> k) (<span class="hljs-name">clj-&gt;js</span> v)))
+                    m)
+         (<span class="hljs-name"><span class="hljs-builtin-name">coll?</span></span> x) (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [arr (<span class="hljs-name">array</span>)]
+                     (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [x (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> clj-&gt;js x)]
+                       (<span class="hljs-name">.push</span> arr x))
+                     arr)
+         <span class="hljs-symbol">:else</span> x))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/clj-GTjs.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

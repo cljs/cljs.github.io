@@ -1,0 +1,94 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/docs">Docs</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li></ul></div></nav><div><h1>cljs.core/defn</h1><table><tr><td>macro</td><td>Added in 0.0-927</td><td><a href="http://clojure.github.io/clojure/branch-master/clojure.core-api.html#clojure.core/defn"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.core/defn</a></td></tr></table><ul><li><code>(defn name doc-string? attr-map? [params*] prepost-map? body)</code></li><li><code>(defn name doc-string? attr-map? ([params*] prepost-map? body) + attr-map?)</code></li></ul><hr /><div><p>Defines a function.</p>
+<p><code>doc-string?</code> is an optional documentation string.</p>
+<p><code>attr-map?</code> is an optional map of <a href="http://clojure.org/metadata">metadata</a> to
+attach to the global variable name.</p>
+<p><code>prepost-map?</code> is an optional map with optional keys <code>:pre</code> and <code>:post</code> that
+contain collections of <a href="http://blog.fogus.me/2009/12/21/clojures-pre-and-post/">pre or post conditions</a>
+for the function.</p>
+<table class="code-tbl-9bef6">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Expands To</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><pre>
+(defn foo [a b c]
+  (* a b c))</pre></td>
+      <td><pre>
+(def foo
+  (fn [a b c]
+    (* a b c)))</pre></td></tr></tbody></table></div><hr /><h3>See Also:</h3><ul><li><a href="/api/special/def">special/def</a></li><li><a href="/api/cljs.core/defn-">cljs.core/defn-</a></li><li><a href="/api/cljs.core/defmacro">cljs.core/defmacro</a></li><li><a href="/api/cljs.core/fn">cljs.core/fn</a></li></ul><hr />Source docstring:<pre><code>Same as (def name (core/fn [params* ] exprs*)) or (def
+ name (core/fn ([params* ] exprs*)+)) with any doc-string or attrs added
+ to the var metadata. prepost-map defines a map with optional keys
+ :pre and :post that contain collections of pre or post conditions.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.76/src/main/clojure/cljs/core.cljc#L2879-L2949">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span>
+  <span class="hljs-comment">^{:doc "Same as (def name (core/fn [params* ] exprs*)) or (def
+    name (core/fn ([params* ] exprs*)+)) with any doc-string or attrs added
+    to the var metadata. prepost-map defines a map with optional keys
+    :pre and :post that contain collections of pre or post conditions."
+    :arglists '([name doc-string? attr-map? [params*] prepost-map? body]
+                 [name doc-string? attr-map? ([params*] prepost-map? body)+ attr-map?])}</span>
+  defn (<span class="hljs-name">core/fn</span> defn [&amp;form &amp;env name &amp; fdecl]
+         <span class="hljs-comment">;; Note: Cannot delegate this check to def because of the call to (with-meta name ..)</span>
+         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">core/instance?</span> #?(<span class="hljs-symbol">:clj</span> clojure.lang.Symbol <span class="hljs-symbol">:cljs</span> Symbol) name)
+           <span class="hljs-literal">nil</span>
+           (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
+             #?(<span class="hljs-symbol">:clj</span> (<span class="hljs-name">IllegalArgumentException.</span> <span class="hljs-string">"First argument to defn must be a symbol"</span>)
+                <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"First argument to defn must be a symbol"</span>))))
+         (<span class="hljs-name">core/let</span> [m (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">core/string?</span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> fdecl))
+                        {<span class="hljs-symbol">:doc</span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> fdecl)}
+                        {})
+                    fdecl (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">core/string?</span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> fdecl))
+                            (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> fdecl)
+                            fdecl)
+                    m (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> fdecl))
+                        (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> m (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> fdecl))
+                        m)
+                    fdecl (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> fdecl))
+                            (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> fdecl)
+                            fdecl)
+                    fdecl (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> fdecl))
+                            (<span class="hljs-name">core/list</span> fdecl)
+                            fdecl)
+                    m (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> fdecl))
+                        (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> m (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> fdecl))
+                        m)
+                    fdecl (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> fdecl))
+                            (<span class="hljs-name"><span class="hljs-builtin-name">butlast</span></span> fdecl)
+                            fdecl)
+                    m (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> {<span class="hljs-symbol">:arglists</span> (<span class="hljs-name">core/list</span> 'quote (<span class="hljs-name"><span class="hljs-builtin-name">sigs</span></span> fdecl))} m)
+                    <span class="hljs-comment">;; no support for :inline</span>
+                    <span class="hljs-comment">;m (core/let [inline (:inline m)</span>
+                    <span class="hljs-comment">;             ifn (first inline)</span>
+                    <span class="hljs-comment">;             iname (second inline)]</span>
+                    <span class="hljs-comment">;    ;; same as: (if (and (= 'fn ifn) (not (symbol? iname))) ...)</span>
+                    <span class="hljs-comment">;    (if (if #?(:clj (clojure.lang.Util/equiv 'fn ifn)</span>
+                    <span class="hljs-comment">;               :cljs (= 'fn ifn))</span>
+                    <span class="hljs-comment">;          (if #?(:clj (core/instance? clojure.lang.Symbol iname)</span>
+                    <span class="hljs-comment">;                 :cljs (core/instance? Symbol iname)) false true))</span>
+                    <span class="hljs-comment">;      ;; inserts the same fn name to the inline fn if it does not have one</span>
+                    <span class="hljs-comment">;      (assoc m</span>
+                    <span class="hljs-comment">;        :inline (cons ifn</span>
+                    <span class="hljs-comment">;                  (cons (clojure.lang.Symbol/intern</span>
+                    <span class="hljs-comment">;                          (.concat (.getName ^clojure.lang.Symbol name) "__inliner"))</span>
+                    <span class="hljs-comment">;                    (next inline))))</span>
+                    <span class="hljs-comment">;      m))</span>
+                    m (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> name) (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> name) {}) m)]
+           (<span class="hljs-name">core/cond</span>
+             (<span class="hljs-name">multi-arity-fn?</span> fdecl)
+             (<span class="hljs-name">multi-arity-fn</span> name
+               (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">comp/checking-types?</span>)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> m [<span class="hljs-symbol">:jsdoc</span>] conj <span class="hljs-string">"@param {...*} var_args"</span>)
+                 m) fdecl (<span class="hljs-symbol">:def-emits-var</span> &amp;env))
+
+             (<span class="hljs-name">variadic-fn?</span> fdecl)
+             (<span class="hljs-name">variadic-fn</span> name
+               (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">comp/checking-types?</span>)
+                 (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> m [<span class="hljs-symbol">:jsdoc</span>] conj <span class="hljs-string">"@param {...*} var_args"</span>)
+                 m) fdecl (<span class="hljs-symbol">:def-emits-var</span> &amp;env))
+
+             <span class="hljs-symbol">:else</span>
+             (<span class="hljs-name">core/list</span> 'def (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> name m)
+               <span class="hljs-comment">;;todo - restore propagation of fn name</span>
+               <span class="hljs-comment">;;must figure out how to convey primitive hints to self calls first</span>
+               (<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> `fn fdecl))))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/defn.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
