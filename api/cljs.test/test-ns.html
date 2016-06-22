@@ -3,7 +3,7 @@ Otherwise, calls test-all-vars on the namespace.  'ns' is a
 namespace object or a symbol.
 
 Internally binds *report-counters* to a ref initialized to
-*initial-report-counters*.  </code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.76/src/main/cljs/cljs/test.cljc#L361-L373">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> test-ns
+*initial-report-counters*.  </code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.89/src/main/cljs/cljs/test.cljc#L361-L373">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> test-ns
   ([ns] `(<span class="hljs-name">cljs.test/test-ns</span> (<span class="hljs-name">cljs.test/empty-env</span>) ~ns))
   ([env [quote ns <span class="hljs-symbol">:as</span> form]]
    `(<span class="hljs-name">cljs.test/run-block</span>

@@ -2,7 +2,7 @@
 collection implementing Iterable. For maps, the iterator should
 return map entries whose hash is computed as
   (hash-ordered-coll [k v]).
-See http://clojure.org/data_structures#hash for full algorithms.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.76/src/main/cljs/cljs/core.cljs#L1230-L1240">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^number</span> hash-unordered-coll
+See http://clojure.org/data_structures#hash for full algorithms.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.89/src/main/cljs/cljs/core.cljs#L1230-L1240">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^number</span> hash-unordered-coll
   [coll]
   (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [n <span class="hljs-number">0</span> hash-code <span class="hljs-number">0</span> coll (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> coll)]
     (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> coll)

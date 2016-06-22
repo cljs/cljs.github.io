@@ -1,4 +1,29 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 21 Jun 2016 04:53:56 GMT</pubDate><lastBuildDate>Tue, 21 Jun 2016 04:53:56 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 22 Jun 2016 14:38:28 GMT</pubDate><lastBuildDate>Wed, 22 Jun 2016 14:38:28 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.89 - cljs.spec & :preloads</title><description>&lt;p&gt;This release fixes several cljs.spec issues. It also includes a new
+compiler option - :preloads. This feature is designed to simplify (but
+not limited to) the loading of development time side effects such as
+enabling printing, REPL connections, and browser tool
+integration. With :preloads you may now specify a sequence of
+namespaces as symbols to load in order immediately after cljs.core. This also
+means there&amp;#39;s a path for providing typical boilerplate as documented
+namespaces that users can specify in their dev builds.&lt;/p&gt;
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1688&quot;&gt;CLJS-1688&lt;/a&gt;: :preloads compiler option for loading other entry points prior to :main&lt;/li&gt;
+&lt;li&gt;cljs.spec - support gen overrides by name in addition to path&lt;/li&gt;
+&lt;li&gt;cljs.spec - every and every-kv&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;added bounded-count&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;missing cljs.spec/fn-specs -&amp;gt; cljs.spec/get-spec in cljs.spec.test ns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1687&quot;&gt;CLJS-1687&lt;/a&gt;: Self-host: cljs.spec: inst-in-range? and int-in-range? need qualification&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1668&quot;&gt;CLJS-1668&lt;/a&gt;: cljs.spec: c alias needs expansion in int-in&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Wed, 22 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.89</link></item><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
 addresses an issue with Transit analysis caching, includes fixes for
 cljs.spec support under bootstrapped, bumps the Closure library
 dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
@@ -287,31 +312,4 @@ includes many small enhancements and fixes.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1395&quot;&gt;CLJS-1395&lt;/a&gt;: no trailing semicolons after JS comment&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1394&quot;&gt;CLJS-1394&lt;/a&gt;: reify gensyms can clash&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Tue, 13 Oct 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.145</link></item><item><title>1.7.48</title><description>&lt;p&gt;This release updates the Google Closure Compiler and Library
-dependencies to the latest. It also addresses a REPL regression, adds
-a goog-define helper macro for goog.define interop, and includes
-various other small fixes, changes and enhancements.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h2 id=&quot;1-7-48&quot;&gt;1.7.48&lt;/h2&gt;
-&lt;h2 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;provide goog-define macro to support proper use of goog.define&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1177&quot;&gt;CLJS-1177&lt;/a&gt;: A compiler support for non-Closure transforms (JSX, etc)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1296&quot;&gt;CLJS-1296&lt;/a&gt;: browser REPL should queue prints before connection then flush after connection&lt;/li&gt;
-&lt;li&gt;add :dump-core compiler option for cljs.js config&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1386&quot;&gt;CLJS-1386&lt;/a&gt;: Symbols should be added to the constants table&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;changes&quot;&gt;Changes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Bump Closure Compiler dependency&lt;/li&gt;
-&lt;li&gt;Bump Closure Library dependency&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1392&quot;&gt;CLJS-1392&lt;/a&gt;: cljs.repl/source regression&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1391&quot;&gt;CLJS-1391&lt;/a&gt;: Error when building for target :nodejs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1388&quot;&gt;CLJS-1388&lt;/a&gt;: Stacktrace element handling for :output-dir w/o file/line/column&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1311&quot;&gt;CLJS-1311&lt;/a&gt;: Improve error reporting when converting JavaScript modules&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1387&quot;&gt;CLJS-1387&lt;/a&gt;: support local Closure libs that conform to classpath&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Wed, 05 Aug 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.48</link></item></channel></rss>
+</description><pubDate>Tue, 13 Oct 2015 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.145</link></item></channel></rss>

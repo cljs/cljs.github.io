@@ -4,7 +4,7 @@ false return values will be included.</p>
 <p>Returns a transducer when no collection is provided.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/remove">cljs.core/remove</a></li><li><a href="/api/cljs.core/keep">cljs.core/keep</a></li></ul><hr />Source docstring:<pre><code>Returns a lazy sequence of the items in coll for which
 (pred item) returns true. pred must be free of side-effects.
-Returns a transducer when no collection is provided.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.76/src/main/cljs/cljs/core.cljs#L4660-L4687">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> filter
+Returns a transducer when no collection is provided.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.89/src/main/cljs/cljs/core.cljs#L4664-L4691">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> filter
   ([pred]
     (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [rf]
       (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
