@@ -2,7 +2,7 @@
 fn [stream & args] ... and returns nil unless the stream is nil (meaning
 output to a string) in which case it returns the resulting string.
 
-format-in can be either a control string or a previously compiled format.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.89/src/main/cljs/cljs/pprint.clj#L117-L131">clojurescript:src/main/cljs/cljs/pprint.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> formatter
+format-in can be either a control string or a previously compiled format.</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.93/src/main/cljs/cljs/pprint.clj#L117-L131">clojurescript:src/main/cljs/cljs/pprint.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> formatter
   [format-in]
   `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [format-in# ~format-in
          my-c-c# cljs.pprint/cached-compile

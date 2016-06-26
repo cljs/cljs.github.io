@@ -27,7 +27,7 @@
 js/-Infinity
 ;;=&gt; -Infinity
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/number">syntax/number</a></li><li><a href="/api/syntax/NaN">syntax/NaN</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta1/src/main/clojure/clojure/tools/reader.clj#L303-L329">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/number">number literal</a></li><li><a href="/api/syntax/NaN">NaN</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta1/src/main/clojure/clojure/tools/reader.clj#L303-L329">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
   [rdr initch]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[line column] (<span class="hljs-name">starting-line-col-info</span> rdr)]
     (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [token (<span class="hljs-name">read-token</span> rdr initch)]

@@ -18,6 +18,6 @@ And additional args that control gen
 :gen-into - the default colection to generate into (will be emptied) (default [])
 
 Optionally takes :gen generator-fn, which must be a fn of no args that
-returns a test.check generator</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.89/src/main/cljs/cljs/spec.cljc#L192-L216">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every
+returns a test.check generator</code></pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.93/src/main/cljs/cljs/spec.cljc#L192-L216">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every
   [pred &amp; {<span class="hljs-symbol">:keys</span> [count max-count min-count distinct gen-max gen-into gen] <span class="hljs-symbol">:as</span> opts}]
   `(<span class="hljs-name">cljs.spec/every-impl</span> '~pred ~pred ~(<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> opts <span class="hljs-symbol">:gen</span>) ~gen))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.spec/every.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
