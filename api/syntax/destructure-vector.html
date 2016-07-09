@@ -32,7 +32,7 @@ maps</a>.</p>
 (<span class="hljs-name">foo</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span>] <span class="hljs-number">3</span>)
 <span class="hljs-comment">;;=&gt; 6</span>
 </code></pre>
-</div><hr /><div><p>Destructure vectors can be nested:</p>
+<p>Destructure vectors can be nested:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [[a b] c]
        [[<span class="hljs-number">1</span> <span class="hljs-number">2</span>] <span class="hljs-number">3</span>] ]
   (<span class="hljs-name">println</span> a b c))
@@ -123,4 +123,4 @@ maps</a>.</p>
         (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
           #?(<span class="hljs-symbol">:clj</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> Exception (<span class="hljs-name">core/str</span> <span class="hljs-string">"Unsupported binding key: "</span> (<span class="hljs-name"><span class="hljs-builtin-name">ffirst</span></span> kwbs)))
              <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> js/Error (<span class="hljs-name">core/str</span> <span class="hljs-string">"Unsupported binding key: "</span> (<span class="hljs-name"><span class="hljs-builtin-name">ffirst</span></span> kwbs)))))
-        (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> process-entry [] bents)))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/syntax/destructure-vector.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+        (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> process-entry [] bents)))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/doc/syntax/destructure-vector.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

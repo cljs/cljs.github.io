@@ -6,7 +6,7 @@ index.</p>
 (<span class="hljs-name">amap</span> a i ret (<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> <span class="hljs-number">10</span> (<span class="hljs-name">aget</span> a i)))
 <span class="hljs-comment">;;=&gt; #js [10 20 30]</span>
 </code></pre>
-</div><hr /><div><p>You can also use <code>ret</code> inside the mapped expression if you want to use the
+<p>You can also use <code>ret</code> inside the mapped expression if you want to use the
 current result:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #js [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 (<span class="hljs-name">amap</span> a i ret (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">pos?</span></span> i)
@@ -27,4 +27,4 @@ array ret.</code></pre><div>Source code @ <a href="https://github.com/clojure/cl
          (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
            (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> ~ret ~idx ~expr)
            (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> ~idx)))
-         ~ret))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/amap.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+         ~ret))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/doc/cljs.core/amap.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

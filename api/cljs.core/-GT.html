@@ -27,7 +27,7 @@ second item in second form, etc.</p>
     first)
 <span class="hljs-comment">;;=&gt; "X"</span>
 </code></pre>
-</div><hr /><div><p>It can also be useful for pulling values out of deeply-nested
+<p>It can also be useful for pulling values out of deeply-nested
 data structures:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> person
   {<span class="hljs-symbol">:name</span> <span class="hljs-string">"Mark Volkmann"</span>
@@ -48,7 +48,7 @@ data structures:</p>
 <pre><code class="lang-clj">(<span class="hljs-symbol">:city</span> (<span class="hljs-symbol">:address</span> (<span class="hljs-symbol">:employer</span> person)))
 <span class="hljs-comment">;;=&gt; "Creve Coeur"</span>
 </code></pre>
-</div><hr /><div><p>It can also help with arithmetic:</p>
+<p>It can also help with arithmetic:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> c <span class="hljs-number">5</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> c (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> <span class="hljs-number">3</span>) (/ <span class="hljs-number">2</span>) (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> <span class="hljs-number">1</span>))
 <span class="hljs-comment">;;=&gt; 3</span>
@@ -69,4 +69,4 @@ second item in second form, etc.</code></pre><div>Source code @ <a href="https:/
                        (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> `(~(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> form) ~x ~@(<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> form)) (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> form))
                        (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> form x))]
         (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> threaded (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> forms)))
-      x)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/-GT.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+      x)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/doc/cljs.core/-GT.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

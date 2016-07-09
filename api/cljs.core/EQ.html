@@ -16,7 +16,7 @@
 (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>)
 <span class="hljs-comment">;;=&gt; false</span>
 </code></pre>
-</div><hr /><div><p>Sequences are considered equal in value if they have the same elements:</p>
+<p>Sequences are considered equal in value if they have the same elements:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> '(<span class="hljs-number">1</span> <span class="hljs-number">2</span>) [<span class="hljs-number">1</span> <span class="hljs-number">2</span>])
 <span class="hljs-comment">;;=&gt; true</span>
 </code></pre>
@@ -29,7 +29,7 @@
 (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> a) (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> b))
 <span class="hljs-comment">;;=&gt; true</span>
 </code></pre>
-</div><hr /><div><p>It is natural to compare deeply nested collections since value equality checks
+<p>It is natural to compare deeply nested collections since value equality checks
 are cheap in ClojureScript:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a {<span class="hljs-symbol">:foo</span> {<span class="hljs-symbol">:bar</span> <span class="hljs-string">"baz"</span>}})
 (<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> b {<span class="hljs-symbol">:foo</span> {<span class="hljs-symbol">:bar</span> <span class="hljs-string">"baz"</span>}})
@@ -65,4 +65,4 @@ comparison.</code></pre><div>Source code @ <a href="https://github.com/clojure/c
        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> more)
          (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> y (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> more) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> more))
          (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> y (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> more)))
-       <span class="hljs-literal">false</span>)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/EQ.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+       <span class="hljs-literal">false</span>)))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/doc/cljs.core/EQ.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

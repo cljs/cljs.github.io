@@ -19,7 +19,7 @@ val(s).</p>
 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> my-map <span class="hljs-symbol">:foo</span>)
 <span class="hljs-comment">;;=&gt; WARNING: Wrong number of args (2) passed to cljs.core/assoc</span>
 </code></pre>
-</div><hr /><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> my-vec [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> my-vec [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 
 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> my-vec <span class="hljs-number">0</span> <span class="hljs-string">"foo"</span>)
 <span class="hljs-comment">;;=&gt; ["foo" 2 3]</span>
@@ -39,4 +39,4 @@ contains val at index.</code></pre><div>Source code @ <a href="https://github.co
      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ret (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> coll k v)]
        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> kvs
          (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> ret (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> kvs) (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> kvs) (<span class="hljs-name"><span class="hljs-builtin-name">nnext</span></span> kvs))
-         ret))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/cljsdoc/cljs.core/assoc.cljsdoc">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+         ret))))</code></pre><hr /><div><a href="https://github.com/cljsinfo/cljs-api-docs/blob/master/doc/cljs.core/assoc.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
