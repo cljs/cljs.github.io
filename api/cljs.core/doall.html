@@ -2,7 +2,7 @@
 sequence produced via functions that have side effects.</p>
 <p><code>doall</code> walks through the successive <code>next</code>s of the sequence, returning the head
 and causing the entire sequence to reside in memory at one time.</p>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/dorun">dorun</a></li><li><a href="/api/cljs.core/doseq">doseq</a></li></ul><hr />Source docstring:<pre>When lazy sequences are produced via functions that have side
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#dorun">dorun</a></li><li><a href="/api/cljs.core#doseq">doseq</a></li></ul><hr />Source docstring:<pre>When lazy sequences are produced via functions that have side
 effects, any effects other than those needed to produce the first
 element in the seq do not occur until the seq is consumed. doall can
 be used to force any effects. Walks through the successive nexts of

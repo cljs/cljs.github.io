@@ -6,7 +6,7 @@
 </ul>
 </div><hr /><h3>Details:</h3><div><p>The concept of &quot;global match&quot; (i.e. <code>/.../g</code> in JavaScript) is not encoded
 in ClojureScript regular expressions.  Instead, use a function like
-<a href="/api/cljs.core/re-seq"><code>re-seq</code></a> to perform global matches.</p>
+<a href="/api/cljs.core#re-seq"><code>re-seq</code></a> to perform global matches.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">#"foo"
 ;;=&gt; #"foo"
 
@@ -20,7 +20,7 @@ in ClojureScript regular expressions.  Instead, use a function like
 (re-seq #"(?i)foo" "FOO BAR foo bar")
 ;;=&gt; ("FOO" "foo")
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/re-pattern">re-pattern</a></li><li><a href="/api/cljs.core/re-find">re-find</a></li><li><a href="/api/cljs.core/re-seq">re-seq</a></li><li><a href="/api/cljs.core/re-matches">re-matches</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L82-L97">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-regex
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#re-pattern">re-pattern</a></li><li><a href="/api/cljs.core#re-find">re-find</a></li><li><a href="/api/cljs.core#re-seq">re-seq</a></li><li><a href="/api/cljs.core#re-matches">re-matches</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L82-L97">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-regex
   [rdr ch opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [sb (<span class="hljs-name">StringBuilder.</span>)]
     (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [ch (<span class="hljs-name">read-char</span> rdr)]

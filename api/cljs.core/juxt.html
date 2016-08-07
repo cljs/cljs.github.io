@@ -4,7 +4,7 @@ those functions.</p>
 containing the result of applying each function to the arguments (left-to-
 right).</p>
 <p><code>((juxt a b c) x)</code> =&gt; <code>[(a x) (b x) (c x)]</code></p>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/partial">partial</a></li><li><a href="/api/cljs.core/comp">comp</a></li></ul><hr />Source docstring:<pre>Takes a set of functions and returns a fn that is the juxtaposition
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#partial">partial</a></li><li><a href="/api/cljs.core#comp">comp</a></li></ul><hr />Source docstring:<pre>Takes a set of functions and returns a fn that is the juxtaposition
 of those fns.  The returned fn takes a variable number of args, and
 returns a vector containing the result of applying each fn to the
 args (left-to-right).

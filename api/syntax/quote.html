@@ -5,7 +5,7 @@
 </ul>
 </div><hr /><h3>Details:</h3><div><p>Quote a form to get its literal value after reading, rather than
 the value created after evaluation.</p>
-<p><code>&#39;foo</code> is sugar for <a href="/api/cljs.core/quote"><code>(quote foo)</code></a>.</p>
+<p><code>&#39;foo</code> is sugar for <a href="/api/cljs.core#quote"><code>(quote foo)</code></a>.</p>
 <p>Prevent the evaluation of the following form.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">'foo
 ;;=&gt; foo
@@ -19,7 +19,7 @@ the value created after evaluation.</p>
 '(a b (c d))
 ;;=&gt; (a b (c d))
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/quote">quote</a></li></ul><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#quote">quote</a></li></ul><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

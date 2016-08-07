@@ -10,7 +10,7 @@
 <pre><code class="lang-clj">#{1 1 2 3}
 ;; Error: Duplicate key: 1
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/hash-set">hash-set</a></li><li><a href="/api/cljs.core/sorted-set">sorted-set</a></li><li><a href="/api/cljs.core/sorted-set-by">sorted-set-by</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L389-L404">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-set
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#hash-set">hash-set</a></li><li><a href="/api/cljs.core#sorted-set">sorted-set</a></li><li><a href="/api/cljs.core#sorted-set-by">sorted-set-by</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L389-L404">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-set
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[start-line start-column] (<span class="hljs-name">starting-line-col-info</span> rdr)
         <span class="hljs-comment">;; subtract 1 from start-column so it includes the # in the leading #{</span>

@@ -58,7 +58,7 @@ following forms:</p>
 <li><code>(fn [...])</code></li>
 <li><code>(loop [...])</code></li>
 </ul>
-<p>Destructure maps can be nested, even in place of names in <a href="/api/syntax/destructure-vector">destructure
+<p>Destructure maps can be nested, even in place of names in <a href="/api/syntax#destructure-vector">destructure
 vectors</a>.</p>
 <p>Also works for namespaced keys and symbols: <a href="https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys">https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys</a></p>
 </div><hr /><h3>Examples:</h3><div><p>Use in place of function arguments:</p>
@@ -74,7 +74,7 @@ vectors</a>.</p>
   (<span class="hljs-name">println</span> a b))
 <span class="hljs-comment">;; 1 2</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/destructure-vector">destructure []</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.93+/src/main/clojure/cljs/core.cljc#L610-L711">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax#destructure-vector">destructure []</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.93+/src/main/clojure/cljs/core.cljc#L610-L711">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
   (<span class="hljs-name">core/let</span> [bents (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> bindings)
              pb (<span class="hljs-name">core/fn</span> pb [bvec b v]
                   (<span class="hljs-name">core/let</span> [pvec

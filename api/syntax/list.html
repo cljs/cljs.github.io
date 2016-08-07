@@ -17,7 +17,7 @@ f(a, b)
 the function receives them.</p>
 <p>If <code>f</code> is a special form or macro, it will receive its arguments <code>a</code> and <code>b</code>
 unevaluated, where they <em>may</em> be evaluated internally.</p>
-<p>(See <a href="/api/cljs.core/List"><code>List</code></a> for data structure details.)</p>
+<p>(See <a href="/api/cljs.core#List"><code>List</code></a> for data structure details.)</p>
 </div><hr /><h3>Examples:</h3><div><p>The following is a list that is evaluated to create var <code>a</code>:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a <span class="hljs-number">1</span>)
 </code></pre>
@@ -29,7 +29,7 @@ unevaluated, where they <em>may</em> be evaluated internally.</p>
 <pre><code class="lang-clj">'(1 2 3)
 ;;=&gt; (1 2 3)
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/vector">[] vector</a></li><li><a href="/api/syntax/quote">' quote</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L206-L222">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-list
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax#vector">[] vector</a></li><li><a href="/api/syntax#quote">' quote</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L206-L222">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-list
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[start-line start-column] (<span class="hljs-name">starting-line-col-info</span> rdr)
         the-list (<span class="hljs-name">read-delimited</span> \) rdr opts pending-forms)

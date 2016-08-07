@@ -8,10 +8,10 @@ etc).</p>
 <p>Supported metadata:</p>
 <ul>
 <li><code>^:private boolean</code> - make non-accessible from other namespaces</li>
-<li><code>^:dynamic boolean</code> - make <a href="/api/cljs.core/binding">dynamically bindable</a> (usually named with <a href="/api/syntax/earmuffs"><code>*earmuffs*</code></a>)</li>
-<li><code>^:const boolean</code> - prevents redef and allows it to be used in <a href="/api/cljs.core/case"><code>case</code></a>.</li>
+<li><code>^:dynamic boolean</code> - make <a href="/api/cljs.core#binding">dynamically bindable</a> (usually named with <a href="/api/syntax#earmuffs"><code>*earmuffs*</code></a>)</li>
+<li><code>^:const boolean</code> - prevents redef and allows it to be used in <a href="/api/cljs.core#case"><code>case</code></a>.</li>
 <li><code>^:jsdoc [&quot;&quot;]</code> - vector of JSDoc Tags for <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler?hl=en#tags">Google Closure</a> or <a href="http://usejsdoc.org/#block-tags">standard</a>.</li>
-<li><code>^:test (fn [] (assert ...))</code> - allows function to be tested with <a href="/api/cljs.core/test"><code>test</code></a>.</li>
+<li><code>^:test (fn [] (assert ...))</code> - allows function to be tested with <a href="/api/cljs.core#test"><code>test</code></a>.</li>
 <li><code>^:doc &quot;&quot;</code> - doc-string (prefer the use of the <code>(def symbol doc-string init)</code>)</li>
 </ul>
 <p>Compiler will also add metadata:</p>
@@ -36,7 +36,7 @@ b
 c
 ;;=&gt; 42
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/defn">defn</a></li><li><a href="/api/cljs.core/fn">fn</a></li><li><a href="/api/cljs.core/defmacro">defmacro</a></li><li><a href="/api/cljs.core/defmulti">defmulti</a></li></ul><hr />Source docstring:<pre>Creates and interns a global var with the name
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#defn">defn</a></li><li><a href="/api/cljs.core#fn">fn</a></li><li><a href="/api/cljs.core#defmacro">defmacro</a></li><li><a href="/api/cljs.core#defmulti">defmulti</a></li></ul><hr />Source docstring:<pre>Creates and interns a global var with the name
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is

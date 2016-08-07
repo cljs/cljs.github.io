@@ -11,17 +11,17 @@ the value bound to the symbol.</p>
 <li>cannot start with <code>:</code> and <code>#</code></li>
 </ul>
 </li>
-<li>symbols starting or ending with a decimal are reserved for interop purposes (see <a href="/api/syntax/dot"><code>. dot</code></a>)</li>
+<li>symbols starting or ending with a decimal are reserved for interop purposes (see <a href="/api/syntax#dot"><code>. dot</code></a>)</li>
 </ul>
-<p>Symbols can use a single <code>/</code> for an optional namespace. See <a href="/api/syntax/namespace"><code>/ namespace slash</code></a>:</p>
+<p>Symbols can use a single <code>/</code> for an optional namespace. See <a href="/api/syntax#namespace"><code>/ namespace slash</code></a>:</p>
 <ul>
 <li><code>foo/bar</code> =&gt; value of <code>bar</code> in the <code>foo</code> namespace</li>
 </ul>
-<p>To access symbols in the global JavaScript context, use the <a href="/api/syntax/js-namespace"><code>js/ namespace</code></a>:</p>
+<p>To access symbols in the global JavaScript context, use the <a href="/api/syntax#js-namespace"><code>js/ namespace</code></a>:</p>
 <ul>
 <li><code>js/document</code> =&gt; global <code>document</code> JavaScript object</li>
 </ul>
-<p>Dots can also be included in symbols for direct JS property access, see <a href="/api/syntax/dot"><code>. dot</code></a>:</p>
+<p>Dots can also be included in symbols for direct JS property access, see <a href="/api/syntax#dot"><code>. dot</code></a>:</p>
 <ul>
 <li><code>js/console.log</code> =&gt; the <code>console.log</code> JavaScript function</li>
 </ul>
@@ -39,7 +39,7 @@ a 1)</code>.  <code>def</code> evaluates to a special form, which suppresses the
 <pre><code class="lang-clj">'a
 ;;=&gt; a
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/symbol">symbol</a></li><li><a href="/api/cljs.core/symbolQMARK">symbol?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L305-L331">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#symbol">symbol</a></li><li><a href="/api/cljs.core#symbolQMARK">symbol?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L305-L331">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
   [rdr initch]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[line column] (<span class="hljs-name">starting-line-col-info</span> rdr)]
     (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [token (<span class="hljs-name">read-token</span> rdr initch)]

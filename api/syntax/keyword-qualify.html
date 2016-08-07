@@ -30,7 +30,7 @@ The namespace will resolve to either of the following:</p>
 <pre><code class="lang-clj">::foo/bar
 ;; clojure.lang.ExceptionInfo: Invalid token: ::foo/bar {:type :reader-exception, ...
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/keyword">: keyword</a></li><li><a href="/api/cljs.core/keyword">keyword</a></li><li><a href="/api/cljs.core/keywordQMARK">keyword?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L345-L363">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-keyword
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax#keyword">: keyword</a></li><li><a href="/api/cljs.core#keyword">keyword</a></li><li><a href="/api/cljs.core#keywordQMARK">keyword?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L345-L363">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-keyword
   [reader initch opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ch (<span class="hljs-name">read-char</span> reader)]
     (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name">whitespace?</span> ch)

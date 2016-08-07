@@ -2,9 +2,9 @@
 <ul>
 <li><code>@foo</code> - returns value at <code>foo</code></li>
 </ul>
-</div><hr /><h3>Details:</h3><div><p><code>@foo</code> is sugar for <a href="/api/cljs.core/deref"><code>(deref foo)</code></a>.</p>
+</div><hr /><h3>Details:</h3><div><p><code>@foo</code> is sugar for <a href="/api/cljs.core#deref"><code>(deref foo)</code></a>.</p>
 <p>Retrieve the underlying value of a reference.  References can be created by
-<a href="/api/cljs.core/atom"><code>atom</code></a> or <a href="/api/cljs.core/delay"><code>delay</code></a>.</p>
+<a href="/api/cljs.core#atom"><code>atom</code></a> or <a href="/api/cljs.core#delay"><code>delay</code></a>.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(def a (atom 1))
 @a
 ;;=&gt; 1
@@ -12,7 +12,7 @@
 (deref a)
 ;;=&gt; 1
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/deref">deref</a></li><li><a href="/api/cljs.core/atom">atom</a></li><li><a href="/api/cljs.core/delay">delay</a></li></ul><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#deref">deref</a></li><li><a href="/api/cljs.core#atom">atom</a></li><li><a href="/api/cljs.core#delay">delay</a></li></ul><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

@@ -5,7 +5,7 @@
 of the <code>try</code> expression.</p>
 <p>Since JavaScript allows you to throw anything, <code>exception-type</code> can be set to
 <code>:default</code> to catch all types of exceptions.</p>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/try">try</a></li><li><a href="/api/cljs.core/finally">finally</a></li><li><a href="/api/cljs.core/throw">throw</a></li></ul><hr />Source docstring:<pre>catch-clause => (catch classname name expr*)
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#try">try</a></li><li><a href="/api/cljs.core#finally">finally</a></li><li><a href="/api/cljs.core#throw">throw</a></li></ul><hr />Source docstring:<pre>catch-clause => (catch classname name expr*)
 finally-clause => (finally expr*)
 Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.93+/src/main/clojure/cljs/analyzer.cljc#L1054-L1113">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
   [op env [_ &amp; body <span class="hljs-symbol">:as</span> form] name _]
