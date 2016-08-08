@@ -18,7 +18,7 @@ Thus, <code>_</code> actually holds the value of its last binding.</p>
   (<span class="hljs-name">println</span> a b c))
 <span class="hljs-comment">;; 2 3 5</span>
 </code></pre>
-<p>Ignore return values of debug statements in a <a href="/api/cljs.core#let"><code>let</code></a> block:</p>
+<p>Ignore return values of debug statements in a <a class="code-link" href="/api/cljs.core#let"><code>let</code></a> block:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a <span class="hljs-number">1</span>
       _ (<span class="hljs-name">println</span> a)
       b (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> a <span class="hljs-number">2</span>)
@@ -27,7 +27,7 @@ Thus, <code>_</code> actually holds the value of its last binding.</p>
   ...)
 </code></pre>
 <p>It is common to use <code>_</code> to ignore all but the latest value of a changing atom
-inside an <a href="/api/cljs.core#add-watch"><code>add-watch</code></a> callback:</p>
+inside an <a class="code-link" href="/api/cljs.core#add-watch"><code>add-watch</code></a> callback:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> <span class="hljs-number">1</span>))
 
 (<span class="hljs-name"><span class="hljs-builtin-name">add-watch</span></span> a <span class="hljs-symbol">:foo</span>

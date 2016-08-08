@@ -1,7 +1,7 @@
 <html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div class="container"><div class="row"><div class="three columns" style="overflow-x: hidden"><div><a href="/api">< Back to Overview</a><div class="sep"></div><div><a href="#arg">% arg</a></div><div><a href="#auto-gensym"># auto-gensym</a></div><div><a href="#boolean">boolean literal</a></div><div><a href="#character">\ character</a></div><div><a href="#comma">, comma</a></div><div><a href="#comment">; comment</a></div><div><a href="#cond">#? reader conditional</a></div><div><a href="#cond-splicing">#?@ reader conditional splicing</a></div><div><a href="#deref">@ deref</a></div><div><a href="#destructure-map">destructure {}</a></div><div><a href="#destructure-vector">destructure []</a></div><div><a href="#dispatch"># dispatch</a></div><div><a href="#dot">. dot</a></div><div><a href="#earmuffs">*earmuffs*</a></div><div><a href="#eval">#= eval</a></div><div><a href="#function">#() function</a></div><div><a href="#ignore">#_ ignore</a></div><div><a href="#impure">! impure</a></div><div><a href="#Infinity">Infinity</a></div><div><a href="#inst-literal">#inst literal</a></div><div><a href="#js-literal">#js literal</a></div><div><a href="#js-namespace">js/ namespace</a></div><div><a href="#keyword">: keyword</a></div><div><a href="#keyword-qualify">:: keyword</a></div><div><a href="#list">() list</a></div><div><a href="#map">{} map</a></div><div><a href="#Math-namespace">Math/ namespace</a></div><div><a href="#meta">^ meta</a></div><div><a href="#namespace">/ namespace slash</a></div><div><a href="#NaN">NaN</a></div><div><a href="#nil">nil</a></div><div><a href="#ns-map">#: namespaced map</a></div><div><a href="#ns-map-alias">#:: namespaced map</a></div><div><a href="#number">number literal</a></div><div><a href="#predicate">? predicate</a></div><div><a href="#queue-literal">#queue literal</a></div><div><a href="#quote">' quote</a></div><div><a href="#regex">#"" regex</a></div><div><a href="#rest">& rest</a></div><div><a href="#set">#{} set</a></div><div><a href="#shebang">#! shebang</a></div><div><a href="#string">"" string</a></div><div><a href="#symbol">symbol literal</a></div><div><a href="#syntax-quote">` syntax quote</a></div><div><a href="#tagged-literal"># tagged literal</a></div><div><a href="#unquote">~ unquote</a></div><div><a href="#unquote-splicing">~@ unquote splicing</a></div><div><a href="#unreadable">#<> unreadable</a></div><div><a href="#unused">_ unused</a></div><div><a href="#uuid-literal">#uuid literal</a></div><div><a href="#var">#' var</a></div><div><a href="#vector">[] vector</a></div><div><a href="#whitespace">whitespace</a></div></div></div><div class="nine columns"><div><h2>Syntax</h2><div class="sep"></div><div><p>This is an index of ClojureScript&#39;s syntax forms, including syntax literals,
 naming conventions, and other syntax patterns.  We hope that you can have any
 question about syntax answered by referencing its appearance in this index.</p>
-</div><hr /><div style="position: relative;"><div id="arg"><strong>% arg</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/arg">full details ></a></div><div class="sep"></div><div><p>Use <code>%</code> as the implicit argument to a <a href="/api/syntax#function"><code>#() function</code></a>, or use the following
+</div><hr /><div style="position: relative;"><div id="arg"><strong>% arg</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/arg">full details ></a></div><div class="sep"></div><div><p>Use <code>%</code> as the implicit argument to a <a class="code-link" href="/api/syntax#function"><code>#() function</code></a>, or use the following
 if there are more than one:</p>
 <ul>
 <li><code>%1</code> - first arg</li>
@@ -9,7 +9,7 @@ if there are more than one:</p>
 <li><code>%3</code> - first arg</li>
 <li><code>%&amp;</code> - rest of the args</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="auto-gensym"><strong># auto-gensym</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/auto-gensym">full details ></a></div><div class="sep"></div><div><p>Shorthand for generating unique symbols inside a <a href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
+</div></div><hr /><div style="position: relative;"><div id="auto-gensym"><strong># auto-gensym</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/auto-gensym">full details ></a></div><div class="sep"></div><div><p>Shorthand for generating unique symbols inside a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
 <ul>
 <li><code>foo#</code> =&gt; <code>foo__135__auto__</code></li>
 </ul>
@@ -36,7 +36,7 @@ if there are more than one:</p>
 <ul>
 <li><code>#?(:clj ... :cljs ...)</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="cond-splicing"><strong>#?@ reader conditional splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/cond-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a href="/api/syntax#cond"><code>#? reader conditional</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
+</div></div><hr /><div style="position: relative;"><div id="cond-splicing"><strong>#?@ reader conditional splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/cond-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a class="code-link" href="/api/syntax#cond"><code>#? reader conditional</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
 <ul>
 <li><code>#?@(:clj [...] :cljs [...])</code></li>
 </ul>
@@ -85,38 +85,38 @@ standalone forms:</p>
 <tbody>
 <tr>
 <td>string-related</td>
-<td><a href="/api/syntax#string"><code>&quot;&quot; string</code></a></td>
-<td><a href="/api/syntax#regex"><code>#&quot;&quot; regex</code></a></td>
+<td><a class="code-link" href="/api/syntax#string"><code>&quot;&quot; string</code></a></td>
+<td><a class="code-link" href="/api/syntax#regex"><code>#&quot;&quot; regex</code></a></td>
 </tr>
 <tr>
 <td>code-related</td>
-<td><a href="/api/syntax#list"><code>() list</code></a></td>
-<td><a href="/api/syntax#function"><code>#() function</code></a></td>
+<td><a class="code-link" href="/api/syntax#list"><code>() list</code></a></td>
+<td><a class="code-link" href="/api/syntax#function"><code>#() function</code></a></td>
 </tr>
 <tr>
 <td>lookup-related</td>
-<td><a href="/api/syntax#map"><code>{} map</code></a></td>
-<td><a href="/api/syntax#set"><code>#{} set</code></a></td>
+<td><a class="code-link" href="/api/syntax#map"><code>{} map</code></a></td>
+<td><a class="code-link" href="/api/syntax#set"><code>#{} set</code></a></td>
 </tr>
 <tr>
 <td>quote-related</td>
-<td><a href="/api/syntax#quote"><code>&#39; quote</code></a></td>
-<td><a href="/api/syntax#var"><code>#&#39; var</code></a></td>
+<td><a class="code-link" href="/api/syntax#quote"><code>&#39; quote</code></a></td>
+<td><a class="code-link" href="/api/syntax#var"><code>#&#39; var</code></a></td>
 </tr>
 <tr>
 <td>ignore-related</td>
-<td><a href="/api/syntax#unused"><code>_ unused</code></a></td>
-<td><a href="/api/syntax#ignore"><code>#_ ignore</code></a></td>
+<td><a class="code-link" href="/api/syntax#unused"><code>_ unused</code></a></td>
+<td><a class="code-link" href="/api/syntax#ignore"><code>#_ ignore</code></a></td>
 </tr>
 <tr>
 <td>name-related</td>
-<td><a href="/api/syntax#symbol"><code>foo (symbol)</code></a></td>
-<td><a href="/api/syntax#tagged-literal"><code>#foo (tagged literal)</code></a></td>
+<td><a class="code-link" href="/api/syntax#symbol"><code>foo (symbol)</code></a></td>
+<td><a class="code-link" href="/api/syntax#tagged-literal"><code>#foo (tagged literal)</code></a></td>
 </tr>
 <tr>
 <td>conditional-related</td>
-<td><a href="/api/syntax#predicate"><code>? predicate</code></a></td>
-<td><a href="/api/syntax#cond"><code>#? reader conditional</code></a></td>
+<td><a class="code-link" href="/api/syntax#predicate"><code>? predicate</code></a></td>
+<td><a class="code-link" href="/api/syntax#cond"><code>#? reader conditional</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -139,7 +139,7 @@ standalone forms:</p>
 <ul>
 <li><code>#=...</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="function"><strong>#() function</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/function">full details ></a></div><div class="sep"></div><div><p>Shorthand for creating an anonymous function. Use <a href="/api/syntax#arg"><code>% arg</code></a> to refer
+</div></div><hr /><div style="position: relative;"><div id="function"><strong>#() function</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/function">full details ></a></div><div class="sep"></div><div><p>Shorthand for creating an anonymous function. Use <a class="code-link" href="/api/syntax#arg"><code>% arg</code></a> to refer
 to the arguments.</p>
 <ul>
 <li><code>#(...)</code> =&gt; <code>(fn [args] (...))</code></li>
@@ -153,10 +153,10 @@ to the arguments.</p>
     (+ a b))
 </code></pre></div></div><hr /><div style="position: relative;"><div id="impure"><strong>! impure</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/impure">full details ></a></div><div class="sep"></div><div><p>A naming convention sometimes applied to functions that perform mutations.  Examples:</p>
 <ul>
-<li><a href="/api/cljs.core#setBANG"><code>set!</code></a></li>
-<li><a href="/api/cljs.core#swapBANG"><code>swap!</code></a></li>
-<li><a href="/api/cljs.core#conjBANG"><code>conj!</code></a></li>
-<li><a href="/api/cljs.core#specifyBANG"><code>specify!</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#setBANG"><code>set!</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#swapBANG"><code>swap!</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#conjBANG"><code>conj!</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#specifyBANG"><code>specify!</code></a></li>
 </ul>
 </div></div><hr /><div style="position: relative;"><div id="Infinity"><strong>Infinity</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/Infinity">full details ></a></div><div class="sep"></div><div><p>Floating point representation of Infinity.</p>
 <ul>
@@ -246,10 +246,10 @@ Available formats:</p>
 </div></div><hr /><div style="position: relative;"><div id="predicate"><strong>? predicate</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/predicate">full details ></a></div><div class="sep"></div><div><p>A naming convention for functions returning true or false (unenforced).
 Examples:</p>
 <ul>
-<li><a href="/api/cljs.core#evenQMARK"><code>even?</code></a></li>
-<li><a href="/api/cljs.core#emptyQMARK"><code>empty?</code></a></li>
-<li><a href="/api/cljs.core#containsQMARK"><code>contains?</code></a></li>
-<li><a href="/api/cljs.core#nilQMARK"><code>nil?</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#evenQMARK"><code>even?</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#emptyQMARK"><code>empty?</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#containsQMARK"><code>contains?</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#nilQMARK"><code>nil?</code></a></li>
 </ul>
 </div></div><hr /><div style="position: relative;"><div id="queue-literal"><strong>#queue literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/queue-literal">full details ></a></div><div class="sep"></div><div><p>A queue is defined by placing <code>#queue</code> before a vector.</p>
 <ul>
@@ -266,7 +266,7 @@ Examples:</p>
 <li><code>#&quot;(?i)...&quot;</code> =&gt; js <code>/.../i</code> (case-insensitive)</li>
 <li><code>#&quot;(?m)...&quot;</code> =&gt; js <code>/.../m</code> (multi-line)</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="rest"><strong>& rest</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/rest">full details ></a></div><div class="sep"></div><div><p>A concept shared between <a href="/api/syntax#destructure-vector"><code>destructure []</code></a> and <a href="/api/cljs.core#fn"><code>fn</code></a>
+</div></div><hr /><div style="position: relative;"><div id="rest"><strong>& rest</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/rest">full details ></a></div><div class="sep"></div><div><p>A concept shared between <a class="code-link" href="/api/syntax#destructure-vector"><code>destructure []</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>
 for binding the rest of the values of a sequence to a name.</p>
 <ul>
 <li><code>(fn [... &amp; rest])</code> - for function arguments</li>
@@ -278,7 +278,7 @@ for binding the rest of the values of a sequence to a name.</p>
 <li><code>#{1 2 3}</code></li>
 </ul>
 </div></div><hr /><div style="position: relative;"><div id="shebang"><strong>#! shebang</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/shebang">full details ></a></div><div class="sep"></div><div><p>ClojureScript allows <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang lines</a> simply by making <code>#!</code> equivalent to
-<a href="/api/syntax#comment"><code>; comment</code></a>.</p>
+<a class="code-link" href="/api/syntax#comment"><code>; comment</code></a>.</p>
 <ul>
 <li><code>#!/usr/bin/env planck</code> - use Planck to execute this file</li>
 </ul>
@@ -295,7 +295,7 @@ the value bound to the symbol.</p>
 <ul>
 <li><code>foo</code> - evaluates to the value bound to <code>foo</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="syntax-quote"><strong>` syntax quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/syntax-quote">full details ></a></div><div class="sep"></div><div><p>A template facility for easier code generation inside macros.  Like <a href="/api/syntax#quote"><code>&#39; quote</code></a>,
+</div></div><hr /><div style="position: relative;"><div id="syntax-quote"><strong>` syntax quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/syntax-quote">full details ></a></div><div class="sep"></div><div><p>A template facility for easier code generation inside macros.  Like <a class="code-link" href="/api/syntax#quote"><code>&#39; quote</code></a>,
 but with more features to help resolve symbols and interpolate values.</p>
 <ul>
 <li><code>`(foo 123)</code> =&gt; <code>(cljs.user/foo 123)</code> - symbols become fully-qualified</li>
@@ -314,11 +314,11 @@ easier to read at the REPL.</p>
 <li><code>#uuid &quot;...&quot;</code> - <a href="doc:syntax/uuid-literal">UUID literal</a></li>
 <li><code>#queue [...]</code> - <a href="doc:syntax/queue-literal">queue literal</a></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="unquote"><strong>~ unquote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote">full details ></a></div><div class="sep"></div><div><p>Inserts an evaluated form inside of a <a href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
+</div></div><hr /><div style="position: relative;"><div id="unquote"><strong>~ unquote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote">full details ></a></div><div class="sep"></div><div><p>Inserts an evaluated form inside of a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
 <ul>
 <li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> (if x is 123)</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="unquote-splicing"><strong>~@ unquote splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a href="/api/syntax#unquote"><code>~ unquote</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
+</div></div><hr /><div style="position: relative;"><div id="unquote-splicing"><strong>~@ unquote splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a class="code-link" href="/api/syntax#unquote"><code>~ unquote</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
 <ul>
 <li><code>`(foo ~@x)</code> =&gt; <code>(cljs.user/foo a b)</code> (if x is [a b])</li>
 </ul>
@@ -334,7 +334,7 @@ reader error will be thrown if this value is fed back into the REPL.</p>
 <li><code>(fn [_ _ a]))</code> - ignore first two function arguments</li>
 <li><code>(let [[_ a _ b] ...])</code> - only bind names to 2nd and 4th values of a sequence</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="uuid-literal"><strong>#uuid literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/uuid-literal">full details ></a></div><div class="sep"></div><div><p>A universally unique identifier (UUID).  Randomly generate one with <a href="/api/cljs.core#random-uuid"><code>random-uuid</code></a>.</p>
+</div></div><hr /><div style="position: relative;"><div id="uuid-literal"><strong>#uuid literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/uuid-literal">full details ></a></div><div class="sep"></div><div><p>A universally unique identifier (UUID).  Randomly generate one with <a class="code-link" href="/api/cljs.core#random-uuid"><code>random-uuid</code></a>.</p>
 <ul>
 <li><code>#uuid &quot;8-4-4-4-12&quot;</code> - numbers represent the number of hex digits</li>
 <li><code>#uuid &quot;97bda55b-6175-4c39-9e04-7c0205c709dc&quot;</code> - actual example</li>
@@ -353,7 +353,7 @@ itself.  It is therefore helpful to be aware of the following subtle differences
 </ul>
 <p>Vectors also serve an important language role to prevent you from interpreting
 sequences as function calls.  Whether it&#39;s for literal data or for <em>binding forms</em>
-inside <a href="/api/cljs.core#let"><code>let</code></a> and <a href="/api/cljs.core#fn"><code>fn</code></a>, vectors provide an
+inside <a class="code-link" href="/api/cljs.core#let"><code>let</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>, vectors provide an
 important syntax cue not found in other Lisps.</p>
 </div></div><hr /><div style="position: relative;"><div id="whitespace"><strong>whitespace</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/whitespace">full details ></a></div><div class="sep"></div><div><p>Any number of whitespace characters can be used between forms, but is
 optional around delimiters. Commas are considered whitespace.
