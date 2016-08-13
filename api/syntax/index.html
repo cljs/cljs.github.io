@@ -1,19 +1,30 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div class="container"><div class="row"><div class="three columns" style="overflow-x: hidden"><div><a href="/api">< Back to Overview</a><div class="sep"></div><div><a href="#arg">% arg</a></div><div><a href="#auto-gensym"># auto-gensym</a></div><div><a href="#boolean">boolean literal</a></div><div><a href="#character">\ character</a></div><div><a href="#comma">, comma</a></div><div><a href="#comment">; comment</a></div><div><a href="#cond">#? reader conditional</a></div><div><a href="#cond-splicing">#?@ reader conditional splicing</a></div><div><a href="#deref">@ deref</a></div><div><a href="#destructure-map">destructure {}</a></div><div><a href="#destructure-vector">destructure []</a></div><div><a href="#dispatch"># dispatch</a></div><div><a href="#dot">. dot</a></div><div><a href="#earmuffs">*earmuffs*</a></div><div><a href="#eval">#= eval</a></div><div><a href="#function">#() function</a></div><div><a href="#ignore">#_ ignore</a></div><div><a href="#impure">! impure</a></div><div><a href="#Infinity">Infinity</a></div><div><a href="#inst-literal">#inst literal</a></div><div><a href="#js-literal">#js literal</a></div><div><a href="#js-namespace">js/ namespace</a></div><div><a href="#keyword">: keyword</a></div><div><a href="#keyword-qualify">:: keyword</a></div><div><a href="#list">() list</a></div><div><a href="#map">{} map</a></div><div><a href="#Math-namespace">Math/ namespace</a></div><div><a href="#meta">^ meta</a></div><div><a href="#namespace">/ namespace slash</a></div><div><a href="#NaN">NaN</a></div><div><a href="#nil">nil</a></div><div><a href="#ns-map">#: namespaced map</a></div><div><a href="#ns-map-alias">#:: namespaced map</a></div><div><a href="#number">number literal</a></div><div><a href="#predicate">? predicate</a></div><div><a href="#queue-literal">#queue literal</a></div><div><a href="#quote">' quote</a></div><div><a href="#regex">#"" regex</a></div><div><a href="#rest">& rest</a></div><div><a href="#set">#{} set</a></div><div><a href="#shebang">#! shebang</a></div><div><a href="#string">"" string</a></div><div><a href="#symbol">symbol literal</a></div><div><a href="#syntax-quote">` syntax quote</a></div><div><a href="#tagged-literal"># tagged literal</a></div><div><a href="#unquote">~ unquote</a></div><div><a href="#unquote-splicing">~@ unquote splicing</a></div><div><a href="#unreadable">#<> unreadable</a></div><div><a href="#unused">_ unused</a></div><div><a href="#uuid-literal">#uuid literal</a></div><div><a href="#var">#' var</a></div><div><a href="#vector">[] vector</a></div><div><a href="#whitespace">whitespace</a></div></div></div><div class="nine columns"><div><h2>Syntax</h2><div class="sep"></div><div><p>This is an index of ClojureScript&#39;s syntax forms, including syntax literals,
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title></title><meta name="description" /><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div class="container"><div class="row"><div class="three columns" style="overflow-x: hidden"><div><a href="/api">< Back to Overview</a><div class="sep">Literals</div><div><a href="#number">number literal</a></div><div><a href="#string">"" string</a></div><div><a href="#regex">#"" regex</a></div><div><a href="#character">\ character</a></div><div><a href="#keyword">: keyword</a></div><div><a href="#keyword-qualify">:: keyword</a></div><div><a href="#symbol">symbol literal</a></div><div class="sep">Special Symbols</div><div><a href="#boolean">boolean literal</a></div><div><a href="#nil">nil</a></div><div><a href="#NaN">NaN</a></div><div><a href="#Infinity">Infinity</a></div><div class="sep">Collections</div><div><a href="#vector">[] vector</a></div><div><a href="#list">() list</a></div><div><a href="#map">{} map</a></div><div><a href="#set">#{} set</a></div><div><a href="#ns-map">#:{} namespaced map</a></div><div><a href="#ns-map-alias">#::{} namespaced map</a></div><div class="sep">Commenting</div><div><a href="#comment">; comment</a></div><div><a href="#shebang">#! shebang</a></div><div><a href="#ignore">#_ ignore</a></div><div class="sep">Function</div><div><a href="#function">#() function</a></div><div><a href="#arg">% arg</a></div><div><a href="#rest">& rest</a></div><div class="sep">Destructuring</div><div><a href="#destructure-vector">destructure []</a></div><div><a href="#destructure-map">destructure {}</a></div><div class="sep">Conventions</div><div><a href="#predicate">? predicate</a></div><div><a href="#impure">! impure</a></div><div><a href="#earmuffs">*earmuffs*</a></div><div><a href="#unused">_ unused</a></div><div><a href="#whitespace">whitespace</a></div><div><a href="#comma">, comma</a></div><div class="sep">Symbol Resolution</div><div><a href="#dot">. dot</a></div><div><a href="#namespace">/ namespace slash</a></div><div><a href="#js-namespace">js/ namespace</a></div><div><a href="#Math-namespace">Math/ namespace</a></div><div class="sep">Tagged Literals</div><div><a href="#tagged-literal"># tagged literal</a></div><div><a href="#js-literal">#js literal</a></div><div><a href="#inst-literal">#inst literal</a></div><div><a href="#uuid-literal">#uuid literal</a></div><div><a href="#queue-literal">#queue literal</a></div><div class="sep">Quoting</div><div><a href="#quote">' quote</a></div><div><a href="#syntax-quote">` syntax quote</a></div><div><a href="#unquote">~ unquote</a></div><div><a href="#unquote-splicing">~@ unquote splicing</a></div><div><a href="#auto-gensym"># auto-gensym</a></div><div class="sep">Vars</div><div><a href="#meta">^ meta</a></div><div><a href="#var">#' var</a></div><div><a href="#deref">@ deref</a></div><div class="sep">Reader Conditionals</div><div><a href="#cond">#? reader conditional</a></div><div><a href="#cond-splicing">#?@ reader conditional splicing</a></div><div class="sep">Misc</div><div><a href="#dispatch"># dispatch</a></div><div><a href="#unreadable">#<> unreadable</a></div><div><a href="#eval">#= eval</a></div></div></div><div class="nine columns"><div><h2>Syntax</h2><div class="sep"></div><div><p>This is an index of ClojureScript&#39;s syntax forms, including syntax literals,
 naming conventions, and other syntax patterns.  We hope that you can have any
 question about syntax answered by referencing its appearance in this index.</p>
-</div><hr /><div style="position: relative;"><div id="arg"><strong>% arg</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/arg">full details ></a></div><div class="sep"></div><div><p>Use <code>%</code> as the implicit argument to a <a class="code-link" href="/api/syntax#function"><code>#() function</code></a>, or use the following
-if there are more than one:</p>
+</div><hr /><h4>Literals</h4><div style="position: relative;"><div id="number"><strong>number literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/number">full details ></a></div><div class="sep"></div><div><p>ClojureScript numbers are the same as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates#Numbers">JavaScript numbers</a> (floats).
+Available formats:</p>
 <ul>
-<li><code>%1</code> - first arg</li>
-<li><code>%2</code> - second arg</li>
-<li><code>%3</code> - first arg</li>
-<li><code>%&amp;</code> - rest of the args</li>
+<li>decimal <code>123</code> <code>1.23</code></li>
+<li>exponent <code>12e3</code> <code>1.2e3</code> <code>1.2e-3</code></li>
+<li>hexadecimal <code>0x123</code></li>
+<li>octal <code>0123</code></li>
+<li>binary <code>2r0110</code></li>
+<li>arbitrary <code>NrXXX</code> where <code>(&lt;= 2 N 36)</code> and <code>X</code> is in <code>[0-9,A-Z]</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="auto-gensym"><strong># auto-gensym</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/auto-gensym">full details ></a></div><div class="sep"></div><div><p>Shorthand for generating unique symbols inside a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
+</div></div><hr /><div style="position: relative;"><div id="string"><strong>"" string</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/string">full details ></a></div><div class="sep"></div><div><p>A string of characters.</p>
 <ul>
-<li><code>foo#</code> =&gt; <code>foo__135__auto__</code></li>
+<li><code>&quot;...&quot;</code></li>
+<li><code>&quot;single line string&quot;</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="boolean"><strong>boolean literal</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/boolean">full details ></a></div><div class="sep"></div><div><p>The boolean literals are <code>true</code> and <code>false</code>.</p>
+<pre><code>&quot;multi
+line
+string&quot;
+</code></pre></div></div><hr /><div style="position: relative;"><div id="regex"><strong>#"" regex</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/regex">full details ></a></div><div class="sep"></div><div><p>Regular expressions compile to native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript regular expressions</a>.</p>
+<ul>
+<li><code>#&quot;...&quot;</code> =&gt; js <code>/.../</code></li>
+<li><code>#&quot;(?i)...&quot;</code> =&gt; js <code>/.../i</code> (case-insensitive)</li>
+<li><code>#&quot;(?m)...&quot;</code> =&gt; js <code>/.../m</code> (multi-line)</li>
+</ul>
 </div></div><hr /><div style="position: relative;"><div id="character"><strong>\ character</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/character">full details ></a></div><div class="sep"></div><div><p>A single character string.</p>
 <ul>
 <li><code>\c</code> =&gt; <code>&quot;c&quot;</code></li>
@@ -22,27 +33,115 @@ if there are more than one:</p>
 <li><code>\u00a1</code> =&gt; <code>&quot;¡&quot;</code></li>
 <li><code>\o256</code> =&gt; <code>&quot;®&quot;</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="comma"><strong>, comma</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/comma">full details ></a></div><div class="sep"></div><div><p>Commas are ignored and can be used for assisting readability.</p>
+</div></div><hr /><div style="position: relative;"><div id="keyword"><strong>: keyword</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/keyword">full details ></a></div><div class="sep"></div><div><p>A keyword starts with a colon and evaluates to itself. It can include an optional
+namespace.</p>
 <ul>
-<li><code>[1, 2, 3]</code> =&gt; <code>[1 2 3]</code></li>
-<li><code>{:a 1, :b 2}</code> =&gt; <code>{:a 1 :b 2}</code></li>
+<li><code>:foo</code></li>
+<li><code>:foo/bar</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="comment"><strong>; comment</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/comment">full details ></a></div><div class="sep"></div><div><p>A single line comment.</p>
+</div></div><hr /><div style="position: relative;"><div id="keyword-qualify"><strong>:: keyword</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/keyword-qualify">full details ></a></div><div class="sep"></div><div><p>Shorthand for specifying namespaced keywords.  Allows you to use an aliased
+namespace or to have the current one auto-inserted if not specified.</p>
+<ul>
+<li><code>::foo/bar</code> =&gt; <code>:aliased-ns/bar</code></li>
+<li><code>::bar</code> =&gt; <code>:current-ns/bar</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="symbol"><strong>symbol literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/symbol">full details ></a></div><div class="sep"></div><div><p>A symbol is intended as a name for a value.  When evaluated, its result will be
+the value bound to the symbol.</p>
+<ul>
+<li><code>foo</code> - evaluates to the value bound to <code>foo</code></li>
+</ul>
+</div></div><hr /><h4>Special Symbols</h4><div style="position: relative;"><div id="boolean"><strong>boolean literal</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/boolean">full details ></a></div><div class="sep"></div><div><p>The boolean literals are <code>true</code> and <code>false</code>.</p>
+</div></div><hr /><div style="position: relative;"><div id="nil"><strong>nil</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/nil">full details ></a></div><div class="sep"></div><div><p><code>nil</code> is a representation of nothing.</p>
+</div></div><hr /><div style="position: relative;"><div id="NaN"><strong>NaN</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/NaN">full details ></a></div><div class="sep"></div><div><p>Floating point representation of <code>NaN</code> (not a number), an undefined or
+unrepresentable number.</p>
+</div></div><hr /><div style="position: relative;"><div id="Infinity"><strong>Infinity</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/Infinity">full details ></a></div><div class="sep"></div><div><p>Floating point representation of Infinity.</p>
+<ul>
+<li><code>Infinity</code> = <code>+Infinity</code></li>
+<li><code>-Infinity</code></li>
+</ul>
+</div></div><hr /><h4>Collections</h4><div style="position: relative;"><div id="vector"><strong>[] vector</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/vector">full details ></a></div><div class="sep"></div><div><p>A vector is the most commonly used form for creating literal sequences.</p>
+<ul>
+<li><code>[...]</code></li>
+<li><code>[1 2 3]</code></li>
+</ul>
+<p>Vectors also serve an important language role to prevent you from interpreting
+sequences as function calls.  Whether it&#39;s for literal data or for <em>binding forms</em>
+inside <a class="code-link" href="/api/cljs.core#let"><code>let</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>, vectors provide an
+important syntax cue not found in other Lisps.</p>
+</div></div><hr /><div style="position: relative;"><div id="list"><strong>() list</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/list">full details ></a></div><div class="sep"></div><div><p>A list is interpreted as a <em>call</em> when evaluated.</p>
+<ul>
+<li><code>(...)</code></li>
+<li><code>(foo 1 2 3)</code> - call foo with arguments 1, 2, 3</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="map"><strong>{} map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/map">full details ></a></div><div class="sep"></div><div><p>A map associates keys with values.</p>
+<ul>
+<li><code>{...}</code></li>
+<li><code>{:foo 1}</code></li>
+<li><code>{:foo 1, :bar 2}</code> - comma is optional</li>
+<li><code>{[1 2] &quot;foo&quot;}</code> - keys and values can be any type (even collections)</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="set"><strong>#{} set</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/set">full details ></a></div><div class="sep"></div><div><p>An unordered set of values.  Values must be unique.</p>
+<ul>
+<li><code>#{...}</code></li>
+<li><code>#{1 2 3}</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="ns-map"><strong>#:{} namespaced map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ns-map">full details ></a></div><div class="sep"></div><div><p>Provide a default namespace for keyword keys in a map.</p>
+<pre><code class="lang-clj">#:a {1 nil, :b nil, :b/c nil, :_/d nil}
+;;=&gt; {1 nil, :a/b nil, :b/c nil, :d nil}
+</code></pre>
+</div></div><hr /><div style="position: relative;"><div id="ns-map-alias"><strong>#::{} namespaced map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ns-map-alias">full details ></a></div><div class="sep"></div><div><p>Provide a default namespace for keyword keys in a map, using an alias.</p>
+<ul>
+<li><code>#:: {:a 1}</code> =&gt; <code>{:current-ns/a 1}</code></li>
+<li><code>#::s {:a 1}</code> =&gt; <code>{:aliased-ns/a 1}</code></li>
+</ul>
+</div></div><hr /><h4>Commenting</h4><div style="position: relative;"><div id="comment"><strong>; comment</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/comment">full details ></a></div><div class="sep"></div><div><p>A single line comment.</p>
 <ul>
 <li><code>; this is a comment</code></li>
 <li><code>;; two semicolons is also common</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="cond"><strong>#? reader conditional</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/cond">full details ></a></div><div class="sep"></div><div><p>Use a different expression depending on the compiler (e.g. Clojure vs ClojureScript).</p>
+</div></div><hr /><div style="position: relative;"><div id="shebang"><strong>#! shebang</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/shebang">full details ></a></div><div class="sep"></div><div><p>ClojureScript allows <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang lines</a> simply by making <code>#!</code> equivalent to
+<a class="code-link" href="/api/syntax#comment"><code>; comment</code></a>.</p>
 <ul>
-<li><code>#?(:clj ... :cljs ...)</code></li>
+<li><code>#!/usr/bin/env planck</code> - use Planck to execute this file</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="cond-splicing"><strong>#?@ reader conditional splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/cond-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a class="code-link" href="/api/syntax#cond"><code>#? reader conditional</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
+</div></div><hr /><div style="position: relative;"><div id="ignore"><strong>#_ ignore</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ignore">full details ></a></div><div class="sep"></div><div><p>Ignore the next well-formed expression.</p>
 <ul>
-<li><code>#?@(:clj [...] :cljs [...])</code></li>
+<li><code>[1 #_foo 2 3]</code> =&gt; <code>[1 2 3]</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="deref"><strong>@ deref</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/deref">full details ></a></div><div class="sep"></div><div><p>Get the value that a reference is currently referring to.</p>
+<p>Also useful for commenting out a multi-line expression:</p>
+<pre><code>#_(defn foo [a b]
+    (+ a b))
+</code></pre></div></div><hr /><h4>Function</h4><div style="position: relative;"><div id="function"><strong>#() function</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/function">full details ></a></div><div class="sep"></div><div><p>Shorthand for creating an anonymous function. Use <a class="code-link" href="/api/syntax#arg"><code>% arg</code></a> to refer
+to the arguments.</p>
 <ul>
-<li><code>@foo</code> - returns value at <code>foo</code></li>
+<li><code>#(...)</code> =&gt; <code>(fn [args] (...))</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="arg"><strong>% arg</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/arg">full details ></a></div><div class="sep"></div><div><p>Use <code>%</code> as the implicit argument to a <a class="code-link" href="/api/syntax#function"><code>#() function</code></a>, or use the following
+if there are more than one:</p>
+<ul>
+<li><code>%1</code> - first arg</li>
+<li><code>%2</code> - second arg</li>
+<li><code>%3</code> - first arg</li>
+<li><code>%&amp;</code> - rest of the args</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="rest"><strong>& rest</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/rest">full details ></a></div><div class="sep"></div><div><p>A concept shared between <a class="code-link" href="/api/syntax#destructure-vector"><code>destructure []</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>
+for binding the rest of the values of a sequence to a name.</p>
+<ul>
+<li><code>(fn [... &amp; rest])</code> - for function arguments</li>
+<li><code>(let [[... &amp; rest] ...])</code> - for sequences</li>
+</ul>
+</div></div><hr /><h4>Destructuring</h4><div style="position: relative;"><div id="destructure-vector"><strong>destructure []</strong> - binding</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/destructure-vector">full details ></a></div><div class="sep"></div><div><p>Shorthand for destructuring a sequence into multiple names. Allows you to use a
+<code>[...]</code> pattern instead of a usual <code>name</code> in the following examples:</p>
+<ul>
+<li><code>(defn [name])</code> -&gt; <code>(defn [[...]])</code></li>
+<li><code>(let [name sequence])</code> -&gt; <code>(let [[...] sequence])</code></li>
+<li><code>(for [name sequences])</code> -&gt; <code>(for [[...] sequences])</code></li>
+</ul>
+<p>Quick pattern reference:</p>
+<ul>
+<li><code>[...]</code> - names are bound by order (e.g. <code>[a b]</code>)</li>
+<li><code>[... &amp; name]</code> - name is bound to the rest of the values</li>
+<li><code>[:as name]</code> - name is bound to whole value</li>
 </ul>
 </div></div><hr /><div style="position: relative;"><div id="destructure-map"><strong>destructure {}</strong> - binding</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/destructure-map">full details ></a></div><div class="sep"></div><div><p>Shorthand for destructuring a map into multiple names. Allows you to use a
 <code>{...}</code> pattern instead of a usual <code>name</code> in the following examples:</p>
@@ -59,20 +158,156 @@ if there are more than one:</p>
 <li><code>{:syms [...]}</code> - names bound using symbols as lookup keys</li>
 <li><code>{:as name}</code> - name is bound to whole value</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="destructure-vector"><strong>destructure []</strong> - binding</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/destructure-vector">full details ></a></div><div class="sep"></div><div><p>Shorthand for destructuring a sequence into multiple names. Allows you to use a
-<code>[...]</code> pattern instead of a usual <code>name</code> in the following examples:</p>
+</div></div><hr /><h4>Conventions</h4><div style="position: relative;"><div id="predicate"><strong>? predicate</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/predicate">full details ></a></div><div class="sep"></div><div><p>A naming convention for functions returning true or false (unenforced).
+Examples:</p>
 <ul>
-<li><code>(defn [name])</code> -&gt; <code>(defn [[...]])</code></li>
-<li><code>(let [name sequence])</code> -&gt; <code>(let [[...] sequence])</code></li>
-<li><code>(for [name sequences])</code> -&gt; <code>(for [[...] sequences])</code></li>
+<li><a class="code-link" href="/api/cljs.core#evenQMARK"><code>even?</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#emptyQMARK"><code>empty?</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#containsQMARK"><code>contains?</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#nilQMARK"><code>nil?</code></a></li>
 </ul>
-<p>Quick pattern reference:</p>
+</div></div><hr /><div style="position: relative;"><div id="impure"><strong>! impure</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/impure">full details ></a></div><div class="sep"></div><div><p>A naming convention sometimes applied to functions that perform mutations.  Examples:</p>
 <ul>
-<li><code>[...]</code> - names are bound by order (e.g. <code>[a b]</code>)</li>
-<li><code>[... &amp; name]</code> - name is bound to the rest of the values</li>
-<li><code>[:as name]</code> - name is bound to whole value</li>
+<li><a class="code-link" href="/api/cljs.core#setBANG"><code>set!</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#swapBANG"><code>swap!</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#conjBANG"><code>conj!</code></a></li>
+<li><a class="code-link" href="/api/cljs.core#specifyBANG"><code>specify!</code></a></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="dispatch"><strong># dispatch</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/dispatch">full details ></a></div><div class="sep"></div><div><p>As a general pattern, syntax forms prefixed with <code>#</code> are related to their
+</div></div><hr /><div style="position: relative;"><div id="earmuffs"><strong>*earmuffs*</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/earmuffs">full details ></a></div><div class="sep"></div><div><p>A naming convention for dynamic vars (unenforced).</p>
+<ul>
+<li><code>(def ^:dynamic *foo* 1)</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="unused"><strong>_ unused</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unused">full details ></a></div><div class="sep"></div><div><p>When unused values require a name, it is common to use <code>_</code>.</p>
+<ul>
+<li><code>(fn [_ _ a]))</code> - ignore first two function arguments</li>
+<li><code>(let [[_ a _ b] ...])</code> - only bind names to 2nd and 4th values of a sequence</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="whitespace"><strong>whitespace</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/whitespace">full details ></a></div><div class="sep"></div><div><p>Any number of whitespace characters can be used between forms, but is
+optional around delimiters. Commas are considered whitespace.
+The following are equivalent:</p>
+<ul>
+<li><code>#js [ 1 2 3 ]</code></li>
+<li><code>#js [1 2 3]</code></li>
+<li><code>#js [1, 2, 3]</code></li>
+<li><code>#js[1 2 3]</code></li>
+<li><code>#js[1,2,3]</code></li>
+</ul>
+<p>Indentation is two-spaces, not tabs, by convention.</p>
+</div></div><hr /><div style="position: relative;"><div id="comma"><strong>, comma</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/comma">full details ></a></div><div class="sep"></div><div><p>Commas are ignored and can be used for assisting readability.</p>
+<ul>
+<li><code>[1, 2, 3]</code> =&gt; <code>[1 2 3]</code></li>
+<li><code>{:a 1, :b 2}</code> =&gt; <code>{:a 1 :b 2}</code></li>
+</ul>
+</div></div><hr /><h4>Symbol Resolution</h4><div style="position: relative;"><div id="dot"><strong>. dot</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/dot">full details ></a></div><div class="sep"></div><div><p>Dots can be used inside symbols for JS interop.</p>
+<ul>
+<li><code>(.foo bar)</code> =&gt; <code>bar.foo()</code></li>
+<li><code>(-.foo bar)</code> =&gt; <code>bar.foo</code></li>
+<li><code>(foo.)</code> =&gt; <code>new foo()</code></li>
+</ul>
+<p>The following are also supported (though not valid in Clojure)</p>
+<ul>
+<li><code>foo.bar.baz</code> =&gt; <code>foo.bar.baz</code></li>
+<li><code>(foo.bar.baz)</code> =&gt; <code>foo.bar.baz()</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="namespace"><strong>/ namespace slash</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/namespace">full details ></a></div><div class="sep"></div><div><p>The left side of <code>/</code> in a keyword or symbol is a namespace.</p>
+<ul>
+<li><code>foo/bar</code></li>
+<li><code>:foo/bar</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="js-namespace"><strong>js/ namespace</strong> - special namespace</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/js-namespace">full details ></a></div><div class="sep"></div><div><p>Use a JavaScript variable.</p>
+<ul>
+<li><code>js/document</code> - the global document object</li>
+<li><code>js/console.log</code> - the global console log function</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="Math-namespace"><strong>Math/ namespace</strong> - special namespace</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/Math-namespace">full details ></a></div><div class="sep"></div><div><p>A special namespace for direct access to the native JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math library</a>.</p>
+<ul>
+<li><code>Math/PI</code> =&gt; <code>js/Math.PI</code></li>
+</ul>
+</div></div><hr /><h4>Tagged Literals</h4><div style="position: relative;"><div id="tagged-literal"><strong># tagged literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/tagged-literal">full details ></a></div><div class="sep"></div><div><p>Some frequently used value types are afforded a &quot;tagged literal&quot; syntax. It is
+similar to a constructor, but this special syntax makes it de/serializable and
+easier to read at the REPL.</p>
+<p>Tagged literals start with a <code>#</code> followed by a symbol and a literal:</p>
+<ul>
+<li><code>#js [...]</code> - <a href="doc:syntax/js-literal">JavaScript array literal</a></li>
+<li><code>#js {...}</code> - <a href="doc:syntax/js-literal">JavaScript object literal</a></li>
+<li><code>#inst &quot;...&quot;</code> - <a href="doc:syntax/inst-literal">JavaScript date literal</a></li>
+<li><code>#uuid &quot;...&quot;</code> - <a href="doc:syntax/uuid-literal">UUID literal</a></li>
+<li><code>#queue [...]</code> - <a href="doc:syntax/queue-literal">queue literal</a></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="js-literal"><strong>#js literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/js-literal">full details ></a></div><div class="sep"></div><div><p>Create a JavaScript object or array.</p>
+<ul>
+<li><code>#js [...]</code> - JS Array</li>
+<li><code>#js {...}</code> - JS Object (with stringified keys)</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="inst-literal"><strong>#inst literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/inst-literal">full details ></a></div><div class="sep"></div><div><p>Creates a JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> object using <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC-3339</a> formatted string.</p>
+<ul>
+<li><code>#inst &quot;yyyy-mm-dd&quot;</code> - date</li>
+<li><code>#inst &quot;yyyy-mm-ddThh:mm:ss&quot;</code> - date and time</li>
+<li><code>#inst &quot;yyyy-mm-ddThh:mm:ssZ&quot;</code> - specify UTC</li>
+<li><code>#inst &quot;yyyy-mm-ddThh:mm:ss-hh:mm&quot;</code> - specify negative time zone offset</li>
+<li><code>#inst &quot;yyyy-mm-ddThh:mm:ss+hh:mm&quot;</code> - specify positive time zone offset</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="uuid-literal"><strong>#uuid literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/uuid-literal">full details ></a></div><div class="sep"></div><div><p>A universally unique identifier (UUID).  Randomly generate one with <a class="code-link" href="/api/cljs.core#random-uuid"><code>random-uuid</code></a>.</p>
+<ul>
+<li><code>#uuid &quot;8-4-4-4-12&quot;</code> - numbers represent the number of hex digits</li>
+<li><code>#uuid &quot;97bda55b-6175-4c39-9e04-7c0205c709dc&quot;</code> - actual example</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="queue-literal"><strong>#queue literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/queue-literal">full details ></a></div><div class="sep"></div><div><p>A queue is defined by placing <code>#queue</code> before a vector.</p>
+<ul>
+<li><code>#queue [...]</code></li>
+</ul>
+</div></div><hr /><h4>Quoting</h4><div style="position: relative;"><div id="quote"><strong>' quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/quote">full details ></a></div><div class="sep"></div><div><p>Return the following form without evaluation, especially for symbols and lists.</p>
+<ul>
+<li><code>&#39;foo</code> =&gt; <code>foo</code></li>
+<li><code>&#39;(foo)</code> =&gt; <code>(foo)</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="syntax-quote"><strong>` syntax quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/syntax-quote">full details ></a></div><div class="sep"></div><div><p>A template facility for easier code generation inside macros.  Like <a class="code-link" href="/api/syntax#quote"><code>&#39; quote</code></a>,
+but with more features to help resolve symbols and interpolate values.</p>
+<ul>
+<li><code>`(foo 123)</code> =&gt; <code>(cljs.user/foo 123)</code> - symbols become fully-qualified</li>
+<li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> - interpolates the value of <code>x</code></li>
+<li><code>`(foo ~@y)</code> =&gt; <code>(cljs.user/foo 1 2 3)</code> - interpolates and splices the sequence of <code>y</code></li>
+<li><code>`(foo bar#)</code> =&gt; <code>(cljs.user/foo bar__20418__auto__)</code> - make symbols ending in <code>#</code> unique</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="unquote"><strong>~ unquote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote">full details ></a></div><div class="sep"></div><div><p>Inserts an evaluated form inside of a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
+<ul>
+<li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> (if x is 123)</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="unquote-splicing"><strong>~@ unquote splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a class="code-link" href="/api/syntax#unquote"><code>~ unquote</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
+<ul>
+<li><code>`(foo ~@x)</code> =&gt; <code>(cljs.user/foo a b)</code> (if x is [a b])</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="auto-gensym"><strong># auto-gensym</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/auto-gensym">full details ></a></div><div class="sep"></div><div><p>Shorthand for generating unique symbols inside a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
+<ul>
+<li><code>foo#</code> =&gt; <code>foo__135__auto__</code></li>
+</ul>
+</div></div><hr /><h4>Vars</h4><div style="position: relative;"><div id="meta"><strong>^ meta</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/meta">full details ></a></div><div class="sep"></div><div><p>Attach metadata to the following symbol or collection.  Use a map to specify
+the metadata, or use shorthand:</p>
+<ul>
+<li><code>^:foo</code> =&gt; <code>^{:foo true}</code></li>
+<li><code>^&quot;foo&quot;</code> =&gt; <code>^{:tag &quot;foo&quot;}</code></li>
+<li><code>^foo</code> =&gt; <code>^{:tag &lt;value of foo&gt;}</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="var"><strong>#' var</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/var">full details ></a></div><div class="sep"></div><div><p>To retrieve metadata like where a var was defined, we need to refer to the var
+itself.  It is therefore helpful to be aware of the following subtle differences:</p>
+<ul>
+<li><code>foo</code> =&gt; returns value bound to foo</li>
+<li><code>&#39;foo</code> =&gt; returns the symbol foo (which is just a name)</li>
+<li><code>#&#39;foo</code> =&gt; returns the foo var itself (for retrieving metadata like where it was defined)</li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="deref"><strong>@ deref</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/deref">full details ></a></div><div class="sep"></div><div><p>Get the value that a reference is currently referring to.</p>
+<ul>
+<li><code>@foo</code> - returns value at <code>foo</code></li>
+</ul>
+</div></div><hr /><h4>Reader Conditionals</h4><div style="position: relative;"><div id="cond"><strong>#? reader conditional</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/cond">full details ></a></div><div class="sep"></div><div><p>Use a different expression depending on the compiler (e.g. Clojure vs ClojureScript).</p>
+<ul>
+<li><code>#?(:clj ... :cljs ...)</code></li>
+</ul>
+</div></div><hr /><div style="position: relative;"><div id="cond-splicing"><strong>#?@ reader conditional splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/cond-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a class="code-link" href="/api/syntax#cond"><code>#? reader conditional</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
+<ul>
+<li><code>#?@(:clj [...] :cljs [...])</code></li>
+</ul>
+</div></div><hr /><h4>Misc</h4><div style="position: relative;"><div id="dispatch"><strong># dispatch</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/dispatch">full details ></a></div><div class="sep"></div><div><p>As a general pattern, syntax forms prefixed with <code>#</code> are related to their
 standalone forms:</p>
 <table>
 <thead>
@@ -120,208 +355,6 @@ standalone forms:</p>
 </tr>
 </tbody>
 </table>
-</div></div><hr /><div style="position: relative;"><div id="dot"><strong>. dot</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/dot">full details ></a></div><div class="sep"></div><div><p>Dots can be used inside symbols for JS interop.</p>
-<ul>
-<li><code>(.foo bar)</code> =&gt; <code>bar.foo()</code></li>
-<li><code>(-.foo bar)</code> =&gt; <code>bar.foo</code></li>
-<li><code>(foo.)</code> =&gt; <code>new foo()</code></li>
-</ul>
-<p>The following are also supported (though not valid in Clojure)</p>
-<ul>
-<li><code>foo.bar.baz</code> =&gt; <code>foo.bar.baz</code></li>
-<li><code>(foo.bar.baz)</code> =&gt; <code>foo.bar.baz()</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="earmuffs"><strong>*earmuffs*</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/earmuffs">full details ></a></div><div class="sep"></div><div><p>A naming convention for dynamic vars (unenforced).</p>
-<ul>
-<li><code>(def ^:dynamic *foo* 1)</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="eval"><strong>#= eval</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/eval">full details ></a></div><div class="sep"></div><div><p>The ability to evaluate forms at reader-time should be ignored in ClojureScript.</p>
-<ul>
-<li><code>#=...</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="function"><strong>#() function</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/function">full details ></a></div><div class="sep"></div><div><p>Shorthand for creating an anonymous function. Use <a class="code-link" href="/api/syntax#arg"><code>% arg</code></a> to refer
-to the arguments.</p>
-<ul>
-<li><code>#(...)</code> =&gt; <code>(fn [args] (...))</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="ignore"><strong>#_ ignore</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ignore">full details ></a></div><div class="sep"></div><div><p>Ignore the next well-formed expression.</p>
-<ul>
-<li><code>[1 #_foo 2 3]</code> =&gt; <code>[1 2 3]</code></li>
-</ul>
-<p>Also useful for commenting out a multi-line expression:</p>
-<pre><code>#_(defn foo [a b]
-    (+ a b))
-</code></pre></div></div><hr /><div style="position: relative;"><div id="impure"><strong>! impure</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/impure">full details ></a></div><div class="sep"></div><div><p>A naming convention sometimes applied to functions that perform mutations.  Examples:</p>
-<ul>
-<li><a class="code-link" href="/api/cljs.core#setBANG"><code>set!</code></a></li>
-<li><a class="code-link" href="/api/cljs.core#swapBANG"><code>swap!</code></a></li>
-<li><a class="code-link" href="/api/cljs.core#conjBANG"><code>conj!</code></a></li>
-<li><a class="code-link" href="/api/cljs.core#specifyBANG"><code>specify!</code></a></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="Infinity"><strong>Infinity</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/Infinity">full details ></a></div><div class="sep"></div><div><p>Floating point representation of Infinity.</p>
-<ul>
-<li><code>Infinity</code> = <code>+Infinity</code></li>
-<li><code>-Infinity</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="inst-literal"><strong>#inst literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/inst-literal">full details ></a></div><div class="sep"></div><div><p>Creates a JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> object using <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC-3339</a> formatted string.</p>
-<ul>
-<li><code>#inst &quot;yyyy-mm-dd&quot;</code> - date</li>
-<li><code>#inst &quot;yyyy-mm-ddThh:mm:ss&quot;</code> - date and time</li>
-<li><code>#inst &quot;yyyy-mm-ddThh:mm:ssZ&quot;</code> - specify UTC</li>
-<li><code>#inst &quot;yyyy-mm-ddThh:mm:ss-hh:mm&quot;</code> - specify negative time zone offset</li>
-<li><code>#inst &quot;yyyy-mm-ddThh:mm:ss+hh:mm&quot;</code> - specify positive time zone offset</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="js-literal"><strong>#js literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/js-literal">full details ></a></div><div class="sep"></div><div><p>Create a JavaScript object or array.</p>
-<ul>
-<li><code>#js [...]</code> - JS Array</li>
-<li><code>#js {...}</code> - JS Object (with stringified keys)</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="js-namespace"><strong>js/ namespace</strong> - special namespace</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/js-namespace">full details ></a></div><div class="sep"></div><div><p>Use a JavaScript variable.</p>
-<ul>
-<li><code>js/document</code> - the global document object</li>
-<li><code>js/console.log</code> - the global console log function</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="keyword"><strong>: keyword</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/keyword">full details ></a></div><div class="sep"></div><div><p>A keyword starts with a colon and evaluates to itself. It can include an optional
-namespace.</p>
-<ul>
-<li><code>:foo</code></li>
-<li><code>:foo/bar</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="keyword-qualify"><strong>:: keyword</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/keyword-qualify">full details ></a></div><div class="sep"></div><div><p>Shorthand for specifying namespaced keywords.  Allows you to use an aliased
-namespace or to have the current one auto-inserted if not specified.</p>
-<ul>
-<li><code>::foo/bar</code> =&gt; <code>:aliased-ns/bar</code></li>
-<li><code>::bar</code> =&gt; <code>:current-ns/bar</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="list"><strong>() list</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/list">full details ></a></div><div class="sep"></div><div><p>A list is interpreted as a <em>call</em> when evaluated.</p>
-<ul>
-<li><code>(...)</code></li>
-<li><code>(foo 1 2 3)</code> - call foo with arguments 1, 2, 3</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="map"><strong>{} map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/map">full details ></a></div><div class="sep"></div><div><p>A map associates keys with values.</p>
-<ul>
-<li><code>{...}</code></li>
-<li><code>{:foo 1}</code></li>
-<li><code>{:foo 1, :bar 2}</code> - comma is optional</li>
-<li><code>{[1 2] &quot;foo&quot;}</code> - keys and values can be any type (even collections)</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="Math-namespace"><strong>Math/ namespace</strong> - special namespace</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/Math-namespace">full details ></a></div><div class="sep"></div><div><p>A special namespace for direct access to the native JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math library</a>.</p>
-<ul>
-<li><code>Math/PI</code> =&gt; <code>js/Math.PI</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="meta"><strong>^ meta</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/meta">full details ></a></div><div class="sep"></div><div><p>Attach metadata to the following symbol or collection.  Use a map to specify
-the metadata, or use shorthand:</p>
-<ul>
-<li><code>^:foo</code> =&gt; <code>^{:foo true}</code></li>
-<li><code>^&quot;foo&quot;</code> =&gt; <code>^{:tag &quot;foo&quot;}</code></li>
-<li><code>^foo</code> =&gt; <code>^{:tag &lt;value of foo&gt;}</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="namespace"><strong>/ namespace slash</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/namespace">full details ></a></div><div class="sep"></div><div><p>The left side of <code>/</code> in a keyword or symbol is a namespace.</p>
-<ul>
-<li><code>foo/bar</code></li>
-<li><code>:foo/bar</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="NaN"><strong>NaN</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/NaN">full details ></a></div><div class="sep"></div><div><p>Floating point representation of <code>NaN</code> (not a number), an undefined or
-unrepresentable number.</p>
-</div></div><hr /><div style="position: relative;"><div id="nil"><strong>nil</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/nil">full details ></a></div><div class="sep"></div><div><p><code>nil</code> is a representation of nothing.</p>
-</div></div><hr /><div style="position: relative;"><div id="ns-map"><strong>#: namespaced map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ns-map">full details ></a></div><div class="sep"></div><div><p>Provide a default namespace for keyword keys in a map.</p>
-<pre><code class="lang-clj">#:a {1 nil, :b nil, :b/c nil, :_/d nil}
-;;=&gt; {1 nil, :a/b nil, :b/c nil, :d nil}
-</code></pre>
-</div></div><hr /><div style="position: relative;"><div id="ns-map-alias"><strong>#:: namespaced map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ns-map-alias">full details ></a></div><div class="sep"></div><div><p>Provide a default namespace for keyword keys in a map, using an alias.</p>
-<ul>
-<li><code>#:: {:a 1}</code> =&gt; <code>{:current-ns/a 1}</code></li>
-<li><code>#::s {:a 1}</code> =&gt; <code>{:aliased-ns/a 1}</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="number"><strong>number literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/number">full details ></a></div><div class="sep"></div><div><p>ClojureScript numbers are the same as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates#Numbers">JavaScript numbers</a> (floats).
-Available formats:</p>
-<ul>
-<li>decimal <code>123</code> <code>1.23</code></li>
-<li>exponent <code>12e3</code> <code>1.2e3</code> <code>1.2e-3</code></li>
-<li>hexadecimal <code>0x123</code></li>
-<li>octal <code>0123</code></li>
-<li>binary <code>2r0110</code></li>
-<li>arbitrary <code>NrXXX</code> where <code>(&lt;= 2 N 36)</code> and <code>X</code> is in <code>[0-9,A-Z]</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="predicate"><strong>? predicate</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/predicate">full details ></a></div><div class="sep"></div><div><p>A naming convention for functions returning true or false (unenforced).
-Examples:</p>
-<ul>
-<li><a class="code-link" href="/api/cljs.core#evenQMARK"><code>even?</code></a></li>
-<li><a class="code-link" href="/api/cljs.core#emptyQMARK"><code>empty?</code></a></li>
-<li><a class="code-link" href="/api/cljs.core#containsQMARK"><code>contains?</code></a></li>
-<li><a class="code-link" href="/api/cljs.core#nilQMARK"><code>nil?</code></a></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="queue-literal"><strong>#queue literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/queue-literal">full details ></a></div><div class="sep"></div><div><p>A queue is defined by placing <code>#queue</code> before a vector.</p>
-<ul>
-<li><code>#queue [...]</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="quote"><strong>' quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/quote">full details ></a></div><div class="sep"></div><div><p>Return the following form without evaluation, especially for symbols and lists.</p>
-<ul>
-<li><code>&#39;foo</code> =&gt; <code>foo</code></li>
-<li><code>&#39;(foo)</code> =&gt; <code>(foo)</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="regex"><strong>#"" regex</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/regex">full details ></a></div><div class="sep"></div><div><p>Regular expressions compile to native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript regular expressions</a>.</p>
-<ul>
-<li><code>#&quot;...&quot;</code> =&gt; js <code>/.../</code></li>
-<li><code>#&quot;(?i)...&quot;</code> =&gt; js <code>/.../i</code> (case-insensitive)</li>
-<li><code>#&quot;(?m)...&quot;</code> =&gt; js <code>/.../m</code> (multi-line)</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="rest"><strong>& rest</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/rest">full details ></a></div><div class="sep"></div><div><p>A concept shared between <a class="code-link" href="/api/syntax#destructure-vector"><code>destructure []</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>
-for binding the rest of the values of a sequence to a name.</p>
-<ul>
-<li><code>(fn [... &amp; rest])</code> - for function arguments</li>
-<li><code>(let [[... &amp; rest] ...])</code> - for sequences</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="set"><strong>#{} set</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/set">full details ></a></div><div class="sep"></div><div><p>An unordered set of values.  Values must be unique.</p>
-<ul>
-<li><code>#{...}</code></li>
-<li><code>#{1 2 3}</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="shebang"><strong>#! shebang</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/shebang">full details ></a></div><div class="sep"></div><div><p>ClojureScript allows <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang lines</a> simply by making <code>#!</code> equivalent to
-<a class="code-link" href="/api/syntax#comment"><code>; comment</code></a>.</p>
-<ul>
-<li><code>#!/usr/bin/env planck</code> - use Planck to execute this file</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="string"><strong>"" string</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/string">full details ></a></div><div class="sep"></div><div><p>A string of characters.</p>
-<ul>
-<li><code>&quot;...&quot;</code></li>
-<li><code>&quot;single line string&quot;</code></li>
-</ul>
-<pre><code>&quot;multi
-line
-string&quot;
-</code></pre></div></div><hr /><div style="position: relative;"><div id="symbol"><strong>symbol literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/symbol">full details ></a></div><div class="sep"></div><div><p>A symbol is intended as a name for a value.  When evaluated, its result will be
-the value bound to the symbol.</p>
-<ul>
-<li><code>foo</code> - evaluates to the value bound to <code>foo</code></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="syntax-quote"><strong>` syntax quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/syntax-quote">full details ></a></div><div class="sep"></div><div><p>A template facility for easier code generation inside macros.  Like <a class="code-link" href="/api/syntax#quote"><code>&#39; quote</code></a>,
-but with more features to help resolve symbols and interpolate values.</p>
-<ul>
-<li><code>`(foo 123)</code> =&gt; <code>(cljs.user/foo 123)</code> - symbols become fully-qualified</li>
-<li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> - interpolates the value of <code>x</code></li>
-<li><code>`(foo ~@y)</code> =&gt; <code>(cljs.user/foo 1 2 3)</code> - interpolates and splices the sequence of <code>y</code></li>
-<li><code>`(foo bar#)</code> =&gt; <code>(cljs.user/foo bar__20418__auto__)</code> - make symbols ending in <code>#</code> unique</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="tagged-literal"><strong># tagged literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/tagged-literal">full details ></a></div><div class="sep"></div><div><p>Some frequently used value types are afforded a &quot;tagged literal&quot; syntax. It is
-similar to a constructor, but this special syntax makes it de/serializable and
-easier to read at the REPL.</p>
-<p>Tagged literals start with a <code>#</code> followed by a symbol and a literal:</p>
-<ul>
-<li><code>#js [...]</code> - <a href="doc:syntax/js-literal">JavaScript array literal</a></li>
-<li><code>#js {...}</code> - <a href="doc:syntax/js-literal">JavaScript object literal</a></li>
-<li><code>#inst &quot;...&quot;</code> - <a href="doc:syntax/inst-literal">JavaScript date literal</a></li>
-<li><code>#uuid &quot;...&quot;</code> - <a href="doc:syntax/uuid-literal">UUID literal</a></li>
-<li><code>#queue [...]</code> - <a href="doc:syntax/queue-literal">queue literal</a></li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="unquote"><strong>~ unquote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote">full details ></a></div><div class="sep"></div><div><p>Inserts an evaluated form inside of a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
-<ul>
-<li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> (if x is 123)</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="unquote-splicing"><strong>~@ unquote splicing</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote-splicing">full details ></a></div><div class="sep"></div><div><p>Like <a class="code-link" href="/api/syntax#unquote"><code>~ unquote</code></a>, except the result is spliced (i.e. <code>[a b]</code> =&gt; <code>a b</code>)</p>
-<ul>
-<li><code>`(foo ~@x)</code> =&gt; <code>(cljs.user/foo a b)</code> (if x is [a b])</li>
-</ul>
 </div></div><hr /><div style="position: relative;"><div id="unreadable"><strong>#<> unreadable</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unreadable">full details ></a></div><div class="sep"></div><div><p>A proper definition for something that cannot be read.</p>
 <ul>
 <li><code>#&lt;...&gt;</code></li>
@@ -329,41 +362,8 @@ easier to read at the REPL.</p>
 <p>When certain values cannot be printed to a REPL using some literal syntax form,
 it wraps a description of its value in a form defined as unreadable, <code>#&lt;&gt;</code>.  A
 reader error will be thrown if this value is fed back into the REPL.</p>
-</div></div><hr /><div style="position: relative;"><div id="unused"><strong>_ unused</strong> - convention</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unused">full details ></a></div><div class="sep"></div><div><p>When unused values require a name, it is common to use <code>_</code>.</p>
+</div></div><hr /><div style="position: relative;"><div id="eval"><strong>#= eval</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/eval">full details ></a></div><div class="sep"></div><div><p>The ability to evaluate forms at reader-time should be ignored in ClojureScript.</p>
 <ul>
-<li><code>(fn [_ _ a]))</code> - ignore first two function arguments</li>
-<li><code>(let [[_ a _ b] ...])</code> - only bind names to 2nd and 4th values of a sequence</li>
+<li><code>#=...</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="uuid-literal"><strong>#uuid literal</strong> - tagged literal</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/uuid-literal">full details ></a></div><div class="sep"></div><div><p>A universally unique identifier (UUID).  Randomly generate one with <a class="code-link" href="/api/cljs.core#random-uuid"><code>random-uuid</code></a>.</p>
-<ul>
-<li><code>#uuid &quot;8-4-4-4-12&quot;</code> - numbers represent the number of hex digits</li>
-<li><code>#uuid &quot;97bda55b-6175-4c39-9e04-7c0205c709dc&quot;</code> - actual example</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="var"><strong>#' var</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/var">full details ></a></div><div class="sep"></div><div><p>To retrieve metadata like where a var was defined, we need to refer to the var
-itself.  It is therefore helpful to be aware of the following subtle differences:</p>
-<ul>
-<li><code>foo</code> =&gt; returns value bound to foo</li>
-<li><code>&#39;foo</code> =&gt; returns the symbol foo (which is just a name)</li>
-<li><code>#&#39;foo</code> =&gt; returns the foo var itself (for retrieving metadata like where it was defined)</li>
-</ul>
-</div></div><hr /><div style="position: relative;"><div id="vector"><strong>[] vector</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/vector">full details ></a></div><div class="sep"></div><div><p>A vector is the most commonly used form for creating literal sequences.</p>
-<ul>
-<li><code>[...]</code></li>
-<li><code>[1 2 3]</code></li>
-</ul>
-<p>Vectors also serve an important language role to prevent you from interpreting
-sequences as function calls.  Whether it&#39;s for literal data or for <em>binding forms</em>
-inside <a class="code-link" href="/api/cljs.core#let"><code>let</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>, vectors provide an
-important syntax cue not found in other Lisps.</p>
-</div></div><hr /><div style="position: relative;"><div id="whitespace"><strong>whitespace</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/whitespace">full details ></a></div><div class="sep"></div><div><p>Any number of whitespace characters can be used between forms, but is
-optional around delimiters. Commas are considered whitespace.
-The following are equivalent:</p>
-<ul>
-<li><code>#js [ 1 2 3 ]</code></li>
-<li><code>#js [1 2 3]</code></li>
-<li><code>#js [1, 2, 3]</code></li>
-<li><code>#js[1 2 3]</code></li>
-<li><code>#js[1,2,3]</code></li>
-</ul>
-<p>Indentation is two-spaces, not tabs, by convention.</p>
 </div></div></div></div></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
