@@ -121,7 +121,7 @@ if there are more than one:</p>
 <ul>
 <li><code>%1</code> - first arg</li>
 <li><code>%2</code> - second arg</li>
-<li><code>%3</code> - first arg</li>
+<li><code>%3</code> - third arg</li>
 <li><code>%&amp;</code> - rest of the args</li>
 </ul>
 </div></div><hr /><div style="position: relative;"><div id="rest"><strong>& rest</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/rest">full details ></a></div><div class="sep"></div><div><p>A concept shared between <a class="code-link" href="/api/syntax#destructure-vector"><code>destructure []</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>
@@ -201,7 +201,7 @@ The following are equivalent:</p>
 </div></div><hr /><h4>Symbol Resolution</h4><div style="position: relative;"><div id="dot"><strong>. dot</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/dot">full details ></a></div><div class="sep"></div><div><p>Dots can be used inside symbols for JS interop.</p>
 <ul>
 <li><code>(.foo bar)</code> =&gt; <code>bar.foo()</code></li>
-<li><code>(-.foo bar)</code> =&gt; <code>bar.foo</code></li>
+<li><code>(.-foo bar)</code> =&gt; <code>bar.foo</code></li>
 <li><code>(foo.)</code> =&gt; <code>new foo()</code></li>
 </ul>
 <p>The following are also supported (though not valid in Clojure)</p>
