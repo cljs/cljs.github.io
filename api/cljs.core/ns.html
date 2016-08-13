@@ -43,11 +43,13 @@ and libraries into the current namespace.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#in-ns">in-ns (repl)</a></li><li><a href="/api/cljs.core#load-namespace">load-namespace (repl)</a></li><li><a href="/api/cljs.core#import">import (repl)</a></li><li><a href="/api/cljs.core#require">require (repl)</a></li><li><a href="/api/cljs.core#require-macros">require-macros (repl)</a></li></ul><hr />Source docstring:<pre>You must currently use the ns form only with the following caveats
 
   * You must use the :only form of :use
-  * :require supports :as and :refer
-    - both options can be skipped
+  * :require supports :as, :refer, and :rename
+    - all options can be skipped
     - in this case a symbol can be used as a libspec directly
       - that is, (:require lib.foo) and (:require [lib.foo]) are both
         supported and mean the same thing
+    - :rename specifies a map from referred var names to different
+      symbols (and can be used to prevent clashes)
     - prefix lists are not supported
   * The only option for :refer-clojure is :exclude
   * :import is available for importing Google Closure classes
@@ -101,7 +103,7 @@ from the clojure.* namespace to the cljs.* namespace. For example:
 
 will be automatically converted to
 
-(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.93+/src/main/clojure/cljs/analyzer.cljc#L2010-L2109">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198+/src/main/clojure/cljs/analyzer.cljc#L2135-L2242">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> name)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespaces must be named by a symbol."</span>)))
@@ -128,7 +130,10 @@ will be automatically converted to
                                     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> metadata (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args) args))
                             <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> metadata (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args) args)))
           name         (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> name merge metadata)
-          excludes     (<span class="hljs-name">parse-ns-excludes</span> env args)
+          {excludes <span class="hljs-symbol">:excludes</span> core-renames <span class="hljs-symbol">:renames</span>} (<span class="hljs-name">parse-ns-excludes</span> env args)
+          core-renames (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m [original renamed]]
+                                 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> m renamed (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> <span class="hljs-string">"cljs.core"</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> original))))
+                         {} core-renames)
           deps         (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> #{})
           aliases      (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> {<span class="hljs-symbol">:fns</span> {} <span class="hljs-symbol">:macros</span> {}})
           spec-parsers {<span class="hljs-symbol">:require</span>        (<span class="hljs-name"><span class="hljs-builtin-name">partial</span></span> parse-require-spec env <span class="hljs-literal">false</span> deps aliases)
@@ -141,7 +146,9 @@ will be automatically converted to
           valid-forms  (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> #{<span class="hljs-symbol">:use</span> <span class="hljs-symbol">:use-macros</span> <span class="hljs-symbol">:require</span> <span class="hljs-symbol">:require-macros</span> <span class="hljs-symbol">:import</span>})
           reload       (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> {<span class="hljs-symbol">:use</span> <span class="hljs-literal">nil</span> <span class="hljs-symbol">:require</span> <span class="hljs-literal">nil</span> <span class="hljs-symbol">:use-macros</span> <span class="hljs-literal">nil</span> <span class="hljs-symbol">:require-macros</span> <span class="hljs-literal">nil</span>})
           reloads      (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> {})
-          {uses <span class="hljs-symbol">:use</span> requires <span class="hljs-symbol">:require</span> use-macros <span class="hljs-symbol">:use-macros</span> require-macros <span class="hljs-symbol">:require-macros</span> imports <span class="hljs-symbol">:import</span> <span class="hljs-symbol">:as</span> params}
+          {uses <span class="hljs-symbol">:use</span> requires <span class="hljs-symbol">:require</span> renames <span class="hljs-symbol">:rename</span>
+           use-macros <span class="hljs-symbol">:use-macros</span> require-macros <span class="hljs-symbol">:require-macros</span>
+           rename-macros <span class="hljs-symbol">:rename-macros</span> imports <span class="hljs-symbol">:import</span> <span class="hljs-symbol">:as</span> params}
           (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span>
             (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m [k &amp; libs]]
               (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name">#</span>{<span class="hljs-symbol">:use</span> <span class="hljs-symbol">:use-macros</span> <span class="hljs-symbol">:require</span> <span class="hljs-symbol">:require-macros</span> <span class="hljs-symbol">:import</span>} k)
@@ -170,8 +177,10 @@ will be automatically converted to
              <span class="hljs-symbol">:excludes</span>       excludes
              <span class="hljs-symbol">:use-macros</span>     use-macros
              <span class="hljs-symbol">:require-macros</span> require-macros
+             <span class="hljs-symbol">:rename-macros</span>  rename-macros
              <span class="hljs-symbol">:uses</span>           uses
              <span class="hljs-symbol">:requires</span>       requires
+             <span class="hljs-symbol">:renames</span>        (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> renames core-renames)
              <span class="hljs-symbol">:imports</span>        imports}
             ns-info
             (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:merge</span> form-meta)
@@ -179,7 +188,8 @@ will be automatically converted to
               (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ns-info' (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> name])]
                 (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">pos?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> ns-info'))
                   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [merge-keys
-                        [<span class="hljs-symbol">:use-macros</span> <span class="hljs-symbol">:require-macros</span> <span class="hljs-symbol">:uses</span> <span class="hljs-symbol">:requires</span> <span class="hljs-symbol">:imports</span>]]
+                        [<span class="hljs-symbol">:use-macros</span> <span class="hljs-symbol">:require-macros</span> <span class="hljs-symbol">:rename-macros</span>
+                         <span class="hljs-symbol">:uses</span> <span class="hljs-symbol">:requires</span> <span class="hljs-symbol">:renames</span> <span class="hljs-symbol">:imports</span>]]
                     (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
                       ns-info'
                       (<span class="hljs-name">merge-with</span> merge

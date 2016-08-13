@@ -6,13 +6,6 @@ if there are more than one:</p>
 <li><code>%3</code> - first arg</li>
 <li><code>%&amp;</code> - rest of the args</li>
 </ul>
-</div><hr /><h3>Details:</h3><div><p>Special vars for accessing implicit function arguments.</p>
-<p>Only usable inside <a class="code-link" href="/api/syntax#function"><code>#() function</code></a>.</p>
-<ul>
-<li><code>%</code> or <code>%1</code> for first argument.</li>
-<li><code>%2</code>, <code>%3</code> and so on for subsequent arguments</li>
-<li><code>%&amp;</code> for the rest of the arguments after the highest individually referenced argument</li>
-</ul>
 </div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> <span class="hljs-number">2</span> %) [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 <span class="hljs-comment">;;=&gt; (2 4 6)</span>
 

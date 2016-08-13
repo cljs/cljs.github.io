@@ -4,7 +4,7 @@ a namespace for which the .clj is in the classpath.  Returns nil if
 it can't find the source.  For most REPL usage, 'source' is more
 convenient.
 
-Example: (source-fn 'filter)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.93+/src/main/clojure/cljs/repl.cljc#L1246-L1267">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> source-fn
+Example: (source-fn 'filter)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198+/src/main/clojure/cljs/repl.cljc#L1301-L1322">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> source-fn
   [env x]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [v (<span class="hljs-name">ana-api/resolve</span> env x)]
     (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [filepath (<span class="hljs-symbol">:file</span> v)]

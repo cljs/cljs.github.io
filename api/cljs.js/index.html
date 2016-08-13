@@ -27,6 +27,8 @@ containing the following keys:
 
 :lang       - the language, :clj or :js
 :source     - the source of the library (a string)
+:file       - optional, the file path, it will be added to AST's :file keyword
+              (but not in :meta)
 :cache      - optional, if a :clj namespace has been precompiled to :js, can
               give an analysis cache for faster loads.
 :source-map - optional, if a :clj namespace has been precompiled to :js, can
