@@ -51,7 +51,7 @@ and libraries into the current namespace.</p>
     - :rename specifies a map from referred var names to different
       symbols (and can be used to prevent clashes)
     - prefix lists are not supported
-  * The only option for :refer-clojure is :exclude
+  * The only options for :refer-clojure are :exclude and :rename
   * :import is available for importing Google Closure classes
     - ClojureScript types and records should be brought in with :use
       or :require :refer, not :import ed
@@ -103,7 +103,7 @@ from the clojure.* namespace to the cljs.* namespace. For example:
 
 will be automatically converted to
 
-(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198+/src/main/clojure/cljs/analyzer.cljc#L2135-L2242">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198+/src/main/clojure/cljs/analyzer.cljc#L2141-L2248">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> name)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespaces must be named by a symbol."</span>)))
