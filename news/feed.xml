@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 13 Aug 2016 03:52:16 GMT</pubDate><lastBuildDate>Sat, 13 Aug 2016 03:52:16 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 13 Aug 2016 04:01:29 GMT</pubDate><lastBuildDate>Sat, 13 Aug 2016 04:01:29 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
 1.9.0-alpha10. This release also includes a large number of
 enhancements to the ns form:&lt;/p&gt;
 &lt;ul&gt;
@@ -9,13 +9,15 @@ compiler will figure it out.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;clojure.* namespaces will now automatically be aliased to their
 ClojureScript equivalents. For example this means that the following
 is perfectly valid ClojureScript:&lt;/p&gt;
-&lt;p&gt;(ns foo.bar
-  (:require [clojure.spec :refer [fspec]]))&lt;/p&gt;
-&lt;p&gt;This feature and the previous one should significantly reduce reader
-conditional usage in ns forms.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;thanks to Antonio Monteiro we now support :rename&lt;/p&gt;
-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-clj&quot;&gt;(&lt;span class=&quot;hljs-name&quot;&gt;&lt;span class=&quot;hljs-builtin-name&quot;&gt;ns&lt;/span&gt;&lt;/span&gt; foo.bar
+  (&lt;span class=&quot;hljs-symbol&quot;&gt;:require&lt;/span&gt; [clojure.spec &lt;span class=&quot;hljs-symbol&quot;&gt;:refer&lt;/span&gt; [fspec]]))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  This feature and the previous one should significantly reduce reader
+  conditional usage in ns forms.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;thanks to Antonio Monteiro we now support :rename&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;We also have a new feature that is relevant for tooling such as
 Figwheel and cljs-devtools - :preloads. This should now be the

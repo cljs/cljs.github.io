@@ -9,13 +9,15 @@ compiler will figure it out.</p>
 <li><p>clojure.* namespaces will now automatically be aliased to their
 ClojureScript equivalents. For example this means that the following
 is perfectly valid ClojureScript:</p>
-<p>(ns foo.bar
-  (:require [clojure.spec :refer [fspec]]))</p>
-<p>This feature and the previous one should significantly reduce reader
-conditional usage in ns forms.</p>
 </li>
-<li><p>thanks to Antonio Monteiro we now support :rename</p>
-</li>
+</ul>
+<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> foo.bar
+  (<span class="hljs-symbol">:require</span> [clojure.spec <span class="hljs-symbol">:refer</span> [fspec]]))
+</code></pre>
+<p>  This feature and the previous one should significantly reduce reader
+  conditional usage in ns forms.</p>
+<ul>
+<li>thanks to Antonio Monteiro we now support :rename</li>
 </ul>
 <p>We also have a new feature that is relevant for tooling such as
 Figwheel and cljs-devtools - :preloads. This should now be the
