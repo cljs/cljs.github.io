@@ -24,7 +24,9 @@ the first time it is dereferenced.</p>
 @a
 ;;=&gt; 1
 </code></pre>
-<p>A <a class="code-link" href="/api/cljs.core#var"><code>var</code></a> is a</p>
+<p>Evaluating a symbol naturally dereferences the value of a <a class="code-link" href="/api/cljs.core#var"><code>var</code></a>.
+But a var reference can be dereferenced as a roundabout way to obtain its value.
+(Var references are mainly used to retrieve metadata on that var).</p>
 <pre><code class="lang-clj">(def ^{:doc "my var"} a 1)
 (:doc (meta #'a))
 ;;=&gt; "my var"
