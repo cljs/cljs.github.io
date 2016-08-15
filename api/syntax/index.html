@@ -36,7 +36,7 @@ string&quot;
 </div></div><hr /><div style="position: relative;"><div id="keyword"><strong>: keyword</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/keyword">full details ></a></div><div class="sep"></div><div><p>A keyword starts with a colon and evaluates to itself. It can include an optional
 namespace.</p>
 <ul>
-<li><code>:foo</code></li>
+<li><code>:bar</code></li>
 <li><code>:foo/bar</code></li>
 </ul>
 </div></div><hr /><div style="position: relative;"><div id="keyword-qualify"><strong>:: keyword</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/keyword-qualify">full details ></a></div><div class="sep"></div><div><p>Shorthand for specifying namespaced keywords.  Allows you to use an aliased
@@ -45,10 +45,12 @@ namespace or to have the current one auto-inserted if not specified.</p>
 <li><code>::foo/bar</code> =&gt; <code>:aliased-ns/bar</code></li>
 <li><code>::bar</code> =&gt; <code>:current-ns/bar</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div id="symbol"><strong>symbol literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/symbol">full details ></a></div><div class="sep"></div><div><p>A symbol is intended as a name for a value.  When evaluated, its result will be
-the value bound to the symbol.</p>
+</div></div><hr /><div style="position: relative;"><div id="symbol"><strong>symbol literal</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/symbol">full details ></a></div><div class="sep"></div><div><p>A symbol is used as a name for a var.  When evaluated, its result will be
+the value bound to the var.</p>
 <ul>
-<li><code>foo</code> - evaluates to the value bound to <code>foo</code></li>
+<li><code>bar</code> - evaluates to the value bound to <code>bar</code></li>
+<li><code>foo/bar</code> - evaluates to the value bound to a var outside the current namespace.
+The namespace <code>foo</code> can be an aliased or literal namespace.</li>
 </ul>
 </div></div><hr /><h4>Special Symbols</h4><div style="position: relative;"><div id="true"><strong>true</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/true">full details ></a></div><div class="sep"></div><div><p>The boolean literal for true.</p>
 </div></div><hr /><div style="position: relative;"><div id="false"><strong>false</strong> - special symbol</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/false">full details ></a></div><div class="sep"></div><div><p>The boolean literal for false.</p>
