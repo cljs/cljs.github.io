@@ -4,7 +4,7 @@ false return values will be included.</p>
 <p>Returns a transducer when no collection is provided.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#keep-indexed">keep-indexed</a></li><li><a href="/api/cljs.core#map">map</a></li><li><a href="/api/cljs.core#filter">filter</a></li></ul><hr />Source docstring:<pre>Returns a lazy sequence of the non-nil results of (f item). Note,
 this means false return values will be included.  f must be free of
-side-effects.  Returns a transducer when no collection is provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198-11-gbc7f1d4/src/main/cljs/cljs/core.cljs#L4160-L4189">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> keep
+side-effects.  Returns a transducer when no collection is provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216/src/main/cljs/cljs/core.cljs#L4160-L4189">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> keep
   ([f]
    (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [rf]
      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>

@@ -2,6 +2,6 @@
 returns a spec that returns a conformed map satisfying all of the
 specs.  Successive conformed values propagate through rest of
 predicates. Unlike 'and', merge can generate maps satisfying the
-union of the predicates.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198-11-gbc7f1d4/src/main/cljs/cljs/spec.cljc#L445-L452">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> merge
+union of the predicates.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216/src/main/cljs/cljs/spec.cljc#L446-L453">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> merge
   [&amp; pred-forms]
   `(<span class="hljs-name">cljs.spec/merge-spec-impl</span> '~(<span class="hljs-name"><span class="hljs-builtin-name">mapv</span></span> #(<span class="hljs-name">res</span> &amp;env %) pred-forms) ~(<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> pred-forms) <span class="hljs-literal">nil</span>))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/merge.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

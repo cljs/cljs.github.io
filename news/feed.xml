@@ -1,4 +1,21 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 15 Aug 2016 06:04:21 GMT</pubDate><lastBuildDate>Mon, 15 Aug 2016 06:04:21 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 15 Aug 2016 19:42:20 GMT</pubDate><lastBuildDate>Mon, 15 Aug 2016 19:42:20 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.211 - cljs.spec fixes</title><description>&lt;p&gt;This release addresses a few bugs around cljs.spec discovered in the
+last release along with relevant fixes for self-hosted ClojureScript.&lt;/p&gt;
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1746&quot;&gt;CLJS-1746&lt;/a&gt;: Log the result of loading a dependency&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1657&quot;&gt;CLJS-1657&lt;/a&gt;: Self-host: Implicit macro loading with alias&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1742&quot;&gt;CLJS-1742&lt;/a&gt;: Add docstring for new refer-clojure REPL special&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1274&quot;&gt;CLJS-1274&lt;/a&gt;: Allow assignment to namespace-qualified names in current namespace&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1744&quot;&gt;CLJS-1744&lt;/a&gt;: rest produces nil for larger maps&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1740&quot;&gt;CLJS-1740&lt;/a&gt;: Self-host: Need to port more of &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1733&quot;&gt;CLJS-1733&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1741&quot;&gt;CLJS-1741&lt;/a&gt;: Add :rename to :refer-clojure in ns docstring&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1737&quot;&gt;CLJS-1737&lt;/a&gt;: Self-host: clojure alias implicit macro use regression&lt;/li&gt;
+&lt;li&gt;invalid cljs.spec/merge res call&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1739&quot;&gt;CLJS-1739&lt;/a&gt;: seq on map literal with 9 elements leads to rest producing nil&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1738&quot;&gt;CLJS-1738&lt;/a&gt;: Self-host: need to update call to check-use-macros-inferring-missing&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Mon, 15 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.211</link></item><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
 1.9.0-alpha10. This release also includes a large number of
 enhancements to the ns form:&lt;/p&gt;
 &lt;ul&gt;
@@ -296,48 +313,4 @@ signifant gains for cold development and production builds.&lt;/p&gt;
 metadata&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1483&quot;&gt;CLJS-1483&lt;/a&gt;: Minor DCE regression with advanced compilation mode&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 08 Jan 2016 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.228</link></item><item><title>1.7.170 - Enhanced Build Pipeline</title><description>&lt;p&gt;This release includes a major refactor of the build pipeline thanks to
-Juho Teperi. This change along with some greatly simplified
-recompilation logic will mean much faster cold build times for larger
-projects (some users have already reported &amp;gt;10X).&lt;/p&gt;
-&lt;p&gt;This is a breaking change for existing tooling. You will need to
-upgrade lein-cljsbuild, lein-figwheel, and boot-cljs if you intend to
-adopt this version of ClojureScript. All the mentioned tools have
-already accounted for this change. Refer to the appropriate
-documentation for your tooling to determine which version number you
-should adopt.&lt;/p&gt;
-&lt;p&gt;Other interesting changes and fixes include newer Google Closure
-Compiler and Library dependencies, self hosting tweaks, a Google
-Closure modules (:modules compiler option) regression,
-improved warnings, and minor REPL enhancements.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Refactor build pipeline&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1478&quot;&gt;CLJS-1478&lt;/a&gt;: Self-host: Allow static-fns opt&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Generate larger range of random UUIDs&lt;/li&gt;
-&lt;li&gt;make browser REPL file reloads less chatty&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1475&quot;&gt;CLJS-1475&lt;/a&gt;: indicate that cljs.reader/read is safe&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1470&quot;&gt;CLJS-1470&lt;/a&gt;: Bump GCL Dependency&lt;/li&gt;
-&lt;li&gt;bump Google Closure dep&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;in system-time check that js/process.hrtime is actually a thing&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1228&quot;&gt;CLJS-1228&lt;/a&gt;: cljs.util/topo-sort is polynomial on larger dependency graphs&lt;/li&gt;
-&lt;li&gt;check that performance.now method actually exists&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1476&quot;&gt;CLJS-1476&lt;/a&gt;: Self-host: Protocol prefixing broken for three- (or more) segment namespaces&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1472&quot;&gt;CLJS-1472&lt;/a&gt; Patch for &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1467&quot;&gt;CLJS-1467&lt;/a&gt; causes regression for nodejscli&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1469&quot;&gt;CLJS-1469&lt;/a&gt; :modules regression&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1445&quot;&gt;CLJS-1445&lt;/a&gt;: Syntax error for var args in protocol methods&lt;/li&gt;
-&lt;li&gt;Warn if protocol impl methods do not match its protocol&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1451&quot;&gt;CLJS-1451&lt;/a&gt; Protocol impl do not support qualified method names&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1422&quot;&gt;CLJS-1422&lt;/a&gt;: cljs.js/eval-str fails for ns form on node.js with simple optimizations&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1423&quot;&gt;CLJS-1423&lt;/a&gt;: self-host: Requiring analyzer/compiler breaks unchecked Boolean&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1466&quot;&gt;CLJS-1466&lt;/a&gt;: Improperly munged output path for GClosure JavaScript&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1467&quot;&gt;CLJS-1467&lt;/a&gt;: Foreign Libraries not included when using :main with :simple or :advanced&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 06 Nov 2015 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.170</link></item></channel></rss>
+</description><pubDate>Fri, 08 Jan 2016 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.7.228</link></item></channel></rss>
