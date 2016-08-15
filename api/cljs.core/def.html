@@ -40,8 +40,8 @@ c
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198+/src/main/clojure/cljs/analyzer.cljc#L1139-L1270">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
-  [op env form name _]
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198-11-gbc7f1d4/src/main/clojure/cljs/analyzer.cljc#L1139-L1278">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
+  [op env form _ _]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pfn (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
               ([_ sym] {<span class="hljs-symbol">:sym</span> sym})
               ([_ sym init] {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:init</span> init})
@@ -54,13 +54,21 @@ not supplied, the root binding of the var is unaffected.</pre><div>Parser code @
         dynamic (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:dynamic</span>)
         ns-name (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:name</span>)
         locals (<span class="hljs-symbol">:locals</span> env)
-        clash-ns (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns-name <span class="hljs-string">"."</span> sym))]
+        clash-ns (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns-name <span class="hljs-string">"."</span> sym))
+        sym-ns   (<span class="hljs-name"><span class="hljs-builtin-name">namespace</span></span> sym)
+        sym      (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
+                   (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> sym-ns (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> sym-ns) ns-name)
+                                       <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">symbol-identical?</span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> sym-ns) ns-name))))
+                   (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Can't def ns-qualified name in namespace "</span> sym-ns)))
+
+                   (<span class="hljs-name">some?</span> sym-ns)
+                   (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> sym))
+
+                   <span class="hljs-symbol">:else</span> sym)]
     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> clash-ns])
       (<span class="hljs-name">warning</span> <span class="hljs-symbol">:ns-var-clash</span> env
         {<span class="hljs-symbol">:ns</span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns-name <span class="hljs-string">"."</span> sym))
          <span class="hljs-symbol">:var</span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns-name) (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> sym))}))
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">namespace</span></span> sym)
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Can't def ns-qualified name"</span>)))
     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:const</span> (<span class="hljs-name">resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> env <span class="hljs-symbol">:locals</span>) sym))
       (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Can't redefine a constant"</span>)))
     (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [doc (<span class="hljs-symbol">:doc</span> args)]

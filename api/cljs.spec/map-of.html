@@ -6,6 +6,6 @@ Same options as 'every', :kind defaults to map?, with the addition of:
 
 :conform-keys - conform keys as well as values (default false)
 
-See also - every-kv</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198+/src/main/cljs/cljs/spec.cljc#L253-L264">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> map-of
+See also - every-kv</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.198-11-gbc7f1d4/src/main/cljs/cljs/spec.cljc#L253-L264">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> map-of
   [kpred vpred &amp; opts]
   `(<span class="hljs-name">every-kv</span> ~kpred ~vpred <span class="hljs-symbol">:cljs.spec/conform-all</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:kind</span> map? ~@opts))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/map-of.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
