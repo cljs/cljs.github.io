@@ -7,12 +7,13 @@ and is used by many macros to define common elements (ie: <code>defn</code>, <co
 etc).</p>
 <p>Supported metadata:</p>
 <ul>
-<li><code>^:private boolean</code> - make non-accessible from other namespaces</li>
-<li><code>^:dynamic boolean</code> - make <a href="/api/cljs.core#binding">dynamically bindable</a> (usually named with <a class="code-link" href="/api/syntax#earmuffs"><code>*earmuffs*</code></a>)</li>
-<li><code>^:const boolean</code> - prevents redef and allows it to be used in <a class="code-link" href="/api/cljs.core#case"><code>case</code></a>.</li>
-<li><code>^:jsdoc [&quot;&quot;]</code> - vector of JSDoc Tags for <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler?hl=en#tags">Google Closure</a> or <a href="http://usejsdoc.org/#block-tags">standard</a>.</li>
-<li><code>^:test (fn [] (assert ...))</code> - allows function to be tested with <a class="code-link" href="/api/cljs.core#test"><code>test</code></a>.</li>
-<li><code>^:doc &quot;&quot;</code> - doc-string (prefer the use of the <code>(def symbol doc-string init)</code>)</li>
+<li><code>^{:private boolean}</code> - make non-accessible from other namespaces</li>
+<li><code>^{:dynamic boolean}</code> - make <a href="/api/cljs.core#binding">dynamically bindable</a> (usually named with <a class="code-link" href="/api/syntax#earmuffs"><code>*earmuffs*</code></a>)</li>
+<li><code>^{:const boolean}</code> - prevents redef and allows it to be used in <a class="code-link" href="/api/cljs.core#case"><code>case</code></a>.</li>
+<li><code>^{:jsdoc [&quot;...&quot;]}</code> - vector of JSDoc Tags for <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler?hl=en#tags">Google Closure</a> or <a href="http://usejsdoc.org/#block-tags">standard</a>.</li>
+<li><code>^{:test (fn [] (assert ...))}</code> - allows function to be tested with <a class="code-link" href="/api/cljs.core#test"><code>test</code></a>.</li>
+<li><code>^{:doc &quot;...&quot;}</code> - doc-string (prefer the use of the <code>(def symbol doc-string init)</code>)</li>
+<li><code>^{:export boolean}</code> - make this var publicly accessible from JS, using <code>goog.exportSymbol</code></li>
 </ul>
 <p>Compiler will also add metadata:</p>
 <ul>
@@ -40,7 +41,7 @@ c
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216/src/main/clojure/cljs/analyzer.cljc#L1139-L1278">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-1-gdd3b3bd/src/main/clojure/cljs/analyzer.cljc#L1139-L1278">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
   [op env form _ _]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pfn (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
               ([_ sym] {<span class="hljs-symbol">:sym</span> sym})

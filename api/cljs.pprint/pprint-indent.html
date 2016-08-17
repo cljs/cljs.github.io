@@ -5,7 +5,7 @@ the current column position. n is an offset.
 
 This function is intended for use when writing custom dispatch functions.
 
-Output is sent to *out* which must be a pretty printing writer.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216/src/main/cljs/cljs/pprint.cljs#L852-L863">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> pprint-indent
+Output is sent to *out* which must be a pretty printing writer.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-1-gdd3b3bd/src/main/cljs/cljs/pprint.cljs#L852-L863">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> pprint-indent
   [relative-to n]
   (<span class="hljs-name">check-enumerated-arg</span> relative-to #{<span class="hljs-symbol">:block</span> <span class="hljs-symbol">:current</span>})
   (<span class="hljs-name">indent</span> *out* relative-to n))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.pprint/pprint-indent.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
