@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 18 Aug 2016 02:49:32 GMT</pubDate><lastBuildDate>Thu, 18 Aug 2016 02:49:32 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.211 - cljs.spec fixes</title><description>&lt;p&gt;This release addresses a few bugs around cljs.spec discovered in the
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 18 Aug 2016 02:59:09 GMT</pubDate><lastBuildDate>Thu, 18 Aug 2016 02:59:09 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.216 - cljs.spec fixes</title><description>&lt;p&gt;This release addresses a few bugs around cljs.spec discovered in the
 last release along with relevant fixes for self-hosted ClojureScript.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
@@ -15,7 +15,7 @@ last release along with relevant fixes for self-hosted ClojureScript.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1739&quot;&gt;CLJS-1739&lt;/a&gt;: seq on map literal with 9 elements leads to rest producing nil&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1738&quot;&gt;CLJS-1738&lt;/a&gt;: Self-host: need to update call to check-use-macros-inferring-missing&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Mon, 15 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.211</link></item><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
+</description><pubDate>Mon, 15 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.216</link></item><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
 1.9.0-alpha10. This release also includes a large number of
 enhancements to the ns form:&lt;/p&gt;
 &lt;ul&gt;
