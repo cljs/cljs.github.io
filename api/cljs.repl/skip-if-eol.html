@@ -3,7 +3,7 @@ leaves the stream untouched. Returns :line-start, :stream-end, or :body
 to indicate the relative location of the next character on s. The stream
 must either be an instance of LineNumberingPushbackReader or duplicate
 its behavior of both supporting .unread and collapsing all of CR, LF, and
-CRLF to a single \newline.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-1-gdd3b3bd/src/main/clojure/cljs/repl.cljc#L54-L66">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> skip-if-eol
+CRLF to a single \newline.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-3-g74db880/src/main/clojure/cljs/repl.cljc#L54-L66">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> skip-if-eol
   [s]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [c (<span class="hljs-name">readers/read-char</span> s)]
     (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> c
