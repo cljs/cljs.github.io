@@ -20,7 +20,7 @@ will be converted at compile-time to a JavaScript object or array, respectively.
 (clj-&gt;js {:foo {:bar 1}})
 ;;=&gt; #js {:foo #js {:bar 1}}
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#js-obj">js-obj</a></li><li><a href="/api/cljs.core#array">array</a></li><li><a href="/api/cljs.core#clj-GTjs">clj->js</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-3-g74db880/src/main/clojure/cljs/tagged_literals.cljc#L62-L77">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-js
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core#js-obj">js-obj</a></li><li><a href="/api/cljs.core#array">array</a></li><li><a href="/api/cljs.core#clj-GTjs">clj->js</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.225/src/main/clojure/cljs/tagged_literals.cljc#L62-L77">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-js
   [form]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> form) (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> form))
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
@@ -35,7 +35,7 @@ will be converted at compile-time to a JavaScript object or array, respectively.
                  <span class="hljs-string">"JavaScript literal keys must be strings or unqualified keywords"</span>)
          <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">js/Error.</span>
                  <span class="hljs-string">"JavaScript literal keys must be strings or unqualified keywords"</span>))))
-  (<span class="hljs-name">JSValue.</span> form))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-3-g74db880/src/main/clojure/cljs/tagged_literals.cljc#L79-L83">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
+  (<span class="hljs-name">JSValue.</span> form))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.225/src/main/clojure/cljs/tagged_literals.cljc#L79-L83">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
   {'queue read-queue
    'uuid  read-uuid
    'inst  read-inst

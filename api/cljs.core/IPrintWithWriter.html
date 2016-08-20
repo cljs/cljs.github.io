@@ -2,7 +2,7 @@
    list of strings to concatenate.  This involved lots of concat calls,
    intermediate vectors, and lazy-seqs, and was very slow in some older JS
    engines.  IPrintWithWriter implements printing via the IWriter protocol, so it
-   be implemented efficiently in terms of e.g. a StringBuffer append.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-3-g74db880/src/main/cljs/cljs/core.cljs#L657-L663">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defprotocol</span></span> IPrintWithWriter
+   be implemented efficiently in terms of e.g. a StringBuffer append.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.225/src/main/cljs/cljs/core.cljs#L657-L663">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defprotocol</span></span> IPrintWithWriter
   <span class="hljs-string">"The old IPrintable protocol's implementation consisted of building a giant
    list of strings to concatenate.  This involved lots of concat calls,
    intermediate vectors, and lazy-seqs, and was very slow in some older JS

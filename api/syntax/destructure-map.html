@@ -74,7 +74,7 @@ vectors</a>.</p>
   (<span class="hljs-name">println</span> a b))
 <span class="hljs-comment">;; 1 2</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax#destructure-vector">destructure []</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.216-3-g74db880/src/main/clojure/cljs/core.cljc#L610-L711">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax#destructure-vector">destructure []</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.225/src/main/clojure/cljs/core.cljc#L610-L711">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
   (<span class="hljs-name">core/let</span> [bents (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> bindings)
              pb (<span class="hljs-name">core/fn</span> pb [bvec b v]
                   (<span class="hljs-name">core/let</span> [pvec
@@ -149,7 +149,7 @@ vectors</a>.</p>
                                                 bk (<span class="hljs-name"><span class="hljs-builtin-name">val</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> bes))
                                                 local (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name">core/instance?</span> clojure.lang.Named bb)
                                                              <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">cljs.core/implements?</span> INamed bb))
-                                                          (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> <span class="hljs-literal">nil</span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> bb))
+                                                          (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> <span class="hljs-literal">nil</span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> bb)) (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> bb))
                                                         bb)
                                                 bv (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> defaults local)
                                                      (<span class="hljs-name">core/list</span> 'cljs.core/get gmap bk (<span class="hljs-name">defaults</span> local))
