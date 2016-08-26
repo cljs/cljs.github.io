@@ -5,7 +5,7 @@ assumed.
 This function is intended for use when writing custom dispatch functions.
 
 Before the body, the caller can optionally specify options: :prefix, :per-line-prefix
-and :suffix.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.225/src/main/cljs/cljs/pprint.clj#L57-L79">clojurescript:src/main/cljs/cljs/pprint.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> pprint-logical-block
+and :suffix.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.225-1-g7a06d00/src/main/cljs/cljs/pprint.clj#L57-L79">clojurescript:src/main/cljs/cljs/pprint.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> pprint-logical-block
   [&amp; args]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[options body] (<span class="hljs-name">parse-lb-options</span> #{<span class="hljs-symbol">:prefix</span> <span class="hljs-symbol">:per-line-prefix</span> <span class="hljs-symbol">:suffix</span>} args)]
     `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">cljs.pprint/level-exceeded</span>)
