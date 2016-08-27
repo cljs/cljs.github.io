@@ -19,7 +19,7 @@ The following keyword arguments can be passed with values:
   :suppress-namespaces If true, no namespaces in symbols    Current value of *print-suppress-namespaces*
 
   * = not yet supported
-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.225-1-g7a06d00/src/main/cljs/cljs/pprint.cljs#L748-L809">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> write
+</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.227/src/main/cljs/cljs/pprint.cljs#L748-L809">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> write
   [object &amp; kw-args]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [options (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> {<span class="hljs-symbol">:stream</span> <span class="hljs-literal">true</span>} (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> hash-map kw-args))]
     <span class="hljs-comment">;;TODO rewrite this as a macro</span>
