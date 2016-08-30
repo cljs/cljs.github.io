@@ -8,35 +8,45 @@ in filenames. Thus, <code>(ns foo.bar-biz.baz)</code> should be the first form i
 and libraries into the current namespace.</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> example.core
 
-  <span class="hljs-comment">;; for excluding clojure symbols</span>
-  (<span class="hljs-symbol">:refer-clojure</span> <span class="hljs-symbol">:exclude</span> [])
+  <span class="hljs-comment">;; for excluding or renaming clojure symbols</span>
+  (<span class="hljs-symbol">:refer-clojure</span>
+    <span class="hljs-symbol">:exclude</span> []
+    <span class="hljs-symbol">:rename</span> {})
 
   <span class="hljs-comment">;; for importing goog classes and enums</span>
   (<span class="hljs-symbol">:import</span>
     lib.ns
-    [lib.ns Ctor*])
-
-  (<span class="hljs-symbol">:require-macros</span>
-    [lib.ns <span class="hljs-symbol">:refer</span> []
-            <span class="hljs-symbol">:as</span> alias
-            <span class="hljs-symbol">:reload</span>
-            <span class="hljs-symbol">:reload-all</span>])
+    (<span class="hljs-name">lib.ns</span> Ctor*))
 
   (<span class="hljs-symbol">:require</span>
+    lib.ns
     [lib.ns <span class="hljs-symbol">:refer</span> []
             <span class="hljs-symbol">:refer-macros</span> []
+            <span class="hljs-symbol">:rename</span> {}
             <span class="hljs-symbol">:include-macros</span> <span class="hljs-literal">true</span>|<span class="hljs-literal">false</span>
             <span class="hljs-symbol">:as</span> alias
             <span class="hljs-symbol">:reload</span>
             <span class="hljs-symbol">:reload-all</span>])
 
   (<span class="hljs-symbol">:use</span>
+    lib.ns
     [lib.ns <span class="hljs-symbol">:only</span> []
+            <span class="hljs-symbol">:rename</span> {}
+            <span class="hljs-symbol">:reload</span>
+            <span class="hljs-symbol">:reload-all</span>])
+
+  (<span class="hljs-symbol">:require-macros</span>
+    lib.ns
+    [lib.ns <span class="hljs-symbol">:refer</span> []
+            <span class="hljs-symbol">:rename</span> {}
+            <span class="hljs-symbol">:as</span> alias
             <span class="hljs-symbol">:reload</span>
             <span class="hljs-symbol">:reload-all</span>])
 
   (<span class="hljs-symbol">:use-macros</span>
+    lib.ns
     [lib.ns <span class="hljs-symbol">:only</span> []
+            <span class="hljs-symbol">:rename</span> {}
             <span class="hljs-symbol">:reload</span>
             <span class="hljs-symbol">:reload-all</span>]))
 </code></pre>
