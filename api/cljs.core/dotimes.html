@@ -3,7 +3,7 @@ integers from 0 through <code>n</code>-1.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/repeat">repeat</a></li><li><a href="/api/cljs.core/for">for</a></li><li><a href="/api/cljs.core/doseq">doseq</a></li></ul><hr />Source docstring:<pre>bindings => name n
 
 Repeatedly executes body (presumably for side-effects) with name
-bound to integers from 0 through n-1.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.227/src/main/clojure/cljs/core.cljc#L2529-L2541">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> dotimes
+bound to integers from 0 through n-1.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.227-2-gce6c657/src/main/clojure/cljs/core.cljc#L2529-L2541">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> dotimes
   [bindings &amp; body]
   (<span class="hljs-name">core/let</span> [i (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> bindings)
              n (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> bindings)]
