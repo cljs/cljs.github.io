@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 06 Sep 2016 04:54:00 GMT</pubDate><lastBuildDate>Tue, 06 Sep 2016 04:54:00 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.227 - cljs.spec fixes</title><description>&lt;p&gt;A bug fix release for cljs.spec and a REPL regression.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 07 Sep 2016 16:37:27 GMT</pubDate><lastBuildDate>Wed, 07 Sep 2016 16:37:27 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.229 - cljs.spec fixes</title><description>&lt;p&gt;A bug fix release for cljs.spec and a REPL regression.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;
@@ -9,8 +9,10 @@
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1757&quot;&gt;CLJS-1757&lt;/a&gt;: cljs.spec/exercise-fn doesn&amp;#39;t work when passed a quoted symbol&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1754&quot;&gt;CLJS-1754&lt;/a&gt;: Add boolean? generator&lt;/li&gt;
 &lt;li&gt;fix REPL regression which removed warnings&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1763&quot;&gt;CLJS-1763&lt;/a&gt;: Defining a var that clashes &lt;code&gt;cljs.core&lt;/code&gt; throws a compiler error instead of warning&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1772&quot;&gt;CLJS-1772&lt;/a&gt;: Dependency index can incorrectly overwrite &lt;code&gt;.cljs&lt;/code&gt; files with &lt;code&gt;.cljc&lt;/code&gt; files if both are present&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 19 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.227</link></item><item><title>1.9.216 - cljs.spec fixes</title><description>&lt;p&gt;This release addresses a few bugs around cljs.spec discovered in the
+</description><pubDate>Fri, 19 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.229</link></item><item><title>1.9.216 - cljs.spec fixes</title><description>&lt;p&gt;This release addresses a few bugs around cljs.spec discovered in the
 last release along with relevant fixes for self-hosted ClojureScript.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
