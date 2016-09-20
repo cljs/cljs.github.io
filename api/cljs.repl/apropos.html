@@ -12,7 +12,7 @@ public definitions in all currently-loaded namespaces that match the
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.repl/find-doc">cljs.repl/find-doc</a></li></ul><hr />Source docstring:<pre>Given a regular expression or stringable thing, return a seq of all
 public definitions in all currently-loaded namespaces that match the
-str-or-pattern.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-1-gd0be396/src/main/clojure/cljs/repl.cljc#L1352-L1367">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> apropos
+str-or-pattern.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/clojure/cljs/repl.cljc#L1352-L1367">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> apropos
   [str-or-pattern]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [matches? (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> Pattern str-or-pattern)
                    #(<span class="hljs-name"><span class="hljs-builtin-name">re-find</span></span> str-or-pattern (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> %))

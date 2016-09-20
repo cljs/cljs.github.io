@@ -24,7 +24,7 @@ In addition, the values of *all* namespace-qualified keys will be validated
 no support for inline value specification, by design.
 
 Optionally takes :gen generator-fn, which must be a fn of no args that
-returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-1-gd0be396/src/main/cljs/cljs/spec.cljc#L110-L168">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys
+returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/cljs/cljs/spec.cljc#L110-L168">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys
   [&amp; {<span class="hljs-symbol">:keys</span> [req req-un opt opt-un gen]}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [unk #(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> % name keyword)
         req-keys (<span class="hljs-name"><span class="hljs-builtin-name">filterv</span></span> keyword? (<span class="hljs-name"><span class="hljs-builtin-name">flatten</span></span> req))
@@ -50,9 +50,9 @@ returns a test.check generator.</pre><div>Source code @ <a href="https://github.
         pred-exprs (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> pred-exprs (<span class="hljs-name">parse-req</span> req-un unk))
         pred-forms (<span class="hljs-name">walk/postwalk</span> #(<span class="hljs-name">res</span> &amp;env %) pred-exprs)]
     <span class="hljs-comment">;; `(map-spec-impl ~req-keys '~req ~opt '~pred-forms ~pred-exprs ~gen)</span>
-    `(<span class="hljs-name">cljs.spec/map-spec-impl</span> {<span class="hljs-symbol">:req</span> '~req <span class="hljs-symbol">:opt</span> '~opt <span class="hljs-symbol">:req-un</span> '~req-un <span class="hljs-symbol">:opt-un</span> '~opt-un
-                               <span class="hljs-symbol">:req-keys</span> '~req-keys <span class="hljs-symbol">:req-specs</span> '~req-specs
-                               <span class="hljs-symbol">:opt-keys</span> '~opt-keys <span class="hljs-symbol">:opt-specs</span> '~opt-specs
-                               <span class="hljs-symbol">:pred-forms</span> '~pred-forms
-                               <span class="hljs-symbol">:pred-exprs</span> ~pred-exprs
-                               <span class="hljs-symbol">:gfn</span> ~gen})))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/keys.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+    `(<span class="hljs-name">map-spec-impl</span> {<span class="hljs-symbol">:req</span> '~req <span class="hljs-symbol">:opt</span> '~opt <span class="hljs-symbol">:req-un</span> '~req-un <span class="hljs-symbol">:opt-un</span> '~opt-un
+                     <span class="hljs-symbol">:req-keys</span> '~req-keys <span class="hljs-symbol">:req-specs</span> '~req-specs
+                     <span class="hljs-symbol">:opt-keys</span> '~opt-keys <span class="hljs-symbol">:opt-specs</span> '~opt-specs
+                     <span class="hljs-symbol">:pred-forms</span> '~pred-forms
+                     <span class="hljs-symbol">:pred-exprs</span> ~pred-exprs
+                     <span class="hljs-symbol">:gfn</span> ~gen})))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/keys.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

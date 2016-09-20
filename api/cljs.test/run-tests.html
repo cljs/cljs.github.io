@@ -2,11 +2,11 @@
 Defaults to current namespace if none given. Does not return a meaningful
 value due to the possiblity of asynchronous execution. To detect test
 completion add a :end-run-tests method case to the cljs.test/report
-multimethod.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-1-gd0be396/src/main/cljs/cljs/test.cljc#L284-L296">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> run-tests
-  ([] `(<span class="hljs-name">run-tests</span> (<span class="hljs-name">cljs.test/empty-env</span>) '~ana/*cljs-ns*))
+multimethod.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/cljs/cljs/test.cljc#L284-L296">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> run-tests
+  ([] `(<span class="hljs-name">run-tests</span> (<span class="hljs-name">empty-env</span>) '~ana/*cljs-ns*))
   ([env-or-ns]
    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">ns?</span> env-or-ns)
-     `(<span class="hljs-name">run-tests</span> (<span class="hljs-name">cljs.test/empty-env</span>) ~env-or-ns)
+     `(<span class="hljs-name">run-tests</span> (<span class="hljs-name">empty-env</span>) ~env-or-ns)
      `(<span class="hljs-name">run-tests</span> ~env-or-ns '~ana/*cljs-ns*)))
   ([env-or-ns &amp; namespaces]
-   `(<span class="hljs-name">cljs.test/run-block</span> (<span class="hljs-name">run-tests-block</span> ~env-or-ns ~@namespaces))))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.test/run-tests.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+   `(<span class="hljs-name">run-block</span> (<span class="hljs-name">run-tests-block</span> ~env-or-ns ~@namespaces))))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.test/run-tests.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

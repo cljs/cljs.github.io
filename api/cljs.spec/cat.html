@@ -3,7 +3,7 @@
 (s/cat :e even? :o odd?)
 
 Returns a regex op that matches (all) values in sequence, returning a map
-containing the keys of each pred and the corresponding value.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-1-gd0be396/src/main/cljs/cljs/spec.cljc#L302-L316">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> cat
+containing the keys of each pred and the corresponding value.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/cljs/cljs/spec.cljc#L302-L316">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> cat
   [&amp; key-pred-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pairs (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> key-pred-forms)
         keys (<span class="hljs-name"><span class="hljs-builtin-name">mapv</span></span> first pairs)
@@ -11,4 +11,4 @@ containing the keys of each pred and the corresponding value.</pre><div>Source c
         pf (<span class="hljs-name"><span class="hljs-builtin-name">mapv</span></span> #(<span class="hljs-name">res</span> &amp;env %) pred-forms)]
     <span class="hljs-comment">;;(prn key-pred-forms)</span>
     (<span class="hljs-name">clojure.core/assert</span> (<span class="hljs-name">clojure.core/and</span> (<span class="hljs-name"><span class="hljs-builtin-name">even?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> key-pred-forms)) (<span class="hljs-name">every?</span> keyword? keys)) <span class="hljs-string">"cat expects k1 p1 k2 p2..., where ks are keywords"</span>)
-    `(<span class="hljs-name">cljs.spec/cat-impl</span> ~keys ~pred-forms '~pf)))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/cat.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+    `(<span class="hljs-name">cat-impl</span> ~keys ~pred-forms '~pf)))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/cat.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

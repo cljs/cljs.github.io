@@ -7,10 +7,10 @@ to the negation value of the ':elide-asserts' compiler option, or true if
 not set.
 If (check-asserts?) is false at runtime, always returns x. Defaults to
 value of 'cljs.spec/*runtime-asserts*', or false if not set. You can
-toggle check-asserts? with (check-asserts bool).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-1-gd0be396/src/main/cljs/cljs/spec.cljc#L480-L496">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> assert
+toggle check-asserts? with (check-asserts bool).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/cljs/cljs/spec.cljc#L480-L496">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> assert
   [spec x]
-  `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> cljs.spec/*compile-asserts*
-     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> cljs.spec/*runtime-asserts*
-       (<span class="hljs-name">cljs.spec/assert*</span> ~spec ~x)
+  `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> *compile-asserts*
+     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> *runtime-asserts*
+       (<span class="hljs-name">assert*</span> ~spec ~x)
        ~x)
     ~x))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/assert.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

@@ -10,9 +10,9 @@ fabricate a return value compliant with the :ret spec, ignoring
 the :fn spec if present.
 
 Optionally takes :gen generator-fn, which must be a fn of no args
-that returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-1-gd0be396/src/main/cljs/cljs/spec.cljc#L334-L352">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fspec
+that returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/cljs/cljs/spec.cljc#L334-L352">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fspec
   [&amp; {<span class="hljs-symbol">:keys</span> [args ret fn gen]}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [env &amp;env]
-    `(<span class="hljs-name">cljs.spec/fspec-impl</span> (<span class="hljs-name">spec</span> ~args) '~(<span class="hljs-name">res</span> env args)
+    `(<span class="hljs-name">fspec-impl</span> (<span class="hljs-name">spec</span> ~args) '~(<span class="hljs-name">res</span> env args)
                            (<span class="hljs-name">spec</span> ~ret) '~(<span class="hljs-name">res</span> env ret)
                            (<span class="hljs-name">spec</span> ~fn) '~(<span class="hljs-name">res</span> env fn) ~gen)))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/fspec.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

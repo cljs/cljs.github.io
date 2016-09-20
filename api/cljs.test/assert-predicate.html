@@ -2,17 +2,17 @@
 'expected' argument to 'report' will contains the original form, the
 'actual' argument will contain the form with all its sub-forms
 evaluated.  If the predicate returns false, the 'actual' form will
-be wrapped in (not...).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-1-gd0be396/src/main/cljs/cljs/test.cljc#L25-L43">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> assert-predicate
+be wrapped in (not...).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/cljs/cljs/test.cljc#L25-L43">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> assert-predicate
   [msg form]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [args (<span class="hljs-name"><span class="hljs-builtin-name">rest</span></span> form)
         pred (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> form)]
     `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [values# (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> ~@args)
            result# (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> ~pred values#)]
        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> result#
-         (<span class="hljs-name">cljs.test/do-report</span>
+         (<span class="hljs-name">do-report</span>
            {<span class="hljs-symbol">:type</span> <span class="hljs-symbol">:pass</span>, <span class="hljs-symbol">:message</span> ~msg,
             <span class="hljs-symbol">:expected</span> '~form, <span class="hljs-symbol">:actual</span> (<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> ~pred values#)})
-         (<span class="hljs-name">cljs.test/do-report</span>
+         (<span class="hljs-name">do-report</span>
            {<span class="hljs-symbol">:type</span> <span class="hljs-symbol">:fail</span>, <span class="hljs-symbol">:message</span> ~msg,
             <span class="hljs-symbol">:expected</span> '~form, <span class="hljs-symbol">:actual</span> (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> '~'not (<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> '~pred values#))}))
        result#)))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.test/assert-predicate.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
