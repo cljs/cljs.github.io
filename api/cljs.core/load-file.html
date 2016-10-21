@@ -2,7 +2,7 @@
 <p>Load file at <code>filename</code>, then compiles and evaluates its code.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name">load-file</span> <span class="hljs-string">"path/to/foo.cljs"</span>)
 </code></pre>
-</div><hr />Source docstring:<pre>Sequentially read and evaluate the set of forms contained in the file.</pre><div>repl specials table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/clojure/cljs/repl.cljc#L654-L770">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> default-special-fns
+</div><hr />Source docstring:<pre>Sequentially read and evaluate the set of forms contained in the file.</pre><div>repl specials table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/clojure/cljs/repl.cljc#L637-L667">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> default-special-fns
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [load-file-fn
         (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
           ([repl-env env form]
@@ -25,92 +25,6 @@
     (<span class="hljs-name">wrap-special-fns</span> wrap-self
      {'in-ns in-ns-fn
       'clojure.core/in-ns in-ns-fn
-      'require
-      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
-        ([repl-env env form]
-         (<span class="hljs-name">self</span> repl-env env form <span class="hljs-literal">nil</span>))
-        ([repl-env env [_ &amp; specs <span class="hljs-symbol">:as</span> form] opts]
-         (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [is-self-require? (<span class="hljs-name">self-require?</span> specs)
-               [target-ns restore-ns]
-               (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> is-self-require?
-                 [ana/*cljs-ns* <span class="hljs-literal">nil</span>]
-                 ['cljs.user ana/*cljs-ns*])]
-           (<span class="hljs-name">evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
-                          (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
-                            `(~'ns ~target-ns
-                               (<span class="hljs-symbol">:require</span> ~@(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> specs canonicalize-specs decorate-specs)))
-                            {<span class="hljs-symbol">:merge</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:line</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:column</span> <span class="hljs-number">1</span>})
-                          identity opts)
-           (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> is-self-require?
-             (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> ana/*cljs-ns* restore-ns)))))
-      'require-macros
-      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
-        ([repl-env env form]
-         (<span class="hljs-name">self</span> repl-env env form <span class="hljs-literal">nil</span>))
-        ([repl-env env [_ &amp; specs <span class="hljs-symbol">:as</span> form] opts]
-         (<span class="hljs-name">evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
-                        (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
-                          `(~'ns ~ana/*cljs-ns*
-                             (<span class="hljs-symbol">:require-macros</span> ~@(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> specs canonicalize-specs decorate-specs)))
-                          {<span class="hljs-symbol">:merge</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:line</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:column</span> <span class="hljs-number">1</span>})
-                        identity opts)))
-      'use
-      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
-        ([repl-env env form]
-         (<span class="hljs-name">self</span> repl-env env form <span class="hljs-literal">nil</span>))
-        ([repl-env env [_ &amp; specs <span class="hljs-symbol">:as</span> form] opts]
-         (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [is-self-require? (<span class="hljs-name">self-require?</span> specs)
-               [target-ns restore-ns]
-               (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> is-self-require?
-                 [ana/*cljs-ns* <span class="hljs-literal">nil</span>]
-                 ['cljs.user ana/*cljs-ns*])]
-           (<span class="hljs-name">evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
-                          (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
-                            `(~'ns ~target-ns
-                               (<span class="hljs-symbol">:use</span> ~@(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> specs canonicalize-specs decorate-specs)))
-                            {<span class="hljs-symbol">:merge</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:line</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:column</span> <span class="hljs-number">1</span>})
-                          identity opts)
-           (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> is-self-require?
-             (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> ana/*cljs-ns* restore-ns)))))
-      'use-macros
-      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
-        ([repl-env env form]
-         (<span class="hljs-name">self</span> repl-env env form <span class="hljs-literal">nil</span>))
-        ([repl-env env [_ &amp; specs <span class="hljs-symbol">:as</span> form] opts]
-         (<span class="hljs-name">evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
-                        (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
-                          `(~'ns ~ana/*cljs-ns*
-                             (<span class="hljs-symbol">:use-macros</span> ~@(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> specs canonicalize-specs decorate-specs)))
-                          {<span class="hljs-symbol">:merge</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:line</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:column</span> <span class="hljs-number">1</span>})
-                        identity opts)))
-      'import
-      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
-        ([repl-env env form]
-         (<span class="hljs-name">self</span> repl-env env form <span class="hljs-literal">nil</span>))
-        ([repl-env env [_ &amp; specs <span class="hljs-symbol">:as</span> form] opts]
-         (<span class="hljs-name">evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
-                        (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
-                          `(~'ns ~ana/*cljs-ns*
-                             (<span class="hljs-symbol">:import</span>
-                              ~@(<span class="hljs-name"><span class="hljs-builtin-name">map</span></span>
-                                 (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [quoted-spec-or-kw]
-                                   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">keyword?</span></span> quoted-spec-or-kw)
-                                     quoted-spec-or-kw
-                                     (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> quoted-spec-or-kw)))
-                                 specs)))
-                          {<span class="hljs-symbol">:merge</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:line</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:column</span> <span class="hljs-number">1</span>})
-                        identity opts)))
-      'refer-clojure
-      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
-        ([repl-env env form]
-         (<span class="hljs-name">self</span> repl-env env form <span class="hljs-literal">nil</span>))
-        ([repl-env env [_ &amp; specs <span class="hljs-symbol">:as</span> form] opts]
-         (<span class="hljs-name">evaluate-form</span> repl-env env <span class="hljs-string">"&lt;cljs repl&gt;"</span>
-                        (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
-                          `(~'ns ~ana/*cljs-ns*
-                             (<span class="hljs-symbol">:refer-clojure</span> ~@specs))
-                          {<span class="hljs-symbol">:merge</span> <span class="hljs-literal">true</span> <span class="hljs-symbol">:line</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:column</span> <span class="hljs-number">1</span>})
-                        identity opts)))
       'load-file load-file-fn
       'clojure.core/load-file load-file-fn
       'load-namespace

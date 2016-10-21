@@ -24,14 +24,14 @@
 (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> foo)
 <span class="hljs-comment">;;=&gt; "97bda55b-6175-4c39-9e04-7c0205c709dc"</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/uuid">uuid</a></li><li><a href="/api/cljs.core/random-uuid">random-uuid</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/clojure/cljs/tagged_literals.cljc#L16-L23">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-uuid
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/uuid">uuid</a></li><li><a href="/api/cljs.core/random-uuid">random-uuid</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/clojure/cljs/tagged_literals.cljc#L24-L31">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-uuid
      [form]
      (when-not (string? form)
        (throw (RuntimeException. "UUID literal expects a string as its representation.")))
      (try
        (java.util.UUID/fromString form)
        (catch Throwable e
-         (throw (RuntimeException. (.getMessage e)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/clojure/cljs/tagged_literals.cljc#L79-L83">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
+         (throw (RuntimeException. (.getMessage e)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/clojure/cljs/tagged_literals.cljc#L87-L91">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
   {'queue read-queue
    'uuid  read-uuid
    'inst  read-inst

@@ -50,7 +50,7 @@ and libraries into the current namespace.</p>
             <span class="hljs-symbol">:reload</span>
             <span class="hljs-symbol">:reload-all</span>]))
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/in-ns">in-ns (repl)</a></li><li><a href="/api/cljs.core/load-namespace">load-namespace (repl)</a></li><li><a href="/api/cljs.core/import">import (repl)</a></li><li><a href="/api/cljs.core/require">require (repl)</a></li><li><a href="/api/cljs.core/require-macros">require-macros (repl)</a></li></ul><hr />Source docstring:<pre>You must currently use the ns form only with the following caveats
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/in-ns">in-ns (repl)</a></li><li><a href="/api/cljs.core/load-namespace">load-namespace (repl)</a></li><li><a href="/api/cljs.core/import">import</a></li><li><a href="/api/cljs.core/require">require</a></li><li><a href="/api/cljs.core/require-macros">require-macros</a></li></ul><hr />Source docstring:<pre>You must currently use the ns form only with the following caveats
 
   * You must use the :only form of :use
   * :require supports :as, :refer, and :rename
@@ -113,8 +113,10 @@ from the clojure.* namespace to the cljs.* namespace. For example:
 
 will be automatically converted to
 
-(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/clojure/cljs/analyzer.cljc#L2159-L2266">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/clojure/cljs/analyzer.cljc#L2187-L2308">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
+  (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> *allow-ns*
+    (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespace declarations must appear at the top-level."</span>)))
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> name)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespaces must be named by a symbol."</span>)))
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [name (<span class="hljs-name">cond-&gt;</span> name (<span class="hljs-symbol">:macros-ns</span> opts) macro-ns-name)]
@@ -179,7 +181,19 @@ will be automatically converted to
               (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> merge-with merge m
                 (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> (<span class="hljs-name">spec-parsers</span> k)
                   (<span class="hljs-name"><span class="hljs-builtin-name">remove</span></span> #{<span class="hljs-symbol">:reload</span> <span class="hljs-symbol">:reload-all</span>} libs))))
-            {} (<span class="hljs-name"><span class="hljs-builtin-name">remove</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [[r]] (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> r <span class="hljs-symbol">:refer-clojure</span>)) args))]
+            {} (<span class="hljs-name"><span class="hljs-builtin-name">remove</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [[r]] (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> r <span class="hljs-symbol">:refer-clojure</span>)) args))
+          <span class="hljs-comment">;; patch `require-macros` and `use-macros` in Bootstrap for namespaces</span>
+          <span class="hljs-comment">;; that require their own macros</span>
+          #?@(<span class="hljs-symbol">:cljs</span> [[require-macros use-macros]
+                     (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [spec-map]
+                            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:macros-ns</span> opts)
+                              (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ns (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">subs</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> name) <span class="hljs-number">0</span> (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> name)) <span class="hljs-number">7</span>)))]
+                                (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m [k v]]
+                                          (<span class="hljs-name">cond-&gt;</span> m
+                                            (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name">symbol-identical?</span> v ns))
+                                            (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> k v)))
+                                  {} spec-map))
+                              spec-map)) [require-macros use-macros])])]
       (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *cljs-ns* name)
       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ns-info
             {<span class="hljs-symbol">:name</span>           name

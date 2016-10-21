@@ -11,7 +11,7 @@
 (<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> <span class="hljs-literal">nil</span> <span class="hljs-literal">nil</span>)
 <span class="hljs-comment">;;=&gt; (nil)</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/conj">conj</a></li></ul><hr />Source docstring:<pre>Returns a new seq where x is the first element and coll is the rest.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.229-14-g7923f80/src/main/cljs/cljs/core.cljs#L3091-L3097">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> cons
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/conj">conj</a></li></ul><hr />Source docstring:<pre>Returns a new seq where x is the first element and coll is the rest.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/cljs/cljs/core.cljs#L3113-L3119">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> cons
   [x coll]
   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> coll)
           (<span class="hljs-name">implements?</span> ISeq coll))

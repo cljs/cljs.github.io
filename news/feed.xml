@@ -1,4 +1,73 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 20 Sep 2016 05:38:00 GMT</pubDate><lastBuildDate>Tue, 20 Sep 2016 05:38:00 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.229 - cljs.spec fixes</title><description>&lt;p&gt;A bug fix release for cljs.spec and a REPL regression.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 21 Oct 2016 21:16:09 GMT</pubDate><lastBuildDate>Fri, 21 Oct 2016 21:16:09 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.293</title><description>&lt;p&gt;This release fixes a major issue with transit analysis caching where
+files were leaked. It also includes a very significant compiler
+enhancement thanks to Antonio Monteiro - you can now create
+ClojureScript files without declaring a namespace. This opens the door
+to making a much larger class of Clojure programs portable to
+ClojureScript. &lt;code&gt;require&lt;/code&gt; and other ns related macros are now available
+granted that they appear at the top of the file. Please take careful
+note that they are not functions and cannot be used in dynamic
+situations. Still this eases writing simple scripts and the door is
+now open to finally support data literals in a comprehensive way.&lt;/p&gt;
+&lt;p&gt;We also bumped the Google Closure compiler dependency. Please note
+that Closure Compiler has made breaking changes around JS module
+processing so this version of ClojureScript is pinned to this latest
+release.&lt;/p&gt;
+&lt;p&gt;A huge thanks to the many people old and new that contributed to this
+release.&lt;/p&gt;
+&lt;p&gt;As always, feedback is most welcome!&lt;/p&gt;
+&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1346&quot;&gt;CLJS-1346&lt;/a&gt;: Support require outside of ns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1762&quot;&gt;CLJS-1762&lt;/a&gt;: Bump Closure Compiler, refactor module support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1658&quot;&gt;CLJS-1658&lt;/a&gt;: testing for protocol membership may return false positives&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1536&quot;&gt;CLJS-1536&lt;/a&gt;: REPL def symbol init collision&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1805&quot;&gt;CLJS-1805&lt;/a&gt;: Source map should take false&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1804&quot;&gt;CLJS-1804&lt;/a&gt;: Self-host: process namespace side-effects for new require without NS&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1803&quot;&gt;CLJS-1803&lt;/a&gt;: Use new require capability in REPLs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1796&quot;&gt;CLJS-1796&lt;/a&gt;: Measure Google Closure specific optimization time&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1782&quot;&gt;CLJS-1782&lt;/a&gt;: Self-host: allow namespaces to require their own macros&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1563&quot;&gt;CLJS-1563&lt;/a&gt;: :source-map option to cljs.build.api/build should take nil&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1785&quot;&gt;CLJS-1785&lt;/a&gt;: Warn on reference to js/foo shadowed by local binding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;make String an implicit ns like Math. revert char? and clarify docstring. add unit tests for char?&lt;/li&gt;
+&lt;li&gt;fix cljs.spec.test/check docstring&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1826&quot;&gt;CLJS-1826&lt;/a&gt;: Self-host: load-deps doesn&amp;#39;t honor &lt;code&gt;:reload&lt;/code&gt; and &lt;code&gt;reload-all&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1825&quot;&gt;CLJS-1825&lt;/a&gt;: :source-map error when passing &lt;code&gt;false&lt;/code&gt; under simple optimizations&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1821&quot;&gt;CLJS-1821&lt;/a&gt;: &lt;code&gt;add-preloads&lt;/code&gt; should only touch sources if &lt;code&gt;:preloads&lt;/code&gt; option specified&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1814&quot;&gt;CLJS-1814&lt;/a&gt;: Move docstrings for require, etc. from &lt;code&gt;cljs.repl&lt;/code&gt; to their new definitions in &lt;code&gt;cljs.core&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1809&quot;&gt;CLJS-1809&lt;/a&gt;: Add 0/1 arity to &lt;code&gt;into&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1824&quot;&gt;CLJS-1824&lt;/a&gt;: transit cache feature leaks files&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1294&quot;&gt;CLJS-1294&lt;/a&gt;: Let macroexpand(-1) accept any quoted argument.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1818&quot;&gt;CLJS-1818&lt;/a&gt;: (hash false) returns different value from Clojure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1817&quot;&gt;CLJS-1817&lt;/a&gt;: Strange result when assoc&amp;#39;ing 0 to persistent hash map&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1815&quot;&gt;CLJS-1815&lt;/a&gt;: Fix failing analyzer tests&lt;/li&gt;
+&lt;li&gt;follow-up on &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-460&quot;&gt;CLJS-460&lt;/a&gt; defmulti ignores optional :hierarchy argument&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1807&quot;&gt;CLJS-1807&lt;/a&gt;: Better error messages for &lt;code&gt;ns*&lt;/code&gt; calls&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1802&quot;&gt;CLJS-1802&lt;/a&gt;: Generated namespaces should be of the form &lt;code&gt;cljs.user.fileXXXX&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CLJ-1935: Use multimethod dispatch value method lookup to take hierarchies into account in multi-spec&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1682&quot;&gt;CLJS-1682&lt;/a&gt; :foreign-libs with module conversion does not works properly if it is used form deps.cljs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1710&quot;&gt;CLJS-1710&lt;/a&gt;: spec/double-in not implemented&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1787&quot;&gt;CLJS-1787&lt;/a&gt;: Make cljs.spec explain pluggable&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1781&quot;&gt;CLJS-1781&lt;/a&gt;: Add cljs.hash-map-test to self-parity tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1788&quot;&gt;CLJS-1788&lt;/a&gt;: Port CLJ-2004: include retag in multi-spec form&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1765&quot;&gt;CLJS-1765&lt;/a&gt;: Empty iterator for hash maps with nil key&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1784&quot;&gt;CLJS-1784&lt;/a&gt;: nth doesn&amp;#39;t throw on strings or arrays&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1773&quot;&gt;CLJS-1773&lt;/a&gt;: Self-host: Don&amp;#39;t resolve unqualified symbols / keywords with $macros&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1770&quot;&gt;CLJS-1770&lt;/a&gt;: goog-defines broken for integers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1600&quot;&gt;CLJS-1600&lt;/a&gt;: Destructuring defprotocol fn args causes defrecord impls to silently fail&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1335&quot;&gt;CLJS-1335&lt;/a&gt;: resolve-macro-var: information missing for macros&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1633&quot;&gt;CLJS-1633&lt;/a&gt;: Improve error associated with invalid foreign-libs :file path&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1775&quot;&gt;CLJS-1775&lt;/a&gt;: &lt;code&gt;get&lt;/code&gt; with &lt;code&gt;nil&lt;/code&gt; returns as if &lt;code&gt;get&lt;/code&gt; with &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1780&quot;&gt;CLJS-1780&lt;/a&gt;: Records without extmaps fail to iterate&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1774&quot;&gt;CLJS-1774&lt;/a&gt;: Self-host: Report filenames in warns in test-self-parity&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1779&quot;&gt;CLJS-1779&lt;/a&gt;: keyword 2-arity constructor accepts anything for both parameters which leads to different hashing&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Wed, 19 Oct 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.293</link></item><item><title>1.9.229 - cljs.spec fixes</title><description>&lt;p&gt;A bug fix release for cljs.spec and a REPL regression.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;
@@ -237,55 +306,4 @@ checking.&lt;/p&gt;
 &lt;li&gt;:warning-handlers missing for known compiler options&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1592&quot;&gt;CLJS-1592&lt;/a&gt;: Self-host: Robustness for core tests&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Mon, 28 Mar 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.8.40</link></item><item><title>1.8.34</title><description>&lt;p&gt;There are many minor fixes in this release around bootstrapped
-ClojureScript. This release also fixes a subtle bug with the
-new :parallel-build feature.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1582&quot;&gt;CLJS-1582&lt;/a&gt;: Type-hint extend-type first arg for primitives&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1590&quot;&gt;CLJS-1590&lt;/a&gt;: split, split-lines differs from Clojure on empty string&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1594&quot;&gt;CLJS-1594&lt;/a&gt;: NaN and both infinities cannot be elements of a set&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1597&quot;&gt;CLJS-1597&lt;/a&gt;: Redundant IPrintWithWriter test in pr-writer-impl&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1583&quot;&gt;CLJS-1583&lt;/a&gt;: (hash (symbol &amp;quot;/&amp;quot;)) does not match (hash &amp;#39;/)&lt;/li&gt;
-&lt;li&gt;bump tools reader&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1492&quot;&gt;CLJS-1492&lt;/a&gt;: Warn when using :optimisations instead of :optimizations&lt;/li&gt;
-&lt;li&gt;less cryptic error if :main doesn&amp;#39;t correspond to any file&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-744&quot;&gt;CLJS-744&lt;/a&gt;: ISequential types should implement JS indexOf, lastIndexOf&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1411&quot;&gt;CLJS-1411&lt;/a&gt;: make-array signature differs from clojure&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1589&quot;&gt;CLJS-1589&lt;/a&gt;: Self-host: case fail with nil&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1596&quot;&gt;CLJS-1596&lt;/a&gt;: Self-host: :load-macros and :analyze-deps don&amp;#39;t work in cljs.js&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1420&quot;&gt;CLJS-1420&lt;/a&gt;: get-in behavior differs from Clojure by always deferring to the 3 arity fn&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1585&quot;&gt;CLJS-1585&lt;/a&gt;: Self-host: Alias-scoped keywords&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1577&quot;&gt;CLJS-1577&lt;/a&gt;: Self-host: syntax-quote resolves on dot forms&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1564&quot;&gt;CLJS-1564&lt;/a&gt;: Self-host: cached macro &lt;em&gt;loaded&lt;/em&gt; update&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1584&quot;&gt;CLJS-1584&lt;/a&gt;: Self-host: core/str error with condp&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1521&quot;&gt;CLJS-1521&lt;/a&gt;: Self-host: Macro namespaces cannot be aliased&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1573&quot;&gt;CLJS-1573&lt;/a&gt;: Self-host: Invalid UTF escaping in cljs-in-cljs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1570&quot;&gt;CLJS-1570&lt;/a&gt;: :parallel-build causes invalid truth check in cljs.reader/read-number&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1568&quot;&gt;CLJS-1568&lt;/a&gt;: LazyTransformer doesn&amp;#39;t implement IMeta&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1578&quot;&gt;CLJS-1578&lt;/a&gt;: Corrupted Analysis Files Break Compilation&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1579&quot;&gt;CLJS-1579&lt;/a&gt;: cljs.source-map/invert-reverse-map discards gcol&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1580&quot;&gt;CLJS-1580&lt;/a&gt;: Self-host: goog.provide offsets source-maps&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1569&quot;&gt;CLJS-1569&lt;/a&gt;: IndexedSeq doesn&amp;#39;t implement IWithMeta / IMeta&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1567&quot;&gt;CLJS-1567&lt;/a&gt;: make-array macro missing &amp;gt; 2 arg arity&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1571&quot;&gt;CLJS-1571&lt;/a&gt;: Make special-symbol? true for &amp;#39;var&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1555&quot;&gt;CLJS-1555&lt;/a&gt;: make-array macro missing 2 arg arity&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-970&quot;&gt;CLJS-970&lt;/a&gt;: generate assert message when compiling&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1565&quot;&gt;CLJS-1565&lt;/a&gt;: Self-host: whitespace optimization is broken&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1541&quot;&gt;CLJS-1541&lt;/a&gt;: Self-host: Cannot require &amp;#39;cljs.js using cljs.jar&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1550&quot;&gt;CLJS-1550&lt;/a&gt;: Enhance docstring for extend-type wrt type-sym&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1551&quot;&gt;CLJS-1551&lt;/a&gt;: Self-host: assert-args dormant in macros&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1552&quot;&gt;CLJS-1552&lt;/a&gt;: doc for &amp;amp; should match fn&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1488&quot;&gt;CLJS-1488&lt;/a&gt;: cljs.repl/source Cannot read source of cljs functions that use #js reader&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1557&quot;&gt;CLJS-1557&lt;/a&gt;: Make special-symbol? return true for catch and finally&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1542&quot;&gt;CLJS-1542&lt;/a&gt;: Self-host: cljs/compile-str not handling errors properly&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1318&quot;&gt;CLJS-1318&lt;/a&gt;: Fix typo in documentation of &lt;code&gt;specify&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-620&quot;&gt;CLJS-620&lt;/a&gt;: Warnings are generated when using a macro in argument position&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1547&quot;&gt;CLJS-1547&lt;/a&gt;: Wrong output encoding when compile with goog.LOCALE&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1546&quot;&gt;CLJS-1546&lt;/a&gt;: cljs.core/run! does not always return nil&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 18 Mar 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.8.34</link></item></channel></rss>
+</description><pubDate>Mon, 28 Mar 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.8.40</link></item></channel></rss>
