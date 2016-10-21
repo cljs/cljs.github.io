@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 21 Oct 2016 21:16:09 GMT</pubDate><lastBuildDate>Fri, 21 Oct 2016 21:16:09 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.293</title><description>&lt;p&gt;This release fixes a major issue with transit analysis caching where
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 21 Oct 2016 21:20:07 GMT</pubDate><lastBuildDate>Fri, 21 Oct 2016 21:20:07 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.293</title><description>&lt;p&gt;This release fixes a major issue with transit analysis caching where
 files were leaked. It also includes a very significant compiler
 enhancement thanks to Antonio Monteiro - you can now create
 ClojureScript files without declaring a namespace. This opens the door
@@ -49,12 +49,12 @@ release.&lt;/p&gt;
 &lt;li&gt;follow-up on &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-460&quot;&gt;CLJS-460&lt;/a&gt; defmulti ignores optional :hierarchy argument&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1807&quot;&gt;CLJS-1807&lt;/a&gt;: Better error messages for &lt;code&gt;ns*&lt;/code&gt; calls&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1802&quot;&gt;CLJS-1802&lt;/a&gt;: Generated namespaces should be of the form &lt;code&gt;cljs.user.fileXXXX&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;CLJ-1935: Use multimethod dispatch value method lookup to take hierarchies into account in multi-spec&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJ-1935&quot;&gt;CLJ-1935&lt;/a&gt;: Use multimethod dispatch value method lookup to take hierarchies into account in multi-spec&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1682&quot;&gt;CLJS-1682&lt;/a&gt; :foreign-libs with module conversion does not works properly if it is used form deps.cljs&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1710&quot;&gt;CLJS-1710&lt;/a&gt;: spec/double-in not implemented&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1787&quot;&gt;CLJS-1787&lt;/a&gt;: Make cljs.spec explain pluggable&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1781&quot;&gt;CLJS-1781&lt;/a&gt;: Add cljs.hash-map-test to self-parity tests&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1788&quot;&gt;CLJS-1788&lt;/a&gt;: Port CLJ-2004: include retag in multi-spec form&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1788&quot;&gt;CLJS-1788&lt;/a&gt;: Port &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJ-2004&quot;&gt;CLJ-2004&lt;/a&gt;: include retag in multi-spec form&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1765&quot;&gt;CLJS-1765&lt;/a&gt;: Empty iterator for hash maps with nil key&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1784&quot;&gt;CLJS-1784&lt;/a&gt;: nth doesn&amp;#39;t throw on strings or arrays&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1773&quot;&gt;CLJS-1773&lt;/a&gt;: Self-host: Don&amp;#39;t resolve unqualified symbols / keywords with $macros&lt;/li&gt;
