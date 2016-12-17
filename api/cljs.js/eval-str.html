@@ -12,21 +12,33 @@ name (symbol)
 opts (map)
   compilation options.
 
-  :eval         - eval function to invoke, see *eval-fn*
-  :load         - library resolution function, see *load-fn*
-  :source-map   - set to true to generate inline source map information
-  :cache-source - optional, a function to run side-effects with the
-                  compilation result prior to actual evalution. This function
-                  takes two arguments, the first is the eval map, the source
-                  will be under :source. The second argument is a callback of
-                  one argument. If an error occurs an :error key should be
-                  supplied.
+  :eval          - eval function to invoke, see *eval-fn*
+  :load          - library resolution function, see *load-fn*
+  :source-map    - set to true to generate inline source map information
+  :cache-source  - optional, a function to run side-effects with the
+                   compilation result prior to actual evalution. This function
+                   takes two arguments, the first is the eval map, the source
+                   will be under :source. The second argument is a callback of
+                   one argument. If an error occurs an :error key should be
+                   supplied.
+  :def-emits-var - sets whether def (and derived) forms return either a Var
+                   (if set to true) or the def init value (if false). Default
+                   is false.
+  :static-fns    - employ static dispatch to specific function arities in
+                   emitted JavaScript, as opposed to making use of the
+                   `call` construct. Default is false.
+  :ns            - optional, the namespace in which to evaluate the source.
+  :verbose       - optional, emit details from compiler activity. Defaults to
+                   false.
+  :context       - optional, sets the context for the source. Possible values
+                   are `:expr`, `:statement` and `:return`. Defaults to
+                    `:expr`.
 
 cb (function)
   callback, will be invoked with a map. If succesful the map will contain
   a :value key with the result of evaluation and :ns the current namespace.
   If unsuccessful will contain a :error key with an ex-info instance describing
-  the cause of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/cljs/cljs/js.cljs#L871-L915">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> eval-str
+  the cause of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-80-gd1b8b31/src/main/cljs/cljs/js.cljs#L910-L966">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> eval-str
   ([state source cb]
    (<span class="hljs-name">eval-str</span> state source <span class="hljs-literal">nil</span> cb))
   ([state source name cb]

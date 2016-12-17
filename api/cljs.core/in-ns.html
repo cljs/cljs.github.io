@@ -3,7 +3,7 @@
 <p>Sets <code>*cljs-ns*</code> to the namespace <code>name</code>.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">in-ns</span></span> 'foo.core)
 </code></pre>
-</div><hr />Source docstring:<pre>Sets *cljs-ns* to the namespace named by the symbol, creating it if needed.</pre><div>repl specials table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/clojure/cljs/repl.cljc#L637-L667">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> default-special-fns
+</div><hr />Source docstring:<pre>Sets *cljs-ns* to the namespace named by the symbol, creating it if needed.</pre><div>repl specials table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-80-gd1b8b31/src/main/clojure/cljs/repl.cljc#L660-L699">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> default-special-fns
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [load-file-fn
         (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
           ([repl-env env form]
@@ -22,7 +22,14 @@
              (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* assoc-in [:<span class="hljs-symbol">:ana/namespaces</span> ns-name] {<span class="hljs-symbol">:name</span> ns-name})
              (<span class="hljs-name">-evaluate</span> repl-env <span class="hljs-string">"&lt;cljs repl&gt;"</span> <span class="hljs-number">1</span>
                (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"goog.provide('"</span> (<span class="hljs-name">comp/munge</span> ns-name) <span class="hljs-string">"');"</span>)))
-           (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> ana/*cljs-ns* ns-name)))]
+           (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> ana/*cljs-ns* ns-name)))
+        load-fn
+        (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> self
+          ([repl-env env form]
+           (<span class="hljs-name">self</span> env repl-env form <span class="hljs-literal">nil</span>))
+          ([repl-env env [_ &amp; paths <span class="hljs-symbol">:as</span> form] opts]
+           (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [cp-paths (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> load-path-&gt;cp-path paths)]
+             (<span class="hljs-name">run!</span> #(<span class="hljs-name">load-file</span> repl-env % opts) cp-paths))))]
     (<span class="hljs-name">wrap-special-fns</span> wrap-self
      {'in-ns in-ns-fn
       'clojure.core/in-ns in-ns-fn
@@ -33,4 +40,6 @@
         ([repl-env env form]
          (<span class="hljs-name">self</span> env repl-env form <span class="hljs-literal">nil</span>))
         ([repl-env env [_ ns <span class="hljs-symbol">:as</span> form] opts]
-         (<span class="hljs-name">load-namespace</span> repl-env ns opts)))})))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/in-ns.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
+         (<span class="hljs-name">load-namespace</span> repl-env ns opts)))
+      'load load-fn
+      'clojure.core/load load-fn})))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/in-ns.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

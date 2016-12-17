@@ -24,7 +24,7 @@ In addition, the values of *all* namespace-qualified keys will be validated
 no support for inline value specification, by design.
 
 Optionally takes :gen generator-fn, which must be a fn of no args that
-returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-2-g9959ae7/src/main/cljs/cljs/spec.cljc#L110-L168">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys
+returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-80-gd1b8b31/src/main/cljs/cljs/spec.cljc#L110-L170">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys
   [&amp; {<span class="hljs-symbol">:keys</span> [req req-un opt opt-un gen]}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [unk #(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> % name keyword)
         req-keys (<span class="hljs-name"><span class="hljs-builtin-name">filterv</span></span> keyword? (<span class="hljs-name"><span class="hljs-builtin-name">flatten</span></span> req))
@@ -35,19 +35,20 @@ returns a test.check generator.</pre><div>Source code @ <a href="https://github.
         req-keys (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> req-keys (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> unk req-un-specs))
         opt-keys (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> opt) (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> unk opt-un))
         opt-specs (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> opt) opt-un)
+        gx (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)
         parse-req (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [rk f]
                     (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [x]
                            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">keyword?</span></span> x)
-                             `#(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> % ~(<span class="hljs-name">f</span> x))
-                             (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [gx (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)]
-                               `(<span class="hljs-name">fn*</span> [~gx]
-                                  ~(<span class="hljs-name">walk/postwalk</span>
-                                     (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [y] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">keyword?</span></span> y) `(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> ~gx ~(<span class="hljs-name">f</span> y)) y))
-                                     x)))))
+                             `(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> ~gx ~(<span class="hljs-name">f</span> x))
+                             (<span class="hljs-name">walk/postwalk</span>
+                               (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [y] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">keyword?</span></span> y) `(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> ~gx ~(<span class="hljs-name">f</span> y)) y))
+                               x)))
                          rk))
-        pred-exprs [`map?]
+        pred-exprs [`(<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> ~gx)]
         pred-exprs (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> pred-exprs (<span class="hljs-name">parse-req</span> req identity))
         pred-exprs (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> pred-exprs (<span class="hljs-name">parse-req</span> req-un unk))
+        keys-pred `(<span class="hljs-name">fn*</span> [~gx] (<span class="hljs-name">c/and</span> ~@pred-exprs))
+        pred-exprs (<span class="hljs-name"><span class="hljs-builtin-name">mapv</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [e] `(<span class="hljs-name">fn*</span> [~gx] ~e)) pred-exprs)
         pred-forms (<span class="hljs-name">walk/postwalk</span> #(<span class="hljs-name">res</span> &amp;env %) pred-exprs)]
     <span class="hljs-comment">;; `(map-spec-impl ~req-keys '~req ~opt '~pred-forms ~pred-exprs ~gen)</span>
     `(<span class="hljs-name">map-spec-impl</span> {<span class="hljs-symbol">:req</span> '~req <span class="hljs-symbol">:opt</span> '~opt <span class="hljs-symbol">:req-un</span> '~req-un <span class="hljs-symbol">:opt-un</span> '~opt-un
@@ -55,4 +56,5 @@ returns a test.check generator.</pre><div>Source code @ <a href="https://github.
                      <span class="hljs-symbol">:opt-keys</span> '~opt-keys <span class="hljs-symbol">:opt-specs</span> '~opt-specs
                      <span class="hljs-symbol">:pred-forms</span> '~pred-forms
                      <span class="hljs-symbol">:pred-exprs</span> ~pred-exprs
+                     <span class="hljs-symbol">:keys-pred</span> ~keys-pred
                      <span class="hljs-symbol">:gfn</span> ~gen})))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/keys.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
