@@ -6,11 +6,11 @@
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> min [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>])
 <span class="hljs-comment">;; =&gt; 1</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/max">max</a></li><li><a href="/api/cljs.core/min-key">min-key</a></li></ul><hr />Source docstring:<pre>Returns the least of the nums.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-80-gd1b8b31/src/main/cljs/cljs/core.cljs#L2541-L2546">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^number</span> min
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/max">max</a></li><li><a href="/api/cljs.core/min-key">min-key</a></li></ul><hr />Source docstring:<pre>Returns the least of the nums.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/cljs/cljs/core.cljs#L2544-L2549">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^number</span> min
   ([x] x)
   ([x y] (<span class="hljs-name">cljs.core/min</span> x y))
   ([x y &amp; more]
-   (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> min (<span class="hljs-name">cljs.core/min</span> x y) more)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-80-gd1b8b31/src/main/clojure/cljs/core.cljc#L1113-L1117">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> min
+   (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> min (<span class="hljs-name">cljs.core/min</span> x y) more)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/clojure/cljs/core.cljc#L1113-L1117">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> min
   ([x] x)
   ([x y] `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [x# ~x, y# ~y]
             (~'js* <span class="hljs-string">"((~{} &lt; ~{}) ? ~{} : ~{})"</span> x# y# x# y#)))

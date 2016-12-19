@@ -24,7 +24,7 @@ Detailed documentation on format control strings is available in the "Common Lis
 Language, 2nd edition", Chapter 22 (available online at:
 http://www.cs.cmu.edu/afs/cs.cmu.edu/project/ai-repository/ai/html/cltl/clm/node200.html#SECTION002633000000000000000)
 and in the Common Lisp HyperSpec at
-http://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-80-gd1b8b31/src/main/cljs/cljs/pprint.cljs#L893-L928">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> cl-format
+http://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/cljs/cljs/pprint.cljs#L893-L928">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> cl-format
   [writer format-in &amp; args]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [compiled-format (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">string?</span></span> format-in) (<span class="hljs-name">compile-format</span> format-in) format-in)
         navigator (<span class="hljs-name">init-navigator</span> args)]

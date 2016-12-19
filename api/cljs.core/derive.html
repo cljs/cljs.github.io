@@ -2,7 +2,7 @@
 tag. Parent must be a namespace-qualified symbol or keyword and
 child can be either a namespace-qualified symbol or keyword or a
 class. h must be a hierarchy obtained from make-hierarchy, if not
-supplied defaults to, and modifies, the global hierarchy.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-80-gd1b8b31/src/main/cljs/cljs/core.cljs#L9996-L10028">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> derive
+supplied defaults to, and modifies, the global hierarchy.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/cljs/cljs/core.cljs#L10025-L10057">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> derive
   ([tag parent]
    (<span class="hljs-name"><span class="hljs-builtin-name">assert</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">namespace</span></span> parent))
    <span class="hljs-comment">;; (assert (or (class? tag) (and (instance? cljs.core.Named tag) (namespace tag))))</span>
