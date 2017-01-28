@@ -113,7 +113,7 @@ from the clojure.* namespace to the cljs.* namespace. For example:
 
 will be automatically converted to
 
-(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/clojure/cljs/analyzer.cljc#L2294-L2400">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.456-1-g0a99062/src/main/clojure/cljs/analyzer.cljc#L2312-L2418">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> *allow-ns*
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespace declarations must appear at the top-level."</span>)))
@@ -123,7 +123,7 @@ will be automatically converted to
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [segments (<span class="hljs-name">string/split</span> (<span class="hljs-name">clojure.core/name</span> name) #<span class="hljs-string">"\."</span>)]
       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-number">1</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> segments))
         (<span class="hljs-name">warning</span> <span class="hljs-symbol">:single-segment-namespace</span> env {<span class="hljs-symbol">:name</span> name}))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some</span> js-reserved segments)
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> (<span class="hljs-name">some</span> js-reserved segments))
         (<span class="hljs-name">warning</span> <span class="hljs-symbol">:munged-namespace</span> env {<span class="hljs-symbol">:name</span> name}))
       (<span class="hljs-name">find-def-clash</span> env name segments)
       #?(<span class="hljs-symbol">:clj</span>
@@ -132,21 +132,21 @@ will be automatically converted to
              (<span class="hljs-name">AssertionError.</span>
                (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Namespace "</span> name <span class="hljs-string">" has a segment starting with an invaild "</span>
                     <span class="hljs-string">"JavaScript identifier"</span>))))))
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [docstring    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">string?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args)) (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args))
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [docstring    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">string?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args)) (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args))
           mdocstr      (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> name meta <span class="hljs-symbol">:doc</span>)
-          args         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> docstring (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args) args)
-          metadata     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args)) (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args))
+          args         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">some?</span> docstring) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args) args)
+          metadata     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args)) (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> args))
           form-meta    (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> form)
           args         (<span class="hljs-name">desugar-ns-specs</span>
                          #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name">rewrite-cljs-aliases</span>
                                     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> metadata (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args) args))
-                            <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> metadata (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args) args)))
+                            <span class="hljs-symbol">:cljs</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">some?</span> metadata) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> args) args)))
           name         (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> name merge metadata)
           {excludes <span class="hljs-symbol">:excludes</span> core-renames <span class="hljs-symbol">:renames</span>} (<span class="hljs-name">parse-ns-excludes</span> env args)
           core-renames (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m [original renamed]]
                                  (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> m renamed (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> <span class="hljs-string">"cljs.core"</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> original))))
                          {} core-renames)
-          deps         (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> #{})
+          deps         (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> [])
           aliases      (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> {<span class="hljs-symbol">:fns</span> {} <span class="hljs-symbol">:macros</span> {}})
           spec-parsers {<span class="hljs-symbol">:require</span>        (<span class="hljs-name"><span class="hljs-builtin-name">partial</span></span> parse-require-spec env <span class="hljs-literal">false</span> deps aliases)
                         <span class="hljs-symbol">:require-macros</span> (<span class="hljs-name"><span class="hljs-builtin-name">partial</span></span> parse-require-spec env <span class="hljs-literal">true</span> deps aliases)
@@ -170,9 +170,9 @@ will be automatically converted to
               (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> valid-forms disj k)
               <span class="hljs-comment">;; check for spec type reloads</span>
               (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:import</span> k)
-                (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some</span> #{<span class="hljs-symbol">:reload</span>} libs)
+                (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> (<span class="hljs-name">some</span> #{<span class="hljs-symbol">:reload</span>} libs))
                   (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> reload assoc k <span class="hljs-symbol">:reload</span>))
-                (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some</span> #{<span class="hljs-symbol">:reload-all</span>} libs)
+                (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> (<span class="hljs-name">some</span> #{<span class="hljs-symbol">:reload-all</span>} libs))
                   (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> reload assoc k <span class="hljs-symbol">:reload-all</span>)))
               <span class="hljs-comment">;; check for individual ns reloads from REPL interactions</span>
               (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [xs (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">filter</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> % meta <span class="hljs-symbol">:reload</span>) libs))]
@@ -210,7 +210,7 @@ will be automatically converted to
         (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> {<span class="hljs-symbol">:op</span>      <span class="hljs-symbol">:ns</span>
                 <span class="hljs-symbol">:env</span>     env
                 <span class="hljs-symbol">:form</span>    form
-                <span class="hljs-symbol">:deps</span>    @deps
+                <span class="hljs-symbol">:deps</span>    (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> [] (<span class="hljs-name">distinct</span> @deps))
                 <span class="hljs-symbol">:reload</span>  @reload
                 <span class="hljs-symbol">:reloads</span> @reloads}
           (<span class="hljs-name">cond-&gt;</span> ns-info

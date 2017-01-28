@@ -24,7 +24,7 @@ And additional args that control gen
 Optionally takes :gen generator-fn, which must be a fn of no args that
 returns a test.check generator
 
-See also - coll-of, every-kv</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/cljs/cljs/spec.cljc#L199-L241">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every
+See also - coll-of, every-kv</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.456-1-g0a99062/src/main/cljs/cljs/spec.cljc#L199-L241">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every
   [pred &amp; {<span class="hljs-symbol">:keys</span> [into kind count max-count min-count distinct gen-max gen-into gen] <span class="hljs-symbol">:as</span> opts}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [nopts (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> opts (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> <span class="hljs-symbol">:gen</span>) (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> :<span class="hljs-symbol">:kind-form</span> `'~(<span class="hljs-name">res</span> &amp;env (<span class="hljs-symbol">:kind</span> opts))))
         gx (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)

@@ -10,7 +10,7 @@ body, fails if not; then returns the thing thrown.
 
 (is (thrown-with-msg? c re body)) checks that an instance of c is
 thrown AND that the message on the exception matches (with
-re-find) the regular expression re.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/cljs/cljs/test.cljc#L150-L166">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> is
+re-find) the regular expression re.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.456-1-g0a99062/src/main/cljs/cljs/test.cljc#L150-L166">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> is
   ([form] `(<span class="hljs-name">cljs.test/is</span> ~form <span class="hljs-literal">nil</span>))
   ([form msg]
    `(<span class="hljs-name">try-expr</span> ~msg ~form)))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.test/is.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

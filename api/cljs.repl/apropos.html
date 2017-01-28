@@ -12,7 +12,7 @@ public definitions in all currently-loaded namespaces that match the
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.repl/find-doc">cljs.repl/find-doc</a></li></ul><hr />Source docstring:<pre>Given a regular expression or stringable thing, return a seq of all
 public definitions in all currently-loaded namespaces that match the
-str-or-pattern.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.293-83-g101d7d9/src/main/clojure/cljs/repl.cljc#L1209-L1224">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> apropos
+str-or-pattern.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.456-1-g0a99062/src/main/clojure/cljs/repl.cljc#L1220-L1235">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> apropos
   [str-or-pattern]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [matches? (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> Pattern str-or-pattern)
                    #(<span class="hljs-name"><span class="hljs-builtin-name">re-find</span></span> str-or-pattern (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> %))
@@ -23,5 +23,5 @@ str-or-pattern.</pre><div>Source code @ <a href="https://github.com/clojure/cloj
             (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [ns]
               (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ns-name (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns)]
                 (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> ns-name (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> %))
-                  (<span class="hljs-name"><span class="hljs-builtin-name">filter</span></span> matches? (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> (<span class="hljs-name">ana-api/ns-publics</span> ns))))))
+                  (<span class="hljs-name"><span class="hljs-builtin-name">filter</span></span> matches? (<span class="hljs-name">named-publics-vars</span> ns)))))
             (<span class="hljs-name">ana-api/all-ns</span>))))))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.repl/apropos.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
