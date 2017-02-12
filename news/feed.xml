@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 12 Feb 2017 14:30:23 GMT</pubDate><lastBuildDate>Sun, 12 Feb 2017 14:30:23 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.473 - bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 12 Feb 2017 14:33:07 GMT</pubDate><lastBuildDate>Sun, 12 Feb 2017 14:33:07 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.473 - bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 &lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
 &lt;ul&gt;
@@ -13,7 +13,7 @@
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1831&quot;&gt;CLJS-1831&lt;/a&gt;: Self-host: Improperly munge ns names&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1925&quot;&gt;CLJS-1925&lt;/a&gt;: Use of undeclared Var cljs.user/RegExp when extending protocol for RegExp&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1920&quot;&gt;CLJS-1920&lt;/a&gt;: cljs.build.api/node-inputs: package.json files are only added if module entries are top-leve&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1916&quot;&gt;CLJS-1916&lt;/a&gt;: &lt;strong&gt;dirname and &lt;/strong&gt;filename are not defined when compiling for Node.js with optimizations :none&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1916&quot;&gt;CLJS-1916&lt;/a&gt;: &lt;code&gt;__dirname&lt;/code&gt; and &lt;code&gt;__filename&lt;/code&gt; are not defined when compiling for Node.js with optimizations :none&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1915&quot;&gt;CLJS-1915&lt;/a&gt;: cljs.test: Index out of bounds for stack element w/o line/column&lt;/li&gt;
 &lt;/ul&gt;
 </description><pubDate>Sat, 11 Feb 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.473</link></item><item><title>1.9.456 - Externs Inference & Comprehensive JS Modules Support</title><description>&lt;p&gt;This is a significant feature release.&lt;/p&gt;
