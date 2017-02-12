@@ -1,4 +1,22 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 28 Jan 2017 03:48:23 GMT</pubDate><lastBuildDate>Sat, 28 Jan 2017 03:48:23 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.456 - Externs Inference & Comprehensive JS Modules Support</title><description>&lt;p&gt;This is a significant feature release.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 12 Feb 2017 14:30:23 GMT</pubDate><lastBuildDate>Sun, 12 Feb 2017 14:30:23 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.473 - bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
+&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
+&lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1931&quot;&gt;CLJS-1931&lt;/a&gt;: Closure Compiler {{--generate_exports}} flag not supported&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1934&quot;&gt;CLJS-1934&lt;/a&gt;: Self-host: require-macros :reload / :reload-all fails&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1932&quot;&gt;CLJS-1932&lt;/a&gt;: Self-host: Perf regression macroexpand-check&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1930&quot;&gt;CLJS-1930&lt;/a&gt;: Master broken wrt static field: ES5_STRICT_UNCOMMON&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1929&quot;&gt;CLJS-1929&lt;/a&gt;: When expanding libs don&amp;#39;t include Hidden files&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1905&quot;&gt;CLJS-1905&lt;/a&gt;: Self-host: Stacktraces for script/test-self-parity&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1795&quot;&gt;CLJS-1795&lt;/a&gt;: Support more options in the &lt;code&gt;:closure-warnings&lt;/code&gt; compiler option&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1922&quot;&gt;CLJS-1922&lt;/a&gt;: Use :file as relative output path for foreign-libs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1831&quot;&gt;CLJS-1831&lt;/a&gt;: Self-host: Improperly munge ns names&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1925&quot;&gt;CLJS-1925&lt;/a&gt;: Use of undeclared Var cljs.user/RegExp when extending protocol for RegExp&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1920&quot;&gt;CLJS-1920&lt;/a&gt;: cljs.build.api/node-inputs: package.json files are only added if module entries are top-leve&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1916&quot;&gt;CLJS-1916&lt;/a&gt;: &lt;strong&gt;dirname and &lt;/strong&gt;filename are not defined when compiling for Node.js with optimizations :none&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1915&quot;&gt;CLJS-1915&lt;/a&gt;: cljs.test: Index out of bounds for stack element w/o line/column&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Sat, 11 Feb 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.473</link></item><item><title>1.9.456 - Externs Inference & Comprehensive JS Modules Support</title><description>&lt;p&gt;This is a significant feature release.&lt;/p&gt;
 &lt;p&gt;The first new feature is externs inference. This should greatly ease
 the integration of 3rd party JavaScript libraries incompatible
 with Google Closure advanced compilation. By treating the externs
@@ -390,25 +408,4 @@ checking.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1629&quot;&gt;CLJS-1629&lt;/a&gt;: Fix warning about duplicate test-pr-str&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1637&quot;&gt;CLJS-1637&lt;/a&gt;: Missing docstrings for a few vars&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Wed, 01 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.14</link></item><item><title>1.8.51</title><description>&lt;p&gt;This release updates the Closure Compiler and tools.reader dependencies, fixes a race condition with :parallel-build, improves JS module integration, and includes a number of enhancements and fixes around optional self hosting. A big thanks to everyone who contributed!&lt;/p&gt;
-&lt;p&gt;As always feedback welcome.&lt;/p&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;bump Closure Compiler to v20160315&lt;/li&gt;
-&lt;li&gt;bump tools.reader to 1.0.0-beta1&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1624&quot;&gt;CLJS-1624&lt;/a&gt;: Avoid useage of JSC_HOME in test bash scripts&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1626&quot;&gt;CLJS-1626&lt;/a&gt;: cljs.test for bootstrap&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1588&quot;&gt;CLJS-1588&lt;/a&gt;: defrecord satisfies? behavior under bootstrap&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1632&quot;&gt;CLJS-1632&lt;/a&gt;: docs / arglist consistency&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1612&quot;&gt;CLJS-1612&lt;/a&gt;: Resolve ns aliases in syntax-quote&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1621&quot;&gt;CLJS-1621&lt;/a&gt;: Foreign libs modules of different types don&amp;#39;t compile together&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1617&quot;&gt;CLJS-1617&lt;/a&gt;: inlined &lt;code&gt;list&lt;/code&gt; evaluation order&lt;/li&gt;
-&lt;li&gt;:parallel-build race condition&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Mon, 25 Apr 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.8.51</link></item></channel></rss>
+</description><pubDate>Wed, 01 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.14</link></item></channel></rss>

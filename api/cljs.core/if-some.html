@@ -3,7 +3,7 @@ not, yields <code>else</code>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/when-some">when-some</a></li></ul><hr />Source docstring:<pre>bindings => binding-form test
 
 If test is not nil, evaluates then with binding-form bound to the
-value of test, if not, yields else</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha7/src/clj/clojure/core.clj#L1859-L1877">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> if-some
+value of test, if not, yields else</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha14/src/clj/clojure/core.clj#L1866-L1884">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> if-some
   ([bindings then]
    `(<span class="hljs-name">if-some</span> ~bindings ~then <span class="hljs-literal">nil</span>))
   ([bindings then else &amp; oldform]

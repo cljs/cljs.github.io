@@ -2,7 +2,7 @@
 side-effect will cause <code>test</code> to become false or nil.</p>
 <p>Returns nil.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/loop">loop</a></li></ul><hr />Source docstring:<pre>Repeatedly executes body while test expression is true. Presumes
-some side-effect will cause test to become false/nil. Returns nil</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha7/src/clj/clojure/core.clj#L6196-L6204">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> while
+some side-effect will cause test to become false/nil. Returns nil</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha14/src/clj/clojure/core.clj#L6215-L6223">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> while
   [test &amp; body]
   `(<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> []
      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> ~test

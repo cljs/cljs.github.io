@@ -45,7 +45,7 @@ that the field names __meta and __extmap are currently reserved and
 should not be used when defining your own types.
 
 Given (deftype TypeName ...), a factory function called ->TypeName
-will be defined, taking positional parameters for the fields</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.456-1-g0a99062/src/main/clojure/cljs/core.cljc#L1652-L1720">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> deftype
+will be defined, taking positional parameters for the fields</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.473-1-g9068898/src/main/clojure/cljs/core.cljc#L1650-L1718">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> deftype
   [t fields &amp; impls]
   (<span class="hljs-name">validate-fields</span> <span class="hljs-string">"deftype"</span> t fields)
   (<span class="hljs-name">core/let</span> [env &amp;env

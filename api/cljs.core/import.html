@@ -21,6 +21,6 @@
 
 For each name in constructor-name-symbols, adds a mapping from name to the
 constructor named by closure-namespace to the current namespace. Use :import in the ns
-macro in preference to calling this directly.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.456-1-g0a99062/src/main/clojure/cljs/core.cljc#L2814-L2821">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> import
+macro in preference to calling this directly.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.473-1-g9068898/src/main/clojure/cljs/core.cljc#L2812-L2819">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> import
   [&amp; import-symbols-or-lists]
   `(~'ns* ~(<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> <span class="hljs-symbol">:import</span> import-symbols-or-lists)))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/import.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

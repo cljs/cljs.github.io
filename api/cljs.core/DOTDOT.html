@@ -35,6 +35,6 @@ expands to:
 
 (. (. System (getProperties)) (get "os.name"))
 
-but is easier to write, read, and understand.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha7/src/clj/clojure/core.clj#L1643-L1659">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> ..
+but is easier to write, read, and understand.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha14/src/clj/clojure/core.clj#L1649-L1665">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> ..
   ([x form] `(<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~x ~form))
   ([x form &amp; more] `(<span class="hljs-name"><span class="hljs-builtin-name">..</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~x ~form) ~@more)))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/DOTDOT.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>
