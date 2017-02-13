@@ -18,7 +18,7 @@ positional-param => binding-form
 next-param => binding-form
 name => symbol
 
-Defines a function</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha14/src/clj/clojure/core.clj#L4465-L4525">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fn
+Defines a function</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L4357-L4417">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fn
   [&amp; sigs]
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [name (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sigs)) (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sigs) <span class="hljs-literal">nil</span>)
           sigs (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> name (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> sigs) sigs)

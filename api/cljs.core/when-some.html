@@ -2,7 +2,7 @@
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/if-some">if-some</a></li></ul><hr />Source docstring:<pre>bindings => binding-form test
 
 When test is not nil, evaluates body with binding-form bound to the
-value of test</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha14/src/clj/clojure/core.clj#L1886-L1901">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> when-some
+value of test</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L1804-L1819">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> when-some
   [bindings &amp; body]
   (<span class="hljs-name">assert-args</span>
      (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> bindings) <span class="hljs-string">"a vector for its binding"</span>
