@@ -2,6 +2,6 @@
 
 Same options as 'every', :into defaults to {}
 
-See also - map-of</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.473-1-g9068898/src/main/cljs/cljs/spec.cljc#L243-L251">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every-kv
+See also - map-of</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.494/src/main/cljs/cljs/spec.cljc#L243-L251">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every-kv
   [kpred vpred &amp; opts]
   `(<span class="hljs-name">every</span> (<span class="hljs-name">tuple</span> ~kpred ~vpred) :<span class="hljs-symbol">:kfn</span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [i# v#] (<span class="hljs-name"><span class="hljs-builtin-name">nth</span></span> v# <span class="hljs-number">0</span>)) <span class="hljs-symbol">:into</span> {} ~@opts))</code></pre><hr /><div><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.spec/every-kv.md">Edit Here!</a></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div></body></html>

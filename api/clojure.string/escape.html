@@ -5,7 +5,7 @@
 from s as follows:
 
 If (cmap ch) is nil, append ch to the new string.
-If (cmap ch) is non-nil, append (str (cmap ch)) instead.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.473-1-g9068898/src/main/cljs/clojure/string.cljs#L198-L215">clojurescript:src/main/cljs/clojure/string.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> escape
+If (cmap ch) is non-nil, append (str (cmap ch)) instead.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.494/src/main/cljs/clojure/string.cljs#L198-L215">clojurescript:src/main/cljs/clojure/string.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> escape
   [s cmap]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [buffer (<span class="hljs-name">StringBuffer.</span>)
         length (<span class="hljs-name">.-length</span> s)]
