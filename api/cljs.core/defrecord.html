@@ -49,7 +49,7 @@ defining your own records.
 
 Given (defrecord TypeName ...), two factory functions will be
 defined: ->TypeName, taking positional parameters for the fields,
-and map->TypeName, taking a map of keywords to field values.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.494/src/main/clojure/cljs/core.cljc#L1812-L1879">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defrecord
+and map->TypeName, taking a map of keywords to field values.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495/src/main/clojure/cljs/core.cljc#L1812-L1879">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defrecord
   [rsym fields &amp; impls]
   (<span class="hljs-name">validate-fields</span> <span class="hljs-string">"defrecord"</span> rsym fields)
   (<span class="hljs-name">core/let</span> [rsym (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> rsym assoc <span class="hljs-symbol">:internal-ctor</span> <span class="hljs-literal">true</span>)

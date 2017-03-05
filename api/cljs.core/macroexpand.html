@@ -17,7 +17,7 @@ subsequent result is <em>not</em> a macro call.  NOTE: nested forms are <em>not<
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/macroexpand-1">macroexpand-1</a></li><li><a href="/api/cljs.core/defmacro">defmacro</a></li></ul><hr />Source docstring:<pre>Repeatedly calls macroexpand-1 on form until it no longer
 represents a macro form, then returns it.  Note neither
-macroexpand-1 nor macroexpand expand macros in subforms.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.494/src/main/clojure/cljs/core.cljc#L2844-L2858">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> macroexpand
+macroexpand-1 nor macroexpand expand macros in subforms.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495/src/main/clojure/cljs/core.cljc#L2844-L2858">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> macroexpand
   [quoted]
   (<span class="hljs-name">core/assert</span> (<span class="hljs-name">core/=</span> (<span class="hljs-name">core/first</span> quoted) 'quote)
     <span class="hljs-string">"Argument to macroexpand must be quoted"</span>)

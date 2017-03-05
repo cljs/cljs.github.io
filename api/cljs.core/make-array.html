@@ -2,7 +2,7 @@
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/aclone">aclone</a></li><li><a href="/api/cljs.core/array">array</a></li></ul><hr />Source docstring:<pre>Construct a JavaScript array of the specified dimensions. Accepts ignored
 type argument for compatibility with Clojure. Note that there is no efficient
 way to allocate multi-dimensional arrays in JavaScript; as such, this function
-will run in polynomial time when called with 3 or more arguments.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.494/src/main/cljs/cljs/core.cljs#L375-L389">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^array</span> make-array
+will run in polynomial time when called with 3 or more arguments.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495/src/main/cljs/cljs/core.cljs#L375-L389">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^array</span> make-array
   ([size]
      (<span class="hljs-name">js/Array.</span> size))
   ([type size]
@@ -12,7 +12,7 @@ will run in polynomial time when called with 3 or more arguments.</pre><div>Func
           dimarray (<span class="hljs-name">make-array</span> size)]
       (<span class="hljs-name"><span class="hljs-builtin-name">dotimes</span></span> [i (<span class="hljs-name">alength</span> dimarray)]
         (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> dimarray i (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> make-array <span class="hljs-literal">nil</span> dims)))
-      dimarray)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.494/src/main/clojure/cljs/core.cljc#L2407-L2423">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> make-array
+      dimarray)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495/src/main/clojure/cljs/core.cljc#L2407-L2423">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> make-array
   ([size]
    (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span>
      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">core/number?</span> size)
