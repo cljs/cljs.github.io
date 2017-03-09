@@ -592,7 +592,8 @@ seq calls.</pre></div></div><hr /><div style="position: relative;"><div id="lazy
 
 Evaluates the exprs in a lexical context in which the symbols in
 the binding-forms are bound to their respective init-exprs or parts
-therein.</pre></div></div><hr /><div style="position: relative;"><div id="letSTAR"><strong>let*</strong> - special form</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/letSTAR">full details ></a></div><div class="sep"></div></div><hr /><div style="position: relative;"><div id="letfn"><strong>letfn</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/letfn">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(letfn fnspecs & body)</code></div></div><div class="sep"><pre>fnspec ==> (fname [params*] exprs) or (fname ([params*] exprs)+)
+therein.</pre></div></div><hr /><div style="position: relative;"><div id="letSTAR"><strong>let*</strong> - special form</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/letSTAR">full details ></a></div><div class="sep"></div><div><p>Internally used by <a class="code-link" href="/api/cljs.core#let"><code>let</code></a>, which should be used instead.</p>
+</div></div><hr /><div style="position: relative;"><div id="letfn"><strong>letfn</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/letfn">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(letfn fnspecs & body)</code></div></div><div class="sep"><pre>fnspec ==> (fname [params*] exprs) or (fname ([params*] exprs)+)
 
 Takes a vector of function specs and a body, and generates a set of
 bindings of functions to their names. All of the names are available
