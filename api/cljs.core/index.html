@@ -24,10 +24,9 @@ argv as arguments.</p>
 Only used for bootstrapping.</p>
 </div></div><hr /><div style="position: relative;"><div id="STARoutSTAR"><strong>*out*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARoutSTAR">full details ></a></div><div class="sep"></div><div><p>Currently unused. Expected to refer to an <a class="code-link" href="/api/cljs.core#IWriter"><code>IWriter</code></a> object
 representing standard output for print operations, as it is in Clojure.</p>
-</div></div><hr /><div style="position: relative;"><div id="STARprint-dupSTAR"><strong>*print-dup*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-dupSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>When set to logical true, objects will be printed in a way that preserves
-their type when read in later.
-
-Defaults to false.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-err-fnSTAR"><strong>*print-err-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-err-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Each runtime environment provides a different way to print error output.
+</div></div><hr /><div style="position: relative;"><div id="STARprint-dupSTAR"><strong>*print-dup*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-dupSTAR">full details ></a></div><div class="sep"></div><div><p>Not implemented. In clojure, it can be bound to true to preserve object types
+when printing, allowing successful object <em>duplication</em> when read back.</p>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-err-fnSTAR"><strong>*print-err-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-err-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Each runtime environment provides a different way to print error output.
 Whatever function *print-err-fn* is bound to will be passed any
 Strings which should be printed.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-fnSTAR"><strong>*print-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Each runtime environment provides a different way to print output.
 Whatever function *print-fn* is bound to will be passed any
