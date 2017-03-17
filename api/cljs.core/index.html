@@ -26,9 +26,13 @@ Only used for bootstrapping.</p>
 representing standard output for print operations, as it is in Clojure.</p>
 </div></div><hr /><div style="position: relative;"><div id="STARprint-dupSTAR"><strong>*print-dup*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-dupSTAR">full details ></a></div><div class="sep"></div><div><p>Not implemented. In clojure, it can be bound to true to preserve object types
 when printing, allowing successful object <em>duplication</em> when read back.</p>
-</div></div><hr /><div style="position: relative;"><div id="STARprint-err-fnSTAR"><strong>*print-err-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-err-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Each runtime environment provides a different way to print error output.
-Whatever function *print-err-fn* is bound to will be passed any
-Strings which should be printed.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-fnSTAR"><strong>*print-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Each runtime environment provides a different way to print output.
+</div></div><hr /><div style="position: relative;"><div id="STARprint-err-fnSTAR"><strong>*print-err-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-err-fnSTAR">full details ></a></div><div class="sep"></div><div><p>A var representing the function used to print error output, which may differ
+between runtime environments.</p>
+<pre><code class="lang-clj">(<span class="hljs-name">enable-console-print!</span>)
+(<span class="hljs-name">binding</span> [*print-fn* *print-err-fn*]
+  (<span class="hljs-name">println</span> <span class="hljs-string">"printed to stderr in Node, or to browser console as error"</span>))
+</code></pre>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-fnSTAR"><strong>*print-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Each runtime environment provides a different way to print output.
 Whatever function *print-fn* is bound to will be passed any
 Strings which should be printed.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-lengthSTAR"><strong>*print-length*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-lengthSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>*print-length* controls how many items of each collection the
 printer will print. If it is bound to logical false, there is no
