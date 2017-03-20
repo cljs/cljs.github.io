@@ -28,7 +28,7 @@ predicate as its argument, the result of that call being the return
 value of condp. A single default expression can follow the clauses,
 and its value will be returned if no clause matches. If no default
 expression is provided and no clause matches, an
-IllegalArgumentException is thrown.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-5-gf7d08ba/src/main/clojure/cljs/core.cljc#L2107-L2147">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> condp
+IllegalArgumentException is thrown.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-13-g197ff2e/src/main/clojure/cljs/core.cljc#L2107-L2147">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> condp
   [pred expr &amp; clauses]
   (<span class="hljs-name">core/let</span> [gpred (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"pred__"</span>)
              gexpr (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"expr__"</span>)

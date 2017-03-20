@@ -41,7 +41,7 @@ c
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-5-gf7d08ba/src/main/clojure/cljs/analyzer.cljc#L1274-L1417">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-13-g197ff2e/src/main/clojure/cljs/analyzer.cljc#L1274-L1417">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
   [op env form _ _]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pfn (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
               ([_ sym] {<span class="hljs-symbol">:sym</span> sym})

@@ -27,38 +27,59 @@ representing standard output for print operations, as it is in Clojure.</p>
 </div></div><hr /><div style="position: relative;"><div id="STARprint-dupSTAR"><strong>*print-dup*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-dupSTAR">full details ></a></div><div class="sep"></div><div><p>Not implemented. In clojure, it can be bound to true to preserve object types
 when printing, allowing successful object <em>duplication</em> when read back.</p>
 </div></div><hr /><div style="position: relative;"><div id="STARprint-err-fnSTAR"><strong>*print-err-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-err-fnSTAR">full details ></a></div><div class="sep"></div><div><p>A var representing the function used to print error output, which may differ
-between runtime environments.</p>
+between runtime environments. Use <a class="code-link" href="/api/cljs.core#enable-console-printBANG"><code>enable-console-print!</code></a> to
+set it to print to console/stderr, then bind as follows:</p>
 <pre><code class="lang-clj">(<span class="hljs-name">enable-console-print!</span>)
 (<span class="hljs-name">binding</span> [*print-fn* *print-err-fn*]
   (<span class="hljs-name">println</span> <span class="hljs-string">"printed to stderr in Node, or to browser console as error"</span>))
 </code></pre>
-</div></div><hr /><div style="position: relative;"><div id="STARprint-fnSTAR"><strong>*print-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Each runtime environment provides a different way to print output.
-Whatever function *print-fn* is bound to will be passed any
-Strings which should be printed.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-lengthSTAR"><strong>*print-length*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-lengthSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>*print-length* controls how many items of each collection the
-printer will print. If it is bound to logical false, there is no
-limit. Otherwise, it must be bound to an integer indicating the maximum
-number of items of each collection to print. If a collection contains
-more items, the printer will print items up to the limit followed by
-'...' to represent the remaining items. The root binding is nil
-indicating no limit.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-levelSTAR"><strong>*print-level*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-levelSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>*print-level* controls how many levels deep the printer will
-print nested objects. If it is bound to logical false, there is no
-limit. Otherwise, it must be bound to an integer indicating the maximum
-level to print. Each argument to print is at level 0; if an argument is a
-collection, its items are at level 1; and so on. If an object is a
-collection and is at a level greater than or equal to the value bound to
-*print-level*, the printer prints '#' to represent it. The root binding
-is nil indicating no limit.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-metaSTAR"><strong>*print-meta*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-metaSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>If set to logical true, when printing an object, its metadata will also
-be printed in a form that can be read back by the reader.
-
-Defaults to false.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-namespace-mapsSTAR"><strong>*print-namespace-maps*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-namespace-mapsSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>*print-namespace-maps* controls whether the printer will print
-namespace map literal syntax.
-
-Defaults to false, but the REPL binds it to true.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-newlineSTAR"><strong>*print-newline*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-newlineSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>When set to logical false will drop newlines from printing calls.
-This is to work around the implicit newlines emitted by standard JavaScript
-console objects.</pre></div></div><hr /><div style="position: relative;"><div id="STARprint-readablySTAR"><strong>*print-readably*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-readablySTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>When set to logical false, strings and characters will be printed with
-non-alphanumeric characters converted to the appropriate escape sequences.
-
-Defaults to true</pre></div></div><hr /><div style="position: relative;"><div id="STARtargetSTAR"><strong>*target*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARtargetSTAR">full details ></a></div><div class="sep"></div><div><p>A string indicating the current ClojureScript target (e.g. <code>&quot;default&quot;</code> for browsers,
+</div></div><hr /><div style="position: relative;"><div id="STARprint-fnSTAR"><strong>*print-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-fnSTAR">full details ></a></div><div class="sep"></div><div><p>A var representing the function used to print output, which may differ
+between runtime environments. Use <a class="code-link" href="/api/cljs.core#enable-console-printBANG"><code>enable-console-print!</code></a> to
+set it to print to console/stdout.</p>
+<pre><code class="lang-clj">(<span class="hljs-name">enable-console-print!</span>)
+(<span class="hljs-name">println</span> <span class="hljs-string">"printed to stdout in Node, or to browser console"</span>)
+</code></pre>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-lengthSTAR"><strong>*print-length*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-lengthSTAR">full details ></a></div><div class="sep"></div><div><p>Limits the number of items in each collection to print.  Defaults to <code>nil</code> indicating
+no limit.  A <code>...</code> is printed for items not shown.</p>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-levelSTAR"><strong>*print-level*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-levelSTAR">full details ></a></div><div class="sep"></div><div><p>Descend only <code>n</code> levels deep when printing a nested object. Defaults to <code>nil</code>
+indicating no limit.  A <code>#</code> is printed for objects at level <code>n</code>.</p>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-metaSTAR"><strong>*print-meta*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-metaSTAR">full details ></a></div><div class="sep"></div><div><p>Determines if metadata should be included when printing an object. Defaults to false.</p>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-namespace-mapsSTAR"><strong>*print-namespace-maps*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-namespace-mapsSTAR">full details ></a></div><div class="sep"></div><div><p>Determines if maps are printed as namespace maps when all keys
+have the same namespace.  Defaults to false.</p>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-newlineSTAR"><strong>*print-newline*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-newlineSTAR">full details ></a></div><div class="sep"></div><div><p>Set to false by <a class="code-link" href="/api/cljs.core#enable-console-printBANG"><code>enable-console-print!</code></a> to prevent
+<a class="code-link" href="/api/cljs.core#println"><code>println</code></a> and <a class="code-link" href="/api/cljs.core#prn"><code>prn</code></a> from duplicating the newline
+already appended by JavaScript console.</p>
+</div></div><hr /><div style="position: relative;"><div id="STARprint-readablySTAR"><strong>*print-readably*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-readablySTAR">full details ></a></div><div class="sep"></div><div><p>Determines if strings are printed with quotes and escape characters. &quot;Readably&quot;
+means the printed string can be copy-pasted back into the reader to produce the
+same value.</p>
+<p>Do not use directly.  The following functions will set this flag appropriately:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">true</th>
+<th style="text-align:left">false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#pr"><code>pr</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#print"><code>print</code></a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#pr-str"><code>pr-str</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#print-str"><code>print-str</code></a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#prn"><code>prn</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#println"><code>println</code></a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#prn-str"><code>prn-str</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/cljs.core#println-str"><code>println-str</code></a></td>
+</tr>
+</tbody>
+</table>
+</div></div><hr /><div style="position: relative;"><div id="STARtargetSTAR"><strong>*target*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARtargetSTAR">full details ></a></div><div class="sep"></div><div><p>A string indicating the current ClojureScript target (e.g. <code>&quot;default&quot;</code> for browsers,
 <code>&quot;nodejs&quot;</code> for Node)</p>
 </div></div><hr /><div style="position: relative;"><div id="STARunchecked-ifSTAR"><strong>*unchecked-if*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARunchecked-ifSTAR">full details ></a></div><div class="sep"></div></div><hr /><div style="position: relative;"><div id="STARwarn-on-inferSTAR"><strong>*warn-on-infer*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARwarn-on-inferSTAR">full details ></a></div><div class="sep"></div></div><hr /><div style="position: relative;"><div id="PLUS"><strong>+</strong> - function/macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/PLUS">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(+)</code></div><div><code>(+ x)</code></div><div><code>(+ x y)</code></div><div><code>(+ x y & more)</code></div></div><div class="sep"><pre>Returns the sum of nums. (+) returns 0.</pre></div></div><hr /><div style="position: relative;"><div id="-"><strong>-</strong> - function/macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/-">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(- x)</code></div><div><code>(- x y)</code></div><div><code>(- x y & more)</code></div></div><div class="sep"><pre>If no ys are supplied, returns the negation of x, else subtracts
 the ys from x and returns the result.</pre></div></div><hr /><div style="position: relative;"><div id="-GT"><strong>-></strong><em>- known as thread first</em> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/-GT">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(-> x & forms)</code></div></div><div class="sep"><pre>Threads the expr through the forms. Inserts x as the

@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 17 Mar 2017 04:45:30 GMT</pubDate><lastBuildDate>Fri, 17 Mar 2017 04:45:30 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.494 - another bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 20 Mar 2017 00:20:16 GMT</pubDate><lastBuildDate>Mon, 20 Mar 2017 00:20:16 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.494 - another bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;
@@ -20,7 +20,7 @@
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1942&quot;&gt;CLJS-1942&lt;/a&gt;: Self-host: &lt;code&gt;cljs.env.macros&lt;/code&gt; and &lt;code&gt;cljs.analyzer.macros&lt;/code&gt; can&amp;#39;t be loaded&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1935&quot;&gt;CLJS-1935&lt;/a&gt;: When calling cljs.spec/valid?, subsequent predicates of cljs.spec/and are evaluated even when early predicate is unsatisfied&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 24 Feb 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.494</link></item><item><title>1.9.473 - bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
+</description><pubDate>Fri, 24 Feb 2017 08:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.494</link></item><item><title>1.9.473 - bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 &lt;h2 id=&quot;fixes&quot;&gt;Fixes&lt;/h2&gt;
 &lt;ul&gt;
@@ -38,7 +38,7 @@
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1916&quot;&gt;CLJS-1916&lt;/a&gt;: &lt;code&gt;__dirname&lt;/code&gt; and &lt;code&gt;__filename&lt;/code&gt; are not defined when compiling for Node.js with optimizations :none&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1915&quot;&gt;CLJS-1915&lt;/a&gt;: cljs.test: Index out of bounds for stack element w/o line/column&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Sat, 11 Feb 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.473</link></item><item><title>1.9.456 - Externs Inference & Comprehensive JS Modules Support</title><description>&lt;p&gt;This is a significant feature release.&lt;/p&gt;
+</description><pubDate>Sat, 11 Feb 2017 08:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.473</link></item><item><title>1.9.456 - Externs Inference & Comprehensive JS Modules Support</title><description>&lt;p&gt;This is a significant feature release.&lt;/p&gt;
 &lt;p&gt;The first new feature is externs inference. This should greatly ease
 the integration of 3rd party JavaScript libraries incompatible
 with Google Closure advanced compilation. By treating the externs
@@ -151,7 +151,7 @@ many members of the community.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1820&quot;&gt;CLJS-1820&lt;/a&gt;: &amp;quot;No such namespace&amp;quot; warning when referring to JS module namespace without using alias&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1828&quot;&gt;CLJS-1828&lt;/a&gt;: Add &lt;code&gt;:rename&lt;/code&gt; to &lt;code&gt;require&lt;/code&gt;&amp;#39;s docstring&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 27 Jan 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.456</link></item><item><title>1.9.293</title><description>&lt;p&gt;This release fixes a major issue with transit analysis caching where
+</description><pubDate>Fri, 27 Jan 2017 08:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.456</link></item><item><title>1.9.293</title><description>&lt;p&gt;This release fixes a major issue with transit analysis caching where
 files were leaked. It also includes a very significant compiler
 enhancement thanks to Antonio Monteiro - you can now create
 ClojureScript files without declaring a namespace. This opens the door
@@ -220,7 +220,7 @@ release.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1774&quot;&gt;CLJS-1774&lt;/a&gt;: Self-host: Report filenames in warns in test-self-parity&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1779&quot;&gt;CLJS-1779&lt;/a&gt;: keyword 2-arity constructor accepts anything for both parameters which leads to different hashing&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Wed, 19 Oct 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.293</link></item><item><title>1.9.229 - cljs.spec fixes</title><description>&lt;p&gt;A bug fix release for cljs.spec and a REPL regression.&lt;/p&gt;
+</description><pubDate>Wed, 19 Oct 2016 07:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.293</link></item><item><title>1.9.229 - cljs.spec fixes</title><description>&lt;p&gt;A bug fix release for cljs.spec and a REPL regression.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;
@@ -234,7 +234,7 @@ release.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1763&quot;&gt;CLJS-1763&lt;/a&gt;: Defining a var that clashes &lt;code&gt;cljs.core&lt;/code&gt; throws a compiler error instead of warning&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1772&quot;&gt;CLJS-1772&lt;/a&gt;: Dependency index can incorrectly overwrite &lt;code&gt;.cljs&lt;/code&gt; files with &lt;code&gt;.cljc&lt;/code&gt; files if both are present&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 19 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.229</link></item><item><title>1.9.216 - cljs.spec fixes</title><description>&lt;p&gt;This release addresses a few bugs around cljs.spec discovered in the
+</description><pubDate>Fri, 19 Aug 2016 07:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.229</link></item><item><title>1.9.216 - cljs.spec fixes</title><description>&lt;p&gt;This release addresses a few bugs around cljs.spec discovered in the
 last release along with relevant fixes for self-hosted ClojureScript.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
@@ -251,7 +251,7 @@ last release along with relevant fixes for self-hosted ClojureScript.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1739&quot;&gt;CLJS-1739&lt;/a&gt;: seq on map literal with 9 elements leads to rest producing nil&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1738&quot;&gt;CLJS-1738&lt;/a&gt;: Self-host: need to update call to check-use-macros-inferring-missing&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Mon, 15 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.216</link></item><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
+</description><pubDate>Mon, 15 Aug 2016 07:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.216</link></item><item><title>1.9.198 - cljs.spec, core ns aliasing, macro inference, :rename, and more!</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure
 1.9.0-alpha10. This release also includes a large number of
 enhancements to the ns form:&lt;/p&gt;
 &lt;ul&gt;
@@ -332,7 +332,7 @@ possible&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1699&quot;&gt;CLJS-1699&lt;/a&gt;: Update docstring for ns&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1694&quot;&gt;CLJS-1694&lt;/a&gt;: Self-host: Port macro var inference in :refer&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 12 Aug 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.198</link></item><item><title>1.9.89 - cljs.spec & :preloads</title><description>&lt;p&gt;This release fixes several cljs.spec issues. It also includes a new
+</description><pubDate>Fri, 12 Aug 2016 07:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.198</link></item><item><title>1.9.89 - cljs.spec & :preloads</title><description>&lt;p&gt;This release fixes several cljs.spec issues. It also includes a new
 compiler option - :preloads. This feature is designed to simplify (but
 not limited to) the loading of development time side effects such as
 enabling printing, REPL connections, and browser tool
@@ -357,7 +357,7 @@ namespaces that users can specify in their dev builds.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1687&quot;&gt;CLJS-1687&lt;/a&gt;: Self-host: cljs.spec: inst-in-range? and int-in-range? need qualification&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1668&quot;&gt;CLJS-1668&lt;/a&gt;: cljs.spec: c alias needs expansion in int-in&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Wed, 22 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.89</link></item><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
+</description><pubDate>Wed, 22 Jun 2016 07:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.89</link></item><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
 addresses an issue with Transit analysis caching, includes fixes for
 cljs.spec support under bootstrapped, bumps the Closure library
 dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
@@ -387,7 +387,7 @@ dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1667&quot;&gt;CLJS-1667&lt;/a&gt;: bad describe* for and-spec-impl&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1699&quot;&gt;CLJS-1699&lt;/a&gt;: Self-host: s/fdef ns-qualify &lt;em&gt;ns&lt;/em&gt; name field access&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 17 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.76</link></item><item><title>1.9.36 - cljs.spec fixes & performance enhancements</title><description>&lt;p&gt;This release fixes a cljs.spec bug around instrumented multi-arity
+</description><pubDate>Fri, 17 Jun 2016 07:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.76</link></item><item><title>1.9.36 - cljs.spec fixes & performance enhancements</title><description>&lt;p&gt;This release fixes a cljs.spec bug around instrumented multi-arity
 fns. It also includes various fixes and performance enhancements from
 Clojure. Another performance related change is writing out analysis
 caches as Transit if transit-clj is available. This is automatic and
@@ -411,4 +411,4 @@ REPLs.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1663&quot;&gt;CLJS-1663&lt;/a&gt;: Calling instrumented multi-arity function causes exception&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1650&quot;&gt;CLJS-1650&lt;/a&gt;: &lt;code&gt;cljs.reader/read-map&lt;/code&gt; now returns array-map/hash-map based on the size of the sequence.&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 03 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.36</link></item></channel></rss>
+</description><pubDate>Fri, 03 Jun 2016 07:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.36</link></item></channel></rss>
