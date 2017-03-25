@@ -7,12 +7,12 @@
 <span class="hljs-comment">;;=&gt; {:a 10 :b 20}</span>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/assoc">assoc</a></li><li><a href="/api/cljs.core/hash-map">hash-map</a></li><li><a href="/api/cljs.core/sorted-map">sorted-map</a></li></ul><hr />Source docstring:<pre>keyval => key val
-Returns a new array map with supplied mappings.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-13-g197ff2e/src/main/cljs/cljs/core.cljs#L8179-L8186">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> array-map
+Returns a new array map with supplied mappings.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-17-g52ff7a2/src/main/cljs/cljs/core.cljs#L8179-L8186">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> array-map
   [&amp; keyvals]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [arr (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> IndexedSeq keyvals) (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> (<span class="hljs-name">.-i</span> keyvals)))
               (<span class="hljs-name">.-arr</span> keyvals)
               (<span class="hljs-name"><span class="hljs-builtin-name">into-array</span></span> keyvals))]
-    (<span class="hljs-name">.createAsIfByAssoc</span> PersistentArrayMap arr <span class="hljs-literal">true</span> <span class="hljs-literal">false</span>)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-13-g197ff2e/src/main/clojure/cljs/core.cljc#L2445-L2453">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> array-map
+    (<span class="hljs-name">.createAsIfByAssoc</span> PersistentArrayMap arr <span class="hljs-literal">true</span> <span class="hljs-literal">false</span>)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-17-g52ff7a2/src/main/clojure/cljs/core.cljc#L2445-L2453">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> array-map
   ([] '(<span class="hljs-name">.-EMPTY</span> cljs.core/PersistentArrayMap))
   ([&amp; kvs]
    (<span class="hljs-name">core/let</span> [keys (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> first (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> kvs))]

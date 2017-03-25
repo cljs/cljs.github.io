@@ -22,7 +22,7 @@ Creates new bindings for the (already-existing) vars, with the
 supplied initial values, executes the exprs in an implicit do, then
 re-establishes the bindings that existed before.  The new bindings
 are made in parallel (unlike let); all init-exprs are evaluated
-before the vars are bound to their new values.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-13-g197ff2e/src/main/clojure/cljs/core.cljc#L2094-L2105">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> binding
+before the vars are bound to their new values.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-17-g52ff7a2/src/main/clojure/cljs/core.cljc#L2094-L2105">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> binding
   [bindings &amp; body]
   (<span class="hljs-name">core/let</span> [names (<span class="hljs-name">take-nth</span> <span class="hljs-number">2</span> bindings)]
     (<span class="hljs-name">cljs.analyzer/confirm-bindings</span> &amp;env names)

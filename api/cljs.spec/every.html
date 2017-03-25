@@ -24,7 +24,7 @@ And additional args that control gen
 Optionally takes :gen generator-fn, which must be a fn of no args that
 returns a test.check generator
 
-See also - coll-of, every-kv</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-13-g197ff2e/src/main/cljs/cljs/spec.cljc#L213-L259">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every
+See also - coll-of, every-kv</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-17-g52ff7a2/src/main/cljs/cljs/spec.cljc#L213-L259">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> every
   [pred &amp; {<span class="hljs-symbol">:keys</span> [into kind count max-count min-count distinct gen-max gen-into gen] <span class="hljs-symbol">:as</span> opts}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [desc (:<span class="hljs-symbol">:describe</span> opts)
         nopts (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> opts
