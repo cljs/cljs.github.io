@@ -88,8 +88,8 @@ same value.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="STARunchecked-ifSTAR"><strong>*unchecked-if*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARunchecked-ifSTAR">full details ></a></div><div class="sep"></div><div><p>Used internally to allow <a class="code-link" href="/api/cljs.core#if"><code>if</code></a> to use JavaScript truthiness rather
 than Clojure truthiness, for the performance benefit of saving a function call.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="STARwarn-on-inferSTAR"><strong>*warn-on-infer*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARwarn-on-inferSTAR">full details ></a></div><div class="sep"></div><div><p>For interop purposes, this is used in conjunction with the compiler option
-<code>:infer-externs true</code> to emit a warning whenever a symbol is in danger of being
-renamed in advanced optimizations mode (i.e. compiler cannot infer an extern).
+<a class="code-link" href="/api/compiler-options#infer-externs"><code>:infer-externs</code></a> to emit a warning whenever a symbol is in danger of being
+renamed in advanced <a class="code-link" href="/api/compiler-options#optimizations"><code>:optimizations</code></a> (i.e. compiler cannot infer an extern).
 Defaults to false.  When set to true, warnings are activated for the rest of the file thereafter.</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *warn-on-infer* <span class="hljs-literal">true</span>)
 

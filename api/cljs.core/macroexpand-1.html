@@ -17,7 +17,7 @@
 <span class="hljs-comment">;;=&gt; (cljs.core/+ (inc 2) 1)</span>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/macroexpand">macroexpand</a></li><li><a href="/api/cljs.core/defmacro">defmacro</a></li></ul><hr />Source docstring:<pre>If form represents a macro form, returns its expansion,
-else returns form.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-17-g52ff7a2/src/main/clojure/cljs/core.cljc#L2833-L2842">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> macroexpand-1
+else returns form.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-18-g296d0a6/src/main/clojure/cljs/core.cljc#L2833-L2842">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> macroexpand-1
   [quoted]
   (<span class="hljs-name">core/assert</span> (<span class="hljs-name">core/=</span> (<span class="hljs-name">core/first</span> quoted) 'quote)
     <span class="hljs-string">"Argument to macroexpand-1 must be quoted"</span>)
