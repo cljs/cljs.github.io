@@ -16,9 +16,17 @@ already be included on the page:</p>
  <span class="hljs-symbol">:cljs-base</span> <span class="hljs-comment">;; &lt;-- leftover namespaces are placed here for you</span>
  {<span class="hljs-symbol">:output-to</span> <span class="hljs-string">"js/cljs_base.js"</span>}} <span class="hljs-comment">;; &lt;-- specify to change base output</span>
 </code></pre>
-</div><hr /><h3>Details:</h3><div><p>Use this option to specify a module containing only the code that a certain page
-will need, saving on file size and thus load time.</p>
-<p>Only supported with simple and advanced <a class="code-link" href="/api/compiler-options/optimizations"><code>:optimizations</code></a>.</p>
+</div><hr /><h3>Details:</h3><div><p>(Only supported with simple and advanced <a class="code-link" href="/api/compiler-options/optimizations"><code>:optimizations</code></a>).</p>
+<p>Including a module&#39;s <code>:output-to</code> file on a page will let you run anything
+inside the namespaces listed in <code>:entries</code>, granted you first include on the
+page any files in this module&#39;s <code>:depends-on</code> entry if present. <code>:cljs-base</code>
+is usually an implicit entry in <code>:depends-on</code>.</p>
+<p><code>:cljs-base</code> is the default module output to
+<a class="code-link" href="/api/compiler-options/output-dir"><code>:output-dir</code></a><code>/cljs_base.js</code>, with an implicit <code>:entries</code>
+containing all namespaces in the build not included by the other modules.</p>
+<p>A module&#39;s <code>:entries</code> must not intersect those of another (i.e. modules comprise
+a formal <a href="https://en.wikipedia.org/wiki/Partition_of_a_set">partition</a> of
+the project&#39;s namespaces).</p>
 <p>Set the top-level <a class="code-link" href="/api/compiler-options/source-map"><code>:source-map</code></a> to <code>true</code> to build source
 maps for all modules.</p>
 <p>For dynamic module loading at runtime, see <a href="https://github.com/bendyworks/conwip-modules">conwip-modules</a>.</p>
