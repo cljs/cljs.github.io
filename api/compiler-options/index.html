@@ -162,7 +162,7 @@ custom path. If present, it is prepended to all <code>sources</code> inside the
 </div></div><hr /><div style="position: relative;"><div class="g" id="static-fns"><strong>:static-fns</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/static-fns">full details ></a></div><div class="sep"></div><div><p>Controls how multi-arity function calls are generated. A &quot;static&quot; call
 means the dispatch to the appropriate arity is handled at compile time (better
 performance), whereas a &quot;dynamic&quot; call means the dispatch is handled at run time
-(allows safer redefinition). Static is enabled by default in advanced
+(allows safer redefinition in REPL). Static is enabled by default in advanced
 <a class="code-link" href="/api/compiler-options#optimizations"><code>:optimizations</code></a>.</p>
 <pre><code class="lang-clj"><span class="hljs-symbol">:static-fns</span> <span class="hljs-literal">true</span>
 </code></pre>
