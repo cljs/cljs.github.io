@@ -1,4 +1,37 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 06 Apr 2017 06:26:12 GMT</pubDate><lastBuildDate>Thu, 06 Apr 2017 06:26:12 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.494 - another bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 13 Apr 2017 06:07:16 GMT</pubDate><lastBuildDate>Thu, 13 Apr 2017 06:07:16 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.518 - `async` issue resolved</title><description>&lt;p&gt;This release bumps Closure Compiler, finally resolving the issue with core.async.&lt;/p&gt;
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1973&quot;&gt;CLJS-1973&lt;/a&gt;: Add support for &lt;code&gt;:npm-deps&lt;/code&gt; in upstream &lt;code&gt;deps.cljs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1968&quot;&gt;CLJS-1968&lt;/a&gt;: Enable calling JS modules that export a single function&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1960&quot;&gt;CLJS-1960&lt;/a&gt;: Require CommonJS modules directly from a ClojureScript namespace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2006&quot;&gt;CLJS-2006&lt;/a&gt;: Upgrade Closure Compiler to April 2017 release&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1497&quot;&gt;CLJS-1497&lt;/a&gt;: &lt;code&gt;find&lt;/code&gt; on an associative collection does not return collection key&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1996&quot;&gt;CLJS-1996&lt;/a&gt;: Support correct checking of :preloads when :optimizations not specified&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1994&quot;&gt;CLJS-1994&lt;/a&gt;: assoc on nil returns PHM (expected PAM)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1988&quot;&gt;CLJS-1988&lt;/a&gt;: add :npm-deps to recognized compiler options&lt;/li&gt;
+&lt;li&gt;Fix tiny bug in index-node-modules when no second argument is given&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1985&quot;&gt;CLJS-1985&lt;/a&gt;: &lt;code&gt;index-node-modules&lt;/code&gt; should pass opts to &lt;code&gt;node-inputs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1987&quot;&gt;CLJS-1987&lt;/a&gt;: don&amp;#39;t index node modules blindly&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1519&quot;&gt;CLJS-1519&lt;/a&gt; Collection invoke errors report arity off by 1&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1964&quot;&gt;CLJS-1964&lt;/a&gt;: Validate that &lt;code&gt;:target :nodejs&lt;/code&gt; and no optimizations requires a &lt;code&gt;:main&lt;/code&gt; option to be present&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1956&quot;&gt;CLJS-1956&lt;/a&gt;: Add missing JS reserved keywords&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1983&quot;&gt;CLJS-1983&lt;/a&gt;: res -&amp;gt; mres in spec.cljs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1978&quot;&gt;CLJS-1978&lt;/a&gt;: port &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJ-2035&quot;&gt;CLJ-2035&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1979&quot;&gt;CLJS-1979&lt;/a&gt;: port &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJ-2043&quot;&gt;CLJ-2043&lt;/a&gt; (fix s/form of s/conformer)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1980&quot;&gt;CLJS-1980&lt;/a&gt;: port &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJ-2100&quot;&gt;CLJ-2100&lt;/a&gt; (s/nilable form should retain original spec form)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1976&quot;&gt;CLJS-1976&lt;/a&gt;: hash-map assoc stackoverflow&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1957&quot;&gt;CLJS-1957&lt;/a&gt;: Process JS modules errors and warnings don&amp;#39;t get printed&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1868&quot;&gt;CLJS-1868&lt;/a&gt; - Output simpler dependency rel paths when compiling with Closure libs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1967&quot;&gt;CLJS-1967&lt;/a&gt;: Missing ^boolean for removed-leaf? in THM impl&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Wed, 12 Apr 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.518</link></item><item><title>1.9.494 - another bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;
@@ -387,28 +420,4 @@ dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1667&quot;&gt;CLJS-1667&lt;/a&gt;: bad describe* for and-spec-impl&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1699&quot;&gt;CLJS-1699&lt;/a&gt;: Self-host: s/fdef ns-qualify &lt;em&gt;ns&lt;/em&gt; name field access&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 17 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.76</link></item><item><title>1.9.36 - cljs.spec fixes & performance enhancements</title><description>&lt;p&gt;This release fixes a cljs.spec bug around instrumented multi-arity
-fns. It also includes various fixes and performance enhancements from
-Clojure. Another performance related change is writing out analysis
-caches as Transit if transit-clj is available. This is automatic and
-requires no configuration and gives a modest speed bump when launching
-REPLs.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Write analysis caches as Transit if transit-clj available&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Clojure &lt;a href=&quot;https://github.com/clojure/clojure/commit/1f25347a7b219488d5d9f8d17b04f2cc7828b30e&quot;&gt;1f25347&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Clojure &lt;a href=&quot;https://github.com/clojure/clojure/commit/47b8d6b47a7c87272334c77878b92fd988448c41&quot;&gt;47b8d6b&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Optimize seq (&amp;amp;) destructuring as per commit (&lt;a href=&quot;https://github.com/clojure/clojure/commit/0aa346766c4b065728cde9f9fcb4b2276a6fe7b5&quot;&gt;0aa3467&lt;/a&gt;) of Clojure&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1611&quot;&gt;CLJS-1611&lt;/a&gt;: Function arity dispatch returns arity&lt;/li&gt;
-&lt;li&gt;only print specs in REPL if we actually have some&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1663&quot;&gt;CLJS-1663&lt;/a&gt;: Calling instrumented multi-arity function causes exception&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1650&quot;&gt;CLJS-1650&lt;/a&gt;: &lt;code&gt;cljs.reader/read-map&lt;/code&gt; now returns array-map/hash-map based on the size of the sequence.&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 03 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.36</link></item></channel></rss>
+</description><pubDate>Fri, 17 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.76</link></item></channel></rss>

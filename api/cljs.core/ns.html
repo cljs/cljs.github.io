@@ -113,7 +113,7 @@ from the clojure.* namespace to the cljs.* namespace. For example:
 
 will be automatically converted to
 
-(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-18-g296d0a6/src/main/clojure/cljs/analyzer.cljc#L2320-L2426">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/clojure/cljs/analyzer.cljc#L2320-L2426">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> *allow-ns*
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespace declarations must appear at the top-level."</span>)))

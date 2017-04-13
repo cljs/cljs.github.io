@@ -24,7 +24,7 @@ In addition, the values of *all* namespace-qualified keys will be validated
 no support for inline value specification, by design.
 
 Optionally takes :gen generator-fn, which must be a fn of no args that
-returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-18-g296d0a6/src/main/cljs/cljs/spec.cljc#L115-L175">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys
+returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/cljs/cljs/spec.cljc#L115-L175">clojurescript:src/main/cljs/cljs/spec.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys
   [&amp; {<span class="hljs-symbol">:keys</span> [req req-un opt opt-un gen]}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [unk #(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> % name keyword)
         req-keys (<span class="hljs-name"><span class="hljs-builtin-name">filterv</span></span> keyword? (<span class="hljs-name"><span class="hljs-builtin-name">flatten</span></span> req))

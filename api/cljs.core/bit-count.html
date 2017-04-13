@@ -8,7 +8,7 @@
 <pre><code class="lang-clj">(<span class="hljs-name">bit-count</span> <span class="hljs-number">11</span>)
 <span class="hljs-comment">;;=&gt; 3</span>
 </code></pre>
-</div><hr />Source docstring:<pre>Counts the number of bits set in n</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.495-18-g296d0a6/src/main/cljs/cljs/core.cljs#L2767-L2772">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> bit-count
+</div><hr />Source docstring:<pre>Counts the number of bits set in n</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/cljs/cljs/core.cljs#L2777-L2782">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> bit-count
   [v]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [v (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> v (<span class="hljs-name">bit-and</span> (<span class="hljs-name">bit-shift-right</span> v <span class="hljs-number">1</span>) <span class="hljs-number">0</span>x55555555))
         v (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> (<span class="hljs-name">bit-and</span> v <span class="hljs-number">0</span>x33333333) (<span class="hljs-name">bit-and</span> (<span class="hljs-name">bit-shift-right</span> v <span class="hljs-number">2</span>) <span class="hljs-number">0</span>x33333333))]
