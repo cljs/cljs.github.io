@@ -4,7 +4,7 @@
 the arguments.</p>
 </div><hr />Source docstring:<pre>With no args, returns the empty string. With one arg x, returns
 x.toString().  (str nil) returns the empty string. With more than
-one arg, returns the concatenation of the str values of the args.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/cljs/cljs/core.cljs#L2822-L2834">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> str
+one arg, returns the concatenation of the str values of the args.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/cljs/cljs/core.cljs#L2822-L2834">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> str
   ([] <span class="hljs-string">""</span>)
   ([x] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> x)
          <span class="hljs-string">""</span>
@@ -13,7 +13,7 @@ one arg, returns the concatenation of the str values of the args.</pre><div>Func
     (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [sb (<span class="hljs-name">StringBuffer.</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> x)) more ys]
       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> more
         (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> sb  (<span class="hljs-name">append</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> more)))) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> more))
-        (<span class="hljs-name">.toString</span> sb)))))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/clojure/cljs/core.cljc#L808-L812">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> str [&amp; xs]
+        (<span class="hljs-name">.toString</span> sb)))))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/clojure/cljs/core.cljc#L808-L812">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> str [&amp; xs]
   (<span class="hljs-name">core/let</span> [strs (<span class="hljs-name">core/-&gt;&gt;</span> (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> xs) <span class="hljs-string">"cljs.core.str.cljs$core$IFn$_invoke$arity$1(~{})"</span>)
                     (<span class="hljs-name">interpose</span> <span class="hljs-string">","</span>)
                     (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> core/str))]

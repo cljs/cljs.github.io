@@ -5,7 +5,7 @@ result val-in-latter)</code>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/merge">merge</a></li></ul><hr />Source docstring:<pre>Returns a map that consists of the rest of the maps conj-ed onto
 the first.  If a key occurs in more than one map, the mapping(s)
 from the latter (left-to-right) will be combined with the mapping in
-the result by calling (f val-in-result val-in-latter).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/cljs/cljs/core.cljs#L8423-L8437">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> merge-with
+the result by calling (f val-in-result val-in-latter).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/cljs/cljs/core.cljs#L8423-L8437">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> merge-with
   [f &amp; maps]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some</span> identity maps)
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [merge-entry (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m e]

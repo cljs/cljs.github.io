@@ -14,11 +14,11 @@
 (<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>)
 <span class="hljs-comment">;;=&gt; 24</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/PLUS">+</a></li><li><a href="/api/cljs.core/SLASH">/</a></li></ul><hr />Source docstring:<pre>Returns the product of nums. (*) returns 1.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/cljs/cljs/core.cljs#L2479-L2484">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^number</span> *
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/PLUS">+</a></li><li><a href="/api/cljs.core/SLASH">/</a></li></ul><hr />Source docstring:<pre>Returns the product of nums. (*) returns 1.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/cljs/cljs/core.cljs#L2479-L2484">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^number</span> *
   ([] <span class="hljs-number">1</span>)
   ([x] x)
   ([x y] (<span class="hljs-name">cljs.core/*</span> x y))
-  ([x y &amp; more] (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> * (<span class="hljs-name">cljs.core/*</span> x y) more)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/clojure/cljs/core.cljc#L1046-L1050">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> *
+  ([x y &amp; more] (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> * (<span class="hljs-name">cljs.core/*</span> x y) more)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/clojure/cljs/core.cljc#L1046-L1050">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> *
   ([] <span class="hljs-number">1</span>)
   ([x] x)
   ([x y] (<span class="hljs-name">core/list</span> 'js* <span class="hljs-string">"(~{} * ~{})"</span> x y))

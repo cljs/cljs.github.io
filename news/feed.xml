@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 13 Apr 2017 06:07:16 GMT</pubDate><lastBuildDate>Thu, 13 Apr 2017 06:07:16 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.518 - `async` issue resolved</title><description>&lt;p&gt;This release bumps Closure Compiler, finally resolving the issue with core.async.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 15 Apr 2017 04:10:17 GMT</pubDate><lastBuildDate>Sat, 15 Apr 2017 04:10:17 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.521 - `async` issue resolved</title><description>&lt;p&gt;This release bumps Closure Compiler, finally resolving the issue with core.async.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
 &lt;ul&gt;
@@ -31,7 +31,7 @@
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1868&quot;&gt;CLJS-1868&lt;/a&gt; - Output simpler dependency rel paths when compiling with Closure libs&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1967&quot;&gt;CLJS-1967&lt;/a&gt;: Missing ^boolean for removed-leaf? in THM impl&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Wed, 12 Apr 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.518</link></item><item><title>1.9.494 - another bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
+</description><pubDate>Wed, 12 Apr 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.521</link></item><item><title>1.9.494 - another bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;

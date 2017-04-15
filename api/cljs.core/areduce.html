@@ -7,7 +7,7 @@ It can also use <code>idx</code> to get the current index.</p>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/reduce">reduce</a></li></ul><hr />Source docstring:<pre>Reduces an expression across an array a, using an index named idx,
 and return value named ret, initialized to init, setting ret to the
-evaluation of expr at each step, returning ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.518/src/main/clojure/cljs/core.cljc#L2528-L2537">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> areduce
+evaluation of expr at each step, returning ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/clojure/cljs/core.cljc#L2528-L2537">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> areduce
   [a idx ret init expr]
   `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a# ~a]
      (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span>  [~idx <span class="hljs-number">0</span> ~ret ~init]
