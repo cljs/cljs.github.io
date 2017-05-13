@@ -1,0 +1,79 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>CLJS - cljs.spec.test.alpha</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div class="container"><div class="row"><div class="three columns" style="overflow-x: hidden"><div><a href="/api">< Back to Overview</a><div class="sep"></div><div class="r"><a href="#-GTsym">->sym</a></div><div class="r"><a href="#abbrev-result">abbrev-result</a></div><div class="r"><a href="#check">check</a></div><div class="r"><a href="#check-1">check-1</a></div><div class="r"><a href="#check-fn">check-fn</a></div><div class="r"><a href="#checkable-syms">checkable-syms</a></div><div class="r"><a href="#checkable-symsSTAR">checkable-syms*</a></div><div class="r"><a href="#distinct-by">distinct-by</a></div><div class="r"><a href="#get-env">get-env</a></div><div class="r"><a href="#get-host-port">get-host-port</a></div><div class="r"><a href="#get-ua-product">get-ua-product</a></div><div class="r"><a href="#instrument">instrument</a></div><div class="r"><a href="#instrument-1">instrument-1</a></div><div class="r"><a href="#instrumentable-syms">instrumentable-syms</a></div><div class="r"><a href="#summarize-results">summarize-results</a></div><div class="r"><a href="#unstrument">unstrument</a></div><div class="r"><a href="#unstrument-1">unstrument-1</a></div><div class="r"><a href="#with-instrument-disabled">with-instrument-disabled</a></div></div></div><div class="nine columns"><div><h2>cljs.spec.test.alpha</h2><div>Added in 1.9.542</div><div class="sep"></div><hr /><div style="position: relative;"><div class="r" id="-GTsym"><strong>->sym</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/-GTsym">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(->sym x)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="abbrev-result"><strong>abbrev-result</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/abbrev-result">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(abbrev-result x)</code></div></div><div class="sep"><pre>Given a check result, returns an abbreviated version
+suitable for summary use.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="check"><strong>check</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/check">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(check)</code></div><div><code>(check sym-or-syms)</code></div><div><code>(check sym-or-syms opts)</code></div></div><div class="sep"><pre>Run generative tests for spec conformance on vars named by
+sym-or-syms, a symbol or collection of symbols. If sym-or-syms
+is not specified, check all checkable vars. If a symbol identifies a
+namespace then all symbols in that namespace will be enumerated.
+
+The opts map includes the following optional keys, where stc
+aliases clojure.test.check:
+
+::stc/opts  opts to flow through test.check/quick-check
+:gen        map from spec names to generator overrides
+
+The ::stc/opts include :num-tests in addition to the keys
+documented by test.check. Generator overrides are passed to
+spec/gen when generating function args.
+
+Returns a lazy sequence of check result maps with the following
+keys
+
+:spec       the spec tested
+:sym        optional symbol naming the var tested
+:failure    optional test failure
+::stc/ret   optional value returned by test.check/quick-check
+
+The value for :failure can be any exception. Exceptions thrown by
+spec itself will have an ::s/failure value in ex-data:
+
+:check-failed   at least one checked return did not conform
+:no-args-spec   no :args spec provided
+:no-fn          no fn provided
+:no-fspec       no fspec provided
+:no-gen         unable to generate :args
+:instrument     invalid args detected by instrument
+</pre></div></div><hr /><div style="position: relative;"><div class="r" id="check-1"><strong>check-1</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/check-1">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(check-1 [quote s :as qs] f spec opts)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="check-fn"><strong>check-fn</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/check-fn">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(check-fn f spec)</code></div><div><code>(check-fn f spec opts)</code></div></div><div class="sep"><pre>Runs generative tests for fn f using spec and opts. See
+'check' for options and return.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="checkable-syms"><strong>checkable-syms</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/checkable-syms">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(checkable-syms)</code></div><div><code>(checkable-syms opts)</code></div></div><div class="sep"><pre>Given an opts map as per check, returns the set of syms that
+can be checked.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="checkable-symsSTAR"><strong>checkable-syms*</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/checkable-symsSTAR">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(checkable-syms*)</code></div><div><code>(checkable-syms* opts)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="distinct-by"><strong>distinct-by</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/distinct-by">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(distinct-by f coll)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="get-env"><strong>get-env</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/get-env">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get-env)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="get-host-port"><strong>get-host-port</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/get-host-port">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get-host-port)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="get-ua-product"><strong>get-ua-product</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/get-ua-product">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get-ua-product)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="instrument"><strong>instrument</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/instrument">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(instrument)</code></div><div><code>(instrument xs)</code></div><div><code>(instrument sym-or-syms opts)</code></div></div><div class="sep"><pre>Instruments the vars named by sym-or-syms, a symbol or collection
+of symbols, or all instrumentable vars if sym-or-syms is not
+specified. If a symbol identifies a namespace then all symbols in that
+namespace will be enumerated.
+
+If a var has an :args fn-spec, sets the var's root binding to a
+fn that checks arg conformance (throwing an exception on failure)
+before delegating to the original fn.
+
+The opts map can be used to override registered specs, and/or to
+replace fn implementations entirely. Opts for symbols not included
+in sym-or-syms are ignored. This facilitates sharing a common
+options map across many different calls to instrument.
+
+The opts map may have the following keys:
+
+  :spec     a map from var-name symbols to override specs
+  :stub     a set of var-name symbols to be replaced by stubs
+  :gen      a map from spec names to generator overrides
+  :replace  a map from var-name symbols to replacement fns
+
+:spec overrides registered fn-specs with specs your provide. Use
+:spec overrides to provide specs for libraries that do not have
+them, or to constrain your own use of a fn to a subset of its
+spec'ed contract.
+
+:stub replaces a fn with a stub that checks :args, then uses the
+:ret spec to generate a return value.
+
+:gen overrides are used only for :stub generation.
+
+:replace replaces a fn with a fn that checks args conformance, then
+invokes the fn you provide, enabling arbitrary stubbing and mocking.
+
+:spec can be used in combination with :stub or :replace.
+
+Returns a collection of syms naming the vars instrumented.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="instrument-1"><strong>instrument-1</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/instrument-1">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(instrument-1 [quote s] opts)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="instrumentable-syms"><strong>instrumentable-syms</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/instrumentable-syms">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(instrumentable-syms)</code></div><div><code>(instrumentable-syms opts)</code></div></div><div class="sep"><pre>Given an opts map as per instrument, returns the set of syms
+that can be instrumented.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="summarize-results"><strong>summarize-results</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/summarize-results">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(summarize-results check-results)</code></div><div><code>(summarize-results check-results summary-result)</code></div></div><div class="sep"><pre>Given a collection of check-results, e.g. from 'check', pretty
+prints the summary-result (default abbrev-result) of each.
+
+Returns a map with :total, the total number of results, plus a
+key with a count for each different :type of result.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="unstrument"><strong>unstrument</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/unstrument">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(unstrument)</code></div><div><code>(unstrument sym-or-syms)</code></div></div><div class="sep"><pre>Undoes instrument on the vars named by sym-or-syms, specified
+as in instrument. With no args, unstruments all instrumented vars.
+Returns a collection of syms naming the vars unstrumented.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="unstrument-1"><strong>unstrument-1</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/unstrument-1">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(unstrument-1 [quote s])</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="with-instrument-disabled"><strong>with-instrument-disabled</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.test.alpha/with-instrument-disabled">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(with-instrument-disabled & body)</code></div></div><div class="sep"><pre>Disables instrument's checking of calls, within a scope.</pre></div></div></div></div></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

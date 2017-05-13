@@ -54,7 +54,7 @@ expressions are acceptable in case, including numbers, strings,
 symbols, keywords, and (ClojureScript) composites thereof. Note that since
 lists are used to group multiple constants that map to the same
 expression, a vector can be used to match a list if needed. The
-test-constants need not be all of the same type.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/clojure/cljs/core.cljc#L2171-L2240">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> case
+test-constants need not be all of the same type.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.542-1-gd93c435/src/main/clojure/cljs/core.cljc#L2171-L2241">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> case
   [e &amp; clauses]
   (<span class="hljs-name">core/let</span> [default (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">odd?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> clauses))
                        (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> clauses)
@@ -93,7 +93,8 @@ test-constants need not be all of the same type.</pre><div>Source code @ <a href
                          vec
                          (<span class="hljs-name"><span class="hljs-builtin-name">mapv</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq?</span></span> %) (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> %) [%])))
                  thens (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vals</span></span> pairs))]
-        `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [~esym (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">keyword?</span></span> ~e) (<span class="hljs-name">.-fqn</span> ~e) <span class="hljs-literal">nil</span>)]
+        `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [~esym ~e
+               ~esym (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">keyword?</span></span> ~esym) (<span class="hljs-name">.-fqn</span> ~esym) <span class="hljs-literal">nil</span>)]
            (<span class="hljs-name">case*</span> ~esym ~tests ~thens ~default)))
 
       <span class="hljs-comment">;; equality</span>

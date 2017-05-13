@@ -13,7 +13,7 @@
 <span class="hljs-comment">;;=&gt; {:foo true, :bar true}</span>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/alter-metaBANG">alter-meta!</a></li><li><a href="/api/cljs.core/with-meta">with-meta</a></li></ul><hr />Source docstring:<pre>Returns an object of the same type and value as obj, with
-(apply f (meta obj) args) as its metadata.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/cljs/cljs/core.cljs#L3780-L3794">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> vary-meta
+(apply f (meta obj) args) as its metadata.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.542-1-gd93c435/src/main/cljs/cljs/core.cljs#L3780-L3794">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> vary-meta
   ([obj f]
    (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> obj (<span class="hljs-name">f</span> (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> obj))))
   ([obj f a]

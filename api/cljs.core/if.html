@@ -15,7 +15,7 @@ false or nil).</p>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/cond">cond</a></li><li><a href="/api/cljs.core/when">when</a></li><li><a href="/api/cljs.core/if-let">if-let</a></li><li><a href="/api/cljs.core/if-not">if-not</a></li></ul><hr />Source docstring:<pre>Evaluates test. If not the singular values nil or false,
 evaluates and yields then, otherwise, evaluates and yields else. If
-else is not supplied it defaults to nil.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.521/src/main/clojure/cljs/analyzer.cljc#L1169-L1181">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'if
+else is not supplied it defaults to nil.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.542-1-gd93c435/src/main/clojure/cljs/analyzer.cljc#L1173-L1185">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'if
   [op env [_ test then else <span class="hljs-symbol">:as</span> form] name _]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> form) <span class="hljs-number">3</span>)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Too few arguments to if"</span>)))

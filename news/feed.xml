@@ -1,4 +1,27 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 19 Apr 2017 07:08:05 GMT</pubDate><lastBuildDate>Wed, 19 Apr 2017 07:08:05 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.521 - `async` issue resolved</title><description>&lt;p&gt;This release bumps Closure Compiler, finally resolving the issue with core.async.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 13 May 2017 02:18:18 GMT</pubDate><lastBuildDate>Sat, 13 May 2017 02:18:18 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.542 - spec changes & REPL enhancement</title><description>&lt;p&gt;This release is primarily about staying in sync with the latest changes to spec. It
+also includes a small but significant enhancement to REPLs to allow handling multiple forms.&lt;/p&gt;
+&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
+&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1572&quot;&gt;CLJS-1572&lt;/a&gt;: REPL doesn&amp;#39;t give error for expressions with too many right parentheses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;cljs.spec -&amp;gt; cljs.spec.alpha&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2013&quot;&gt;CLJS-2013&lt;/a&gt; - Add MapEntry type&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2015&quot;&gt;CLJS-2015&lt;/a&gt;: Self-host: &lt;code&gt;defmacro&lt;/code&gt; should return the Var&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2017&quot;&gt;CLJS-2017&lt;/a&gt;: Upgrade Closure Compiler to latest April 2017 release&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-485&quot;&gt;CLJS-485&lt;/a&gt;: RegExp flags are being dropped by string/replace&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1518&quot;&gt;CLJS-1518&lt;/a&gt;: Case macro expansion evaluates expression twice&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2024&quot;&gt;CLJS-2024&lt;/a&gt;: Self-host: &lt;code&gt;find-ns-obj&lt;/code&gt; broken for namespaces with &amp;#39;a&amp;#39; as the first segment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2028&quot;&gt;CLJS-2028&lt;/a&gt;: &lt;code&gt;realized?&lt;/code&gt; throws on LazyTransformer&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2010&quot;&gt;CLJS-2010&lt;/a&gt;: refer-clojure :rename throws on valid invocations&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2007&quot;&gt;CLJS-2007&lt;/a&gt;: Whitespace optimizations should respect :main option.&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Fri, 12 May 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.542</link></item><item><title>1.9.521 - `async` issue resolved</title><description>&lt;p&gt;This release bumps Closure Compiler, finally resolving the issue with core.async.&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
 &lt;ul&gt;
@@ -390,34 +413,4 @@ namespaces that users can specify in their dev builds.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1687&quot;&gt;CLJS-1687&lt;/a&gt;: Self-host: cljs.spec: inst-in-range? and int-in-range? need qualification&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1668&quot;&gt;CLJS-1668&lt;/a&gt;: cljs.spec: c alias needs expansion in int-in&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Wed, 22 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.89</link></item><item><title>1.9.76</title><description>&lt;p&gt;This release brings cljs.spec to parity with Clojure 1.9.0-alpha7. It
-addresses an issue with Transit analysis caching, includes fixes for
-cljs.spec support under bootstrapped, bumps the Closure library
-dependency, and includes other minor fixes and enhancements.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1648&quot;&gt;CLJS-1648&lt;/a&gt;: Getting Source Info into ex-info data for Analysis Errors&lt;/li&gt;
-&lt;li&gt;cljs.spec updated to Clojure 1.9.0-alpha7 changes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;bump Google Closure Library dep&lt;/li&gt;
-&lt;li&gt;AOT cljs.spec nses&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1679&quot;&gt;CLJS-1679&lt;/a&gt;: Self-host: Incorporate spec tests&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1680&quot;&gt;CLJS-1680&lt;/a&gt;: Self-host: Don&amp;#39;t require items no longer provided by Closure&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1654&quot;&gt;CLJS-1654&lt;/a&gt;: cljs.spec: var name in s/fdef non-conformance&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1655&quot;&gt;CLJS-1655&lt;/a&gt;: cljs.spec: conformer docstring indicates :clojure.spec/invalid&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1656&quot;&gt;CLJS-1656&lt;/a&gt;: Self-host: cljs.spec: speced-vars* fn not resolving&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1661&quot;&gt;CLJS-1661&lt;/a&gt;: cljs.spec: non-spec&amp;#39;ed fn var printing&lt;/li&gt;
-&lt;li&gt;compute read/write opts for transit if possible, handle JSValue&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1660&quot;&gt;CLJS-1660&lt;/a&gt;: cljs.spec: Always return var from instrument / unstrument&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1671&quot;&gt;CLJS-1671&lt;/a&gt;: Bad cljs.spec interactive instrumentation session&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1664&quot;&gt;CLJS-1664&lt;/a&gt;: The filename aux.cljs is a problem on windows.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1667&quot;&gt;CLJS-1667&lt;/a&gt;: bad describe* for and-spec-impl&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1699&quot;&gt;CLJS-1699&lt;/a&gt;: Self-host: s/fdef ns-qualify &lt;em&gt;ns&lt;/em&gt; name field access&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 17 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.76</link></item></channel></rss>
+</description><pubDate>Wed, 22 Jun 2016 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.89</link></item></channel></rss>
