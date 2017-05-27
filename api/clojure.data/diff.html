@@ -8,7 +8,7 @@ Comparison rules:
 * All sequential things are treated as associative collections
   by their indexes, with results returned as vectors.
 * Everything else (including strings!) is treated as
-  an atom and compared for equality.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.542-1-gd93c435/src/main/cljs/clojure/data.cljs#L144-L161">clojurescript:src/main/cljs/clojure/data.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> diff
+  an atom and compared for equality.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562/src/main/cljs/clojure/data.cljs#L144-L161">clojurescript:src/main/cljs/clojure/data.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> diff
   [a b]
   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> a b)
     [<span class="hljs-literal">nil</span> <span class="hljs-literal">nil</span> a]

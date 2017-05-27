@@ -3,7 +3,7 @@ return
 
 an async test - is invoked with a continuation running left fns
 
-a seq of fns tagged per block - are invoked immediately after fn</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.542-1-gd93c435/src/main/cljs/cljs/test.cljs#L432-L449">clojurescript:src/main/cljs/cljs/test.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> run-block
+a seq of fns tagged per block - are invoked immediately after fn</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562/src/main/cljs/cljs/test.cljs#L432-L449">clojurescript:src/main/cljs/cljs/test.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> run-block
   [fns]
   (<span class="hljs-name">when-first</span> [f fns]
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [obj (<span class="hljs-name">f</span>)]

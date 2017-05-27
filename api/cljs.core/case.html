@@ -54,13 +54,14 @@ expressions are acceptable in case, including numbers, strings,
 symbols, keywords, and (ClojureScript) composites thereof. Note that since
 lists are used to group multiple constants that map to the same
 expression, a vector can be used to match a list if needed. The
-test-constants need not be all of the same type.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.542-1-gd93c435/src/main/clojure/cljs/core.cljc#L2171-L2241">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> case
+test-constants need not be all of the same type.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562/src/main/clojure/cljs/core.cljc#L2185-L2255">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> case
   [e &amp; clauses]
-  (<span class="hljs-name">core/let</span> [default (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">odd?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> clauses))
+  (<span class="hljs-name">core/let</span> [esym    (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)
+             default (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">odd?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> clauses))
                        (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> clauses)
                        `(<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
                           (<span class="hljs-name">js/Error.</span>
-                            (<span class="hljs-name">cljs.core/str</span> <span class="hljs-string">"No matching clause: "</span> ~e))))
+                            (<span class="hljs-name">cljs.core/str</span> <span class="hljs-string">"No matching clause: "</span> ~esym))))
              env     &amp;env
              pairs   (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span>
                        (<span class="hljs-name">core/fn</span> [m [test expr]]
@@ -78,7 +79,6 @@ test-constants need not be all of the same type.</pre><div>Source code @ <a href
                            <span class="hljs-symbol">:else</span>
                            (<span class="hljs-name">assoc-test</span> m test expr env)))
                      {} (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> clauses))
-             esym    (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)
              tests   (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> pairs)]
     (<span class="hljs-name">core/cond</span>
       (<span class="hljs-name">every?</span> (<span class="hljs-name">some-fn</span> core/number? core/string? #?(<span class="hljs-symbol">:clj</span> core/char? <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">core/fnil</span> core/char? <span class="hljs-symbol">:nonchar</span>)) #(<span class="hljs-name">const?</span> env %)) tests)
