@@ -36,7 +36,7 @@ number, or a boolean.</p>
 (<span class="hljs-name">goog-define</span> foo <span class="hljs-string">"default-value"</span>) <span class="hljs-comment">;; &lt;-- replaced with "new-value"</span>
 (<span class="hljs-name">println</span> foo) <span class="hljs-comment">;; &lt;-- prints "new-value"</span>
 </code></pre>
-</div></div><hr /><div style="position: relative;"><div class="y" id="closure-extra-annotations"><strong>:closure-extra-annotations</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/closure-extra-annotations">full details ></a></div><div class="sep"></div><div><p>Suppress Closure warnings related to non-standard JSDoc tags (like <code>@api</code>) that
+</div></div><hr /><div style="position: relative;"><div class="y" id="closure-extra-annotations"><strong>:closure-extra-annotations</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/closure-extra-annotations">full details ></a></div><div class="sep"></div><div><p>Suppress warnings about <a href="https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler">JSDoc Tags</a> unrecognized by Closure (like <code>@api</code>) that
 your project or other dependent libraries may be using.</p>
 <pre><code class="lang-clj">:closure-extra-annotations #{&quot;api&quot; ...}
 </code></pre>
