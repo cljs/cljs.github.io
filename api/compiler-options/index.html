@@ -53,7 +53,7 @@ number, or a boolean.</p>
 your project or other dependent libraries may be using.</p>
 <pre><code class="lang-clj">:closure-extra-annotations #{&quot;api&quot; ...}
 </code></pre>
-</div></div><hr /><div style="position: relative;"><div class="y" id="closure-generate-exports"><strong>:closure-generate-exports</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/closure-generate-exports">full details ></a></div><div class="sep"></div><div><p>If you are using a Closure-compatible JS library that uses [<code>@export</code>] JSDoc tags,
+</div></div><hr /><div style="position: relative;"><div class="y" id="closure-generate-exports"><strong>:closure-generate-exports</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/closure-generate-exports">full details ></a></div><div class="sep"></div><div><p>If you are using a Closure-compatible JS library that uses <a class="code-link" href="https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#export-export-sometype"><code>@export</code></a> JSDoc tags,
 you will need to enable this option so the appropriate <code>goog.export()</code> calls
 are generated to allow their usage.</p>
 <pre><code class="lang-clj"><span class="hljs-symbol">:closure-generate-exports</span> <span class="hljs-literal">true</span>
