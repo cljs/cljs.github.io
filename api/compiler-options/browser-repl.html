@@ -4,8 +4,8 @@ Defaults to false.</p>
 </code></pre>
 </div><hr /><h3>Details:</h3><div><p>When true, adds <code>clojure.browser.repl/preload</code> to <a class="code-link" href="/api/compiler-options/preloads"><code>:preloads</code></a>.</p>
 <p>The natively supported browser REPL must be started from a custom script in
-Clojure. Start the REPL by calling <a class="code-link" href="/api/cljs.repl/repl"><code>repl</code></a> with the result of
-<a class="code-link" href="/api/cljs.repl.browser/repl-env"><code>repl-env</code></a>:</p>
+Clojure. Start the REPL by calling <a class="code-link" href="/api/cljs.repl/repl"><code>cljs.repl/repl</code></a> with the result of
+<a class="code-link" href="/api/cljs.repl.browser/repl-env"><code>cljs.repl.browser/repl-env</code></a>:</p>
 <pre><code class="lang-clj"><span class="hljs-comment">;; ClojureScript compiler script (in Clojure)</span>
 
 (<span class="hljs-name">require</span> 'cljs.repl)

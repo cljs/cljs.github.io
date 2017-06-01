@@ -70,7 +70,7 @@ must map to either <code>:error</code>, <code>:warning</code>, or <code>:off</co
 <pre><code class="lang-clj"><span class="hljs-symbol">:compiler-stats</span> <span class="hljs-literal">true</span>
 </code></pre>
 </div></div><hr /><div style="position: relative;"><div class="g" id="dump-core"><strong>:dump-core</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/dump-core">full details ></a></div><div class="sep"></div><div><p>Dump the analysis cache of <code>cljs.core</code> into the output file, allowing you to
-evaluate basic ClojureScript code at runtime using <a class="code-link" href="/api/cljs.js#eval-str"><code>eval-str</code></a>
+evaluate basic ClojureScript code at runtime using <a class="code-link" href="/api/cljs.js#eval-str"><code>cljs.js/eval-str</code></a>
 without extra setup.  Defaults to false.</p>
 <pre><code class="lang-clj"><span class="hljs-symbol">:dump-core</span> <span class="hljs-literal">true</span>
 </code></pre>
@@ -277,11 +277,11 @@ Defaults to true.</p>
 <pre><code class="lang-clj"><span class="hljs-symbol">:warnings</span> <span class="hljs-literal">true</span>                  <span class="hljs-comment">;; enable all (default)</span>
 <span class="hljs-symbol">:warnings</span> {<span class="hljs-symbol">:fn-deprecated</span> <span class="hljs-literal">true</span>} <span class="hljs-comment">;; enable specific warnings</span>
 </code></pre>
-</div></div><hr /><div style="position: relative;"><div class="y" id="watch-error-fn"><strong>:watch-error-fn</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/watch-error-fn">full details ></a></div><div class="sep"></div><div><p>Function called after a failed build (from <a class="code-link" href="/api/compiler/cljs.build.api#watch"><code>watch</code></a>).
+</div></div><hr /><div style="position: relative;"><div class="y" id="watch-error-fn"><strong>:watch-error-fn</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/watch-error-fn">full details ></a></div><div class="sep"></div><div><p>Function called after a failed build (from <a class="code-link" href="/api/compiler/cljs.build.api#watch"><code>cljs.build.api/watch</code></a>).
 Receives the exception object as its first arg.</p>
 <pre><code class="lang-clj"><span class="hljs-symbol">:watch-error-fn</span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [e] (<span class="hljs-name">print-my-error</span> e))
 </code></pre>
-</div></div><hr /><div style="position: relative;"><div class="y" id="watch-fn"><strong>:watch-fn</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/watch-fn">full details ></a></div><div class="sep"></div><div><p>Function called after a successful build (from <a class="code-link" href="/api/compiler/cljs.build.api#watch"><code>watch</code></a>).</p>
+</div></div><hr /><div style="position: relative;"><div class="y" id="watch-fn"><strong>:watch-fn</strong></div><div style="position: absolute; right: 0; top: 0;"><a href="/api/compiler-options/watch-fn">full details ></a></div><div class="sep"></div><div><p>Function called after a successful build (from <a class="code-link" href="/api/compiler/cljs.build.api#watch"><code>cljs.build.api/watch</code></a>).</p>
 <pre><code class="lang-clj"><span class="hljs-symbol">:watch-fn</span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [] (<span class="hljs-name">println</span> <span class="hljs-string">"Build succeeded."</span>))
 </code></pre>
 </div></div></div></div></div></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

@@ -3,7 +3,7 @@ predicate.
 
 pred should be a function that accepts an options map, a connection,
 and a request map and returns a boolean value based on whether or not
-that request should be dispatched to the related handler.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562/src/main/clojure/cljs/repl/server.clj#L49-L61">clojurescript:src/main/clojure/cljs/repl/server.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> dispatch-on
+that request should be dispatched to the related handler.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562-1-gdd7403f/src/main/clojure/cljs/repl/server.clj#L49-L61">clojurescript:src/main/clojure/cljs/repl/server.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> dispatch-on
   ([method pred handler]
     (<span class="hljs-name">dispatch-on</span> method {<span class="hljs-symbol">:pred</span> pred <span class="hljs-symbol">:handler</span> handler}))
   ([method {<span class="hljs-symbol">:as</span> m}]

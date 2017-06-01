@@ -12,7 +12,7 @@ modifiers are: <code>:let [binding-form expr ...]</code>, <code>:while test</cod
  binding-forms.  Supported modifiers are: :let [binding-form expr ...],
  :while test, :when test.
 
-(take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)]  [x y]))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562/src/main/clojure/cljs/core.cljc#L2270-L2355">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> for
+(take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)]  [x y]))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562-1-gdd7403f/src/main/clojure/cljs/core.cljc#L2270-L2355">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> for
   [seq-exprs body-expr]
   (<span class="hljs-name">assert-args</span> for
     (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> seq-exprs) <span class="hljs-string">"a vector for its binding"</span>

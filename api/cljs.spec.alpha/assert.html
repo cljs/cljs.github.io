@@ -7,7 +7,7 @@ to the negation value of the ':elide-asserts' compiler option, or true if
 not set.
 If (check-asserts?) is false at runtime, always returns x. Defaults to
 value of 'cljs.spec.alpha/*runtime-asserts*', or false if not set. You can
-toggle check-asserts? with (check-asserts bool).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562/src/main/cljs/cljs/spec/alpha.cljc#L541-L557">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> assert
+toggle check-asserts? with (check-asserts bool).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562-1-gdd7403f/src/main/cljs/cljs/spec/alpha.cljc#L541-L557">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> assert
   [spec x]
   `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> *compile-asserts*
      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> *runtime-asserts*
