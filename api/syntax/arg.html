@@ -13,7 +13,7 @@ if there are more than one:</p>
 (<span class="hljs-name">f</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>)
 <span class="hljs-comment">;; prints: 1 2 (3 4 5)</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/function">#() function</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L560-L579">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-arg
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/function">#() function</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L560-L579">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-arg
   [rdr pct opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name">thread-bound?</span> #'arg-env)
     (<span class="hljs-name">read-symbol</span> rdr pct)
@@ -32,7 +32,7 @@ if there are more than one:</p>
        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [n (<span class="hljs-name">read*</span> rdr <span class="hljs-literal">true</span> <span class="hljs-literal">nil</span> opts pending-forms)]
          (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">integer?</span></span> n)
            (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">IllegalStateException.</span> <span class="hljs-string">"Arg literal must be %, %&amp; or %integer"</span>))
-           (<span class="hljs-name">register-arg</span> n)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+           (<span class="hljs-name">register-arg</span> n)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

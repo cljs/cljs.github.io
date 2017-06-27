@@ -35,7 +35,7 @@ easier to read at the REPL.</p>
 <pre><code class="lang-clj">#uuid "97bda55b-6175-4c39-9e04-7c0205c709dc"
 ;;=&gt; #uuid "97bda55b-6175-4c39-9e04-7c0205c709dc"
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/dispatch"># dispatch</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0-beta3/src/main/clojure/clojure/tools/reader.clj#L838-L851">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-tagged [rdr initch opts pending-forms]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/dispatch"># dispatch</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L838-L851">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-tagged [rdr initch opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [tag (<span class="hljs-name">read*</span> rdr <span class="hljs-literal">true</span> <span class="hljs-literal">nil</span> opts pending-forms)]
     (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol?</span></span> tag)
       (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Reader tag must be a symbol"</span>))

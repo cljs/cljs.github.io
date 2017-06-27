@@ -41,14 +41,17 @@ c
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.562-1-gdd7403f/src/main/clojure/cljs/analyzer.cljc#L1278-L1421">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.660/src/main/clojure/cljs/analyzer.cljc#L1327-L1488">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
   [op env form _ _]
+  (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> form) <span class="hljs-number">4</span>)
+    (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Too many arguments to def"</span>)))
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pfn (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
               ([_ sym] {<span class="hljs-symbol">:sym</span> sym})
               ([_ sym init] {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:init</span> init})
               ([_ sym doc init] {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:doc</span> doc <span class="hljs-symbol">:init</span> init}))
         args (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> pfn form)
         sym (<span class="hljs-symbol">:sym</span> args)
+        const? (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:const</span>)
         sym-meta (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> sym)
         tag (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:tag</span>)
         protocol (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:protocol</span> valid-proto)
@@ -82,14 +85,16 @@ not supplied, the root binding of the var is unaffected.</pre><div>Parser code @
                  *file-defs*
                  (<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> @*file-defs* sym))
         (<span class="hljs-name">warning</span> <span class="hljs-symbol">:redef-in-file</span> env {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:line</span> (<span class="hljs-symbol">:line</span> v)})))
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> *file-defs*
-      (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> *file-defs* conj sym))
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [env (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> ns-name 'cljs.core)
                            (<span class="hljs-name">core-name?</span> env sym))
                       (<span class="hljs-name">some?</span> (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:uses</span> sym])))
-                (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ev (<span class="hljs-name">resolve-existing-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> env <span class="hljs-symbol">:locals</span>) sym)
+                (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ev (<span class="hljs-name">resolve-existing-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> env <span class="hljs-symbol">:locals</span>)
+                           <span class="hljs-comment">;; ::no-resolve true is to suppress "can't take value</span>
+                           <span class="hljs-comment">;; of macro warning" when sym resolves to a macro</span>
+                           (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> sym {:<span class="hljs-symbol">:no-resolve</span> <span class="hljs-literal">true</span>}))
                       conj-to-set (<span class="hljs-name">fnil</span> conj #{})]
-                  (<span class="hljs-name">warning</span> <span class="hljs-symbol">:redef</span> env {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:ns</span> (<span class="hljs-symbol">:ns</span> ev) <span class="hljs-symbol">:ns-name</span> ns-name})
+                  (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">public-name?</span> (<span class="hljs-symbol">:ns</span> ev) sym)
+                    (<span class="hljs-name">warning</span> <span class="hljs-symbol">:redef</span> env {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:ns</span> (<span class="hljs-symbol">:ns</span> ev) <span class="hljs-symbol">:ns-name</span> ns-name}))
                   (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* update-in [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:excludes</span>]
                      conj-to-set sym)
                   (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> env [<span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:excludes</span>] conj-to-set sym))
@@ -116,49 +121,62 @@ not supplied, the root binding of the var is unaffected.</pre><div>Parser code @
         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:declared</span>))
                    (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> (<span class="hljs-symbol">:fn-var</span> v)) (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> fn-var?)))
           (<span class="hljs-name">warning</span> <span class="hljs-symbol">:fn-var</span> env {<span class="hljs-symbol">:ns-name</span> ns-name <span class="hljs-symbol">:sym</span> sym})))
-      (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* assoc-in [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym]
-        (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-          {<span class="hljs-symbol">:name</span> var-name}
-          <span class="hljs-comment">;; remove actual test metadata, as it includes non-valid EDN and</span>
-          <span class="hljs-comment">;; cannot be present in analysis cached to disk - David</span>
-          (<span class="hljs-name">cond-&gt;</span> sym-meta
-            (<span class="hljs-symbol">:test</span> sym-meta) (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:test</span> <span class="hljs-literal">true</span>))
-          {<span class="hljs-symbol">:meta</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym-meta
-                   (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> <span class="hljs-symbol">:test</span>)
-                   (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> [<span class="hljs-symbol">:file</span>]
-                     (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [f]
-                       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:name</span>) 'cljs.core)
-                         <span class="hljs-string">"cljs/core.cljs"</span>
-                         f))))}
-          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> doc {<span class="hljs-symbol">:doc</span> doc})
-          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> dynamic) {<span class="hljs-symbol">:dynamic</span> <span class="hljs-literal">true</span>})
-          (<span class="hljs-name">source-info</span> var-name env)
-          <span class="hljs-comment">;; the protocol a protocol fn belongs to</span>
-          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> protocol
-            {<span class="hljs-symbol">:protocol</span> protocol})
-          <span class="hljs-comment">;; symbol for reified protocol</span>
-          (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [protocol-symbol (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:protocol-symbol</span>)]
-            {<span class="hljs-symbol">:protocol-symbol</span> protocol-symbol
-             <span class="hljs-symbol">:info</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> protocol-symbol meta <span class="hljs-symbol">:protocol-info</span>)
-             <span class="hljs-symbol">:impls</span> #{}})
-          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> fn-var?
-            (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [params (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> <span class="hljs-symbol">:name</span> (<span class="hljs-symbol">:params</span> %))) (<span class="hljs-symbol">:methods</span> init-expr))]
-              (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-                {<span class="hljs-symbol">:fn-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-symbol">:macro</span> sym-meta))
-                 <span class="hljs-comment">;; protocol implementation context</span>
-                 <span class="hljs-symbol">:protocol-impl</span> (<span class="hljs-symbol">:protocol-impl</span> init-expr)
-                 <span class="hljs-comment">;; inline protocol implementation context</span>
-                 <span class="hljs-symbol">:protocol-inline</span> (<span class="hljs-symbol">:protocol-inline</span> init-expr)}
-                (<span class="hljs-name">if-some</span> [top-fn-meta (<span class="hljs-symbol">:top-fn</span> sym-meta)]
-                  top-fn-meta
-                  {<span class="hljs-symbol">:variadic</span> (<span class="hljs-symbol">:variadic</span> init-expr)
-                   <span class="hljs-symbol">:max-fixed-arity</span> (<span class="hljs-symbol">:max-fixed-arity</span> init-expr)
-                   <span class="hljs-symbol">:method-params</span> params
-                   <span class="hljs-symbol">:arglists</span> (<span class="hljs-symbol">:arglists</span> sym-meta)
-                   <span class="hljs-symbol">:arglists-meta</span> (<span class="hljs-name"><span class="hljs-builtin-name">doall</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> meta (<span class="hljs-symbol">:arglists</span> sym-meta)))}))))
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> fn-var? (<span class="hljs-name">some?</span> tag))
-            {<span class="hljs-symbol">:ret-tag</span> tag}
-            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> tag {<span class="hljs-symbol">:tag</span> tag}))))
+
+      <span class="hljs-comment">;; declare must not replace any analyzer data of an already def'd sym</span>
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym]))
+                (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-symbol">:declared</span> sym-meta)))
+        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> *file-defs*
+          (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> *file-defs* conj sym))
+
+        (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* assoc-in [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym]
+          (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
+            {<span class="hljs-symbol">:name</span> var-name}
+            <span class="hljs-comment">;; remove actual test metadata, as it includes non-valid EDN and</span>
+            <span class="hljs-comment">;; cannot be present in analysis cached to disk - David</span>
+            (<span class="hljs-name">cond-&gt;</span> sym-meta
+              (<span class="hljs-symbol">:test</span> sym-meta) (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:test</span> <span class="hljs-literal">true</span>))
+            {<span class="hljs-symbol">:meta</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym-meta
+                       (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> <span class="hljs-symbol">:test</span>)
+                       (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> [<span class="hljs-symbol">:file</span>]
+                         (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [f]
+                           (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:name</span>) 'cljs.core)
+                             <span class="hljs-string">"cljs/core.cljs"</span>
+                             f))))}
+            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> doc {<span class="hljs-symbol">:doc</span> doc})
+            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> const?
+              (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [const-expr
+                    (<span class="hljs-name">binding</span> [*passes* (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> *passes* (<span class="hljs-name">replace-env-pass</span> {<span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>}))]
+                      (<span class="hljs-name">analyze</span> env (<span class="hljs-symbol">:init</span> args)))]
+                (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">constant-value?</span> const-expr)
+                  {<span class="hljs-symbol">:const-expr</span> const-expr})))
+            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> dynamic) {<span class="hljs-symbol">:dynamic</span> <span class="hljs-literal">true</span>})
+            (<span class="hljs-name">source-info</span> var-name env)
+            <span class="hljs-comment">;; the protocol a protocol fn belongs to</span>
+            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> protocol
+              {<span class="hljs-symbol">:protocol</span> protocol})
+            <span class="hljs-comment">;; symbol for reified protocol</span>
+            (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [protocol-symbol (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:protocol-symbol</span>)]
+              {<span class="hljs-symbol">:protocol-symbol</span> protocol-symbol
+               <span class="hljs-symbol">:info</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> protocol-symbol meta <span class="hljs-symbol">:protocol-info</span>)
+               <span class="hljs-symbol">:impls</span> #{}})
+            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> fn-var?
+              (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [params (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> <span class="hljs-symbol">:name</span> (<span class="hljs-symbol">:params</span> %))) (<span class="hljs-symbol">:methods</span> init-expr))]
+                (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
+                  {<span class="hljs-symbol">:fn-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-symbol">:macro</span> sym-meta))
+                   <span class="hljs-comment">;; protocol implementation context</span>
+                   <span class="hljs-symbol">:protocol-impl</span> (<span class="hljs-symbol">:protocol-impl</span> init-expr)
+                   <span class="hljs-comment">;; inline protocol implementation context</span>
+                   <span class="hljs-symbol">:protocol-inline</span> (<span class="hljs-symbol">:protocol-inline</span> init-expr)}
+                  (<span class="hljs-name">if-some</span> [top-fn-meta (<span class="hljs-symbol">:top-fn</span> sym-meta)]
+                    top-fn-meta
+                    {<span class="hljs-symbol">:variadic</span> (<span class="hljs-symbol">:variadic</span> init-expr)
+                     <span class="hljs-symbol">:max-fixed-arity</span> (<span class="hljs-symbol">:max-fixed-arity</span> init-expr)
+                     <span class="hljs-symbol">:method-params</span> params
+                     <span class="hljs-symbol">:arglists</span> (<span class="hljs-symbol">:arglists</span> sym-meta)
+                     <span class="hljs-symbol">:arglists-meta</span> (<span class="hljs-name"><span class="hljs-builtin-name">doall</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> meta (<span class="hljs-symbol">:arglists</span> sym-meta)))}))))
+            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> fn-var? (<span class="hljs-name">some?</span> tag))
+              {<span class="hljs-symbol">:ret-tag</span> tag}
+              (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> tag {<span class="hljs-symbol">:tag</span> tag})))))
       (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
         {<span class="hljs-symbol">:env</span> env
          <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:def</span>
