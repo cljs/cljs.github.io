@@ -4,7 +4,7 @@ Temporarily redefines vars while executing the body.  The
 temp-value-exprs will be evaluated and each resulting value will
 replace in parallel the root value of its var.  After the body is
 executed, the root values of all the vars will be set back to their
-old values. Useful for mocking out functions during testing.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671/src/main/clojure/cljs/core.cljc#L2098-L2118">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> with-redefs
+old values. Useful for mocking out functions during testing.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-31-g6db8f0c/src/main/clojure/cljs/core.cljc#L2105-L2125">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> with-redefs
   [bindings &amp; body]
   (<span class="hljs-name">core/let</span> [names (<span class="hljs-name">take-nth</span> <span class="hljs-number">2</span> bindings)
              vals (<span class="hljs-name">take-nth</span> <span class="hljs-number">2</span> (<span class="hljs-name"><span class="hljs-builtin-name">drop</span></span> <span class="hljs-number">1</span> bindings))
