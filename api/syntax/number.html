@@ -43,7 +43,7 @@ Available formats:</p>
 36rZ
 ;;=&gt; 35
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/Infinity">Infinity</a></li><li><a href="/api/syntax/NaN">NaN</a></li><li><a href="/api/cljs.core/numberQMARK">number?</a></li><li><a href="/api/cljs.core/integerQMARK">integer?</a></li><li><a href="/api/cljs.core/int">int</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L262-L271">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-number
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/Infinity">Infinity</a></li><li><a href="/api/syntax/NaN">NaN</a></li><li><a href="/api/cljs.core/numberQMARK">number?</a></li><li><a href="/api/cljs.core/integerQMARK">integer?</a></li><li><a href="/api/cljs.core/int">int</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L259-L268">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-number
   [rdr initch]
   (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [sb (<span class="hljs-name"><span class="hljs-builtin-name">doto</span></span> (<span class="hljs-name">StringBuilder.</span>) (<span class="hljs-name">.append</span> initch))
          ch (<span class="hljs-name">read-char</span> rdr)]
@@ -51,5 +51,5 @@ Available formats:</p>
       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [s (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> sb)]
         (<span class="hljs-name">unread</span> rdr ch)
         (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name">match-number</span> s)
-            (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Invalid number format ["</span> s <span class="hljs-string">"]"</span>)))
+            (<span class="hljs-name">err/throw-invalid-number</span> rdr s)))
       (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">doto</span></span> sb (<span class="hljs-name">.append</span> ch)) (<span class="hljs-name">read-char</span> rdr)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

@@ -19,7 +19,7 @@ The following keyword arguments can be passed with values:
   :suppress-namespaces If true, no namespaces in symbols    Current value of *print-suppress-namespaces*
 
   * = not yet supported
-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-52-g3e775a1/src/main/cljs/cljs/pprint.cljs#L750-L811">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> write
+</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/cljs/cljs/pprint.cljs#L750-L811">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> write
   [object &amp; kw-args]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [options (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> {<span class="hljs-symbol">:stream</span> <span class="hljs-literal">true</span>} (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> hash-map kw-args))]
     <span class="hljs-comment">;;TODO rewrite this as a macro</span>
@@ -56,6 +56,6 @@ The following keyword arguments can be passed with values:
             (<span class="hljs-name">binding</span> [*out* base-writer]
               (<span class="hljs-name"><span class="hljs-builtin-name">pr</span></span> object)))
           (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> optval)
-            (<span class="hljs-name">*print-fn*</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> sb)))
+            (<span class="hljs-name">string-print</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> sb)))
           (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> optval)
             (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> sb)))))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

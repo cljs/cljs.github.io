@@ -17,10 +17,8 @@ allowing you to print things to stderr using the print function.</p>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/STARprint-fnSTAR">*print-fn*</a></li><li><a href="/api/cljs.core/enable-console-printBANG">enable-console-print!</a></li></ul><hr />Source docstring:<pre>Each runtime environment provides a different way to print error output.
 Whatever function *print-err-fn* is bound to will be passed any
-Strings which should be printed.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-52-g3e775a1/src/main/cljs/cljs/core.cljs#L59-L65">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defonce</span></span>
+Strings which should be printed.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/cljs/cljs/core.cljs#L70-L74">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defonce</span></span>
   <span class="hljs-comment">^{:doc "Each runtime environment provides a different way to print error output.
   Whatever function *print-err-fn* is bound to will be passed any
   Strings which should be printed." :dynamic true}</span>
-  *print-err-fn*
-  (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [_]
-    (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"No *print-err-fn* fn set for evaluation environment"</span>))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+  *print-err-fn* <span class="hljs-literal">nil</span>)</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

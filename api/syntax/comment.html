@@ -10,9 +10,9 @@
 <p>It is common to use <code>;;</code> for comments that have their own line:</p>
 <pre><code class="lang-clj"><span class="hljs-comment">;; this comment is on its own line</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/ignore">#_ ignore</a></li><li><a href="/api/cljs.core/comment">comment</a></li><li><a href="/api/syntax/shebang">#! shebang</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader/impl/commons.clj#L123-L125">tools.reader:src/main/clojure/clojure/tools/reader/impl/commons.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-comment
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/ignore">#_ ignore</a></li><li><a href="/api/cljs.core/comment">comment</a></li><li><a href="/api/syntax/shebang">#! shebang</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader/impl/commons.clj#L124-L126">tools.reader:src/main/clojure/clojure/tools/reader/impl/commons.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-comment
   [rdr &amp; _]
-  (<span class="hljs-name">skip-line</span> rdr))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+  (<span class="hljs-name">skip-line</span> rdr))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L767-L786">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

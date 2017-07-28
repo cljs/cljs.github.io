@@ -25,11 +25,11 @@ See <a class="code-link" href="/api/syntax/auto-gensym"><code># auto-gensym</cod
 `(def foo 1)
 ;;=&gt; (def cljs.user/foo 1)
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/auto-gensym"># auto-gensym</a></li><li><a href="/api/syntax/quote">' quote</a></li><li><a href="/api/syntax/unquote">~ unquote</a></li><li><a href="/api/syntax/unquote-splicing">~@ unquote splicing</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L739-L743">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-syntax-quote
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/auto-gensym"># auto-gensym</a></li><li><a href="/api/syntax/quote">' quote</a></li><li><a href="/api/syntax/unquote">~ unquote</a></li><li><a href="/api/syntax/unquote-splicing">~@ unquote splicing</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L736-L740">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-syntax-quote
   [rdr backquote opts pending-forms]
   (<span class="hljs-name">binding</span> [gensym-env {}]
     (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> (<span class="hljs-name">read*</span> rdr <span class="hljs-literal">true</span> <span class="hljs-literal">nil</span> opts pending-forms)
-      syntax-quote*)))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+      syntax-quote*)))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L767-L786">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

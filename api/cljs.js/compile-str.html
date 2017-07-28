@@ -18,12 +18,17 @@ opts (map)
    :def-emits-var    - sets whether def (and derived) forms return either a Var
                        (if set to true) or the def init value (if false). Default
                        is false.
+   :checked-arrays   - if :warn or :error, checks inferred types and values passed
+                       to aget/aset. Logs for incorrect values if :warn, throws if
+                       :error. Defaults to false.
    :static-fns       - employ static dispatch to specific function arities in
                        emitted JavaScript, as opposed to making use of the
                        `call` construct. Defaults to false.
    :fn-invoke-direct - if `true`, does not generate `.call(null...)` calls for
                        unknown functions, but instead direct invokes via
                        `f(a0,a1...)`. Defaults to `false`.
+   :target           - use `:nodejs` if targeting Node.js. Takes no other options
+                       at the moment.
    :ns               - optional, the namespace in which to evaluate the source.
    :verbose          - optional, emit details from compiler activity. Defaults to
                        false.
@@ -35,7 +40,7 @@ cb (function)
   callback, will be invoked with a map. If successful the map will contain
   a key :value with the compilation result (string). If unsuccessful the map
   will contain a key :error with an ex-info instance describing the cause
-  of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-52-g3e775a1/src/main/cljs/cljs/js.cljs#L820-L874">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-str
+  of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/cljs/cljs/js.cljs#L900-L959">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-str
   ([state source cb]
    (<span class="hljs-name">compile-str</span> state source <span class="hljs-literal">nil</span> cb))
   ([state source name cb]

@@ -45,8 +45,8 @@ avoiding rebuilding when possible.
 
 Same options as 'every'.
 
-See also - every, map-of</pre></div></div><hr /><div style="position: relative;"><div class="r" id="conform"><strong>conform</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/conform">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(conform spec x)</code></div></div><div class="sep"><pre>Given a spec and a value, returns :clojure.spec/invalid if value does not match spec,
-else the (possibly destructured) value.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="conformer"><strong>conformer</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/conformer">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(conformer f)</code></div><div><code>(conformer f unf)</code></div></div><div class="sep"><pre>takes a predicate function with the semantics of conform i.e. it should return either a
+See also - every, map-of</pre></div></div><hr /><div style="position: relative;"><div class="r" id="conform"><strong>conform</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/conform">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(conform spec x)</code></div></div><div class="sep"><pre>Given a spec and a value, returns :cljs.spec.alpha/invalid if value does
+not match spec, else the (possibly destructured) value.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="conformer"><strong>conformer</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/conformer">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(conformer f)</code></div><div><code>(conformer f unf)</code></div></div><div class="sep"><pre>takes a predicate function with the semantics of conform i.e. it should return either a
 (possibly converted) value or :cljs.spec.alpha/invalid, and returns a
 spec that uses it as a predicate/conformer. Optionally takes a
 second fn that does unform of result of first</pre></div></div><hr /><div style="position: relative;"><div class="r" id="def"><strong>def</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/def">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(def k spec-form)</code></div></div><div class="sep"><pre>Given a namespace-qualified keyword or resolveable symbol k, and a spec,
@@ -111,7 +111,7 @@ Registers an fspec in the global registry, where it can be retrieved
 by calling get-spec with the var or full-qualified symbol.
 
 Once registered, function specs are included in doc, checked by
-instrument, tested by the runner clojure.spec.test.alpha/run-tests, and (if
+instrument, tested by the runner cljs.spec.test.alpha/run-tests, and (if
 a macro) used to explain errors during macroexpansion.
 
 Note that :fn specs require the presence of :args and :ret specs to
@@ -122,7 +122,7 @@ Returns the qualified fn-sym.
 
 For example, to register function specs for the symbol function:
 
-(s/fdef clojure.core/symbol
+(s/fdef cljs.core/symbol
   :args (s/alt :separate (s/cat :ns string? :n string?)
                :str string?
                :sym symbol?)
@@ -230,7 +230,7 @@ though those values are not evident in the spec.</pre></div></div><hr /><div sty
 Returns a destructuring spec that returns a map entry containing the
 key of the first matching pred and the corresponding value. Thus the
 'key' and 'val' functions can be used to refer generically to the
-components of the tagged return.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="regexQMARK"><strong>regex?</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/regexQMARK">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(regex? x)</code></div></div><div class="sep"><pre>returns x if x is a (clojure.spec) regex op, else logical false</pre></div></div><hr /><div style="position: relative;"><div class="r" id="registry"><strong>registry</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/registry">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(registry)</code></div></div><div class="sep"><pre>returns the registry map, prefer 'get-spec' to lookup a spec by name</pre></div></div><hr /><div style="position: relative;"><div class="r" id="registry-ref"><strong>registry-ref</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/registry-ref">full details ></a></div><div class="sep"></div></div><hr /><div style="position: relative;"><div class="r" id="spec"><strong>spec</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/spec">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(spec form & {:keys [gen]})</code></div></div><div class="sep"><pre>Takes a single predicate form, e.g. can be the name of a predicate,
+components of the tagged return.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="regexQMARK"><strong>regex?</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/regexQMARK">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(regex? x)</code></div></div><div class="sep"><pre>returns x if x is a (cljs.spec.alpha) regex op, else logical false</pre></div></div><hr /><div style="position: relative;"><div class="r" id="registry"><strong>registry</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/registry">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(registry)</code></div></div><div class="sep"><pre>returns the registry map, prefer 'get-spec' to lookup a spec by name</pre></div></div><hr /><div style="position: relative;"><div class="r" id="registry-ref"><strong>registry-ref</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/registry-ref">full details ></a></div><div class="sep"></div></div><hr /><div style="position: relative;"><div class="r" id="spec"><strong>spec</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.spec.alpha/spec">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(spec form & {:keys [gen]})</code></div></div><div class="sep"><pre>Takes a single predicate form, e.g. can be the name of a predicate,
 like even?, or a fn literal like #(< % 42). Note that it is not
 generally necessary to wrap predicates in spec when using the rest
 of the spec macros, only to attach a unique generator

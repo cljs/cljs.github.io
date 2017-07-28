@@ -41,10 +41,10 @@ a 1)</code>.  <code>def</code> evaluates to a special form, which suppresses the
 <pre><code class="lang-clj">'a
 ;;=&gt; a
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/symbol">symbol</a></li><li><a href="/api/cljs.core/symbolQMARK">symbol?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L305-L331">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/symbol">symbol</a></li><li><a href="/api/cljs.core/symbolQMARK">symbol?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L302-L328">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
   [rdr initch]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[line column] (<span class="hljs-name">starting-line-col-info</span> rdr)]
-    (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [token (<span class="hljs-name">read-token</span> rdr initch)]
+    (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [token (<span class="hljs-name">read-token</span> rdr <span class="hljs-symbol">:symbol</span> initch)]
       (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> token
 
         <span class="hljs-comment">;; special symbols</span>
@@ -67,4 +67,4 @@ a 1)</code>.  <code>def</code> evaluates to a special form, which suppresses the
                       <span class="hljs-symbol">:column</span> column
                       <span class="hljs-symbol">:end-line</span> end-line
                       <span class="hljs-symbol">:end-column</span> end-column})))))
-            (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Invalid token: "</span> token))))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+            (<span class="hljs-name">err/throw-invalid</span> rdr <span class="hljs-symbol">:symbol</span> token))))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

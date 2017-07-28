@@ -7,7 +7,7 @@ being nil-patched.</p>
 a nil first argument to f with the supplied value x. Higher arity
 versions can replace arguments in the second and third
 positions (y, z). Note that the function f can take any number of
-arguments, not just the one(s) being nil-patched.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-52-g3e775a1/src/main/cljs/cljs/core.cljs#L4209-L4230">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> fnil
+arguments, not just the one(s) being nil-patched.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/cljs/cljs/core.cljs#L4273-L4294">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> fnil
   ([f x]
    (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
      ([a] (<span class="hljs-name">f</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> a) x a)))

@@ -14,14 +14,14 @@
 (<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> m [<span class="hljs-number">1</span> <span class="hljs-number">2</span>])
 <span class="hljs-comment">;;=&gt; 3</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/hash-map">hash-map</a></li><li><a href="/api/cljs.core/array-map">array-map</a></li><li><a href="/api/cljs.core/sorted-map">sorted-map</a></li><li><a href="/api/cljs.core/sorted-map-by">sorted-map-by</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L240-L260">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-map
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/hash-map">hash-map</a></li><li><a href="/api/cljs.core/array-map">array-map</a></li><li><a href="/api/cljs.core/sorted-map">sorted-map</a></li><li><a href="/api/cljs.core/sorted-map-by">sorted-map-by</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L237-L257">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-map
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[start-line start-column] (<span class="hljs-name">starting-line-col-info</span> rdr)
-        the-map (<span class="hljs-name">read-delimited</span> \} rdr opts pending-forms)
+        the-map (<span class="hljs-name">read-delimited</span> <span class="hljs-symbol">:map</span> \} rdr opts pending-forms)
         map-count (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> the-map)
         [end-line end-column] (<span class="hljs-name">ending-line-col-info</span> rdr)]
     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">odd?</span></span> map-count)
-      (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Map literal must contain an even number of forms"</span>))
+      (<span class="hljs-name">err/throw-odd-map</span> rdr start-line start-column the-map))
     (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span>
       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> map-count)
         {}
@@ -33,7 +33,7 @@
          {<span class="hljs-symbol">:line</span> start-line
           <span class="hljs-symbol">:column</span> start-column
           <span class="hljs-symbol">:end-line</span> end-line
-          <span class="hljs-symbol">:end-column</span> end-column})))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L769-L788">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+          <span class="hljs-symbol">:end-column</span> end-column})))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L767-L786">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

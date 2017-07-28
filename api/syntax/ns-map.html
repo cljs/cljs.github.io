@@ -2,9 +2,9 @@
 <pre><code class="lang-clj">#:a {1 nil, :b nil, :b/c nil, :_/d nil}
 ;;=&gt; {1 nil, :a/b nil, :b/c nil, :d nil}
 </code></pre>
-</div><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L745-L767">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-namespaced-map
+</div><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L742-L765">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-namespaced-map
   [rdr _ opts pending-forms]
-  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [token (<span class="hljs-name">read-token</span> rdr (<span class="hljs-name">read-char</span> rdr))]
+  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [token (<span class="hljs-name">read-token</span> rdr <span class="hljs-symbol">:namespaced-map</span> (<span class="hljs-name">read-char</span> rdr))]
     (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [ns (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
                   (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> token <span class="hljs-string">":"</span>)
                   (<span class="hljs-name">ns-name</span> *ns*)
@@ -17,14 +17,15 @@
 
       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ch (<span class="hljs-name">read-past</span> whitespace? rdr)]
         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> ch \{)
-          (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [items (<span class="hljs-name">read-delimited</span> \} rdr opts pending-forms)]
+          (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [items (<span class="hljs-name">read-delimited</span> <span class="hljs-symbol">:namespaced-map</span> \} rdr opts pending-forms)]
             (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">odd?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> items))
-              (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Map literal must contain an even number of forms"</span>))
+              (<span class="hljs-name">err/throw-odd-map</span> rdr <span class="hljs-literal">nil</span> <span class="hljs-literal">nil</span> items))
             (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [keys (<span class="hljs-name">take-nth</span> <span class="hljs-number">2</span> items)
                   vals (<span class="hljs-name">take-nth</span> <span class="hljs-number">2</span> (<span class="hljs-name"><span class="hljs-builtin-name">rest</span></span> items))]
+
               (<span class="hljs-name">RT/map</span> (<span class="hljs-name"><span class="hljs-builtin-name">to-array</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">mapcat</span></span> list (<span class="hljs-name">namespace-keys</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns) keys) vals)))))
-          (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Namespaced map must specify a map"</span>)))
-      (<span class="hljs-name">reader-error</span> rdr <span class="hljs-string">"Invalid token used as namespace in namespaced map: "</span> token))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L790-L803">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
+          (<span class="hljs-name">err/throw-ns-map-no-map</span> rdr token)))
+      (<span class="hljs-name">err/throw-bad-ns</span> rdr token))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L788-L801">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \^ read-meta                <span class="hljs-comment">;deprecated</span>
     \' (<span class="hljs-name">wrapping-reader</span> 'var)

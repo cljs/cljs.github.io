@@ -20,10 +20,10 @@ the trailing parentheses:</p>
 <pre><code class="lang-clj">[<span class="hljs-number">1</span> <span class="hljs-number">2</span> #_ foo <span class="hljs-number">3</span>]
 <span class="hljs-comment">;;=&gt; [1 2 3]</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/comment">; comment</a></li><li><a href="/api/cljs.core/comment">comment</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L406-L410">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-discard
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/comment">; comment</a></li><li><a href="/api/cljs.core/comment">comment</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L404-L408">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-discard
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">doto</span></span> rdr
-    (<span class="hljs-name">read*</span> <span class="hljs-literal">true</span> <span class="hljs-literal">nil</span> opts pending-forms)))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L790-L803">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
+    (<span class="hljs-name">read*</span> <span class="hljs-literal">true</span> <span class="hljs-literal">nil</span> opts pending-forms)))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L788-L801">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \^ read-meta                <span class="hljs-comment">;deprecated</span>
     \' (<span class="hljs-name">wrapping-reader</span> 'var)

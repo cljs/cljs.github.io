@@ -19,14 +19,20 @@ obj
 ;;=&gt; #js {:foo "bar"}
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/aget">aget</a></li><li><a href="/api/cljs.core/setBANG">set!</a></li><li><a href="/api/cljs.core/assoc-in">assoc-in</a></li></ul><hr />Source docstring:<pre>Sets the value at the index/indices. Works on JavaScript arrays.
-Returns val.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-52-g3e775a1/src/main/cljs/cljs/core.cljs#L422-L428">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> aset
+Returns val.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/cljs/cljs/core.cljs#L489-L495">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> aset
   ([array idx val]
     (<span class="hljs-name">cljs.core/aset</span> array idx val))
   ([array idx idx2 &amp; idxv]
-    (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> aset (<span class="hljs-name">aget</span> array idx) idx2 idxv)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-52-g3e775a1/src/main/clojure/cljs/core.cljc#L989-L995">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> aset
+    (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> aset (<span class="hljs-name">aget</span> array idx) idx2 idxv)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/clojure/cljs/core.cljc#L993-L1005">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> aset
   ([array idx val]
-   (<span class="hljs-name">core/list</span> 'js* <span class="hljs-string">"(~{}[~{}] = ~{})"</span> array idx val))
+   (<span class="hljs-name">core/case</span> (<span class="hljs-name">ana/checked-arrays</span>)
+     <span class="hljs-symbol">:warn</span> `(<span class="hljs-name">checked-aset</span> ~array ~idx ~val)
+     <span class="hljs-symbol">:error</span> `(<span class="hljs-name">checked-aset'</span> ~array ~idx ~val)
+     (<span class="hljs-name">core/list</span> 'js* <span class="hljs-string">"(~{}[~{}] = ~{})"</span> array idx val)))
   ([array idx idx2 &amp; idxv]
-   (<span class="hljs-name">core/let</span> [n    (<span class="hljs-name">core/dec</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> idxv))
-              astr (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> core/str (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> n <span class="hljs-string">"[~{}]"</span>))]
-     `(~'js* ~(<span class="hljs-name">core/str</span> <span class="hljs-string">"(~{}[~{}][~{}]"</span> astr <span class="hljs-string">" = ~{})"</span>) ~array ~idx ~idx2 ~@idxv))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+   (<span class="hljs-name">core/case</span> (<span class="hljs-name">ana/checked-arrays</span>)
+     <span class="hljs-symbol">:warn</span> `(<span class="hljs-name">checked-aset</span> ~array ~idx ~idx2 ~@idxv)
+     <span class="hljs-symbol">:error</span> `(<span class="hljs-name">checked-aset'</span> ~array ~idx ~idx2 ~@idxv)
+     (<span class="hljs-name">core/let</span> [n    (<span class="hljs-name">core/dec</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> idxv))
+                astr (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> core/str (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> n <span class="hljs-string">"[~{}]"</span>))]
+       `(~'js* ~(<span class="hljs-name">core/str</span> <span class="hljs-string">"(~{}[~{}][~{}]"</span> astr <span class="hljs-string">" = ~{})"</span>) ~array ~idx ~idx2 ~@idxv)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

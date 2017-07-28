@@ -10,7 +10,7 @@ user=> (s/conform (s/keys* :req-un [::a ::c]) [:a 1 :c 2])
 the resulting regex op can be composed into a larger regex:
 
 user=> (s/conform (s/cat :i1 integer? :m (s/keys* :req-un [::a ::c]) :i2 integer?) [42 :a 1 :c 2 :d 4 99])
-{:i1 42, :m {:a 1, :c 2, :d 4}, :i2 99}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.671-52-g3e775a1/src/main/cljs/cljs/spec/alpha.cljc#L444-L461">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys*
+{:i1 42, :m {:a 1, :c 2, :d 4}, :i2 99}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/cljs/cljs/spec/alpha.cljc#L442-L459">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> keys*
   [&amp; kspecs]
   `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [mspec# (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> ~@kspecs)]
      (<span class="hljs-name">with-gen</span> (<span class="hljs-name">cljs.spec.alpha/&amp;</span> (<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> (<span class="hljs-name">cat</span> :<span class="hljs-symbol">:k</span> keyword? :<span class="hljs-symbol">:v</span> cljs.core/any?)) :<span class="hljs-symbol">:kvs-&gt;map</span> mspec#)

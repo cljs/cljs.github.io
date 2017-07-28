@@ -10,12 +10,13 @@
 <pre><code class="lang-clj">#{1 1 2 3}
 ;; Error: Duplicate key: 1
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/hash-set">hash-set</a></li><li><a href="/api/cljs.core/sorted-set">sorted-set</a></li><li><a href="/api/cljs.core/sorted-set-by">sorted-set-by</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L389-L404">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-set
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/hash-set">hash-set</a></li><li><a href="/api/cljs.core/sorted-set">sorted-set</a></li><li><a href="/api/cljs.core/sorted-set-by">sorted-set-by</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L386-L402">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-set
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[start-line start-column] (<span class="hljs-name">starting-line-col-info</span> rdr)
         <span class="hljs-comment">;; subtract 1 from start-column so it includes the # in the leading #{</span>
         start-column (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> start-column (<span class="hljs-name"><span class="hljs-builtin-name">int</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">int</span></span> start-column))))
-        the-set (<span class="hljs-name">PersistentHashSet/createWithCheck</span> (<span class="hljs-name">read-delimited</span> \} rdr opts pending-forms))
+        the-set (<span class="hljs-name">PersistentHashSet/createWithCheck</span>
+          (<span class="hljs-name">read-delimited</span> <span class="hljs-symbol">:set</span> \} rdr opts pending-forms))
         [end-line end-column] (<span class="hljs-name">ending-line-col-info</span> rdr)]
     (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> the-set
       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> start-line
@@ -25,7 +26,7 @@
          {<span class="hljs-symbol">:line</span> start-line
           <span class="hljs-symbol">:column</span> start-column
           <span class="hljs-symbol">:end-line</span> end-line
-          <span class="hljs-symbol">:end-column</span> end-column})))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.0/src/main/clojure/clojure/tools/reader.clj#L790-L803">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
+          <span class="hljs-symbol">:end-column</span> end-column})))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L788-L801">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \^ read-meta                <span class="hljs-comment">;deprecated</span>
     \' (<span class="hljs-name">wrapping-reader</span> 'var)

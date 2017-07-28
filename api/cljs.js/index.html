@@ -56,12 +56,17 @@ opts (map)
    :def-emits-var    - sets whether def (and derived) forms return either a Var
                        (if set to true) or the def init value (if false).
                        Defaults to false.
+   :checked-arrays   - if :warn or :error, checks inferred types and values passed
+                       to aget/aset. Logs for incorrect values if :warn, throws if
+                       :error. Defaults to false.
    :static-fns       - employ static dispatch to specific function arities in
                        emitted JavaScript, as opposed to making use of the
                        `call` construct. Defaults to false.
    :fn-invoke-direct - if `true`, does not generate `.call(null...)` calls for
                        unknown functions, but instead direct invokes via
                        `f(a0,a1...)`. Defaults to `false`.
+   :target           - use `:nodejs` if targeting Node.js. Takes no other options
+                       at the moment.
    :ns               - optional, the namespace in which to evaluate the source.
    :verbose          - optional, emit details from compiler activity. Defaults to
                        false.
@@ -93,12 +98,17 @@ opts (map)
    :def-emits-var    - sets whether def (and derived) forms return either a Var
                        (if set to true) or the def init value (if false). Default
                        is false.
+   :checked-arrays   - if :warn or :error, checks inferred types and values passed
+                       to aget/aset. Logs for incorrect values if :warn, throws if
+                       :error. Defaults to false.
    :static-fns       - employ static dispatch to specific function arities in
                        emitted JavaScript, as opposed to making use of the
                        `call` construct. Defaults to false.
    :fn-invoke-direct - if `true`, does not generate `.call(null...)` calls for
                        unknown functions, but instead direct invokes via
                        `f(a0,a1...)`. Defaults to `false`.
+   :target           - use `:nodejs` if targeting Node.js. Takes no other options
+                       at the moment.
    :ns               - optional, the namespace in which to evaluate the source.
    :verbose          - optional, emit details from compiler activity. Defaults to
                        false.
@@ -128,12 +138,17 @@ opts (map)
    :def-emits-var    - sets whether def (and derived) forms return either a Var
                        (if set to true) or the def init value (if false). Default
                        is false.
+   :checked-arrays   - if :warn or :error, checks inferred types and values passed
+                       to aget/aset. Logs for incorrect values if :warn, throws if
+                       :error. Defaults to false.
    :static-fns       - employ static dispatch to specific function arities in
                        emitted JavaScript, as opposed to making use of the
                        `call` construct. Defaults to false.
    :fn-invoke-direct - if `true`, does not generate `.call(null...)` calls for
                        unknown functions, but instead direct invokes via
                        `f(a0,a1...)`. Defaults to `false`.
+   :target           - use `:nodejs` if targeting Node.js. Takes no other options
+                       at the moment.
    :ns               - optional, the namespace in which to evaluate the source.
    :verbose          - optional, emit details from compiler activity. Defaults to
                        false.
@@ -171,12 +186,17 @@ opts (map)
   :def-emits-var    - sets whether def (and derived) forms return either a Var
                       (if set to true) or the def init value (if false). Default
                       is false.
+  :checked-arrays   - if :warn or :error, checks inferred types and values passed
+                      to aget/aset. Logs for incorrect values if :warn, throws if
+                      :error. Defaults to false.
   :static-fns       - employ static dispatch to specific function arities in
                       emitted JavaScript, as opposed to making use of the
                       `call` construct. Defaults to false.
   :fn-invoke-direct - if `true`, does not generate `.call(null...)` calls for
                       unknown functions, but instead direct invokes via
                       `f(a0,a1...)`. Defaults to `false`.
+  :target           - use `:nodejs` if targeting Node.js. Takes no other options
+                      at the moment.
   :ns               - optional, the namespace in which to evaluate the source.
   :verbose          - optional, emit details from compiler activity. Defaults to
                       false.
