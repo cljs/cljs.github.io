@@ -27,7 +27,7 @@ the metadata, or use shorthand:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> ^<span class="hljs-symbol">:foo</span> ^<span class="hljs-string">"foo"</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 <span class="hljs-comment">;;=&gt; {:foo true, :tag "foo"}</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/meta">meta</a></li><li><a href="/api/cljs.core/with-meta">with-meta</a></li><li><a href="/api/cljs.core/vary-meta">vary-meta</a></li><li><a href="/api/cljs.core/alter-metaBANG">alter-meta!</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L368-L384">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-meta
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/meta">meta</a></li><li><a href="/api/cljs.core/with-meta">with-meta</a></li><li><a href="/api/cljs.core/vary-meta">vary-meta</a></li><li><a href="/api/cljs.core/alter-metaBANG">alter-meta!</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.5/src/main/clojure/clojure/tools/reader.clj#L368-L384">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-meta
   [rdr _ opts pending-forms]
   (<span class="hljs-name">log-source</span> rdr
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[line column] (<span class="hljs-name">starting-line-col-info</span> rdr)
@@ -42,7 +42,7 @@ the metadata, or use shorthand:</p>
             (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> IObj o)
               (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> o (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> o) m))
               (<span class="hljs-name"><span class="hljs-builtin-name">reset-meta!</span></span> o m)))
-          (<span class="hljs-name">err/throw-bad-metadata-target</span> rdr o))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L767-L786">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+          (<span class="hljs-name">err/throw-bad-metadata-target</span> rdr o))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.5/src/main/clojure/clojure/tools/reader.clj#L767-L786">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

@@ -34,7 +34,7 @@ invokes the fn you provide, enabling arbitrary stubbing and mocking.
 
 :spec can be used in combination with :stub or :replace.
 
-Returns a collection of syms naming the vars instrumented.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.854/src/main/cljs/cljs/spec/test/alpha.cljc#L68-L126">clojurescript:src/main/cljs/cljs/spec/test/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> instrument
+Returns a collection of syms naming the vars instrumented.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908/src/main/cljs/cljs/spec/test/alpha.cljc#L68-L126">clojurescript:src/main/cljs/cljs/spec/test/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> instrument
   ([]
    `(<span class="hljs-name">instrument</span> '[~@(<span class="hljs-name">#?</span>(<span class="hljs-symbol">:clj</span>  s/speced-vars
                         <span class="hljs-symbol">:cljs</span> cljs.spec.alpha$macros/speced-vars))]))

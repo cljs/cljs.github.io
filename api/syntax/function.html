@@ -20,7 +20,7 @@ automatically assigned <code>%</code> argument names.</p>
 (<span class="hljs-name">f</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>)
 <span class="hljs-comment">;; prints: 1 2 (3 4 5)</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/arg">% arg</a></li><li><a href="/api/cljs.core/fn">fn</a></li><li><a href="/api/cljs.core/defn">defn</a></li><li><a href="/api/cljs.core/partial">partial</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L523-L542">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-fn
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/arg">% arg</a></li><li><a href="/api/cljs.core/fn">fn</a></li><li><a href="/api/cljs.core/defn">defn</a></li><li><a href="/api/cljs.core/partial">partial</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.5/src/main/clojure/clojure/tools/reader.clj#L523-L542">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-fn
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">thread-bound?</span> #'arg-env)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">IllegalStateException.</span> <span class="hljs-string">"Nested #()s are not allowed"</span>)))
@@ -39,7 +39,7 @@ automatically assigned <code>%</code> argument names.</p>
                                 args)]
                      args))
                  [])]
-      (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> 'fn* args form))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.3/src/main/clojure/clojure/tools/reader.clj#L788-L801">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
+      (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> 'fn* args form))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.5/src/main/clojure/clojure/tools/reader.clj#L788-L801">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \^ read-meta                <span class="hljs-comment">;deprecated</span>
     \' (<span class="hljs-name">wrapping-reader</span> 'var)
