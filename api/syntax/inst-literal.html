@@ -27,14 +27,14 @@ extends <code>js/Date</code> type with <code>IEquiv</code> protocol to allow thi
 (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> a b)
 <span class="hljs-comment">;;=&gt; true</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/time">time</a></li><li><a href="/api/syntax/tagged-literal"># tagged literal</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908/src/main/clojure/cljs/tagged_literals.cljc#L44-L51">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-inst
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/time">time</a></li><li><a href="/api/syntax/tagged-literal"># tagged literal</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-8-g98656d3/src/main/clojure/cljs/tagged_literals.cljc#L44-L51">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-inst
      [form]
      (when-not (string? form)
        (throw (RuntimeException. "Instance literal expects a string for its timestamp.")))
      (try
        (inst/read-instant-date form)
        (catch Throwable e
-         (throw (RuntimeException. (.getMessage e)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908/src/main/clojure/cljs/tagged_literals.cljc#L87-L93">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
+         (throw (RuntimeException. (.getMessage e)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-8-g98656d3/src/main/clojure/cljs/tagged_literals.cljc#L87-L93">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
   (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> <span class="hljs-comment">;; assumes we can read all data_readers</span>
     #?(<span class="hljs-symbol">:clj</span> *data-readers*)
     {'queue read-queue

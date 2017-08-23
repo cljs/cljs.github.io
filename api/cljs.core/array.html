@@ -18,7 +18,7 @@
 <span class="hljs-comment">;;=&gt; #js [1 2 #js [3 4]]</span>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/aclone">aclone</a></li><li><a href="/api/cljs.core/make-array">make-array</a></li><li><a href="/api/cljs.core/clj-GTjs">clj->js</a></li></ul><hr />Source docstring:<pre>Creates a new javascript array.
-@param {...*} var_args</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908/src/main/cljs/cljs/core.cljs#L423-L433">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^array</span> array
+@param {...*} var_args</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-8-g98656d3/src/main/cljs/cljs/core.cljs#L423-L433">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^array</span> array
   [var-args]            <span class="hljs-comment">;; [&amp; items]</span>
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a (<span class="hljs-name">js/Array.</span> (<span class="hljs-name">alength</span> (<span class="hljs-name">cljs.core/js-arguments</span>)))]
     (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [i <span class="hljs-number">0</span>]
@@ -26,7 +26,7 @@
         (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
           (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> a i (<span class="hljs-name">aget</span> (<span class="hljs-name">cljs.core/js-arguments</span>) i))
           (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> i)))
-        a))))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908/src/main/clojure/cljs/core.cljc#L2457-L2464">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> array [&amp; rest]
+        a))))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-8-g98656d3/src/main/clojure/cljs/core.cljc#L2457-L2464">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> array [&amp; rest]
   (<span class="hljs-name">core/let</span> [xs-str (<span class="hljs-name">core/-&gt;&gt;</span> (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> <span class="hljs-string">"~{}"</span>)
                       (<span class="hljs-name"><span class="hljs-builtin-name">take</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> rest))
                       (<span class="hljs-name">interpose</span> <span class="hljs-string">","</span>)
