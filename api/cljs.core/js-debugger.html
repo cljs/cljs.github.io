@@ -9,7 +9,7 @@ open.  Equivalent to <code>debugger;</code> in JavaScript.</p>
 <span class="hljs-comment">;; will print "HI" then pause JS inside this function</span>
 <span class="hljs-comment">;; if browser devtools are open.</span>
 </code></pre>
-</div><hr />Source docstring:<pre>Emit JavaScript "debugger;" statement</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-8-g98656d3/src/main/clojure/cljs/core.cljc#L909-L914">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> js-debugger
+</div><hr />Source docstring:<pre>Emit JavaScript "debugger;" statement</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-12-g998933f/src/main/clojure/cljs/core.cljc#L909-L914">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> js-debugger
   []
   (<span class="hljs-name">core/list</span> 'do
              (<span class="hljs-name">core/list</span> 'js* <span class="hljs-string">"debugger"</span>)

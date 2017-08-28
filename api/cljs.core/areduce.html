@@ -7,10 +7,11 @@ It can also use <code>idx</code> to get the current index.</p>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/reduce">reduce</a></li></ul><hr />Source docstring:<pre>Reduces an expression across an array a, using an index named idx,
 and return value named ret, initialized to init, setting ret to the
-evaluation of expr at each step, returning ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-8-g98656d3/src/main/clojure/cljs/core.cljc#L2587-L2596">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> areduce
+evaluation of expr at each step, returning ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-12-g998933f/src/main/clojure/cljs/core.cljc#L2588-L2598">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> areduce
   [a idx ret init expr]
-  `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a# ~a]
+  `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a# ~a
+         l# (<span class="hljs-name">alength</span> a#)]
      (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span>  [~idx <span class="hljs-number">0</span> ~ret ~init]
-       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> ~idx  (<span class="hljs-name">alength</span> a#))
+       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> ~idx l#)
          (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> ~idx) ~expr)
          ~ret))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

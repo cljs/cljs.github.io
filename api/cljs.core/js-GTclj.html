@@ -2,7 +2,7 @@
 JavaScript objects into ClojureScript maps.</p>
 <p>With option <code>{:keywordize-keys true}</code> will convert object fields from strings to
 keywords.</p>
-<p>Note that <code>js-&gt;clj</code> is not optimized for speed and the <a href="http://swannodette.github.io/2014/07/26/transit--clojurescript/">transit.cljs</a> library is
+<p>Note that <code>js-&gt;clj</code> is not optimized for speed and the <a href="https://github.com/cognitect/transit-cljs">transit.cljs</a> library is
 recommended for parsing large amounts of JSON data.</p>
 </div><hr /><h3>Examples:</h3><div><p>Parse a JSON string:</p>
 <pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> json <span class="hljs-string">"{\"foo\": 1, \"bar\": 2, \"baz\": [1,2,3]}"</span>)
@@ -19,7 +19,7 @@ recommended for parsing large amounts of JSON data.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/clj-GTjs">clj->js</a></li></ul><hr />Source docstring:<pre>Recursively transforms JavaScript arrays into ClojureScript
 vectors, and JavaScript objects into ClojureScript maps.  With
 option ':keywordize-keys true' will convert object fields from
-strings to keywords.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-8-g98656d3/src/main/cljs/cljs/core.cljs#L10243-L10271">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> js-&gt;clj
+strings to keywords.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-12-g998933f/src/main/cljs/cljs/core.cljs#L10243-L10271">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> js-&gt;clj
   ([x] (<span class="hljs-name">js-&gt;clj</span> x <span class="hljs-symbol">:keywordize-keys</span> <span class="hljs-literal">false</span>))
   ([x &amp; opts]
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [{<span class="hljs-symbol">:keys</span> [keywordize-keys]} opts
