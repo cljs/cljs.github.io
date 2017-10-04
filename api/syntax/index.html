@@ -314,49 +314,52 @@ standalone forms:</p>
 <table>
 <thead>
 <tr>
-<th>relation</th>
-<th>original</th>
-<th>with <code>#</code> prefix</th>
+<th style="text-align:left">relation</th>
+<th style="text-align:left">original</th>
+<th style="text-align:left">with <code>#</code> prefix</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string-related</td>
-<td><a class="code-link" href="/api/syntax#string"><code>&quot;&quot; string</code></a></td>
-<td><a class="code-link" href="/api/syntax#regex"><code>#&quot;&quot; regex</code></a></td>
+<td style="text-align:left">string-related</td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#string"><code>&quot;&quot; string</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#regex"><code>#&quot;&quot; regex</code></a></td>
 </tr>
 <tr>
-<td>code-related</td>
-<td><a class="code-link" href="/api/syntax#list"><code>() list</code></a></td>
-<td><a class="code-link" href="/api/syntax#function"><code>#() function</code></a></td>
+<td style="text-align:left">code-related</td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#list"><code>() list</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#function"><code>#() function</code></a></td>
 </tr>
 <tr>
-<td>lookup-related</td>
-<td><a class="code-link" href="/api/syntax#map"><code>{} map</code></a></td>
-<td><a class="code-link" href="/api/syntax#set"><code>#{} set</code></a></td>
+<td style="text-align:left">lookup-related</td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#map"><code>{} map</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#set"><code>#{} set</code></a></td>
 </tr>
 <tr>
-<td>quote-related</td>
-<td><a class="code-link" href="/api/syntax#quote"><code>&#39; quote</code></a></td>
-<td><a class="code-link" href="/api/syntax#var"><code>#&#39; var</code></a></td>
+<td style="text-align:left">quote-related</td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#quote"><code>&#39; quote</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#var"><code>#&#39; var</code></a></td>
 </tr>
 <tr>
-<td>ignore-related</td>
-<td><a class="code-link" href="/api/syntax#unused"><code>_ unused</code></a></td>
-<td><a class="code-link" href="/api/syntax#ignore"><code>#_ ignore</code></a></td>
+<td style="text-align:left">ignore-related</td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#unused"><code>_ unused</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#ignore"><code>#_ ignore</code></a></td>
 </tr>
 <tr>
-<td>name-related</td>
-<td><a class="code-link" href="/api/syntax#symbol"><code>foo (symbol)</code></a></td>
-<td><a class="code-link" href="/api/syntax#tagged-literal"><code>#foo (tagged literal)</code></a></td>
+<td style="text-align:left">name-related</td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#symbol"><code>foo (symbol)</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#tagged-literal"><code>#foo (tagged literal)</code></a></td>
 </tr>
 <tr>
-<td>conditional-related</td>
-<td><a class="code-link" href="/api/syntax#predicate"><code>? predicate</code></a></td>
-<td><a class="code-link" href="/api/syntax#cond"><code>#? reader conditional</code></a></td>
+<td style="text-align:left">conditional-related</td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#predicate"><code>? predicate</code></a></td>
+<td style="text-align:left"><a class="code-link" href="/api/syntax#cond"><code>#? reader conditional</code></a></td>
 </tr>
 </tbody>
 </table>
+<p>The &quot;symbolic values&quot; <a class="code-link" href="/api/syntax#Inf"><code>##Inf</code></a>, <a class="code-link" href="/api/syntax#-Inf"><code>##-Inf</code></a>, <a class="code-link" href="/api/syntax#NaN"><code>##NaN</code></a> do
+not follow this pattern, but the additional number sign in <code>##</code> serves as a
+mnemonic for these special numerical values.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="unreadable"><strong>#<> unreadable</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unreadable">full details ></a></div><div class="sep"></div><div><p>A proper definition for something that cannot be read.</p>
 <ul>
 <li><code>#&lt;...&gt;</code></li>
