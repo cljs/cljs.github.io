@@ -40,7 +40,7 @@ escape characters:</p>
 <span class="hljs-comment">;;   foo</span>
 <span class="hljs-comment">;;   bar</span>
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/str">str</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.5/src/main/clojure/clojure/tools/reader.clj#L291-L300">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-string*
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/str">str</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.1.0/src/main/clojure/clojure/tools/reader.clj#L291-L300">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-string*
   [reader _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [sb (<span class="hljs-name">StringBuilder.</span>)
          ch (<span class="hljs-name">read-char</span> reader)]
@@ -49,7 +49,7 @@ escape characters:</p>
       \\ (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">doto</span></span> sb (<span class="hljs-name">.append</span> (<span class="hljs-name">escape-char</span> sb reader)))
                 (<span class="hljs-name">read-char</span> reader))
       \<span class="hljs-string">" (str sb)
-      (recur (doto sb (.append ch)) (read-char reader)))))</span></code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.5/src/main/clojure/clojure/tools/reader.clj#L767-L786">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
+      (recur (doto sb (.append ch)) (read-char reader)))))</span></code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.1.0/src/main/clojure/clojure/tools/reader.clj#L776-L795">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \<span class="hljs-string">" read-string*
     \: read-keyword

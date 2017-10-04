@@ -41,7 +41,7 @@ cb (function)
   callback, will be invoked with a map. If successful the map will contain
   a key :value, the actual value is not meaningful. If unsuccessful the
   map will contain a key :error with an ex-info instance describing the cause
-  of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-12-g998933f/src/main/cljs/cljs/js.cljs#L667-L727">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> analyze-str
+  of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.946/src/main/cljs/cljs/js.cljs#L710-L771">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> analyze-str
   ([state source cb]
    (<span class="hljs-name">analyze-str</span> state source <span class="hljs-literal">nil</span> cb))
   ([state source name cb]
@@ -54,6 +54,7 @@ cb (function)
       <span class="hljs-symbol">:*data-readers*</span> tags/*cljs-data-readers*
       <span class="hljs-symbol">:*passes*</span>       (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:passes</span> opts) ana/*passes*)
       <span class="hljs-symbol">:*analyze-deps*</span> (<span class="hljs-symbol">:analyze-deps</span> opts <span class="hljs-literal">true</span>)
+      <span class="hljs-symbol">:*cljs-dep-set*</span> ana/*cljs-dep-set*
       <span class="hljs-symbol">:*load-macros*</span>  (<span class="hljs-symbol">:load-macros</span> opts <span class="hljs-literal">true</span>)
       <span class="hljs-symbol">:*load-fn*</span>      (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:load</span> opts) *load-fn*)
       <span class="hljs-symbol">:*eval-fn*</span>      (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:eval</span> opts) *eval-fn*)}

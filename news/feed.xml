@@ -1,4 +1,44 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 28 Aug 2017 05:43:45 GMT</pubDate><lastBuildDate>Mon, 28 Aug 2017 05:43:45 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.908</title><description>&lt;p&gt;This release includes a number of bug fixes and changes based on feedback
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 04 Oct 2017 18:29:01 GMT</pubDate><lastBuildDate>Wed, 04 Oct 2017 18:29:01 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.9.946</title><description>&lt;p&gt;This release contains many bug fixes and addresses feedback from the 1.9.908
+release. Important changes include parity with Clojure 1.9.0-beta1 and an
+updated Google Closure Compiler dependency. The later one in particular now
+means that ClojureScript has a dependency on JDK 8.&lt;/p&gt;
+&lt;p&gt;As always feedback welcome!&lt;/p&gt;
+&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2300&quot;&gt;CLJS-2300&lt;/a&gt;: Delegate clojure.string/capitalize to goog.string/capitalize&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2374&quot;&gt;CLJS-2374&lt;/a&gt;: Print js/Infinity, js/-Infinity, js/NaN using new reader literals&lt;/li&gt;
+&lt;li&gt;bump tools.reader (1.1.0)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2372&quot;&gt;CLJS-2372&lt;/a&gt;: update hash to use the new infinity literals&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2364&quot;&gt;CLJS-2364&lt;/a&gt;: Bump Closure Compiler to the Sep 2017 version&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2340&quot;&gt;CLJS-2340&lt;/a&gt;: Have js-keys delegate directly to good.object/getKeys&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2338&quot;&gt;CLJS-2338&lt;/a&gt;: Support renamePrefix{Namespace} closure compiler option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1576&quot;&gt;CLJS-1576&lt;/a&gt;: fix source-map string encoding by applying encodeURIComponent and fixing string/replace call&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2294&quot;&gt;CLJS-2294&lt;/a&gt;: Always use opts with implicit opts added&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2166&quot;&gt;CLJS-2166&lt;/a&gt;: Add uri? predicate&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2368&quot;&gt;CLJS-2368&lt;/a&gt;: Self-host: Never compile macro namespaces with &lt;code&gt;:optimize-constants true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2367&quot;&gt;CLJS-2367&lt;/a&gt;: Self-host: :def-emits-var leaks into loaded namespace processing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2352&quot;&gt;CLJS-2352&lt;/a&gt;: Emit valid JS for NaN etc. even when used w/ CLJ &amp;gt;= 1.9.0-alpha20&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2339&quot;&gt;CLJS-2339&lt;/a&gt;: Significant code reload slowdown with :npm-deps&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2361&quot;&gt;CLJS-2361&lt;/a&gt;: Self-host: circular dependency detection doesn&amp;#39;t handle REPL self-require&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2356&quot;&gt;CLJS-2356&lt;/a&gt;: Self-host: circular dependency detection is not correct&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2354&quot;&gt;CLJS-2354&lt;/a&gt;: Self-host: &lt;code&gt;compile-str&lt;/code&gt; doesn&amp;#39;t handle &lt;code&gt;clojure&lt;/code&gt; -&amp;gt; &lt;code&gt;cljs&lt;/code&gt; aliasing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2353&quot;&gt;CLJS-2353&lt;/a&gt;: use portable &lt;code&gt;node-module-dep?&lt;/code&gt; function in analyze-deps&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2345&quot;&gt;CLJS-2345&lt;/a&gt;: escape paths emitted as args to cljs.core.load_file&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2349&quot;&gt;CLJS-2349&lt;/a&gt;: Port reset-vals! and swap-vals! over from Clojure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2336&quot;&gt;CLJS-2336&lt;/a&gt;: Call alength once in areduce and amap&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2335&quot;&gt;CLJS-2335&lt;/a&gt;: Avoid alength on strings&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2334&quot;&gt;CLJS-2334&lt;/a&gt;: Also gather dependencies from foreign-libs that are modules&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2333&quot;&gt;CLJS-2333&lt;/a&gt;: module-deps.js doesn&amp;#39;t correctly compute &lt;code&gt;main&lt;/code&gt; if aliased in browser field&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2332&quot;&gt;CLJS-2332&lt;/a&gt;: module_deps.js doesn&amp;#39;t process &lt;code&gt;export from&lt;/code&gt; correctly&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2330&quot;&gt;CLJS-2330&lt;/a&gt;: Don&amp;#39;t set &lt;code&gt;&amp;quot;browser&amp;quot;&lt;/code&gt; field for Closure if target is :nodejs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2326&quot;&gt;CLJS-2326&lt;/a&gt;: Indexing node_modules can&amp;#39;t find &lt;code&gt;main&lt;/code&gt; when it doesn&amp;#39;t have an extension&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2328&quot;&gt;CLJS-2328&lt;/a&gt;: Args are not provided to &lt;em&gt;main-cli-fn&lt;/em&gt; with optimizations advanced&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2327&quot;&gt;CLJS-2327&lt;/a&gt;: module_deps.js doesn&amp;#39;t know about browser field advanced usage&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Tue, 03 Oct 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.946</link></item><item><title>1.9.908</title><description>&lt;p&gt;This release includes a number of bug fixes and changes based on feedback
 from the 1.9.854 release. For high level details please refer to the
 announcement on the official site &lt;a href=&quot;https://clojurescript.org/news/2017-08-16-release&quot;&gt;https://clojurescript.org/news/2017-08-16-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always feedback welcome!&lt;/p&gt;
@@ -402,117 +442,4 @@ also includes a small but significant enhancement to REPLs to allow handling mul
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1916&quot;&gt;CLJS-1916&lt;/a&gt;: &lt;code&gt;__dirname&lt;/code&gt; and &lt;code&gt;__filename&lt;/code&gt; are not defined when compiling for Node.js with optimizations :none&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1915&quot;&gt;CLJS-1915&lt;/a&gt;: cljs.test: Index out of bounds for stack element w/o line/column&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Sat, 11 Feb 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.473</link></item><item><title>1.9.456 - Externs Inference & Comprehensive JS Modules Support</title><description>&lt;p&gt;This is a significant feature release.&lt;/p&gt;
-&lt;p&gt;The first new feature is externs inference. This should greatly ease
-the integration of 3rd party JavaScript libraries incompatible
-with Google Closure advanced compilation. By treating the externs
-problem as a type-hinting one - we can automatically generate the
-required externs for you. This new feature should be considered
-of alpha quality and subject to change. Still, feedback is greatly
-appreciated to help us better understand how to best deliver this
-enhancement.&lt;/p&gt;
-&lt;p&gt;For details please look at the new guide:&lt;br&gt;
-&lt;a href=&quot;https://clojurescript.org/guides/externs&quot;&gt;https://clojurescript.org/guides/externs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The second new feature is much more comprehensive support for
-JavaScript modules. We now have a good story for integrating the
-various kinds of JavaScript modules into a ClojureScript project
-build without resorting to JavaScript build tools. This feature
-even includes the consumption of modules directly from NPM.&lt;/p&gt;
-&lt;p&gt;There are far too many details to cover in this release announcement
-so once again refer to the guide:&lt;br&gt;
-&lt;a href=&quot;https://clojurescript.org/guides/javascript-modules&quot;&gt;https://clojurescript.org/guides/javascript-modules&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Like externs inference this feature is alpha and subject to change.
-Again feedback is critical to guiding this enhancement in the
-right direction.&lt;/p&gt;
-&lt;p&gt;I&amp;#39;d like to especially call out Maria Geller&amp;#39;s Google Summer of Code work
-here around these two major features. This work began almost 2 years
-and it&amp;#39;s nice to see the long term planning come together so well.&lt;/p&gt;
-&lt;p&gt;There are quite a few performancement enhancements in this release
-related to compiler startup time as well as numerous fixes from
-many members of the community.&lt;/p&gt;
-&lt;p&gt;Congratulations to everyone involved and happy hacking!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Enhanced JavaScript module support&lt;/li&gt;
-&lt;li&gt;Support Node resolution for CommonJS modules&lt;/li&gt;
-&lt;li&gt;Externs inference&lt;/li&gt;
-&lt;li&gt;Performance enhancements&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1835&quot;&gt;CLJS-1835&lt;/a&gt;: REPL load special fn&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1194&quot;&gt;CLJS-1194&lt;/a&gt;: Support for &lt;code&gt;data_readers.cljc&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;expose :closure-module-roots option&lt;/li&gt;
-&lt;li&gt;bump Closure Compiler dep&lt;/li&gt;
-&lt;li&gt;Under Node.js don&amp;#39;t need require entries in the goog.addDependency calls in cljs_deps.js&lt;/li&gt;
-&lt;li&gt;do not throw on circular dependencies between Google Closure JS libs&lt;/li&gt;
-&lt;li&gt;str macro should call str/1 function directly, added str benchmark&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1718&quot;&gt;CLJS-1718&lt;/a&gt;: Foreign lib files should be placed in a relative location&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1858&quot;&gt;CLJS-1858&lt;/a&gt;: Should allow &lt;code&gt;:cache-analysis true&lt;/code&gt; and &lt;code&gt;cache-analysis-format nil&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1616&quot;&gt;CLJS-1616&lt;/a&gt;: Self-host: improve documentation for compile-str&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1643&quot;&gt;CLJS-1643&lt;/a&gt;: Emit more informative error when emitting a type which has no emit multimethod case&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1816&quot;&gt;CLJS-1816&lt;/a&gt;: Basic timing info in verbose output&lt;/li&gt;
-&lt;li&gt;add support for emitting inferred externs file&lt;/li&gt;
-&lt;li&gt;add cljs.analyzer/analyze-form-seq&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1666&quot;&gt;CLJS-1666&lt;/a&gt;: Flag to optionally disable transit analysis cache encoding&lt;/li&gt;
-&lt;li&gt;Provide more descriptive error message when invalid libspec detected&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1768&quot;&gt;CLJS-1768&lt;/a&gt;: cljs.spec perf tweaks&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1842&quot;&gt;CLJS-1842&lt;/a&gt;: Remove analyzer &lt;code&gt;:merge&lt;/code&gt; hack for REPLs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1839&quot;&gt;CLJS-1839&lt;/a&gt;: Relax the constraint that &lt;code&gt;new&lt;/code&gt; and dot forms must be passed a symbol&lt;/li&gt;
-&lt;li&gt;default to :ecmascript3 if :language-out not specified for :es6 module&lt;/li&gt;
-&lt;li&gt;respect :language-out when processing ES6 modules&lt;/li&gt;
-&lt;li&gt;default to :ecmascript3 if :language-out not specified for :es6 module&lt;/li&gt;
-&lt;li&gt;inline some?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1911&quot;&gt;CLJS-1911&lt;/a&gt;: Need to bind Node.js require&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1909&quot;&gt;CLJS-1909&lt;/a&gt;: Self-host: circular dependency when requiring cljs.reader&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1906&quot;&gt;CLJS-1906&lt;/a&gt;: Self-host: script/test-self-parity fails&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1903&quot;&gt;CLJS-1903&lt;/a&gt;: Remove anonymous vars from dir and apropos output&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1897&quot;&gt;CLJS-1897&lt;/a&gt;: Too many externs generated&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1895&quot;&gt;CLJS-1895&lt;/a&gt;: Externs inference needs to support user supplied externs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1873&quot;&gt;CLJS-1873&lt;/a&gt;: Self-host: Unit tests fail owing to test.check dep&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1874&quot;&gt;CLJS-1874&lt;/a&gt;: Self-host: :fn-var true for macros&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1877&quot;&gt;CLJS-1877&lt;/a&gt;: :foreign-libs entries should be allowed to specify directories along with individual files&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1890&quot;&gt;CLJS-1890&lt;/a&gt;: s/form for s/nilable in cljs.spec does not match clojure.spec&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1811&quot;&gt;CLJS-1811&lt;/a&gt;: Can&amp;#39;t compose cljs.spec.test.instrument (or cljs.spec.test.check) with cljs.spec.test.enumerate-namespace&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1894&quot;&gt;CLJS-1894&lt;/a&gt;: Unnecessary analysis of core.cljs on first compile&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1893&quot;&gt;CLJS-1893&lt;/a&gt;: Unnecessary analysis of core.cljs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1892&quot;&gt;CLJS-1892&lt;/a&gt;: Dependencies in JARs are analyzed every time even if an analysis cache file exists&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1887&quot;&gt;CLJS-1887&lt;/a&gt;: add :watch-error-fn option&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1883&quot;&gt;CLJS-1883&lt;/a&gt; Foreign libs can&amp;#39;t be found on Node.js&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1882&quot;&gt;CLJS-1882&lt;/a&gt; Fix constant table sort order when using :modules&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1853&quot;&gt;CLJS-1853&lt;/a&gt;: var metadata in compiled output&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1878&quot;&gt;CLJS-1878&lt;/a&gt;: prefer &lt;code&gt;some?&lt;/code&gt; over &lt;code&gt;(not (nil? %))&lt;/code&gt; in analyzer&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1880&quot;&gt;CLJS-1880&lt;/a&gt;: missing ^boolean on some hasNext calls&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1875&quot;&gt;CLJS-1875&lt;/a&gt; Difference in seqable? between CLJ &amp;amp; CLJS&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1829&quot;&gt;CLJS-1829&lt;/a&gt;: get does not return not-found on negative indexes&lt;/li&gt;
-&lt;li&gt;cljs.spec.test/unstrument shouldn&amp;#39;t return the names of vars that weren&amp;#39;t instrumented in the first place. Fixes &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1812&quot;&gt;CLJS-1812&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1786&quot;&gt;CLJS-1786&lt;/a&gt;: Add knob for controlling printing of namespaced maps&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1836&quot;&gt;CLJS-1836&lt;/a&gt;: nth doesn&amp;#39;t throw for IndexedSeqs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1870&quot;&gt;CLJS-1870&lt;/a&gt;: Quoted specs check in require macro symbols&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1869&quot;&gt;CLJS-1869&lt;/a&gt;: Regression importing goog.Uri&lt;/li&gt;
-&lt;li&gt;Fix &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1653&quot;&gt;CLJS-1653&lt;/a&gt; regression&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1860&quot;&gt;CLJS-1860&lt;/a&gt;: Resolve JS modules referred by their fully-qualified namespace&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1861&quot;&gt;CLJS-1861&lt;/a&gt;: Use usr/bin/env in build scripts for portability&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1857&quot;&gt;CLJS-1857&lt;/a&gt;: Fix self-host tests&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1855&quot;&gt;CLJS-1855&lt;/a&gt;: Subvec should implement IIterable&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1856&quot;&gt;CLJS-1856&lt;/a&gt;: Self-host: load-deps doesn&amp;#39;t delegate to itself&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1651&quot;&gt;CLJS-1651&lt;/a&gt;: Self-host: Cannot replace core macro-function&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1848&quot;&gt;CLJS-1848&lt;/a&gt;: Analyzer can&amp;#39;t find JS modules during macro-expansion&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1851&quot;&gt;CLJS-1851&lt;/a&gt;: Only output JS module processing time when &lt;code&gt;:compiler-stats&lt;/code&gt; is true&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1850&quot;&gt;CLJS-1850&lt;/a&gt;: &lt;em&gt;unchecked-if&lt;/em&gt; not declared ^:dynamic warning after commit a732f0&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1849&quot;&gt;CLJS-1849&lt;/a&gt;: Self-host: regression introduced by &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1794&quot;&gt;CLJS-1794&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1844&quot;&gt;CLJS-1844&lt;/a&gt;: port over Maria Geller&amp;#39;s externs file parsing code&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1845&quot;&gt;CLJS-1845&lt;/a&gt;: Assoc on subvec should throw if out of bounds&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1847&quot;&gt;CLJS-1847&lt;/a&gt;: REPL should recognize &lt;code&gt;clojure.core/load&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1745&quot;&gt;CLJS-1745&lt;/a&gt;: refer-clojure doesn&amp;#39;t pull in previously excluded vars&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1794&quot;&gt;CLJS-1794&lt;/a&gt;: incomplete alias created for namespace cljs.spec warning under advanced compilation&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1834&quot;&gt;CLJS-1834&lt;/a&gt;: REPL regression, require of ns from the ns itself errors out in circular reference&lt;/li&gt;
-&lt;li&gt;fix ns aliasing regression for JS namespaces&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1837&quot;&gt;CLJS-1837&lt;/a&gt;: Port halt-when over from Clojure&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1820&quot;&gt;CLJS-1820&lt;/a&gt;: &amp;quot;No such namespace&amp;quot; warning when referring to JS module namespace without using alias&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1828&quot;&gt;CLJS-1828&lt;/a&gt;: Add &lt;code&gt;:rename&lt;/code&gt; to &lt;code&gt;require&lt;/code&gt;&amp;#39;s docstring&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 27 Jan 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.456</link></item></channel></rss>
+</description><pubDate>Sat, 11 Feb 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.473</link></item></channel></rss>

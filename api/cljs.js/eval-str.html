@@ -46,7 +46,7 @@ cb (function)
   callback, will be invoked with a map. If succesful the map will contain
   a :value key with the result of evaluation and :ns the current namespace.
   If unsuccessful will contain a :error key with an ex-info instance describing
-  the cause of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.908-12-g998933f/src/main/cljs/cljs/js.cljs#L1063-L1127">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> eval-str
+  the cause of failure.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.946/src/main/cljs/cljs/js.cljs#L1112-L1177">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> eval-str
   ([state source cb]
    (<span class="hljs-name">eval-str</span> state source <span class="hljs-literal">nil</span> cb))
   ([state source name cb]
@@ -58,6 +58,7 @@ cb (function)
      {<span class="hljs-symbol">:*compiler*</span>     state
       <span class="hljs-symbol">:*data-readers*</span> tags/*cljs-data-readers*
       <span class="hljs-symbol">:*analyze-deps*</span> (<span class="hljs-symbol">:analyze-deps</span> opts <span class="hljs-literal">true</span>)
+      <span class="hljs-symbol">:*cljs-dep-set*</span> ana/*cljs-dep-set*
       <span class="hljs-symbol">:*load-macros*</span>  (<span class="hljs-symbol">:load-macros</span> opts <span class="hljs-literal">true</span>)
       <span class="hljs-symbol">:*load-fn*</span>      (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:load</span> opts) *load-fn*)
       <span class="hljs-symbol">:*eval-fn*</span>      (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:eval</span> opts) *eval-fn*)}

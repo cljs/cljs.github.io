@@ -41,7 +41,7 @@ a 1)</code>.  <code>def</code> evaluates to a special form, which suppresses the
 <pre><code class="lang-clj">'a
 ;;=&gt; a
 </code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/symbol">symbol</a></li><li><a href="/api/cljs.core/symbolQMARK">symbol?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.0.5/src/main/clojure/clojure/tools/reader.clj#L302-L328">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/symbol">symbol</a></li><li><a href="/api/cljs.core/symbolQMARK">symbol?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.1.0/src/main/clojure/clojure/tools/reader.clj#L302-L325">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-symbol
   [rdr initch]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[line column] (<span class="hljs-name">starting-line-col-info</span> rdr)]
     (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [token (<span class="hljs-name">read-token</span> rdr <span class="hljs-symbol">:symbol</span> initch)]
@@ -52,9 +52,6 @@ a 1)</code>.  <code>def</code> evaluates to a special form, which suppresses the
         <span class="hljs-string">"true"</span> <span class="hljs-literal">true</span>
         <span class="hljs-string">"false"</span> <span class="hljs-literal">false</span>
         <span class="hljs-string">"/"</span> '/
-        <span class="hljs-string">"NaN"</span> Double/NaN
-        <span class="hljs-string">"-Infinity"</span> Double/NEGATIVE_INFINITY
-        (<span class="hljs-string">"Infinity"</span> <span class="hljs-string">"+Infinity"</span>) Double/POSITIVE_INFINITY
 
         (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [p (<span class="hljs-name">parse-symbol</span> token)]
               (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">p</span> <span class="hljs-number">0</span>) (<span class="hljs-name">p</span> <span class="hljs-number">1</span>))
