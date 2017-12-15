@@ -7,14 +7,43 @@ If (cmap ch) is non-nil, append (str (cmap ch)) instead.</pre></div></div><hr />
 forward from from-index or nil if not found.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="join"><strong>join</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/join">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(join coll)</code></div><div><code>(join separator coll)</code></div></div><div class="sep"><pre>Returns a string of all elements in coll, as returned by (seq coll),
 separated by an optional separator.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="last-index-of"><strong>last-index-of</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/last-index-of">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(last-index-of s value)</code></div><div><code>(last-index-of s value from-index)</code></div></div><div class="sep"><pre>Return last index of value (string or char) in s, optionally
 searching backward from from-index or nil if not found.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="lower-case"><strong>lower-case</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/lower-case">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(lower-case s)</code></div></div><div class="sep"><pre>Converts string to all lower-case.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="replace"><strong>replace</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/replace">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(replace s match replacement)</code></div></div><div class="sep"><pre>Replaces all instance of match with replacement in s.
+
 match/replacement can be:
 
 string / string
-pattern / (string or function of match).</pre></div></div><hr /><div style="position: relative;"><div class="y" id="replace-first"><strong>replace-first</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/replace-first">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(replace-first s match replacement)</code></div></div><div class="sep"><pre>Replaces the first instance of match with replacement in s.
+pattern / (string or function of match).
+
+See also replace-first.
+
+The replacement is literal (i.e. none of its characters are treated
+specially) for all cases above except pattern / string.
+
+For pattern / string, $1, $2, etc. in the replacement string are
+substituted with the string that matched the corresponding
+parenthesized group in the pattern.
+
+Example:
+(clojure.string/replace "Almost Pig Latin" #"\b(\w)(\w+)\b" "$2$1ay")
+-> "lmostAay igPay atinLay"</pre></div></div><hr /><div style="position: relative;"><div class="y" id="replace-first"><strong>replace-first</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/replace-first">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(replace-first s match replacement)</code></div></div><div class="sep"><pre>Replaces the first instance of match with replacement in s.
+
 match/replacement can be:
 
 string / string
-pattern / (string or function of match).</pre></div></div><hr /><div style="position: relative;"><div class="y" id="reverse"><strong>reverse</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/reverse">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(reverse s)</code></div></div><div class="sep"><pre>Returns s with its characters reversed.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="split"><strong>split</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/split">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(split s re)</code></div><div><code>(split s re limit)</code></div></div><div class="sep"><pre>Splits string on a regular expression. Optional argument limit is
+pattern / (string or function of match).
+
+See also replace.
+
+The replacement is literal (i.e. none of its characters are treated
+specially) for all cases above except pattern / string.
+
+For pattern / string, $1, $2, etc. in the replacement string are
+substituted with the string that matched the corresponding
+parenthesized group in the pattern.
+
+Example:
+(clojure.string/replace-first "swap first two words"
+                              #"(\w+)(\s+)(\w+)" "$3$2$1")
+-> "first swap two words"</pre></div></div><hr /><div style="position: relative;"><div class="y" id="reverse"><strong>reverse</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/reverse">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(reverse s)</code></div></div><div class="sep"><pre>Returns s with its characters reversed.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="split"><strong>split</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/split">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(split s re)</code></div><div><code>(split s re limit)</code></div></div><div class="sep"><pre>Splits string on a regular expression. Optional argument limit is
 the maximum number of splits. Not lazy. Returns vector of the splits.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="split-lines"><strong>split-lines</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/split-lines">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(split-lines s)</code></div></div><div class="sep"><pre>Splits s on 
  or 
 .</pre></div></div><hr /><div style="position: relative;"><div class="r" id="starts-withQMARK"><strong>starts-with?</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/starts-withQMARK">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(starts-with? s substr)</code></div></div><div class="sep"><pre>True if s starts with substr.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="trim"><strong>trim</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/trim">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(trim s)</code></div></div><div class="sep"><pre>Removes whitespace from both ends of string.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="trim-newline"><strong>trim-newline</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/clojure.string/trim-newline">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(trim-newline s)</code></div></div><div class="sep"><pre>Removes all trailing newline \n or return \r characters from
