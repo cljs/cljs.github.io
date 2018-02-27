@@ -7,7 +7,7 @@ of the <code>try</code> expression.</p>
 <code>:default</code> to catch all types of exceptions.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/try">try</a></li><li><a href="/api/cljs.core/finally">finally</a></li><li><a href="/api/cljs.core/throw">throw</a></li></ul><hr />Source docstring:<pre>catch-clause => (catch classname name expr*)
 finally-clause => (finally expr*)
-Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.946-22-gebdaf6c/src/main/clojure/cljs/analyzer.cljc#L1395-L1454">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
+Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.64/src/main/clojure/cljs/analyzer.cljc#L1396-L1455">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
   [op env [_ &amp; body <span class="hljs-symbol">:as</span> form] name _]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [catchenv (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> env [<span class="hljs-symbol">:context</span>] #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> %) <span class="hljs-symbol">:return</span> %))
         catch? (<span class="hljs-name">every-pred</span> seq? #(<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> %) 'catch))
@@ -35,7 +35,7 @@ Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="http
             parser))
 
         finally (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> fblock)
-                  (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:statement</span>) `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> ~@(<span class="hljs-name"><span class="hljs-builtin-name">rest</span></span> fblock))))
+                  (<span class="hljs-name">disallowing-recur</span> (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:statement</span>) `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> ~@(<span class="hljs-name"><span class="hljs-builtin-name">rest</span></span> fblock)))))
         e (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> cblocks) dblock) (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"e"</span>))
         default (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [[_ _ name &amp; cb] dblock]
                   `(<span class="hljs-name">cljs.core/let</span> [~name ~e] ~@cb)
@@ -58,8 +58,8 @@ Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="http
                          <span class="hljs-symbol">:column</span> (<span class="hljs-name">get-col</span> e env)})
                  locals)
         catch (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> cblock
-                (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> catchenv <span class="hljs-symbol">:locals</span> locals) cblock))
-        try (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> e finally) catchenv env) `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> ~@body))]
+                (<span class="hljs-name">disallowing-recur</span> (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> catchenv <span class="hljs-symbol">:locals</span> locals) cblock)))
+        try (<span class="hljs-name">disallowing-recur</span> (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> e finally) catchenv env) `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> ~@body)))]
 
     {<span class="hljs-symbol">:env</span> env <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:try</span> <span class="hljs-symbol">:form</span> form
      <span class="hljs-symbol">:try</span> try

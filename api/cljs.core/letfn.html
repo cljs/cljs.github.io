@@ -7,7 +7,7 @@ functions as well as <code>body</code>.</p>
 
 Takes a vector of function specs and a body, and generates a set of
 bindings of functions to their names. All of the names are available
-in all of the definitions of the functions, as well as the body.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L6297-L6308">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> letfn 
+in all of the definitions of the functions, as well as the body.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0/src/clj/clojure/core.clj#L6463-L6474">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> letfn 
   [fnspecs &amp; body] 
   `(<span class="hljs-name">letfn*</span> ~(<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name">interleave</span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> first fnspecs) 
                              (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> `fn %) fnspecs)))

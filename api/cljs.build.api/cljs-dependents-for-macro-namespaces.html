@@ -7,7 +7,7 @@ For example where example.macros is defined in the clojure file
 ClojureScript namespaces that require and use the macros from
 'example.macros :
 (cljs-dependents-for-macro-namespaces 'example.macros) ->
-('example.core 'example.util)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.946-22-gebdaf6c/src/main/clojure/cljs/build/api.clj#L44-L62">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> cljs-dependents-for-macro-namespaces
+('example.core 'example.util)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.64/src/main/clojure/cljs/build/api.clj#L44-L62">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> cljs-dependents-for-macro-namespaces
   ([namespaces]
    (<span class="hljs-name">closure/cljs-dependents-for-macro-namespaces</span>
      (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> env/*compiler*)

@@ -4,7 +4,7 @@
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/when-let">when-let</a></li><li><a href="/api/cljs.core/if">if</a></li></ul><hr />Source docstring:<pre>bindings => binding-form test
 
 If test is true, evaluates then with binding-form bound to the value of 
-test, if not, yields else</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L1749-L1767">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> if-let
+test, if not, yields else</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0/src/clj/clojure/core.clj#L1833-L1851">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> if-let
   ([bindings then]
    `(<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> ~bindings ~then <span class="hljs-literal">nil</span>))
   ([bindings then else &amp; oldform]

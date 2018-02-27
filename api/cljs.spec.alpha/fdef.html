@@ -28,7 +28,9 @@ For example, to register function specs for the symbol function:
   :args (s/alt :separate (s/cat :ns string? :n string?)
                :str string?
                :sym symbol?)
-  :ret symbol?)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.946-22-gebdaf6c/src/main/cljs/cljs/spec/alpha.cljc#L406-L440">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fdef
+  :ret symbol?)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.64/src/main/cljs/cljs/spec/alpha.cljc#L406-L442">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fdef
   [fn-sym &amp; specs]
-  (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> _speced_vars conj (<span class="hljs-name">ns-qualify</span> &amp;env fn-sym))
+  (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> _speced_vars conj
+    (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> (<span class="hljs-name">ns-qualify</span> &amp;env fn-sym)
+      assoc <span class="hljs-symbol">:fdef-ns</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> &amp;env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:name</span>)))
   `(<span class="hljs-name">cljs.spec.alpha/def</span> ~fn-sym (<span class="hljs-name">fspec</span> ~@specs)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

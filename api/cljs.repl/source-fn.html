@@ -4,7 +4,7 @@ a namespace for which the .clj is in the classpath.  Returns nil if
 it can't find the source.  For most REPL usage, 'source' is more
 convenient.
 
-Example: (source-fn 'filter)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.9.946-22-gebdaf6c/src/main/clojure/cljs/repl.cljc#L1205-L1226">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> source-fn
+Example: (source-fn 'filter)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.64/src/main/clojure/cljs/repl.cljc#L1240-L1262">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> source-fn
   [env x]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [v (<span class="hljs-name">ana-api/resolve</span> env x)]
     (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [filepath (<span class="hljs-symbol">:file</span> v)]
@@ -16,6 +16,7 @@ Example: (source-fn 'filter)</pre><div>Source code @ <a href="https://github.com
           (<span class="hljs-name"><span class="hljs-builtin-name">with-open</span></span> [pbr (<span class="hljs-name">PushbackReader.</span> (<span class="hljs-name">io/reader</span> f))]
             (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [rdr (<span class="hljs-name">readers/source-logging-push-back-reader</span> pbr)]
               (<span class="hljs-name"><span class="hljs-builtin-name">dotimes</span></span> [_ (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> (<span class="hljs-symbol">:line</span> v))] (<span class="hljs-name">readers/read-line</span> rdr))
-              (<span class="hljs-name">binding</span> [reader/*data-readers* tags/*cljs-data-readers*]
+              (<span class="hljs-name">binding</span> [reader/*alias-map*    identity
+                        reader/*data-readers* tags/*cljs-data-readers*]
                 (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> (<span class="hljs-name">reader/read</span> {<span class="hljs-symbol">:read-cond</span> <span class="hljs-symbol">:allow</span> <span class="hljs-symbol">:features</span> #{<span class="hljs-symbol">:cljs</span>}} rdr)
                   meta <span class="hljs-symbol">:source</span>)))))))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
