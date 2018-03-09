@@ -3,15 +3,15 @@
 Options:
 
 port:           The port on which the REPL server will run. Defaults to 9000.
+launch-browser: A Boolean indicating whether a browser should be automatically
+                launched connecting back to the terminal REPL. Defaults to true.
 working-dir:    The directory where the compiled REPL client JavaScript will
                 be stored. Defaults to ".repl" with a ClojureScript version
                 suffix, eg. ".repl-0.0-2138".
-serve-static:   Should the REPL server attempt to serve static content?
-                Defaults to true.
 static-dir:     List of directories to search for static content. Defaults to
                 ["." "out/"].
 src:            The source directory containing user-defined cljs files. Used to
                 support reflection. Defaults to "src/".
-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.64/src/main/clojure/cljs/repl/browser.clj#L369-L386">clojurescript:src/main/clojure/cljs/repl/browser.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> repl-env
+</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.145-8-g92cbedd/src/main/clojure/cljs/repl/browser.clj#L390-L407">clojurescript:src/main/clojure/cljs/repl/browser.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> repl-env
   [&amp; {<span class="hljs-symbol">:as</span> opts}]
   (<span class="hljs-name">repl-env*</span> opts))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

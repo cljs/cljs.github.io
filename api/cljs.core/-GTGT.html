@@ -37,7 +37,7 @@ of the first 10 even squares:</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/-GT">-></a></li></ul><hr />Source docstring:<pre>Threads the expr through the forms. Inserts x as the
 last item in the first form, making a list of it if it is not a
 list already. If there are more forms, inserts the first form as the
-last item in second form, etc.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.9.0/src/clj/clojure/core.clj#L1685-L1699">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> -&gt;&gt;
+last item in second form, etc.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L1602-L1616">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> -&gt;&gt;
   [x &amp; forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [x x, forms forms]
     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> forms

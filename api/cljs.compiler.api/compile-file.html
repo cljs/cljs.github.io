@@ -9,7 +9,7 @@ the dest file has an older modification time.
 Both src and dest may be either a String or a File.
 
 Returns a map containing {:ns .. :provides .. :requires .. :file ..}.
-If the file was not compiled returns only {:file ...}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.64/src/main/clojure/cljs/compiler/api.clj#L66-L92">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-file
+If the file was not compiled returns only {:file ...}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.145-8-g92cbedd/src/main/clojure/cljs/compiler/api.clj#L66-L92">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-file
   ([src]
    (<span class="hljs-name">compile-file</span> src (<span class="hljs-name">closure/src-file-&gt;target-file</span> src)))
   ([src dest]
