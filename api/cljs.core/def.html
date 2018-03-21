@@ -41,7 +41,7 @@ c
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.191-3-gbfa599f/src/main/clojure/cljs/analyzer.cljc#L1473-L1634">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.217-4-gb949c7f/src/main/clojure/cljs/analyzer.cljc#L1473-L1634">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
   [op env form _ _]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> form) <span class="hljs-number">4</span>)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Too many arguments to def"</span>)))

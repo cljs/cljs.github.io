@@ -2,7 +2,7 @@
 Defaults to current namespace if none given. Does not return a meaningful
 value due to the possiblity of asynchronous execution. To detect test
 completion add a :end-run-tests method case to the cljs.test/report
-multimethod.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.191-3-gbfa599f/src/main/cljs/cljs/test.cljc#L288-L300">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> run-tests
+multimethod.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.217-4-gb949c7f/src/main/cljs/cljs/test.cljc#L288-L300">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> run-tests
   ([] `(<span class="hljs-name">run-tests</span> (<span class="hljs-name">empty-env</span>) '~ana/*cljs-ns*))
   ([env-or-ns]
    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">ns?</span> env-or-ns)

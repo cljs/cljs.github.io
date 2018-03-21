@@ -5,7 +5,7 @@
 Returns a destructuring spec that returns a map entry containing the
 key of the first matching pred and the corresponding value. Thus the
 'key' and 'val' functions can be used to refer generically to the
-components of the tagged return.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.191-3-gbfa599f/src/main/cljs/cljs/spec/alpha.cljc#L182-L197">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> or
+components of the tagged return.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.217-4-gb949c7f/src/main/cljs/cljs/spec/alpha.cljc#L182-L197">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> or
   [&amp; key-pred-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pairs (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> key-pred-forms)
         keys (<span class="hljs-name"><span class="hljs-builtin-name">mapv</span></span> first pairs)
