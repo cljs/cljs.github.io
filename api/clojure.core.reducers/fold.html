@@ -8,7 +8,7 @@ arguments, (combinef) must produce its identity element. These
 operations may be performed in parallel, but the results will
 preserve order.
 
-Note: Performing operations in parallel is currently not implemented.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.217-4-gb949c7f/src/main/cljs/clojure/core/reducers.cljs#L49-L64">clojurescript:src/main/cljs/clojure/core/reducers.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> fold
+Note: Performing operations in parallel is currently not implemented.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.217-8-g0dad6a2/src/main/cljs/clojure/core/reducers.cljs#L49-L64">clojurescript:src/main/cljs/clojure/core/reducers.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> fold
   ([reducef coll] (<span class="hljs-name">fold</span> reducef reducef coll))
   ([combinef reducef coll] (<span class="hljs-name">fold</span> <span class="hljs-number">512</span> combinef reducef coll))
   ([n combinef reducef coll]
