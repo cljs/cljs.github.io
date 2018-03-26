@@ -14,22 +14,19 @@ defaults to true when using :modules.</li>
 </ul>
 <h3 id="changes">Changes</h3>
 <ul>
-<li><ul>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-2592">CLJS-2592</a>: :npm-deps using ES6 modules with .mjs extensions are not detected correctly</li>
-</ul>
-</li>
 <li>AOTed ClojureScript artifact is now the default, for sources only use the
 &quot;slim&quot; Maven classifier</li>
 <li>Bump Closure Compiler</li>
 <li>REPL now show uniform prompts</li>
-<li><a href="http://dev.clojure.org/jira/browse/CLJS-2660">CLJS-2660</a>: Add cljs.core/eval which, delegates to an overridable <em>eval</em></li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-2660">CLJS-2660</a>: Add cljs.core/eval which, delegates to an overridable <code>*eval*</code></li>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-2375">CLJS-2375</a>: Remove AMD Module Support</li>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-2413">CLJS-2413</a>: Port core.specs.alpha to ClojureScript</li>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-2423">CLJS-2423</a>: Allow custom :output-wrapper function</li>
 <li>Map entries are no longer two element vectors, now MapEntry instances</li>
-<li><em>print-fn</em> automatically set</li>
+<li><code>*print-fn*</code> automatically set</li>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-2561">CLJS-2561</a>: AOT compile browser REPL client js</li>
-<li><a href="http://dev.clojure.org/jira/browse/CLJS-2581">CLJS-2581</a>: Create a cljs.repl/<em>repl-env</em> dynamic var and bind it around cljs repl loops</li>
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-2581">CLJS-2581</a>: Create a <code>cljs.repl/*repl-env*</code> dynamic var and bind it around cljs repl loops</li>
 </ul>
 <h3 id="fixes">Fixes</h3>
 <ul>

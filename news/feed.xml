@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 26 Mar 2018 19:43:36 GMT</pubDate><lastBuildDate>Mon, 26 Mar 2018 19:43:36 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.238</title><description>&lt;p&gt;This release contains a very large number of enhancements. Please
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 26 Mar 2018 20:07:26 GMT</pubDate><lastBuildDate>Mon, 26 Mar 2018 20:07:26 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.238</title><description>&lt;p&gt;This release contains a very large number of enhancements. Please
 refer to the announce post for details:
 &lt;a href=&quot;https://clojurescript.org/news/2018-03-26-release&quot;&gt;https://clojurescript.org/news/2018-03-26-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
@@ -14,22 +14,19 @@ defaults to true when using :modules.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2592&quot;&gt;CLJS-2592&lt;/a&gt;: :npm-deps using ES6 modules with .mjs extensions are not detected correctly&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;li&gt;AOTed ClojureScript artifact is now the default, for sources only use the
 &amp;quot;slim&amp;quot; Maven classifier&lt;/li&gt;
 &lt;li&gt;Bump Closure Compiler&lt;/li&gt;
 &lt;li&gt;REPL now show uniform prompts&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2660&quot;&gt;CLJS-2660&lt;/a&gt;: Add cljs.core/eval which, delegates to an overridable &lt;em&gt;eval&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2660&quot;&gt;CLJS-2660&lt;/a&gt;: Add cljs.core/eval which, delegates to an overridable &lt;code&gt;*eval*&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2375&quot;&gt;CLJS-2375&lt;/a&gt;: Remove AMD Module Support&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2413&quot;&gt;CLJS-2413&lt;/a&gt;: Port core.specs.alpha to ClojureScript&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2423&quot;&gt;CLJS-2423&lt;/a&gt;: Allow custom :output-wrapper function&lt;/li&gt;
 &lt;li&gt;Map entries are no longer two element vectors, now MapEntry instances&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;print-fn&lt;/em&gt; automatically set&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*print-fn*&lt;/code&gt; automatically set&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2561&quot;&gt;CLJS-2561&lt;/a&gt;: AOT compile browser REPL client js&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2581&quot;&gt;CLJS-2581&lt;/a&gt;: Create a cljs.repl/&lt;em&gt;repl-env&lt;/em&gt; dynamic var and bind it around cljs repl loops&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2581&quot;&gt;CLJS-2581&lt;/a&gt;: Create a &lt;code&gt;cljs.repl/*repl-env*&lt;/code&gt; dynamic var and bind it around cljs repl loops&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
 &lt;ul&gt;
