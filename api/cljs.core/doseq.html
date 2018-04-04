@@ -3,7 +3,7 @@ filtering as provided by <code>for</code>. Does not retain the head of the seque
 <p>Returns nil.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/doall">doall</a></li><li><a href="/api/cljs.core/dorun">dorun</a></li><li><a href="/api/cljs.core/for">for</a></li><li><a href="/api/cljs.core/dotimes">dotimes</a></li></ul><hr />Source docstring:<pre>Repeatedly executes body (presumably for side-effects) with
 bindings and filtering as provided by "for".  Does not retain
-the head of the sequence. Returns nil.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.238-3-g39609cb/src/main/clojure/cljs/core.cljc#L2410-L2464">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> doseq
+the head of the sequence. Returns nil.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.238-25-g9c1c727/src/main/clojure/cljs/core.cljc#L2410-L2464">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> doseq
   [seq-exprs &amp; body]
   (<span class="hljs-name">assert-args</span> doseq
     (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> seq-exprs) <span class="hljs-string">"a vector for its binding"</span>
