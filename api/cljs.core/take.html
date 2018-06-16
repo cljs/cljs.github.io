@@ -3,7 +3,7 @@ if there are fewer than <code>n</code>.</p>
 <p>Returns a stateful transducer when no collection is provided.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/drop">drop</a></li><li><a href="/api/cljs.core/take-while">take-while</a></li><li><a href="/api/cljs.core/take-last">take-last</a></li><li><a href="/api/cljs.core/take-nth">take-nth</a></li></ul><hr />Source docstring:<pre>Returns a lazy sequence of the first n items in coll, or all items if
 there are fewer than n.  Returns a stateful transducer when
-no collection is provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.238-25-g9c1c727/src/main/cljs/cljs/core.cljs#L4701-L4726">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> take
+no collection is provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-7-g6d23b1f/src/main/cljs/cljs/core.cljs#L4701-L4726">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> take
   ([n]
    {<span class="hljs-symbol">:pre</span> [(<span class="hljs-name"><span class="hljs-builtin-name">number?</span></span> n)]}
      (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [rf]

@@ -1,4 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Wed, 04 Apr 2018 13:11:27 GMT</pubDate><lastBuildDate>Wed, 04 Apr 2018 13:11:27 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.238</title><description>&lt;p&gt;This release contains a very large number of enhancements. Please
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 16 Jun 2018 12:23:24 GMT</pubDate><lastBuildDate>Sat, 16 Jun 2018 12:23:24 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.312</title><description>&lt;p&gt;This release contains many fixes and enhancements, the most notable being those around externs inference. With enhanced externs inference, integration with tools like Webpack is greatly improved and we now provide an official guide &lt;a href=&quot;https://clojurescript.org/guides/webpack&quot;&gt;https://clojurescript.org/guides/webpack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more details see &lt;a href=&quot;https://clojurescript.org/news/2018-06-15-release&quot;&gt;https://clojurescript.org/news/2018-06-15-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
+</description><pubDate>Fri, 15 Jun 2018 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.312</link></item><item><title>1.10.238</title><description>&lt;p&gt;This release contains a very large number of enhancements. Please
 refer to the announce post for details:
 &lt;a href=&quot;https://clojurescript.org/news/2018-03-26-release&quot;&gt;https://clojurescript.org/news/2018-03-26-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
@@ -485,26 +488,4 @@ also includes a small but significant enhancement to REPLs to allow handling mul
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1868&quot;&gt;CLJS-1868&lt;/a&gt; - Output simpler dependency rel paths when compiling with Closure libs&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1967&quot;&gt;CLJS-1967&lt;/a&gt;: Missing ^boolean for removed-leaf? in THM impl&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Wed, 12 Apr 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.521</link></item><item><title>1.9.494 - another bugfix release</title><description>&lt;p&gt;This is a bugfix release.&lt;/p&gt;
-&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1948&quot;&gt;CLJS-1948&lt;/a&gt;: Possible race condition in compiler w/ parallel-build true&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1941&quot;&gt;CLJS-1941&lt;/a&gt;: &lt;code&gt;cljs.compiler/cljs-files-in&lt;/code&gt; shouldn&amp;#39;t return &lt;code&gt;.cljc&lt;/code&gt; files if a &lt;code&gt;.cljs&lt;/code&gt; file exists for the namespace&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1940&quot;&gt;CLJS-1940&lt;/a&gt;: Undeclared var warning when invoking a protocol method on a &lt;code&gt;js&lt;/code&gt; interop form&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1951&quot;&gt;CLJS-1951&lt;/a&gt;: Missing 0 and 1 arity versions of interleave&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1952&quot;&gt;CLJS-1952&lt;/a&gt;: Bump Closure Compiler to Feb 2017 release&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1937&quot;&gt;CLJS-1937&lt;/a&gt;: Self-host: undeclared cljs.core$macros/mod when compiling cljs/core.cljs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1936&quot;&gt;CLJS-1936&lt;/a&gt;: cljs.analyzer declares vars which are only used in Clojure&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1949&quot;&gt;CLJS-1949&lt;/a&gt;: Self-host: cljs.compiler/munge doesn&amp;#39;t preserve JVM compiler semantics&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1950&quot;&gt;CLJS-1950&lt;/a&gt;: Eliminate instances of #^&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1943&quot;&gt;CLJS-1943&lt;/a&gt;: Self-host: &lt;code&gt;cljs.pprint&lt;/code&gt;&amp;#39;s macros can&amp;#39;t be compiled&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1945&quot;&gt;CLJS-1945&lt;/a&gt;: cljs.spec/every-impl kind-fn kind-form dead code&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1944&quot;&gt;CLJS-1944&lt;/a&gt;: Can&amp;#39;t spec generate non-vector collections&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1946&quot;&gt;CLJS-1946&lt;/a&gt;: Self-hosted: don&amp;#39;t emit &lt;code&gt;goog.require&lt;/code&gt; calls for foreign libs if optimizations different than &lt;code&gt;:none&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1636&quot;&gt;CLJS-1636&lt;/a&gt;: Mark some symbols in core macros ns as private&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1939&quot;&gt;CLJS-1939&lt;/a&gt;: Fix Node load_file call for foreign-deps&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1942&quot;&gt;CLJS-1942&lt;/a&gt;: Self-host: &lt;code&gt;cljs.env.macros&lt;/code&gt; and &lt;code&gt;cljs.analyzer.macros&lt;/code&gt; can&amp;#39;t be loaded&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1935&quot;&gt;CLJS-1935&lt;/a&gt;: When calling cljs.spec/valid?, subsequent predicates of cljs.spec/and are evaluated even when early predicate is unsatisfied&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 24 Feb 2017 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.494</link></item></channel></rss>
+</description><pubDate>Wed, 12 Apr 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.521</link></item></channel></rss>
