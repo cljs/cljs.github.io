@@ -113,7 +113,7 @@ from the clojure.* namespace to the cljs.* namespace. For example:
 
 will be automatically converted to
 
-(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-7-g6d23b1f/src/main/clojure/cljs/analyzer.cljc#L2595-L2702">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/analyzer.cljc#L2593-L2699">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> *allow-ns*
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespace declarations must appear at the top-level."</span>)))
@@ -124,8 +124,7 @@ will be automatically converted to
       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-number">1</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> segments))
         (<span class="hljs-name">warning</span> <span class="hljs-symbol">:single-segment-namespace</span> env {<span class="hljs-symbol">:name</span> name}))
       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [segment (<span class="hljs-name">some</span> js-reserved segments)]
-        <span class="hljs-comment">;; don't complain about "com", for Rhino</span>
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name">some?</span> segment) (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> <span class="hljs-string">"com"</span> segment))
+        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> segment)
           (<span class="hljs-name">warning</span> <span class="hljs-symbol">:munged-namespace</span> env {<span class="hljs-symbol">:name</span> name})))
       (<span class="hljs-name">find-def-clash</span> env name segments)
       #?(<span class="hljs-symbol">:clj</span>

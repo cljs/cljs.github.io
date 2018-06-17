@@ -7,7 +7,7 @@ supporting .unread and collapsing all of CR, LF, and CRLF into a single
     - returns request-exit on end of stream, or
     - reads an object from the input stream, then
       - skips the next input character if it's end of line, then
-      - returns the object.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-7-g6d23b1f/src/main/clojure/cljs/repl.cljc#L85-L110">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> repl-read
+      - returns the object.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/repl.cljc#L85-L110">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> repl-read
   ([request-prompt request-exit]
    (<span class="hljs-name">repl-read</span> request-prompt request-exit *repl-opts*))
   ([request-prompt request-exit opts]
