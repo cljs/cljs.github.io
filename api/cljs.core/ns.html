@@ -24,31 +24,31 @@ and libraries into the current namespace.</p>
             <span class="hljs-symbol">:refer-macros</span> []
             <span class="hljs-symbol">:rename</span> {}
             <span class="hljs-symbol">:include-macros</span> <span class="hljs-literal">true</span>|<span class="hljs-literal">false</span>
-            <span class="hljs-symbol">:as</span> alias
-            <span class="hljs-symbol">:reload</span>
-            <span class="hljs-symbol">:reload-all</span>])
+            <span class="hljs-symbol">:as</span> alias]
+    <span class="hljs-symbol">:reload</span>
+    <span class="hljs-symbol">:reload-all</span>)
 
   (<span class="hljs-symbol">:use</span>
     lib.ns
     [lib.ns <span class="hljs-symbol">:only</span> []
-            <span class="hljs-symbol">:rename</span> {}
-            <span class="hljs-symbol">:reload</span>
-            <span class="hljs-symbol">:reload-all</span>])
+            <span class="hljs-symbol">:rename</span> {}]
+    <span class="hljs-symbol">:reload</span>
+    <span class="hljs-symbol">:reload-all</span>)
 
   (<span class="hljs-symbol">:require-macros</span>
     lib.ns
     [lib.ns <span class="hljs-symbol">:refer</span> []
             <span class="hljs-symbol">:rename</span> {}
-            <span class="hljs-symbol">:as</span> alias
-            <span class="hljs-symbol">:reload</span>
-            <span class="hljs-symbol">:reload-all</span>])
+            <span class="hljs-symbol">:as</span> alias]
+    <span class="hljs-symbol">:reload</span>
+    <span class="hljs-symbol">:reload-all</span>)
 
   (<span class="hljs-symbol">:use-macros</span>
     lib.ns
     [lib.ns <span class="hljs-symbol">:only</span> []
-            <span class="hljs-symbol">:rename</span> {}
-            <span class="hljs-symbol">:reload</span>
-            <span class="hljs-symbol">:reload-all</span>]))
+            <span class="hljs-symbol">:rename</span> {}]
+    <span class="hljs-symbol">:reload</span>
+    <span class="hljs-symbol">:reload-all</span>))
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/in-ns">in-ns (repl)</a></li><li><a href="/api/cljs.core/load-namespace">load-namespace (repl)</a></li><li><a href="/api/cljs.core/import">import</a></li><li><a href="/api/cljs.core/require">require</a></li><li><a href="/api/cljs.core/require-macros">require-macros</a></li></ul><hr />Source docstring:<pre>You must currently use the ns form only with the following caveats
 
