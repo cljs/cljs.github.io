@@ -5,4 +5,10 @@ itself (not its value) is returned. The reader macro #'x expands to (var x).</pr
     {<span class="hljs-symbol">:env</span> env
      <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:var-special</span>
      <span class="hljs-symbol">:form</span> form}
-    (<span class="hljs-name">var-ast</span> env sym)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+    (<span class="hljs-name">var-ast</span> env sym)))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/compiler.cljc#L401-L407">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:var-special</span>
+  [{<span class="hljs-symbol">:keys</span> [env var sym meta] <span class="hljs-symbol">:as</span> arg}]
+  {<span class="hljs-symbol">:pre</span> [(<span class="hljs-name">ana/ast?</span> sym) (<span class="hljs-name">ana/ast?</span> meta)]}
+  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [{<span class="hljs-symbol">:keys</span> [name]} (<span class="hljs-symbol">:info</span> var)]
+    (<span class="hljs-name">emit-wrap</span> env
+      (<span class="hljs-name">emits</span> <span class="hljs-string">"new cljs.core.Var(function(){return "</span> (<span class="hljs-name">munge</span> name) <span class="hljs-string">";},"</span>
+        sym <span class="hljs-string">","</span> meta <span class="hljs-string">")"</span>))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

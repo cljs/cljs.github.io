@@ -16,4 +16,26 @@
       <span class="hljs-string">"case* tests must be numbers, strings, or constants"</span>)
     {<span class="hljs-symbol">:env</span> env <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:case*</span> <span class="hljs-symbol">:form</span> form
      <span class="hljs-symbol">:v</span> v <span class="hljs-symbol">:tests</span> tests <span class="hljs-symbol">:thens</span> thens <span class="hljs-symbol">:default</span> default
-     <span class="hljs-symbol">:children</span> (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> [v] tests thens (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> default [default])))}))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+     <span class="hljs-symbol">:children</span> (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> [v] tests thens (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> default [default])))}))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/compiler.cljc#L537-L559">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:case*</span>
+  [{<span class="hljs-symbol">:keys</span> [v tests thens default env]}]
+  (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-symbol">:context</span> env) <span class="hljs-symbol">:expr</span>)
+    (<span class="hljs-name">emitln</span> <span class="hljs-string">"(function(){"</span>))
+  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [gs (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"caseval__"</span>)]
+    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env))
+      (<span class="hljs-name">emitln</span> <span class="hljs-string">"var "</span> gs <span class="hljs-string">";"</span>))
+    (<span class="hljs-name">emitln</span> <span class="hljs-string">"switch ("</span> v <span class="hljs-string">") {"</span>)
+    (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [[ts then] (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> (<span class="hljs-name">interleave</span> tests thens))]
+      (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [test ts]
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">"case "</span> test <span class="hljs-string">":"</span>))
+      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env))
+        (<span class="hljs-name">emitln</span> gs <span class="hljs-string">"="</span> then)
+        (<span class="hljs-name">emitln</span> then))
+      (<span class="hljs-name">emitln</span> <span class="hljs-string">"break;"</span>))
+    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> default
+      (<span class="hljs-name">emitln</span> <span class="hljs-string">"default:"</span>)
+      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env))
+        (<span class="hljs-name">emitln</span> gs <span class="hljs-string">"="</span> default)
+        (<span class="hljs-name">emitln</span> default)))
+    (<span class="hljs-name">emitln</span> <span class="hljs-string">"}"</span>)
+    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env))
+      (<span class="hljs-name">emitln</span> <span class="hljs-string">"return "</span> gs <span class="hljs-string">";})()"</span>))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

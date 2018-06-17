@@ -15,4 +15,13 @@
        <span class="hljs-symbol">:code</span> code
        <span class="hljs-symbol">:tag</span> tag
        <span class="hljs-symbol">:js-op</span> js-op
-       <span class="hljs-symbol">:numeric</span> numeric})))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+       <span class="hljs-symbol">:numeric</span> numeric})))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/compiler.cljc#L1246-L1255">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:js</span>
+  [{<span class="hljs-symbol">:keys</span> [op env code segs args]}]
+  (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> code #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name">.startsWith</span> <span class="hljs-comment">^String</span> (<span class="hljs-name">string/trim</span> code) <span class="hljs-string">"/*"</span>)
+                   <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">gstring/startsWith</span> (<span class="hljs-name">string/trim</span> code) <span class="hljs-string">"/*"</span>)))
+    (<span class="hljs-name">emits</span> code)
+    (<span class="hljs-name">emit-wrap</span> env
+      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> code
+        (<span class="hljs-name">emits</span> code)
+        (<span class="hljs-name">emits</span> (<span class="hljs-name">interleave</span> (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> segs (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> <span class="hljs-literal">nil</span>))
+                           (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> args [<span class="hljs-literal">nil</span>])))))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

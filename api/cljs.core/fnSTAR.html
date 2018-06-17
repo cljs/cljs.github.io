@@ -70,4 +70,83 @@
         (<span class="hljs-name">warning</span> <span class="hljs-symbol">:variadic-max-arity</span> env {<span class="hljs-symbol">:name</span> name-var}))
       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> (<span class="hljs-name">distinct</span> param-counts) param-counts)
         (<span class="hljs-name">warning</span> <span class="hljs-symbol">:overload-arity</span> env {<span class="hljs-symbol">:name</span> name-var})))
-    (<span class="hljs-name">analyze-wrap-meta</span> ast)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+    (<span class="hljs-name">analyze-wrap-meta</span> ast)))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/compiler.cljc#L846-L925">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:fn</span>
+  [{<span class="hljs-symbol">:keys</span> [name env methods max-fixed-arity variadic recur-frames loop-lets]}]
+  <span class="hljs-comment">;;fn statements get erased, serve no purpose and can pollute scope if named</span>
+  (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:statement</span> (<span class="hljs-symbol">:context</span> env))
+    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [loop-locals (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">mapcat</span></span> <span class="hljs-symbol">:params</span> (<span class="hljs-name"><span class="hljs-builtin-name">filter</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> % @(<span class="hljs-symbol">:flag</span> %)) recur-frames))
+                                   (<span class="hljs-name"><span class="hljs-builtin-name">mapcat</span></span> <span class="hljs-symbol">:params</span> loop-lets))
+                           (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> munge)
+                           seq)]
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> loop-locals
+        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
+            (<span class="hljs-name">emits</span> <span class="hljs-string">"return "</span>))
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">"((function ("</span> (<span class="hljs-name">comma-sep</span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> munge loop-locals)) <span class="hljs-string">"){"</span>)
+        (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
+            (<span class="hljs-name">emits</span> <span class="hljs-string">"return "</span>)))
+      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-number">1</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> methods))
+        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> variadic
+          (<span class="hljs-name">emit-variadic-fn-method</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> methods) <span class="hljs-symbol">:name</span> name))
+          (<span class="hljs-name">emit-fn-method</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> methods) <span class="hljs-symbol">:name</span> name)))
+        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [name (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> name (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>))
+              mname (<span class="hljs-name">munge</span> name)
+              maxparams (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> max-key count (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> <span class="hljs-symbol">:params</span> methods))
+              mmap (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> {}
+                     (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [method]
+                            [(<span class="hljs-name">munge</span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> mname <span class="hljs-string">"__"</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> (<span class="hljs-symbol">:params</span> method)))))
+                             method])
+                          methods))
+              ms (<span class="hljs-name"><span class="hljs-builtin-name">sort-by</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> % second <span class="hljs-symbol">:params</span> count) (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> mmap))]
+          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
+            (<span class="hljs-name">emits</span> <span class="hljs-string">"return "</span>))
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">"(function() {"</span>)
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">"var "</span> mname <span class="hljs-string">" = null;"</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [[n meth] ms]
+            (<span class="hljs-name">emits</span> <span class="hljs-string">"var "</span> n <span class="hljs-string">" = "</span>)
+            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:variadic</span> meth)
+              (<span class="hljs-name">emit-variadic-fn-method</span> meth)
+              (<span class="hljs-name">emit-fn-method</span> meth))
+            (<span class="hljs-name">emitln</span> <span class="hljs-string">";"</span>))
+            (<span class="hljs-name">emitln</span> mname <span class="hljs-string">" = function("</span> (<span class="hljs-name">comma-sep</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> variadic
+                                                      (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">butlast</span></span> maxparams) ['var_args])
+                                                      maxparams)) <span class="hljs-string">"){"</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> variadic
+            (<span class="hljs-name">emits</span> <span class="hljs-string">"var "</span>)
+            (<span class="hljs-name">emit</span> (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> maxparams))
+            (<span class="hljs-name">emitln</span> <span class="hljs-string">" = var_args;"</span>))
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">"switch(arguments.length){"</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [[n meth] ms]
+            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:variadic</span> meth)
+              (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name">emitln</span> <span class="hljs-string">"default:"</span>)
+                  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [restarg (<span class="hljs-name">munge</span> (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>))]
+                    (<span class="hljs-name">emitln</span> <span class="hljs-string">"var "</span> restarg <span class="hljs-string">" = null;"</span>)
+                    (<span class="hljs-name">emitln</span> <span class="hljs-string">"if (arguments.length &gt; "</span> max-fixed-arity <span class="hljs-string">") {"</span>)
+                    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a (<span class="hljs-name">emit-arguments-to-array</span> max-fixed-arity)]
+                      (<span class="hljs-name">emitln</span> restarg <span class="hljs-string">" = new cljs.core.IndexedSeq("</span> a <span class="hljs-string">",0,null);"</span>))
+                    (<span class="hljs-name">emitln</span> <span class="hljs-string">"}"</span>)
+                    (<span class="hljs-name">emitln</span> <span class="hljs-string">"return "</span> n <span class="hljs-string">".cljs$core$IFn$_invoke$arity$variadic("</span>
+                            (<span class="hljs-name">comma-sep</span> (<span class="hljs-name"><span class="hljs-builtin-name">butlast</span></span> maxparams))
+                            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> maxparams) <span class="hljs-number">1</span>) <span class="hljs-string">", "</span>)
+                            restarg <span class="hljs-string">");"</span>)))
+              (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pcnt (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> (<span class="hljs-symbol">:params</span> meth))]
+                (<span class="hljs-name">emitln</span> <span class="hljs-string">"case "</span> pcnt <span class="hljs-string">":"</span>)
+                (<span class="hljs-name">emitln</span> <span class="hljs-string">"return "</span> n <span class="hljs-string">".call(this"</span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> pcnt) <span class="hljs-literal">nil</span>
+                                                     (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> <span class="hljs-string">","</span> (<span class="hljs-name">comma-sep</span> (<span class="hljs-name"><span class="hljs-builtin-name">take</span></span> pcnt maxparams)))) <span class="hljs-string">");"</span>))))
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">"}"</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [arg-count-js (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> 'self__ (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> ms first val <span class="hljs-symbol">:params</span> first <span class="hljs-symbol">:name</span>))
+                               <span class="hljs-string">"(arguments.length - 1)"</span>
+                               <span class="hljs-string">"arguments.length"</span>)]
+            (<span class="hljs-name">emitln</span> <span class="hljs-string">"throw(new Error('Invalid arity: ' + "</span> arg-count-js <span class="hljs-string">"));"</span>))
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">"};"</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> variadic
+            (<span class="hljs-name">emitln</span> mname <span class="hljs-string">".cljs$lang$maxFixedArity = "</span> max-fixed-arity <span class="hljs-string">";"</span>)
+            (<span class="hljs-name">emitln</span> mname <span class="hljs-string">".cljs$lang$applyTo = "</span> (<span class="hljs-name">some</span> #(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[n m] %] (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:variadic</span> m) n)) ms) <span class="hljs-string">".cljs$lang$applyTo;"</span>))
+          (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [[n meth] ms]
+            (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [c (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> (<span class="hljs-symbol">:params</span> meth))]
+              (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:variadic</span> meth)
+                (<span class="hljs-name">emitln</span> mname <span class="hljs-string">".cljs$core$IFn$_invoke$arity$variadic = "</span> n <span class="hljs-string">".cljs$core$IFn$_invoke$arity$variadic;"</span>)
+                (<span class="hljs-name">emitln</span> mname <span class="hljs-string">".cljs$core$IFn$_invoke$arity$"</span> c <span class="hljs-string">" = "</span> n <span class="hljs-string">";"</span>))))
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">"return "</span> mname <span class="hljs-string">";"</span>)
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">"})()"</span>)))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> loop-locals
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">";})("</span> (<span class="hljs-name">comma-sep</span> loop-locals) <span class="hljs-string">"))"</span>)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

@@ -25,4 +25,9 @@ returned.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescr
                     js/Number number
                     js/Function function
                     js/Boolean boolean} name)
-                 name))})))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+                 name))})))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/compiler.cljc#L1111-L1116">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:new</span>
+  [{<span class="hljs-symbol">:keys</span> [ctor args env]}]
+  (<span class="hljs-name">emit-wrap</span> env
+             (<span class="hljs-name">emits</span> <span class="hljs-string">"(new "</span> ctor <span class="hljs-string">"("</span>
+                    (<span class="hljs-name">comma-sep</span> args)
+                    <span class="hljs-string">"))"</span>)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
