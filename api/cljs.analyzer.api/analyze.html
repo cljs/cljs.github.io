@@ -3,7 +3,7 @@
   compilation ns)}, and form, returns an expression object (a map
   containing at least :form, :op and :env keys). If expr has any (immediately)
   nested exprs, must have :children [exprs...] entry. This will
-  facilitate code walking without knowing the details of the op set.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/analyzer/api.cljc#L69-L87">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn analyze
+  facilitate code walking without knowing the details of the op set.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff2499/src/main/clojure/cljs/analyzer/api.cljc#L69-L87">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn analyze
      ([env form] (analyze env form nil))
      ([env form name] (analyze env form name nil))
      ([env form name opts]

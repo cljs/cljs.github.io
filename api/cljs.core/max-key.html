@@ -2,7 +2,7 @@
 <p><code>(k x)</code> should return a number.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/max">max</a></li><li><a href="/api/cljs.core/min-key">min-key</a></li></ul><hr />Source docstring:<pre>Returns the x for which (k x), a number, is greatest.
 
-If there are multiple such xs, the last one is returned.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/cljs/cljs/core.cljs#L9411-L9418">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> max-key
+If there are multiple such xs, the last one is returned.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff2499/src/main/cljs/cljs/core.cljs#L9411-L9418">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> max-key
   ([k x] x)
   ([k x y] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name">k</span> x) (<span class="hljs-name">k</span> y)) x y))
   ([k x y &amp; more]

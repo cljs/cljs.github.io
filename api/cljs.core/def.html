@@ -41,7 +41,7 @@ c
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/analyzer.cljc#L1496-L1668">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff2499/src/main/clojure/cljs/analyzer.cljc#L1496-L1668">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
   [op env form _ _]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> form) <span class="hljs-number">4</span>)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Too many arguments to def"</span>)))
@@ -213,7 +213,7 @@ not supplied, the root binding of the var is unaffected.</pre><div>Parser code @
             {<span class="hljs-symbol">:tag</span> tag}))
         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> dynamic) {<span class="hljs-symbol">:dynamic</span> <span class="hljs-literal">true</span>})
         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> export-as) {<span class="hljs-symbol">:export</span> export-as})
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> init-expr) {<span class="hljs-symbol">:children</span> [init-expr]})))))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff249/src/main/clojure/cljs/compiler.cljc#L688-L723">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:def</span>
+        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> init-expr) {<span class="hljs-symbol">:children</span> [init-expr]})))))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff2499/src/main/clojure/cljs/compiler.cljc#L688-L723">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:def</span>
   [{<span class="hljs-symbol">:keys</span> [name var init env doc jsdoc export test var-ast]}]
   <span class="hljs-comment">;; We only want to emit if an init is supplied, this is to avoid dead code</span>
   <span class="hljs-comment">;; elimination issues. The REPL is the exception to this rule.</span>
