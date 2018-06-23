@@ -7,7 +7,7 @@ of the <code>try</code> expression.</p>
 <code>:default</code> to catch all types of exceptions.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/try">try</a></li><li><a href="/api/cljs.core/finally">finally</a></li><li><a href="/api/cljs.core/throw">throw</a></li></ul><hr />Source docstring:<pre>catch-clause => (catch classname name expr*)
 finally-clause => (finally expr*)
-Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff2499/src/main/clojure/cljs/analyzer.cljc#L1419-L1478">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
+Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/clojure/cljs/analyzer.cljc#L1419-L1478">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
   [op env [_ &amp; body <span class="hljs-symbol">:as</span> form] name _]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [catchenv (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> env [<span class="hljs-symbol">:context</span>] #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> %) <span class="hljs-symbol">:return</span> %))
         catch? (<span class="hljs-name">every-pred</span> seq? #(<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> %) 'catch))
@@ -66,7 +66,7 @@ Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="http
      <span class="hljs-symbol">:finally</span> finally
      <span class="hljs-symbol">:name</span> e
      <span class="hljs-symbol">:catch</span> catch
-     <span class="hljs-symbol">:children</span> [try catch finally]}))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.312-12-g68ff2499/src/main/clojure/cljs/compiler.cljc#L935-L950">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:try</span>
+     <span class="hljs-symbol">:children</span> [try catch finally]}))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/clojure/cljs/compiler.cljc#L935-L950">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:try</span>
   [{<span class="hljs-symbol">:keys</span> [env try catch name finally]}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [context (<span class="hljs-symbol">:context</span> env)]
     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> name finally)
@@ -77,7 +77,7 @@ Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="http
         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> name
           (<span class="hljs-name">emits</span> <span class="hljs-string">"catch ("</span> (<span class="hljs-name">munge</span> name) <span class="hljs-string">"){"</span> catch <span class="hljs-string">"}"</span>))
         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> finally
-          (<span class="hljs-name"><span class="hljs-builtin-name">assert</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> <span class="hljs-symbol">:constant</span> (<span class="hljs-symbol">:op</span> finally)) <span class="hljs-string">"finally block cannot contain constant"</span>)
+          (<span class="hljs-name"><span class="hljs-builtin-name">assert</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> <span class="hljs-symbol">:const</span> (<span class="hljs-symbol">:op</span> finally)) <span class="hljs-string">"finally block cannot contain constant"</span>)
           (<span class="hljs-name">emits</span> <span class="hljs-string">"finally {"</span> finally <span class="hljs-string">"}"</span>))
         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> context)
           (<span class="hljs-name">emits</span> <span class="hljs-string">"})()"</span>)))
