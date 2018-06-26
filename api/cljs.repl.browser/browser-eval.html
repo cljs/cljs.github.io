@@ -3,7 +3,7 @@ result of the evaluation. The map will contain the keys :type and :value. :type 
 :success, :exception, or :error. :success means that the JavaScript was evaluated without
 exception and :value will contain the return value of the evaluation. :exception means that
 there was an exception in the browser while evaluating the JavaScript and :value will
-contain the error message. :error means that some other error has occured.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/clojure/cljs/repl/browser.clj#L272-L288">clojurescript:src/main/clojure/cljs/repl/browser.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> browser-eval
+contain the error message. :error means that some other error has occured.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/clojure/cljs/repl/browser.clj#L272-L288">clojurescript:src/main/clojure/cljs/repl/browser.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> browser-eval
   [form]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [return-value (<span class="hljs-name"><span class="hljs-builtin-name">promise</span></span>)]
     (<span class="hljs-name">send-for-eval</span> form

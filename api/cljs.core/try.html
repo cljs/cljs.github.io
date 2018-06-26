@@ -12,7 +12,7 @@ expressions will be evaluated for their side effects.</p>
 <p><code>try</code> is one of ClojureScript&#39;s <a href="http://clojure.org/special_forms">special forms</a>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/catch">catch</a></li><li><a href="/api/cljs.core/finally">finally</a></li><li><a href="/api/cljs.core/throw">throw</a></li></ul><hr />Source docstring:<pre>catch-clause => (catch classname name expr*)
 finally-clause => (finally expr*)
-Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/clojure/cljs/analyzer.cljc#L1419-L1478">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
+Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/clojure/cljs/analyzer.cljc#L1419-L1478">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'try
   [op env [_ &amp; body <span class="hljs-symbol">:as</span> form] name _]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [catchenv (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> env [<span class="hljs-symbol">:context</span>] #(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> %) <span class="hljs-symbol">:return</span> %))
         catch? (<span class="hljs-name">every-pred</span> seq? #(<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> %) 'catch))
@@ -71,7 +71,7 @@ Catches and handles JavaScript exceptions.</pre><div>Parser code @ <a href="http
      <span class="hljs-symbol">:finally</span> finally
      <span class="hljs-symbol">:name</span> e
      <span class="hljs-symbol">:catch</span> catch
-     <span class="hljs-symbol">:children</span> [try catch finally]}))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/clojure/cljs/compiler.cljc#L935-L950">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:try</span>
+     <span class="hljs-symbol">:children</span> [try catch finally]}))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/clojure/cljs/compiler.cljc#L935-L950">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:try</span>
   [{<span class="hljs-symbol">:keys</span> [env try catch name finally]}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [context (<span class="hljs-symbol">:context</span> env)]
     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> name finally)

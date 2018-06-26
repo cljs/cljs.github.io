@@ -27,7 +27,7 @@ which must be a unary function, is called with the result of the
 predicate as its argument, the result of that call being the return
 value of condp. A single default expression can follow the clauses,
 and its value will be returned if no clause matches. If no default
-expression is provided and no clause matches, an Error is thrown.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/clojure/cljs/core.cljc#L2189-L2228">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> condp
+expression is provided and no clause matches, an Error is thrown.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/clojure/cljs/core.cljc#L2189-L2228">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> condp
   [pred expr &amp; clauses]
   (<span class="hljs-name">core/let</span> [gpred (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"pred__"</span>)
              gexpr (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"expr__"</span>)

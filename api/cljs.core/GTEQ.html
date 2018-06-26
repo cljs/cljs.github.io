@@ -13,7 +13,7 @@ previous one, false otherwise.</p>
 <span class="hljs-comment">;;=&gt; true</span>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/GT">></a></li></ul><hr />Source docstring:<pre>Returns non-nil if nums are in monotonically non-increasing order,
-otherwise false.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/cljs/cljs/core.cljs#L2646-L2656">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^boolean</span> &gt;=
+otherwise false.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/cljs/cljs/core.cljs#L2646-L2656">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^boolean</span> &gt;=
   ([x] <span class="hljs-literal">true</span>)
   ([x y] (<span class="hljs-name">cljs.core/&gt;=</span> x y))
   ([x y &amp; more]
@@ -21,7 +21,7 @@ otherwise false.</pre><div>Function code @ <a href="https://github.com/clojure/c
      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> more)
        (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> y (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> more) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> more))
        (<span class="hljs-name">cljs.core/&gt;=</span> y (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> more)))
-     <span class="hljs-literal">false</span>)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.329-4-ga7c0899e/src/main/clojure/cljs/core.cljc#L1142-L1145">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> &gt;=
+     <span class="hljs-literal">false</span>)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/clojure/cljs/core.cljc#L1142-L1145">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> &gt;=
   ([x] <span class="hljs-literal">true</span>)
   ([x y] (<span class="hljs-name">bool-expr</span> (<span class="hljs-name">core/list</span> 'js* <span class="hljs-string">"(~{} &gt;= ~{})"</span> x y)))
   ([x y &amp; more] `(<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;=</span></span> ~x ~y) (<span class="hljs-name"><span class="hljs-builtin-name">&gt;=</span></span> ~y ~@more))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
