@@ -3,7 +3,8 @@ returns symbols identifying namespaces not Namespace instances.</pre></div></div
   (one of :statement, :expr, :return), :ns (a symbol naming the
   compilation ns)}, and form, returns an expression object (a map
   containing at least :form, :op and :env keys). If expr has any (immediately)
-  nested exprs, must have :children [exprs...] entry. This will
+  nested exprs, must have :children entry. This must be a vector of keywords naming
+  the immediately nested fields mapped to an expr or vector of exprs. This will
   facilitate code walking without knowing the details of the op set.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="analyze-file"><strong>analyze-file</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.analyzer.api/analyze-file">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(analyze-file f)</code></div><div><code>(analyze-file f opts)</code></div><div><code>(analyze-file state f opts)</code></div></div><div class="sep"><pre>Given a java.io.File, java.net.URL or a string identifying a resource on the
    classpath attempt to analyze it.
 

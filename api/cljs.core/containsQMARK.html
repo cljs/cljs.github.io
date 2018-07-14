@@ -37,7 +37,7 @@ used for this purpose:</p>
 returns false.  Note that for numerically indexed collections like
 vectors and arrays, this tests if the numeric key is within the
 range of indexes. 'contains?' operates constant or logarithmic time;
-it will not perform a linear search for a value.  See also 'some'.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/cljs/cljs/core.cljs#L2317-L2326">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^boolean</span> contains?
+it will not perform a linear search for a value.  See also 'some'.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-24-g0773689e/src/main/cljs/cljs/core.cljs#L2321-L2330">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^boolean</span> contains?
   [coll v]
   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> (<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> coll v lookup-sentinel) lookup-sentinel)
     <span class="hljs-literal">false</span>

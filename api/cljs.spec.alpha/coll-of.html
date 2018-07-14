@@ -7,7 +7,7 @@ avoiding rebuilding when possible.
 
 Same options as 'every'.
 
-See also - every, map-of</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-1-g9a8196eb/src/main/cljs/cljs/spec/alpha.cljc#L277-L290">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> coll-of
+See also - every, map-of</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-24-g0773689e/src/main/cljs/cljs/spec/alpha.cljc#L277-L290">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> coll-of
   [pred &amp; opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [desc `(<span class="hljs-name">coll-of</span> ~(<span class="hljs-name">res</span> &amp;env pred) ~@(<span class="hljs-name">res-kind</span> &amp;env opts))]
     `(<span class="hljs-name">every</span> ~pred :<span class="hljs-symbol">:conform-all</span> <span class="hljs-literal">true</span> :<span class="hljs-symbol">:describe</span> '~desc ~@opts)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
