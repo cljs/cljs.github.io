@@ -28,7 +28,7 @@ For example, to register function specs for the symbol function:
   :args (s/alt :separate (s/cat :ns string? :n string?)
                :str string?
                :sym symbol?)
-  :ret symbol?)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-24-g0773689e/src/main/cljs/cljs/spec/alpha.cljc#L406-L442">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fdef
+  :ret symbol?)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/cljs/cljs/spec/alpha.cljc#L408-L444">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fdef
   [fn-sym &amp; specs]
   (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> _speced_vars conj
     (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> (<span class="hljs-name">ns-qualify</span> &amp;env fn-sym)

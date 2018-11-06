@@ -34,14 +34,14 @@ invokes the fn you provide, enabling arbitrary stubbing and mocking.
 
 :spec can be used in combination with :stub or :replace.
 
-Returns a collection of syms naming the vars instrumented.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-24-g0773689e/src/main/cljs/cljs/spec/test/alpha.cljc#L69-L127">clojurescript:src/main/cljs/cljs/spec/test/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> instrument
+Returns a collection of syms naming the vars instrumented.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/cljs/cljs/spec/test/alpha.cljc#L101-L159">clojurescript:src/main/cljs/cljs/spec/test/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> instrument
   ([]
-   `(<span class="hljs-name">instrument</span> '[~@(<span class="hljs-name">#?</span>(<span class="hljs-symbol">:clj</span>  s/speced-vars
-                        <span class="hljs-symbol">:cljs</span> cljs.spec.alpha$macros/speced-vars))]))
+   `(<span class="hljs-name">instrument</span> ^:<span class="hljs-symbol">:no-eval</span> '[~@(<span class="hljs-name">#?</span>(<span class="hljs-symbol">:clj</span>  s/speced-vars
+                                   <span class="hljs-symbol">:cljs</span> cljs.spec.alpha$macros/speced-vars))]))
   ([xs]
    `(<span class="hljs-name">instrument</span> ~xs <span class="hljs-literal">nil</span>))
   ([sym-or-syms opts]
-   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [syms (<span class="hljs-name">sym-or-syms-&gt;syms</span> (<span class="hljs-name"><span class="hljs-builtin-name">eval</span></span> sym-or-syms))
+   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [syms (<span class="hljs-name">sym-or-syms-&gt;syms</span> (<span class="hljs-name">form-&gt;sym-or-syms</span> sym-or-syms))
          opts-sym (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"opts"</span>)]
      `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [~opts-sym ~opts]
         (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span>

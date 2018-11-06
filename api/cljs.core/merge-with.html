@@ -5,11 +5,11 @@ result val-in-latter)</code>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/merge">merge</a></li></ul><hr />Source docstring:<pre>Returns a map that consists of the rest of the maps conj-ed onto
 the first.  If a key occurs in more than one map, the mapping(s)
 from the latter (left-to-right) will be combined with the mapping in
-the result by calling (f val-in-result val-in-latter).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.339-24-g0773689e/src/main/cljs/cljs/core.cljs#L9012-L9026">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> merge-with
+the result by calling (f val-in-result val-in-latter).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/cljs/cljs/core.cljs#L9013-L9027">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> merge-with
   [f &amp; maps]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some</span> identity maps)
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [merge-entry (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m e]
-                        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [k (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> e) v (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> e)]
+                        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [k (<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> e) v (<span class="hljs-name"><span class="hljs-builtin-name">val</span></span> e)]
                           (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> m k)
                             (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> m k (<span class="hljs-name">f</span> (<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> m k) v))
                             (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> m k v))))
