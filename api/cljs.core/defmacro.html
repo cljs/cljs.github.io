@@ -14,7 +14,7 @@ for the optimized &quot;ClojureScript JVM&quot; compiler and the newer bootstrap
 &quot;ClojureScript JS&quot; compiler.</p>
 <p>In order to create macros that are portable between either compiler version,
 you must place macros in a <code>.cljc</code> file, but a <code>.clj</code> file is sufficient if no
-[reader conditionals][doc:syntax/cond] are needed.  Why would they be needed?
+<a href="/api/syntax/cond">reader conditionals</a> are needed.  Why would they be needed?
 Because ClojureScript macro namespaces may be handed off to Clojure for
 evaluation, depending on the compiler version:</p>
 <table>
@@ -33,8 +33,7 @@ evaluation, depending on the compiler version:</p>
 <td>ClojureScript</td>
 </tr>
 </tbody></table>
-<p>Please see the examples section below for a more concrete look.
-[doc:syntax/cond]:/api/syntax/cond</p>
+<p>Please see the examples section below for a more concrete look.</p>
 </div><hr /><h3>Examples:</h3><div><p>Here is a <code>str-&gt;int</code> macro that works for either ClojureScript compiler
 version.  It simply expands to a <code>js/parseInt</code> call:</p>
 <pre><code class="language-clj"><span class="hljs-comment">;; in macros.clj</span>

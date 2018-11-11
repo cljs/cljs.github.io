@@ -3,14 +3,13 @@
 <li><code>#?@(:clj [...] :cljs [...])</code></li>
 </ul>
 </div><hr /><h3>Details:</h3><div><p>(Only allowed in <code>.cljc</code> files or the REPL)</p>
-<p>Like [<code>#? reader conditional</code>][doc:syntax/cond], except:</p>
+<p>Like <a class="code-link" href="/api/syntax/cond"><code>#? reader conditional</code></a>, except:</p>
 <ul>
 <li>each conditional value must be a sequence,</li>
 <li>the selected sequence is spliced into the parent form,</li>
 <li>and it must have a parent form to be spliced into (not top level).</li>
 </ul>
-<p><code>(def #?@(:cljs [foo 1])</code> is read as <code>(def foo 1)</code>.
-[doc:syntax/cond]:/api/syntax/cond</p>
+<p><code>(def #?@(:cljs [foo 1])</code> is read as <code>(def foo 1)</code>.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">'(def #?@(:cljs [a 1]
           :clj  [b 2]))
 ;;=&gt; (def a 1)</code></pre>

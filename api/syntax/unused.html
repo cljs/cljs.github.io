@@ -7,10 +7,7 @@
 serve as a name for a value.  It is just convention to reserve this name for
 values that are not to be referenced.</p>
 <p>Multiple <code>_</code>&#39;s can be used since duplicate names shadow those that come before.
-Thus, <code>_</code> actually holds the value of its last binding.
-[doc:cljs.core/add-watch]:/api/cljs.core/add-watch
-[doc:cljs.core/let]:/api/cljs.core/let
-[doc:syntax/destructure-vector]:/api/syntax/destructure-vector</p>
+Thus, <code>_</code> actually holds the value of its last binding.</p>
 </div><hr /><h3>Examples:</h3><div><p>Create a function whose first two arguments are ignored:</p>
 <pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [_ _ a]
   (<span class="hljs-name">println</span> a))</code></pre>

@@ -5,10 +5,8 @@ itself.  It is therefore helpful to be aware of the following subtle differences
 <li><code>&#39;foo</code> =&gt; returns the symbol foo (which is just a name)</li>
 <li><code>#&#39;foo</code> =&gt; returns the foo var itself (for retrieving metadata like where it was defined)</li>
 </ul>
-</div><hr /><h3>Details:</h3><div><p><code>#&#39;foo</code> is sugar for [<code>(var foo)</code>][doc:cljs.core/var].</p>
-<p>Mainly used in conjunction with [<code>meta</code>][doc:cljs.core/meta].
-[doc:cljs.core/var]:/api/cljs.core/var
-[doc:cljs.core/meta]:/api/cljs.core/meta</p>
+</div><hr /><h3>Details:</h3><div><p><code>#&#39;foo</code> is sugar for <a class="code-link" href="/api/cljs.core/var"><code>(var foo)</code></a>.</p>
+<p>Mainly used in conjunction with <a class="code-link" href="/api/cljs.core/meta"><code>meta</code></a>.</p>
 </div><hr /><h3>Examples:</h3><div><p>Access the metadata of a var:</p>
 <pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> x <span class="hljs-number">123</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> #'x)

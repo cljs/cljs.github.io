@@ -53,10 +53,9 @@ following forms:</p>
 <li><code>(fn [...])</code></li>
 <li><code>(loop [...])</code></li>
 </ul>
-<p>Destructure maps can be nested, even in place of names in [destructure
-vectors][doc:syntax/destructure-vector].</p>
-<p>Also works for namespaced keys and symbols: <a href="https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys">https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys</a>
-[doc:syntax/destructure-vector]:/api/syntax/destructure-vector</p>
+<p>Destructure maps can be nested, even in place of names in <a href="/api/syntax/destructure-vector">destructure
+vectors</a>.</p>
+<p>Also works for namespaced keys and symbols: <a href="https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys">https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys</a></p>
 </div><hr /><h3>Examples:</h3><div><p>Use in place of function arguments:</p>
 <pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> print-point
   [{<span class="hljs-symbol">:keys</span> [x y z]}]

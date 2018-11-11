@@ -12,8 +12,7 @@ to the arguments.</p>
 <p>Note that <code>#(1)</code> does not create a function that returns <code>1</code>, for the same
 reason that <code>(1)</code> does evaluate to <code>1</code>.</p>
 <p><code>#()</code> forms cannot be nested, since this would create an ambiguity between the
-automatically assigned <code>%</code> argument names.
-[doc:syntax/arg]:/api/syntax/arg</p>
+automatically assigned <code>%</code> argument names.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> <span class="hljs-number">2</span> %) [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 <span class="hljs-comment">;;=&gt; (2 4 6)</span>
 

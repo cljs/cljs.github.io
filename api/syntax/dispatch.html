@@ -10,80 +10,46 @@ standalone forms:</p>
 </thead>
 <tbody><tr>
 <td align="left">string-related</td>
-<td align="left">[<code>&quot;&quot; string</code>][doc:syntax/string]</td>
-<td align="left">[<code>#&quot;&quot; regex</code>][doc:syntax/regex]</td>
+<td align="left"><a class="code-link" href="/api/syntax/string"><code>&quot;&quot; string</code></a></td>
+<td align="left"><a class="code-link" href="/api/syntax/regex"><code>#&quot;&quot; regex</code></a></td>
 </tr>
 <tr>
 <td align="left">code-related</td>
-<td align="left">[<code>() list</code>][doc:syntax/list]</td>
-<td align="left">[<code>#() function</code>][doc:syntax/function]</td>
+<td align="left"><a class="code-link" href="/api/syntax/list"><code>() list</code></a></td>
+<td align="left"><a class="code-link" href="/api/syntax/function"><code>#() function</code></a></td>
 </tr>
 <tr>
 <td align="left">lookup-related</td>
-<td align="left">[<code>{} map</code>][doc:syntax/map]</td>
-<td align="left">[<code>#{} set</code>][doc:syntax/set]</td>
+<td align="left"><a class="code-link" href="/api/syntax/map"><code>{} map</code></a></td>
+<td align="left"><a class="code-link" href="/api/syntax/set"><code>#{} set</code></a></td>
 </tr>
 <tr>
 <td align="left">quote-related</td>
-<td align="left">[<code>&#39; quote</code>][doc:syntax/quote]</td>
-<td align="left">[<code>#&#39; var</code>][doc:syntax/var]</td>
+<td align="left"><a class="code-link" href="/api/syntax/quote"><code>&#39; quote</code></a></td>
+<td align="left"><a class="code-link" href="/api/syntax/var"><code>#&#39; var</code></a></td>
 </tr>
 <tr>
 <td align="left">ignore-related</td>
-<td align="left">[<code>_ unused</code>][doc:syntax/unused]</td>
-<td align="left">[<code>#_ ignore</code>][doc:syntax/ignore]</td>
+<td align="left"><a class="code-link" href="/api/syntax/unused"><code>_ unused</code></a></td>
+<td align="left"><a class="code-link" href="/api/syntax/ignore"><code>#_ ignore</code></a></td>
 </tr>
 <tr>
 <td align="left">name-related</td>
-<td align="left">[<code>foo (symbol)</code>][doc:syntax/symbol]</td>
-<td align="left">[<code>#foo (tagged literal)</code>][doc:syntax/tagged-literal]</td>
+<td align="left"><a class="code-link" href="/api/syntax/symbol"><code>foo (symbol)</code></a></td>
+<td align="left"><a class="code-link" href="/api/syntax/tagged-literal"><code>#foo (tagged literal)</code></a></td>
 </tr>
 <tr>
 <td align="left">conditional-related</td>
-<td align="left">[<code>? predicate</code>][doc:syntax/predicate]</td>
-<td align="left">[<code>#? reader conditional</code>][doc:syntax/cond]</td>
+<td align="left"><a class="code-link" href="/api/syntax/predicate"><code>? predicate</code></a></td>
+<td align="left"><a class="code-link" href="/api/syntax/cond"><code>#? reader conditional</code></a></td>
 </tr>
 </tbody></table>
-<p>The &quot;symbolic values&quot; [<code>##Inf</code>][doc:syntax/Inf], [<code>##-Inf</code>][doc:syntax/-Inf], [<code>##NaN</code>][doc:syntax/NaN] do
+<p>The &quot;symbolic values&quot; <a class="code-link" href="/api/syntax/Inf"><code>##Inf</code></a>, <a class="code-link" href="/api/syntax/-Inf"><code>##-Inf</code></a>, <a class="code-link" href="/api/syntax/NaN"><code>##NaN</code></a> do
 not follow this pattern, but the additional number sign in <code>##</code> serves as a
-mnemonic for these special numerical values.
-[doc:syntax/symbol]:/api/syntax/symbol
-[doc:syntax/-Inf]:/api/syntax/-Inf
-[doc:syntax/cond]:/api/syntax/cond
-[doc:syntax/string]:/api/syntax/string
-[doc:syntax/quote]:/api/syntax/quote
-[doc:syntax/Inf]:/api/syntax/Inf
-[doc:syntax/regex]:/api/syntax/regex
-[doc:syntax/unused]:/api/syntax/unused
-[doc:syntax/set]:/api/syntax/set
-[doc:syntax/tagged-literal]:/api/syntax/tagged-literal
-[doc:syntax/function]:/api/syntax/function
-[doc:syntax/map]:/api/syntax/map
-[doc:syntax/list]:/api/syntax/list
-[doc:syntax/NaN]:/api/syntax/NaN
-[doc:syntax/predicate]:/api/syntax/predicate
-[doc:syntax/ignore]:/api/syntax/ignore
-[doc:syntax/var]:/api/syntax/var</p>
+mnemonic for these special numerical values.</p>
 </div><hr /><h3>Details:</h3><div><p><code>#</code> is a prefix character that is called the dispatch macro, because it allows
 the behavior of the reader to be dispatched to another table, indexed by the
-character following the <code>#</code>.
-[doc:syntax/symbol]:/api/syntax/symbol
-[doc:syntax/-Inf]:/api/syntax/-Inf
-[doc:syntax/cond]:/api/syntax/cond
-[doc:syntax/string]:/api/syntax/string
-[doc:syntax/quote]:/api/syntax/quote
-[doc:syntax/Inf]:/api/syntax/Inf
-[doc:syntax/regex]:/api/syntax/regex
-[doc:syntax/unused]:/api/syntax/unused
-[doc:syntax/set]:/api/syntax/set
-[doc:syntax/tagged-literal]:/api/syntax/tagged-literal
-[doc:syntax/function]:/api/syntax/function
-[doc:syntax/map]:/api/syntax/map
-[doc:syntax/list]:/api/syntax/list
-[doc:syntax/NaN]:/api/syntax/NaN
-[doc:syntax/predicate]:/api/syntax/predicate
-[doc:syntax/ignore]:/api/syntax/ignore
-[doc:syntax/var]:/api/syntax/var</p>
+character following the <code>#</code>.</p>
 </div><hr /><h3>Examples:</h3><div><p>The dispatch macro is not usable on its own.  Rather, it dispatches to other
 syntax forms.</p>
 <p>Regular expression:</p>

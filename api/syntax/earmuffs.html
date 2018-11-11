@@ -3,13 +3,10 @@
 <li><code>(def ^:dynamic *foo* 1)</code></li>
 </ul>
 </div><hr /><h3>Details:</h3><div><p>Dynamic vars are global vars that you intend to temporarily rebind with
-[<code>binding</code>][doc:cljs.core/binding].</p>
+<a class="code-link" href="/api/cljs.core/binding"><code>binding</code></a>.</p>
 <p>NOTE: Sometimes, the core library uses the earmuffs convention for non-dynamic
-special global vars (e.g. [<code>*clojurescript-version*</code>][doc:cljs.core/<em>clojurescript-version</em>],
-[<code>*main-cli-fn*</code>][doc:cljs.core/<em>main-cli-fn</em>]).
-[doc:cljs.core/binding]:/api/cljs.core/binding
-[doc:cljs.core/<em>main-cli-fn</em>]:/api/cljs.core/STARmain-cli-fnSTAR
-[doc:cljs.core/<em>clojurescript-version</em>]:/api/cljs.core/STARclojurescript-versionSTAR</p>
+special global vars (e.g. <a class="code-link" href="/api/cljs.core/STARclojurescript-versionSTAR"><code>*clojurescript-version*</code></a>,
+<a class="code-link" href="/api/cljs.core/STARmain-cli-fnSTAR"><code>*main-cli-fn*</code></a>).</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *foo* <span class="hljs-number">1</span>)
 
 (<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> print-foo []

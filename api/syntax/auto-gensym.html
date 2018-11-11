@@ -5,13 +5,11 @@
 </div><hr /><h3>Details:</h3><div><p>Auto-generates a unique symbol with the given prefix, particularly one that
 will not shadow any existing symbol in its resulting scope.  This is intended
 as a convenience for creating hygienic macros without calling
-[<code>gensym</code>][doc:cljs.core/gensym] directly.</p>
+<a class="code-link" href="/api/cljs.core/gensym"><code>gensym</code></a> directly.</p>
 <p>Every symbol matching a unique <code>foo#</code> symbol within a syntax quoted form will
 be replaced with the same generated symbol.</p>
 <p>``(foo# foo#)<code>=&gt;</code>(foo__138__auto__ foo__138__auto__)`</p>
-<p>Namespace-qualified symbols <code>foo/bar#</code> are not replaced.
-[doc:cljs.core/gensym]:/api/cljs.core/gensym
-[doc:syntax/syntax-quote]:/api/syntax/syntax-quote</p>
+<p>Namespace-qualified symbols <code>foo/bar#</code> are not replaced.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">`foo#
 ;;=&gt; foo__142__auto__</code></pre>
 <p>Namespace-qualified symbols are left alone.</p>

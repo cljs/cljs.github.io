@@ -15,29 +15,24 @@ API is identical of course.</li>
 </div><hr /><div style="position: relative;"><div class="g" id="STAR"><strong>*</strong> - function/macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STAR">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(*)</code></div><div><code>(* x)</code></div><div><code>(* x y)</code></div><div><code>(* x y & more)</code></div></div><div class="sep"><pre>Returns the product of nums. (*) returns 1.</pre></div></div><hr /><div style="position: relative;"><div class="g" id="STAR1"><strong>*1</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STAR1">full details ></a></div><div class="sep"></div><div><p>Holds the result of the last REPL expression.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STAR2"><strong>*2</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STAR2">full details ></a></div><div class="sep"></div><div><p>Holds the result of the second to last REPL expression.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STAR3"><strong>*3</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STAR3">full details ></a></div><div class="sep"></div><div><p>Holds the result of the third to last REPL expression.</p>
-</div></div><hr /><div style="position: relative;"><div class="g" id="STARassertSTAR"><strong>*assert*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARassertSTAR">full details ></a></div><div class="sep"></div><div><p>Internally used to remove all calls to [<code>assert</code>][doc:cljs.core/assert] when the compiler
-option [<code>:elide-asserts</code>][doc:compiler-options/elide-asserts] is set to true.  Not to be used
-manually.
-[doc:cljs.core/assert]:/api/cljs.core#assert
-[doc:compiler-options/elide-asserts]:/api/compiler-options#elide-asserts</p>
+</div></div><hr /><div style="position: relative;"><div class="g" id="STARassertSTAR"><strong>*assert*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARassertSTAR">full details ></a></div><div class="sep"></div><div><p>Internally used to remove all calls to <a class="code-link" href="/api/cljs.core#assert"><code>assert</code></a> when the compiler
+option <a class="code-link" href="/api/compiler-options#elide-asserts"><code>:elide-asserts</code></a> is set to true.  Not to be used
+manually.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STARclojurescript-versionSTAR"><strong>*clojurescript-version*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARclojurescript-versionSTAR">full details ></a></div><div class="sep"></div><div><p>A string indicating the current ClojureScript version.</p>
 </div></div><hr /><div style="position: relative;"><div class="r" id="STARcommand-line-argsSTAR"><strong>*command-line-args*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARcommand-line-argsSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>A sequence of the supplied command line arguments, or nil if
 none were supplied</pre></div></div><hr /><div style="position: relative;"><div class="g" id="STARe"><strong>*e</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARe">full details ></a></div><div class="sep"></div><div><p>Holds the result of the last exception.  REPL only</p>
 </div></div><hr /><div style="position: relative;"><div class="r" id="STARevalSTAR"><strong>*eval*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARevalSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>Runtime environments may provide a way to evaluate ClojureScript
 forms. Whatever function *eval* is bound to will be passed any forms which
 should be evaluated.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="STARexec-tap-fnSTAR"><strong>*exec-tap-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARexec-tap-fnSTAR">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(*exec-tap-fn* f)</code></div></div><div class="sep"><pre>Arranges to have tap functions executed via the supplied f, a
-function of no arguments. Returns true if successful, false otherwise.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="STARflush-on-newlineSTAR"><strong>*flush-on-newline*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARflush-on-newlineSTAR">full details ></a></div><div class="sep"></div><div><p>Indicates whether [<code>flush</code>][doc:cljs.core/flush] is called after a newline is printed.
-[doc:cljs.core/flush]:/api/cljs.core#flush</p>
+function of no arguments. Returns true if successful, false otherwise.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="STARflush-on-newlineSTAR"><strong>*flush-on-newline*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARflush-on-newlineSTAR">full details ></a></div><div class="sep"></div><div><p>Indicates whether <a class="code-link" href="/api/cljs.core#flush"><code>flush</code></a> is called after a newline is printed.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STARloaded-libsSTAR"><strong>*loaded-libs*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARloaded-libsSTAR">full details ></a></div><div class="sep"></div><div><p>A set of strings indicating the namespaces currently loaded in the REPL.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STARmain-cli-fnSTAR"><strong>*main-cli-fn*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARmain-cli-fnSTAR">full details ></a></div><div class="sep"></div><div><p>When compiled for a command-line target, whatever function
 <code>*main-cli-fn*</code> is set to will be called with the command-line
 argv as arguments.</p>
-</div></div><hr /><div style="position: relative;"><div class="g" id="STARnsSTAR"><strong>*ns*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARnsSTAR">full details ></a></div><div class="sep"></div><div><p>Var bound to a [<code>Namespace</code>][doc:cljs.core/Namespace] object representing the current namespace.
-Only used for bootstrapping.
-[doc:cljs.core/Namespace]:/api/cljs.core#Namespace</p>
-</div></div><hr /><div style="position: relative;"><div class="y" id="STARoutSTAR"><strong>*out*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARoutSTAR">full details ></a></div><div class="sep"></div><div><p>Currently unused. Expected to refer to an [<code>IWriter</code>][doc:cljs.core/IWriter] object
-representing standard output for print operations, as it is in Clojure.
-[doc:cljs.core/IWriter]:/api/cljs.core#IWriter</p>
+</div></div><hr /><div style="position: relative;"><div class="g" id="STARnsSTAR"><strong>*ns*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARnsSTAR">full details ></a></div><div class="sep"></div><div><p>Var bound to a <a class="code-link" href="/api/cljs.core#Namespace"><code>Namespace</code></a> object representing the current namespace.
+Only used for bootstrapping.</p>
+</div></div><hr /><div style="position: relative;"><div class="y" id="STARoutSTAR"><strong>*out*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARoutSTAR">full details ></a></div><div class="sep"></div><div><p>Currently unused. Expected to refer to an <a class="code-link" href="/api/cljs.core#IWriter"><code>IWriter</code></a> object
+representing standard output for print operations, as it is in Clojure.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="STARprint-dupSTAR"><strong>*print-dup*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-dupSTAR">full details ></a></div><div class="sep"></div><div><p>Not implemented. In clojure, it can be bound to true to preserve object types
 when printing, allowing successful object <em>duplication</em> when read back.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="STARprint-err-fnSTAR"><strong>*print-err-fn*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-err-fnSTAR">full details ></a></div><div class="sep"></div><div><p>A var representing the function used to print error output, which may differ
@@ -53,19 +48,15 @@ set it to print to console/stdout.</p>
 (<span class="hljs-name">println</span> <span class="hljs-string">"printed to stdout in Node, or to browser console"</span>)</code></pre>
 </div></div><hr /><div style="position: relative;"><div class="r" id="STARprint-fn-bodiesSTAR"><strong>*print-fn-bodies*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-fn-bodiesSTAR">full details ></a></div><div class="sep"></div><div class="sep"><pre>*print-fns-bodies* controls whether functions print their source or
  only their names.</pre></div></div><hr /><div style="position: relative;"><div class="g" id="STARprint-lengthSTAR"><strong>*print-length*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-lengthSTAR">full details ></a></div><div class="sep"></div><div><p>Limits the number of items in each collection to print.  Defaults to <code>nil</code> indicating
-no limit.  A <code>...</code> is printed for items not shown.
-[doc:cljs.core/range]:/api/cljs.core#range</p>
+no limit.  A <code>...</code> is printed for items not shown.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STARprint-levelSTAR"><strong>*print-level*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-levelSTAR">full details ></a></div><div class="sep"></div><div><p>Descend only <code>n</code> levels deep when printing a nested object. Defaults to <code>nil</code>
 indicating no limit.  A <code>#</code> is printed for objects at level <code>n</code>.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STARprint-metaSTAR"><strong>*print-meta*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-metaSTAR">full details ></a></div><div class="sep"></div><div><p>Determines if metadata should be included when printing an object. Defaults to false.</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STARprint-namespace-mapsSTAR"><strong>*print-namespace-maps*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-namespace-mapsSTAR">full details ></a></div><div class="sep"></div><div><p>Determines if maps are printed as namespace maps when all keys
 have the same namespace.  Defaults to false.</p>
-</div></div><hr /><div style="position: relative;"><div class="y" id="STARprint-newlineSTAR"><strong>*print-newline*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-newlineSTAR">full details ></a></div><div class="sep"></div><div><p>Set to false by [<code>enable-console-print!</code>][doc:cljs.core/enable-console-print!] to prevent
-[<code>println</code>][doc:cljs.core/println] and [<code>prn</code>][doc:cljs.core/prn] from duplicating the newline
-already appended by JavaScript console.
-[doc:cljs.core/enable-console-print!]:/api/cljs.core#enable-console-printBANG
-[doc:cljs.core/prn]:/api/cljs.core#prn
-[doc:cljs.core/println]:/api/cljs.core#println</p>
+</div></div><hr /><div style="position: relative;"><div class="y" id="STARprint-newlineSTAR"><strong>*print-newline*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-newlineSTAR">full details ></a></div><div class="sep"></div><div><p>Set to false by <a class="code-link" href="/api/cljs.core#enable-console-printBANG"><code>enable-console-print!</code></a> to prevent
+<a class="code-link" href="/api/cljs.core#println"><code>println</code></a> and <a class="code-link" href="/api/cljs.core#prn"><code>prn</code></a> from duplicating the newline
+already appended by JavaScript console.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="STARprint-readablySTAR"><strong>*print-readably*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARprint-readablySTAR">full details ></a></div><div class="sep"></div><div><p>Determines if strings are printed with quotes and escape characters. &quot;Readably&quot;
 means the printed string can be copy-pasted back into the reader to produce the
 same value.</p>
@@ -78,59 +69,26 @@ same value.</p>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">[<code>pr</code>][doc:cljs.core/pr]</td>
-<td align="left">[<code>print</code>][doc:cljs.core/print]</td>
+<td align="left"><a class="code-link" href="/api/cljs.core#pr"><code>pr</code></a></td>
+<td align="left"><a class="code-link" href="/api/cljs.core#print"><code>print</code></a></td>
 </tr>
 <tr>
-<td align="left">[<code>pr-str</code>][doc:cljs.core/pr-str]</td>
-<td align="left">[<code>print-str</code>][doc:cljs.core/print-str]</td>
+<td align="left"><a class="code-link" href="/api/cljs.core#pr-str"><code>pr-str</code></a></td>
+<td align="left"><a class="code-link" href="/api/cljs.core#print-str"><code>print-str</code></a></td>
 </tr>
 <tr>
-<td align="left">[<code>prn</code>][doc:cljs.core/prn]</td>
-<td align="left">[<code>println</code>][doc:cljs.core/println]</td>
+<td align="left"><a class="code-link" href="/api/cljs.core#prn"><code>prn</code></a></td>
+<td align="left"><a class="code-link" href="/api/cljs.core#println"><code>println</code></a></td>
 </tr>
 <tr>
-<td align="left">[<code>prn-str</code>][doc:cljs.core/prn-str]</td>
-<td align="left">[<code>println-str</code>][doc:cljs.core/println-str]</td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/pr]:/api/cljs.core#pr</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/prn]:/api/cljs.core#prn</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/pr-str]:/api/cljs.core#pr-str</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/print]:/api/cljs.core#print</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/println-str]:/api/cljs.core#println-str</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/println]:/api/cljs.core#println</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/print-str]:/api/cljs.core#print-str</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">[doc:cljs.core/prn-str]:/api/cljs.core#prn-str</td>
-<td align="left"></td>
+<td align="left"><a class="code-link" href="/api/cljs.core#prn-str"><code>prn-str</code></a></td>
+<td align="left"><a class="code-link" href="/api/cljs.core#println-str"><code>println-str</code></a></td>
 </tr>
 </tbody></table>
 </div></div><hr /><div style="position: relative;"><div class="g" id="STARtargetSTAR"><strong>*target*</strong> - dynamic var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARtargetSTAR">full details ></a></div><div class="sep"></div><div><p>A string indicating the current ClojureScript target (e.g. <code>&quot;default&quot;</code> for browsers,
 <code>&quot;nodejs&quot;</code> for Node)</p>
-</div></div><hr /><div style="position: relative;"><div class="r" id="STARunchecked-arraysSTAR"><strong>*unchecked-arrays*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARunchecked-arraysSTAR">full details ></a></div><div class="sep"></div></div><hr /><div style="position: relative;"><div class="y" id="STARunchecked-ifSTAR"><strong>*unchecked-if*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARunchecked-ifSTAR">full details ></a></div><div class="sep"></div><div><p>Used internally to allow [<code>if</code>][doc:cljs.core/if] to use JavaScript truthiness rather
-than Clojure truthiness, for the performance benefit of saving a function call.
-[doc:cljs.core/if]:/api/cljs.core#if</p>
+</div></div><hr /><div style="position: relative;"><div class="r" id="STARunchecked-arraysSTAR"><strong>*unchecked-arrays*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARunchecked-arraysSTAR">full details ></a></div><div class="sep"></div></div><hr /><div style="position: relative;"><div class="y" id="STARunchecked-ifSTAR"><strong>*unchecked-if*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARunchecked-ifSTAR">full details ></a></div><div class="sep"></div><div><p>Used internally to allow <a class="code-link" href="/api/cljs.core#if"><code>if</code></a> to use JavaScript truthiness rather
+than Clojure truthiness, for the performance benefit of saving a function call.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="STARwarn-on-inferSTAR"><strong>*warn-on-infer*</strong> - var</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/STARwarn-on-inferSTAR">full details ></a></div><div class="sep"></div><div><p>For interop purposes, this is used in conjunction with the compiler option
 <a class="code-link" href="/api/compiler-options#infer-externs"><code>:infer-externs</code></a> to emit a warning whenever a symbol is in danger of being
 renamed in advanced <a class="code-link" href="/api/compiler-options#optimizations"><code>:optimizations</code></a> (i.e. compiler cannot infer an extern).
@@ -219,9 +177,8 @@ contains val at index.</pre></div></div><hr /><div style="position: relative;"><
 val(s). When applied to a transient vector, sets the val at index.
 Note - index must be <= (count vector). Returns coll.</pre></div></div><hr /><div style="position: relative;"><div class="g" id="assoc-in"><strong>assoc-in</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/assoc-in">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(assoc-in m [k & ks] v)</code></div></div><div class="sep"><pre>Associates a value in a nested associative structure, where ks is a
 sequence of keys and v is the new value and returns a new nested structure.
-If any levels do not exist, hash-maps will be created.</pre></div></div><hr /><div style="position: relative;"><div class="g" id="associativeQMARK"><strong>associative?</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/associativeQMARK">full details ></a></div><div class="sep"></div><div><p>Determines if the given collection implements [<code>IAssociative</code>][doc:cljs.core/IAssociative]
-(e.g. maps and vectors).
-[doc:cljs.core/IAssociative]:/api/cljs.core#IAssociative</p>
+If any levels do not exist, hash-maps will be created.</pre></div></div><hr /><div style="position: relative;"><div class="g" id="associativeQMARK"><strong>associative?</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/associativeQMARK">full details ></a></div><div class="sep"></div><div><p>Determines if the given collection implements <a class="code-link" href="/api/cljs.core#IAssociative"><code>IAssociative</code></a>
+(e.g. maps and vectors).</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="atom"><strong>atom</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/atom">full details ></a></div><div class="sep"></div><div><p><code>(atom x)</code> - creates atom with initial value of <code>x</code>
 <code>(atom x opts)</code> - adds metadata or validator to atom</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="binding"><strong>binding</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/binding">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(binding bindings & body)</code></div></div><div class="sep"><pre>binding => var-symbol init-expr
@@ -582,9 +539,8 @@ Bootstrap only.</pre></div></div><hr /><div style="position: relative;"><div cla
 Bootstrap only.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="find-ns-obj"><strong>find-ns-obj</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/find-ns-obj">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(find-ns-obj ns)</code></div></div><div class="sep"><pre>Bootstrap only.</pre></div></div><hr /><div style="position: relative;"><div class="g" id="first"><strong>first</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/first">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(first coll)</code></div></div><div class="sep"><pre>Returns the first item in the collection. Calls seq on its
 argument. If coll is nil, returns nil.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="flatten"><strong>flatten</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/flatten">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(flatten x)</code></div></div><div class="sep"><pre>Takes any nested combination of sequential things (lists, vectors,
 etc.) and returns their contents as a single, flat sequence.
-(flatten nil) returns nil.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="float"><strong>float</strong> - function/macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/float">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(float x)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="floatQMARK"><strong>float?</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/floatQMARK">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(float? x)</code></div></div><div class="sep"><pre>Returns true for JavaScript numbers, false otherwise.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="floats"><strong>floats</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/floats">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(floats x)</code></div></div></div><hr /><div style="position: relative;"><div class="y" id="flush"><strong>flush</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/flush">full details ></a></div><div class="sep"></div><div><p>Flushes the output stream that is the current value of [<code>*out*</code>][doc:cljs.core/<em>out</em>].
-(Currently unimplemented)
-[doc:cljs.core/<em>out</em>]:/api/cljs.core#STARoutSTAR</p>
+(flatten nil) returns nil.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="float"><strong>float</strong> - function/macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/float">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(float x)</code></div></div></div><hr /><div style="position: relative;"><div class="r" id="floatQMARK"><strong>float?</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/floatQMARK">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(float? x)</code></div></div><div class="sep"><pre>Returns true for JavaScript numbers, false otherwise.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="floats"><strong>floats</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/floats">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(floats x)</code></div></div></div><hr /><div style="position: relative;"><div class="y" id="flush"><strong>flush</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/flush">full details ></a></div><div class="sep"></div><div><p>Flushes the output stream that is the current value of <a class="code-link" href="/api/cljs.core#STARoutSTAR"><code>*out*</code></a>.
+(Currently unimplemented)</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="fn"><strong>fn</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/fn">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(fn & sigs)</code></div></div><div class="sep"><pre>params => positional-params* , or positional-params* & next-param
 positional-param => binding-form
 next-param => binding-form
@@ -608,13 +564,9 @@ supplied, the name is prefix# where # is some unique number. If
 prefix is not supplied, the prefix is 'G__'.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="get"><strong>get</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/get">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get o k)</code></div><div><code>(get o k not-found)</code></div></div><div class="sep"><pre>Returns the value mapped to key, not-found or nil if key not present.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="get-in"><strong>get-in</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/get-in">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get-in m ks)</code></div><div><code>(get-in m ks not-found)</code></div></div><div class="sep"><pre>Returns the value in a nested associative structure,
 where ks is a sequence of keys. Returns nil if the key is not present,
 or the not-found value if supplied.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="get-method"><strong>get-method</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/get-method">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get-method multifn dispatch-val)</code></div></div><div class="sep"><pre>Given a multimethod and a dispatch value, returns the dispatch fn
-that would apply to that value, or nil if none apply and no default</pre></div></div><hr /><div style="position: relative;"><div class="y" id="get-validator"><strong>get-validator</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/get-validator">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get-validator iref)</code></div></div><div class="sep"><pre>Gets the validator-fn for a var/ref/agent/atom.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="goog-define"><strong>goog-define</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/goog-define">full details ></a></div><div class="sep"></div><div><p>Use instead of [<code>def</code>][doc:cljs.core/def] when you want to configure its value at
-compile-time with the [<code>:closure-defines</code>][doc:compiler-options/closure-defines] compiler option.
-Must be a string, number, or boolean.
-[doc:cljs.core/identical?]:/api/cljs.core#identicalQMARK
-[doc:compiler-options/optimizations]:/api/compiler-options#optimizations
-[doc:compiler-options/closure-defines]:/api/compiler-options#closure-defines
-[doc:cljs.core/def]:/api/cljs.core#def</p>
+that would apply to that value, or nil if none apply and no default</pre></div></div><hr /><div style="position: relative;"><div class="y" id="get-validator"><strong>get-validator</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/get-validator">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(get-validator iref)</code></div></div><div class="sep"><pre>Gets the validator-fn for a var/ref/agent/atom.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="goog-define"><strong>goog-define</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/goog-define">full details ></a></div><div class="sep"></div><div><p>Use instead of <a class="code-link" href="/api/cljs.core#def"><code>def</code></a> when you want to configure its value at
+compile-time with the <a class="code-link" href="/api/compiler-options#closure-defines"><code>:closure-defines</code></a> compiler option.
+Must be a string, number, or boolean.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="group-by"><strong>group-by</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/group-by">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(group-by f coll)</code></div></div><div class="sep"><pre>Returns a map of the elements of coll keyed by the result of
 f on each element. The value at each key will be a vector of the
 corresponding elements, in the order they appeared in coll.</pre></div></div><hr /><div style="position: relative;"><div class="r" id="halt-when"><strong>halt-when</strong> - function</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/halt-when">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(halt-when pred)</code></div><div><code>(halt-when pred retf)</code></div></div><div class="sep"><pre>Returns a transducer that ends transduction when pred returns true
@@ -684,8 +636,7 @@ seq calls.</pre></div></div><hr /><div style="position: relative;"><div class="y
 
 Evaluates the exprs in a lexical context in which the symbols in
 the binding-forms are bound to their respective init-exprs or parts
-therein.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="letSTAR"><strong>let*</strong> - special form</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/letSTAR">full details ></a></div><div class="sep"></div><div><p>Internally used by [<code>let</code>][doc:cljs.core/let], which should be used instead.
-[doc:cljs.core/let]:/api/cljs.core#let</p>
+therein.</pre></div></div><hr /><div style="position: relative;"><div class="y" id="letSTAR"><strong>let*</strong> - special form</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/letSTAR">full details ></a></div><div class="sep"></div><div><p>Internally used by <a class="code-link" href="/api/cljs.core#let"><code>let</code></a>, which should be used instead.</p>
 </div></div><hr /><div style="position: relative;"><div class="y" id="letfn"><strong>letfn</strong> - macro</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/cljs.core/letfn">full details ></a></div><div class="sep"></div><div class="sep"><div><code>(letfn fnspecs & body)</code></div></div><div class="sep"><pre>fnspec ==> (fname [params*] exprs) or (fname ([params*] exprs)+)
 
 Takes a vector of function specs and a body, and generates a set of

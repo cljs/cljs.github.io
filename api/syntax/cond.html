@@ -33,8 +33,7 @@ depending on the ClojureScript compiler version:</p>
 </tr>
 </tbody></table>
 <p>Thus, reader conditionals allow us to account for differences in both versions
-of the compiler.  See [<code>defmacro</code>][doc:cljs.core/defmacro] for details.
-[doc:cljs.core/defmacro]:/api/cljs.core/defmacro</p>
+of the compiler.  See <a class="code-link" href="/api/cljs.core/defmacro"><code>defmacro</code></a> for details.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">#?(:clj "Clojure" :cljs "ClojureScript")
 ;;=&gt; "ClojureScript"</code></pre>
 <p>A function that works in Clojure and ClojureScript (<a href="https://github.com/lymingtonprecision/route-ccrs/blob/c579aea05504736f2cfbd31c3c755f7e25fdad77/src/route_ccrs/manufacturing_methods.cljc#L8-L10">source</a>):</p>
