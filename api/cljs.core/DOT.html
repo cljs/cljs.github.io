@@ -28,44 +28,38 @@ use the following sugar:</p>
     </tr>
   </tbody>
 </table></div><hr /><h3>Examples:</h3><div><p>We can access the JavaScript properties of a string:</p>
-<pre><code class="lang-js"><span class="hljs-comment">// JavaScript</span>
+<pre><code class="language-js"><span class="hljs-comment">// JavaScript</span>
 <span class="hljs-keyword">var</span> m = <span class="hljs-string">"Hello World"</span>;
 m.length;
-<span class="hljs-comment">//=&gt; 11</span>
-</code></pre>
-<pre><code class="lang-clj"><span class="hljs-comment">;; ClojureScript</span>
+<span class="hljs-comment">//=&gt; 11</span></code></pre>
+<pre><code class="language-clj"><span class="hljs-comment">;; ClojureScript</span>
 (<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> m <span class="hljs-string">"Hello World"</span>)
 (<span class="hljs-name">.-length</span> m)
-<span class="hljs-comment">;;=&gt; 11</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; 11</span></code></pre>
 <p>We can also call member functions on the string:</p>
-<pre><code class="lang-js"><span class="hljs-comment">// JavaScript</span>
+<pre><code class="language-js"><span class="hljs-comment">// JavaScript</span>
 m.toUpperCase();
 <span class="hljs-comment">//=&gt; "HELLO WORLD"</span>
 
 m.replace(<span class="hljs-string">"H"</span>, <span class="hljs-string">""</span>);
-<span class="hljs-comment">//=&gt; "ello World";</span>
-</code></pre>
-<pre><code class="lang-clj"><span class="hljs-comment">;; ClojureScript</span>
+<span class="hljs-comment">//=&gt; "ello World";</span></code></pre>
+<pre><code class="language-clj"><span class="hljs-comment">;; ClojureScript</span>
 (<span class="hljs-name">.toUpperCase</span> m)
 <span class="hljs-comment">;;=&gt; "HELLO WORLD"</span>
 
 (<span class="hljs-name">.replace</span> m <span class="hljs-string">"H"</span> <span class="hljs-string">""</span>)
-<span class="hljs-comment">;;=&gt; "ello World"</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; "ello World"</span></code></pre>
 <p>Create a JavaScript object <code>o</code>:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> o #js {<span class="hljs-symbol">:foo</span> <span class="hljs-string">"bar"</span>})
-</code></pre>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> o #js {<span class="hljs-symbol">:foo</span> <span class="hljs-string">"bar"</span>})</code></pre>
 <p>You can get the value at property <code>&quot;foo&quot;</code> with any of the following:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> o -foo)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> o -foo)
 <span class="hljs-comment">;;=&gt; "bar"</span>
 
 (<span class="hljs-name">.-foo</span> o)
 <span class="hljs-comment">;;=&gt; "bar"</span>
 
 (<span class="hljs-name">aget</span> o <span class="hljs-string">"foo"</span>)
-<span class="hljs-comment">;;=&gt; "bar"</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; "bar"</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/DOTDOT">..</a></li><li><a href="/api/cljs.core/aget">aget</a></li></ul><hr />Source docstring:<pre>The instance member form works for methods and fields.
 They all expand into calls to the dot operator at macroexpansion time.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/analyzer.cljc#L3163-L3165">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse '.
   [_ env [_ target &amp; [field &amp; member+] <span class="hljs-symbol">:as</span> form] _ _]

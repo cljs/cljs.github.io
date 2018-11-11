@@ -11,9 +11,8 @@ ClojureScript equivalents. For example this means that the following
 is perfectly valid ClojureScript:</p>
 </li>
 </ul>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> foo.bar
-  (<span class="hljs-symbol">:require</span> [clojure.spec <span class="hljs-symbol">:refer</span> [fspec]]))
-</code></pre>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> foo.bar
+  (<span class="hljs-symbol">:require</span> [clojure.spec <span class="hljs-symbol">:refer</span> [fspec]]))</code></pre>
 <p>  This feature and the previous one should significantly reduce reader
   conditional usage in ns forms.</p>
 <ul>
@@ -30,7 +29,7 @@ a very big thank you to everyone that has contributed.</p>
 <ul>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-1508">CLJS-1508</a>: Extend ns form to support :rename option</li>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-1507">CLJS-1507</a>: Implicit macro loading: macro var inference in :refer</li>
-<li><a href="http://dev.clojure.org/jira/browse/CLJS-1692">CLJS-1692</a>: Autoalias clojure.<em> to exisiting cljs.</em> namespaces if
+<li><a href="http://dev.clojure.org/jira/browse/CLJS-1692">CLJS-1692</a>: Autoalias clojure.* to exisiting cljs.* namespaces if
 possible</li>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-1350">CLJS-1350</a>: Compiler support for browser REPL</li>
 <li><a href="http://dev.clojure.org/jira/browse/CLJS-1729">CLJS-1729</a>: Support <code>use</code> special function in REPLs</li>

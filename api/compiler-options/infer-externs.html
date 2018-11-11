@@ -3,16 +3,17 @@
 Enable <a class="code-link" href="/api/cljs.core/STARwarn-on-inferSTAR"><code>*warn-on-infer*</code></a> to be warned of failed inferences.
 Successful inferences are written to <code>inferred_externs.js</code> in
 <a class="code-link" href="/api/compiler-options/output-dir"><code>:output-dir</code></a>.</p>
-<pre><code class="lang-clj"><span class="hljs-symbol">:infer-externs</span> <span class="hljs-literal">true</span>
-</code></pre>
-</div><hr /><h3>Details:</h3><div><p>See <a href="https://clojurescript.org/guides/externs">Externs</a> for more details.</p>
+<pre><code class="language-clj"><span class="hljs-symbol">:infer-externs</span> <span class="hljs-literal">true</span></code></pre>
+</div><hr /><h3>Details:</h3><div><p>See <a href="https://clojurescript.org/guides/externs">Externs</a> for more details.
+[doc:cljs.core/.]:/api/cljs.core/DOT
+[doc:compiler-options/output-dir]:/api/compiler-options/output-dir
+[doc:compiler-options/externs]:/api/compiler-options/externs
+[doc:cljs.core/<em>warn-on-infer</em>]:/api/cljs.core/STARwarn-on-inferSTAR</p>
 </div><hr /><h3>Examples:</h3><div><p>Given the following cljs code</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> wrap-baz [<span class="hljs-comment">^js/Foo.Bar</span> x]
-  (<span class="hljs-name">.baz</span> x))
-</code></pre>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> wrap-baz [<span class="hljs-comment">^js/Foo.Bar</span> x]
+  (<span class="hljs-name">.baz</span> x))</code></pre>
 <p>these externs will be created in <code>inferred_externs.js</code>:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> Foo = {};
+<pre><code class="language-js"><span class="hljs-keyword">var</span> Foo = {};
 Foo.Bar = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
-Foo.Bar.prototype.baz = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
-</code></pre>
+Foo.Bar.prototype.baz = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/STARwarn-on-inferSTAR">*warn-on-infer*</a></li><li><a href="/api/compiler-options/externs">:externs</a></li></ul><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

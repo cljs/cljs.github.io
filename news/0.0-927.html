@@ -9,12 +9,10 @@ development, please continue to use Git.</p>
 <pre><code>(defproject foo &quot;1.0.0-SNAPSHOT&quot;
   :description &quot;FIXME: write description&quot;
   :dependencies [[org.clojure/clojure &quot;1.3.0&quot;]
-                 [org.clojure/clojurescript &quot;0.0-927&quot;]])
-</code></pre><p>To start immediately without waiting for Maven Central, add Sonatype
+                 [org.clojure/clojurescript &quot;0.0-927&quot;]])</code></pre><p>To start immediately without waiting for Maven Central, add Sonatype
 OSS to your public repositories like this:</p>
 <pre><code>  :repositories {&quot;sonatype-oss&quot;
-                 &quot;http://oss.sonatype.org/content/groups/public/&quot;}
-</code></pre><h2 id="about-version-numbers">About Version Numbers</h2>
+                 &quot;http://oss.sonatype.org/content/groups/public/&quot;}</code></pre><h2 id="about-version-numbers">About Version Numbers</h2>
 <p>ClojureScript has no &quot;release&quot; versions yet. Instead we have a
 revision number, calculated as the number of commits on the master
 branch since the beginning of the project. ClojureScript is currently

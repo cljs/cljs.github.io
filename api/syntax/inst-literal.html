@@ -6,27 +6,24 @@
 <li><code>#inst &quot;yyyy-mm-ddThh:mm:ss-hh:mm&quot;</code> - specify negative time zone offset</li>
 <li><code>#inst &quot;yyyy-mm-ddThh:mm:ss+hh:mm&quot;</code> - specify positive time zone offset</li>
 </ul>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">#inst "1985-04-12"
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">#inst "1985-04-12"
 ;;=&gt; #inst "1985-04-12T00:00:00.000-00:00"
 
 #inst "1985-04-12T23:20:50.52Z"
-;;=&gt; #inst "1985-04-12T23:20:50.520-00:00"
-</code></pre>
+;;=&gt; #inst "1985-04-12T23:20:50.520-00:00"</code></pre>
 <p>Dates can be tested for order, as native JavaScript Dates can:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #inst <span class="hljs-string">"2005-01-20"</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #inst <span class="hljs-string">"2005-01-20"</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> b #inst <span class="hljs-string">"2005-01-21"</span>)
 
 (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> a b)
-<span class="hljs-comment">;;=&gt; true</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; true</span></code></pre>
 <p>Dates can be tested for equality, unlike JavaScript Dates.  (ClojureScript
 extends <code>js/Date</code> type with <code>IEquiv</code> protocol to allow this.)</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #inst <span class="hljs-string">"2012-06-13"</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #inst <span class="hljs-string">"2012-06-13"</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> b #inst <span class="hljs-string">"2012-06-13"</span>)
 
 (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> a b)
-<span class="hljs-comment">;;=&gt; true</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; true</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/time">time</a></li><li><a href="/api/syntax/tagged-literal"># tagged literal</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/tagged_literals.cljc#L44-L51">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-inst
      [form]
      (when-not (string? form)

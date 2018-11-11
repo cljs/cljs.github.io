@@ -4,15 +4,15 @@
 </ul>
 </div><hr /><h3>Details:</h3><div><p>Queues are the only core collection type that requires a tagged literal to
 create, while the other collections have built-in delimiters <code>()</code> <code>[]</code> <code>{}</code> <code>#{}</code>.</p>
-<p>See <a class="code-link" href="/api/cljs.core/PersistentQueue"><code>PersistentQueue</code></a> for data structure details.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">#queue []
+<p>See [<code>PersistentQueue</code>][doc:cljs.core/PersistentQueue] for data structure details.
+[doc:cljs.core/PersistentQueue]:/api/cljs.core/PersistentQueue</p>
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">#queue []
 ;;=&gt; #queue []
 
 #queue [1 2 3]
-;;=&gt; #queue [1 2 3]
-</code></pre>
+;;=&gt; #queue [1 2 3]</code></pre>
 <p>Some operations:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> q #queue [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> q #queue [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 <span class="hljs-comment">;;=&gt; #queue [1 2 3]</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> q <span class="hljs-number">4</span>)
@@ -22,8 +22,7 @@ create, while the other collections have built-in delimiters <code>()</code> <co
 <span class="hljs-comment">;;=&gt; #queue [2 3]</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> q)
-<span class="hljs-comment">;;=&gt; 1</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; 1</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/list">() list</a></li><li><a href="/api/syntax/vector">[] vector</a></li><li><a href="/api/syntax/map">{} map</a></li><li><a href="/api/syntax/set">#{} set</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/tagged_literals.cljc#L13-L21">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-queue
   [form]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> form)

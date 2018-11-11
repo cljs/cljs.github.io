@@ -8,26 +8,29 @@ already be included on the page:</p>
 <li><code>:entries</code> - namespaces to include (modules must have no entries in common)</li>
 <li><code>:depends-on</code> - modules expected to be included on the page beforehand</li>
 </ul>
-<pre><code class="lang-clj"><span class="hljs-symbol">:modules</span>
+<pre><code class="language-clj"><span class="hljs-symbol">:modules</span>
 {<span class="hljs-symbol">:foo</span> {<span class="hljs-symbol">:output-to</span> <span class="hljs-string">"js/foo.js"</span> <span class="hljs-symbol">:entries</span> #{<span class="hljs-string">"my.foo"</span>}}
  <span class="hljs-symbol">:bar</span> {<span class="hljs-symbol">:output-to</span> <span class="hljs-string">"js/bar.js"</span> <span class="hljs-symbol">:entries</span> #{<span class="hljs-string">"my.bar"</span>} <span class="hljs-symbol">:depends-on</span> #{<span class="hljs-symbol">:foo</span>}}
  <span class="hljs-symbol">:baz</span> {<span class="hljs-symbol">:output-to</span> <span class="hljs-string">"js/baz.js"</span> <span class="hljs-symbol">:entries</span> #{<span class="hljs-string">"my.baz"</span>} <span class="hljs-symbol">:depends-on</span> #{<span class="hljs-symbol">:bar</span>}}
 
  <span class="hljs-symbol">:cljs-base</span> <span class="hljs-comment">;; &lt;-- leftover namespaces are placed here for you</span>
- {<span class="hljs-symbol">:output-to</span> <span class="hljs-string">"js/cljs_base.js"</span>}} <span class="hljs-comment">;; &lt;-- specify to change base output</span>
-</code></pre>
-</div><hr /><h3>Details:</h3><div><p>(Only supported with simple and advanced <a class="code-link" href="/api/compiler-options/optimizations"><code>:optimizations</code></a>).</p>
+ {<span class="hljs-symbol">:output-to</span> <span class="hljs-string">"js/cljs_base.js"</span>}} <span class="hljs-comment">;; &lt;-- specify to change base output</span></code></pre>
+</div><hr /><h3>Details:</h3><div><p>(Only supported with simple and advanced [<code>:optimizations</code>][doc:compiler-options/optimizations]).</p>
 <p>Including a module&#39;s <code>:output-to</code> file on a page will let you run anything
 inside the namespaces listed in <code>:entries</code>, granted you first include on the
 page any files in this module&#39;s <code>:depends-on</code> entry if present. <code>:cljs-base</code>
 is usually an implicit entry in <code>:depends-on</code>.</p>
 <p><code>:cljs-base</code> is the default module output to
-<a class="code-link" href="/api/compiler-options/output-dir"><code>:output-dir</code></a><code>/cljs_base.js</code>, with an implicit <code>:entries</code>
+[<code>:output-dir</code>][doc:compiler-options/output-dir]<code>/cljs_base.js</code>, with an implicit <code>:entries</code>
 containing all namespaces in the build not included by the other modules.</p>
 <p>A module&#39;s <code>:entries</code> must not intersect those of another (i.e. modules comprise
 a formal <a href="https://en.wikipedia.org/wiki/Partition_of_a_set">partition</a> of
 the project&#39;s namespaces).</p>
-<p>Set the top-level <a class="code-link" href="/api/compiler-options/source-map"><code>:source-map</code></a> to <code>true</code> to build source
+<p>Set the top-level [<code>:source-map</code>][doc:compiler-options/source-map] to <code>true</code> to build source
 maps for all modules.</p>
-<p>For dynamic module loading at runtime, see <a href="https://github.com/bendyworks/conwip-modules">conwip-modules</a>.</p>
+<p>For dynamic module loading at runtime, see <a href="https://github.com/bendyworks/conwip-modules">conwip-modules</a>.
+[doc:compiler-options/optimizations]:/api/compiler-options/optimizations
+[doc:compiler-options/output-dir]:/api/compiler-options/output-dir
+[doc:compiler-options/source-map]:/api/compiler-options/source-map
+[doc:compiler-options/output-to]:/api/compiler-options/output-to</p>
 </div><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

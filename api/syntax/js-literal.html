@@ -6,20 +6,18 @@
 </div><hr /><h3>Details:</h3><div><p>Data in the form of a map <code>{}</code> or vector <code>[]</code> must follow the <code>#js</code> tag, which
 will be converted at compile-time to a JavaScript object or array, respectively.</p>
 <p>This will not implicitly convert nested data into JavaScript objects or arrays.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">#js {:foo 1 :bar 2}
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">#js {:foo 1 :bar 2}
 ;;=&gt; #js {:foo 1, :bar 2}
 
 #js [1 2 3]
-;;=&gt; #js [1 2 3]
-</code></pre>
+;;=&gt; #js [1 2 3]</code></pre>
 <p>For readability, it is sometimes preferable to use <code>clj-&gt;js</code> rather than nested
 <code>#js</code> tags.</p>
-<pre><code class="lang-clj">#js {:foo #js {:bar 1}}
+<pre><code class="language-clj">#js {:foo #js {:bar 1}}
 ;;=&gt; #js {:foo #js {:bar 1}}
 
 (clj-&gt;js {:foo {:bar 1}})
-;;=&gt; #js {:foo #js {:bar 1}}
-</code></pre>
+;;=&gt; #js {:foo #js {:bar 1}}</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/js-obj">js-obj</a></li><li><a href="/api/cljs.core/array">array</a></li><li><a href="/api/cljs.core/clj-GTjs">clj->js</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/tagged_literals.cljc#L70-L85">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read-js
   [form]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> form) (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> form))

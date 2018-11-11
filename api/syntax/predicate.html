@@ -7,9 +7,13 @@ Examples:</p>
 <li><a class="code-link" href="/api/cljs.core/nilQMARK"><code>nil?</code></a></li>
 </ul>
 </div><hr /><h3>Details:</h3><div><p>Predicate functions are presumably pure (not having any side-effects on state).</p>
-<p>It is sometimes used to name boolean values as well, not just predicate functions.</p>
+<p>It is sometimes used to name boolean values as well, not just predicate functions.
+[doc:cljs.core/empty?]:/api/cljs.core/emptyQMARK
+[doc:cljs.core/contains?]:/api/cljs.core/containsQMARK
+[doc:cljs.core/even?]:/api/cljs.core/evenQMARK
+[doc:cljs.core/nil?]:/api/cljs.core/nilQMARK</p>
 </div><hr /><h3>Examples:</h3><div><p>Create a <code>divisible?</code> predicate:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> divisible? [n factor]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> divisible? [n factor]
   (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">mod</span></span> n factor)))
 
 (<span class="hljs-name">divisible?</span> <span class="hljs-number">15</span> <span class="hljs-number">3</span>)
@@ -19,6 +23,5 @@ Examples:</p>
 <span class="hljs-comment">;;=&gt; false</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">filter</span></span> #(<span class="hljs-name">divisible?</span> <span class="hljs-number">15</span> %) (<span class="hljs-name"><span class="hljs-builtin-name">range</span></span> <span class="hljs-number">15</span>))
-<span class="hljs-comment">;;=&gt; (1 3 5)</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; (1 3 5)</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/impure">! impure</a></li></ul><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

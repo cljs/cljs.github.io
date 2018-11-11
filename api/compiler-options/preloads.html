@@ -2,13 +2,13 @@
 allowing you to preload extra code for specific builds.  For example, a
 development build can use it to setup logging or connecting REPLs.
 Only applies when <a class="code-link" href="/api/compiler-options/optimizations"><code>:optimizations</code></a> is <code>:none</code>.</p>
-<pre><code class="lang-clj">:preloads &#39;[foo.dev]
-</code></pre>
+<pre><code class="language-clj">:preloads &#39;[foo.dev]</code></pre>
 </div><hr /><h3>Examples:</h3><div><p>If you have the following namespace:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> foo.dev)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> foo.dev)
 
-(<span class="hljs-name">enable-console-print!</span>)
-</code></pre>
+(<span class="hljs-name">enable-console-print!</span>)</code></pre>
 <p>You can configure your development build to load this side effect prior to your
-main namespace with <code>:preloads &#39;[foo.dev]</code>.</p>
+main namespace with <code>:preloads &#39;[foo.dev]</code>.
+[doc:compiler-options/optimizations]:/api/compiler-options/optimizations
+[doc:compiler-options/main]:/api/compiler-options/main</p>
 </div><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

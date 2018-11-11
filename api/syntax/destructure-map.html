@@ -15,23 +15,20 @@
 </ul>
 </div><hr /><h3>Details:</h3><div><p>A helpful shorthand for binding names to values inside a map.</p>
 <p>The destructure map can be a map from a symbol to a lookup value:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {a <span class="hljs-symbol">:foo</span>}   <span class="hljs-comment">;; &lt;-- destructure map</span>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {a <span class="hljs-symbol">:foo</span>}   <span class="hljs-comment">;; &lt;-- destructure map</span>
        {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span>} ]
   a)
-<span class="hljs-comment">;;=&gt; 1</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; 1</span></code></pre>
 <p>The destructure map can bind multiple names:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {a <span class="hljs-symbol">:foo</span>, b <span class="hljs-symbol">:bar</span>}   <span class="hljs-comment">;; &lt;-- destructure map</span>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {a <span class="hljs-symbol">:foo</span>, b <span class="hljs-symbol">:bar</span>}   <span class="hljs-comment">;; &lt;-- destructure map</span>
        {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span>, <span class="hljs-symbol">:bar</span> <span class="hljs-number">2</span>} ]
   (<span class="hljs-name">println</span> a b))
-<span class="hljs-comment">;; 1 2</span>
-</code></pre>
+<span class="hljs-comment">;; 1 2</span></code></pre>
 <p>Use this convenient alternative if names match the keys:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {<span class="hljs-symbol">:keys</span> [foo bar]}   <span class="hljs-comment">;; &lt;-- destructure map</span>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {<span class="hljs-symbol">:keys</span> [foo bar]}   <span class="hljs-comment">;; &lt;-- destructure map</span>
        {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span>, <span class="hljs-symbol">:bar</span> <span class="hljs-number">2</span>} ]
   (<span class="hljs-name">println</span> foo bar))
-<span class="hljs-comment">;; 1 2</span>
-</code></pre>
+<span class="hljs-comment">;; 1 2</span></code></pre>
 <p>Different key types are supported using <code>:keys</code>, <code>:strs</code>, or <code>:syms</code>, which
 map to the manual destructuring forms below:</p>
 <ul>
@@ -40,17 +37,15 @@ map to the manual destructuring forms below:</p>
 <li><code>{:syms [foo]}</code> -&gt; <code>{foo &#39;foo }</code></li>
 </ul>
 <p>Use <code>:as foo</code> to name the original value:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {<span class="hljs-symbol">:keys</span> [foo bar] <span class="hljs-symbol">:as</span> whole}
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {<span class="hljs-symbol">:keys</span> [foo bar] <span class="hljs-symbol">:as</span> whole}
        {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span>, <span class="hljs-symbol">:bar</span> <span class="hljs-number">2</span>} ]
   whole)
-<span class="hljs-comment">;;=&gt; {:foo 1, :bar 2}</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; {:foo 1, :bar 2}</span></code></pre>
 <p>Use <code>:or {}</code> to provide default values if missing:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {<span class="hljs-symbol">:keys</span> [foo bar] <span class="hljs-symbol">:or</span> {bar <span class="hljs-number">0</span>} }
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ {<span class="hljs-symbol">:keys</span> [foo bar] <span class="hljs-symbol">:or</span> {bar <span class="hljs-number">0</span>} }
        {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span>} ]
   (<span class="hljs-name">println</span> foo bar))
-<span class="hljs-comment">;; 1 0</span>
-</code></pre>
+<span class="hljs-comment">;; 1 0</span></code></pre>
 <p>Use the special destructuring map in place of any local name binding in the
 following forms:</p>
 <ul>
@@ -58,22 +53,21 @@ following forms:</p>
 <li><code>(fn [...])</code></li>
 <li><code>(loop [...])</code></li>
 </ul>
-<p>Destructure maps can be nested, even in place of names in <a href="/api/syntax/destructure-vector">destructure
-vectors</a>.</p>
-<p>Also works for namespaced keys and symbols: <a href="https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys">https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys</a></p>
+<p>Destructure maps can be nested, even in place of names in [destructure
+vectors][doc:syntax/destructure-vector].</p>
+<p>Also works for namespaced keys and symbols: <a href="https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys">https://github.com/clojure/clojure/blob/master/changes.md#22-map-destructuring-extended-to-support-namespaced-keys</a>
+[doc:syntax/destructure-vector]:/api/syntax/destructure-vector</p>
 </div><hr /><h3>Examples:</h3><div><p>Use in place of function arguments:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> print-point
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> print-point
   [{<span class="hljs-symbol">:keys</span> [x y z]}]
   (<span class="hljs-name">println</span> x y z))
 
 (<span class="hljs-name">print-point</span> {<span class="hljs-symbol">:x</span> <span class="hljs-number">1</span>, <span class="hljs-symbol">:y</span> <span class="hljs-number">2</span>, <span class="hljs-symbol">:z</span> <span class="hljs-number">3</span>})
-<span class="hljs-comment">;; 1 2 3</span>
-</code></pre>
+<span class="hljs-comment">;; 1 2 3</span></code></pre>
 <p>A non-vector sequence can be destructured as a map:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [{<span class="hljs-symbol">:keys</span> [a b]} '(<span class="hljs-symbol">:a</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:b</span> <span class="hljs-number">2</span>)]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [{<span class="hljs-symbol">:keys</span> [a b]} '(<span class="hljs-symbol">:a</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:b</span> <span class="hljs-number">2</span>)]
   (<span class="hljs-name">println</span> a b))
-<span class="hljs-comment">;; 1 2</span>
-</code></pre>
+<span class="hljs-comment">;; 1 2</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/destructure-vector">destructure []</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/core.cljc#L624-L725">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
   (<span class="hljs-name">core/let</span> [bents (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> bindings)
              pb (<span class="hljs-name">core/fn</span> pb [bvec b v]

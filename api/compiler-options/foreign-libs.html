@@ -2,7 +2,7 @@
 namespaces—if they are, use <a class="code-link" href="/api/compiler-options/libs"><code>:libs</code></a> instead.
 For an easier way to include libraries from npm use
 <a class="code-link" href="/api/compiler-options/npm-deps"><code>:npm-deps</code></a>.</p>
-<pre><code class="lang-clj"><span class="hljs-symbol">:foreign-libs</span>
+<pre><code class="language-clj"><span class="hljs-symbol">:foreign-libs</span>
 [{<span class="hljs-symbol">:file</span> <span class="hljs-string">"local/file.js"</span>         <span class="hljs-comment">;; file path or URL</span>
   <span class="hljs-symbol">:provides</span> [<span class="hljs-string">"my.example"</span>]      <span class="hljs-comment">;; assign a fake namespace</span>
 
@@ -10,8 +10,7 @@ For an easier way to include libraries from npm use
   <span class="hljs-symbol">:file-min</span> <span class="hljs-string">"local/file.min.js"</span> <span class="hljs-comment">;; used for :advanced optimizations</span>
   <span class="hljs-symbol">:module-type</span> ...              <span class="hljs-comment">;; :commonjs, :amd, or :es6</span>
   <span class="hljs-symbol">:requires</span> [<span class="hljs-string">"foo.bar"</span>]         <span class="hljs-comment">;; inferred if :module-type supplied</span>
-  <span class="hljs-symbol">:preprocess</span> ...}]             <span class="hljs-comment">;; custom preprocessor (e.g. JSX)</span>
-</code></pre>
+  <span class="hljs-symbol">:preprocess</span> ...}]             <span class="hljs-comment">;; custom preprocessor (e.g. JSX)</span></code></pre>
 </div><hr /><h3>Details:</h3><div><p>Be sure that each <code>:file</code> url returns an HTTP Code 200.</p>
 <p>Required keys:</p>
 <ul>
@@ -26,12 +25,11 @@ For an easier way to include libraries from npm use
 <li><code>:preprocess</code> Used to preprocess / transform code in other dialects (JSX, etc.). A <code>defmethod</code> for <code>cljs.clojure/js-transforms</code> must be provided that matches the supplied value in order to effect the desired code transformation. For more info see <a href="https://clojurescript.org/reference/javascript-library-preprocessing">JavaScript Library Preprocessing</a>.</li>
 </ul>
 </div><hr /><h3>Examples:</h3><div><p>To use the foreign library in the summary example:</p>
-<pre><code class="lang-clj">(<span class="hljs-name">require</span> 'my.example)
+<pre><code class="language-clj">(<span class="hljs-name">require</span> 'my.example)
 
 <span class="hljs-comment">;; If my.example is a single exported function:</span>
 (<span class="hljs-name">my.example</span>)
 
 <span class="hljs-comment">;; If my.example has an exported foo function:</span>
-(<span class="hljs-name">my.example/foo</span>)
-</code></pre>
+(<span class="hljs-name">my.example/foo</span>)</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/compiler-options/npm-deps">:npm-deps</a></li><li><a href="/api/compiler-options/libs">:libs</a></li></ul><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

@@ -20,9 +20,8 @@ are largely
 static in nature and useful for metaprogramming and REPL interactions. Towards 
 this end we&#39;ve implemented the <code>var</code> special form and introduced very restricted 
 functionality - metadata is the primary use case. </p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> foo []) 
-(<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> #'foo) <span class="hljs-comment">;; will return the expected metadata</span>
-</code></pre>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> foo []) 
+(<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> #'foo) <span class="hljs-comment">;; will return the expected metadata </span></code></pre>
 <p>cljs.test is implemented on top of this functionality as well as a new namespace 
 cljs.analyzer.api which I think macro writers will find quite useful. </p>
 <p>Also there&#39;s a doc macro now in the cljs.repl namespace that works as expected. 

@@ -16,15 +16,14 @@ symbols at the time of evaluation.</li>
 <li>Any non-namespaced symbols ending with <code>#</code> are replaced with unique symbols.
 See <a class="code-link" href="/api/syntax/auto-gensym"><code># auto-gensym</code></a>.</li>
 </ul>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">`foo
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">`foo
 ;;=&gt; cljs.user/foo
 
 `foo#
 ;;=&gt; foo__20418__auto__
 
 `(def foo 1)
-;;=&gt; (def cljs.user/foo 1)
-</code></pre>
+;;=&gt; (def cljs.user/foo 1)</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/auto-gensym"># auto-gensym</a></li><li><a href="/api/syntax/quote">' quote</a></li><li><a href="/api/syntax/unquote">~ unquote</a></li><li><a href="/api/syntax/unquote-splicing">~@ unquote splicing</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L746-L750">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-syntax-quote
   [rdr backquote opts pending-forms]
   (<span class="hljs-name">binding</span> [gensym-env {}]

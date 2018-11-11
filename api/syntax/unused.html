@@ -7,34 +7,33 @@
 serve as a name for a value.  It is just convention to reserve this name for
 values that are not to be referenced.</p>
 <p>Multiple <code>_</code>&#39;s can be used since duplicate names shadow those that come before.
-Thus, <code>_</code> actually holds the value of its last binding.</p>
+Thus, <code>_</code> actually holds the value of its last binding.
+[doc:cljs.core/add-watch]:/api/cljs.core/add-watch
+[doc:cljs.core/let]:/api/cljs.core/let
+[doc:syntax/destructure-vector]:/api/syntax/destructure-vector</p>
 </div><hr /><h3>Examples:</h3><div><p>Create a function whose first two arguments are ignored:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [_ _ a]
-  (<span class="hljs-name">println</span> a))
-</code></pre>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [_ _ a]
+  (<span class="hljs-name">println</span> a))</code></pre>
 <p>Ignore the first and third value of a <a href="/api/syntax/destructure-vector">destructured</a> sequence:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [_ a b _ c]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [_ a b _ c]
        [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>] ]
   (<span class="hljs-name">println</span> a b c))
-<span class="hljs-comment">;; 2 3 5</span>
-</code></pre>
+<span class="hljs-comment">;; 2 3 5</span></code></pre>
 <p>Ignore return values of debug statements in a <a class="code-link" href="/api/cljs.core/let"><code>let</code></a> block:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a <span class="hljs-number">1</span>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [a <span class="hljs-number">1</span>
       _ (<span class="hljs-name">println</span> a)
       b (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> a <span class="hljs-number">2</span>)
       _ (<span class="hljs-name">println</span> b)
       c (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> b <span class="hljs-number">3</span>)]
-  ...)
-</code></pre>
+  ...)</code></pre>
 <p>It is common to use <code>_</code> to ignore all but the latest value of a changing atom
 inside an <a class="code-link" href="/api/cljs.core/add-watch"><code>add-watch</code></a> callback:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> <span class="hljs-number">1</span>))
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> <span class="hljs-number">1</span>))
 
 (<span class="hljs-name"><span class="hljs-builtin-name">add-watch</span></span> a <span class="hljs-symbol">:foo</span>
   (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [_ _ _ s]
     (<span class="hljs-name">println</span> s)))
 
 (<span class="hljs-name"><span class="hljs-builtin-name">reset!</span></span> a <span class="hljs-number">2</span>)
-<span class="hljs-comment">;; 2</span>
-</code></pre>
+<span class="hljs-comment">;; 2</span></code></pre>
 </div><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

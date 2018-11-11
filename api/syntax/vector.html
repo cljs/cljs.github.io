@@ -5,8 +5,12 @@
 </ul>
 <p>Vectors also serve an important language role to prevent you from interpreting
 sequences as function calls.  Whether it&#39;s for literal data or for <em>binding forms</em>
-inside <a class="code-link" href="/api/cljs.core/let"><code>let</code></a> and <a class="code-link" href="/api/cljs.core/fn"><code>fn</code></a>, vectors provide an
-important syntax cue not found in other Lisps.</p>
+inside [<code>let</code>][doc:cljs.core/let] and [<code>fn</code>][doc:cljs.core/fn], vectors provide an
+important syntax cue not found in other Lisps.
+[doc:cljs.core/let]:/api/cljs.core/let
+[doc:cljs.core/conj]:/api/cljs.core/conj
+[doc:cljs.core/PersistentVector]:/api/cljs.core/PersistentVector
+[doc:cljs.core/fn]:/api/cljs.core/fn</p>
 </div><hr /><h3>Details:</h3><div><p>Elements are inserted at the end via <a class="code-link" href="/api/cljs.core/conj"><code>conj</code></a>, and can be looked up
 via index. See <a class="code-link" href="/api/cljs.core/PersistentVector"><code>PersistentVector</code></a> for data structure details.</p>
 <p>Vectors are the conventional form for representing <em>binding forms</em>, that is,
@@ -15,9 +19,8 @@ when local names are created and bound to values. Examples:</p>
 <li><code>[a b]</code> as function arg bindings in <a class="code-link" href="/api/cljs.core/fn"><code>(fn [a b] ...)</code></a></li>
 <li><code>[a 1 b 2]</code> as let bindings in <a class="code-link" href="/api/cljs.core/let"><code>(let [a 1 b 2] ...)</code></a></li>
 </ul>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
-<span class="hljs-comment">;;=&gt; [1 2 3]</span>
-</code></pre>
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+<span class="hljs-comment">;;=&gt; [1 2 3]</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/vector">vector</a></li><li><a href="/api/cljs.core/vec">vec</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L222-L236">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-vector
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [[start-line start-column] (<span class="hljs-name">starting-line-col-info</span> rdr)

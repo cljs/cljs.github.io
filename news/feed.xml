@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 11 Nov 2018 02:41:04 GMT</pubDate><lastBuildDate>Sun, 11 Nov 2018 02:41:04 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.439</title><description>&lt;p&gt;Please refer the announce post for the details:
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 11 Nov 2018 13:13:39 GMT</pubDate><lastBuildDate>Sun, 11 Nov 2018 13:13:39 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.439</title><description>&lt;p&gt;Please refer the announce post for the details:
 &lt;a href=&quot;https://clojurescript.org/news/2018-11-02-release&quot;&gt;https://clojurescript.org/news/2018-11-02-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
@@ -358,7 +358,7 @@ gives warnings&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2172&quot;&gt;CLJS-2172&lt;/a&gt;: memfn docstring refers to Java and reflection&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1959&quot;&gt;CLJS-1959&lt;/a&gt;: under :nodejs target we should provide &lt;code&gt;__dirname&lt;/code&gt; and &lt;code&gt;__filename&lt;/code&gt; constants&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1966&quot;&gt;CLJS-1966&lt;/a&gt;: cljs.test assumes the output directory is &amp;#39;/out/&amp;#39; when determining the filename for a failed or errored test result.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2191&quot;&gt;CLJS-2191&lt;/a&gt;: Clean up doc references to clojure.spec.&lt;em&gt; in favor of cljs.spec.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2191&quot;&gt;CLJS-2191&lt;/a&gt;: Clean up doc references to clojure.spec.* in favor of cljs.spec.*&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2194&quot;&gt;CLJS-2194&lt;/a&gt;: cljs.util/relative-name bug&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2195&quot;&gt;CLJS-2195&lt;/a&gt;: npm-deps tests are not idempotent&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2179&quot;&gt;CLJS-2179&lt;/a&gt;: Add test for preprocess JS module as symbol&lt;/li&gt;

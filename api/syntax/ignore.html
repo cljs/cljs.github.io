@@ -4,22 +4,18 @@
 </ul>
 <p>Also useful for commenting out a multi-line expression:</p>
 <pre><code>#_(defn foo [a b]
-    (+ a b))
-</code></pre></div><hr /><h3>Details:</h3><div><p>Causes the following form to be completely skipped by the reader.  This is a
+    (+ a b))</code></pre></div><hr /><h3>Details:</h3><div><p>Causes the following form to be completely skipped by the reader.  This is a
 more complete removal than the <code>comment</code> macro which yields nil.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">{<span class="hljs-symbol">:foo</span> #_bar <span class="hljs-number">2</span>}
-<span class="hljs-comment">;;=&gt; {:foo 2}</span>
-</code></pre>
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">{<span class="hljs-symbol">:foo</span> #_bar <span class="hljs-number">2</span>}
+<span class="hljs-comment">;;=&gt; {:foo 2}</span></code></pre>
 <p>To comment out the last line of a function without worrying about commenting out
 the trailing parentheses:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> foo []
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> foo []
   (<span class="hljs-name">println</span> <span class="hljs-string">"hello"</span>)
-  #_(<span class="hljs-name">println</span> <span class="hljs-string">"world"</span>))
-</code></pre>
+  #_(<span class="hljs-name">println</span> <span class="hljs-string">"world"</span>))</code></pre>
 <p>Whitespace is optional:</p>
-<pre><code class="lang-clj">[<span class="hljs-number">1</span> <span class="hljs-number">2</span> #_ foo <span class="hljs-number">3</span>]
-<span class="hljs-comment">;;=&gt; [1 2 3]</span>
-</code></pre>
+<pre><code class="language-clj">[<span class="hljs-number">1</span> <span class="hljs-number">2</span> #_ foo <span class="hljs-number">3</span>]
+<span class="hljs-comment">;;=&gt; [1 2 3]</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/comment">; comment</a></li><li><a href="/api/cljs.core/comment">comment</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L405-L409">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-discard
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">doto</span></span> rdr

@@ -4,7 +4,7 @@
 <p><code>:meta</code> should be a <a href="http://clojure.org/metadata">metadata-map</a> for the atom.</p>
 <p><code>:validator</code> should be a validator function for the atom. See <code>set-validator!</code>
 for more information.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(def a (atom 1))
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(def a (atom 1))
 
 @a
 ;;=&gt; 1
@@ -15,8 +15,7 @@ for more information.</p>
 
 (swap! a inc)
 @a
-;;=&gt; 3
-</code></pre>
+;;=&gt; 3</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/atom">atom</a></li><li><a href="/api/cljs.core/swapBANG">swap!</a></li><li><a href="/api/cljs.core/resetBANG">reset!</a></li><li><a href="/api/cljs.core/set-validatorBANG">set-validator!</a></li><li><a href="/api/cljs.core/get-validator">get-validator</a></li></ul><hr />Source docstring:<pre>Creates and returns an Atom with an initial value of x and zero or
 more options (in any order):
 

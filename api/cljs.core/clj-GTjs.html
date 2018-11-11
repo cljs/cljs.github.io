@@ -8,8 +8,7 @@
 <th></th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Set</td>
 <td><code>#{}</code></td>
 <td>Array</td>
@@ -45,17 +44,15 @@
 <td>Object</td>
 <td><code>{}</code></td>
 </tr>
-</tbody>
-</table>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name">clj-&gt;js</span> {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:bar</span> <span class="hljs-number">2</span>})
+</tbody></table>
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name">clj-&gt;js</span> {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span> <span class="hljs-symbol">:bar</span> <span class="hljs-number">2</span>})
 <span class="hljs-comment">;;=&gt; #js {:foo 1, :bar 2}</span>
 
 (<span class="hljs-name">clj-&gt;js</span> [<span class="hljs-symbol">:foo</span> <span class="hljs-string">"bar"</span> 'baz])
 <span class="hljs-comment">;;=&gt; #js ["foo" "bar" "baz"]</span>
 
 (<span class="hljs-name">clj-&gt;js</span> [<span class="hljs-number">1</span> {<span class="hljs-symbol">:foo</span> <span class="hljs-string">"bar"</span>} <span class="hljs-number">4</span>])
-<span class="hljs-comment">;;=&gt; #js [1 #js {:foo "bar"} 4]</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; #js [1 #js {:foo "bar"} 4]</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/js-GTclj">js->clj</a></li></ul><hr />Source docstring:<pre>Recursively transforms ClojureScript values to JavaScript.
 sets/vectors/lists become Arrays, Keywords and Symbol become Strings,
 Maps become Objects. Arbitrary keys are encoded to by `key->js`.

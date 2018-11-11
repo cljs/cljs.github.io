@@ -12,23 +12,20 @@
 <li><code>[:as name]</code> - name is bound to whole value</li>
 </ul>
 </div><hr /><h3>Details:</h3><div><p>A helpful shorthand for destructuring a sequence into multiple names.</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [a b c]   <span class="hljs-comment">;; &lt;-- destructure vector</span>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [a b c]   <span class="hljs-comment">;; &lt;-- destructure vector</span>
        [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>] ]
   (<span class="hljs-name">println</span> a b c))
-<span class="hljs-comment">;; 1 2 3</span>
-</code></pre>
+<span class="hljs-comment">;; 1 2 3</span></code></pre>
 <p>Use <code>&amp; foo</code> to name the rest of the items in the sequence:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [a b c &amp; d]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [a b c &amp; d]
        [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>] ]
   (<span class="hljs-name">println</span> a b c d))
-<span class="hljs-comment">;; 1 2 3 (4 5)</span>
-</code></pre>
+<span class="hljs-comment">;; 1 2 3 (4 5)</span></code></pre>
 <p>Use <code>:as foo</code> to name the original value:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [a b c &amp; d <span class="hljs-symbol">:as</span> whole]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [a b c &amp; d <span class="hljs-symbol">:as</span> whole]
        [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>] ]
   whole)
-<span class="hljs-comment">;;=&gt; [1 2 3 4 5]</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; [1 2 3 4 5]</span></code></pre>
 <p>Use the special destructure vector in place of any local name binding in the
 following forms:</p>
 <ul>
@@ -36,21 +33,20 @@ following forms:</p>
 <li><code>(fn [...])</code></li>
 <li><code>(loop [...])</code></li>
 </ul>
-<p>Destructure vectors can be nested, even in place of names in <a href="/api/syntax/destructure-map">destructure
-maps</a>.</p>
+<p>Destructure vectors can be nested, even in place of names in [destructure
+maps][doc:syntax/destructure-map].
+[doc:syntax/destructure-map]:/api/syntax/destructure-map</p>
 </div><hr /><h3>Examples:</h3><div><p>Use destructure vectors in function parameters:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> foo [[a b] c]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> foo [[a b] c]
   (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> a b c))
 
 (<span class="hljs-name">foo</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span>] <span class="hljs-number">3</span>)
-<span class="hljs-comment">;;=&gt; 6</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; 6</span></code></pre>
 <p>Destructure vectors can be nested:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [[a b] c]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ [[a b] c]
        [[<span class="hljs-number">1</span> <span class="hljs-number">2</span>] <span class="hljs-number">3</span>] ]
   (<span class="hljs-name">println</span> a b c))
-<span class="hljs-comment">;; 1 2 3</span>
-</code></pre>
+<span class="hljs-comment">;; 1 2 3</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/destructure-map">destructure {}</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/core.cljc#L624-L725">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
   (<span class="hljs-name">core/let</span> [bents (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> bindings)
              pb (<span class="hljs-name">core/fn</span> pb [bvec b v]

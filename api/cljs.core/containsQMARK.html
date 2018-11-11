@@ -4,35 +4,31 @@ tests if the numeric key is within the range of indexes.</p>
 <p><code>contains?</code> operates in constant or logarithmic time, using <code>get</code> to perform
 the lookup. It will not perform a linear search for a value.  <code>some</code> is
 used for this purpose:</p>
-<pre><code class="lang-clj">(<span class="hljs-name">some</span> #{value} coll)
-</code></pre>
+<pre><code class="language-clj">(<span class="hljs-name">some</span> #{value} coll)</code></pre>
 </div><hr /><h3>Examples:</h3><div><p>Sets and Maps provide key lookups, so <code>contains?</code> works as expected:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> #{<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>} <span class="hljs-symbol">:a</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> #{<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>} <span class="hljs-symbol">:a</span>)
 <span class="hljs-comment">;;=&gt; true</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> {<span class="hljs-symbol">:a</span> <span class="hljs-number">1</span>, <span class="hljs-symbol">:b</span> <span class="hljs-number">2</span>} <span class="hljs-symbol">:a</span>)
 <span class="hljs-comment">;;=&gt; true</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> {<span class="hljs-symbol">:a</span> <span class="hljs-number">1</span>, <span class="hljs-symbol">:b</span> <span class="hljs-number">2</span>} <span class="hljs-number">1</span>)
-<span class="hljs-comment">;;=&gt; false</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; false</span></code></pre>
 <p>Vectors provide integer index lookups, so <code>contains?</code> works appropriately:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> [<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>] <span class="hljs-symbol">:b</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> [<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>] <span class="hljs-symbol">:b</span>)
 <span class="hljs-comment">;;=&gt; false</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> [<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>] <span class="hljs-number">1</span>)
-<span class="hljs-comment">;;=&gt; true</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; true</span></code></pre>
 <p>Lists and Sequences do not provide lookups, so <code>contains?</code> will not work:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> '(<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>) <span class="hljs-symbol">:a</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> '(<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>) <span class="hljs-symbol">:a</span>)
 <span class="hljs-comment">;;=&gt; false</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> '(<span class="hljs-symbol">:a</span> <span class="hljs-symbol">:b</span>) <span class="hljs-number">1</span>)
 <span class="hljs-comment">;;=&gt; false</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">range</span></span> <span class="hljs-number">3</span>) <span class="hljs-number">1</span>)
-<span class="hljs-comment">;;=&gt; false</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; false</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/some">some</a></li><li><a href="/api/cljs.core/get">get</a></li></ul><hr />Source docstring:<pre>Returns true if key is present in the given collection, otherwise
 returns false.  Note that for numerically indexed collections like
 vectors and arrays, this tests if the numeric key is within the

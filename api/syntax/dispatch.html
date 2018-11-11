@@ -3,97 +3,122 @@ standalone forms:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">relation</th>
-<th style="text-align:left">original</th>
-<th style="text-align:left">with <code>#</code> prefix</th>
+<th align="left">relation</th>
+<th align="left">original</th>
+<th align="left">with <code>#</code> prefix</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">string-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/string"><code>&quot;&quot; string</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/regex"><code>#&quot;&quot; regex</code></a></td>
+<tbody><tr>
+<td align="left">string-related</td>
+<td align="left">[<code>&quot;&quot; string</code>][doc:syntax/string]</td>
+<td align="left">[<code>#&quot;&quot; regex</code>][doc:syntax/regex]</td>
 </tr>
 <tr>
-<td style="text-align:left">code-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/list"><code>() list</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/function"><code>#() function</code></a></td>
+<td align="left">code-related</td>
+<td align="left">[<code>() list</code>][doc:syntax/list]</td>
+<td align="left">[<code>#() function</code>][doc:syntax/function]</td>
 </tr>
 <tr>
-<td style="text-align:left">lookup-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/map"><code>{} map</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/set"><code>#{} set</code></a></td>
+<td align="left">lookup-related</td>
+<td align="left">[<code>{} map</code>][doc:syntax/map]</td>
+<td align="left">[<code>#{} set</code>][doc:syntax/set]</td>
 </tr>
 <tr>
-<td style="text-align:left">quote-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/quote"><code>&#39; quote</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/var"><code>#&#39; var</code></a></td>
+<td align="left">quote-related</td>
+<td align="left">[<code>&#39; quote</code>][doc:syntax/quote]</td>
+<td align="left">[<code>#&#39; var</code>][doc:syntax/var]</td>
 </tr>
 <tr>
-<td style="text-align:left">ignore-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/unused"><code>_ unused</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/ignore"><code>#_ ignore</code></a></td>
+<td align="left">ignore-related</td>
+<td align="left">[<code>_ unused</code>][doc:syntax/unused]</td>
+<td align="left">[<code>#_ ignore</code>][doc:syntax/ignore]</td>
 </tr>
 <tr>
-<td style="text-align:left">name-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/symbol"><code>foo (symbol)</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/tagged-literal"><code>#foo (tagged literal)</code></a></td>
+<td align="left">name-related</td>
+<td align="left">[<code>foo (symbol)</code>][doc:syntax/symbol]</td>
+<td align="left">[<code>#foo (tagged literal)</code>][doc:syntax/tagged-literal]</td>
 </tr>
 <tr>
-<td style="text-align:left">conditional-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/predicate"><code>? predicate</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax/cond"><code>#? reader conditional</code></a></td>
+<td align="left">conditional-related</td>
+<td align="left">[<code>? predicate</code>][doc:syntax/predicate]</td>
+<td align="left">[<code>#? reader conditional</code>][doc:syntax/cond]</td>
 </tr>
-</tbody>
-</table>
-<p>The &quot;symbolic values&quot; <a class="code-link" href="/api/syntax/Inf"><code>##Inf</code></a>, <a class="code-link" href="/api/syntax/-Inf"><code>##-Inf</code></a>, <a class="code-link" href="/api/syntax/NaN"><code>##NaN</code></a> do
+</tbody></table>
+<p>The &quot;symbolic values&quot; [<code>##Inf</code>][doc:syntax/Inf], [<code>##-Inf</code>][doc:syntax/-Inf], [<code>##NaN</code>][doc:syntax/NaN] do
 not follow this pattern, but the additional number sign in <code>##</code> serves as a
-mnemonic for these special numerical values.</p>
+mnemonic for these special numerical values.
+[doc:syntax/symbol]:/api/syntax/symbol
+[doc:syntax/-Inf]:/api/syntax/-Inf
+[doc:syntax/cond]:/api/syntax/cond
+[doc:syntax/string]:/api/syntax/string
+[doc:syntax/quote]:/api/syntax/quote
+[doc:syntax/Inf]:/api/syntax/Inf
+[doc:syntax/regex]:/api/syntax/regex
+[doc:syntax/unused]:/api/syntax/unused
+[doc:syntax/set]:/api/syntax/set
+[doc:syntax/tagged-literal]:/api/syntax/tagged-literal
+[doc:syntax/function]:/api/syntax/function
+[doc:syntax/map]:/api/syntax/map
+[doc:syntax/list]:/api/syntax/list
+[doc:syntax/NaN]:/api/syntax/NaN
+[doc:syntax/predicate]:/api/syntax/predicate
+[doc:syntax/ignore]:/api/syntax/ignore
+[doc:syntax/var]:/api/syntax/var</p>
 </div><hr /><h3>Details:</h3><div><p><code>#</code> is a prefix character that is called the dispatch macro, because it allows
 the behavior of the reader to be dispatched to another table, indexed by the
-character following the <code>#</code>.</p>
+character following the <code>#</code>.
+[doc:syntax/symbol]:/api/syntax/symbol
+[doc:syntax/-Inf]:/api/syntax/-Inf
+[doc:syntax/cond]:/api/syntax/cond
+[doc:syntax/string]:/api/syntax/string
+[doc:syntax/quote]:/api/syntax/quote
+[doc:syntax/Inf]:/api/syntax/Inf
+[doc:syntax/regex]:/api/syntax/regex
+[doc:syntax/unused]:/api/syntax/unused
+[doc:syntax/set]:/api/syntax/set
+[doc:syntax/tagged-literal]:/api/syntax/tagged-literal
+[doc:syntax/function]:/api/syntax/function
+[doc:syntax/map]:/api/syntax/map
+[doc:syntax/list]:/api/syntax/list
+[doc:syntax/NaN]:/api/syntax/NaN
+[doc:syntax/predicate]:/api/syntax/predicate
+[doc:syntax/ignore]:/api/syntax/ignore
+[doc:syntax/var]:/api/syntax/var</p>
 </div><hr /><h3>Examples:</h3><div><p>The dispatch macro is not usable on its own.  Rather, it dispatches to other
 syntax forms.</p>
 <p>Regular expression:</p>
-<pre><code class="lang-clj">#"[a-zA-Z0-9]+"
-;;=&gt; #"[a-zA-Z0-9]+"
-</code></pre>
+<pre><code class="language-clj">#"[a-zA-Z0-9]+"
+;;=&gt; #"[a-zA-Z0-9]+"</code></pre>
 <p>Set:</p>
-<pre><code class="lang-clj">#{:foo 1 2}
-;;=&gt; #{:foo 1 2}
-</code></pre>
+<pre><code class="language-clj">#{:foo 1 2}
+;;=&gt; #{:foo 1 2}</code></pre>
 <p>Function:</p>
-<pre><code class="lang-clj">#(foo 1 2)
+<pre><code class="language-clj">#(foo 1 2)
 ;;=&gt; #&lt;function (){
 ;;   return cljs.user.foo.call(null,(1),(2));
-;;   }&gt;
-</code></pre>
+;;   }&gt;</code></pre>
 <p>Var reference:</p>
-<pre><code class="lang-clj">(def a)
+<pre><code class="language-clj">(def a)
 #'a
-;;=&gt; #'cljs.user/a
-</code></pre>
+;;=&gt; #'cljs.user/a</code></pre>
 <p>Ignore form:</p>
-<pre><code class="lang-clj">#_foo
+<pre><code class="language-clj">#_foo
 ;; waits for next form since #_foo was ignored
 
 #_123 456
-;;=&gt; 456
-</code></pre>
+;;=&gt; 456</code></pre>
 <p>Tagged Literals:</p>
-<pre><code class="lang-clj">#queue [1 2 3]
+<pre><code class="language-clj">#queue [1 2 3]
 ;;=&gt; #queue [1 2 3]
 
 #js {:foo 1}
 ;;=&gt; #js {:foo 1}
 
 #inst "2010-11-12T18:14:15.666-00:00"
-;;=&gt; #inst "2010-11-12T18:14:15.666-00:00"
-</code></pre>
+;;=&gt; #inst "2010-11-12T18:14:15.666-00:00"</code></pre>
 <p>Reader Conditional:</p>
-<pre><code class="lang-clj">#?(:clj "Clojure" :cljs "ClojureScript")
-;;=&gt; "ClojureScript"
-</code></pre>
+<pre><code class="language-clj">#?(:clj "Clojure" :cljs "ClojureScript")
+;;=&gt; "ClojureScript"</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/regex">#"" regex</a></li><li><a href="/api/syntax/function">#() function</a></li><li><a href="/api/syntax/set">#{} set</a></li><li><a href="/api/syntax/var">#' var</a></li><li><a href="/api/syntax/ignore">#_ ignore</a></li><li><a href="/api/syntax/tagged-literal"># tagged literal</a></li><li><a href="/api/syntax/cond">#? reader conditional</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L67-L73">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-dispatch
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [ch (<span class="hljs-name">read-char</span> rdr)]

@@ -3,12 +3,11 @@ to allow compatibility when converting code to ClojureScript.</p>
 <p>Since there is only a single number type in JavaScript, 64-bit floating point, there is no
 reason to use the <code>==</code> operator in ClojureScript.</p>
 <p>Behavior on non-number arguments is undefined.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>)
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>)
 <span class="hljs-comment">;;=&gt; true</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>)
-<span class="hljs-comment">;;=&gt; false</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; false</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/EQ">=</a></li><li><a href="/api/cljs.core/identicalQMARK">identical?</a></li></ul><hr />Source docstring:<pre>Returns non-nil if nums all have the equivalent
 value, otherwise false. Behavior on non nums is
 undefined.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/cljs/cljs/core.cljs#L2904-L2915">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^boolean</span> ==

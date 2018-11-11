@@ -2,19 +2,17 @@
 across a JavaScript array <code>a</code>.  The expression can use <code>ret</code> as the current
 result, which is initialized to <code>a</code>.  It can also use <code>idx</code> to get the current
 index.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #js [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #js [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 (<span class="hljs-name">amap</span> a i ret (<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> <span class="hljs-number">10</span> (<span class="hljs-name">aget</span> a i)))
-<span class="hljs-comment">;;=&gt; #js [10 20 30]</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; #js [10 20 30]</span></code></pre>
 <p>You can also use <code>ret</code> inside the mapped expression if you want to use the
 current result:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #js [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a #js [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 (<span class="hljs-name">amap</span> a i ret (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">pos?</span></span> i)
                    (<span class="hljs-name">aget</span> ret (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> i))
                    <span class="hljs-number">0</span>)
                  (<span class="hljs-name"><span class="hljs-builtin-name">*</span></span> <span class="hljs-number">10</span> (<span class="hljs-name">aget</span> a i))))
-<span class="hljs-comment">;;=&gt; #js [10 30 60]</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; #js [10 30 60]</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/map">map</a></li></ul><hr />Source docstring:<pre>Maps an expression across an array a, using an index named idx, and
 return value named ret, initialized to a clone of a, then setting
 each element of ret to the evaluation of expr, returning the new

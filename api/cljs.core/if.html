@@ -4,15 +4,14 @@
 and is a fundamental building block of the language. All other conditionals in
 ClojureScript are based on <code>if</code>s notion of truthiness (ie: anything other than
 false or nil).</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> v [<span class="hljs-number">1</span> <span class="hljs-number">2</span>])
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> v [<span class="hljs-number">1</span> <span class="hljs-number">2</span>])
 
 (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">empty?</span></span> v) <span class="hljs-string">"empty!"</span> <span class="hljs-string">"filled!"</span>)
 <span class="hljs-comment">;;=&gt; "filled!"</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"This vector is "</span>
   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">empty?</span></span> v) <span class="hljs-string">"empty!"</span> <span class="hljs-string">"filled!"</span>))
-<span class="hljs-comment">;;=&gt; "This vector is filled!"</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; "This vector is filled!"</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/cond">cond</a></li><li><a href="/api/cljs.core/when">when</a></li><li><a href="/api/cljs.core/if-let">if-let</a></li><li><a href="/api/cljs.core/if-not">if-not</a></li></ul><hr />Source docstring:<pre>Evaluates test. If not the singular values nil or false,
 evaluates and yields then, otherwise, evaluates and yields else. If
 else is not supplied it defaults to nil.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/analyzer.cljc#L1444-L1456">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'if

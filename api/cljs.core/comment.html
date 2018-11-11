@@ -3,20 +3,18 @@
 different functions during development.  Specific expressions within the
 <code>comment</code> can then be selected and evaluated from some editors.</p>
 <p>You can also use <code>;</code> to &quot;comment out&quot; code until the end of a line.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-comment">comment</span> <span class="hljs-number">123</span>)
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-comment">comment</span> <span class="hljs-number">123</span>)
 <span class="hljs-comment">;;=&gt; nil</span>
 
 (<span class="hljs-comment">comment</span>
   (<span class="hljs-name">foo</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>)
   (<span class="hljs-name">bar</span> <span class="hljs-string">"hello"</span>))
-<span class="hljs-comment">;;=&gt; nil</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; nil</span></code></pre>
 <p>Inner forms must still be syntactically correct:</p>
-<pre><code class="lang-clj">(<span class="hljs-comment">comment</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]])
+<pre><code class="language-clj">(<span class="hljs-comment">comment</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]])
 <span class="hljs-comment">;; Error: Unmatched delimiter ]</span>
 
 (<span class="hljs-comment">comment</span> a : b)
-<span class="hljs-comment">;; Error: Invalid token :</span>
-</code></pre>
+<span class="hljs-comment">;; Error: Invalid token :</span></code></pre>
 </div><hr />Source docstring:<pre>Ignores body, yields nil</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L4555-L4558">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> comment
   [&amp; body])</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

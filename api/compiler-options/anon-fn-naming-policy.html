@@ -5,18 +5,14 @@ assignments and declarations.  Defaults to <code>:off</code>.</p>
 <li><code>:unmapped</code> - named based on left-hand of assignment (after possible renaming)</li>
 <li><code>:mapped</code> - short unique name generated and mapped to left-hand of assignment</li>
 </ul>
-<pre><code class="lang-clj"><span class="hljs-symbol">:anon-fn-naming-policy</span> <span class="hljs-symbol">:unmapped</span> <span class="hljs-comment">;; &lt;-- assign names to anon functions</span>
-</code></pre>
+<pre><code class="language-clj"><span class="hljs-symbol">:anon-fn-naming-policy</span> <span class="hljs-symbol">:unmapped</span> <span class="hljs-comment">;; &lt;-- assign names to anon functions</span></code></pre>
 </div><hr /><h3>Details:</h3><div><p>(It is unclear how short names from <code>:mapped</code> are mapped back to their original
 names during debugging)</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> foo.core)
-(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> x (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [] ...))
-</code></pre>
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> foo.core)
+(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> x (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [] ...))</code></pre>
 <p>Compiles to the following when <code>:off</code>:</p>
-<pre><code class="lang-js">foo.core.x = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{ ... });
-</code></pre>
+<pre><code class="language-js">foo.core.x = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{ ... });</code></pre>
 <p>Compiles to the following when <code>:unmapped</code>:</p>
-<pre><code class="lang-js">foo.core.x = (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo$core$x</span>(<span class="hljs-params"></span>)</span>{ ... });
-</code></pre>
+<pre><code class="language-js">foo.core.x = (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo$core$x</span>(<span class="hljs-params"></span>)</span>{ ... });</code></pre>
 <p><code>:mapped</code> seems to compile to the same as the above.</p>
 </div><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

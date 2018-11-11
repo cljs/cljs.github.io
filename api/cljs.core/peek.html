@@ -2,7 +2,7 @@
 <p>Returns the last element of a vector, and much more efficient than using <code>last</code>.</p>
 <p>Returns nil if <code>coll</code> is empty.</p>
 </div><hr /><h3>Examples:</h3><div><p>With vectors:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 <span class="hljs-comment">;;=&gt; 3</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span>])
@@ -12,10 +12,9 @@
 <span class="hljs-comment">;;=&gt; 1</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> [])
-<span class="hljs-comment">;;=&gt; nil</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; nil</span></code></pre>
 <p>With lists:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> '(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>))
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> '(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>))
 <span class="hljs-comment">;;=&gt; 1</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> '(<span class="hljs-number">1</span> <span class="hljs-number">2</span>))
@@ -25,8 +24,7 @@
 <span class="hljs-comment">;;=&gt; 1</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">peek</span></span> '())
-<span class="hljs-comment">;;=&gt; nil</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; nil</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/first">first</a></li><li><a href="/api/cljs.core/pop">pop</a></li><li><a href="/api/cljs.core/conj">conj</a></li></ul><hr />Source docstring:<pre>For a list or queue, same as first, for a vector, same as, but much
 more efficient than, last. If the collection is empty, returns nil.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/cljs/cljs/core.cljs#L2068-L2073">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> peek
   [coll]

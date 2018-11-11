@@ -5,9 +5,8 @@
 </div><hr /><h3>Details:</h3><div><p>(Only allowed in <code>.cljc</code> files or the REPL)</p>
 <p>Allows the reader to conditionally select from the given list of forms
 depending on available &quot;feature&quot; keys.  For example:</p>
-<pre><code class="lang-clj">#?(:clj &quot;Clojure&quot;
-   :cljs &quot;ClojureScript&quot;)
-</code></pre>
+<pre><code class="language-clj">#?(:clj &quot;Clojure&quot;
+   :cljs &quot;ClojureScript&quot;)</code></pre>
 <p>ClojureScript&#39;s reader is configured with the <code>:cljs</code> feature key, making the
 expression above read as <code>&quot;ClojureScript&quot;</code>.  Clojure&#39;s reader is
 similarly configured with the <code>:clj</code> key.</p>
@@ -24,8 +23,7 @@ depending on the ClojureScript compiler version:</p>
 <th>macros evaluated by</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>ClojureScript JVM</td>
 <td>Clojure</td>
 </tr>
@@ -33,21 +31,19 @@ depending on the ClojureScript compiler version:</p>
 <td>ClojureScript JS</td>
 <td>ClojureScript</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>Thus, reader conditionals allow us to account for differences in both versions
-of the compiler.  See <a class="code-link" href="/api/cljs.core/defmacro"><code>defmacro</code></a> for details.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">#?(:clj "Clojure" :cljs "ClojureScript")
-;;=&gt; "ClojureScript"
-</code></pre>
+of the compiler.  See [<code>defmacro</code>][doc:cljs.core/defmacro] for details.
+[doc:cljs.core/defmacro]:/api/cljs.core/defmacro</p>
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">#?(:clj "Clojure" :cljs "ClojureScript")
+;;=&gt; "ClojureScript"</code></pre>
 <p>A function that works in Clojure and ClojureScript (<a href="https://github.com/lymingtonprecision/route-ccrs/blob/c579aea05504736f2cfbd31c3c755f7e25fdad77/src/route_ccrs/manufacturing_methods.cljc#L8-L10">source</a>):</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> str-&gt;int [s]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> str-&gt;int [s]
   #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name">java.lang.Integer/parseInt</span> s)
      <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">js/parseInt</span> s)))
 
 (<span class="hljs-name">str-&gt;int</span> <span class="hljs-string">"123"</span>)
-<span class="hljs-comment">;;=&gt; 123</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; 123</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/cond-splicing">#?@ reader conditional splicing</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L505-L523">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-cond
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> opts (<span class="hljs-name">#</span>{<span class="hljs-symbol">:allow</span> <span class="hljs-symbol">:preserve</span>} (<span class="hljs-symbol">:read-cond</span> opts))))

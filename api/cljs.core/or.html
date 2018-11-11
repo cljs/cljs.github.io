@@ -2,7 +2,7 @@
 logical true, <code>or</code> returns that value and doesn&#39;t evaluate any of the other
 arguments, otherwise it returns the value of the last argument.</p>
 <p><code>(or)</code> returns nil.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">or</span></span>)
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">or</span></span>)
 <span class="hljs-comment">;;=&gt; nil</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> <span class="hljs-literal">false</span>)
@@ -18,10 +18,9 @@ arguments, otherwise it returns the value of the last argument.</p>
 <span class="hljs-comment">;;=&gt; true</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> <span class="hljs-literal">false</span> <span class="hljs-literal">false</span>)
-<span class="hljs-comment">;;=&gt; false</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; false</span></code></pre>
 <p><code>nil</code> and <code>false</code> are the only falsy values and everything else is truthy:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> <span class="hljs-string">"foo"</span> <span class="hljs-string">"bar"</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> <span class="hljs-string">"foo"</span> <span class="hljs-string">"bar"</span>)
 <span class="hljs-comment">;;=&gt; "bar"</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> <span class="hljs-string">"foo"</span> <span class="hljs-literal">nil</span>)
@@ -34,8 +33,7 @@ arguments, otherwise it returns the value of the last argument.</p>
 <span class="hljs-comment">;;=&gt; "foo"</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> <span class="hljs-literal">false</span> <span class="hljs-string">"foo"</span>)
-<span class="hljs-comment">;;=&gt; "foo"</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; "foo"</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/and">and</a></li><li><a href="/api/cljs.core/if">if</a></li></ul><hr />Source docstring:<pre>Evaluates exprs one at a time, from left to right. If a form
 returns a logical true value, or returns that value and doesn't
 evaluate any of the other expressions, otherwise it returns the

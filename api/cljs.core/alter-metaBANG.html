@@ -2,23 +2,21 @@
 <p>Alter the metadata of <code>data</code> to be <code>(apply f its-current-meta args)</code>.</p>
 </div><hr /><h3>Details:</h3><div><p>Metadata of vars cannot be altered since they are statically determined at compile-time.</p>
 </div><hr /><h3>Examples:</h3><div><p>Metadata of symbols and collections can be altered:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a ^<span class="hljs-symbol">:foo</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a ^<span class="hljs-symbol">:foo</span> [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> a)
 <span class="hljs-comment">;;=&gt; {:foo true}</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">alter-meta!</span></span> a assoc <span class="hljs-symbol">:bar</span> <span class="hljs-literal">true</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> a)
-<span class="hljs-comment">;;=&gt; {:foo true, :bar true}</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; {:foo true, :bar true}</span></code></pre>
 <p>Metadata of vars cannot be altered:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> #'a)
 <span class="hljs-comment">;;=&gt; {:arglists (), :test nil, :name a, :column 1, :line 1, :file "&lt;cljs repl&gt;", :doc nil, :ns cljs.user}</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">alter-meta!</span></span> #'a assoc <span class="hljs-symbol">:bar</span> <span class="hljs-literal">true</span>)
 (<span class="hljs-symbol">:bar</span> (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> #'a))
-<span class="hljs-comment">;;=&gt; nil</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; nil</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/with-meta">with-meta</a></li><li><a href="/api/cljs.core/vary-meta">vary-meta</a></li></ul><hr />Source docstring:<pre>Atomically sets the metadata for a namespace/var/ref/agent/atom to be:
 
 (apply f its-current-meta args)

@@ -6,7 +6,7 @@ in filenames. Thus, <code>(ns foo.bar-biz.baz)</code> should be the first form i
 <code>foo/bar_biz/baz.cljs</code>.</p>
 <p><code>references</code> can be zero or more forms used to import other namespaces, symbols,
 and libraries into the current namespace.</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> example.core
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">ns</span></span> example.core
 
   <span class="hljs-comment">;; for excluding or renaming clojure symbols</span>
   (<span class="hljs-symbol">:refer-clojure</span>
@@ -48,8 +48,7 @@ and libraries into the current namespace.</p>
     [lib.ns <span class="hljs-symbol">:only</span> []
             <span class="hljs-symbol">:rename</span> {}]
     <span class="hljs-symbol">:reload</span>
-    <span class="hljs-symbol">:reload-all</span>))
-</code></pre>
+    <span class="hljs-symbol">:reload-all</span>))</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/in-ns">in-ns (repl)</a></li><li><a href="/api/cljs.core/load-namespace">load-namespace (repl)</a></li><li><a href="/api/cljs.core/import">import</a></li><li><a href="/api/cljs.core/require">require</a></li><li><a href="/api/cljs.core/require-macros">require-macros</a></li></ul><hr />Source docstring:<pre>You must currently use the ns form only with the following caveats
 
   * You must use the :only form of :use

@@ -13,23 +13,19 @@ The namespace will resolve to either of the following:</p>
 <li>reader error if given namespace doesn&#39;t exist</li>
 </ul>
 </div><hr /><h3>Examples:</h3><div><p>If we are in the <code>user</code> namespace:</p>
-<pre><code class="lang-clj">::foo
-;;=&gt; :user/foo
-</code></pre>
+<pre><code class="language-clj">::foo
+;;=&gt; :user/foo</code></pre>
 <p>We can use namespace aliases:</p>
-<pre><code class="lang-clj">(require '[example.util :as util])
+<pre><code class="language-clj">(require '[example.util :as util])
 
 ::util/foo
-;;=&gt; :example.util/foo
-</code></pre>
+;;=&gt; :example.util/foo</code></pre>
 <p>Existing namespaces will resolve normally:</p>
-<pre><code class="lang-clj">::cljs.core/foo
-;;=&gt; :cljs.core/foo
-</code></pre>
+<pre><code class="language-clj">::cljs.core/foo
+;;=&gt; :cljs.core/foo</code></pre>
 <p>Non-existing namespaces will throw a reader exception:</p>
-<pre><code class="lang-clj">::foo/bar
-;; clojure.lang.ExceptionInfo: Invalid token: ::foo/bar {:type :reader-exception, ...
-</code></pre>
+<pre><code class="language-clj">::foo/bar
+;; clojure.lang.ExceptionInfo: Invalid token: ::foo/bar {:type :reader-exception, ...</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/keyword">: keyword</a></li><li><a href="/api/cljs.core/keyword">keyword</a></li><li><a href="/api/cljs.core/keywordQMARK">keyword?</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L343-L361">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-keyword
   [reader initch opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ch (<span class="hljs-name">read-char</span> reader)]

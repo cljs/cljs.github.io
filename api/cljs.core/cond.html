@@ -11,8 +11,7 @@ keyword <code>:else</code> (a keyword always evaluates to logical true).</p>
   (= a 10) &quot;a is 10&quot;
   (&gt; a 10) &quot;a is bigger than 10&quot;
   :else &quot;a is not a number!&quot;)
-;;=&gt; &quot;a is bigger than 10&quot;
-</code></pre></div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/condp">condp</a></li><li><a href="/api/cljs.core/case">case</a></li><li><a href="/api/cljs.core/if">if</a></li></ul><hr />Source docstring:<pre>Takes a set of test/expr pairs. It evaluates each test one at a
+;;=&gt; &quot;a is bigger than 10&quot;</code></pre></div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/condp">condp</a></li><li><a href="/api/cljs.core/case">case</a></li><li><a href="/api/cljs.core/if">if</a></li></ul><hr />Source docstring:<pre>Takes a set of test/expr pairs. It evaluates each test one at a
 time.  If a test returns logical true, cond evaluates and returns
 the value of the corresponding expr and doesn't evaluate any of the
 other tests or exprs. (cond) returns nil.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.8.0/src/clj/clojure/core.clj#L580-L593">clojure:src/clj/clojure/core.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> cond

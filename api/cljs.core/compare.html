@@ -4,7 +4,7 @@
 <p>Uses <code>IComparable</code> if available and <code>google.array.defaultCompare</code> for objects of
 the same type. nil is treated as a special case and is always less than any
 other object.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">compare</span></span> <span class="hljs-number">10</span> <span class="hljs-number">12</span>)
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">compare</span></span> <span class="hljs-number">10</span> <span class="hljs-number">12</span>)
 <span class="hljs-comment">;;=&gt; -1</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">compare</span></span> <span class="hljs-number">12</span> <span class="hljs-number">10</span>)
@@ -17,8 +17,7 @@ other object.</p>
 <span class="hljs-comment">;;=&gt;  1</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">compare</span></span> <span class="hljs-number">10</span> (<span class="hljs-name"><span class="hljs-builtin-name">list</span></span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>))
-<span class="hljs-comment">;; Error: compare on non-nil objects of different types</span>
-</code></pre>
+<span class="hljs-comment">;; Error: compare on non-nil objects of different types</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/sort-by">sort-by</a></li><li><a href="/api/cljs.core/sorted-set-by">sorted-set-by</a></li><li><a href="/api/cljs.core/sorted-map-by">sorted-map-by</a></li></ul><hr />Source docstring:<pre>Comparator. Returns a negative number, zero, or a positive number
  when x is logically 'less than', 'equal to', or 'greater than'
  y. Uses IComparable if available and google.array.defaultCompare for objects

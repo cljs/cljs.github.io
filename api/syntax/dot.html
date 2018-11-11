@@ -17,7 +17,7 @@
 <li><code>foo/bar.baz</code> or <code>bar.baz</code> means <code>bar.baz</code> is nested JS property access (<strong>not allowed in clojure</strong>).</li>
 </ul>
 </div><hr /><h3>Examples:</h3><div><p>For interop:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> obj #js {<span class="hljs-symbol">:age</span> <span class="hljs-number">28</span>, <span class="hljs-symbol">:greet</span> #(<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Hi "</span> %)})
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> obj #js {<span class="hljs-symbol">:age</span> <span class="hljs-number">28</span>, <span class="hljs-symbol">:greet</span> #(<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Hi "</span> %)})
 
 (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> obj greet <span class="hljs-string">"Bob"</span>)
 <span class="hljs-comment">;;=&gt; "Hi Bob"</span>
@@ -29,10 +29,9 @@
 <span class="hljs-comment">;;=&gt; 28</span>
 
 (<span class="hljs-name">.-age</span> obj)
-<span class="hljs-comment">;;=&gt; 28</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; 28</span></code></pre>
 <p>For constructor:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> Foo [x]
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> Foo [x]
    Object
    (<span class="hljs-name">toString</span> [_] (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Foo:"</span> x)))
 
@@ -40,25 +39,21 @@
 <span class="hljs-comment">;;=&gt; #&lt;Foo: 1&gt;</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">new</span></span> Foo <span class="hljs-number">1</span>)
-<span class="hljs-comment">;;=&gt; #&lt;Foo: 1&gt;</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; #&lt;Foo: 1&gt;</span></code></pre>
 <p>For nested namespaces:</p>
-<pre><code class="lang-clj">(ns example.nested.core)
+<pre><code class="language-clj">(ns example.nested.core)
 (def foo 1)
 example.nested.core/foo
-;;=&gt; 1
-</code></pre>
+;;=&gt; 1</code></pre>
 <p>For nested JS properties.  The following pairs are equivalent:</p>
-<pre><code class="lang-clj">(<span class="hljs-name">js/console.log</span> <span class="hljs-string">"HELLO"</span>)
+<pre><code class="language-clj">(<span class="hljs-name">js/console.log</span> <span class="hljs-string">"HELLO"</span>)
 <span class="hljs-comment">;; "HELLO"</span>
 
 (<span class="hljs-name">.log</span> js/console <span class="hljs-string">"HELLO"</span>)
-<span class="hljs-comment">;; "HELLO"</span>
-</code></pre>
-<pre><code class="lang-clj">cljs.core/PersistentQueue.EMPTY
+<span class="hljs-comment">;; "HELLO"</span></code></pre>
+<pre><code class="language-clj">cljs.core/PersistentQueue.EMPTY
 ;;=&gt; #queue []
 
 (.-EMPTY cljs.core/PersistentQueue)
-;;=&gt; #queue []
-</code></pre>
+;;=&gt; #queue []</code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/symbol">symbol literal</a></li><li><a href="/api/syntax/namespace">/ namespace slash</a></li></ul><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

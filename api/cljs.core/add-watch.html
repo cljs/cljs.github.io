@@ -4,7 +4,7 @@ changes.</p>
 new state.</p>
 <p><code>key</code> should be a keyword and can be used with <code>remove-watch</code> to remove the
 watch function.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> {}))
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a (<span class="hljs-name"><span class="hljs-builtin-name">atom</span></span> {}))
 
 (<span class="hljs-name"><span class="hljs-builtin-name">add-watch</span></span> a <span class="hljs-symbol">:logger</span>
   (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [_key _atom old-state new-state]
@@ -14,8 +14,7 @@ watch function.</p>
 (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> a assoc <span class="hljs-symbol">:foo</span> <span class="hljs-string">"bar"</span>)
 <span class="hljs-comment">;;=&gt; will print the following:</span>
 <span class="hljs-comment">;; old: {}</span>
-<span class="hljs-comment">;; new: {:foo "bar"}</span>
-</code></pre>
+<span class="hljs-comment">;; new: {:foo "bar"}</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/remove-watch">remove-watch</a></li></ul><hr />Source docstring:<pre>Adds a watch function to an atom reference. The watch fn must be a
 fn of 4 args: a key, the reference, its old-state, its
 new-state. Whenever the reference's state might have been changed,

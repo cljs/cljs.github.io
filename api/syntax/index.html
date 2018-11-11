@@ -18,8 +18,7 @@ Available formats:</p>
 </ul>
 <pre><code>&quot;multi
 line
-string&quot;
-</code></pre></div></div><hr /><div style="position: relative;"><div class="g" id="regex"><strong>#"" regex</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/regex">full details ></a></div><div class="sep"></div><div><p>Regular expressions compile to native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript regular expressions</a>.</p>
+string&quot;</code></pre></div></div><hr /><div style="position: relative;"><div class="g" id="regex"><strong>#"" regex</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/regex">full details ></a></div><div class="sep"></div><div><p>Regular expressions compile to native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript regular expressions</a>.</p>
 <ul>
 <li><code>#&quot;...&quot;</code> =&gt; js <code>/.../</code></li>
 <li><code>#&quot;(?i)...&quot;</code> =&gt; js <code>/.../i</code> (case-insensitive)</li>
@@ -67,8 +66,12 @@ unrepresentable number.</p>
 </ul>
 <p>Vectors also serve an important language role to prevent you from interpreting
 sequences as function calls.  Whether it&#39;s for literal data or for <em>binding forms</em>
-inside <a class="code-link" href="/api/cljs.core#let"><code>let</code></a> and <a class="code-link" href="/api/cljs.core#fn"><code>fn</code></a>, vectors provide an
-important syntax cue not found in other Lisps.</p>
+inside [<code>let</code>][doc:cljs.core/let] and [<code>fn</code>][doc:cljs.core/fn], vectors provide an
+important syntax cue not found in other Lisps.
+[doc:cljs.core/let]:/api/cljs.core#let
+[doc:cljs.core/conj]:/api/cljs.core#conj
+[doc:cljs.core/PersistentVector]:/api/cljs.core#PersistentVector
+[doc:cljs.core/fn]:/api/cljs.core#fn</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="list"><strong>() list</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/list">full details ></a></div><div class="sep"></div><div><p>A list is interpreted as a <em>call</em> when evaluated.</p>
 <ul>
 <li><code>(...)</code></li>
@@ -87,9 +90,8 @@ important syntax cue not found in other Lisps.</p>
 <li><code>#{1 2 3}</code></li>
 </ul>
 </div></div><hr /><div style="position: relative;"><div class="y" id="ns-map"><strong>#:{} namespaced map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ns-map">full details ></a></div><div class="sep"></div><div><p>Provide a default namespace for keyword keys in a map.</p>
-<pre><code class="lang-clj">#:a {1 nil, :b nil, :b/c nil, :_/d nil}
-;;=&gt; {1 nil, :a/b nil, :b/c nil, :d nil}
-</code></pre>
+<pre><code class="language-clj">#:a {1 nil, :b nil, :b/c nil, :_/d nil}
+;;=&gt; {1 nil, :a/b nil, :b/c nil, :d nil}</code></pre>
 </div></div><hr /><div style="position: relative;"><div class="y" id="ns-map-alias"><strong>#::{} namespaced map</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/ns-map-alias">full details ></a></div><div class="sep"></div><div><p>Provide a default namespace for keyword keys in a map, using an alias.</p>
 <ul>
 <li><code>#:: {:a 1}</code> =&gt; <code>{:current-ns/a 1}</code></li>
@@ -111,8 +113,7 @@ important syntax cue not found in other Lisps.</p>
 </ul>
 <p>Also useful for commenting out a multi-line expression:</p>
 <pre><code>#_(defn foo [a b]
-    (+ a b))
-</code></pre></div></div><hr /><h4>Function</h4><div style="position: relative;"><div class="g" id="function"><strong>#() function</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/function">full details ></a></div><div class="sep"></div><div><p>Shorthand for creating an anonymous function. Use <a class="code-link" href="/api/syntax#arg"><code>% arg</code></a> to refer
+    (+ a b))</code></pre></div></div><hr /><h4>Function</h4><div style="position: relative;"><div class="g" id="function"><strong>#() function</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/function">full details ></a></div><div class="sep"></div><div><p>Shorthand for creating an anonymous function. Use <a class="code-link" href="/api/syntax#arg"><code>% arg</code></a> to refer
 to the arguments.</p>
 <ul>
 <li><code>#(...)</code> =&gt; <code>(fn [args] (...))</code></li>
@@ -270,7 +271,7 @@ but with more features to help resolve symbols and interpolate values.</p>
 <li><code>`(foo ~@y)</code> =&gt; <code>(cljs.user/foo 1 2 3)</code> - interpolates and splices the sequence of <code>y</code></li>
 <li><code>`(foo bar#)</code> =&gt; <code>(cljs.user/foo bar__20418__auto__)</code> - make symbols ending in <code>#</code> unique</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div class="g" id="unquote"><strong>~ unquote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote">full details ></a></div><div class="sep"></div><div><p>Inserts an evaluated form inside of a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
+</div></div><hr /><div style="position: relative;"><div class="g" id="unquote"><strong>~ unquote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unquote">full details ></a></div><div class="sep"></div><div><p>Inserts an evaluated form inside of a <a href="/api/syntax#syntax-quote">``` syntax quote``</a> template.</p>
 <ul>
 <li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> (if x is 123)</li>
 </ul>
@@ -278,7 +279,7 @@ but with more features to help resolve symbols and interpolate values.</p>
 <ul>
 <li><code>`(foo ~@x)</code> =&gt; <code>(cljs.user/foo a b)</code> (if x is [a b])</li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div class="g" id="auto-gensym"><strong># auto-gensym</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/auto-gensym">full details ></a></div><div class="sep"></div><div><p>Shorthand for generating unique symbols inside a <a class="code-link" href="/api/syntax#syntax-quote"><code>` syntax quote</code></a> template.</p>
+</div></div><hr /><div style="position: relative;"><div class="g" id="auto-gensym"><strong># auto-gensym</strong> - special character</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/auto-gensym">full details ></a></div><div class="sep"></div><div><p>Shorthand for generating unique symbols inside a <a href="/api/syntax#syntax-quote">``` syntax quote``</a> template.</p>
 <ul>
 <li><code>foo#</code> =&gt; <code>foo__135__auto__</code></li>
 </ul>
@@ -314,52 +315,67 @@ standalone forms:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">relation</th>
-<th style="text-align:left">original</th>
-<th style="text-align:left">with <code>#</code> prefix</th>
+<th align="left">relation</th>
+<th align="left">original</th>
+<th align="left">with <code>#</code> prefix</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">string-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#string"><code>&quot;&quot; string</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#regex"><code>#&quot;&quot; regex</code></a></td>
+<tbody><tr>
+<td align="left">string-related</td>
+<td align="left">[<code>&quot;&quot; string</code>][doc:syntax/string]</td>
+<td align="left">[<code>#&quot;&quot; regex</code>][doc:syntax/regex]</td>
 </tr>
 <tr>
-<td style="text-align:left">code-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#list"><code>() list</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#function"><code>#() function</code></a></td>
+<td align="left">code-related</td>
+<td align="left">[<code>() list</code>][doc:syntax/list]</td>
+<td align="left">[<code>#() function</code>][doc:syntax/function]</td>
 </tr>
 <tr>
-<td style="text-align:left">lookup-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#map"><code>{} map</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#set"><code>#{} set</code></a></td>
+<td align="left">lookup-related</td>
+<td align="left">[<code>{} map</code>][doc:syntax/map]</td>
+<td align="left">[<code>#{} set</code>][doc:syntax/set]</td>
 </tr>
 <tr>
-<td style="text-align:left">quote-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#quote"><code>&#39; quote</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#var"><code>#&#39; var</code></a></td>
+<td align="left">quote-related</td>
+<td align="left">[<code>&#39; quote</code>][doc:syntax/quote]</td>
+<td align="left">[<code>#&#39; var</code>][doc:syntax/var]</td>
 </tr>
 <tr>
-<td style="text-align:left">ignore-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#unused"><code>_ unused</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#ignore"><code>#_ ignore</code></a></td>
+<td align="left">ignore-related</td>
+<td align="left">[<code>_ unused</code>][doc:syntax/unused]</td>
+<td align="left">[<code>#_ ignore</code>][doc:syntax/ignore]</td>
 </tr>
 <tr>
-<td style="text-align:left">name-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#symbol"><code>foo (symbol)</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#tagged-literal"><code>#foo (tagged literal)</code></a></td>
+<td align="left">name-related</td>
+<td align="left">[<code>foo (symbol)</code>][doc:syntax/symbol]</td>
+<td align="left">[<code>#foo (tagged literal)</code>][doc:syntax/tagged-literal]</td>
 </tr>
 <tr>
-<td style="text-align:left">conditional-related</td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#predicate"><code>? predicate</code></a></td>
-<td style="text-align:left"><a class="code-link" href="/api/syntax#cond"><code>#? reader conditional</code></a></td>
+<td align="left">conditional-related</td>
+<td align="left">[<code>? predicate</code>][doc:syntax/predicate]</td>
+<td align="left">[<code>#? reader conditional</code>][doc:syntax/cond]</td>
 </tr>
-</tbody>
-</table>
-<p>The &quot;symbolic values&quot; <a class="code-link" href="/api/syntax#Inf"><code>##Inf</code></a>, <a class="code-link" href="/api/syntax#-Inf"><code>##-Inf</code></a>, <a class="code-link" href="/api/syntax#NaN"><code>##NaN</code></a> do
+</tbody></table>
+<p>The &quot;symbolic values&quot; [<code>##Inf</code>][doc:syntax/Inf], [<code>##-Inf</code>][doc:syntax/-Inf], [<code>##NaN</code>][doc:syntax/NaN] do
 not follow this pattern, but the additional number sign in <code>##</code> serves as a
-mnemonic for these special numerical values.</p>
+mnemonic for these special numerical values.
+[doc:syntax/symbol]:/api/syntax#symbol
+[doc:syntax/-Inf]:/api/syntax#-Inf
+[doc:syntax/cond]:/api/syntax#cond
+[doc:syntax/string]:/api/syntax#string
+[doc:syntax/quote]:/api/syntax#quote
+[doc:syntax/Inf]:/api/syntax#Inf
+[doc:syntax/regex]:/api/syntax#regex
+[doc:syntax/unused]:/api/syntax#unused
+[doc:syntax/set]:/api/syntax#set
+[doc:syntax/tagged-literal]:/api/syntax#tagged-literal
+[doc:syntax/function]:/api/syntax#function
+[doc:syntax/map]:/api/syntax#map
+[doc:syntax/list]:/api/syntax#list
+[doc:syntax/NaN]:/api/syntax#NaN
+[doc:syntax/predicate]:/api/syntax#predicate
+[doc:syntax/ignore]:/api/syntax#ignore
+[doc:syntax/var]:/api/syntax#var</p>
 </div></div><hr /><div style="position: relative;"><div class="g" id="unreadable"><strong>#<> unreadable</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/unreadable">full details ></a></div><div class="sep"></div><div><p>A proper definition for something that cannot be read.</p>
 <ul>
 <li><code>#&lt;...&gt;</code></li>

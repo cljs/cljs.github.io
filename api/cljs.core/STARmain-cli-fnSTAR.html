@@ -2,12 +2,11 @@
 <code>*main-cli-fn*</code> is set to will be called with the command-line
 argv as arguments.</p>
 </div><hr /><h3>Details:</h3><div><p>Currently only available for Node (compiler option <code>:target :nodejs</code>)</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> -main [&amp; args]
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> -main [&amp; args]
   (<span class="hljs-name">println</span> <span class="hljs-string">"You passed the following command line args:"</span>)
   (<span class="hljs-name">println</span> args))
 
-(<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *main-cli-fn* -main)
-</code></pre>
+(<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *main-cli-fn* -main)</code></pre>
 </div><hr />Source docstring:<pre>When compiled for a command-line target, whatever function
 *main-cli-fn* is set to will be called with the command-line
 argv as arguments</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/cljs/cljs/core.cljs#L294-L298">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span>

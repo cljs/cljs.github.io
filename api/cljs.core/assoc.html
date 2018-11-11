@@ -4,7 +4,7 @@ val(s).</p>
 <p>Has no effect on the map type (hashed/sorted).</p>
 <p>When applied to a vector, returns a new vector that contains value <code>v</code> at index
 <code>k</code>.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> my-map {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span>})
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> my-map {<span class="hljs-symbol">:foo</span> <span class="hljs-number">1</span>})
 
 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> my-map <span class="hljs-symbol">:foo</span> <span class="hljs-number">2</span>)
 <span class="hljs-comment">;;=&gt; {:foo 2}</span>
@@ -17,16 +17,14 @@ val(s).</p>
 
 <span class="hljs-comment">;; you must pass a value for every key</span>
 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> my-map <span class="hljs-symbol">:foo</span>)
-<span class="hljs-comment">;;=&gt; WARNING: Wrong number of args (2) passed to cljs.core/assoc</span>
-</code></pre>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> my-vec [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
+<span class="hljs-comment">;;=&gt; WARNING: Wrong number of args (2) passed to cljs.core/assoc</span></code></pre>
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> my-vec [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 
 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> my-vec <span class="hljs-number">0</span> <span class="hljs-string">"foo"</span>)
 <span class="hljs-comment">;;=&gt; ["foo" 2 3]</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> my-vec <span class="hljs-number">3</span> <span class="hljs-string">"foo"</span>)
-<span class="hljs-comment">;;=&gt; Error: Index 3 out of bounds  [0,0]</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; Error: Index 3 out of bounds  [0,0]</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/assoc-in">assoc-in</a></li><li><a href="/api/cljs.core/dissoc">dissoc</a></li><li><a href="/api/cljs.core/merge">merge</a></li></ul><hr />Source docstring:<pre>assoc[iate]. When applied to a map, returns a new map of the
 same (hashed/sorted) type, that contains the mapping of key(s) to
 val(s). When applied to a vector, returns a new vector that

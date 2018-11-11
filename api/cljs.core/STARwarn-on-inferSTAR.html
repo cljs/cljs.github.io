@@ -2,15 +2,16 @@
 <a class="code-link" href="/api/compiler-options/infer-externs"><code>:infer-externs</code></a> to emit a warning whenever a symbol is in danger of being
 renamed in advanced <a class="code-link" href="/api/compiler-options/optimizations"><code>:optimizations</code></a> (i.e. compiler cannot infer an extern).
 Defaults to false.  When set to true, warnings are activated for the rest of the file thereafter.</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *warn-on-infer* <span class="hljs-literal">true</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> *warn-on-infer* <span class="hljs-literal">true</span>)
 
 (<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> wrap-baz [x] (<span class="hljs-name">.baz</span> x))
 <span class="hljs-comment">;; WARNING: Cannot infer target type in expression (. x baz)</span>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> wrap-baz [<span class="hljs-comment">^js/Foo.Bar</span> x] (<span class="hljs-name">.baz</span> x))
-<span class="hljs-comment">;; no more warning after x is annotated</span>
-</code></pre>
+<span class="hljs-comment">;; no more warning after x is annotated</span></code></pre>
 </div><hr /><h3>Details:</h3><div><p>See <a href="https://clojurescript.org/guides/externs#externs-inference">externs inference</a> for full details.</p>
 <p>Somewhat analogous to <a class="code-link" href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/*warn-on-reflection*"><code>*warn-on-reflection*</code></a>
-in Clojure.</p>
+in Clojure.
+[doc:compiler-options/infer-externs]:/api/compiler-options/infer-externs
+[doc:compiler-options/optimizations]:/api/compiler-options/optimizations</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/compiler-options/infer-externs">:infer-externs</a></li></ul><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/cljs/cljs/core.cljs#L33">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> *warn-on-infer* <span class="hljs-literal">false</span>)</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

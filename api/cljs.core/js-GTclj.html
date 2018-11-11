@@ -5,17 +5,15 @@ keywords.</p>
 <p>Note that <code>js-&gt;clj</code> is not optimized for speed and the <a href="https://github.com/cognitect/transit-cljs">transit.cljs</a> library is
 recommended for parsing large amounts of JSON data.</p>
 </div><hr /><h3>Examples:</h3><div><p>Parse a JSON string:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> json <span class="hljs-string">"{\"foo\": 1, \"bar\": 2, \"baz\": [1,2,3]}"</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> json <span class="hljs-string">"{\"foo\": 1, \"bar\": 2, \"baz\": [1,2,3]}"</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> a (<span class="hljs-name">.parse</span> js/JSON json))
-<span class="hljs-comment">;;=&gt; #js {:foo 1, :bar 2, :baz #js [1 2 3]}</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; #js {:foo 1, :bar 2, :baz #js [1 2 3]}</span></code></pre>
 <p>Convert JSON data <code>a</code> to ClojureScript data:</p>
-<pre><code class="lang-clj">(<span class="hljs-name">js-&gt;clj</span> a)
+<pre><code class="language-clj">(<span class="hljs-name">js-&gt;clj</span> a)
 <span class="hljs-comment">;;=&gt; {"foo" 1, "bar" 2, "baz" [1 2 3]}</span>
 
 (<span class="hljs-name">js-&gt;clj</span> a <span class="hljs-symbol">:keywordize-keys</span> <span class="hljs-literal">true</span>)
-<span class="hljs-comment">;;=&gt; {:foo 1, :bar 2, :baz [1 2 3]}</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; {:foo 1, :bar 2, :baz [1 2 3]}</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/clj-GTjs">clj->js</a></li></ul><hr />Source docstring:<pre>Recursively transforms JavaScript arrays into ClojureScript
 vectors, and JavaScript objects into ClojureScript maps.  With
 option ':keywordize-keys true' will convert object fields from

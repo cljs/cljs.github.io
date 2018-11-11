@@ -4,10 +4,9 @@ of those functions.</p>
 rightmost of <code>fns</code> to the arguments, whose result is subsequently applied to
 the next left function, and so on.</p>
 <p><code>((comp a b c) x y)</code> = <code>(a (b (c x y)))</code></p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> f (<span class="hljs-name"><span class="hljs-builtin-name">comp</span></span> str inc +))
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> f (<span class="hljs-name"><span class="hljs-builtin-name">comp</span></span> str inc +))
 (<span class="hljs-name">f</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>)
-<span class="hljs-comment">;;=&gt; "7"</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; "7"</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/partial">partial</a></li><li><a href="/api/cljs.core/juxt">juxt</a></li></ul><hr />Source docstring:<pre>Takes a set of functions and returns a fn that is the composition
 of those fns.  The returned fn takes a variable number of args,
 applies the rightmost of fns to the args, the next

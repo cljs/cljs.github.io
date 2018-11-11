@@ -3,27 +3,25 @@
 <li><code>#uuid &quot;8-4-4-4-12&quot;</code> - numbers represent the number of hex digits</li>
 <li><code>#uuid &quot;97bda55b-6175-4c39-9e04-7c0205c709dc&quot;</code> - actual example</li>
 </ul>
-</div><hr /><h3>Details:</h3><div><p>Uses the <a class="code-link" href="/api/cljs.core/uuid"><code>UUID</code></a> type.</p>
+</div><hr /><h3>Details:</h3><div><p>Uses the <a class="code-link" href="/api/cljs.core/UUID"><code>UUID</code></a> type.</p>
 <p>Representing UUIDs with <code>#uuid</code> rather than just a plain string has the following benefits:</p>
 <ul>
 <li>the reader will throw an exception on malformed UUIDs</li>
 <li>its UUID type is preserved and shown when serialized to <a href="https://github.com/edn-format/edn">edn</a>.</li>
 </ul>
-<p>To create a UUID from an evaluated expression, use <a class="code-link" href="/api/cljs.core/uuid"><code>uuid</code></a>.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="lang-clj">#uuid "00000000-0000-0000-0000-000000000000"
+<p>To create a UUID from an evaluated expression, use <a class="code-link" href="/api/cljs.core/UUID"><code>uuid</code></a>.</p>
+</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">#uuid "00000000-0000-0000-0000-000000000000"
 ;;=&gt; #uuid "00000000-0000-0000-0000-000000000000"
 
 #uuid "97bda55b-6175-4c39-9e04-7c0205c709dc"
 ;;=&gt; #uuid "97bda55b-6175-4c39-9e04-7c0205c709dc"
 
 #uuid "asdf"
-;; clojure.lang.ExceptionInfo: Invalid UUID string: asdf
-</code></pre>
+;; clojure.lang.ExceptionInfo: Invalid UUID string: asdf</code></pre>
 <p>Get as a string:</p>
-<pre><code class="lang-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> foo #uuid <span class="hljs-string">"97bda55b-6175-4c39-9e04-7c0205c709dc"</span>)
+<pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> foo #uuid <span class="hljs-string">"97bda55b-6175-4c39-9e04-7c0205c709dc"</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> foo)
-<span class="hljs-comment">;;=&gt; "97bda55b-6175-4c39-9e04-7c0205c709dc"</span>
-</code></pre>
+<span class="hljs-comment">;;=&gt; "97bda55b-6175-4c39-9e04-7c0205c709dc"</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/uuid">uuid</a></li><li><a href="/api/cljs.core/random-uuid">random-uuid</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/tagged_literals.cljc#L24-L31">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-uuid
      [form]
      (when-not (string? form)
