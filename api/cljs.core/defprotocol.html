@@ -36,17 +36,32 @@ effect, and defines no new types.
       (foo [this] 17)
       (bar-me [this] x)
       (bar-me [this y] x))))
-=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/core.cljc#L1970-L2087">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
+=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.516/src/main/clojure/cljs/core.cljc#L1983-L2138">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
   [psym &amp; doc+methods]
   (<span class="hljs-name">core/let</span> [p (<span class="hljs-symbol">:name</span> (<span class="hljs-name">cljs.analyzer/resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> &amp;env <span class="hljs-symbol">:locals</span>) psym))
-             [doc methods] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">core/string?</span> (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> doc+methods))
-                             [(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> doc+methods) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> doc+methods)]
-                             [<span class="hljs-literal">nil</span> doc+methods])
-             psym (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> psym assoc
-                    <span class="hljs-symbol">:doc</span> doc
-                    <span class="hljs-symbol">:protocol-symbol</span> <span class="hljs-literal">true</span>)
+             [opts methods]
+             (<span class="hljs-name">core/loop</span> [opts {<span class="hljs-symbol">:protocol-symbol</span> <span class="hljs-literal">true</span>}
+                         methods []
+                         sigs doc+methods]
+               (<span class="hljs-name">core/if-not</span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> sigs)
+                 [opts methods]
+                 (<span class="hljs-name">core/let</span> [[head &amp; tail] sigs]
+                   (<span class="hljs-name">core/cond</span>
+                     (<span class="hljs-name">core/string?</span> head)
+                     (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> opts <span class="hljs-symbol">:doc</span> head) methods tail)
+                     (<span class="hljs-name">core/keyword?</span> head)
+                     (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> opts head (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> tail)) methods (<span class="hljs-name"><span class="hljs-builtin-name">rest</span></span> tail))
+                     (<span class="hljs-name">core/list?</span> head)
+                     (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> opts (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> methods head) tail)
+                     <span class="hljs-symbol">:else</span>
+                     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name">Exception.</span>
+                                       (<span class="hljs-name">core/str</span> <span class="hljs-string">"Invalid protocol, "</span> psym <span class="hljs-string">" received unexpected argument"</span>))
+                               <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">js/Error.</span>
+                                       (<span class="hljs-name">core/str</span> <span class="hljs-string">"Invalid protocol, "</span> psym <span class="hljs-string">" received unexpected argument"</span>))))
+                     ))))
+             psym (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> psym merge opts)
              ns-name (<span class="hljs-name">core/-&gt;</span> &amp;env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:name</span>)
-             fqn (<span class="hljs-name">core/fn</span> [n] (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> ns-name <span class="hljs-string">"."</span> n)))
+             fqn (<span class="hljs-name">core/fn</span> [n] (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> ns-name) (<span class="hljs-name">core/str</span> n)))
              prefix (<span class="hljs-name">protocol-prefix</span> p)
              _ (<span class="hljs-name">core/doseq</span> [[mname &amp; arities] methods]
                  (<span class="hljs-name">core/when</span> (<span class="hljs-name">some</span> #{<span class="hljs-number">0</span>} (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> count (<span class="hljs-name"><span class="hljs-builtin-name">filter</span></span> vector? arities)))
@@ -64,21 +79,44 @@ effect, and defines no new types.
                                                      (<span class="hljs-name">core/symbol?</span> arg) arg
                                                      (<span class="hljs-name">core/and</span> (<span class="hljs-name"><span class="hljs-builtin-name">map?</span></span> arg) (<span class="hljs-name">core/some?</span> (<span class="hljs-symbol">:as</span> arg))) (<span class="hljs-symbol">:as</span> arg)
                                                      <span class="hljs-symbol">:else</span> (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>))) sig)
-                                           sig)]
-                            `(~sig
-                              (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> ~(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig)))
-                                    (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig) ~(<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> <span class="hljs-string">"-"</span> slot)))))) <span class="hljs-comment">;; Property access needed here.</span>
-                                (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig) ~slot ~@sig)
-                                (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [x# (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> ~(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig)) <span class="hljs-literal">nil</span> ~(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig))
-                                      m# (<span class="hljs-name">unchecked-get</span> ~(<span class="hljs-name">fqn</span> fname) (<span class="hljs-name">goog/typeOf</span> x#))]
-                                  (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> m#)
-                                    (<span class="hljs-name">m#</span> ~@sig)
-                                    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [m# (<span class="hljs-name">unchecked-get</span> ~(<span class="hljs-name">fqn</span> fname) <span class="hljs-string">"_"</span>)]
-                                      (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> m#)
-                                        (<span class="hljs-name">m#</span> ~@sig)
-                                        (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
-                                          (<span class="hljs-name">missing-protocol</span>
-                                            ~(<span class="hljs-name">core/str</span> psym <span class="hljs-string">"."</span> fname) ~(<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig)))))))))))
+                                           sig)
+
+                                     fqn-fname (<span class="hljs-name">fqn</span> fname)
+                                     fsig (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig)
+
+                                     <span class="hljs-comment">;; construct protocol checks in reverse order</span>
+                                     <span class="hljs-comment">;; check the.protocol/fn["_"] for default impl last</span>
+                                     check
+                                     `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [m# (<span class="hljs-name">unchecked-get</span> ~fqn-fname <span class="hljs-string">"_"</span>)]
+                                        (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> m#)
+                                          (<span class="hljs-name">m#</span> ~@sig)
+                                          (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span>
+                                            (<span class="hljs-name">missing-protocol</span>
+                                              ~(<span class="hljs-name">core/str</span> psym <span class="hljs-string">"."</span> fname) ~fsig))))
+
+                                     <span class="hljs-comment">;; then check protocol fn in metadata (only when protocol is marked with :extend-via-metadata true)</span>
+                                     check
+                                     (<span class="hljs-name">core/if-not</span> (<span class="hljs-symbol">:extend-via-metadata</span> opts)
+                                       check
+                                       `(<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [meta-impl# (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> ~fsig (<span class="hljs-name">core/meta</span>) (<span class="hljs-name">core/get</span> '~fqn-fname))]
+                                          (<span class="hljs-name">meta-impl#</span> ~@sig)
+                                          ~check))
+
+                                     <span class="hljs-comment">;; then check protocol on js string,function,array,object</span>
+                                     check
+                                     `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [x# (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> ~fsig) <span class="hljs-literal">nil</span> ~fsig)
+                                            m# (<span class="hljs-name">unchecked-get</span> ~fqn-fname (<span class="hljs-name">goog/typeOf</span> x#))]
+                                        (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> m#)
+                                          (<span class="hljs-name">m#</span> ~@sig)
+                                          ~check))
+
+                                     <span class="hljs-comment">;; then check protocol property on object (first check actually executed)</span>
+                                     check
+                                     `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> ~fsig))
+                                               (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~fsig ~(<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> <span class="hljs-string">"-"</span> slot)))))) <span class="hljs-comment">;; Property access needed here.</span>
+                                        (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~fsig ~slot ~@sig)
+                                        ~check)]
+                            `(~sig ~check)))
              psym (<span class="hljs-name">core/-&gt;</span> psym
                     (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> update-in [<span class="hljs-symbol">:jsdoc</span>] conj
                       <span class="hljs-string">"@interface"</span>)

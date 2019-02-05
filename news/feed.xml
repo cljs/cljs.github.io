@@ -1,4 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 19 Nov 2018 00:39:33 GMT</pubDate><lastBuildDate>Mon, 19 Nov 2018 00:39:33 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.439</title><description>&lt;p&gt;Please refer the announce post for the details:
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 05 Feb 2019 22:58:37 GMT</pubDate><lastBuildDate>Tue, 05 Feb 2019 22:58:37 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.516</title><description>&lt;p&gt;Please refer to the announce post for the details:
+&lt;a href=&quot;https://clojurescript.org/news/2019-01-31-release&quot;&gt;https://clojurescript.org/news/2019-01-31-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
+</description><pubDate>Wed, 31 Jan 2018 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.516</link></item><item><title>1.10.439</title><description>&lt;p&gt;Please refer the announce post for the details:
 &lt;a href=&quot;https://clojurescript.org/news/2018-11-02-release&quot;&gt;https://clojurescript.org/news/2018-11-02-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 &lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
@@ -515,27 +518,4 @@ optimization Replace with-meta calls by -with-meta calls where possible&lt;/li&g
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2020&quot;&gt;CLJS-2020&lt;/a&gt;: defmulti &amp;quot;miss&amp;quot; performance poor&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2034&quot;&gt;CLJS-2034&lt;/a&gt;: Sequence and Eduction produce infinite loop in transducer that appends to the reduction&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 26 May 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.562</link></item><item><title>1.9.542 - spec changes & REPL enhancement</title><description>&lt;p&gt;This release is primarily about staying in sync with the latest changes to spec. It
-also includes a small but significant enhancement to REPLs to allow handling multiple forms.&lt;/p&gt;
-&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1572&quot;&gt;CLJS-1572&lt;/a&gt;: REPL doesn&amp;#39;t give error for expressions with too many right parentheses&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;cljs.spec -&amp;gt; cljs.spec.alpha&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2013&quot;&gt;CLJS-2013&lt;/a&gt; - Add MapEntry type&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2015&quot;&gt;CLJS-2015&lt;/a&gt;: Self-host: &lt;code&gt;defmacro&lt;/code&gt; should return the Var&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2017&quot;&gt;CLJS-2017&lt;/a&gt;: Upgrade Closure Compiler to latest April 2017 release&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-485&quot;&gt;CLJS-485&lt;/a&gt;: RegExp flags are being dropped by string/replace&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1518&quot;&gt;CLJS-1518&lt;/a&gt;: Case macro expansion evaluates expression twice&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2024&quot;&gt;CLJS-2024&lt;/a&gt;: Self-host: &lt;code&gt;find-ns-obj&lt;/code&gt; broken for namespaces with &amp;#39;a&amp;#39; as the first segment&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2028&quot;&gt;CLJS-2028&lt;/a&gt;: &lt;code&gt;realized?&lt;/code&gt; throws on LazyTransformer&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2010&quot;&gt;CLJS-2010&lt;/a&gt;: refer-clojure :rename throws on valid invocations&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2007&quot;&gt;CLJS-2007&lt;/a&gt;: Whitespace optimizations should respect :main option.&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 12 May 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.542</link></item></channel></rss>
+</description><pubDate>Fri, 26 May 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.562</link></item></channel></rss>

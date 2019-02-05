@@ -22,14 +22,14 @@
 <pre><code class="language-clj">(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> foo #uuid <span class="hljs-string">"97bda55b-6175-4c39-9e04-7c0205c709dc"</span>)
 (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> foo)
 <span class="hljs-comment">;;=&gt; "97bda55b-6175-4c39-9e04-7c0205c709dc"</span></code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/uuid">uuid</a></li><li><a href="/api/cljs.core/random-uuid">random-uuid</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/tagged_literals.cljc#L24-L31">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-uuid
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/uuid">uuid</a></li><li><a href="/api/cljs.core/random-uuid">random-uuid</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.516/src/main/clojure/cljs/tagged_literals.cljc#L24-L31">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>   (defn read-uuid
      [form]
      (when-not (string? form)
        (throw (RuntimeException. "UUID literal expects a string as its representation.")))
      (try
        (java.util.UUID/fromString form)
        (catch Throwable e
-         (throw (RuntimeException. (.getMessage e)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.439/src/main/clojure/cljs/tagged_literals.cljc#L87-L93">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
+         (throw (RuntimeException. (.getMessage e)))))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.516/src/main/clojure/cljs/tagged_literals.cljc#L87-L93">clojurescript:src/main/clojure/cljs/tagged_literals.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> ^<span class="hljs-symbol">:dynamic</span> *cljs-data-readers*
   (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> <span class="hljs-comment">;; assumes we can read all data_readers</span>
     #?(<span class="hljs-symbol">:clj</span> *data-readers*)
     {'queue read-queue
