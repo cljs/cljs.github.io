@@ -21,6 +21,6 @@
 
 (apply f its-current-meta args)
 
-f must be free of side-effects</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.516/src/main/cljs/cljs/core.cljs#L10484-L10491">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> alter-meta!
+f must be free of side-effects</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.520-1-g230e46ae/src/main/cljs/cljs/core.cljs#L10484-L10491">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> alter-meta!
   [iref f &amp; args]
   (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> (<span class="hljs-name">.-meta</span> iref) (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> f (<span class="hljs-name">.-meta</span> iref) args)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
