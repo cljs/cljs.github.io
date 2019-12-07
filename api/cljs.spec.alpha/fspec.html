@@ -10,7 +10,7 @@ fabricate a return value compliant with the :ret spec, ignoring
 the :fn spec if present.
 
 Optionally takes :gen generator-fn, which must be a fn of no args
-that returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.520-1-g230e46ae/src/main/cljs/cljs/spec/alpha.cljc#L378-L396">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fspec
+that returns a test.check generator.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/cljs/cljs/spec/alpha.cljc#L388-L406">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmacro</span></span> fspec
   [&amp; {<span class="hljs-symbol">:keys</span> [args ret fn gen] <span class="hljs-symbol">:or</span> {ret `cljs.core/any?}}]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [env &amp;env]
     `(<span class="hljs-name">fspec-impl</span> (<span class="hljs-name">spec</span> ~args) '~(<span class="hljs-name">res</span> env args)

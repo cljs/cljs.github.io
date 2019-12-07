@@ -36,7 +36,7 @@ effect, and defines no new types.
       (foo [this] 17)
       (bar-me [this] x)
       (bar-me [this y] x))))
-=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.520-1-g230e46ae/src/main/clojure/cljs/core.cljc#L1983-L2138">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
+=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/clojure/cljs/core.cljc#L1989-L2158">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
   [psym &amp; doc+methods]
   (<span class="hljs-name">core/let</span> [p (<span class="hljs-symbol">:name</span> (<span class="hljs-name">cljs.analyzer/resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> &amp;env <span class="hljs-symbol">:locals</span>) psym))
              [opts methods]
@@ -118,8 +118,7 @@ effect, and defines no new types.
                                         ~check)]
                             `(~sig ~check)))
              psym (<span class="hljs-name">core/-&gt;</span> psym
-                    (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> update-in [<span class="hljs-symbol">:jsdoc</span>] conj
-                      <span class="hljs-string">"@interface"</span>)
+                    (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> update-in [<span class="hljs-symbol">:jsdoc</span>] conj <span class="hljs-string">"@interface"</span>)
                     (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> assoc-in [<span class="hljs-symbol">:protocol-info</span> <span class="hljs-symbol">:methods</span>]
                       (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> {}
                         (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span>
@@ -129,6 +128,16 @@ effect, and defines no new types.
                                        sigs (<span class="hljs-name"><span class="hljs-builtin-name">take-while</span></span> vector? sigs)]
                               [(<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> fname assoc <span class="hljs-symbol">:doc</span> doc)
                                (<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> sigs)]))
+                          methods)))
+                    <span class="hljs-comment">;; for compatibility with Clojure</span>
+                    (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> assoc-in [<span class="hljs-symbol">:sigs</span>]
+                      (<span class="hljs-name"><span class="hljs-builtin-name">into</span></span> {}
+                        (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span>
+                          (<span class="hljs-name">core/fn</span> [[fname &amp; sigs]]
+                            (<span class="hljs-name">core/let</span> [doc (<span class="hljs-name">core/as-&gt;</span> (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> sigs) doc
+                                             (<span class="hljs-name">core/when</span> (<span class="hljs-name">core/string?</span> doc) doc))
+                                       sigs (<span class="hljs-name"><span class="hljs-builtin-name">take-while</span></span> vector? sigs)]
+                              [(<span class="hljs-name"><span class="hljs-builtin-name">keyword</span></span> fname) {<span class="hljs-symbol">:name</span> fname <span class="hljs-symbol">:arglists</span> (<span class="hljs-name"><span class="hljs-builtin-name">list*</span></span> sigs) <span class="hljs-symbol">:doc</span> doc}]))
                           methods))))
              method (<span class="hljs-name">core/fn</span> [[fname &amp; sigs]]
                       (<span class="hljs-name">core/let</span> [doc (<span class="hljs-name">core/as-&gt;</span> (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> sigs) doc
@@ -138,6 +147,11 @@ effect, and defines no new types.
                                        (<span class="hljs-name">cljs.analyzer/warning</span>
                                         <span class="hljs-symbol">:protocol-with-variadic-method</span>
                                         &amp;env {<span class="hljs-symbol">:protocol</span> psym <span class="hljs-symbol">:name</span> fname}))
+                                 _ (<span class="hljs-name">core/when-some</span> [existing (<span class="hljs-name">core/get</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> &amp;env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:defs</span>) fname)]
+                                     (<span class="hljs-name">core/when-not</span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> p (<span class="hljs-symbol">:protocol</span> existing))
+                                       (<span class="hljs-name">cljs.analyzer/warning</span>
+                                         <span class="hljs-symbol">:protocol-with-overwriting-method</span>
+                                         {} {<span class="hljs-symbol">:protocol</span> psym <span class="hljs-symbol">:name</span> fname <span class="hljs-symbol">:existing</span> existing})))
                                  slot (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> prefix (<span class="hljs-name">munge</span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> fname))))
                                  fname (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> fname assoc
                                          <span class="hljs-symbol">:protocol</span> p

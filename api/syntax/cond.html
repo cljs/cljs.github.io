@@ -43,7 +43,7 @@ of the compiler.  See <a class="code-link" href="/api/cljs.core/defmacro"><code>
 
 (<span class="hljs-name">str-&gt;int</span> <span class="hljs-string">"123"</span>)
 <span class="hljs-comment">;;=&gt; 123</span></code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/cond-splicing">#?@ reader conditional splicing</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L505-L523">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-cond
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/cond-splicing">#?@ reader conditional splicing</a></li></ul><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.2/src/main/clojure/clojure/tools/reader.clj#L505-L523">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> read-cond
   [rdr _ opts pending-forms]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> opts (<span class="hljs-name">#</span>{<span class="hljs-symbol">:allow</span> <span class="hljs-symbol">:preserve</span>} (<span class="hljs-symbol">:read-cond</span> opts))))
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">RuntimeException.</span> <span class="hljs-string">"Conditional read not allowed"</span>)))
@@ -61,7 +61,7 @@ of the compiler.  See <a class="code-link" href="/api/cljs.core/defmacro"><code>
               (<span class="hljs-name">reader-conditional</span> (<span class="hljs-name">read-list</span> rdr ch opts pending-forms) splicing)
               (<span class="hljs-name">read-cond-delimited</span> rdr splicing opts pending-forms))))
         (<span class="hljs-name">err/throw-eof-in-character</span> rdr)))
-    (<span class="hljs-name">err/throw-eof-in-character</span> rdr)))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.0/src/main/clojure/clojure/tools/reader.clj#L798-L812">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
+    (<span class="hljs-name">err/throw-eof-in-character</span> rdr)))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.2/src/main/clojure/clojure/tools/reader.clj#L798-L812">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn-</span></span> dispatch-macros [ch]
   (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> ch
     \^ read-meta                <span class="hljs-comment">;deprecated</span>
     \' (<span class="hljs-name">wrapping-reader</span> 'var)

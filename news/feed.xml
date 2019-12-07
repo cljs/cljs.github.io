@@ -1,4 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 21 Mar 2019 04:57:49 GMT</pubDate><lastBuildDate>Thu, 21 Mar 2019 04:57:49 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.516</title><description>&lt;p&gt;Please refer to the announce post for the details:
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 07 Dec 2019 20:03:32 GMT</pubDate><lastBuildDate>Sat, 07 Dec 2019 20:03:32 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.597</title><description>&lt;p&gt;Please refer to the announce post for the details:
+&lt;a href=&quot;https://clojurescript.org/news/2019-11-18-release&quot;&gt;https://clojurescript.org/news/2019-11-18-release&lt;/a&gt;&lt;/p&gt;
+</description><pubDate>Mon, 18 Nov 2019 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.597</link></item><item><title>1.10.516</title><description>&lt;p&gt;Please refer to the announce post for the details:
 &lt;a href=&quot;https://clojurescript.org/news/2019-01-31-release&quot;&gt;https://clojurescript.org/news/2019-01-31-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
 </description><pubDate>Wed, 31 Jan 2018 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.516</link></item><item><title>1.10.439</title><description>&lt;p&gt;Please refer the announce post for the details:
@@ -487,35 +489,4 @@ contributed by Mike Fikes:
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2067&quot;&gt;CLJS-2067&lt;/a&gt;: reduce-kv / inode-kv-reduce fails to honor reduced?&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2056&quot;&gt;CLJS-2056&lt;/a&gt;: Self-host: test-self-parity failing wrt cljs.core/fn symbol&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Tue, 27 Jun 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.660</link></item><item><title>1.9.562 - Clojure 1.9.0-alpha17 parity</title><description>&lt;p&gt;This release coincides with Clojure 1.9.0-alpha17, includes a variety
-of fixes, and updates both the Closure Compiler &amp;amp; Library dependencies.&lt;/p&gt;
-&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2027&quot;&gt;CLJS-2027&lt;/a&gt;: Add language-in for ECMA 2017 and ECMA Next&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2026&quot;&gt;CLJS-2026&lt;/a&gt;: Add Compiler option for rewrite polyfills&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2021&quot;&gt;CLJS-2021&lt;/a&gt;: subvec throws when passed non-vector&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1884&quot;&gt;CLJS-1884&lt;/a&gt;: Give a chance to MetaFn to be removed by closure under :advanced
-optimization Replace with-meta calls by -with-meta calls where possible&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2052&quot;&gt;CLJS-2052&lt;/a&gt;: Port new spec.alpha enhancements&lt;/li&gt;
-&lt;li&gt;Update Google Closure Compiler dependency&lt;/li&gt;
-&lt;li&gt;Update Google Closure Library dependency&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2053&quot;&gt;CLJS-2053&lt;/a&gt;: Regression: cljs.spec.alpha/any for fdef&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2039&quot;&gt;CLJS-2039&lt;/a&gt;: remove extraneous argument from ChunkBuffer.chunk&lt;/li&gt;
-&lt;li&gt;Fix assumption that all closure-compliant JS is goog.*&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2035&quot;&gt;CLJS-2035&lt;/a&gt;: Self-host: Add map-entry-test to self-parity&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2033&quot;&gt;CLJS-2033&lt;/a&gt;: set-validator! should check current state&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2008&quot;&gt;CLJS-2008&lt;/a&gt;: Self-host: backport fixes to threading macros&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2005&quot;&gt;CLJS-2005&lt;/a&gt;: Bad error message with duplicate arity function definitions&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2032&quot;&gt;CLJS-2032&lt;/a&gt;: Case macro expansion evaluates expression twice when no matching clause&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2023&quot;&gt;CLJS-2023&lt;/a&gt;: User supplied type hints stopped working on js/goog.DEBUG&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2020&quot;&gt;CLJS-2020&lt;/a&gt;: defmulti &amp;quot;miss&amp;quot; performance poor&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2034&quot;&gt;CLJS-2034&lt;/a&gt;: Sequence and Eduction produce infinite loop in transducer that appends to the reduction&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 26 May 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.562</link></item></channel></rss>
+</description><pubDate>Tue, 27 Jun 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.660</link></item></channel></rss>

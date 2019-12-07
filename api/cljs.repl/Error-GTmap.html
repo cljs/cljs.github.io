@@ -6,17 +6,12 @@
           :message - exception message
           :data - ex-data
           :at - top stack element
- :trace - root cause stack elements</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.520-1-g230e46ae/src/main/cljs/cljs/repl.cljs#L62-L102">clojurescript:src/main/cljs/cljs/repl.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> Error-&gt;map
+ :trace - root cause stack elements</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/cljs/cljs/repl.cljs#L62-L97">clojurescript:src/main/cljs/cljs/repl.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> Error-&gt;map
   [o]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [base (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [t]
                (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> {<span class="hljs-symbol">:type</span> (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
                                (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> ExceptionInfo t) 'ExceptionInfo
-                               (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> js/EvalError t) 'js/EvalError
-                               (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> js/RangeError t) 'js/RangeError
-                               (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> js/ReferenceError t) 'js/ReferenceError
-                               (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> js/SyntaxError t) 'js/SyntaxError
-                               (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> js/URIError t) 'js/URIError
-                               (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> js/Error t) 'js/Error
+                               (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> js/Error t) (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> <span class="hljs-string">"js"</span> (<span class="hljs-name">.-name</span> t))
                                <span class="hljs-symbol">:else</span> <span class="hljs-literal">nil</span>)}
                  (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [msg (<span class="hljs-name">ex-message</span> t)]
                    {<span class="hljs-symbol">:message</span> msg})

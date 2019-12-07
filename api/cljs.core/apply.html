@@ -8,7 +8,7 @@ arguments to <code>args</code>.</p>
 
 (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> max <span class="hljs-number">1</span> [<span class="hljs-number">2</span> <span class="hljs-number">3</span>])
 <span class="hljs-comment">;;=&gt; 3</span></code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/map">map</a></li></ul><hr />Source docstring:<pre>Applies fn f to the argument list formed by prepending intervening arguments to args.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.520-1-g230e46ae/src/main/cljs/cljs/core.cljs#L3922-L3968">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> apply
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/map">map</a></li></ul><hr />Source docstring:<pre>Applies fn f to the argument list formed by prepending intervening arguments to args.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/cljs/cljs/core.cljs#L3915-L3961">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> apply
   ([f args]
    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">.-cljs</span>$lang$applyTo f)
      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [fixed-arity (<span class="hljs-name">.-cljs</span>$lang$maxFixedArity f)
