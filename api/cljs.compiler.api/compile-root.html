@@ -2,16 +2,12 @@
 .js files. If target-dir is provided, output will go into this
 directory mirroring the source directory structure. Returns a list
 of maps containing information about each file which was compiled
-in dependency order.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/clojure/cljs/compiler/api.clj#L99-L116">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-root
+in dependency order.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/clojure/cljs/compiler/api.clj#L88-L101">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-root
   ([src-dir] (<span class="hljs-name">compile-root</span> src-dir <span class="hljs-string">"out"</span>))
   ([src-dir target-dir] (<span class="hljs-name">compile-root</span> src-dir target-dir <span class="hljs-literal">nil</span>))
   ([src-dir target-dir opts]
-   (<span class="hljs-name">compile-root</span>
-     (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> env/*compiler*)
-       env/*compiler*
-       (<span class="hljs-name">env/default-compiler-env</span> opts))
-     src-dir target-dir opts))
+   (<span class="hljs-name">compile-root</span> (<span class="hljs-name">ana-api/empty-state</span> opts) src-dir target-dir opts))
   ([state src-dir target-dir opts]
-   (<span class="hljs-name">env/with-compiler-env</span> state
+   (<span class="hljs-name">ana-api/with-state</span> state
      (<span class="hljs-name">binding</span> [ana/*cljs-warning-handlers* (<span class="hljs-symbol">:warning-handlers</span> opts ana/*cljs-warning-handlers*)]
        (<span class="hljs-name">comp/compile-root</span> src-dir target-dir opts)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

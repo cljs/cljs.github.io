@@ -3,13 +3,13 @@ Dependencies must be a sequence of strings or symbols naming packages or paths
 within packages (e.g. [react "react-dom/server"] or a valid compiler options
 map. Assumes dependencies have been been previously installed, either by
 `cljs.build.api/install-node-deps!` or by an NPM client, and reside in the
-`node_modules` directory.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/clojure/cljs/build/api.clj#L251-L268">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> get-node-deps
+`node_modules` directory.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/clojure/cljs/build/api.clj#L268-L285">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> get-node-deps
   ([dependencies]
    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">compiler-opts?</span> dependencies)
      (<span class="hljs-name">get-node-deps</span> (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> (<span class="hljs-symbol">:npm-deps</span> dependencies)) dependencies)
      (<span class="hljs-name">get-node-deps</span> dependencies
-       (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> env/*compiler*)
-         (<span class="hljs-symbol">:options</span> @env/*compiler*)))))
+       (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [state (<span class="hljs-name">ana-api/current-state</span>)]
+         (<span class="hljs-symbol">:options</span> @state)))))
   ([dependencies opts]
    {<span class="hljs-symbol">:pre</span> [(<span class="hljs-name"><span class="hljs-builtin-name">sequential?</span></span> dependencies)]}
    (<span class="hljs-name">closure/index-node-modules</span>

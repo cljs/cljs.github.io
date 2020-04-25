@@ -9,18 +9,14 @@ the dest file has an older modification time.
 Both src and dest may be either a String or a File.
 
 Returns a map containing {:ns .. :provides .. :requires .. :file ..}.
-If the file was not compiled returns only {:file ...}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/clojure/cljs/compiler/api.clj#L66-L92">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-file
+If the file was not compiled returns only {:file ...}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/clojure/cljs/compiler/api.clj#L59-L81">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-file
   ([src]
    (<span class="hljs-name">compile-file</span> src (<span class="hljs-name">closure/src-file-&gt;target-file</span> src)))
   ([src dest]
    (<span class="hljs-name">compile-file</span> src dest <span class="hljs-literal">nil</span>))
   ([src dest opts]
-   (<span class="hljs-name">compile-file</span>
-     (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> env/*compiler*)
-       env/*compiler*
-       (<span class="hljs-name">env/default-compiler-env</span> opts))
-     src dest opts))
+   (<span class="hljs-name">compile-file</span> (<span class="hljs-name">ana-api/empty-state</span> opts) src dest opts))
   ([state src dest opts]
-   (<span class="hljs-name">env/with-compiler-env</span> state
+   (<span class="hljs-name">ana-api/with-state</span> state
      (<span class="hljs-name">binding</span> [ana/*cljs-warning-handlers* (<span class="hljs-symbol">:warning-handlers</span> opts ana/*cljs-warning-handlers*)]
        (<span class="hljs-name">comp/compile-file</span> src dest opts)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

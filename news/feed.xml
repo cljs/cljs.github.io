@@ -1,4 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 07 Dec 2019 20:03:32 GMT</pubDate><lastBuildDate>Sat, 07 Dec 2019 20:03:32 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.597</title><description>&lt;p&gt;Please refer to the announce post for the details:
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sat, 25 Apr 2020 01:03:27 GMT</pubDate><lastBuildDate>Sat, 25 Apr 2020 01:03:27 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.741</title><description>&lt;p&gt;Please refer to the announce post for the details:
+&lt;a href=&quot;https://clojurescript.org/news/2020-04-24-release&quot;&gt;https://clojurescript.org/news/2020-04-24-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This release also features a significant enhancement when building against node_modules:
+&lt;a href=&quot;https://clojurescript.org/news/2020-04-24-bundle-target&quot;&gt;https://clojurescript.org/news/2020-04-24-bundle-target&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
+</description><pubDate>Fri, 24 Apr 2020 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.741</link></item><item><title>1.10.597</title><description>&lt;p&gt;Please refer to the announce post for the details:
 &lt;a href=&quot;https://clojurescript.org/news/2019-11-18-release&quot;&gt;https://clojurescript.org/news/2019-11-18-release&lt;/a&gt;&lt;/p&gt;
 </description><pubDate>Mon, 18 Nov 2019 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.597</link></item><item><title>1.10.516</title><description>&lt;p&gt;Please refer to the announce post for the details:
 &lt;a href=&quot;https://clojurescript.org/news/2019-01-31-release&quot;&gt;https://clojurescript.org/news/2019-01-31-release&lt;/a&gt;&lt;/p&gt;
@@ -402,91 +407,4 @@ with-meta expressions&lt;/li&gt;
 &lt;li&gt;resolve returns improperly constructed Var&lt;/li&gt;
 &lt;li&gt;fix :fn-invoke-direct edgecase around keywords&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 30 Jun 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.671</link></item><item><title>1.9.660 - compiler performance, runtime performance, cljs.spec fixes</title><description>&lt;p&gt;This release includes many performance enhancements to the
-ClojureScript compiler as well as ClojureScript runtime code. In
-addition, the release contains fixes to cljs.spec so that it works
-correctly under incremental compilation.&lt;/p&gt;
-&lt;p&gt;For more information please refer to the new post here kindly
-contributed by Mike Fikes:
-&lt;a href=&quot;https://clojurescript.org/news/2017-06-27-faster-compilation-runtime-and-spec-caching-fixes&quot;&gt;https://clojurescript.org/news/2017-06-27-faster-compilation-runtime-and-spec-caching-fixes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Thanks to all that contributed, and as always, feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2108&quot;&gt;CLJS-2108&lt;/a&gt;: faster set equivalence&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2099&quot;&gt;CLJS-2099&lt;/a&gt;: Optimize apply by avoiding .apply&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2046&quot;&gt;CLJS-2046&lt;/a&gt;: Optimize expression in call position&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1876&quot;&gt;CLJS-1876&lt;/a&gt;: Faster reduce for PV, Subvec and ChunkedSeq&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2080&quot;&gt;CLJS-2080&lt;/a&gt;: Faster equiv-map&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2066&quot;&gt;CLJS-2066&lt;/a&gt;: Avoid analyzing named fn literal bodies twice&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2065&quot;&gt;CLJS-2065&lt;/a&gt;: Improve analyzer munge performance&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2134&quot;&gt;CLJS-2134&lt;/a&gt;: Warn on variadic signatures in protocol method implementation&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2130&quot;&gt;CLJS-2130&lt;/a&gt;: Self-host: Add &lt;code&gt;:fn-invoke-direct&lt;/code&gt; to public API docstrings&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2112&quot;&gt;CLJS-2112&lt;/a&gt;: Iterator based reduce path&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2100&quot;&gt;CLJS-2100&lt;/a&gt;: to-array calls seq too often&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2041&quot;&gt;CLJS-2041&lt;/a&gt;: Compiler flag to drop Function.prototype.call invokes&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2093&quot;&gt;CLJS-2093&lt;/a&gt;: inline ^:const var values&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2042&quot;&gt;CLJS-2042&lt;/a&gt;: Variadic invoke calls array_seq inefficiently&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2003&quot;&gt;CLJS-2003&lt;/a&gt; remove redundant calls to &lt;code&gt;str&lt;/code&gt; in munge/demunge&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1907&quot;&gt;CLJS-1907&lt;/a&gt;: Improve error message from cljs.reader/read-string&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1724&quot;&gt;CLJS-1724&lt;/a&gt;: Include IIterable in fast-path-protocols&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-924&quot;&gt;CLJS-924&lt;/a&gt;: Better error message for mistaken use of &amp;#39;def&amp;#39;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1599&quot;&gt;CLJS-1599&lt;/a&gt;: UUIDs are not equal for upper/lower case strings&lt;/li&gt;
-&lt;li&gt;NodeJS REPL accepts a :path opt to set NODE_PATH&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1886&quot;&gt;CLJS-1886&lt;/a&gt;: RangedIterator should only be created from cljs.core.PersistentVector instances&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2068&quot;&gt;CLJS-2068&lt;/a&gt;: MapEntry, RedNode and BlackNode are IComparable&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2073&quot;&gt;CLJS-2073&lt;/a&gt;: Don&amp;#39;t flush for every emitted line&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2089&quot;&gt;CLJS-2089&lt;/a&gt;: Warn message wrong for recur to protocol with nil&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2085&quot;&gt;CLJS-2085&lt;/a&gt;: defrecord recur method head target object&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1977&quot;&gt;CLJS-1977&lt;/a&gt;: defrecord should use murmur hashing like Clojure&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2076&quot;&gt;CLJS-2076&lt;/a&gt;: modules should support wildcard namespaces&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2078&quot;&gt;CLJS-2078&lt;/a&gt;: add resolve macro&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2133&quot;&gt;CLJS-2133&lt;/a&gt;: Invalid variadic IFn implementations now fail&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2128&quot;&gt;CLJS-2128&lt;/a&gt;: Fix regression in &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1886&quot;&gt;CLJS-1886&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2126&quot;&gt;CLJS-2126&lt;/a&gt;: Add new compiler option :fn-invoke-direct to build-affecting options&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2054&quot;&gt;CLJS-2054&lt;/a&gt;: Private core names still result in &amp;quot;already declared&amp;quot; warnings&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2125&quot;&gt;CLJS-2125&lt;/a&gt;: Duplicate HOF invoke warnings if :static-fns true&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2119&quot;&gt;CLJS-2119&lt;/a&gt;: s/form for s/&amp;amp; is qualified with &lt;code&gt;clojure.spec.alpha&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2121&quot;&gt;CLJS-2121&lt;/a&gt;: Self-host: Document string as valid name arg&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2124&quot;&gt;CLJS-2124&lt;/a&gt;: Self-host: Tests failing wth Could not find tag parser for :cljs.spec.alpha&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2122&quot;&gt;CLJS-2122&lt;/a&gt;: Self-host: Non-symbol ns names dumped into env&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2117&quot;&gt;CLJS-2117&lt;/a&gt;: Self-host: Port &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1989&quot;&gt;CLJS-1989&lt;/a&gt; to self-hosted&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1989&quot;&gt;CLJS-1989&lt;/a&gt;: s/fdef expansion side effect fails when load cached source&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2116&quot;&gt;CLJS-2116&lt;/a&gt;: Need to handle un-namespaced symbol when evaluating &lt;code&gt;foo.core&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2109&quot;&gt;CLJS-2109&lt;/a&gt;: incorrect syntax-quote symbol resolution (resolve-symbol &amp;#39;clojure.core) -&amp;gt; &amp;#39;clojure/core&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2113&quot;&gt;CLJS-2113&lt;/a&gt;: nth function produces different results from clojure when using a negative index on a sequence&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2115&quot;&gt;CLJS-2115&lt;/a&gt;: Pass not-found in the native-satisfies? branch of nth&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2111&quot;&gt;CLJS-2111&lt;/a&gt;: Transit analysis caching broken for JSValue or regex&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2101&quot;&gt;CLJS-2101&lt;/a&gt;: Undeclared var in do chain of defs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2104&quot;&gt;CLJS-2104&lt;/a&gt;: Const-replaced exprs do not emit js &amp;quot;return&amp;quot;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1992&quot;&gt;CLJS-1992&lt;/a&gt;: declare after def should have no effect&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1251&quot;&gt;CLJS-1251&lt;/a&gt;: Missing semicolons when emitting deftype and defrecord mistaken use of &amp;#39;def&amp;#39;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1685&quot;&gt;CLJS-1685&lt;/a&gt;: Incorrectly lazy subvec when start param is nil&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1641&quot;&gt;CLJS-1641&lt;/a&gt;: Multi-arity defn copies arguments unnecessarily for all cases&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2092&quot;&gt;CLJS-2092&lt;/a&gt;: Redundant call to equiv-map in PAM.-equiv&lt;/li&gt;
-&lt;li&gt;Check for compilation success, and lib folder&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2030&quot;&gt;CLJS-2030&lt;/a&gt;: Case with grouped keyword test emit result-expr multiple times&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2094&quot;&gt;CLJS-2094&lt;/a&gt;: Predicates unit tests constructs a uuid with nil&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1891&quot;&gt;CLJS-1891&lt;/a&gt;: UUID.toString can return non-string&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2072&quot;&gt;CLJS-2072&lt;/a&gt;: Eliminate reflection in cljs.js-deps/build-index&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2012&quot;&gt;CLJS-2012&lt;/a&gt;: Find on PHM with nil entry always returns nil entry&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2057&quot;&gt;CLJS-2057&lt;/a&gt;: fix language-in options (es6 deprecated and add missing es2016)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2060&quot;&gt;CLJS-2060&lt;/a&gt;: Backport &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJ-2141&quot;&gt;CLJ-2141&lt;/a&gt; Return only true/false from qualified-* predicates&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2091&quot;&gt;CLJS-2091&lt;/a&gt;: reify docstring ISeqable example needs correction&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2088&quot;&gt;CLJS-2088&lt;/a&gt;: fix caching collision between macros ns and regular ns in boostrap&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2036&quot;&gt;CLJS-2036&lt;/a&gt;: Relative path exception thrown when :preloads requires a :foreign-lib&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2083&quot;&gt;CLJS-2083&lt;/a&gt;: Test equiv-map for maps which do not impl IKVReduce&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2081&quot;&gt;CLJS-2081&lt;/a&gt;: Self-host: Regression with &lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2079&quot;&gt;CLJS-2079&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2079&quot;&gt;CLJS-2079&lt;/a&gt;: Records and maps are not equal&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2075&quot;&gt;CLJS-2075&lt;/a&gt;: PersistentTreeMap.reduce-kv does not honor reduced?&lt;/li&gt;
-&lt;li&gt;Browser REPL regression&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2069&quot;&gt;CLJS-2069&lt;/a&gt;: Self-host: automatic &lt;code&gt;clojure&lt;/code&gt; -&amp;gt; &lt;code&gt;cljs&lt;/code&gt; aliasing doesn&amp;#39;t work when loading macro namespaces&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2067&quot;&gt;CLJS-2067&lt;/a&gt;: reduce-kv / inode-kv-reduce fails to honor reduced?&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2056&quot;&gt;CLJS-2056&lt;/a&gt;: Self-host: test-self-parity failing wrt cljs.core/fn symbol&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Tue, 27 Jun 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.660</link></item></channel></rss>
+</description><pubDate>Fri, 30 Jun 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.671</link></item></channel></rss>

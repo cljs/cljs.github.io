@@ -5,14 +5,10 @@
    `cljs.env/*compiler*` to aggregate analysis information. opts argument is
    compiler options, if :cache-analysis true will cache analysis to
    ":output-dir/some/ns/foo.cljs.cache.edn". This function does not return a
-   meaningful value.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/clojure/cljs/analyzer/api.cljc#L121-L140">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn analyze-file
+   meaningful value.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/clojure/cljs/analyzer/api.cljc#L149-L164">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn analyze-file
      ([f] (analyze-file f nil))
      ([f opts]
-      (analyze-file
-        (if-not (nil? env/*compiler*)
-          env/*compiler*
-          (env/default-compiler-env opts))
-        f opts))
+      (analyze-file (empty-state opts) f opts))
      ([state f opts]
       (env/with-compiler-env state
         (binding [ana/*cljs-warning-handlers* (:warning-handlers opts ana/*cljs-warning-handlers*)]

@@ -40,7 +40,7 @@ c
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/clojure/cljs/analyzer.cljc#L1827-L2009">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/clojure/cljs/analyzer.cljc#L1849-L2033">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
   [op env form _ _]
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> form) <span class="hljs-number">4</span>)
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Too many arguments to def"</span>)))
@@ -209,6 +209,8 @@ not supplied, the root binding of the var is unaffected.</pre><div>Parser code @
                 <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:var</span>)
          <span class="hljs-symbol">:doc</span> doc
          <span class="hljs-symbol">:jsdoc</span> (<span class="hljs-symbol">:jsdoc</span> sym-meta)}
+        (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [goog-type (<span class="hljs-symbol">:goog-define</span> sym-meta)]
+          {<span class="hljs-symbol">:goog-define</span> goog-type})
         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> (<span class="hljs-symbol">:def-emits-var</span> env))
           {<span class="hljs-symbol">:var-ast</span> (<span class="hljs-name">var-ast</span> env sym)})
         (<span class="hljs-name">when-some</span> [test (<span class="hljs-symbol">:test</span> sym-meta)]
@@ -222,39 +224,42 @@ not supplied, the root binding of the var is unaffected.</pre><div>Parser code @
         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">some?</span> init-expr)
           {<span class="hljs-symbol">:init</span> init-expr
            <span class="hljs-symbol">:children</span> [<span class="hljs-symbol">:var</span> <span class="hljs-symbol">:init</span>]}
-          {<span class="hljs-symbol">:children</span> [<span class="hljs-symbol">:var</span>]})))))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.597/src/main/clojure/cljs/compiler.cljc#L801-L836">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:def</span>
-  [{<span class="hljs-symbol">:keys</span> [name var init env doc jsdoc export test var-ast]}]
+          {<span class="hljs-symbol">:children</span> [<span class="hljs-symbol">:var</span>]})))))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/clojure/cljs/compiler.cljc#L801-L839">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:def</span>
+  [{<span class="hljs-symbol">:keys</span> [name var init env doc goog-define jsdoc export test var-ast]}]
   <span class="hljs-comment">;; We only want to emit if an init is supplied, this is to avoid dead code</span>
   <span class="hljs-comment">;; elimination issues. The REPL is the exception to this rule.</span>
   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> init (<span class="hljs-symbol">:def-emits-var</span> env))
     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [mname (<span class="hljs-name">munge</span> name)]
-     (<span class="hljs-name">emit-comment</span> env doc (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> jsdoc (<span class="hljs-symbol">:jsdoc</span> init)))
-     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
-         (<span class="hljs-name">emitln</span> <span class="hljs-string">"return ("</span>))
-     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:def-emits-var</span> env)
-       (<span class="hljs-name">emitln</span> <span class="hljs-string">"(function (){"</span>))
-     (<span class="hljs-name">emits</span> var)
-     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> init
-       (<span class="hljs-name">emits</span> <span class="hljs-string">" = "</span>
-         (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [define (<span class="hljs-name">get-define</span> mname jsdoc)]
-           define
-           init)))
-     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:def-emits-var</span> env)
-       (<span class="hljs-name">emitln</span> <span class="hljs-string">"; return ("</span>)
-       (<span class="hljs-name">emits</span> (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-                {<span class="hljs-symbol">:op</span>  <span class="hljs-symbol">:the-var</span>
-                 <span class="hljs-symbol">:env</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>)}
-                var-ast))
-       (<span class="hljs-name">emitln</span> <span class="hljs-string">");})()"</span>))
-     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
-         (<span class="hljs-name">emitln</span> <span class="hljs-string">")"</span>))
-     <span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> JavaScriptCore does not like this under advanced compilation</span>
-     <span class="hljs-comment">;; this change was primarily for REPL interactions - David</span>
-     <span class="hljs-comment">;(emits " = (typeof " mname " != 'undefined') ? " mname " : undefined")</span>
-     (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env)) (<span class="hljs-name">emitln</span> <span class="hljs-string">";"</span>))
-     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> export
-       (<span class="hljs-name">emitln</span> <span class="hljs-string">"goog.exportSymbol('"</span> (<span class="hljs-name">munge</span> export) <span class="hljs-string">"', "</span> mname <span class="hljs-string">");"</span>))
-     (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> ana/*load-tests* test)
-       (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env))
-         (<span class="hljs-name">emitln</span> <span class="hljs-string">";"</span>))
-       (<span class="hljs-name">emitln</span> var <span class="hljs-string">".cljs$lang$test = "</span> test <span class="hljs-string">";"</span>)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+      (<span class="hljs-name">emit-comment</span> env doc (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span>
+                              (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> goog-define
+                                [(<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"@define {"</span> goog-define <span class="hljs-string">"}"</span>)])
+                              jsdoc (<span class="hljs-symbol">:jsdoc</span> init)))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">"return ("</span>))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:def-emits-var</span> env)
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">"(function (){"</span>))
+      (<span class="hljs-name">emits</span> var)
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> init
+        (<span class="hljs-name">emits</span> <span class="hljs-string">" = "</span>
+          (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [define (<span class="hljs-name">get-define</span> mname jsdoc)]
+            define
+            init)))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:def-emits-var</span> env)
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">"; return ("</span>)
+        (<span class="hljs-name">emits</span> (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
+                 {<span class="hljs-symbol">:op</span>  <span class="hljs-symbol">:the-var</span>
+                  <span class="hljs-symbol">:env</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>)}
+                 var-ast))
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">");})()"</span>))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">")"</span>))
+      <span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> JavaScriptCore does not like this under advanced compilation</span>
+      <span class="hljs-comment">;; this change was primarily for REPL interactions - David</span>
+      <span class="hljs-comment">;(emits " = (typeof " mname " != 'undefined') ? " mname " : undefined")</span>
+      (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env)) (<span class="hljs-name">emitln</span> <span class="hljs-string">";"</span>))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> export
+        (<span class="hljs-name">emitln</span> <span class="hljs-string">"goog.exportSymbol('"</span> (<span class="hljs-name">munge</span> export) <span class="hljs-string">"', "</span> mname <span class="hljs-string">");"</span>))
+      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> ana/*load-tests* test)
+        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env))
+          (<span class="hljs-name">emitln</span> <span class="hljs-string">";"</span>))
+        (<span class="hljs-name">emitln</span> var <span class="hljs-string">".cljs$lang$test = "</span> test <span class="hljs-string">";"</span>)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
