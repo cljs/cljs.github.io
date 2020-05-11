@@ -2,7 +2,7 @@
 value of x supplied at the front of the given arguments.  The forms
 are evaluated in order.  Returns x.
 
-(doto (new js/Map) (.set "a" 1) (.set "b" 2))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/clojure/cljs/core.cljc#L178-L192">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> doto
+(doto (new js/Map) (.set "a" 1) (.set "b" 2))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.758-3-gbe792c95/src/main/clojure/cljs/core.cljc#L178-L192">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> doto
   [x &amp; forms]
   (<span class="hljs-name">core/let</span> [gx (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span>)]
     `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [~gx ~x]

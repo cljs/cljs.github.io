@@ -3,7 +3,7 @@
 <p><code>seq</code> also works on strings.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/seqQMARK">seq?</a></li><li><a href="/api/cljs.core/emptyQMARK">empty?</a></li></ul><hr />Source docstring:<pre>Returns a seq on the collection. If the collection is
 empty, returns nil.  (seq nil) returns nil. seq also works on
-Strings.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.741/src/main/cljs/cljs/core.cljs#L1226-L1251">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^seq</span> seq
+Strings.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.758-3-gbe792c95/src/main/cljs/cljs/core.cljs#L1226-L1251">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^seq</span> seq
   [coll]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> coll)
     (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
