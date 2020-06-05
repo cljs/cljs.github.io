@@ -2,7 +2,7 @@
 <pre>user=> (zipmap [:a :b :c :d] [1 2 3 4])
 {:a 1, :b 2, :c 3, :d 4}</pre>
 
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/interleave">interleave</a></li></ul><hr />Source docstring:<pre>Returns a map with the keys mapped to the corresponding vals.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.758-3-gbe792c95/src/main/cljs/cljs/core.cljs#L9526-L9536">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> zipmap
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/interleave">interleave</a></li></ul><hr />Source docstring:<pre>Returns a map with the keys mapped to the corresponding vals.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/cljs/cljs/core.cljs#L9526-L9536">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> zipmap
   [keys vals]
     (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [map (<span class="hljs-name"><span class="hljs-builtin-name">transient</span></span> {})
            ks (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> keys)

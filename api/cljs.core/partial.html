@@ -5,7 +5,7 @@ arguments.</p>
 <p><code>((partial f a b) c d)</code> =&gt; <code>(f a b c d)</code></p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/comp">comp</a></li><li><a href="/api/cljs.core/juxt">juxt</a></li></ul><hr />Source docstring:<pre>Takes a function f and fewer than the normal arguments to f, and
 returns a fn that takes a variable number of additional args. When
-called, the returned function calls f with args + additional args.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.758-3-gbe792c95/src/main/cljs/cljs/core.cljs#L4315-L4342">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> partial
+called, the returned function calls f with args + additional args.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/cljs/cljs/core.cljs#L4315-L4342">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> partial
   ([f] f)
   ([f arg1]
    (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
