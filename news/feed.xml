@@ -1,4 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 05 Jun 2020 13:49:52 GMT</pubDate><lastBuildDate>Fri, 05 Jun 2020 13:49:52 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.741</title><description>&lt;p&gt;Please refer to the announce post for the details:
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Mon, 26 Apr 2021 21:58:16 GMT</pubDate><lastBuildDate>Mon, 26 Apr 2021 21:58:16 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.844</title><description>&lt;p&gt;Please refer to the announce post for the details:
+&lt;a href=&quot;https://clojurescript.org/news/2021-04-06-release&quot;&gt;https://clojurescript.org/news/2021-04-06-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
+</description><pubDate>Tue, 07 Apr 2020 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.844</link></item><item><title>1.10.741</title><description>&lt;p&gt;Please refer to the announce post for the details:
 &lt;a href=&quot;https://clojurescript.org/news/2020-04-24-release&quot;&gt;https://clojurescript.org/news/2020-04-24-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This release also features a significant enhancement when building against node_modules:
 &lt;a href=&quot;https://clojurescript.org/news/2020-04-24-bundle-target&quot;&gt;https://clojurescript.org/news/2020-04-24-bundle-target&lt;/a&gt;&lt;/p&gt;
@@ -395,16 +398,4 @@ gives warnings&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2145&quot;&gt;CLJS-2145&lt;/a&gt;: inode_find issue with hash-map&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2142&quot;&gt;CLJS-2142&lt;/a&gt;: Can&amp;#39;t instrument a namespace containing constants&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Fri, 28 Jul 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.854</link></item><item><title>1.9.671 - bugfix release</title><description>&lt;p&gt;This is a follow up bugfix release to 1.9.660.&lt;/p&gt;
-&lt;p&gt;As always, feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2139&quot;&gt;CLJS-2139&lt;/a&gt;: Undeclared var regression in fn bodies&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2137&quot;&gt;CLJS-2137&lt;/a&gt;: Missing INext on some sequences&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2136&quot;&gt;CLJS-2136&lt;/a&gt;: Clarify IFind contract to avoid double-lookups&lt;/li&gt;
-&lt;li&gt;need to elide :c.a/analyzed in c.a/analyze-wrap-meta to avoid dumping unintended
-with-meta expressions&lt;/li&gt;
-&lt;li&gt;resolve returns improperly constructed Var&lt;/li&gt;
-&lt;li&gt;fix :fn-invoke-direct edgecase around keywords&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Fri, 30 Jun 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.671</link></item></channel></rss>
+</description><pubDate>Fri, 28 Jul 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.854</link></item></channel></rss>

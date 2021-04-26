@@ -28,7 +28,7 @@ val(s).</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/assoc-in">assoc-in</a></li><li><a href="/api/cljs.core/dissoc">dissoc</a></li><li><a href="/api/cljs.core/merge">merge</a></li></ul><hr />Source docstring:<pre>assoc[iate]. When applied to a map, returns a new map of the
 same (hashed/sorted) type, that contains the mapping of key(s) to
 val(s). When applied to a vector, returns a new vector that
-contains val at index. Note - index must be <= (count vector).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/cljs/cljs/core.cljs#L1993-L2008">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> assoc
+contains val at index. Note - index must be <= (count vector).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/cljs/cljs/core.cljs#L1997-L2012">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> assoc
   ([coll k v]
    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">implements?</span> IAssociative coll)
      (<span class="hljs-name">-assoc</span> coll k v)

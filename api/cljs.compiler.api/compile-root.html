@@ -2,11 +2,11 @@
 .js files. If target-dir is provided, output will go into this
 directory mirroring the source directory structure. Returns a list
 of maps containing information about each file which was compiled
-in dependency order.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/clojure/cljs/compiler/api.clj#L88-L101">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-root
+in dependency order.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/compiler/api.clj#L88-L101">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> compile-root
   ([src-dir] (<span class="hljs-name">compile-root</span> src-dir <span class="hljs-string">"out"</span>))
   ([src-dir target-dir] (<span class="hljs-name">compile-root</span> src-dir target-dir <span class="hljs-literal">nil</span>))
   ([src-dir target-dir opts]
-   (<span class="hljs-name">compile-root</span> (<span class="hljs-name">ana-api/empty-state</span> opts) src-dir target-dir opts))
+   (<span class="hljs-name">compile-root</span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name">ana-api/current-state</span>) (<span class="hljs-name">ana-api/empty-state</span> opts)) src-dir target-dir opts))
   ([state src-dir target-dir opts]
    (<span class="hljs-name">ana-api/with-state</span> state
      (<span class="hljs-name">binding</span> [ana/*cljs-warning-handlers* (<span class="hljs-symbol">:warning-handlers</span> opts ana/*cljs-warning-handlers*)]

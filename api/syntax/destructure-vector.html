@@ -46,7 +46,7 @@ maps</a>.</p>
        [[<span class="hljs-number">1</span> <span class="hljs-number">2</span>] <span class="hljs-number">3</span>] ]
   (<span class="hljs-name">println</span> a b c))
 <span class="hljs-comment">;; 1 2 3</span></code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/destructure-map">destructure {}</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/clojure/cljs/core.cljc#L624-L725">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/destructure-map">destructure {}</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/core.cljc#L624-L725">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defn</span> destructure [bindings]
   (<span class="hljs-name">core/let</span> [bents (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> bindings)
              pb (<span class="hljs-name">core/fn</span> pb [bvec b v]
                   (<span class="hljs-name">core/let</span> [pvec
@@ -91,7 +91,7 @@ maps</a>.</p>
                                (<span class="hljs-name">core/let</span> [gmap (<span class="hljs-name"><span class="hljs-builtin-name">gensym</span></span> <span class="hljs-string">"map__"</span>)
                                           defaults (<span class="hljs-symbol">:or</span> b)]
                                  (<span class="hljs-name">core/loop</span> [ret (<span class="hljs-name">core/-&gt;</span> bvec (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> gmap) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> v)
-                                                          (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> gmap) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">implements?</span> ISeq ~gmap) (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> cljs.core/hash-map ~gmap) ~gmap))
+                                                          (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> gmap) (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> `(<span class="hljs-name">--destructure-map</span> ~gmap))
                                                      ((<span class="hljs-name">core/fn</span> [ret]
                                                         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:as</span> b)
                                                           (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> ret (<span class="hljs-symbol">:as</span> b) gmap)

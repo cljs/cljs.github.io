@@ -36,7 +36,7 @@ effect, and defines no new types.
       (foo [this] 17)
       (bar-me [this] x)
       (bar-me [this y] x))))
-=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/clojure/cljs/core.cljc#L1989-L2172">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
+=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/core.cljc#L1998-L2181">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
   [psym &amp; doc+methods]
   (<span class="hljs-name">core/let</span> [p (<span class="hljs-symbol">:name</span> (<span class="hljs-name">cljs.analyzer/resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> &amp;env <span class="hljs-symbol">:locals</span>) psym))
              [opts methods]
@@ -121,7 +121,7 @@ effect, and defines no new types.
                                      check
                                      `(<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> ~fsig))
                                                <span class="hljs-comment">;; Property access needed here.</span>
-                                               (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~fsig ~(<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> <span class="hljs-string">"-"</span> slot)) {<span class="hljs-symbol">:protocol-method</span> <span class="hljs-literal">true</span>})))))
+                                               (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~fsig ~(<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> <span class="hljs-string">"-"</span> slot)) {<span class="hljs-symbol">:protocol-prop</span> <span class="hljs-literal">true</span>})))))
                                         (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~fsig ~slot ~@sig)
                                         (~dyn-name ~@sig))]
                             `(~sig ~check)))
@@ -173,7 +173,7 @@ effect, and defines no new types.
                              ~@(<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> (<span class="hljs-name">core/fn</span> [sig]
                                       (<span class="hljs-name">expand-sig</span> dyn-name
                                         (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> slot <span class="hljs-string">"$arity$"</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> sig)))
-                                          {<span class="hljs-symbol">:protocol-method</span> <span class="hljs-literal">true</span>})
+                                          {<span class="hljs-symbol">:protocol-prop</span> <span class="hljs-literal">true</span>})
                                         sig))
                                  sigs)))))]
     `(<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>

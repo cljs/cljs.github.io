@@ -6,11 +6,11 @@
    opts parameter provided :analyze-deps and :load-macros keys their values will
    be used for *analyze-deps* and *load-macros* bindings respectively. This
    function does _not_ side-effect the ambient compilation environment unless
-   requested via opts where :restore is false.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/clojure/cljs/analyzer/api.cljc#L151-L168">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn parse-ns
+   requested via opts where :restore is false.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/analyzer/api.cljc#L151-L168">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn parse-ns
      ([src] (parse-ns src nil nil))
      ([src opts] (parse-ns src nil opts))
      ([src dest opts]
-      (parse-ns (empty-state opts) src dest opts))
+      (parse-ns (or (current-state) (empty-state opts)) src dest opts))
      ([state src dest opts]
       (env/with-compiler-env state
         (binding [ana/*cljs-warning-handlers* (:warning-handlers opts ana/*cljs-warning-handlers*)]

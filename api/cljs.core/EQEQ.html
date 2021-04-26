@@ -10,7 +10,7 @@ reason to use the <code>==</code> operator in ClojureScript.</p>
 <span class="hljs-comment">;;=&gt; false</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/EQ">=</a></li><li><a href="/api/cljs.core/identicalQMARK">identical?</a></li></ul><hr />Source docstring:<pre>Returns non-nil if nums all have the equivalent
 value, otherwise false. Behavior on non nums is
-undefined.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/cljs/cljs/core.cljs#L2934-L2945">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^boolean</span> ==
+undefined.</pre><div>Function code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/cljs/cljs/core.cljs#L2947-L2958">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> <span class="hljs-comment">^boolean</span> ==
   ([x] <span class="hljs-literal">true</span>)
   ([x y] (<span class="hljs-name">-equiv</span> x y))
   ([x y &amp; more]
@@ -18,7 +18,7 @@ undefined.</pre><div>Function code @ <a href="https://github.com/clojure/clojure
      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> more)
        (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> y (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> more) (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> more))
        (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> y (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> more)))
-     <span class="hljs-literal">false</span>)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.773-2-g946348da/src/main/clojure/cljs/core.cljc#L1169-L1172">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> ==
+     <span class="hljs-literal">false</span>)))</code></pre><hr /><div>Macro code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/core.cljc#L1172-L1175">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> ^:<span class="hljs-symbol">:ana/numeric</span> ==
   ([x] <span class="hljs-literal">true</span>)
   ([x y] (<span class="hljs-name">bool-expr</span> (<span class="hljs-name">core/list</span> 'js* <span class="hljs-string">"(~{} === ~{})"</span> x y)))
   ([x y &amp; more] `(<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> ~x ~y) (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> ~y ~@more))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
