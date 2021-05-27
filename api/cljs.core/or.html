@@ -37,17 +37,9 @@ arguments, otherwise it returns the value of the last argument.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/and">and</a></li><li><a href="/api/cljs.core/if">if</a></li></ul><hr />Source docstring:<pre>Evaluates exprs one at a time, from left to right. If a form
 returns a logical true value, or returns that value and doesn't
 evaluate any of the other expressions, otherwise it returns the
-value of the last expression. (or) returns nil.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/core.cljc#L892-L909">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> or
+value of the last expression. (or) returns nil.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.866/src/main/clojure/cljs/core.cljc#L878-L887">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> or
   ([] <span class="hljs-literal">nil</span>)
   ([x] x)
   ([x &amp; next]
-   (<span class="hljs-name">core/let</span> [forms (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> [x] next)]
-     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">every?</span> #(<span class="hljs-name">simple-test-expr?</span> &amp;env %)
-           (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name">cljs.analyzer/no-warn</span> (<span class="hljs-name">cljs.analyzer/analyze</span> &amp;env %)) forms))
-       (<span class="hljs-name">core/let</span> [or-str (<span class="hljs-name">core/-&gt;&gt;</span> (<span class="hljs-name"><span class="hljs-builtin-name">repeat</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> forms) <span class="hljs-string">"(~{})"</span>)
-                           (<span class="hljs-name">interpose</span> <span class="hljs-string">" || "</span>)
-                           (<span class="hljs-name">#</span>(<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span> [<span class="hljs-string">"("</span>] % [<span class="hljs-string">")"</span>]))
-                           (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> core/str))]
-         (<span class="hljs-name">bool-expr</span> `(~'js* ~or-str ~@forms)))
-       `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [or# ~x]
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> or# or# (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> ~@next)))))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+   `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [or# ~x]
+      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> or# or# (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> ~@next)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

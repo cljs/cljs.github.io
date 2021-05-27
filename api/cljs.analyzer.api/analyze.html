@@ -4,7 +4,7 @@
   containing at least :form, :op and :env keys). If expr has any (immediately)
   nested exprs, must have :children entry. This must be a vector of keywords naming
   the immediately nested fields mapped to an expr or vector of exprs. This will
-  facilitate code walking without knowing the details of the op set.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/analyzer/api.cljc#L126-L141">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn analyze
+  facilitate code walking without knowing the details of the op set.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.866/src/main/clojure/cljs/analyzer/api.cljc#L126-L141">clojurescript:src/main/clojure/cljs/analyzer/api.cljc</a></div><pre><code>   (defn analyze
      ([env form] (analyze env form nil))
      ([env form name] (analyze env form name nil))
      ([env form name opts]

@@ -36,7 +36,7 @@ effect, and defines no new types.
       (foo [this] 17)
       (bar-me [this] x)
       (bar-me [this y] x))))
-=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/core.cljc#L1998-L2181">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
+=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.866/src/main/clojure/cljs/core.cljc#L1976-L2159">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
   [psym &amp; doc+methods]
   (<span class="hljs-name">core/let</span> [p (<span class="hljs-symbol">:name</span> (<span class="hljs-name">cljs.analyzer/resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> &amp;env <span class="hljs-symbol">:locals</span>) psym))
              [opts methods]

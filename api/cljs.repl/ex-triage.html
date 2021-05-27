@@ -10,7 +10,7 @@ are optional:
   :clojure.error/symbol - symbol being expanded/compiled/invoked
   :clojure.error/class - cause exception class symbol
   :clojure.error/cause - cause exception message
-  :clojure.error/spec - explain-data for spec error</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.844-12-g4a73bc8b/src/main/clojure/cljs/repl.cljc#L850-L905">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> ex-triage
+  :clojure.error/spec - explain-data for spec error</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.866/src/main/clojure/cljs/repl.cljc#L850-L905">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> ex-triage
   [datafied-throwable]
   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [{<span class="hljs-symbol">:keys</span> [via trace phase] <span class="hljs-symbol">:or</span> {phase <span class="hljs-symbol">:execution</span>}} datafied-throwable
         {<span class="hljs-symbol">:keys</span> [type message data]} (<span class="hljs-name"><span class="hljs-builtin-name">last</span></span> via)
