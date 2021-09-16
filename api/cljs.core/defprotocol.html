@@ -36,7 +36,7 @@ effect, and defines no new types.
       (foo [this] 17)
       (bar-me [this] x)
       (bar-me [this y] x))))
-=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.866/src/main/clojure/cljs/core.cljc#L1976-L2159">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
+=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.879-6-gaec9f0c5/src/main/clojure/cljs/core.cljc#L1976-L2160">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> defprotocol
   [psym &amp; doc+methods]
   (<span class="hljs-name">core/let</span> [p (<span class="hljs-symbol">:name</span> (<span class="hljs-name">cljs.analyzer/resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> &amp;env <span class="hljs-symbol">:locals</span>) psym))
              [opts methods]
@@ -96,14 +96,6 @@ effect, and defines no new types.
                                             (<span class="hljs-name">missing-protocol</span>
                                               ~(<span class="hljs-name">core/str</span> psym <span class="hljs-string">"."</span> fname) ~fsig))))
 
-                                     <span class="hljs-comment">;; then check protocol fn in metadata (only when protocol is marked with :extend-via-metadata true)</span>
-                                     check
-                                     (<span class="hljs-name">core/if-not</span> (<span class="hljs-symbol">:extend-via-metadata</span> opts)
-                                       check
-                                       `(<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [meta-impl# (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> ~fsig (<span class="hljs-name">core/meta</span>) (<span class="hljs-name">core/get</span> '~fqn-fname))]
-                                          (<span class="hljs-name">meta-impl#</span> ~@sig)
-                                          ~check))
-
                                      <span class="hljs-comment">;; then check protocol on js string,function,array,object (first dynamic check actually executed)</span>
                                      check
                                      `(<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [x# (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> ~fsig) <span class="hljs-literal">nil</span> ~fsig)
@@ -112,9 +104,10 @@ effect, and defines no new types.
                                           (<span class="hljs-name">m#</span> ~@sig)
                                           ~check))]
                             `(~sig ~check)))
-             expand-sig (<span class="hljs-name">core/fn</span> [dyn-name slot sig]
+             expand-sig (<span class="hljs-name">core/fn</span> [fname dyn-name slot sig]
                           (<span class="hljs-name">core/let</span> [sig (<span class="hljs-name">sig-&gt;syms</span> sig)
 
+                                     fqn-fname (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name">fqn</span> fname) {<span class="hljs-symbol">:cljs.analyzer/no-resolve</span> <span class="hljs-literal">true</span>})
                                      fsig (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> sig)
 
                                      <span class="hljs-comment">;; check protocol property on object (first check executed)</span>
@@ -123,7 +116,15 @@ effect, and defines no new types.
                                                <span class="hljs-comment">;; Property access needed here.</span>
                                                (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~fsig ~(<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> <span class="hljs-string">"-"</span> slot)) {<span class="hljs-symbol">:protocol-prop</span> <span class="hljs-literal">true</span>})))))
                                         (<span class="hljs-name"><span class="hljs-builtin-name">.</span></span> ~fsig ~slot ~@sig)
-                                        (~dyn-name ~@sig))]
+                                        (~dyn-name ~@sig))
+
+                                     <span class="hljs-comment">;; then check protocol fn in metadata (only when protocol is marked with :extend-via-metadata true)</span>
+                                     check
+                                     (<span class="hljs-name">core/if-not</span> (<span class="hljs-symbol">:extend-via-metadata</span> opts)
+                                       check
+                                       `(<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [meta-impl# (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> ~fsig (<span class="hljs-name">core/meta</span>) (<span class="hljs-name">core/get</span> '~fqn-fname))]
+                                          (<span class="hljs-name">meta-impl#</span> ~@sig)
+                                          ~check))]
                             `(~sig ~check)))
              psym (<span class="hljs-name">core/-&gt;</span> psym
                     (<span class="hljs-name"><span class="hljs-builtin-name">vary-meta</span></span> update-in [<span class="hljs-symbol">:jsdoc</span>] conj <span class="hljs-string">"@interface"</span>)
@@ -171,7 +172,7 @@ effect, and defines no new types.
                                                sigs))]
                            (<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> ~fname
                              ~@(<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> (<span class="hljs-name">core/fn</span> [sig]
-                                      (<span class="hljs-name">expand-sig</span> dyn-name
+                                      (<span class="hljs-name">expand-sig</span> fname dyn-name
                                         (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name">core/str</span> slot <span class="hljs-string">"$arity$"</span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> sig)))
                                           {<span class="hljs-symbol">:protocol-prop</span> <span class="hljs-literal">true</span>})
                                         sig))
