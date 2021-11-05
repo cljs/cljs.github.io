@@ -1,4 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Thu, 16 Sep 2021 16:12:39 GMT</pubDate><lastBuildDate>Thu, 16 Sep 2021 16:12:39 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.866</title><description>&lt;p&gt;Please see &lt;a href=&quot;https://clojurescript.org/news/2021-05-24-release&quot;&gt;https://clojurescript.org/news/2021-05-24-release&lt;/a&gt; for details.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Fri, 05 Nov 2021 19:41:23 GMT</pubDate><lastBuildDate>Fri, 05 Nov 2021 19:41:23 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.891</title><description>&lt;p&gt;Please see &lt;a href=&quot;https://clojurescript.org/news/2021-11-04-release&quot;&gt;https://clojurescript.org/news/2021-11-04-release&lt;/a&gt; for details&lt;/p&gt;
+&lt;p&gt;Thanks!
+David&lt;/p&gt;
+</description><pubDate>Thu, 04 Nov 2021 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.891</link></item><item><title>1.10.866</title><description>&lt;p&gt;Please see &lt;a href=&quot;https://clojurescript.org/news/2021-05-24-release&quot;&gt;https://clojurescript.org/news/2021-05-24-release&lt;/a&gt; for details.&lt;/p&gt;
 </description><pubDate>Tue, 25 May 2021 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.866</link></item><item><title>1.10.844</title><description>&lt;p&gt;Please refer to the announce post for the details:
 &lt;a href=&quot;https://clojurescript.org/news/2021-04-06-release&quot;&gt;https://clojurescript.org/news/2021-04-06-release&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always, feedback welcome!&lt;/p&gt;
@@ -221,51 +224,4 @@ means that ClojureScript has a dependency on JDK 8.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2328&quot;&gt;CLJS-2328&lt;/a&gt;: Args are not provided to &lt;em&gt;main-cli-fn&lt;/em&gt; with optimizations advanced&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2327&quot;&gt;CLJS-2327&lt;/a&gt;: module_deps.js doesn&amp;#39;t know about browser field advanced usage&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Tue, 03 Oct 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.946</link></item><item><title>1.9.908</title><description>&lt;p&gt;This release includes a number of bug fixes and changes based on feedback
-from the 1.9.854 release. For high level details please refer to the
-announcement on the official site &lt;a href=&quot;https://clojurescript.org/news/2017-08-16-release&quot;&gt;https://clojurescript.org/news/2017-08-16-release&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2323&quot;&gt;CLJS-2323&lt;/a&gt;: data readers support for records&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2322&quot;&gt;CLJS-2322&lt;/a&gt;: Require only &lt;code&gt;@cljs-oss/module-deps&lt;/code&gt; to be installed to figure out Node.js dep graph&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2321&quot;&gt;CLJS-2321&lt;/a&gt;: Do not automatically call &lt;code&gt;set-loaded!&lt;/code&gt; on the user&amp;#39;s behalf&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2316&quot;&gt;CLJS-2316&lt;/a&gt;: Upgrade Closure Compiler to August release&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2317&quot;&gt;CLJS-2317&lt;/a&gt;: Upgrade Google Closure Library&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2234&quot;&gt;CLJS-2234&lt;/a&gt;: Make build scripts optionally less verbose&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2314&quot;&gt;CLJS-2314&lt;/a&gt;: Eliminate str call on literal strings in str macro&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2291&quot;&gt;CLJS-2291&lt;/a&gt;: Set up Windows CI&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2286&quot;&gt;CLJS-2286&lt;/a&gt;: Simplify JS module processing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2324&quot;&gt;CLJS-2324&lt;/a&gt;: module-graph doesn&amp;#39;t munge :requires when indexing inputs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2309&quot;&gt;CLJS-2309&lt;/a&gt;: :module foreign-libs order not preserved&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2318&quot;&gt;CLJS-2318&lt;/a&gt;: module-deps.js doesn&amp;#39;t respect the package.json &lt;code&gt;module&lt;/code&gt; field&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2312&quot;&gt;CLJS-2312&lt;/a&gt;: Miss-compile: Uncaught SyntaxError: Unexpected token default&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2315&quot;&gt;CLJS-2315&lt;/a&gt;: module_deps.js can&amp;#39;t resolve JSON modules&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2313&quot;&gt;CLJS-2313&lt;/a&gt;: :language-out is a build affecting option&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2306&quot;&gt;CLJS-2306&lt;/a&gt;: Provide better warning message when namespace can&amp;#39;t be found&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2303&quot;&gt;CLJS-2303&lt;/a&gt;: Disable duplicate alias checking for self-host&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2307&quot;&gt;CLJS-2307&lt;/a&gt;: Closure warns on unreachable checked array code&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2305&quot;&gt;CLJS-2305&lt;/a&gt; Tests: Unable to resolve symbol: opts in this context&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2299&quot;&gt;CLJS-2299&lt;/a&gt;: Failure with alias and bad require of clojure.spec&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2302&quot;&gt;CLJS-2302&lt;/a&gt;: Disable process-shim by default in Node.js targets&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2266&quot;&gt;CLJS-2266&lt;/a&gt;: Self-host: Cannot require clojure.x where clojure.x has no macros namespace&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2304&quot;&gt;CLJS-2304&lt;/a&gt;: Fix compiler infrastructure tests on Windows&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2261&quot;&gt;CLJS-2261&lt;/a&gt;: Issue using interop record constructors in macros namespaces&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2296&quot;&gt;CLJS-2296&lt;/a&gt;: Foreign libs that expose modules are not being processed under target nod&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2293&quot;&gt;CLJS-2293&lt;/a&gt;: Self-host: Can&amp;#39;t load cljs.js owing to set alias&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2295&quot;&gt;CLJS-2295&lt;/a&gt;: &lt;code&gt;index-node-modules-dir&lt;/code&gt; can&amp;#39;t determine :main for package.json files that have &lt;code&gt;.&lt;/code&gt; in the string&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1620&quot;&gt;CLJS-1620&lt;/a&gt;: In JavaScript ES2015 modules default export name is munged to default$&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2287&quot;&gt;CLJS-2287&lt;/a&gt;: Self-host: &lt;code&gt;require&lt;/code&gt; prints result of loading node deps / global exports&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2290&quot;&gt;CLJS-2290&lt;/a&gt;: Node packages using require(&amp;#39;assert&amp;#39;) fail compilation&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2281&quot;&gt;CLJS-2281&lt;/a&gt;: module_deps.js cannot compute inputs for ES6 sources&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2284&quot;&gt;CLJS-2284&lt;/a&gt;: Fix build API tests not to pollute &lt;code&gt;out&lt;/code&gt; in the current directory&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2282&quot;&gt;CLJS-2282&lt;/a&gt;: Some valid keywords are strings in JS object literals&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2283&quot;&gt;CLJS-2283&lt;/a&gt;: Regression with js-obj and gobject alias?&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Wed, 16 Aug 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.908</link></item></channel></rss>
+</description><pubDate>Tue, 03 Oct 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.946</link></item></channel></rss>
