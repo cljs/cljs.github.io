@@ -1,4 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Sun, 07 Nov 2021 19:59:07 GMT</pubDate><lastBuildDate>Sun, 07 Nov 2021 19:59:07 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.891</title><description>&lt;p&gt;Please see &lt;a href=&quot;https://clojurescript.org/news/2021-11-04-release&quot;&gt;https://clojurescript.org/news/2021-11-04-release&lt;/a&gt; for details&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ClojureScript</title><description>ClojureScript News and Releases</description><link>http://cljsinfo.github.io/news</link><atom:link href="http://cljsinfo.github.io/news/feed.xml" rel="self" type="application/rss+xml" /><pubDate>Tue, 21 Dec 2021 20:09:25 GMT</pubDate><lastBuildDate>Tue, 21 Dec 2021 20:09:25 GMT</lastBuildDate><generator>(sitegen.news/rss-feed-xml)</generator><item><title>1.10.914</title><description>&lt;p&gt;Please see &lt;a href=&quot;https://clojurescript.org/news/2021-12-20-release&quot;&gt;https://clojurescript.org/news/2021-12-20-release&lt;/a&gt; for details.&lt;/p&gt;
+</description><pubDate>Mon, 20 Dec 2021 06:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.914</link></item><item><title>1.10.891</title><description>&lt;p&gt;Please see &lt;a href=&quot;https://clojurescript.org/news/2021-11-04-release&quot;&gt;https://clojurescript.org/news/2021-11-04-release&lt;/a&gt; for details&lt;/p&gt;
 &lt;p&gt;Thanks!
 David&lt;/p&gt;
 </description><pubDate>Thu, 04 Nov 2021 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.891</link></item><item><title>1.10.866</title><description>&lt;p&gt;Please see &lt;a href=&quot;https://clojurescript.org/news/2021-05-24-release&quot;&gt;https://clojurescript.org/news/2021-05-24-release&lt;/a&gt; for details.&lt;/p&gt;
@@ -184,44 +185,4 @@ defaults to true when using :modules.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2391&quot;&gt;CLJS-2391&lt;/a&gt;: Unable to :stub a function using stest/instrument&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2378&quot;&gt;CLJS-2378&lt;/a&gt;: keep the :npm-deps-installed? to avoid to reinstall NPM deps&lt;/li&gt;
 &lt;/ul&gt;
-</description><pubDate>Mon, 26 Mar 2018 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.238</link></item><item><title>1.9.946</title><description>&lt;p&gt;This release contains many bug fixes and addresses feedback from the 1.9.908
-release. Important changes include parity with Clojure 1.9.0-beta1 and an
-updated Google Closure Compiler dependency. The later one in particular now
-means that ClojureScript has a dependency on JDK 8.&lt;/p&gt;
-&lt;p&gt;As always feedback welcome!&lt;/p&gt;
-&lt;h3 id=&quot;changes&quot;&gt;Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2300&quot;&gt;CLJS-2300&lt;/a&gt;: Delegate clojure.string/capitalize to goog.string/capitalize&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2374&quot;&gt;CLJS-2374&lt;/a&gt;: Print js/Infinity, js/-Infinity, js/NaN using new reader literals&lt;/li&gt;
-&lt;li&gt;bump tools.reader (1.1.0)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2372&quot;&gt;CLJS-2372&lt;/a&gt;: update hash to use the new infinity literals&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2364&quot;&gt;CLJS-2364&lt;/a&gt;: Bump Closure Compiler to the Sep 2017 version&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2340&quot;&gt;CLJS-2340&lt;/a&gt;: Have js-keys delegate directly to good.object/getKeys&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2338&quot;&gt;CLJS-2338&lt;/a&gt;: Support renamePrefix{Namespace} closure compiler option&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;fixes&quot;&gt;Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-1576&quot;&gt;CLJS-1576&lt;/a&gt;: fix source-map string encoding by applying encodeURIComponent and fixing string/replace call&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2294&quot;&gt;CLJS-2294&lt;/a&gt;: Always use opts with implicit opts added&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2166&quot;&gt;CLJS-2166&lt;/a&gt;: Add uri? predicate&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2368&quot;&gt;CLJS-2368&lt;/a&gt;: Self-host: Never compile macro namespaces with &lt;code&gt;:optimize-constants true&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2367&quot;&gt;CLJS-2367&lt;/a&gt;: Self-host: :def-emits-var leaks into loaded namespace processing&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2352&quot;&gt;CLJS-2352&lt;/a&gt;: Emit valid JS for NaN etc. even when used w/ CLJ &amp;gt;= 1.9.0-alpha20&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2339&quot;&gt;CLJS-2339&lt;/a&gt;: Significant code reload slowdown with :npm-deps&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2361&quot;&gt;CLJS-2361&lt;/a&gt;: Self-host: circular dependency detection doesn&amp;#39;t handle REPL self-require&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2356&quot;&gt;CLJS-2356&lt;/a&gt;: Self-host: circular dependency detection is not correct&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2354&quot;&gt;CLJS-2354&lt;/a&gt;: Self-host: &lt;code&gt;compile-str&lt;/code&gt; doesn&amp;#39;t handle &lt;code&gt;clojure&lt;/code&gt; -&amp;gt; &lt;code&gt;cljs&lt;/code&gt; aliasing&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2353&quot;&gt;CLJS-2353&lt;/a&gt;: use portable &lt;code&gt;node-module-dep?&lt;/code&gt; function in analyze-deps&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2345&quot;&gt;CLJS-2345&lt;/a&gt;: escape paths emitted as args to cljs.core.load_file&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2349&quot;&gt;CLJS-2349&lt;/a&gt;: Port reset-vals! and swap-vals! over from Clojure&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2336&quot;&gt;CLJS-2336&lt;/a&gt;: Call alength once in areduce and amap&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2335&quot;&gt;CLJS-2335&lt;/a&gt;: Avoid alength on strings&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2334&quot;&gt;CLJS-2334&lt;/a&gt;: Also gather dependencies from foreign-libs that are modules&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2333&quot;&gt;CLJS-2333&lt;/a&gt;: module-deps.js doesn&amp;#39;t correctly compute &lt;code&gt;main&lt;/code&gt; if aliased in browser field&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2332&quot;&gt;CLJS-2332&lt;/a&gt;: module_deps.js doesn&amp;#39;t process &lt;code&gt;export from&lt;/code&gt; correctly&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2330&quot;&gt;CLJS-2330&lt;/a&gt;: Don&amp;#39;t set &lt;code&gt;&amp;quot;browser&amp;quot;&lt;/code&gt; field for Closure if target is :nodejs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2326&quot;&gt;CLJS-2326&lt;/a&gt;: Indexing node_modules can&amp;#39;t find &lt;code&gt;main&lt;/code&gt; when it doesn&amp;#39;t have an extension&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2328&quot;&gt;CLJS-2328&lt;/a&gt;: Args are not provided to &lt;em&gt;main-cli-fn&lt;/em&gt; with optimizations advanced&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dev.clojure.org/jira/browse/CLJS-2327&quot;&gt;CLJS-2327&lt;/a&gt;: module_deps.js doesn&amp;#39;t know about browser field advanced usage&lt;/li&gt;
-&lt;/ul&gt;
-</description><pubDate>Tue, 03 Oct 2017 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.9.946</link></item></channel></rss>
+</description><pubDate>Mon, 26 Mar 2018 05:00:00 GMT</pubDate><link>http://cljsinfo.github.io/news/1.10.238</link></item></channel></rss>

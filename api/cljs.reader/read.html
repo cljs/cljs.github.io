@@ -13,7 +13,7 @@ opts is a map that can include the following keys:
 :readers  - a map of tag symbols to data-reader functions to be considered before default-data-readers.
            When not supplied, only the default-data-readers will be used.
 :default - A function of two args, that will, if present and no reader is found for a tag,
-           be called with the tag and the value.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.891-1-g64435188/src/main/cljs/cljs/reader.cljs#L142-L172">clojurescript:src/main/cljs/cljs/reader.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read
+           be called with the tag and the value.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.914/src/main/cljs/cljs/reader.cljs#L142-L172">clojurescript:src/main/cljs/cljs/reader.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> read
   ([reader]
    (<span class="hljs-name">edn/read</span>
      {<span class="hljs-symbol">:readers</span> @*tag-table*

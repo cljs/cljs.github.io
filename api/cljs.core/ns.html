@@ -112,7 +112,7 @@ from the clojure.* namespace to the cljs.* namespace. For example:
 
 will be automatically converted to
 
-(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.891-1-g64435188/src/main/clojure/cljs/analyzer.cljc#L3116-L3222">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
+(ns testme.core (:require [cljs.test :as clojure.test]))</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.914/src/main/clojure/cljs/analyzer.cljc#L3116-L3222">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'ns
   [_ env [_ name &amp; args <span class="hljs-symbol">:as</span> form] _ opts]
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> *allow-ns*
     (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Namespace declarations must appear at the top-level."</span>)))
@@ -218,7 +218,7 @@ will be automatically converted to
               (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m] (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> m {(@reload <span class="hljs-symbol">:use</span>) <span class="hljs-literal">true</span>})))
             (@reload <span class="hljs-symbol">:require</span>)
             (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> [<span class="hljs-symbol">:requires</span>]
-              (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m] (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> m {(@reload <span class="hljs-symbol">:require</span>) <span class="hljs-literal">true</span>})))))))))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.891-1-g64435188/src/main/clojure/cljs/compiler.cljc#L1375-L1383">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:ns</span>
+              (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [m] (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> m {(@reload <span class="hljs-symbol">:require</span>) <span class="hljs-literal">true</span>})))))))))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.914/src/main/clojure/cljs/compiler.cljc#L1375-L1383">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:ns</span>
   [{<span class="hljs-symbol">:keys</span> [name requires uses require-macros reloads env deps]}]
   (<span class="hljs-name">emitln</span> <span class="hljs-string">"goog.provide('"</span> (<span class="hljs-name">munge</span> name) <span class="hljs-string">"');"</span>)
   (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> name 'cljs.core)

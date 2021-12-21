@@ -3,7 +3,7 @@ the given bindings, then prints out the bindings and the expr
 followed by number of iterations and total time. The optional
 argument print-fn, defaulting to println, sets function used to
 print the result. expr's string representation will be produced
-using pr-str in any case.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.891-1-g64435188/src/main/clojure/cljs/core.cljc#L2798-L2814">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> simple-benchmark
+using pr-str in any case.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.914/src/main/clojure/cljs/core.cljc#L2801-L2817">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> simple-benchmark
   [bindings expr iterations &amp; {<span class="hljs-symbol">:keys</span> [print-fn] <span class="hljs-symbol">:or</span> {print-fn 'println}}]
   (<span class="hljs-name">core/let</span> [bs-str   (<span class="hljs-name">pr-str</span> bindings)
              expr-str (<span class="hljs-name">pr-str</span> expr)]
