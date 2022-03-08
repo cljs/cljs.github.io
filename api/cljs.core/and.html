@@ -37,7 +37,7 @@ of the other arguments, otherwise it returns the value of the last argument.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/or">or</a></li><li><a href="/api/cljs.core/if">if</a></li></ul><hr />Source docstring:<pre>Evaluates exprs one at a time, from left to right. If a form
 returns logical false (nil or false), and returns that value and
 doesn't evaluate any of the other expressions, otherwise it returns
-the value of the last expr. (and) returns true.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.10.914/src/main/clojure/cljs/core.cljc#L870-L879">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> and
+the value of the last expr. (and) returns true.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/clojure/cljs/core.cljc#L870-L879">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code>(<span class="hljs-name">core/defmacro</span> and
   ([] <span class="hljs-literal">true</span>)
   ([x] x)
   ([x &amp; next]
