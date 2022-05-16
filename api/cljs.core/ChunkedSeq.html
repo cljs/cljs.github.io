@@ -1,83 +1,83 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>ChunkedSeq</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">ChunkedSeq</h1><table><tr><td>type</td><td>since v0.0-1424</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentVector.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/ChunkedSeq</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/ChunkedSeq.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#ASeq"><code>ASeq</code></a> <a class="code-link" href="/api/cljs.core#IChunkedNext"><code>IChunkedNext</code></a> <a class="code-link" href="/api/cljs.core#IChunkedSeq"><code>IChunkedSeq</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#INext"><code>INext</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReduce"><code>IReduce</code></a> <a class="code-link" href="/api/cljs.core#ISeq"><code>ISeq</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISequential"><code>ISequential</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(ChunkedSeq. vec node i off meta __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/cljs/cljs/core.cljs#L5768-L5850">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> ChunkedSeq [vec node i off meta ^<span class="hljs-symbol">:mutable</span> __hash]
-  Object
-  (<span class="hljs-name">toString</span> [coll]
-    (<span class="hljs-name">pr-str*</span> coll))
-  (<span class="hljs-name">equiv</span> [this other]
-    (<span class="hljs-name">-equiv</span> this other))
-  (<span class="hljs-name">indexOf</span> [coll x]
-    (<span class="hljs-name">-indexOf</span> coll x <span class="hljs-number">0</span>))
-  (<span class="hljs-name">indexOf</span> [coll x start]
-    (<span class="hljs-name">-indexOf</span> coll x start))
-  (<span class="hljs-name">lastIndexOf</span> [coll x]
-    (<span class="hljs-name">-lastIndexOf</span> coll x (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> coll)))
-  (<span class="hljs-name">lastIndexOf</span> [coll x start]
-    (<span class="hljs-name">-lastIndexOf</span> coll x start))
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>ChunkedSeq</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">ChunkedSeq</h1><table><tr><td>type</td><td>since v0.0-1424</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentVector.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/ChunkedSeq</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/ChunkedSeq.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#ASeq"><code>ASeq</code></a> <a class="code-link" href="/api/cljs.core#IChunkedNext"><code>IChunkedNext</code></a> <a class="code-link" href="/api/cljs.core#IChunkedSeq"><code>IChunkedSeq</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#INext"><code>INext</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReduce"><code>IReduce</code></a> <a class="code-link" href="/api/cljs.core#ISeq"><code>ISeq</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISequential"><code>ISequential</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(ChunkedSeq. vec node i off meta __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/cljs/cljs/core.cljs#L5784-L5866">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">deftype</span> <span class="symbol">ChunkedSeq</span> <span class="s-exp">[</span><span class="core-fn">vec</span> <span class="symbol">node</span> <span class="symbol">i</span> <span class="symbol">off</span> <span class="core-fn">meta</span> <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="symbol">__hash</span><span class="s-exp">]</span>
+  <span class="symbol">Object</span>
+  <span class="s-exp">(</span><span class="symbol">toString</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">pr-str*</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">equiv</span> <span class="s-exp">[</span><span class="symbol">this</span> <span class="symbol">other</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="symbol">this</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">indexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-indexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="number">0</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">indexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-indexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">lastIndexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lastIndexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">lastIndexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lastIndexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IWithMeta
-  (<span class="hljs-name">-with-meta</span> [coll new-meta]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> new-meta meta)
-      coll
-      (<span class="hljs-name">chunked-seq</span> vec node i off new-meta)))
-  IMeta
-  (<span class="hljs-name">-meta</span> [coll] meta)
+  <span class="symbol">IWithMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-with-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">new-meta</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">identical?</span> <span class="symbol">new-meta</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
+      <span class="symbol">coll</span>
+      <span class="s-exp">(</span><span class="symbol">chunked-seq</span> <span class="core-fn">vec</span> <span class="symbol">node</span> <span class="symbol">i</span> <span class="symbol">off</span> <span class="symbol">new-meta</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="symbol">IMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
 
-  ISeqable
-  (<span class="hljs-name">-seq</span> [coll] coll)
+  <span class="symbol">ISeqable</span>
+  <span class="s-exp">(</span><span class="symbol">-seq</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="symbol">coll</span><span class="s-exp">)</span>
 
-  ISequential
-  IEquiv
-  (<span class="hljs-name">-equiv</span> [coll other] (<span class="hljs-name">equiv-sequential</span> coll other))
+  <span class="symbol">ISequential</span>
+  <span class="symbol">IEquiv</span>
+  <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">equiv-sequential</span> <span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ASeq
-  ISeq
-  (<span class="hljs-name">-first</span> [coll]
-    (<span class="hljs-name">aget</span> node off))
-  (<span class="hljs-name">-rest</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> off) (<span class="hljs-name">alength</span> node))
-      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [s (<span class="hljs-name">chunked-seq</span> vec node i (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> off))]
-        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> s)
-          ()
-          s))
-      (<span class="hljs-name">-chunked-rest</span> coll)))
+  <span class="symbol">ASeq</span>
+  <span class="symbol">ISeq</span>
+  <span class="s-exp">(</span><span class="symbol">-first</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">node</span> <span class="symbol">off</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-rest</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">off</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">node</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">s</span> <span class="s-exp">(</span><span class="symbol">chunked-seq</span> <span class="core-fn">vec</span> <span class="symbol">node</span> <span class="symbol">i</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">off</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+        <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">s</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="s-exp">)</span>
+          <span class="symbol">s</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">-chunked-rest</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  INext
-  (<span class="hljs-name">-next</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> off) (<span class="hljs-name">alength</span> node))
-      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [s (<span class="hljs-name">chunked-seq</span> vec node i (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> off))]
-        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> s)
-          <span class="hljs-literal">nil</span>
-          s))
-      (<span class="hljs-name">-chunked-next</span> coll)))
+  <span class="symbol">INext</span>
+  <span class="s-exp">(</span><span class="symbol">-next</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">off</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">node</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">s</span> <span class="s-exp">(</span><span class="symbol">chunked-seq</span> <span class="core-fn">vec</span> <span class="symbol">node</span> <span class="symbol">i</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">off</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+        <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">s</span><span class="s-exp">)</span>
+          <span class="nil">nil</span>
+          <span class="symbol">s</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">-chunked-next</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICollection
-  (<span class="hljs-name">-conj</span> [coll o]
-    (<span class="hljs-name"><span class="hljs-builtin-name">cons</span></span> o coll))
+  <span class="symbol">ICollection</span>
+  <span class="s-exp">(</span><span class="symbol">-conj</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">o</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">cons</span> <span class="symbol">o</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEmptyableCollection
-  (<span class="hljs-name">-empty</span> [coll]
-    ())
+  <span class="symbol">IEmptyableCollection</span>
+  <span class="s-exp">(</span><span class="symbol">-empty</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IChunkedSeq
-  (<span class="hljs-name">-chunked-first</span> [coll]
-    (<span class="hljs-name">array-chunk</span> node off))
-  (<span class="hljs-name">-chunked-rest</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [end (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> i (<span class="hljs-name">alength</span> node))]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> end (<span class="hljs-name">-count</span> vec))
-        (<span class="hljs-name">chunked-seq</span> vec (<span class="hljs-name">unchecked-array-for</span> vec end) end <span class="hljs-number">0</span>)
-        ())))
+  <span class="symbol">IChunkedSeq</span>
+  <span class="s-exp">(</span><span class="symbol">-chunked-first</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">array-chunk</span> <span class="symbol">node</span> <span class="symbol">off</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-chunked-rest</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">end</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">i</span> <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">node</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">end</span> <span class="s-exp">(</span><span class="symbol">-count</span> <span class="core-fn">vec</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">chunked-seq</span> <span class="core-fn">vec</span> <span class="s-exp">(</span><span class="symbol">unchecked-array-for</span> <span class="core-fn">vec</span> <span class="symbol">end</span><span class="s-exp">)</span> <span class="symbol">end</span> <span class="number">0</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IChunkedNext
-  (<span class="hljs-name">-chunked-next</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [end (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> i (<span class="hljs-name">alength</span> node))]
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> end (<span class="hljs-name">-count</span> vec))
-        (<span class="hljs-name">chunked-seq</span> vec (<span class="hljs-name">unchecked-array-for</span> vec end) end <span class="hljs-number">0</span>))))
+  <span class="symbol">IChunkedNext</span>
+  <span class="s-exp">(</span><span class="symbol">-chunked-next</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">end</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">i</span> <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">node</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">end</span> <span class="s-exp">(</span><span class="symbol">-count</span> <span class="core-fn">vec</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">chunked-seq</span> <span class="core-fn">vec</span> <span class="s-exp">(</span><span class="symbol">unchecked-array-for</span> <span class="core-fn">vec</span> <span class="symbol">end</span><span class="s-exp">)</span> <span class="symbol">end</span> <span class="number">0</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IHash
-  (<span class="hljs-name">-hash</span> [coll] (<span class="hljs-name">caching-hash</span> coll hash-ordered-coll __hash))
+  <span class="symbol">IHash</span>
+  <span class="s-exp">(</span><span class="symbol">-hash</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">caching-hash</span> <span class="symbol">coll</span> <span class="core-fn">hash-ordered-coll</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IReduce
-  (<span class="hljs-name">-reduce</span> [coll f]
-    (<span class="hljs-name">pv-reduce</span> vec f (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> i off) (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> vec)))
+  <span class="symbol">IReduce</span>
+  <span class="s-exp">(</span><span class="symbol">-reduce</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">f</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">pv-reduce</span> <span class="core-fn">vec</span> <span class="symbol">f</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">i</span> <span class="symbol">off</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="core-fn">vec</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-reduce</span> [coll f start]
-    (<span class="hljs-name">pv-reduce</span> vec f start (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> i off) (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> vec))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+  <span class="s-exp">(</span><span class="symbol">-reduce</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">f</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">pv-reduce</span> <span class="core-fn">vec</span> <span class="symbol">f</span> <span class="symbol">start</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">i</span> <span class="symbol">off</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="core-fn">vec</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

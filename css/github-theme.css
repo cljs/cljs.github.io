@@ -1,99 +1,35 @@
-/*
 
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+/* GitHub style color scheme for clojure glow highlighter:
+ * https://github.com/venantius/glow */
 
-*/
+code.syntax .background   { color: inherit }
 
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-}
+/* parens */
+code.syntax .s-exp        { color: inherit }
 
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
+/* primitives */
+code.syntax .comment      { color: #999988 }
+code.syntax .number       { color: #008080 }
+code.syntax .symbol       { color: inherit }
+code.syntax .boolean      { color: #008080 }
+code.syntax .keyword      { color: #990073 }
+code.syntax .nil          { color: #008080 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
+/* strings */
+code.syntax .string       { color: #dd1144 }
+code.syntax .regex        { color: #dd1144 }
+code.syntax .character    { color: #dd1144 }
 
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
+/* types of symbols
+ * see: https://github.com/venantius/glow/tree/master/resources/keywords */
+code.syntax .conditional  { color: #0086b3 }
+code.syntax .definition   { color: #0086b3 }
+code.syntax .exception    { color: #0086b3 }
+code.syntax .core-fn      { color: #0086b3 }
+code.syntax .macro        { color: #0086b3 }
+code.syntax .repeat       { color: #0086b3 }
+code.syntax .special-form { color: #0086b3 }
+code.syntax .variable     { color: #0086b3 }
 
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
+code.syntax .reader-char  { color: inherit }
 
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}

@@ -1,95 +1,95 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>PersistentTreeSet</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">PersistentTreeSet</h1><table><tr><td>type</td><td>since v0.0-1211</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentTreeSet.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/PersistentTreeSet</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/PersistentTreeSet.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#ICloneable"><code>ICloneable</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReversible"><code>IReversible</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISet"><code>ISet</code></a> <a class="code-link" href="/api/cljs.core#ISorted"><code>ISorted</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(PersistentTreeSet. meta tree-map __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/cljs/cljs/core.cljs#L9353-L9447">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> PersistentTreeSet [meta tree-map ^<span class="hljs-symbol">:mutable</span> __hash]
-  Object
-  (<span class="hljs-name">toString</span> [coll]
-    (<span class="hljs-name">pr-str*</span> coll))
-  (<span class="hljs-name">equiv</span> [this other]
-    (<span class="hljs-name">-equiv</span> this other))
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>PersistentTreeSet</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">PersistentTreeSet</h1><table><tr><td>type</td><td>since v0.0-1211</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentTreeSet.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/PersistentTreeSet</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/PersistentTreeSet.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#ICloneable"><code>ICloneable</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReversible"><code>IReversible</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISet"><code>ISet</code></a> <a class="code-link" href="/api/cljs.core#ISorted"><code>ISorted</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(PersistentTreeSet. meta tree-map __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/cljs/cljs/core.cljs#L9447-L9541">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">deftype</span> <span class="symbol">PersistentTreeSet</span> <span class="s-exp">[</span><span class="core-fn">meta</span> <span class="symbol">tree-map</span> <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="symbol">__hash</span><span class="s-exp">]</span>
+  <span class="symbol">Object</span>
+  <span class="s-exp">(</span><span class="symbol">toString</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">pr-str*</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">equiv</span> <span class="s-exp">[</span><span class="symbol">this</span> <span class="symbol">other</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="symbol">this</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  <span class="hljs-comment">;; EXPERIMENTAL: subject to change</span>
-  (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> [coll]
-    (<span class="hljs-name">es6-iterator</span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> coll)))
-  (<span class="hljs-name">entries</span> [coll]
-    (<span class="hljs-name">es6-set-entries-iterator</span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> coll)))
-  (<span class="hljs-name">values</span> [coll]
-    (<span class="hljs-name">es6-iterator</span> (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> coll)))
-  (<span class="hljs-name">has</span> [coll k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> coll k))
-  (<span class="hljs-name">forEach</span> [coll f]
-    (<span class="hljs-name"><span class="hljs-builtin-name">doseq</span></span> [[k v] coll]
-      (<span class="hljs-name">f</span> v k)))
+  <span class="comment">;; EXPERIMENTAL: subject to change
+</span>  <span class="s-exp">(</span><span class="core-fn">keys</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">es6-iterator</span> <span class="s-exp">(</span><span class="core-fn">seq</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">entries</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">es6-set-entries-iterator</span> <span class="s-exp">(</span><span class="core-fn">seq</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">values</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">es6-iterator</span> <span class="s-exp">(</span><span class="core-fn">seq</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">has</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">contains?</span> <span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">forEach</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">f</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="repeat">doseq</span> <span class="s-exp">[</span><span class="s-exp">[</span><span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">]</span> <span class="symbol">coll</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="symbol">f</span> <span class="symbol">v</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICloneable
-  (<span class="hljs-name">-clone</span> [_] (<span class="hljs-name">PersistentTreeSet.</span> meta tree-map __hash))
+  <span class="symbol">ICloneable</span>
+  <span class="s-exp">(</span><span class="symbol">-clone</span> <span class="s-exp">[</span><span class="symbol">_</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">PersistentTreeSet.</span> <span class="core-fn">meta</span> <span class="symbol">tree-map</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IWithMeta
-  (<span class="hljs-name">-with-meta</span> [coll new-meta]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> new-meta meta)
-      coll
-      (<span class="hljs-name">PersistentTreeSet.</span> new-meta tree-map __hash)))
+  <span class="symbol">IWithMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-with-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">new-meta</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">identical?</span> <span class="symbol">new-meta</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
+      <span class="symbol">coll</span>
+      <span class="s-exp">(</span><span class="symbol">PersistentTreeSet.</span> <span class="symbol">new-meta</span> <span class="symbol">tree-map</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IMeta
-  (<span class="hljs-name">-meta</span> [coll] meta)
+  <span class="symbol">IMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
 
-  ICollection
-  (<span class="hljs-name">-conj</span> [coll o]
-    (<span class="hljs-name">PersistentTreeSet.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> tree-map o <span class="hljs-literal">nil</span>) <span class="hljs-literal">nil</span>))
+  <span class="symbol">ICollection</span>
+  <span class="s-exp">(</span><span class="symbol">-conj</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">o</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">PersistentTreeSet.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="symbol">tree-map</span> <span class="symbol">o</span> <span class="nil">nil</span><span class="s-exp">)</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEmptyableCollection
-  (<span class="hljs-name">-empty</span> [coll] (<span class="hljs-name">PersistentTreeSet.</span> meta (<span class="hljs-name">-empty</span> tree-map) <span class="hljs-number">0</span>))
+  <span class="symbol">IEmptyableCollection</span>
+  <span class="s-exp">(</span><span class="symbol">-empty</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">PersistentTreeSet.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="symbol">-empty</span> <span class="symbol">tree-map</span><span class="s-exp">)</span> <span class="number">0</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEquiv
-  (<span class="hljs-name">-equiv</span> [coll other]
-    (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span>
-     (<span class="hljs-name"><span class="hljs-builtin-name">set?</span></span> other)
-     (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> coll) (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> other))
-     <span class="hljs-comment">^boolean</span>
-     (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
-       (<span class="hljs-name">reduce-kv</span>
-         #(<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> other %<span class="hljs-number">2</span>) (<span class="hljs-name"><span class="hljs-builtin-name">reduced</span></span> <span class="hljs-literal">false</span>))
-         <span class="hljs-literal">true</span> tree-map)
-       (<span class="hljs-name">catch</span> js/Error ex
-         <span class="hljs-literal">false</span>))))
+  <span class="symbol">IEquiv</span>
+  <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="macro">and</span>
+     <span class="s-exp">(</span><span class="core-fn">set?</span> <span class="symbol">other</span><span class="s-exp">)</span>
+     <span class="s-exp">(</span><span class="core-fn">==</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">coll</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
+     <span class="reader-char">^</span><span class="core-fn">boolean</span>
+     <span class="s-exp">(</span><span class="exception">try</span>
+       <span class="s-exp">(</span><span class="core-fn">reduce-kv</span>
+         <span class="reader-char">#</span><span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="core-fn">contains?</span> <span class="symbol">other</span> <span class="keyword">%2</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">reduced</span> <span class="boolean">false</span><span class="s-exp">)</span><span class="s-exp">)</span>
+         <span class="boolean">true</span> <span class="symbol">tree-map</span><span class="s-exp">)</span>
+       <span class="s-exp">(</span><span class="exception">catch</span> <span class="symbol">js/Error</span> <span class="symbol">ex</span>
+         <span class="boolean">false</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IHash
-  (<span class="hljs-name">-hash</span> [coll] (<span class="hljs-name">caching-hash</span> coll hash-unordered-coll __hash))
+  <span class="symbol">IHash</span>
+  <span class="s-exp">(</span><span class="symbol">-hash</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">caching-hash</span> <span class="symbol">coll</span> <span class="core-fn">hash-unordered-coll</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ISeqable
-  (<span class="hljs-name">-seq</span> [coll] (<span class="hljs-name"><span class="hljs-builtin-name">keys</span></span> tree-map))
+  <span class="symbol">ISeqable</span>
+  <span class="s-exp">(</span><span class="symbol">-seq</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="core-fn">keys</span> <span class="symbol">tree-map</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ISorted
-  (<span class="hljs-name">-sorted-seq</span> [coll ascending?]
-    (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> key (<span class="hljs-name">-sorted-seq</span> tree-map ascending?)))
+  <span class="symbol">ISorted</span>
+  <span class="s-exp">(</span><span class="symbol">-sorted-seq</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">ascending?</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">map</span> <span class="core-fn">key</span> <span class="s-exp">(</span><span class="symbol">-sorted-seq</span> <span class="symbol">tree-map</span> <span class="symbol">ascending?</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-sorted-seq-from</span> [coll k ascending?]
-    (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> key (<span class="hljs-name">-sorted-seq-from</span> tree-map k ascending?)))
+  <span class="s-exp">(</span><span class="symbol">-sorted-seq-from</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">ascending?</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">map</span> <span class="core-fn">key</span> <span class="s-exp">(</span><span class="symbol">-sorted-seq-from</span> <span class="symbol">tree-map</span> <span class="symbol">k</span> <span class="symbol">ascending?</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-entry-key</span> [coll entry] entry)
+  <span class="s-exp">(</span><span class="symbol">-entry-key</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">entry</span><span class="s-exp">]</span> <span class="symbol">entry</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-comparator</span> [coll] (<span class="hljs-name">-comparator</span> tree-map))
+  <span class="s-exp">(</span><span class="symbol">-comparator</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">-comparator</span> <span class="symbol">tree-map</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IReversible
-  (<span class="hljs-name">-rseq</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">pos?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> tree-map))
-      (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> key (<span class="hljs-name"><span class="hljs-builtin-name">rseq</span></span> tree-map))))
+  <span class="symbol">IReversible</span>
+  <span class="s-exp">(</span><span class="symbol">-rseq</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">pos?</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">tree-map</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="core-fn">map</span> <span class="core-fn">key</span> <span class="s-exp">(</span><span class="core-fn">rseq</span> <span class="symbol">tree-map</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICounted
-  (<span class="hljs-name">-count</span> [coll] (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> tree-map))
+  <span class="symbol">ICounted</span>
+  <span class="s-exp">(</span><span class="symbol">-count</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">tree-map</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ILookup
-  (<span class="hljs-name">-lookup</span> [coll v]
-    (<span class="hljs-name">-lookup</span> coll v <span class="hljs-literal">nil</span>))
-  (<span class="hljs-name">-lookup</span> [coll v not-found]
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [n (<span class="hljs-name">.entry-at</span> tree-map v)]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> n)
-        (<span class="hljs-name">.-key</span> n)
-        not-found)))
+  <span class="symbol">ILookup</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">v</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">coll</span> <span class="symbol">v</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">v</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">n</span> <span class="s-exp">(</span><span class="symbol">.entry-at</span> <span class="symbol">tree-map</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="conditional">if-not</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">n</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">.-key</span> <span class="symbol">n</span><span class="s-exp">)</span>
+        <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ISet
-  (<span class="hljs-name">-disjoin</span> [coll v]
-    (<span class="hljs-name">PersistentTreeSet.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> tree-map v) <span class="hljs-literal">nil</span>))
+  <span class="symbol">ISet</span>
+  <span class="s-exp">(</span><span class="symbol">-disjoin</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">v</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">PersistentTreeSet.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">dissoc</span> <span class="symbol">tree-map</span> <span class="symbol">v</span><span class="s-exp">)</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IFn
-  (<span class="hljs-name">-invoke</span> [coll k]
-    (<span class="hljs-name">-lookup</span> coll k))
-  (<span class="hljs-name">-invoke</span> [coll k not-found]
-    (<span class="hljs-name">-lookup</span> coll k not-found)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+  <span class="symbol">IFn</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

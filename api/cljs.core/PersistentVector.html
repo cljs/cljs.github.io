@@ -1,196 +1,196 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>PersistentVector</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">PersistentVector</h1><table><tr><td>type</td><td>since v0.0-1006</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentVector.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/PersistentVector</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/PersistentVector.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#APersistentVector"><code>APersistentVector</code></a> <a class="code-link" href="/api/cljs.core#IAssociative"><code>IAssociative</code></a> <a class="code-link" href="/api/cljs.core#ICloneable"><code>ICloneable</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#IComparable"><code>IComparable</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEditableCollection"><code>IEditableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFind"><code>IFind</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#IIndexed"><code>IIndexed</code></a> <a class="code-link" href="/api/cljs.core#IIterable"><code>IIterable</code></a> <a class="code-link" href="/api/cljs.core#IKVReduce"><code>IKVReduce</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReduce"><code>IReduce</code></a> <a class="code-link" href="/api/cljs.core#IReversible"><code>IReversible</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISequential"><code>ISequential</code></a> <a class="code-link" href="/api/cljs.core#IStack"><code>IStack</code></a> <a class="code-link" href="/api/cljs.core#IVector"><code>IVector</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(PersistentVector. meta cnt shift root tail __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/cljs/cljs/core.cljs#L5520-L5715">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> PersistentVector [meta cnt shift root tail ^<span class="hljs-symbol">:mutable</span> __hash]
-  Object
-  (<span class="hljs-name">toString</span> [coll]
-    (<span class="hljs-name">pr-str*</span> coll))
-  (<span class="hljs-name">equiv</span> [this other]
-    (<span class="hljs-name">-equiv</span> this other))
-  (<span class="hljs-name">indexOf</span> [coll x]
-    (<span class="hljs-name">-indexOf</span> coll x <span class="hljs-number">0</span>))
-  (<span class="hljs-name">indexOf</span> [coll x start]
-    (<span class="hljs-name">-indexOf</span> coll x start))
-  (<span class="hljs-name">lastIndexOf</span> [coll x]
-    (<span class="hljs-name">-lastIndexOf</span> coll x (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> coll)))
-  (<span class="hljs-name">lastIndexOf</span> [coll x start]
-    (<span class="hljs-name">-lastIndexOf</span> coll x start))
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>PersistentVector</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">PersistentVector</h1><table><tr><td>type</td><td>since v0.0-1006</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentVector.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/PersistentVector</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/PersistentVector.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#APersistentVector"><code>APersistentVector</code></a> <a class="code-link" href="/api/cljs.core#IAssociative"><code>IAssociative</code></a> <a class="code-link" href="/api/cljs.core#ICloneable"><code>ICloneable</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#IComparable"><code>IComparable</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEditableCollection"><code>IEditableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFind"><code>IFind</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#IIndexed"><code>IIndexed</code></a> <a class="code-link" href="/api/cljs.core#IIterable"><code>IIterable</code></a> <a class="code-link" href="/api/cljs.core#IKVReduce"><code>IKVReduce</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReduce"><code>IReduce</code></a> <a class="code-link" href="/api/cljs.core#IReversible"><code>IReversible</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISequential"><code>ISequential</code></a> <a class="code-link" href="/api/cljs.core#IStack"><code>IStack</code></a> <a class="code-link" href="/api/cljs.core#IVector"><code>IVector</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(PersistentVector. meta cnt shift root tail __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/cljs/cljs/core.cljs#L5536-L5731">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">deftype</span> <span class="symbol">PersistentVector</span> <span class="s-exp">[</span><span class="core-fn">meta</span> <span class="symbol">cnt</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="symbol">tail</span> <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="symbol">__hash</span><span class="s-exp">]</span>
+  <span class="symbol">Object</span>
+  <span class="s-exp">(</span><span class="symbol">toString</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">pr-str*</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">equiv</span> <span class="s-exp">[</span><span class="symbol">this</span> <span class="symbol">other</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="symbol">this</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">indexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-indexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="number">0</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">indexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-indexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">lastIndexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lastIndexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">lastIndexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lastIndexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICloneable
-  (<span class="hljs-name">-clone</span> [_] (<span class="hljs-name">PersistentVector.</span> meta cnt shift root tail __hash))
+  <span class="symbol">ICloneable</span>
+  <span class="s-exp">(</span><span class="symbol">-clone</span> <span class="s-exp">[</span><span class="symbol">_</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="symbol">cnt</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="symbol">tail</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IWithMeta
-  (<span class="hljs-name">-with-meta</span> [coll new-meta]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> new-meta meta)
-      coll
-      (<span class="hljs-name">PersistentVector.</span> new-meta cnt shift root tail __hash)))
+  <span class="symbol">IWithMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-with-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">new-meta</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">identical?</span> <span class="symbol">new-meta</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
+      <span class="symbol">coll</span>
+      <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="symbol">new-meta</span> <span class="symbol">cnt</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="symbol">tail</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IMeta
-  (<span class="hljs-name">-meta</span> [coll] meta)
+  <span class="symbol">IMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
 
-  IStack
-  (<span class="hljs-name">-peek</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> cnt <span class="hljs-number">0</span>)
-      (<span class="hljs-name">-nth</span> coll (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt))))
-  (<span class="hljs-name">-pop</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
-     (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> cnt) (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"Can't pop empty vector"</span>))
-     (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> <span class="hljs-number">1</span> cnt) (<span class="hljs-name">-with-meta</span> (<span class="hljs-name">.-EMPTY</span> PersistentVector) meta)
-     (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> <span class="hljs-number">1</span> (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> cnt (<span class="hljs-name">tail-off</span> coll)))
-      (<span class="hljs-name">PersistentVector.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt) shift root (<span class="hljs-name">.slice</span> tail <span class="hljs-number">0</span> <span class="hljs-number">-1</span>) <span class="hljs-literal">nil</span>)
-      <span class="hljs-symbol">:else</span> (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-tail (<span class="hljs-name">unchecked-array-for</span> coll (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> cnt <span class="hljs-number">2</span>))
-                  nr (<span class="hljs-name">pop-tail</span> coll shift root)
-                  new-root (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> nr) (<span class="hljs-name">.-EMPTY-NODE</span> PersistentVector) nr)
-                  cnt-1 (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt)]
-              (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> <span class="hljs-number">5</span> shift) (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name">pv-aget</span> new-root <span class="hljs-number">1</span>)))
-                (<span class="hljs-name">PersistentVector.</span> meta cnt-1 (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> shift <span class="hljs-number">5</span>) (<span class="hljs-name">pv-aget</span> new-root <span class="hljs-number">0</span>) new-tail <span class="hljs-literal">nil</span>)
-                (<span class="hljs-name">PersistentVector.</span> meta cnt-1 shift new-root new-tail <span class="hljs-literal">nil</span>)))))
+  <span class="symbol">IStack</span>
+  <span class="s-exp">(</span><span class="symbol">-peek</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">></span> <span class="symbol">cnt</span> <span class="number">0</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">coll</span> <span class="s-exp">(</span><span class="core-fn">dec</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-pop</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">cond</span>
+     <span class="s-exp">(</span><span class="core-fn">zero?</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"Can't pop empty vector"</span><span class="s-exp">)</span><span class="s-exp">)</span>
+     <span class="s-exp">(</span><span class="core-fn">==</span> <span class="number">1</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">-with-meta</span> <span class="s-exp">(</span><span class="symbol">.-EMPTY</span> <span class="symbol">PersistentVector</span><span class="s-exp">)</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
+     <span class="s-exp">(</span><span class="core-fn"><</span> <span class="number">1</span> <span class="s-exp">(</span><span class="core-fn">-</span> <span class="symbol">cnt</span> <span class="s-exp">(</span><span class="symbol">tail-off</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">dec</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="s-exp">(</span><span class="symbol">.slice</span> <span class="symbol">tail</span> <span class="number">0</span> <span class="number">-1</span><span class="s-exp">)</span> <span class="nil">nil</span><span class="s-exp">)</span>
+      <span class="keyword">:else</span> <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">new-tail</span> <span class="s-exp">(</span><span class="symbol">unchecked-array-for</span> <span class="symbol">coll</span> <span class="s-exp">(</span><span class="core-fn">-</span> <span class="symbol">cnt</span> <span class="number">2</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                  <span class="symbol">nr</span> <span class="s-exp">(</span><span class="symbol">pop-tail</span> <span class="symbol">coll</span> <span class="symbol">shift</span> <span class="symbol">root</span><span class="s-exp">)</span>
+                  <span class="symbol">new-root</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">nr</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">.-EMPTY-NODE</span> <span class="symbol">PersistentVector</span><span class="s-exp">)</span> <span class="symbol">nr</span><span class="s-exp">)</span>
+                  <span class="symbol">cnt-1</span> <span class="s-exp">(</span><span class="core-fn">dec</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">]</span>
+              <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="number">5</span> <span class="symbol">shift</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="s-exp">(</span><span class="symbol">pv-aget</span> <span class="symbol">new-root</span> <span class="number">1</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="symbol">cnt-1</span> <span class="s-exp">(</span><span class="core-fn">-</span> <span class="symbol">shift</span> <span class="number">5</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">pv-aget</span> <span class="symbol">new-root</span> <span class="number">0</span><span class="s-exp">)</span> <span class="symbol">new-tail</span> <span class="nil">nil</span><span class="s-exp">)</span>
+                <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="symbol">cnt-1</span> <span class="symbol">shift</span> <span class="symbol">new-root</span> <span class="symbol">new-tail</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICollection
-  (<span class="hljs-name">-conj</span> [coll o]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">-</span></span> cnt (<span class="hljs-name">tail-off</span> coll)) <span class="hljs-number">32</span>)
-      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [len (<span class="hljs-name">alength</span> tail)
-            new-tail (<span class="hljs-name">make-array</span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> len))]
-        (<span class="hljs-name"><span class="hljs-builtin-name">dotimes</span></span> [i len]
-          (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-tail i (<span class="hljs-name">aget</span> tail i)))
-        (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-tail len o)
-        (<span class="hljs-name">PersistentVector.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> cnt) shift root new-tail <span class="hljs-literal">nil</span>))
-      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [root-overflow? (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name">bit-shift-right-zero-fill</span> cnt <span class="hljs-number">5</span>) (<span class="hljs-name">bit-shift-left</span> <span class="hljs-number">1</span> shift))
-            new-shift (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> root-overflow? (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> shift <span class="hljs-number">5</span>) shift)
-            new-root (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> root-overflow?
-                       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [n-r (<span class="hljs-name">pv-fresh-node</span> <span class="hljs-literal">nil</span>)]
-                           (<span class="hljs-name">pv-aset</span> n-r <span class="hljs-number">0</span> root)
-                           (<span class="hljs-name">pv-aset</span> n-r <span class="hljs-number">1</span> (<span class="hljs-name">new-path</span> <span class="hljs-literal">nil</span> shift (<span class="hljs-name">VectorNode.</span> <span class="hljs-literal">nil</span> tail)))
-                           n-r)
-                       (<span class="hljs-name">push-tail</span> coll shift root (<span class="hljs-name">VectorNode.</span> <span class="hljs-literal">nil</span> tail)))]
-        (<span class="hljs-name">PersistentVector.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> cnt) new-shift new-root (<span class="hljs-name">array</span> o) <span class="hljs-literal">nil</span>))))
+  <span class="symbol">ICollection</span>
+  <span class="s-exp">(</span><span class="symbol">-conj</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">o</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="s-exp">(</span><span class="core-fn">-</span> <span class="symbol">cnt</span> <span class="s-exp">(</span><span class="symbol">tail-off</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="number">32</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">len</span> <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">tail</span><span class="s-exp">)</span>
+            <span class="symbol">new-tail</span> <span class="s-exp">(</span><span class="core-fn">make-array</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">len</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+        <span class="s-exp">(</span><span class="repeat">dotimes</span> <span class="s-exp">[</span><span class="symbol">i</span> <span class="symbol">len</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="core-fn">aset</span> <span class="symbol">new-tail</span> <span class="symbol">i</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">tail</span> <span class="symbol">i</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="core-fn">aset</span> <span class="symbol">new-tail</span> <span class="symbol">len</span> <span class="symbol">o</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="symbol">new-tail</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">root-overflow?</span> <span class="s-exp">(</span><span class="core-fn">></span> <span class="s-exp">(</span><span class="symbol">bit-shift-right-zero-fill</span> <span class="symbol">cnt</span> <span class="number">5</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">bit-shift-left</span> <span class="number">1</span> <span class="symbol">shift</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="symbol">new-shift</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">root-overflow?</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">shift</span> <span class="number">5</span><span class="s-exp">)</span> <span class="symbol">shift</span><span class="s-exp">)</span>
+            <span class="symbol">new-root</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">root-overflow?</span>
+                       <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">n-r</span> <span class="s-exp">(</span><span class="symbol">pv-fresh-node</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                           <span class="s-exp">(</span><span class="symbol">pv-aset</span> <span class="symbol">n-r</span> <span class="number">0</span> <span class="symbol">root</span><span class="s-exp">)</span>
+                           <span class="s-exp">(</span><span class="symbol">pv-aset</span> <span class="symbol">n-r</span> <span class="number">1</span> <span class="s-exp">(</span><span class="symbol">new-path</span> <span class="nil">nil</span> <span class="symbol">shift</span> <span class="s-exp">(</span><span class="symbol">VectorNode.</span> <span class="nil">nil</span> <span class="symbol">tail</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                           <span class="symbol">n-r</span><span class="s-exp">)</span>
+                       <span class="s-exp">(</span><span class="symbol">push-tail</span> <span class="symbol">coll</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="s-exp">(</span><span class="symbol">VectorNode.</span> <span class="nil">nil</span> <span class="symbol">tail</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+        <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="symbol">new-shift</span> <span class="symbol">new-root</span> <span class="s-exp">(</span><span class="symbol">array</span> <span class="symbol">o</span><span class="s-exp">)</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEmptyableCollection
-  (<span class="hljs-name">-empty</span> [coll] (<span class="hljs-name">-with-meta</span> (<span class="hljs-name">.-EMPTY</span> PersistentVector) meta))
+  <span class="symbol">IEmptyableCollection</span>
+  <span class="s-exp">(</span><span class="symbol">-empty</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">-with-meta</span> <span class="s-exp">(</span><span class="symbol">.-EMPTY</span> <span class="symbol">PersistentVector</span><span class="s-exp">)</span> <span class="core-fn">meta</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ISequential
-  IEquiv
-  (<span class="hljs-name">-equiv</span> [coll other]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">instance?</span></span> PersistentVector other)
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> cnt (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> other))
-        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [me-iter  (<span class="hljs-name">-iterator</span> coll)
-              you-iter (<span class="hljs-name">-iterator</span> other)]
-          (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> []
-            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.hasNext</span> me-iter)
-              (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [x (<span class="hljs-name">.next</span> me-iter)
-                    y (<span class="hljs-name">.next</span> you-iter)]
-                (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> x y)
-                  (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span>)
-                  <span class="hljs-literal">false</span>))
-              <span class="hljs-literal">true</span>)))
-        <span class="hljs-literal">false</span>)
-      (<span class="hljs-name">equiv-sequential</span> coll other)))
+  <span class="symbol">ISequential</span>
+  <span class="symbol">IEquiv</span>
+  <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">instance?</span> <span class="symbol">PersistentVector</span> <span class="symbol">other</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">cnt</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">me-iter</span>  <span class="s-exp">(</span><span class="symbol">-iterator</span> <span class="symbol">coll</span><span class="s-exp">)</span>
+              <span class="symbol">you-iter</span> <span class="s-exp">(</span><span class="symbol">-iterator</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="s-exp">]</span>
+            <span class="s-exp">(</span><span class="special-form">if</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="s-exp">(</span><span class="symbol">.hasNext</span> <span class="symbol">me-iter</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">x</span> <span class="s-exp">(</span><span class="symbol">.next</span> <span class="symbol">me-iter</span><span class="s-exp">)</span>
+                    <span class="symbol">y</span> <span class="s-exp">(</span><span class="symbol">.next</span> <span class="symbol">you-iter</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="symbol">x</span> <span class="symbol">y</span><span class="s-exp">)</span>
+                  <span class="s-exp">(</span><span class="special-form">recur</span><span class="s-exp">)</span>
+                  <span class="boolean">false</span><span class="s-exp">)</span><span class="s-exp">)</span>
+              <span class="boolean">true</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="boolean">false</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">equiv-sequential</span> <span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IHash
-  (<span class="hljs-name">-hash</span> [coll] (<span class="hljs-name">caching-hash</span> coll hash-ordered-coll __hash))
+  <span class="symbol">IHash</span>
+  <span class="s-exp">(</span><span class="symbol">-hash</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">caching-hash</span> <span class="symbol">coll</span> <span class="core-fn">hash-ordered-coll</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ISeqable
-  (<span class="hljs-name">-seq</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
-      (<span class="hljs-name"><span class="hljs-builtin-name">zero?</span></span> cnt) <span class="hljs-literal">nil</span>
-      (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> cnt <span class="hljs-number">32</span>) (<span class="hljs-name">IndexedSeq.</span> tail <span class="hljs-number">0</span> <span class="hljs-literal">nil</span>)
-      <span class="hljs-symbol">:else</span> (<span class="hljs-name">chunked-seq</span> coll (<span class="hljs-name">first-array-for-longvec</span> coll) <span class="hljs-number">0</span> <span class="hljs-number">0</span>)))
+  <span class="symbol">ISeqable</span>
+  <span class="s-exp">(</span><span class="symbol">-seq</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">cond</span>
+      <span class="s-exp">(</span><span class="core-fn">zero?</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="nil">nil</span>
+      <span class="s-exp">(</span><span class="core-fn"><=</span> <span class="symbol">cnt</span> <span class="number">32</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">IndexedSeq.</span> <span class="symbol">tail</span> <span class="number">0</span> <span class="nil">nil</span><span class="s-exp">)</span>
+      <span class="keyword">:else</span> <span class="s-exp">(</span><span class="symbol">chunked-seq</span> <span class="symbol">coll</span> <span class="s-exp">(</span><span class="symbol">first-array-for-longvec</span> <span class="symbol">coll</span><span class="s-exp">)</span> <span class="number">0</span> <span class="number">0</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICounted
-  (<span class="hljs-name">-count</span> [coll] cnt)
+  <span class="symbol">ICounted</span>
+  <span class="s-exp">(</span><span class="symbol">-count</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="symbol">cnt</span><span class="s-exp">)</span>
 
-  IIndexed
-  (<span class="hljs-name">-nth</span> [coll n]
-    (<span class="hljs-name">aget</span> (<span class="hljs-name">array-for</span> coll n) (<span class="hljs-name">bit-and</span> n <span class="hljs-number">0</span>x01f)))
-  (<span class="hljs-name">-nth</span> [coll n not-found]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> <span class="hljs-number">0</span> n) (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> n cnt))
-      (<span class="hljs-name">aget</span> (<span class="hljs-name">unchecked-array-for</span> coll n) (<span class="hljs-name">bit-and</span> n <span class="hljs-number">0</span>x01f))
-      not-found))
+  <span class="symbol">IIndexed</span>
+  <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">n</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="s-exp">(</span><span class="symbol">array-for</span> <span class="symbol">coll</span> <span class="symbol">n</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">bit-and</span> <span class="symbol">n</span> <span class="number">0x01f</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">n</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn"><=</span> <span class="number">0</span> <span class="symbol">n</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">n</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="s-exp">(</span><span class="symbol">unchecked-array-for</span> <span class="symbol">coll</span> <span class="symbol">n</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">bit-and</span> <span class="symbol">n</span> <span class="number">0x01f</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ILookup
-  (<span class="hljs-name">-lookup</span> [coll k] (<span class="hljs-name">-lookup</span> coll k <span class="hljs-literal">nil</span>))
-  (<span class="hljs-name">-lookup</span> [coll k not-found] (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">number?</span></span> k)
-                                (<span class="hljs-name">-nth</span> coll k not-found)
-                                not-found))
+  <span class="symbol">ILookup</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">coll</span> <span class="symbol">k</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">number?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+                                <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">)</span>
+                                <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IAssociative
-  (<span class="hljs-name">-assoc</span> [coll k v]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">number?</span></span> k)
-      (<span class="hljs-name">-assoc-n</span> coll k v)
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"Vector's key for assoc must be a number."</span>))))
-  (<span class="hljs-name">-contains-key?</span> [coll k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">integer?</span></span> k)
-      (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> <span class="hljs-number">0</span> k) (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> k cnt))
-      <span class="hljs-literal">false</span>))
+  <span class="symbol">IAssociative</span>
+  <span class="s-exp">(</span><span class="symbol">-assoc</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">number?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">-assoc-n</span> <span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"Vector's key for assoc must be a number."</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-contains-key?</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">integer?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn"><=</span> <span class="number">0</span> <span class="symbol">k</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">k</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="boolean">false</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IFind
-  (<span class="hljs-name">-find</span> [coll n]
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> <span class="hljs-number">0</span> n) (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> n cnt))
-      (<span class="hljs-name">MapEntry.</span> n (<span class="hljs-name">aget</span> (<span class="hljs-name">unchecked-array-for</span> coll n) (<span class="hljs-name">bit-and</span> n <span class="hljs-number">0</span>x01f)) <span class="hljs-literal">nil</span>)))
+  <span class="symbol">IFind</span>
+  <span class="s-exp">(</span><span class="symbol">-find</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">n</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn"><=</span> <span class="number">0</span> <span class="symbol">n</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">n</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">MapEntry.</span> <span class="symbol">n</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="s-exp">(</span><span class="symbol">unchecked-array-for</span> <span class="symbol">coll</span> <span class="symbol">n</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">bit-and</span> <span class="symbol">n</span> <span class="number">0x01f</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  APersistentVector
-  IVector
-  (<span class="hljs-name">-assoc-n</span> [coll n val]
-    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
-       (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> <span class="hljs-number">0</span> n) (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> n cnt))
-       (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;=</span></span> (<span class="hljs-name">tail-off</span> coll) n)
-         (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-tail (<span class="hljs-name">aclone</span> tail)]
-           (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-tail (<span class="hljs-name">bit-and</span> n <span class="hljs-number">0</span>x01f) val)
-           (<span class="hljs-name">PersistentVector.</span> meta cnt shift root new-tail <span class="hljs-literal">nil</span>))
-         (<span class="hljs-name">PersistentVector.</span> meta cnt shift (<span class="hljs-name">do-assoc</span> coll shift root n val) tail <span class="hljs-literal">nil</span>))
-       (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n cnt) (<span class="hljs-name">-conj</span> coll val)
-       <span class="hljs-symbol">:else</span> (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Index "</span> n <span class="hljs-string">" out of bounds  [0,"</span> cnt <span class="hljs-string">"]"</span>)))))
+  <span class="symbol">APersistentVector</span>
+  <span class="symbol">IVector</span>
+  <span class="s-exp">(</span><span class="symbol">-assoc-n</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">n</span> <span class="core-fn">val</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">cond</span>
+       <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn"><=</span> <span class="number">0</span> <span class="symbol">n</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">n</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">)</span>
+       <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><=</span> <span class="s-exp">(</span><span class="symbol">tail-off</span> <span class="symbol">coll</span><span class="s-exp">)</span> <span class="symbol">n</span><span class="s-exp">)</span>
+         <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">new-tail</span> <span class="s-exp">(</span><span class="core-fn">aclone</span> <span class="symbol">tail</span><span class="s-exp">)</span><span class="s-exp">]</span>
+           <span class="s-exp">(</span><span class="core-fn">aset</span> <span class="symbol">new-tail</span> <span class="s-exp">(</span><span class="core-fn">bit-and</span> <span class="symbol">n</span> <span class="number">0x01f</span><span class="s-exp">)</span> <span class="core-fn">val</span><span class="s-exp">)</span>
+           <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="symbol">cnt</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="symbol">new-tail</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+         <span class="s-exp">(</span><span class="symbol">PersistentVector.</span> <span class="core-fn">meta</span> <span class="symbol">cnt</span> <span class="symbol">shift</span> <span class="s-exp">(</span><span class="symbol">do-assoc</span> <span class="symbol">coll</span> <span class="symbol">shift</span> <span class="symbol">root</span> <span class="symbol">n</span> <span class="core-fn">val</span><span class="s-exp">)</span> <span class="symbol">tail</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+       <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">n</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">-conj</span> <span class="symbol">coll</span> <span class="core-fn">val</span><span class="s-exp">)</span>
+       <span class="keyword">:else</span> <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="s-exp">(</span><span class="core-fn">str</span> <span class="string">"Index "</span> <span class="symbol">n</span> <span class="string">" out of bounds  [0,"</span> <span class="symbol">cnt</span> <span class="string">"]"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IReduce
-  (<span class="hljs-name">-reduce</span> [v f]
-    (<span class="hljs-name">pv-reduce</span> v f <span class="hljs-number">0</span> cnt))
-  (<span class="hljs-name">-reduce</span> [v f init]
-    (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [i <span class="hljs-number">0</span> init init]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> i cnt)
-        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [arr  (<span class="hljs-name">unchecked-array-for</span> v i)
-              len  (<span class="hljs-name">alength</span> arr)
-              init (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [j <span class="hljs-number">0</span> init init]
-                     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> j len)
-                       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [init (<span class="hljs-name">f</span> init (<span class="hljs-name">aget</span> arr j))]
-                         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">reduced?</span></span> init)
-                           init
-                           (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> j) init)))
-                       init))]
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">reduced?</span></span> init)
-            @init
-            (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> i len) init)))
-        init)))
+  <span class="symbol">IReduce</span>
+  <span class="s-exp">(</span><span class="symbol">-reduce</span> <span class="s-exp">[</span><span class="symbol">v</span> <span class="symbol">f</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">pv-reduce</span> <span class="symbol">v</span> <span class="symbol">f</span> <span class="number">0</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-reduce</span> <span class="s-exp">[</span><span class="symbol">v</span> <span class="symbol">f</span> <span class="symbol">init</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">i</span> <span class="number">0</span> <span class="symbol">init</span> <span class="symbol">init</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">i</span> <span class="symbol">cnt</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">arr</span>  <span class="s-exp">(</span><span class="symbol">unchecked-array-for</span> <span class="symbol">v</span> <span class="symbol">i</span><span class="s-exp">)</span>
+              <span class="symbol">len</span>  <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">arr</span><span class="s-exp">)</span>
+              <span class="symbol">init</span> <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">j</span> <span class="number">0</span> <span class="symbol">init</span> <span class="symbol">init</span><span class="s-exp">]</span>
+                     <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">j</span> <span class="symbol">len</span><span class="s-exp">)</span>
+                       <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">init</span> <span class="s-exp">(</span><span class="symbol">f</span> <span class="symbol">init</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">arr</span> <span class="symbol">j</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                         <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">reduced?</span> <span class="symbol">init</span><span class="s-exp">)</span>
+                           <span class="symbol">init</span>
+                           <span class="s-exp">(</span><span class="special-form">recur</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">j</span><span class="s-exp">)</span> <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                       <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">reduced?</span> <span class="symbol">init</span><span class="s-exp">)</span>
+            <span class="reader-char">@</span><span class="symbol">init</span>
+            <span class="s-exp">(</span><span class="special-form">recur</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">i</span> <span class="symbol">len</span><span class="s-exp">)</span> <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IKVReduce
-  (<span class="hljs-name">-kv-reduce</span> [v f init]
-    (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [i <span class="hljs-number">0</span> init init]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> i cnt)
-        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [arr  (<span class="hljs-name">unchecked-array-for</span> v i)
-              len  (<span class="hljs-name">alength</span> arr)
-              init (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [j <span class="hljs-number">0</span> init init]
-                     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&lt;</span></span> j len)
-                       (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [init (<span class="hljs-name">f</span> init (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> j i) (<span class="hljs-name">aget</span> arr j))]
-                         (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">reduced?</span></span> init)
-                           init
-                           (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> j) init)))
-                       init))]
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">reduced?</span></span> init)
-            @init
-            (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">+</span></span> i len) init)))
-        init)))
+  <span class="symbol">IKVReduce</span>
+  <span class="s-exp">(</span><span class="symbol">-kv-reduce</span> <span class="s-exp">[</span><span class="symbol">v</span> <span class="symbol">f</span> <span class="symbol">init</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">i</span> <span class="number">0</span> <span class="symbol">init</span> <span class="symbol">init</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">i</span> <span class="symbol">cnt</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">arr</span>  <span class="s-exp">(</span><span class="symbol">unchecked-array-for</span> <span class="symbol">v</span> <span class="symbol">i</span><span class="s-exp">)</span>
+              <span class="symbol">len</span>  <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">arr</span><span class="s-exp">)</span>
+              <span class="symbol">init</span> <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">j</span> <span class="number">0</span> <span class="symbol">init</span> <span class="symbol">init</span><span class="s-exp">]</span>
+                     <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn"><</span> <span class="symbol">j</span> <span class="symbol">len</span><span class="s-exp">)</span>
+                       <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">init</span> <span class="s-exp">(</span><span class="symbol">f</span> <span class="symbol">init</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">j</span> <span class="symbol">i</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">arr</span> <span class="symbol">j</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                         <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">reduced?</span> <span class="symbol">init</span><span class="s-exp">)</span>
+                           <span class="symbol">init</span>
+                           <span class="s-exp">(</span><span class="special-form">recur</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">j</span><span class="s-exp">)</span> <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                       <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">reduced?</span> <span class="symbol">init</span><span class="s-exp">)</span>
+            <span class="reader-char">@</span><span class="symbol">init</span>
+            <span class="s-exp">(</span><span class="special-form">recur</span> <span class="s-exp">(</span><span class="core-fn">+</span> <span class="symbol">i</span> <span class="symbol">len</span><span class="s-exp">)</span> <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IFn
-  (<span class="hljs-name">-invoke</span> [coll k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">number?</span></span> k)
-      (<span class="hljs-name">-nth</span> coll k)
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"Key must be integer"</span>))))
+  <span class="symbol">IFn</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">number?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"Key must be integer"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEditableCollection
-  (<span class="hljs-name">-as-transient</span> [coll]
-    (<span class="hljs-name">TransientVector.</span> cnt shift (<span class="hljs-name">tv-editable-root</span> root) (<span class="hljs-name">tv-editable-tail</span> tail)))
+  <span class="symbol">IEditableCollection</span>
+  <span class="s-exp">(</span><span class="symbol">-as-transient</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">TransientVector.</span> <span class="symbol">cnt</span> <span class="symbol">shift</span> <span class="s-exp">(</span><span class="symbol">tv-editable-root</span> <span class="symbol">root</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">tv-editable-tail</span> <span class="symbol">tail</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IReversible
-  (<span class="hljs-name">-rseq</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">pos?</span></span> cnt)
-      (<span class="hljs-name">RSeq.</span> coll (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> cnt) <span class="hljs-literal">nil</span>)))
+  <span class="symbol">IReversible</span>
+  <span class="s-exp">(</span><span class="symbol">-rseq</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">pos?</span> <span class="symbol">cnt</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">RSeq.</span> <span class="symbol">coll</span> <span class="s-exp">(</span><span class="core-fn">dec</span> <span class="symbol">cnt</span><span class="s-exp">)</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IIterable
-  (<span class="hljs-name">-iterator</span> [this]
-    (<span class="hljs-name">ranged-iterator</span> this <span class="hljs-number">0</span> cnt)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+  <span class="symbol">IIterable</span>
+  <span class="s-exp">(</span><span class="symbol">-iterator</span> <span class="s-exp">[</span><span class="symbol">this</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">ranged-iterator</span> <span class="symbol">this</span> <span class="number">0</span> <span class="symbol">cnt</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

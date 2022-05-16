@@ -1,76 +1,76 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>cljs.js/eval-str*</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r"><s>cljs.js/eval-str*</s></h1><table><tr><td>function</td><td>removed v1.7.28</td><td>added v1.7.10</td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.js/eval-strSTAR.md">Edit</a></td></tr></table><div><code>(eval-str* bound-vars source name opts cb)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.7.10/src/main/cljs/cljs/js.cljs#L623-L698">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defn</span></span> eval-str* [bound-vars source name opts cb]
-  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [rdr        (<span class="hljs-name">rt/indexing-push-back-reader</span> source <span class="hljs-number">1</span> name)
-        eof        (<span class="hljs-name">js-obj</span>)
-        aenv       (<span class="hljs-name">ana/empty-env</span>)
-        sb         (<span class="hljs-name">StringBuffer.</span>)
-        the-ns     (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:ns</span> opts) 'cljs.user)
-        bound-vars (<span class="hljs-name">cond-&gt;</span> (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span> bound-vars {<span class="hljs-symbol">:*cljs-ns*</span> the-ns})
-                     (<span class="hljs-symbol">:source-map</span> opts) (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:*sm-data*</span> (<span class="hljs-name">sm-data</span>)))]
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:verbose</span> opts) (<span class="hljs-name">debug-prn</span> <span class="hljs-string">"Evaluating"</span> name))
-    ((<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> compile-loop [ns]
-       (<span class="hljs-name">binding</span> [env/*compiler*         (<span class="hljs-symbol">:*compiler*</span> bound-vars)
-                 *eval-fn*              (<span class="hljs-symbol">:*eval-fn*</span> bound-vars)
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>cljs.js/eval-str*</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r"><s>cljs.js/eval-str*</s></h1><table><tr><td>function</td><td>removed v1.7.28</td><td>added v1.7.10</td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.js/eval-strSTAR.md">Edit</a></td></tr></table><div><code>(eval-str* bound-vars source name opts cb)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.7.10/src/main/cljs/cljs/js.cljs#L623-L698">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code class="syntax">(defn eval-str* [bound-vars source name opts cb]
+  (let [rdr        (rt/indexing-push-back-reader source 1 name)
+        eof        (js-obj)
+        aenv       (ana/empty-env)
+        sb         (StringBuffer.)
+        the-ns     (or (:ns opts) 'cljs.user)
+        bound-vars (cond-> (merge bound-vars {:*cljs-ns* the-ns})
+                     (:source-map opts) (assoc :*sm-data* (sm-data)))]
+    (when (:verbose opts) (debug-prn "Evaluating" name))
+    ((fn compile-loop [ns]
+       (binding [env/*compiler*         (:*compiler* bound-vars)
+                 *eval-fn*              (:*eval-fn* bound-vars)
                  ana/*cljs-ns*          ns
-                 *ns*                   (<span class="hljs-name"><span class="hljs-builtin-name">create-ns</span></span> ns)
-                 r/*data-readers*       (<span class="hljs-symbol">:*data-readers*</span> bound-vars)
-                 comp/*source-map-data* (<span class="hljs-symbol">:*sm-data*</span> bound-vars)]
-         (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [res (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
-                     {<span class="hljs-symbol">:value</span> (<span class="hljs-name">r/read</span> {<span class="hljs-symbol">:eof</span> eof <span class="hljs-symbol">:read-cond</span> <span class="hljs-symbol">:allow</span> <span class="hljs-symbol">:features</span> #{<span class="hljs-symbol">:cljs</span>}} rdr)}
-                     (<span class="hljs-name">catch</span> <span class="hljs-symbol">:default</span> cause
-                       (<span class="hljs-name">wrap-error</span>
-                         (<span class="hljs-name">ana/error</span> aenv
-                           (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Could not eval "</span> name) cause))))]
-           (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
-             (<span class="hljs-name">cb</span> res)
-             (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [form (<span class="hljs-symbol">:value</span> res)]
-               (<span class="hljs-name"><span class="hljs-builtin-name">if-not</span></span> (<span class="hljs-name">identical?</span> eof form)
-                 (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [aenv (<span class="hljs-name">cond-&gt;</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> aenv <span class="hljs-symbol">:ns</span> (<span class="hljs-name">ana/get-namespace</span> ns))
-                              (<span class="hljs-symbol">:context</span> opts) (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:context</span> (<span class="hljs-symbol">:context</span> opts))
-                              (<span class="hljs-symbol">:def-emits-var</span> opts) (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:def-emits-var</span> <span class="hljs-literal">true</span>))
-                       res  (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
-                              {<span class="hljs-symbol">:value</span> (<span class="hljs-name">ana/analyze</span> aenv form <span class="hljs-literal">nil</span> opts)}
-                              (<span class="hljs-name">catch</span> <span class="hljs-symbol">:default</span> cause
-                                (<span class="hljs-name">wrap-error</span>
-                                  (<span class="hljs-name">ana/error</span> aenv
-                                    (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Could not eval "</span> name) cause))))]
-                   (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
-                     (<span class="hljs-name">cb</span> res)
-                     (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ast (<span class="hljs-symbol">:value</span> res)
+                 *ns*                   (create-ns ns)
+                 r/*data-readers*       (:*data-readers* bound-vars)
+                 comp/*source-map-data* (:*sm-data* bound-vars)]
+         (let [res (try
+                     {:value (r/read {:eof eof :read-cond :allow :features #{:cljs}} rdr)}
+                     (catch :default cause
+                       (wrap-error
+                         (ana/error aenv
+                           (str "Could not eval " name) cause))))]
+           (if (:error res)
+             (cb res)
+             (let [form (:value res)]
+               (if-not (identical? eof form)
+                 (let [aenv (cond-> (assoc aenv :ns (ana/get-namespace ns))
+                              (:context opts) (assoc :context (:context opts))
+                              (:def-emits-var opts) (assoc :def-emits-var true))
+                       res  (try
+                              {:value (ana/analyze aenv form nil opts)}
+                              (catch :default cause
+                                (wrap-error
+                                  (ana/error aenv
+                                    (str "Could not eval " name) cause))))]
+                   (if (:error res)
+                     (cb res)
+                     (let [ast (:value res)
                            ns' ana/*cljs-ns*]
-                      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:ns</span> (<span class="hljs-symbol">:op</span> ast))
-                        (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
-                          (<span class="hljs-name">.append</span> sb
-                            (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"goog.provide(\""</span> (<span class="hljs-name">munge</span> (<span class="hljs-symbol">:name</span> ast)) <span class="hljs-string">"\");\n"</span>))
-                          (<span class="hljs-name">ns-side-effects</span> <span class="hljs-literal">true</span> bound-vars aenv ast opts
-                            (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [res]
-                              (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
-                                (<span class="hljs-name">cb</span> res)
-                                (<span class="hljs-name">compile-loop</span> ns')))))
-                        (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
-                          (<span class="hljs-name">.append</span> sb (<span class="hljs-name">with-out-str</span> (<span class="hljs-name">comp/emit</span> ast)))
-                          (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> ns'))))))
-                 (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
-                   (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:source-map</span> opts)
-                     (<span class="hljs-name">append-source-map</span> env/*compiler*
+                      (if (= :ns (:op ast))
+                        (do
+                          (.append sb
+                            (str "goog.provide(\"" (munge (:name ast)) "\");\n"))
+                          (ns-side-effects true bound-vars aenv ast opts
+                            (fn [res]
+                              (if (:error res)
+                                (cb res)
+                                (compile-loop ns')))))
+                        (do
+                          (.append sb (with-out-str (comp/emit ast)))
+                          (recur ns'))))))
+                 (do
+                   (when (:source-map opts)
+                     (append-source-map env/*compiler*
                        name source sb @comp/*source-map-data* opts))
-                   (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [js-source (<span class="hljs-name">.toString</span> sb)
-                         evalm     {<span class="hljs-symbol">:lang</span>   <span class="hljs-symbol">:clj</span>
-                                    <span class="hljs-symbol">:name</span>   name
-                                    <span class="hljs-symbol">:path</span>   (<span class="hljs-name">ns-&gt;relpath</span> name)
-                                    <span class="hljs-symbol">:source</span> js-source
-                                    <span class="hljs-symbol">:cache</span>  (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> env/*compiler* [:<span class="hljs-symbol">:ana/namespaces</span> name])}
-                         complete  (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [res]
-                                     (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-symbol">:error</span> res)
-                                       (<span class="hljs-name">cb</span> res)
-                                       (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>
-                                         (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:verbose</span> opts)
-                                           (<span class="hljs-name">debug-prn</span> js-source))
-                                         (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [res (<span class="hljs-name"><span class="hljs-builtin-name">try</span></span>
-                                                     {<span class="hljs-symbol">:ns</span> ns <span class="hljs-symbol">:value</span> (<span class="hljs-name">*eval-fn*</span> evalm)}
-                                                     (<span class="hljs-name">catch</span> <span class="hljs-symbol">:default</span> cause
-                                                       (<span class="hljs-name">wrap-error</span> (<span class="hljs-name">ana/error</span> aenv <span class="hljs-string">"ERROR"</span> cause))))]
-                                           (<span class="hljs-name">cb</span> res)))))]
-                     (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [f (<span class="hljs-symbol">:cache-source</span> opts)]
-                       (<span class="hljs-name">f</span> evalm complete)
-                       (<span class="hljs-name">complete</span> {<span class="hljs-symbol">:value</span> <span class="hljs-literal">nil</span>}))))))))))
-      (<span class="hljs-symbol">:*cljs-ns*</span> bound-vars))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+                   (let [js-source (.toString sb)
+                         evalm     {:lang   :clj
+                                    :name   name
+                                    :path   (ns->relpath name)
+                                    :source js-source
+                                    :cache  (get-in env/*compiler* [::ana/namespaces name])}
+                         complete  (fn [res]
+                                     (if (:error res)
+                                       (cb res)
+                                       (do
+                                         (when (:verbose opts)
+                                           (debug-prn js-source))
+                                         (let [res (try
+                                                     {:ns ns :value (*eval-fn* evalm)}
+                                                     (catch :default cause
+                                                       (wrap-error (ana/error aenv "ERROR" cause))))]
+                                           (cb res)))))]
+                     (if-let [f (:cache-source opts)]
+                       (f evalm complete)
+                       (complete {:value nil}))))))))))
+      (:*cljs-ns* bound-vars))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

@@ -1,265 +1,266 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>def</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="g">def</h1><em>known as "define"</em><table><tr><td>special form</td><td>since v0.0-927</td><td><a href="http://clojure.github.io/clojure/branch-master/clojure.core-api.html#clojure.core/def"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.core/def</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/def.md">Edit</a></td></tr></table><div><code>(def symbol doc-string? init?)</code></div><hr /><h3>Details:</h3><div><p>Creates a global variable with the name of <code>symbol</code> and a namespace of the
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>def</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="g">def</h1><em>known as "define"</em><table><tr><td>special form</td><td>since v0.0-927</td><td><a href="http://clojure.github.io/clojure/branch-master/clojure.core-api.html#clojure.core/def"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.core/def</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/def.md">Edit</a></td></tr></table><div><code>(def symbol doc-string? init?)</code></div><hr /><h3>Details:</h3><div><p>Creates a global variable with the name of <code class="syntax"><span class="core-fn">symbol</span></code> and a namespace of the
 current namespace.</p>
-<p>If <code>init</code> is supplied, it is evaluated and the result is assigned to <code>symbol</code>.</p>
-<p><code>doc-string</code> is an optional documentation string.</p>
-<p><code>def</code> is one of ClojureScript&#39;s <a href="http://clojure.org/special_forms">special forms</a>
-and is used by many macros to define common elements (ie: <code>defn</code>, <code>defmacro</code>,
+<p>If <code class="syntax"><span class="symbol">init</span></code> is supplied, it is evaluated and the result is assigned to <code class="syntax"><span class="core-fn">symbol</span></code>.</p>
+<p><code class="syntax"><span class="symbol">doc-string</span></code> is an optional documentation string.</p>
+<p><code class="syntax"><span class="special-form">def</span></code> is one of ClojureScript's <a href="http://clojure.org/special_forms">special forms</a>
+and is used by many macros to define common elements (ie: <code class="syntax"><span class="definition">defn</span></code>, <code class="syntax"><span class="definition">defmacro</span></code>,
 etc).</p>
 <p>Supported metadata:</p>
 <ul>
-<li><code>^{:private boolean}</code> - make non-accessible from other namespaces</li>
-<li><code>^{:dynamic boolean}</code> - make <a href="/api/cljs.core/binding">dynamically bindable</a> (usually named with <a class="code-link" href="/api/syntax/earmuffs"><code>*earmuffs*</code></a>)</li>
-<li><code>^{:const boolean}</code> - prevents redef and allows it to be used in <a class="code-link" href="/api/cljs.core/case"><code>case</code></a>.</li>
-<li><code>^{:jsdoc [&quot;...&quot;]}</code> - vector of JSDoc Tags for <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler?hl=en#tags">Google Closure</a> or <a href="http://usejsdoc.org/#block-tags">standard</a>.</li>
-<li><code>^{:test (fn [] (assert ...))}</code> - allows function to be tested with <a class="code-link" href="/api/cljs.core/test"><code>test</code></a>.</li>
-<li><code>^{:doc &quot;...&quot;}</code> - doc-string (prefer the use of the <code>(def symbol doc-string init)</code>)</li>
-<li><code>^{:export boolean}</code> - make this var publicly accessible from JS, using <code>goog.exportSymbol</code></li>
+<li><code class="syntax"><span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:private</span> <span class="core-fn">boolean</span><span class="s-exp">}</span></code> - make non-accessible from other namespaces</li>
+<li><code class="syntax"><span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="core-fn">boolean</span><span class="s-exp">}</span></code> - make <a href="/api/cljs.core/binding">dynamically bindable</a> (usually named with <a href="/api/syntax/earmuffs"><code class="syntax"><span class="symbol">*earmuffs*</span></code></a>)</li>
+<li><code class="syntax"><span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:const</span> <span class="core-fn">boolean</span><span class="s-exp">}</span></code> - prevents redef and allows it to be used in <a href="/api/cljs.core/case"><code class="syntax"><span class="conditional">case</span></code></a>.</li>
+<li><code class="syntax"><span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:jsdoc</span> <span class="s-exp">[</span><span class="string">"..."</span><span class="s-exp">]</span><span class="s-exp">}</span></code> - vector of JSDoc Tags for <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler?hl=en#tags">Google Closure</a> or <a href="http://usejsdoc.org/#block-tags">standard</a>.</li>
+<li><code class="syntax"><span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:test</span> <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="macro">assert</span> <span class="symbol">...</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">}</span></code> - allows function to be tested with <a href="/api/cljs.core/test"><code class="syntax"><span class="core-fn">test</span></code></a>.</li>
+<li><code class="syntax"><span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:doc</span> <span class="string">"..."</span><span class="s-exp">}</span></code> - doc-string (prefer the use of the <code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="core-fn">symbol</span> <span class="symbol">doc-string</span> <span class="symbol">init</span><span class="s-exp">)</span></code>)</li>
+<li><code class="syntax"><span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:export</span> <span class="core-fn">boolean</span><span class="s-exp">}</span></code> - make this var publicly accessible from JS, using <code class="syntax"><span class="symbol">goog.exportSymbol</span></code></li>
 </ul>
 <p>Compiler will also add metadata:</p>
 <ul>
-<li><code>:ns</code></li>
-<li><code>:name</code></li>
-<li><code>:file</code></li>
-<li><code>:line</code>, <code>:end-line</code></li>
-<li><code>:column</code>, <code>:end-column</code></li>
-<li><code>:source</code></li>
-<li><code>:arglists</code></li>
+<li><code class="syntax"><span class="keyword">:ns</span></code></li>
+<li><code class="syntax"><span class="keyword">:name</span></code></li>
+<li><code class="syntax"><span class="keyword">:file</span></code></li>
+<li><code class="syntax"><span class="keyword">:line</span></code>, <code class="syntax"><span class="keyword">:end-line</span></code></li>
+<li><code class="syntax"><span class="keyword">:column</span></code>, <code class="syntax"><span class="keyword">:end-column</span></code></li>
+<li><code class="syntax"><span class="keyword">:source</span></code></li>
+<li><code class="syntax"><span class="keyword">:arglists</span></code></li>
 </ul>
-</div><hr /><h3>Examples:</h3><div><pre><code class="language-clj">(def a)
-a
-;;=&gt; nil
-
-(def b 42)
-b
-;;=&gt; 42
-
-(def c "an optional docstring" 42)
-c
-;;=&gt; 42</code></pre>
+</div><hr /><h3>Examples:</h3><div><pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">a</span><span class="s-exp">)</span>
+<span class="symbol">a</span>
+<span class="comment">;;=> nil
+</span>
+<span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">b</span> <span class="number">42</span><span class="s-exp">)</span>
+<span class="symbol">b</span>
+<span class="comment">;;=> 42
+</span>
+<span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">c</span> <span class="string">"an optional docstring"</span> <span class="number">42</span><span class="s-exp">)</span>
+<span class="symbol">c</span>
+<span class="comment">;;=> 42
+</span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/defn">defn</a></li><li><a href="/api/cljs.core/fn">fn</a></li><li><a href="/api/cljs.core/defmacro">defmacro</a></li><li><a href="/api/cljs.core/defmulti">defmulti</a></li></ul><hr />Source docstring:<pre>Creates and interns a global var with the name
 of symbol in the current namespace (*ns*) or locates such a var if
 it already exists.  If init is supplied, it is evaluated, and the
 root binding of the var is set to the resulting value.  If init is
-not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/clojure/cljs/analyzer.cljc#L1854-L2038">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> parse 'def
-  [op env form _ _]
-  (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> form) <span class="hljs-number">4</span>)
-    (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Too many arguments to def"</span>)))
-  (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [pfn (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span>
-              ([_ sym] {<span class="hljs-symbol">:sym</span> sym})
-              ([_ sym init] {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:init</span> init})
-              ([_ sym doc init] {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:doc</span> doc <span class="hljs-symbol">:init</span> init}))
-        args (<span class="hljs-name"><span class="hljs-builtin-name">apply</span></span> pfn form)
-        sym (<span class="hljs-symbol">:sym</span> args)
-        const? (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:const</span>)
-        sym-meta (<span class="hljs-name"><span class="hljs-builtin-name">meta</span></span> sym)
-        tag (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:tag</span>)
-        protocol (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:protocol</span> valid-proto)
-        dynamic (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:dynamic</span>)
-        ns-name (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:name</span>)
-        locals (<span class="hljs-symbol">:locals</span> env)
-        clash-ns (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns-name <span class="hljs-string">"."</span> sym))
-        sym-ns   (<span class="hljs-name"><span class="hljs-builtin-name">namespace</span></span> sym)
-        sym      (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
-                   (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> sym-ns (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> #?(<span class="hljs-symbol">:clj</span>  (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> sym-ns) ns-name)
-                                       <span class="hljs-symbol">:cljs</span> (<span class="hljs-name">symbol-identical?</span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> sym-ns) ns-name))))
-                   (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"Can't def ns-qualified name in namespace "</span> sym-ns)))
+not supplied, the root binding of the var is unaffected.</pre><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/clojure/cljs/analyzer.cljc#L1931-L2115">clojurescript:src/main/clojure/cljs/analyzer.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmethod</span> <span class="symbol">parse</span> <span class="reader-char">'</span><span class="special-form">def</span>
+  <span class="s-exp">[</span><span class="symbol">op</span> <span class="symbol">env</span> <span class="symbol">form</span> <span class="symbol">_</span> <span class="symbol">_</span><span class="s-exp">]</span>
+  <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">></span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">form</span><span class="s-exp">)</span> <span class="number">4</span><span class="s-exp">)</span>
+    <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">error</span> <span class="symbol">env</span> <span class="string">"Too many arguments to def"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">pfn</span> <span class="s-exp">(</span><span class="special-form">fn</span>
+              <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">_</span> <span class="symbol">sym</span><span class="s-exp">]</span> <span class="s-exp">{</span><span class="keyword">:sym</span> <span class="symbol">sym</span><span class="s-exp">}</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">_</span> <span class="symbol">sym</span> <span class="symbol">init</span><span class="s-exp">]</span> <span class="s-exp">{</span><span class="keyword">:sym</span> <span class="symbol">sym</span> <span class="keyword">:init</span> <span class="symbol">init</span><span class="s-exp">}</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">_</span> <span class="symbol">sym</span> <span class="symbol">doc</span> <span class="symbol">init</span><span class="s-exp">]</span> <span class="s-exp">{</span><span class="keyword">:sym</span> <span class="symbol">sym</span> <span class="keyword">:doc</span> <span class="symbol">doc</span> <span class="keyword">:init</span> <span class="symbol">init</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="symbol">args</span> <span class="s-exp">(</span><span class="core-fn">apply</span> <span class="symbol">pfn</span> <span class="symbol">form</span><span class="s-exp">)</span>
+        <span class="symbol">sym</span> <span class="s-exp">(</span><span class="keyword">:sym</span> <span class="symbol">args</span><span class="s-exp">)</span>
+        <span class="symbol">const?</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:const</span><span class="s-exp">)</span>
+        <span class="symbol">sym-meta</span> <span class="s-exp">(</span><span class="core-fn">meta</span> <span class="symbol">sym</span><span class="s-exp">)</span>
+        <span class="symbol">tag</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:tag</span><span class="s-exp">)</span>
+        <span class="symbol">protocol</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:protocol</span> <span class="symbol">valid-proto</span><span class="s-exp">)</span>
+        <span class="symbol">dynamic</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:dynamic</span><span class="s-exp">)</span>
+        <span class="core-fn">ns-name</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">env</span> <span class="keyword">:ns</span> <span class="keyword">:name</span><span class="s-exp">)</span>
+        <span class="symbol">locals</span> <span class="s-exp">(</span><span class="keyword">:locals</span> <span class="symbol">env</span><span class="s-exp">)</span>
+        <span class="symbol">clash-ns</span> <span class="s-exp">(</span><span class="core-fn">symbol</span> <span class="s-exp">(</span><span class="core-fn">str</span> <span class="core-fn">ns-name</span> <span class="string">"."</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="symbol">sym-ns</span>   <span class="s-exp">(</span><span class="core-fn">namespace</span> <span class="symbol">sym</span><span class="s-exp">)</span>
+        <span class="symbol">sym</span>      <span class="s-exp">(</span><span class="conditional">cond</span>
+                   <span class="s-exp">(</span><span class="macro">and</span> <span class="symbol">sym-ns</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="reader-char">#</span><span class="symbol">?</span><span class="s-exp">(</span><span class="keyword">:clj</span>  <span class="s-exp">(</span><span class="core-fn">=</span> <span class="s-exp">(</span><span class="core-fn">symbol</span> <span class="symbol">sym-ns</span><span class="s-exp">)</span> <span class="core-fn">ns-name</span><span class="s-exp">)</span>
+                                       <span class="keyword">:cljs</span> <span class="s-exp">(</span><span class="symbol">symbol-identical?</span> <span class="s-exp">(</span><span class="core-fn">symbol</span> <span class="symbol">sym-ns</span><span class="s-exp">)</span> <span class="core-fn">ns-name</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                   <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">error</span> <span class="symbol">env</span> <span class="s-exp">(</span><span class="core-fn">str</span> <span class="string">"Can't def ns-qualified name in namespace "</span> <span class="symbol">sym-ns</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-                   (<span class="hljs-name">some?</span> sym-ns)
-                   (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">name</span></span> sym))
+                   <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="symbol">sym-ns</span><span class="s-exp">)</span>
+                   <span class="s-exp">(</span><span class="core-fn">symbol</span> <span class="s-exp">(</span><span class="core-fn">name</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-                   <span class="hljs-symbol">:else</span> sym)]
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> clash-ns]))
-      (<span class="hljs-name">warning</span> <span class="hljs-symbol">:ns-var-clash</span> env
-        {<span class="hljs-symbol">:ns</span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns-name <span class="hljs-string">"."</span> sym))
-         <span class="hljs-symbol">:var</span> (<span class="hljs-name"><span class="hljs-builtin-name">symbol</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> ns-name) (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> sym))}))
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> (<span class="hljs-symbol">:const</span> (<span class="hljs-name">resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> env <span class="hljs-symbol">:locals</span>) sym)))
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Can't redefine a constant"</span>)))
-    (<span class="hljs-name">when-some</span> [doc (<span class="hljs-symbol">:doc</span> args)]
-      (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">string?</span></span> doc)
-        (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">error</span> env <span class="hljs-string">"Too many arguments to def"</span>))))
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> dynamic)
-               (<span class="hljs-name">earmuffed?</span> sym)
-               (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name">core-ns?</span> ns-name)))
-      (<span class="hljs-name">warning</span> <span class="hljs-symbol">:non-dynamic-earmuffed-var</span> env
-        {<span class="hljs-symbol">:var</span> (<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> sym)}))
-    (<span class="hljs-name">when-some</span> [v (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym])]
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> *allow-redef*)
-                 (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-symbol">:declared</span> v))
-                 (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-symbol">:declared</span> sym-meta))
-                 *file-defs*
-                 (<span class="hljs-name"><span class="hljs-builtin-name">get</span></span> @*file-defs* sym))
-        (<span class="hljs-name">warning</span> <span class="hljs-symbol">:redef-in-file</span> env {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:line</span> (<span class="hljs-symbol">:line</span> v)}))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-symbol">:declared</span> v)
-                 (<span class="hljs-symbol">:arglists</span> v)
-                 (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> (<span class="hljs-symbol">:arglists</span> v) (<span class="hljs-symbol">:arglists</span> sym-meta)))
-        (<span class="hljs-name">warning</span> <span class="hljs-symbol">:declared-arglists-mismatch</span> env {<span class="hljs-symbol">:ns-name</span>  ns-name <span class="hljs-symbol">:sym</span> sym
-                                                  <span class="hljs-symbol">:declared</span> (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> (<span class="hljs-symbol">:arglists</span> v))
-                                                  <span class="hljs-symbol">:defined</span>  (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> (<span class="hljs-symbol">:arglists</span> sym-meta))})))
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [env (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not=</span></span> ns-name 'cljs.core)
-                           (<span class="hljs-name">core-name?</span> env sym))
-                      (<span class="hljs-name">some?</span> (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:uses</span> sym])))
-                (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [ev (<span class="hljs-name">resolve-existing-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> env <span class="hljs-symbol">:locals</span>)
-                           <span class="hljs-comment">;; ::no-resolve true is to suppress "can't take value</span>
-                           <span class="hljs-comment">;; of macro warning" when sym resolves to a macro</span>
-                           (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> sym {:<span class="hljs-symbol">:no-resolve</span> <span class="hljs-literal">true</span>}))
-                      conj-to-set (<span class="hljs-name">fnil</span> conj #{})]
-                  (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">public-name?</span> (<span class="hljs-symbol">:ns</span> ev) sym)
-                    (<span class="hljs-name">warning</span> <span class="hljs-symbol">:redef</span> env {<span class="hljs-symbol">:sym</span> sym <span class="hljs-symbol">:ns</span> (<span class="hljs-symbol">:ns</span> ev) <span class="hljs-symbol">:ns-name</span> ns-name}))
-                  (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* update-in [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:excludes</span>]
-                     conj-to-set sym)
-                  (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> env [<span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:excludes</span>] conj-to-set sym))
-                env)
-          var-name (<span class="hljs-symbol">:name</span> (<span class="hljs-name">resolve-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> env <span class="hljs-symbol">:locals</span>) sym))
-          init-expr (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">contains?</span></span> args <span class="hljs-symbol">:init</span>)
-                      (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* assoc-in [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym]
-                        (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-                          {<span class="hljs-symbol">:name</span> var-name}
-                          sym-meta
-                          (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> dynamic) {<span class="hljs-symbol">:dynamic</span> <span class="hljs-literal">true</span>})
-                          (<span class="hljs-name">source-info</span> var-name env)))
-                      (<span class="hljs-name">disallowing-recur</span>
-                        (<span class="hljs-name">disallowing-ns*</span>
-                          (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>) (<span class="hljs-symbol">:init</span> args) sym))))
-          fn-var? (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name">some?</span> init-expr) (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-symbol">:op</span> init-expr) <span class="hljs-symbol">:fn</span>))
-          tag (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
-                fn-var? (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:ret-tag</span> init-expr) tag (<span class="hljs-symbol">:inferred-ret-tag</span> init-expr))
-                tag tag
-                dynamic impl/ANY_SYM
-                <span class="hljs-symbol">:else</span> (<span class="hljs-symbol">:tag</span> init-expr))
-          export-as (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [export-val (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:export</span>)]
-                      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-literal">true</span> export-val) var-name export-val))
-          doc (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-symbol">:doc</span> args) (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:doc</span>))]
-      (<span class="hljs-name">when-some</span> [v (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym])]
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:declared</span>))
-                   (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> (<span class="hljs-symbol">:fn-var</span> v)) (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> fn-var?)))
-          (<span class="hljs-name">warning</span> <span class="hljs-symbol">:fn-var</span> env {<span class="hljs-symbol">:ns-name</span> ns-name <span class="hljs-symbol">:sym</span> sym})))
+                   <span class="keyword">:else</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="s-exp">(</span><span class="core-fn">get-in</span> <span class="reader-char">@</span><span class="symbol">env/*compiler*</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="symbol">clash-ns</span><span class="s-exp">]</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">warning</span> <span class="keyword">:ns-var-clash</span> <span class="symbol">env</span>
+        <span class="s-exp">{</span><span class="keyword">:ns</span> <span class="s-exp">(</span><span class="core-fn">symbol</span> <span class="s-exp">(</span><span class="core-fn">str</span> <span class="core-fn">ns-name</span> <span class="string">"."</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
+         <span class="keyword">:var</span> <span class="s-exp">(</span><span class="core-fn">symbol</span> <span class="s-exp">(</span><span class="core-fn">str</span> <span class="core-fn">ns-name</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">str</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
+    <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="s-exp">(</span><span class="keyword">:const</span> <span class="s-exp">(</span><span class="symbol">resolve-var</span> <span class="s-exp">(</span><span class="core-fn">dissoc</span> <span class="symbol">env</span> <span class="keyword">:locals</span><span class="s-exp">)</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">error</span> <span class="symbol">env</span> <span class="string">"Can't redefine a constant"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+    <span class="s-exp">(</span><span class="conditional">when-some</span> <span class="s-exp">[</span><span class="symbol">doc</span> <span class="s-exp">(</span><span class="keyword">:doc</span> <span class="symbol">args</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="conditional">when-not</span> <span class="s-exp">(</span><span class="core-fn">string?</span> <span class="symbol">doc</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">error</span> <span class="symbol">env</span> <span class="string">"Too many arguments to def"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+    <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="symbol">dynamic</span><span class="s-exp">)</span>
+               <span class="s-exp">(</span><span class="symbol">earmuffed?</span> <span class="symbol">sym</span><span class="s-exp">)</span>
+               <span class="s-exp">(</span><span class="core-fn">not</span> <span class="s-exp">(</span><span class="symbol">core-ns?</span> <span class="core-fn">ns-name</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">warning</span> <span class="keyword">:non-dynamic-earmuffed-var</span> <span class="symbol">env</span>
+        <span class="s-exp">{</span><span class="keyword">:var</span> <span class="s-exp">(</span><span class="core-fn">str</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
+    <span class="s-exp">(</span><span class="conditional">when-some</span> <span class="s-exp">[</span><span class="symbol">v</span> <span class="s-exp">(</span><span class="core-fn">get-in</span> <span class="reader-char">@</span><span class="symbol">env/*compiler*</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="core-fn">ns-name</span> <span class="keyword">:defs</span> <span class="symbol">sym</span><span class="s-exp">]</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="symbol">*allow-redef*</span><span class="s-exp">)</span>
+                 <span class="s-exp">(</span><span class="core-fn">not</span> <span class="s-exp">(</span><span class="keyword">:declared</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                 <span class="s-exp">(</span><span class="core-fn">not</span> <span class="s-exp">(</span><span class="keyword">:declared</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                 <span class="symbol">*file-defs*</span>
+                 <span class="s-exp">(</span><span class="core-fn">get</span> <span class="reader-char">@</span><span class="symbol">*file-defs*</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">warning</span> <span class="keyword">:redef-in-file</span> <span class="symbol">env</span> <span class="s-exp">{</span><span class="keyword">:sym</span> <span class="symbol">sym</span> <span class="keyword">:line</span> <span class="s-exp">(</span><span class="keyword">:line</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="keyword">:declared</span> <span class="symbol">v</span><span class="s-exp">)</span>
+                 <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">v</span><span class="s-exp">)</span>
+                 <span class="s-exp">(</span><span class="core-fn">not=</span> <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">v</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">warning</span> <span class="keyword">:declared-arglists-mismatch</span> <span class="symbol">env</span> <span class="s-exp">{</span><span class="keyword">:ns-name</span>  <span class="core-fn">ns-name</span> <span class="keyword">:sym</span> <span class="symbol">sym</span>
+                                                  <span class="keyword">:declared</span> <span class="s-exp">(</span><span class="core-fn">second</span> <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                                                  <span class="keyword">:defined</span>  <span class="s-exp">(</span><span class="core-fn">second</span> <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">env</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn">not=</span> <span class="core-fn">ns-name</span> <span class="reader-char">'</span><span class="symbol">cljs.core</span><span class="s-exp">)</span>
+                           <span class="s-exp">(</span><span class="symbol">core-name?</span> <span class="symbol">env</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                      <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="s-exp">(</span><span class="core-fn">get-in</span> <span class="reader-char">@</span><span class="symbol">env/*compiler*</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="core-fn">ns-name</span> <span class="keyword">:uses</span> <span class="symbol">sym</span><span class="s-exp">]</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">ev</span> <span class="s-exp">(</span><span class="symbol">resolve-existing-var</span> <span class="s-exp">(</span><span class="core-fn">dissoc</span> <span class="symbol">env</span> <span class="keyword">:locals</span><span class="s-exp">)</span>
+                           <span class="comment">;; ::no-resolve true is to suppress "can't take value
+</span>                           <span class="comment">;; of macro warning" when sym resolves to a macro
+</span>                           <span class="s-exp">(</span><span class="core-fn">with-meta</span> <span class="symbol">sym</span> <span class="s-exp">{</span><span class="keyword">::no-resolve</span> <span class="boolean">true</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                      <span class="symbol">conj-to-set</span> <span class="s-exp">(</span><span class="core-fn">fnil</span> <span class="core-fn">conj</span> <span class="s-exp">#{</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                  <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="symbol">public-name?</span> <span class="s-exp">(</span><span class="keyword">:ns</span> <span class="symbol">ev</span><span class="s-exp">)</span> <span class="symbol">sym</span><span class="s-exp">)</span>
+                    <span class="s-exp">(</span><span class="symbol">warning</span> <span class="keyword">:redef</span> <span class="symbol">env</span> <span class="s-exp">{</span><span class="keyword">:sym</span> <span class="symbol">sym</span> <span class="keyword">:ns</span> <span class="s-exp">(</span><span class="keyword">:ns</span> <span class="symbol">ev</span><span class="s-exp">)</span> <span class="keyword">:ns-name</span> <span class="core-fn">ns-name</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                  <span class="s-exp">(</span><span class="core-fn">swap!</span> <span class="symbol">env/*compiler*</span> <span class="core-fn">update-in</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="core-fn">ns-name</span> <span class="keyword">:excludes</span><span class="s-exp">]</span>
+                     <span class="symbol">conj-to-set</span> <span class="symbol">sym</span><span class="s-exp">)</span>
+                  <span class="s-exp">(</span><span class="core-fn">update-in</span> <span class="symbol">env</span> <span class="s-exp">[</span><span class="keyword">:ns</span> <span class="keyword">:excludes</span><span class="s-exp">]</span> <span class="symbol">conj-to-set</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                <span class="symbol">env</span><span class="s-exp">)</span>
+          <span class="symbol">var-name</span> <span class="s-exp">(</span><span class="keyword">:name</span> <span class="s-exp">(</span><span class="symbol">resolve-var</span> <span class="s-exp">(</span><span class="core-fn">dissoc</span> <span class="symbol">env</span> <span class="keyword">:locals</span><span class="s-exp">)</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">init-expr</span> <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">contains?</span> <span class="symbol">args</span> <span class="keyword">:init</span><span class="s-exp">)</span>
+                      <span class="s-exp">(</span><span class="core-fn">swap!</span> <span class="symbol">env/*compiler*</span> <span class="core-fn">assoc-in</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="core-fn">ns-name</span> <span class="keyword">:defs</span> <span class="symbol">sym</span><span class="s-exp">]</span>
+                        <span class="s-exp">(</span><span class="core-fn">merge</span>
+                          <span class="s-exp">{</span><span class="keyword">:name</span> <span class="symbol">var-name</span><span class="s-exp">}</span>
+                          <span class="symbol">sym-meta</span>
+                          <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">true?</span> <span class="symbol">dynamic</span><span class="s-exp">)</span> <span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span><span class="s-exp">)</span>
+                          <span class="s-exp">(</span><span class="symbol">source-info</span> <span class="symbol">var-name</span> <span class="symbol">env</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                      <span class="s-exp">(</span><span class="symbol">disallowing-recur</span>
+                        <span class="s-exp">(</span><span class="symbol">disallowing-ns*</span>
+                          <span class="s-exp">(</span><span class="symbol">analyze</span> <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="symbol">env</span> <span class="keyword">:context</span> <span class="keyword">:expr</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="keyword">:init</span> <span class="symbol">args</span><span class="s-exp">)</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">fn-var?</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="symbol">init-expr</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="s-exp">(</span><span class="keyword">:op</span> <span class="symbol">init-expr</span><span class="s-exp">)</span> <span class="keyword">:fn</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">tag</span> <span class="s-exp">(</span><span class="conditional">cond</span>
+                <span class="symbol">fn-var?</span> <span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="keyword">:ret-tag</span> <span class="symbol">init-expr</span><span class="s-exp">)</span> <span class="symbol">tag</span> <span class="s-exp">(</span><span class="keyword">:inferred-ret-tag</span> <span class="symbol">init-expr</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                <span class="symbol">tag</span> <span class="symbol">tag</span>
+                <span class="symbol">dynamic</span> <span class="symbol">impl/ANY_SYM</span>
+                <span class="keyword">:else</span> <span class="s-exp">(</span><span class="keyword">:tag</span> <span class="symbol">init-expr</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">export-as</span> <span class="s-exp">(</span><span class="conditional">when-let</span> <span class="s-exp">[</span><span class="symbol">export-val</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:export</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="boolean">true</span> <span class="symbol">export-val</span><span class="s-exp">)</span> <span class="symbol">var-name</span> <span class="symbol">export-val</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">doc</span> <span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="keyword">:doc</span> <span class="symbol">args</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:doc</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="conditional">when-some</span> <span class="s-exp">[</span><span class="symbol">v</span> <span class="s-exp">(</span><span class="core-fn">get-in</span> <span class="reader-char">@</span><span class="symbol">env/*compiler*</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="core-fn">ns-name</span> <span class="keyword">:defs</span> <span class="symbol">sym</span><span class="s-exp">]</span><span class="s-exp">)</span><span class="s-exp">]</span>
+        <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:declared</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                   <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="core-fn">true?</span> <span class="s-exp">(</span><span class="keyword">:fn-var</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="symbol">fn-var?</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="symbol">warning</span> <span class="keyword">:fn-var</span> <span class="symbol">env</span> <span class="s-exp">{</span><span class="keyword">:ns-name</span> <span class="core-fn">ns-name</span> <span class="keyword">:sym</span> <span class="symbol">sym</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-      <span class="hljs-comment">;; declare must not replace any analyzer data of an already def'd sym</span>
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">get-in</span></span> @env/*compiler* [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym]))
-                (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-symbol">:declared</span> sym-meta)))
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> *file-defs*
-          (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> *file-defs* conj sym))
+      <span class="comment">;; declare must not replace any analyzer data of an already def'd sym
+</span>      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="s-exp">(</span><span class="core-fn">get-in</span> <span class="reader-char">@</span><span class="symbol">env/*compiler*</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="core-fn">ns-name</span> <span class="keyword">:defs</span> <span class="symbol">sym</span><span class="s-exp">]</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                <span class="s-exp">(</span><span class="core-fn">not</span> <span class="s-exp">(</span><span class="keyword">:declared</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">*file-defs*</span>
+          <span class="s-exp">(</span><span class="core-fn">swap!</span> <span class="symbol">*file-defs*</span> <span class="core-fn">conj</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-        (<span class="hljs-name"><span class="hljs-builtin-name">swap!</span></span> env/*compiler* assoc-in [:<span class="hljs-symbol">:namespaces</span> ns-name <span class="hljs-symbol">:defs</span> sym]
-          (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-            {<span class="hljs-symbol">:name</span> var-name}
-            <span class="hljs-comment">;; remove actual test metadata, as it includes non-valid EDN and</span>
-            <span class="hljs-comment">;; cannot be present in analysis cached to disk - David</span>
-            (<span class="hljs-name">cond-&gt;</span> sym-meta
-              (<span class="hljs-symbol">:test</span> sym-meta) (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:test</span> <span class="hljs-literal">true</span>))
-            {<span class="hljs-symbol">:meta</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym-meta
-                       (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> <span class="hljs-symbol">:test</span>)
-                       (<span class="hljs-name"><span class="hljs-builtin-name">update-in</span></span> [<span class="hljs-symbol">:file</span>]
-                         (<span class="hljs-name"><span class="hljs-builtin-name">fn</span></span> [f]
-                           (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> env <span class="hljs-symbol">:ns</span> <span class="hljs-symbol">:name</span>) 'cljs.core)
-                             <span class="hljs-string">"cljs/core.cljs"</span>
-                             f))))}
-            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> doc {<span class="hljs-symbol">:doc</span> doc})
-            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> const?
-              (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [const-expr
-                    (<span class="hljs-name">binding</span> [*passes* (<span class="hljs-name"><span class="hljs-builtin-name">conj</span></span> *passes* (<span class="hljs-name">replace-env-pass</span> {<span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>}))]
-                      (<span class="hljs-name">analyze</span> env (<span class="hljs-symbol">:init</span> args)))]
-                (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">constant-value?</span> const-expr)
-                  {<span class="hljs-symbol">:const-expr</span> const-expr})))
-            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> dynamic) {<span class="hljs-symbol">:dynamic</span> <span class="hljs-literal">true</span>})
-            (<span class="hljs-name">source-info</span> var-name env)
-            <span class="hljs-comment">;; the protocol a protocol fn belongs to</span>
-            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> protocol
-              {<span class="hljs-symbol">:protocol</span> protocol})
-            <span class="hljs-comment">;; symbol for reified protocol</span>
-            (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [protocol-symbol (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> sym meta <span class="hljs-symbol">:protocol-symbol</span>)]
-              {<span class="hljs-symbol">:protocol-symbol</span> protocol-symbol
-               <span class="hljs-symbol">:info</span> (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> protocol-symbol meta <span class="hljs-symbol">:protocol-info</span>)
-               <span class="hljs-symbol">:impls</span> #{}})
-            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> fn-var?
-              (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [params (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">vec</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> <span class="hljs-symbol">:name</span> (<span class="hljs-symbol">:params</span> %))) (<span class="hljs-symbol">:methods</span> init-expr))]
-                (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-                  {<span class="hljs-symbol">:fn-var</span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> (<span class="hljs-symbol">:macro</span> sym-meta))
-                   <span class="hljs-comment">;; protocol implementation context</span>
-                   <span class="hljs-symbol">:protocol-impl</span> (<span class="hljs-symbol">:protocol-impl</span> init-expr)
-                   <span class="hljs-comment">;; inline protocol implementation context</span>
-                   <span class="hljs-symbol">:protocol-inline</span> (<span class="hljs-symbol">:protocol-inline</span> init-expr)}
-                  (<span class="hljs-name">if-some</span> [top-fn-meta (<span class="hljs-symbol">:top-fn</span> sym-meta)]
-                    top-fn-meta
-                    {<span class="hljs-symbol">:variadic?</span> (<span class="hljs-symbol">:variadic?</span> init-expr)
-                     <span class="hljs-symbol">:max-fixed-arity</span> (<span class="hljs-symbol">:max-fixed-arity</span> init-expr)
-                     <span class="hljs-symbol">:method-params</span> params
-                     <span class="hljs-symbol">:arglists</span> (<span class="hljs-symbol">:arglists</span> sym-meta)
-                     <span class="hljs-symbol">:arglists-meta</span> (<span class="hljs-name"><span class="hljs-builtin-name">doall</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> meta (<span class="hljs-symbol">:arglists</span> sym-meta)))}))))
-            (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> (<span class="hljs-symbol">:declared</span> sym-meta)
-                       (<span class="hljs-symbol">:arglists</span> sym-meta))
-              {<span class="hljs-symbol">:declared</span> <span class="hljs-literal">true</span>
-               <span class="hljs-symbol">:fn-var</span> <span class="hljs-literal">true</span>
-               <span class="hljs-symbol">:method-params</span> (<span class="hljs-name"><span class="hljs-builtin-name">second</span></span> (<span class="hljs-symbol">:arglists</span> sym-meta))})
-            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> fn-var? (<span class="hljs-name">some?</span> tag))
-              {<span class="hljs-symbol">:ret-tag</span> tag}
-              (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> tag {<span class="hljs-symbol">:tag</span> tag})))))
-      (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-        {<span class="hljs-symbol">:env</span> env
-         <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:def</span>
-         <span class="hljs-symbol">:form</span> form
-         <span class="hljs-symbol">:ns</span> ns-name
-         <span class="hljs-symbol">:name</span> var-name
-         <span class="hljs-symbol">:var</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span>
-                (<span class="hljs-name">analyze</span>
-                  (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> env (<span class="hljs-name"><span class="hljs-builtin-name">dissoc</span></span> <span class="hljs-symbol">:locals</span>)
-                    (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>)
-                    (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> <span class="hljs-symbol">:def-var</span> <span class="hljs-literal">true</span>))
-                  sym)
-                <span class="hljs-symbol">:op</span> <span class="hljs-symbol">:var</span>)
-         <span class="hljs-symbol">:doc</span> doc
-         <span class="hljs-symbol">:jsdoc</span> (<span class="hljs-symbol">:jsdoc</span> sym-meta)}
-        (<span class="hljs-name"><span class="hljs-builtin-name">when-let</span></span> [goog-type (<span class="hljs-symbol">:goog-define</span> sym-meta)]
-          {<span class="hljs-symbol">:goog-define</span> goog-type})
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> (<span class="hljs-symbol">:def-emits-var</span> env))
-          {<span class="hljs-symbol">:var-ast</span> (<span class="hljs-name">var-ast</span> env sym)})
-        (<span class="hljs-name">when-some</span> [test (<span class="hljs-symbol">:test</span> sym-meta)]
-          {<span class="hljs-symbol">:test</span> (<span class="hljs-name">analyze</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>) test)})
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> tag)
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> fn-var?
-            {<span class="hljs-symbol">:ret-tag</span> tag}
-            {<span class="hljs-symbol">:tag</span> tag}))
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">true?</span></span> dynamic) {<span class="hljs-symbol">:dynamic</span> <span class="hljs-literal">true</span>})
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name">some?</span> export-as) {<span class="hljs-symbol">:export</span> export-as})
-        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">some?</span> init-expr)
-          {<span class="hljs-symbol">:init</span> init-expr
-           <span class="hljs-symbol">:children</span> [<span class="hljs-symbol">:var</span> <span class="hljs-symbol">:init</span>]}
-          {<span class="hljs-symbol">:children</span> [<span class="hljs-symbol">:var</span>]})))))</code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/clojure/cljs/compiler.cljc#L810-L848">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">defmethod</span></span> emit* <span class="hljs-symbol">:def</span>
-  [{<span class="hljs-symbol">:keys</span> [name var init env doc goog-define jsdoc export test var-ast]}]
-  <span class="hljs-comment">;; We only want to emit if an init is supplied, this is to avoid dead code</span>
-  <span class="hljs-comment">;; elimination issues. The REPL is the exception to this rule.</span>
-  (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> init (<span class="hljs-symbol">:def-emits-var</span> env))
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [mname (<span class="hljs-name">munge</span> name)]
-      (<span class="hljs-name">emit-comment</span> env doc (<span class="hljs-name"><span class="hljs-builtin-name">concat</span></span>
-                              (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> goog-define
-                                [(<span class="hljs-name"><span class="hljs-builtin-name">str</span></span> <span class="hljs-string">"@define {"</span> goog-define <span class="hljs-string">"}"</span>)])
-                              jsdoc (<span class="hljs-symbol">:jsdoc</span> init)))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
-        (<span class="hljs-name">emitln</span> <span class="hljs-string">"return ("</span>))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:def-emits-var</span> env)
-        (<span class="hljs-name">emitln</span> <span class="hljs-string">"(function (){"</span>))
-      (<span class="hljs-name">emits</span> var)
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> init
-        (<span class="hljs-name">emits</span> <span class="hljs-string">" = "</span>
-          (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [define (<span class="hljs-name">get-define</span> mname jsdoc)]
-            define
-            init)))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-symbol">:def-emits-var</span> env)
-        (<span class="hljs-name">emitln</span> <span class="hljs-string">"; return ("</span>)
-        (<span class="hljs-name">emits</span> (<span class="hljs-name"><span class="hljs-builtin-name">merge</span></span>
-                 {<span class="hljs-symbol">:op</span>  <span class="hljs-symbol">:the-var</span>
-                  <span class="hljs-symbol">:env</span> (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> env <span class="hljs-symbol">:context</span> <span class="hljs-symbol">:expr</span>)}
-                 var-ast))
-        (<span class="hljs-name">emitln</span> <span class="hljs-string">");})()"</span>))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:return</span> (<span class="hljs-symbol">:context</span> env))
-        (<span class="hljs-name">emitln</span> <span class="hljs-string">")"</span>))
-      <span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> JavaScriptCore does not like this under advanced compilation</span>
-      <span class="hljs-comment">;; this change was primarily for REPL interactions - David</span>
-      <span class="hljs-comment">;(emits " = (typeof " mname " != 'undefined') ? " mname " : undefined")</span>
-      (<span class="hljs-name"><span class="hljs-builtin-name">when-not</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env)) (<span class="hljs-name">emitln</span> <span class="hljs-string">";"</span>))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> export
-        (<span class="hljs-name">emitln</span> <span class="hljs-string">"goog.exportSymbol('"</span> (<span class="hljs-name">munge</span> export) <span class="hljs-string">"', "</span> mname <span class="hljs-string">");"</span>))
-      (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">and</span></span> ana/*load-tests* test)
-        (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">=</span></span> <span class="hljs-symbol">:expr</span> (<span class="hljs-symbol">:context</span> env))
-          (<span class="hljs-name">emitln</span> <span class="hljs-string">";"</span>))
-        (<span class="hljs-name">emitln</span> var <span class="hljs-string">".cljs$lang$test = "</span> test <span class="hljs-string">";"</span>)))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+        <span class="s-exp">(</span><span class="core-fn">swap!</span> <span class="symbol">env/*compiler*</span> <span class="core-fn">assoc-in</span> <span class="s-exp">[</span><span class="keyword">::namespaces</span> <span class="core-fn">ns-name</span> <span class="keyword">:defs</span> <span class="symbol">sym</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="core-fn">merge</span>
+            <span class="s-exp">{</span><span class="keyword">:name</span> <span class="symbol">var-name</span><span class="s-exp">}</span>
+            <span class="comment">;; remove actual test metadata, as it includes non-valid EDN and
+</span>            <span class="comment">;; cannot be present in analysis cached to disk - David
+</span>            <span class="s-exp">(</span><span class="conditional">cond-></span> <span class="symbol">sym-meta</span>
+              <span class="s-exp">(</span><span class="keyword">:test</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="keyword">:test</span> <span class="boolean">true</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="s-exp">{</span><span class="keyword">:meta</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym-meta</span>
+                       <span class="s-exp">(</span><span class="core-fn">dissoc</span> <span class="keyword">:test</span><span class="s-exp">)</span>
+                       <span class="s-exp">(</span><span class="core-fn">update-in</span> <span class="s-exp">[</span><span class="keyword">:file</span><span class="s-exp">]</span>
+                         <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="symbol">f</span><span class="s-exp">]</span>
+                           <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">env</span> <span class="keyword">:ns</span> <span class="keyword">:name</span><span class="s-exp">)</span> <span class="reader-char">'</span><span class="symbol">cljs.core</span><span class="s-exp">)</span>
+                             <span class="string">"cljs/core.cljs"</span>
+                             <span class="symbol">f</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">}</span>
+            <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">doc</span> <span class="s-exp">{</span><span class="keyword">:doc</span> <span class="symbol">doc</span><span class="s-exp">}</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">const?</span>
+              <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">const-expr</span>
+                    <span class="s-exp">(</span><span class="macro">binding</span> <span class="s-exp">[</span><span class="symbol">*passes*</span> <span class="s-exp">(</span><span class="core-fn">conj</span> <span class="symbol">*passes*</span> <span class="s-exp">(</span><span class="symbol">replace-env-pass</span> <span class="s-exp">{</span><span class="keyword">:context</span> <span class="keyword">:expr</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                      <span class="s-exp">(</span><span class="symbol">analyze</span> <span class="symbol">env</span> <span class="s-exp">(</span><span class="keyword">:init</span> <span class="symbol">args</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="symbol">constant-value?</span> <span class="symbol">const-expr</span><span class="s-exp">)</span>
+                  <span class="s-exp">{</span><span class="keyword">:const-expr</span> <span class="symbol">const-expr</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">true?</span> <span class="symbol">dynamic</span><span class="s-exp">)</span> <span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="symbol">source-info</span> <span class="symbol">var-name</span> <span class="symbol">env</span><span class="s-exp">)</span>
+            <span class="comment">;; the protocol a protocol fn belongs to
+</span>            <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">protocol</span>
+              <span class="s-exp">{</span><span class="keyword">:protocol</span> <span class="symbol">protocol</span><span class="s-exp">}</span><span class="s-exp">)</span>
+            <span class="comment">;; symbol for reified protocol
+</span>            <span class="s-exp">(</span><span class="conditional">when-let</span> <span class="s-exp">[</span><span class="symbol">protocol-symbol</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">sym</span> <span class="core-fn">meta</span> <span class="keyword">:protocol-symbol</span><span class="s-exp">)</span><span class="s-exp">]</span>
+              <span class="s-exp">{</span><span class="keyword">:protocol-symbol</span> <span class="symbol">protocol-symbol</span>
+               <span class="keyword">:info</span> <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">protocol-symbol</span> <span class="core-fn">meta</span> <span class="keyword">:protocol-info</span><span class="s-exp">)</span>
+               <span class="keyword">:impls</span> <span class="s-exp">#{</span><span class="s-exp">}</span><span class="s-exp">}</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">fn-var?</span>
+              <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">params</span> <span class="s-exp">(</span><span class="core-fn">map</span> <span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">vec</span> <span class="s-exp">(</span><span class="core-fn">map</span> <span class="keyword">:name</span> <span class="s-exp">(</span><span class="keyword">:params</span> <span class="keyword">%</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="keyword">:methods</span> <span class="symbol">init-expr</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                <span class="s-exp">(</span><span class="core-fn">merge</span>
+                  <span class="s-exp">{</span><span class="keyword">:fn-var</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="s-exp">(</span><span class="keyword">:macro</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                   <span class="comment">;; protocol implementation context
+</span>                   <span class="keyword">:protocol-impl</span> <span class="s-exp">(</span><span class="keyword">:protocol-impl</span> <span class="symbol">init-expr</span><span class="s-exp">)</span>
+                   <span class="comment">;; inline protocol implementation context
+</span>                   <span class="keyword">:protocol-inline</span> <span class="s-exp">(</span><span class="keyword">:protocol-inline</span> <span class="symbol">init-expr</span><span class="s-exp">)</span><span class="s-exp">}</span>
+                  <span class="s-exp">(</span><span class="conditional">if-some</span> <span class="s-exp">[</span><span class="symbol">top-fn-meta</span> <span class="s-exp">(</span><span class="keyword">:top-fn</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">]</span>
+                    <span class="symbol">top-fn-meta</span>
+                    <span class="s-exp">{</span><span class="keyword">:variadic?</span> <span class="s-exp">(</span><span class="keyword">:variadic?</span> <span class="symbol">init-expr</span><span class="s-exp">)</span>
+                     <span class="keyword">:max-fixed-arity</span> <span class="s-exp">(</span><span class="keyword">:max-fixed-arity</span> <span class="symbol">init-expr</span><span class="s-exp">)</span>
+                     <span class="keyword">:method-params</span> <span class="symbol">params</span>
+                     <span class="keyword">:arglists</span> <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span>
+                     <span class="keyword">:arglists-meta</span> <span class="s-exp">(</span><span class="core-fn">doall</span> <span class="s-exp">(</span><span class="core-fn">map</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="s-exp">(</span><span class="keyword">:declared</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span>
+                       <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span>
+              <span class="s-exp">{</span><span class="keyword">:declared</span> <span class="boolean">true</span>
+               <span class="keyword">:fn-var</span> <span class="boolean">true</span>
+               <span class="keyword">:method-params</span> <span class="s-exp">(</span><span class="core-fn">second</span> <span class="s-exp">(</span><span class="keyword">:arglists</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="symbol">fn-var?</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="symbol">tag</span><span class="s-exp">)</span><span class="s-exp">)</span>
+              <span class="s-exp">{</span><span class="keyword">:ret-tag</span> <span class="symbol">tag</span><span class="s-exp">}</span>
+              <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">tag</span> <span class="s-exp">{</span><span class="keyword">:tag</span> <span class="symbol">tag</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="core-fn">merge</span>
+        <span class="s-exp">{</span><span class="keyword">:env</span> <span class="symbol">env</span>
+         <span class="keyword">:op</span> <span class="keyword">:def</span>
+         <span class="keyword">:form</span> <span class="symbol">form</span>
+         <span class="keyword">:ns</span> <span class="core-fn">ns-name</span>
+         <span class="keyword">:name</span> <span class="symbol">var-name</span>
+         <span class="keyword">:var</span> <span class="s-exp">(</span><span class="core-fn">assoc</span>
+                <span class="s-exp">(</span><span class="symbol">analyze</span>
+                  <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">env</span> <span class="s-exp">(</span><span class="core-fn">dissoc</span> <span class="keyword">:locals</span><span class="s-exp">)</span>
+                    <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="keyword">:context</span> <span class="keyword">:expr</span><span class="s-exp">)</span>
+                    <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="keyword">:def-var</span> <span class="boolean">true</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                  <span class="symbol">sym</span><span class="s-exp">)</span>
+                <span class="keyword">:op</span> <span class="keyword">:var</span><span class="s-exp">)</span>
+         <span class="keyword">:doc</span> <span class="symbol">doc</span>
+         <span class="keyword">:jsdoc</span> <span class="s-exp">(</span><span class="keyword">:jsdoc</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">}</span>
+        <span class="s-exp">(</span><span class="conditional">when-let</span> <span class="s-exp">[</span><span class="symbol">goog-type</span> <span class="s-exp">(</span><span class="keyword">:goog-define</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">{</span><span class="keyword">:goog-define</span> <span class="symbol">goog-type</span><span class="s-exp">}</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">true?</span> <span class="s-exp">(</span><span class="keyword">:def-emits-var</span> <span class="symbol">env</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="s-exp">{</span><span class="keyword">:var-ast</span> <span class="s-exp">(</span><span class="symbol">var-ast</span> <span class="symbol">env</span> <span class="symbol">sym</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="conditional">when-some</span> <span class="s-exp">[</span><span class="core-fn">test</span> <span class="s-exp">(</span><span class="keyword">:test</span> <span class="symbol">sym-meta</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">{</span><span class="keyword">:test</span> <span class="s-exp">(</span><span class="symbol">analyze</span> <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="symbol">env</span> <span class="keyword">:context</span> <span class="keyword">:expr</span><span class="s-exp">)</span> <span class="core-fn">test</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="symbol">tag</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">fn-var?</span>
+            <span class="s-exp">{</span><span class="keyword">:ret-tag</span> <span class="symbol">tag</span><span class="s-exp">}</span>
+            <span class="s-exp">{</span><span class="keyword">:tag</span> <span class="symbol">tag</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">true?</span> <span class="symbol">dynamic</span><span class="s-exp">)</span> <span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="symbol">export-as</span><span class="s-exp">)</span> <span class="s-exp">{</span><span class="keyword">:export</span> <span class="symbol">export-as</span><span class="s-exp">}</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="symbol">init-expr</span><span class="s-exp">)</span>
+          <span class="s-exp">{</span><span class="keyword">:init</span> <span class="symbol">init-expr</span>
+           <span class="keyword">:children</span> <span class="s-exp">[</span><span class="keyword">:var</span> <span class="keyword">:init</span><span class="s-exp">]</span><span class="s-exp">}</span>
+          <span class="s-exp">{</span><span class="keyword">:children</span> <span class="s-exp">[</span><span class="keyword">:var</span><span class="s-exp">]</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /><div>Emitting code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/clojure/cljs/compiler.cljc#L813-L851">clojurescript:src/main/clojure/cljs/compiler.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmethod</span> <span class="symbol">emit*</span> <span class="keyword">:def</span>
+  <span class="s-exp">[</span><span class="s-exp">{</span><span class="keyword">:keys</span> <span class="s-exp">[</span><span class="core-fn">name</span> <span class="special-form">var</span> <span class="symbol">init</span> <span class="symbol">env</span> <span class="symbol">doc</span> <span class="symbol">goog-define</span> <span class="symbol">jsdoc</span> <span class="symbol">export</span> <span class="core-fn">test</span> <span class="symbol">var-ast</span><span class="s-exp">]</span><span class="s-exp">}</span><span class="s-exp">]</span>
+  <span class="comment">;; We only want to emit if an init is supplied, this is to avoid dead code
+</span>  <span class="comment">;; elimination issues. The REPL is the exception to this rule.
+</span>  <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">or</span> <span class="symbol">init</span> <span class="s-exp">(</span><span class="keyword">:def-emits-var</span> <span class="symbol">env</span><span class="s-exp">)</span><span class="s-exp">)</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">mname</span> <span class="s-exp">(</span><span class="core-fn">munge</span> <span class="core-fn">name</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="symbol">emit-comment</span> <span class="symbol">env</span> <span class="symbol">doc</span> <span class="s-exp">(</span><span class="core-fn">concat</span>
+                              <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">goog-define</span>
+                                <span class="s-exp">[</span><span class="s-exp">(</span><span class="core-fn">str</span> <span class="string">"@define {"</span> <span class="symbol">goog-define</span> <span class="string">"}"</span><span class="s-exp">)</span><span class="s-exp">]</span><span class="s-exp">)</span>
+                              <span class="symbol">jsdoc</span> <span class="s-exp">(</span><span class="keyword">:jsdoc</span> <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="keyword">:return</span> <span class="s-exp">(</span><span class="keyword">:context</span> <span class="symbol">env</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">"return ("</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="keyword">:def-emits-var</span> <span class="symbol">env</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">"(function (){"</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">emits</span> <span class="special-form">var</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">init</span>
+        <span class="s-exp">(</span><span class="symbol">emits</span> <span class="string">" = "</span>
+          <span class="s-exp">(</span><span class="conditional">if-let</span> <span class="s-exp">[</span><span class="symbol">define</span> <span class="s-exp">(</span><span class="symbol">get-define</span> <span class="symbol">mname</span> <span class="symbol">jsdoc</span><span class="s-exp">)</span><span class="s-exp">]</span>
+            <span class="symbol">define</span>
+            <span class="symbol">init</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="keyword">:def-emits-var</span> <span class="symbol">env</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">"; return ("</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">emits</span> <span class="s-exp">(</span><span class="core-fn">merge</span>
+                 <span class="s-exp">{</span><span class="keyword">:op</span>  <span class="keyword">:the-var</span>
+                  <span class="keyword">:env</span> <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="symbol">env</span> <span class="keyword">:context</span> <span class="keyword">:expr</span><span class="s-exp">)</span><span class="s-exp">}</span>
+                 <span class="symbol">var-ast</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">");})()"</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="keyword">:return</span> <span class="s-exp">(</span><span class="keyword">:context</span> <span class="symbol">env</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">")"</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="comment">;; NOTE: JavaScriptCore does not like this under advanced compilation
+</span>      <span class="comment">;; this change was primarily for REPL interactions - David
+</span>      <span class="comment">;(emits " = (typeof " mname " != 'undefined') ? " mname " : undefined")
+</span>      <span class="s-exp">(</span><span class="conditional">when-not</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="keyword">:expr</span> <span class="s-exp">(</span><span class="keyword">:context</span> <span class="symbol">env</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">";"</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">export</span>
+        <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">"goog.exportSymbol('"</span> <span class="s-exp">(</span><span class="core-fn">munge</span> <span class="symbol">export</span><span class="s-exp">)</span> <span class="string">"', "</span> <span class="symbol">mname</span> <span class="string">");"</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="symbol">ana/*load-tests*</span> <span class="core-fn">test</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">=</span> <span class="keyword">:expr</span> <span class="s-exp">(</span><span class="keyword">:context</span> <span class="symbol">env</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="string">";"</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">emitln</span> <span class="special-form">var</span> <span class="string">".cljs$lang$test = "</span> <span class="core-fn">test</span> <span class="string">";"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

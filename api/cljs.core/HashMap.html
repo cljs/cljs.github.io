@@ -1,92 +1,92 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>HashMap</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r"><s>HashMap</s></h1><table><tr><td>type</td><td>removed v0.0-1798</td><td>added v0.0-927</td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/HashMap.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#IAssociative"><code>IAssociative</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMap"><code>IMap</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IPrintable"><code>IPrintable</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(HashMap. meta count hashobj __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1586/src/cljs/cljs/core.cljs#L3737-L3828">clojurescript:src/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> HashMap [meta count hashobj ^<span class="hljs-symbol">:mutable</span> __hash]
-  Object
-  (<span class="hljs-name">toString</span> [this]
-    (<span class="hljs-name">pr-str</span> this))
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>HashMap</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r"><s>HashMap</s></h1><table><tr><td>type</td><td>removed v0.0-1798</td><td>added v0.0-927</td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/HashMap.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#IAssociative"><code>IAssociative</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMap"><code>IMap</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IPrintable"><code>IPrintable</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(HashMap. meta count hashobj __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1586/src/cljs/cljs/core.cljs#L3737-L3828">clojurescript:src/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">deftype</span> <span class="symbol">HashMap</span> <span class="s-exp">[</span><span class="core-fn">meta</span> <span class="core-fn">count</span> <span class="symbol">hashobj</span> <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="symbol">__hash</span><span class="s-exp">]</span>
+  <span class="symbol">Object</span>
+  <span class="s-exp">(</span><span class="symbol">toString</span> <span class="s-exp">[</span><span class="symbol">this</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">pr-str</span> <span class="symbol">this</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IWithMeta
-  (<span class="hljs-name">-with-meta</span> [coll meta] (<span class="hljs-name">HashMap.</span> meta count hashobj __hash))
+  <span class="symbol">IWithMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-with-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="core-fn">meta</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">HashMap.</span> <span class="core-fn">meta</span> <span class="core-fn">count</span> <span class="symbol">hashobj</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IMeta
-  (<span class="hljs-name">-meta</span> [coll] meta)
+  <span class="symbol">IMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-meta</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="core-fn">meta</span><span class="s-exp">)</span>
 
-  ICollection
-  (<span class="hljs-name">-conj</span> [coll entry]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> entry)
-      (<span class="hljs-name">-assoc</span> coll (<span class="hljs-name">-nth</span> entry <span class="hljs-number">0</span>) (<span class="hljs-name">-nth</span> entry <span class="hljs-number">1</span>))
-      (<span class="hljs-name"><span class="hljs-builtin-name">reduce</span></span> -conj
-              coll
-              entry)))
+  <span class="symbol">ICollection</span>
+  <span class="s-exp">(</span><span class="symbol">-conj</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">entry</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">vector?</span> <span class="symbol">entry</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="symbol">-assoc</span> <span class="symbol">coll</span> <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">entry</span> <span class="number">0</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">entry</span> <span class="number">1</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="core-fn">reduce</span> <span class="symbol">-conj</span>
+              <span class="symbol">coll</span>
+              <span class="symbol">entry</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEmptyableCollection
-  (<span class="hljs-name">-empty</span> [coll] (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> cljs.core.HashMap/EMPTY meta))
+  <span class="symbol">IEmptyableCollection</span>
+  <span class="s-exp">(</span><span class="symbol">-empty</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="core-fn">with-meta</span> <span class="symbol">cljs.core.HashMap/EMPTY</span> <span class="core-fn">meta</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEquiv
-  (<span class="hljs-name">-equiv</span> [coll other] (<span class="hljs-name">equiv-map</span> coll other))
+  <span class="symbol">IEquiv</span>
+  <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">equiv-map</span> <span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IHash
-  (<span class="hljs-name">-hash</span> [coll] (<span class="hljs-name">caching-hash</span> coll hash-imap __hash))
+  <span class="symbol">IHash</span>
+  <span class="s-exp">(</span><span class="symbol">-hash</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">caching-hash</span> <span class="symbol">coll</span> <span class="symbol">hash-imap</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ISeqable
-  (<span class="hljs-name">-seq</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">pos?</span></span> count)
-      (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [hashes (<span class="hljs-name">.sort</span> (<span class="hljs-name">js-keys</span> hashobj))]
-        (<span class="hljs-name"><span class="hljs-builtin-name">mapcat</span></span> #(<span class="hljs-name"><span class="hljs-builtin-name">map</span></span> vec (<span class="hljs-name"><span class="hljs-builtin-name">partition</span></span> <span class="hljs-number">2</span> (<span class="hljs-name">aget</span> hashobj %)))
-                hashes))))
+  <span class="symbol">ISeqable</span>
+  <span class="s-exp">(</span><span class="symbol">-seq</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">when</span> <span class="s-exp">(</span><span class="core-fn">pos?</span> <span class="core-fn">count</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">hashes</span> <span class="s-exp">(</span><span class="symbol">.sort</span> <span class="s-exp">(</span><span class="symbol">js-keys</span> <span class="symbol">hashobj</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+        <span class="s-exp">(</span><span class="core-fn">mapcat</span> <span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">map</span> <span class="core-fn">vec</span> <span class="s-exp">(</span><span class="core-fn">partition</span> <span class="number">2</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">hashobj</span> <span class="keyword">%</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                <span class="symbol">hashes</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICounted
-  (<span class="hljs-name">-count</span> [coll] count)
+  <span class="symbol">ICounted</span>
+  <span class="s-exp">(</span><span class="symbol">-count</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="core-fn">count</span><span class="s-exp">)</span>
 
-  ILookup
-  (<span class="hljs-name">-lookup</span> [coll k] (<span class="hljs-name">-lookup</span> coll k <span class="hljs-literal">nil</span>))
-  (<span class="hljs-name">-lookup</span> [coll k not-found]
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [bucket (<span class="hljs-name">aget</span> hashobj (<span class="hljs-name">hash</span> k))
-          i (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> bucket (<span class="hljs-name">scan-array</span> <span class="hljs-number">2</span> k bucket))]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> i
-        (<span class="hljs-name">aget</span> bucket (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> i))
-        not-found)))
+  <span class="symbol">ILookup</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">coll</span> <span class="symbol">k</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">bucket</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">hashobj</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">i</span> <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">bucket</span> <span class="s-exp">(</span><span class="symbol">scan-array</span> <span class="number">2</span> <span class="symbol">k</span> <span class="symbol">bucket</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">i</span>
+        <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">bucket</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">i</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IAssociative
-  (<span class="hljs-name">-assoc</span> [coll k v]
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [h (<span class="hljs-name">hash</span> k)
-          bucket (<span class="hljs-name">aget</span> hashobj h)]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> bucket
-        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-bucket (<span class="hljs-name">aclone</span> bucket)
-              new-hashobj (<span class="hljs-name">goog.object/clone</span> hashobj)]
-          (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-hashobj h new-bucket)
-          (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [i (<span class="hljs-name">scan-array</span> <span class="hljs-number">2</span> k new-bucket)]
-            (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>                         <span class="hljs-comment">; found key, replace</span>
-              (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-bucket (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> i) v)
-              (<span class="hljs-name">HashMap.</span> meta count new-hashobj <span class="hljs-literal">nil</span>))
-            (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span>                         <span class="hljs-comment">; did not find key, append</span>
-              (<span class="hljs-name">.push</span> new-bucket k v)
-              (<span class="hljs-name">HashMap.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> count) new-hashobj <span class="hljs-literal">nil</span>))))
-        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-hashobj (<span class="hljs-name">goog.object/clone</span> hashobj)] <span class="hljs-comment">; did not find bucket</span>
-          (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-hashobj h (<span class="hljs-name">array</span> k v))
-          (<span class="hljs-name">HashMap.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> count) new-hashobj <span class="hljs-literal">nil</span>)))))
-  (<span class="hljs-name">-contains-key?</span> [coll k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [bucket (<span class="hljs-name">aget</span> hashobj (<span class="hljs-name">hash</span> k))
-          i (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> bucket (<span class="hljs-name">scan-array</span> <span class="hljs-number">2</span> k bucket))]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> i
-        <span class="hljs-literal">true</span>
-        <span class="hljs-literal">false</span>)))
+  <span class="symbol">IAssociative</span>
+  <span class="s-exp">(</span><span class="symbol">-assoc</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">h</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span>
+          <span class="symbol">bucket</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">hashobj</span> <span class="symbol">h</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">bucket</span>
+        <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">new-bucket</span> <span class="s-exp">(</span><span class="core-fn">aclone</span> <span class="symbol">bucket</span><span class="s-exp">)</span>
+              <span class="symbol">new-hashobj</span> <span class="s-exp">(</span><span class="symbol">goog.object/clone</span> <span class="symbol">hashobj</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="core-fn">aset</span> <span class="symbol">new-hashobj</span> <span class="symbol">h</span> <span class="symbol">new-bucket</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="conditional">if-let</span> <span class="s-exp">[</span><span class="symbol">i</span> <span class="s-exp">(</span><span class="symbol">scan-array</span> <span class="number">2</span> <span class="symbol">k</span> <span class="symbol">new-bucket</span><span class="s-exp">)</span><span class="s-exp">]</span>
+            <span class="s-exp">(</span><span class="special-form">do</span>                         <span class="comment">; found key, replace
+</span>              <span class="s-exp">(</span><span class="core-fn">aset</span> <span class="symbol">new-bucket</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">i</span><span class="s-exp">)</span> <span class="symbol">v</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="symbol">HashMap.</span> <span class="core-fn">meta</span> <span class="core-fn">count</span> <span class="symbol">new-hashobj</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="special-form">do</span>                         <span class="comment">; did not find key, append
+</span>              <span class="s-exp">(</span><span class="symbol">.push</span> <span class="symbol">new-bucket</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="symbol">HashMap.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="core-fn">count</span><span class="s-exp">)</span> <span class="symbol">new-hashobj</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">new-hashobj</span> <span class="s-exp">(</span><span class="symbol">goog.object/clone</span> <span class="symbol">hashobj</span><span class="s-exp">)</span><span class="s-exp">]</span> <span class="comment">; did not find bucket
+</span>          <span class="s-exp">(</span><span class="core-fn">aset</span> <span class="symbol">new-hashobj</span> <span class="symbol">h</span> <span class="s-exp">(</span><span class="symbol">array</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="symbol">HashMap.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="core-fn">count</span><span class="s-exp">)</span> <span class="symbol">new-hashobj</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-contains-key?</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">bucket</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">hashobj</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">i</span> <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">bucket</span> <span class="s-exp">(</span><span class="symbol">scan-array</span> <span class="number">2</span> <span class="symbol">k</span> <span class="symbol">bucket</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">i</span>
+        <span class="boolean">true</span>
+        <span class="boolean">false</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IMap
-  (<span class="hljs-name">-dissoc</span> [coll k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [h (<span class="hljs-name">hash</span> k)
-          bucket (<span class="hljs-name">aget</span> hashobj h)
-          i (<span class="hljs-name"><span class="hljs-builtin-name">when</span></span> bucket (<span class="hljs-name">scan-array</span> <span class="hljs-number">2</span> k bucket))]
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> i)
-        coll <span class="hljs-comment">; key not found, return coll unchanged</span>
-        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-hashobj (<span class="hljs-name">goog.object/clone</span> hashobj)]
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">&gt;</span></span> <span class="hljs-number">3</span> (<span class="hljs-name">alength</span> bucket))
-            (<span class="hljs-name">js-delete</span> new-hashobj h)
-            (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [new-bucket (<span class="hljs-name">aclone</span> bucket)]
-              (<span class="hljs-name">.splice</span> new-bucket i <span class="hljs-number">2</span>)
-              (<span class="hljs-name"><span class="hljs-builtin-name">aset</span></span> new-hashobj h new-bucket)))
-          (<span class="hljs-name">HashMap.</span> meta (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> count) new-hashobj <span class="hljs-literal">nil</span>)))))
+  <span class="symbol">IMap</span>
+  <span class="s-exp">(</span><span class="symbol">-dissoc</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">h</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span>
+          <span class="symbol">bucket</span> <span class="s-exp">(</span><span class="core-fn">aget</span> <span class="symbol">hashobj</span> <span class="symbol">h</span><span class="s-exp">)</span>
+          <span class="symbol">i</span> <span class="s-exp">(</span><span class="conditional">when</span> <span class="symbol">bucket</span> <span class="s-exp">(</span><span class="symbol">scan-array</span> <span class="number">2</span> <span class="symbol">k</span> <span class="symbol">bucket</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="symbol">i</span><span class="s-exp">)</span>
+        <span class="symbol">coll</span> <span class="comment">; key not found, return coll unchanged
+</span>        <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">new-hashobj</span> <span class="s-exp">(</span><span class="symbol">goog.object/clone</span> <span class="symbol">hashobj</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">></span> <span class="number">3</span> <span class="s-exp">(</span><span class="core-fn">alength</span> <span class="symbol">bucket</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="symbol">js-delete</span> <span class="symbol">new-hashobj</span> <span class="symbol">h</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">new-bucket</span> <span class="s-exp">(</span><span class="core-fn">aclone</span> <span class="symbol">bucket</span><span class="s-exp">)</span><span class="s-exp">]</span>
+              <span class="s-exp">(</span><span class="symbol">.splice</span> <span class="symbol">new-bucket</span> <span class="symbol">i</span> <span class="number">2</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="core-fn">aset</span> <span class="symbol">new-hashobj</span> <span class="symbol">h</span> <span class="symbol">new-bucket</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="symbol">HashMap.</span> <span class="core-fn">meta</span> <span class="s-exp">(</span><span class="core-fn">dec</span> <span class="core-fn">count</span><span class="s-exp">)</span> <span class="symbol">new-hashobj</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IFn
-  (<span class="hljs-name">-invoke</span> [coll k]
-    (<span class="hljs-name">-lookup</span> coll k))
-  (<span class="hljs-name">-invoke</span> [coll k not-found]
-    (<span class="hljs-name">-lookup</span> coll k not-found)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+  <span class="symbol">IFn</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">coll</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

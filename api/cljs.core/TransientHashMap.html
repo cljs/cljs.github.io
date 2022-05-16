@@ -1,114 +1,114 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>TransientHashMap</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">TransientHashMap</h1><table><tr><td>type</td><td>since v0.0-1211</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentHashMap.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/TransientHashMap</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/TransientHashMap.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#ITransientAssociative"><code>ITransientAssociative</code></a> <a class="code-link" href="/api/cljs.core#ITransientCollection"><code>ITransientCollection</code></a> <a class="code-link" href="/api/cljs.core#ITransientMap"><code>ITransientMap</code></a></em></div><hr /><div><code>(TransientHashMap. edit root count has-nil? nil-val)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/cljs/cljs/core.cljs#L8078-L8191">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> TransientHashMap [^<span class="hljs-symbol">:mutable</span> <span class="hljs-comment">^boolean</span> edit
-                           ^<span class="hljs-symbol">:mutable</span> root
-                           ^<span class="hljs-symbol">:mutable</span> count
-                           ^<span class="hljs-symbol">:mutable</span> <span class="hljs-comment">^boolean</span> has-nil?
-                           ^<span class="hljs-symbol">:mutable</span> <span class="hljs-literal">nil</span>-val]
-  Object
-  (<span class="hljs-name"><span class="hljs-builtin-name">conj!</span></span> [tcoll o]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> edit
-      (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span>
-        (<span class="hljs-name">map-entry?</span> o)
-        (<span class="hljs-name">.assoc!</span> tcoll (<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> o) (<span class="hljs-name"><span class="hljs-builtin-name">val</span></span> o))
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>TransientHashMap</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">TransientHashMap</h1><table><tr><td>type</td><td>since v0.0-1211</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/PersistentHashMap.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/TransientHashMap</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/TransientHashMap.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#ITransientAssociative"><code>ITransientAssociative</code></a> <a class="code-link" href="/api/cljs.core#ITransientCollection"><code>ITransientCollection</code></a> <a class="code-link" href="/api/cljs.core#ITransientMap"><code>ITransientMap</code></a></em></div><hr /><div><code>(TransientHashMap. edit root count has-nil? nil-val)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/cljs/cljs/core.cljs#L8162-L8275">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">deftype</span> <span class="symbol">TransientHashMap</span> <span class="s-exp">[</span><span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="symbol">edit</span>
+                           <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="symbol">root</span>
+                           <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="core-fn">count</span>
+                           <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="symbol">has-nil?</span>
+                           <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="symbol">nil-val</span><span class="s-exp">]</span>
+  <span class="symbol">Object</span>
+  <span class="s-exp">(</span><span class="core-fn">conj!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="symbol">o</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">edit</span>
+      <span class="s-exp">(</span><span class="conditional">cond</span>
+        <span class="s-exp">(</span><span class="symbol">map-entry?</span> <span class="symbol">o</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">.assoc!</span> <span class="symbol">tcoll</span> <span class="s-exp">(</span><span class="core-fn">key</span> <span class="symbol">o</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">val</span> <span class="symbol">o</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-        (<span class="hljs-name"><span class="hljs-builtin-name">vector?</span></span> o)
-        (<span class="hljs-name">.assoc!</span> tcoll (<span class="hljs-name">o</span> <span class="hljs-number">0</span>) (<span class="hljs-name">o</span> <span class="hljs-number">1</span>))
+        <span class="s-exp">(</span><span class="core-fn">vector?</span> <span class="symbol">o</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="symbol">.assoc!</span> <span class="symbol">tcoll</span> <span class="s-exp">(</span><span class="symbol">o</span> <span class="number">0</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">o</span> <span class="number">1</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-        <span class="hljs-symbol">:else</span>
-        (<span class="hljs-name"><span class="hljs-builtin-name">loop</span></span> [es (<span class="hljs-name"><span class="hljs-builtin-name">seq</span></span> o) tcoll tcoll]
-          (<span class="hljs-name"><span class="hljs-builtin-name">if-let</span></span> [e (<span class="hljs-name"><span class="hljs-builtin-name">first</span></span> es)]
-            (<span class="hljs-name"><span class="hljs-builtin-name">recur</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">next</span></span> es)
-                   (<span class="hljs-name">.assoc!</span> tcoll (<span class="hljs-name"><span class="hljs-builtin-name">key</span></span> e) (<span class="hljs-name"><span class="hljs-builtin-name">val</span></span> e)))
-            tcoll)))
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"conj! after persistent"</span>))))
+        <span class="keyword">:else</span>
+        <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">es</span> <span class="s-exp">(</span><span class="core-fn">seq</span> <span class="symbol">o</span><span class="s-exp">)</span> <span class="symbol">tcoll</span> <span class="symbol">tcoll</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="conditional">if-let</span> <span class="s-exp">[</span><span class="symbol">e</span> <span class="s-exp">(</span><span class="core-fn">first</span> <span class="symbol">es</span><span class="s-exp">)</span><span class="s-exp">]</span>
+            <span class="s-exp">(</span><span class="special-form">recur</span> <span class="s-exp">(</span><span class="core-fn">next</span> <span class="symbol">es</span><span class="s-exp">)</span>
+                   <span class="s-exp">(</span><span class="symbol">.assoc!</span> <span class="symbol">tcoll</span> <span class="s-exp">(</span><span class="core-fn">key</span> <span class="symbol">e</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">val</span> <span class="symbol">e</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="symbol">tcoll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"conj! after persistent"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name"><span class="hljs-builtin-name">assoc!</span></span> [tcoll k v]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> edit
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> k)
-        (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> <span class="hljs-literal">nil</span>-val v)
-              <span class="hljs-literal">nil</span>
-              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> <span class="hljs-literal">nil</span>-val v))
-            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-nil?
-              <span class="hljs-literal">nil</span>
-              (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> count (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> count))
-                  (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> has-nil? <span class="hljs-literal">true</span>)))
-            tcoll)
-        (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [added-leaf? (<span class="hljs-name">Box.</span> <span class="hljs-literal">false</span>)
-              node        (<span class="hljs-name"><span class="hljs-builtin-name">-&gt;</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> root)
-                                (<span class="hljs-name">.-EMPTY</span> BitmapIndexedNode)
-                                root)
-                              (<span class="hljs-name">.inode-assoc!</span> edit <span class="hljs-number">0</span> (<span class="hljs-name">hash</span> k) k v added-leaf?))]
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> node root)
-            <span class="hljs-literal">nil</span>
-            (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> root node))
-          (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-val</span> added-leaf?)
-            (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> count (<span class="hljs-name"><span class="hljs-builtin-name">inc</span></span> count)))
-          tcoll))
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"assoc! after persistent!"</span>))))
+  <span class="s-exp">(</span><span class="core-fn">assoc!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">edit</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">do</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">identical?</span> <span class="symbol">nil-val</span> <span class="symbol">v</span><span class="s-exp">)</span>
+              <span class="nil">nil</span>
+              <span class="s-exp">(</span><span class="special-form">set!</span> <span class="symbol">nil-val</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">has-nil?</span>
+              <span class="nil">nil</span>
+              <span class="s-exp">(</span><span class="special-form">do</span> <span class="s-exp">(</span><span class="special-form">set!</span> <span class="core-fn">count</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="core-fn">count</span><span class="s-exp">)</span><span class="s-exp">)</span>
+                  <span class="s-exp">(</span><span class="special-form">set!</span> <span class="symbol">has-nil?</span> <span class="boolean">true</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="symbol">tcoll</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">added-leaf?</span> <span class="s-exp">(</span><span class="symbol">Box.</span> <span class="boolean">false</span><span class="s-exp">)</span>
+              <span class="symbol">node</span>        <span class="s-exp">(</span><span class="macro">-></span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">root</span><span class="s-exp">)</span>
+                                <span class="s-exp">(</span><span class="symbol">.-EMPTY</span> <span class="symbol">BitmapIndexedNode</span><span class="s-exp">)</span>
+                                <span class="symbol">root</span><span class="s-exp">)</span>
+                              <span class="s-exp">(</span><span class="symbol">.inode-assoc!</span> <span class="symbol">edit</span> <span class="number">0</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span> <span class="symbol">k</span> <span class="symbol">v</span> <span class="symbol">added-leaf?</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
+          <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">identical?</span> <span class="symbol">node</span> <span class="symbol">root</span><span class="s-exp">)</span>
+            <span class="nil">nil</span>
+            <span class="s-exp">(</span><span class="special-form">set!</span> <span class="symbol">root</span> <span class="symbol">node</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="special-form">if</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="s-exp">(</span><span class="symbol">.-val</span> <span class="symbol">added-leaf?</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="special-form">set!</span> <span class="core-fn">count</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="core-fn">count</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+          <span class="symbol">tcoll</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"assoc! after persistent!"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">without!</span> [tcoll k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> edit
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> k)
-        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-nil?
-          (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> has-nil? <span class="hljs-literal">false</span>)
-              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> <span class="hljs-literal">nil</span>-val <span class="hljs-literal">nil</span>)
-              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> count (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> count))
-              tcoll)
-          tcoll)
-        (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> root)
-          tcoll
-          (<span class="hljs-name"><span class="hljs-builtin-name">let</span></span> [removed-leaf? (<span class="hljs-name">Box.</span> <span class="hljs-literal">false</span>)
-                node (<span class="hljs-name">.inode-without!</span> root edit <span class="hljs-number">0</span> (<span class="hljs-name">hash</span> k) k removed-leaf?)]
-            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name">identical?</span> node root)
-              <span class="hljs-literal">nil</span>
-              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> root node))
-            (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> <span class="hljs-comment">^boolean</span> (<span class="hljs-name">.-val</span> removed-leaf?)
-              (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> count (<span class="hljs-name"><span class="hljs-builtin-name">dec</span></span> count)))
-            tcoll)))
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"dissoc! after persistent!"</span>))))
+  <span class="s-exp">(</span><span class="symbol">without!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">edit</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">has-nil?</span>
+          <span class="s-exp">(</span><span class="special-form">do</span> <span class="s-exp">(</span><span class="special-form">set!</span> <span class="symbol">has-nil?</span> <span class="boolean">false</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="special-form">set!</span> <span class="symbol">nil-val</span> <span class="nil">nil</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="special-form">set!</span> <span class="core-fn">count</span> <span class="s-exp">(</span><span class="core-fn">dec</span> <span class="core-fn">count</span><span class="s-exp">)</span><span class="s-exp">)</span>
+              <span class="symbol">tcoll</span><span class="s-exp">)</span>
+          <span class="symbol">tcoll</span><span class="s-exp">)</span>
+        <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">root</span><span class="s-exp">)</span>
+          <span class="symbol">tcoll</span>
+          <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">removed-leaf?</span> <span class="s-exp">(</span><span class="symbol">Box.</span> <span class="boolean">false</span><span class="s-exp">)</span>
+                <span class="symbol">node</span> <span class="s-exp">(</span><span class="symbol">.inode-without!</span> <span class="symbol">root</span> <span class="symbol">edit</span> <span class="number">0</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span> <span class="symbol">k</span> <span class="symbol">removed-leaf?</span><span class="s-exp">)</span><span class="s-exp">]</span>
+            <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">identical?</span> <span class="symbol">node</span> <span class="symbol">root</span><span class="s-exp">)</span>
+              <span class="nil">nil</span>
+              <span class="s-exp">(</span><span class="special-form">set!</span> <span class="symbol">root</span> <span class="symbol">node</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="s-exp">(</span><span class="special-form">if</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="s-exp">(</span><span class="symbol">.-val</span> <span class="symbol">removed-leaf?</span><span class="s-exp">)</span>
+              <span class="s-exp">(</span><span class="special-form">set!</span> <span class="core-fn">count</span> <span class="s-exp">(</span><span class="core-fn">dec</span> <span class="core-fn">count</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+            <span class="symbol">tcoll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"dissoc! after persistent!"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name"><span class="hljs-builtin-name">persistent!</span></span> [tcoll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> edit
-      (<span class="hljs-name"><span class="hljs-builtin-name">do</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">set!</span></span> edit <span class="hljs-literal">nil</span>)
-          (<span class="hljs-name">PersistentHashMap.</span> <span class="hljs-literal">nil</span> count root has-nil? <span class="hljs-literal">nil</span>-val <span class="hljs-literal">nil</span>))
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"persistent! called twice"</span>))))
+  <span class="s-exp">(</span><span class="core-fn">persistent!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">edit</span>
+      <span class="s-exp">(</span><span class="special-form">do</span> <span class="s-exp">(</span><span class="special-form">set!</span> <span class="symbol">edit</span> <span class="nil">nil</span><span class="s-exp">)</span>
+          <span class="s-exp">(</span><span class="symbol">PersistentHashMap.</span> <span class="nil">nil</span> <span class="core-fn">count</span> <span class="symbol">root</span> <span class="symbol">has-nil?</span> <span class="symbol">nil-val</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"persistent! called twice"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICounted
-  (<span class="hljs-name">-count</span> [coll]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> edit
-      count
-      (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"count after persistent!"</span>))))
+  <span class="symbol">ICounted</span>
+  <span class="s-exp">(</span><span class="symbol">-count</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">edit</span>
+      <span class="core-fn">count</span>
+      <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"count after persistent!"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ILookup
-  (<span class="hljs-name">-lookup</span> [tcoll k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> k)
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-nil?
-        <span class="hljs-literal">nil</span>-val)
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> root)
-        <span class="hljs-literal">nil</span>
-        (<span class="hljs-name">.inode-lookup</span> root <span class="hljs-number">0</span> (<span class="hljs-name">hash</span> k) k))))
+  <span class="symbol">ILookup</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">has-nil?</span>
+        <span class="symbol">nil-val</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">root</span><span class="s-exp">)</span>
+        <span class="nil">nil</span>
+        <span class="s-exp">(</span><span class="symbol">.inode-lookup</span> <span class="symbol">root</span> <span class="number">0</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-lookup</span> [tcoll k not-found]
-    (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> k)
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> has-nil?
-        <span class="hljs-literal">nil</span>-val
-        not-found)
-      (<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">nil?</span></span> root)
-        not-found
-        (<span class="hljs-name">.inode-lookup</span> root <span class="hljs-number">0</span> (<span class="hljs-name">hash</span> k) k not-found))))
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">k</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">has-nil?</span>
+        <span class="symbol">nil-val</span>
+        <span class="symbol">not-found</span><span class="s-exp">)</span>
+      <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">root</span><span class="s-exp">)</span>
+        <span class="symbol">not-found</span>
+        <span class="s-exp">(</span><span class="symbol">.inode-lookup</span> <span class="symbol">root</span> <span class="number">0</span> <span class="s-exp">(</span><span class="core-fn">hash</span> <span class="symbol">k</span><span class="s-exp">)</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ITransientCollection
-  (<span class="hljs-name">-conj!</span> [tcoll val] (<span class="hljs-name">.conj!</span> tcoll val))
+  <span class="symbol">ITransientCollection</span>
+  <span class="s-exp">(</span><span class="symbol">-conj!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="core-fn">val</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">.conj!</span> <span class="symbol">tcoll</span> <span class="core-fn">val</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-persistent!</span> [tcoll] (<span class="hljs-name">.persistent!</span> tcoll))
+  <span class="s-exp">(</span><span class="symbol">-persistent!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">.persistent!</span> <span class="symbol">tcoll</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ITransientAssociative
-  (<span class="hljs-name">-assoc!</span> [tcoll key val] (<span class="hljs-name">.assoc!</span> tcoll key val))
+  <span class="symbol">ITransientAssociative</span>
+  <span class="s-exp">(</span><span class="symbol">-assoc!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">.assoc!</span> <span class="symbol">tcoll</span> <span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ITransientMap
-  (<span class="hljs-name">-dissoc!</span> [tcoll key] (<span class="hljs-name">.without!</span> tcoll key))
+  <span class="symbol">ITransientMap</span>
+  <span class="s-exp">(</span><span class="symbol">-dissoc!</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="core-fn">key</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">.without!</span> <span class="symbol">tcoll</span> <span class="core-fn">key</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IFn
-  (<span class="hljs-name">-invoke</span> [tcoll key]
-    (<span class="hljs-name">-lookup</span> tcoll key))
-  (<span class="hljs-name">-invoke</span> [tcoll key not-found]
-    (<span class="hljs-name">-lookup</span> tcoll key not-found)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+  <span class="symbol">IFn</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="core-fn">key</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">tcoll</span> <span class="core-fn">key</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="core-fn">key</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="symbol">tcoll</span> <span class="core-fn">key</span> <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

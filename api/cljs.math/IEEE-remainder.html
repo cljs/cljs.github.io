@@ -1,0 +1,87 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>cljs.math/IEEE-remainder</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">cljs.math/IEEE-remainder</h1><table><tr><td>function</td><td>since v1.11.50</td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.math/IEEE-remainder.md">Edit</a></td></tr></table><div><code>(IEEE-remainder dividend divisor)</code></div><hr />Source docstring:<pre>Returns the remainder per IEEE 754 such that
+ remainder = dividend - divisor * n
+where n is the integer closest to the exact value of dividend / divisor.
+If two integers are equally close, then n is the even one.
+If the remainder is zero, sign will match dividend.
+If dividend or divisor is ##NaN, or dividend is ##Inf or ##-Inf, or divisor is zero => ##NaN
+If dividend is finite and divisor is infinite => dividend
+
+Method: based on fmod return x-[x/p]chopped*p exactlp.
+Ported from: https://github.com/openjdk/jdk/blob/master/src/java.base/share/native/libfdlibm/e_remainder.c
+See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#IEEEremainder-double-double-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/cljs/cljs/math.cljs#L335-L411">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax">(defn ^number IEEE-remainder
+  {:doc "Returns the remainder per IEEE 754 such that
+    remainder = dividend - divisor * n
+   where n is the integer closest to the exact value of dividend / divisor.
+   If two integers are equally close, then n is the even one.
+   If the remainder is zero, sign will match dividend.
+   If dividend or divisor is ##NaN, or dividend is ##Inf or ##-Inf, or divisor is zero => ##NaN
+   If dividend is finite and divisor is infinite => dividend
+
+   Method: based on fmod return x-[x/p]chopped*p exactlp.
+   Ported from: https://github.com/openjdk/jdk/blob/master/src/java.base/share/native/libfdlibm/e_remainder.c
+   See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#IEEEremainder-double-double-"
+    :added "1.11.10"}
+  [dividend divisor]
+  ;; check for exception values
+  (cond
+    (zero? divisor) ##NaN
+    ^boolean (js/isNaN divisor) ##NaN
+    ;; check if dividend is ##Inf ##-Inf or ##NaN
+    ^boolean (js/isNaN dividend) ##NaN
+    (not ^boolean (js/isFinite dividend)) ##NaN
+    ;; dividend is finish, check if divisor is infinite
+    (not ^boolean (js/isFinite divisor)) dividend
+
+    :default
+    ;; create a buffer large enough for 2 doubles
+    (let [a (js/ArrayBuffer. 16)
+          ;; represent the buffer as a double array
+          d (js/Float64Array. a)
+          ;; represent the buffer as 32 bit ints
+          i (js/Uint32Array. a)]
+      (aset d 0 dividend)
+      (aset d 1 divisor)
+      ;; x gets the dividend high and low ints
+      (let [hx (aget i HI)
+            lx (aget i LO)
+            ;; p gets the divisor high and low ints
+            hp (aget i (+ HI 2))
+            lp (aget i (+ LO 2))
+            ;; sx is the sign bit
+            sx (bit-and hx INT32-NON-SIGN-BIT)
+            ;; strip the sign bit from hp and hx
+            hp (bit-and hp INT32-NON-SIGN-BITS)
+            hx (bit-and hx INT32-NON-SIGN-BITS)
+
+            ;;make x < 2p
+            dividend (if (<= hp 0x7FDFFFFF) (IEEE-fmod dividend (+ divisor divisor)) dividend)]
+        (if (zero? (bit-or (- hx hp) (- lx lp)))
+          (* 0.0 dividend)
+          ;; convert dividend and divisor to absolute values. 
+          (let [dividend (Math/abs dividend)
+                divisor (Math/abs divisor)
+                ;; reduce dividend within range of the divisor
+                dividend (if (< hp 0x00200000)
+                           ;; smaller divisor compare 2*dividend to the divisor
+                           (if (> (+ dividend dividend) divisor)
+                             (let [dividend (- dividend divisor)] ;; reduce the dividend
+                               (if (>= (+ dividend dividend) divisor) ;; 2*dividend still larger
+                                 (- dividend divisor) ;; reduce again
+                                 dividend))
+                             dividend)
+                           ;; compare dividend to half the divisor
+                           (let [divisor-half (* 0.5 divisor)]
+                             (if (> dividend divisor-half)
+                               (let [dividend (- dividend divisor)] ;; reduce the dividend
+                                 (if (>= dividend divisor-half) ;; still larger than half divisor
+                                   (- dividend divisor) ;; reduce again
+                                   dividend))
+                               dividend)))]
+            ;; update the buffer with the new dividend value
+            (aset d 0 dividend)
+            ;; calculate a new hi int for the dividend using the saved sign bit
+            (let [hx (bit-xor (aget i HI) sx)]
+              ;; set the dividend with this new sign bit
+              (aset i HI hx)
+              ;; retrieve the updated dividend
+              (aget d 0))))))))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

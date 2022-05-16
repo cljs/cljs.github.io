@@ -1,94 +1,94 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>MapEntry</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="/news">News</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">MapEntry</h1><table><tr><td>type</td><td>since v1.9.542</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/MapEntry.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/MapEntry</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/MapEntry.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#IAssociative"><code>IAssociative</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#IComparable"><code>IComparable</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFind"><code>IFind</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#IIndexed"><code>IIndexed</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMapEntry"><code>IMapEntry</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReduce"><code>IReduce</code></a> <a class="code-link" href="/api/cljs.core#IReversible"><code>IReversible</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISequential"><code>ISequential</code></a> <a class="code-link" href="/api/cljs.core#IStack"><code>IStack</code></a> <a class="code-link" href="/api/cljs.core#IVector"><code>IVector</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(MapEntry. key val __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.4/src/main/cljs/cljs/core.cljs#L6675-L6768">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code>(<span class="hljs-name"><span class="hljs-builtin-name">deftype</span></span> MapEntry [key val ^<span class="hljs-symbol">:mutable</span> __hash]
-  Object
-  (<span class="hljs-name">indexOf</span> [coll x]
-    (<span class="hljs-name">-indexOf</span> coll x <span class="hljs-number">0</span>))
-  (<span class="hljs-name">indexOf</span> [coll x start]
-    (<span class="hljs-name">-indexOf</span> coll x start))
-  (<span class="hljs-name">lastIndexOf</span> [coll x]
-    (<span class="hljs-name">-lastIndexOf</span> coll x (<span class="hljs-name"><span class="hljs-builtin-name">count</span></span> coll)))
-  (<span class="hljs-name">lastIndexOf</span> [coll x start]
-    (<span class="hljs-name">-lastIndexOf</span> coll x start))
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>MapEntry</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="r">MapEntry</h1><table><tr><td>type</td><td>since v1.9.542</td><td><a href="https://github.com/clojure/clojure/blob/clojure-1.10.0-alpha4/src/jvm/clojure/lang/MapEntry.java"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.lang/MapEntry</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/MapEntry.md">Edit</a></td></tr></table><div><em>satisfies <a class="code-link" href="/api/cljs.core#IAssociative"><code>IAssociative</code></a> <a class="code-link" href="/api/cljs.core#ICollection"><code>ICollection</code></a> <a class="code-link" href="/api/cljs.core#IComparable"><code>IComparable</code></a> <a class="code-link" href="/api/cljs.core#ICounted"><code>ICounted</code></a> <a class="code-link" href="/api/cljs.core#IEmptyableCollection"><code>IEmptyableCollection</code></a> <a class="code-link" href="/api/cljs.core#IEquiv"><code>IEquiv</code></a> <a class="code-link" href="/api/cljs.core#IFind"><code>IFind</code></a> <a class="code-link" href="/api/cljs.core#IFn"><code>IFn</code></a> <a class="code-link" href="/api/cljs.core#IHash"><code>IHash</code></a> <a class="code-link" href="/api/cljs.core#IIndexed"><code>IIndexed</code></a> <a class="code-link" href="/api/cljs.core#ILookup"><code>ILookup</code></a> <a class="code-link" href="/api/cljs.core#IMapEntry"><code>IMapEntry</code></a> <a class="code-link" href="/api/cljs.core#IMeta"><code>IMeta</code></a> <a class="code-link" href="/api/cljs.core#IPrintWithWriter"><code>IPrintWithWriter</code></a> <a class="code-link" href="/api/cljs.core#IReduce"><code>IReduce</code></a> <a class="code-link" href="/api/cljs.core#IReversible"><code>IReversible</code></a> <a class="code-link" href="/api/cljs.core#ISeqable"><code>ISeqable</code></a> <a class="code-link" href="/api/cljs.core#ISequential"><code>ISequential</code></a> <a class="code-link" href="/api/cljs.core#IStack"><code>IStack</code></a> <a class="code-link" href="/api/cljs.core#IVector"><code>IVector</code></a> <a class="code-link" href="/api/cljs.core#IWithMeta"><code>IWithMeta</code></a></em></div><hr /><div><code>(MapEntry. key val __hash)</code></div><hr /><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/cljs/cljs/core.cljs#L6691-L6784">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">deftype</span> <span class="symbol">MapEntry</span> <span class="s-exp">[</span><span class="core-fn">key</span> <span class="core-fn">val</span> <span class="reader-char">^</span><span class="keyword">:mutable</span> <span class="symbol">__hash</span><span class="s-exp">]</span>
+  <span class="symbol">Object</span>
+  <span class="s-exp">(</span><span class="symbol">indexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-indexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="number">0</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">indexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-indexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">lastIndexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lastIndexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">lastIndexOf</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-lastIndexOf</span> <span class="symbol">coll</span> <span class="symbol">x</span> <span class="symbol">start</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IMapEntry
-  (<span class="hljs-name">-key</span> [node] key)
-  (<span class="hljs-name">-val</span> [node] val)
+  <span class="symbol">IMapEntry</span>
+  <span class="s-exp">(</span><span class="symbol">-key</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="core-fn">key</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-val</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="core-fn">val</span><span class="s-exp">)</span>
 
-  IHash
-  (<span class="hljs-name">-hash</span> [coll] (<span class="hljs-name">caching-hash</span> coll hash-ordered-coll __hash))
+  <span class="symbol">IHash</span>
+  <span class="s-exp">(</span><span class="symbol">-hash</span> <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">caching-hash</span> <span class="symbol">coll</span> <span class="core-fn">hash-ordered-coll</span> <span class="symbol">__hash</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IEquiv
-  (<span class="hljs-name">-equiv</span> [coll other] (<span class="hljs-name">equiv-sequential</span> coll other))
+  <span class="symbol">IEquiv</span>
+  <span class="s-exp">(</span><span class="symbol">-equiv</span> <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">equiv-sequential</span> <span class="symbol">coll</span> <span class="symbol">other</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IMeta
-  (<span class="hljs-name">-meta</span> [node] <span class="hljs-literal">nil</span>)
+  <span class="symbol">IMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-meta</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="nil">nil</span><span class="s-exp">)</span>
 
-  IWithMeta
-  (<span class="hljs-name">-with-meta</span> [node meta]
-    (<span class="hljs-name"><span class="hljs-builtin-name">with-meta</span></span> [key val] meta))
+  <span class="symbol">IWithMeta</span>
+  <span class="s-exp">(</span><span class="symbol">-with-meta</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="core-fn">meta</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">with-meta</span> <span class="s-exp">[</span><span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">]</span> <span class="core-fn">meta</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IStack
-  (<span class="hljs-name">-peek</span> [node] val)
+  <span class="symbol">IStack</span>
+  <span class="s-exp">(</span><span class="symbol">-peek</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="core-fn">val</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-pop</span> [node] [key])
+  <span class="s-exp">(</span><span class="symbol">-pop</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="s-exp">[</span><span class="core-fn">key</span><span class="s-exp">]</span><span class="s-exp">)</span>
 
-  ICollection
-  (<span class="hljs-name">-conj</span> [node o] [key val o])
+  <span class="symbol">ICollection</span>
+  <span class="s-exp">(</span><span class="symbol">-conj</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">o</span><span class="s-exp">]</span> <span class="s-exp">[</span><span class="core-fn">key</span> <span class="core-fn">val</span> <span class="symbol">o</span><span class="s-exp">]</span><span class="s-exp">)</span>
 
-  IEmptyableCollection
-  (<span class="hljs-name">-empty</span> [node] <span class="hljs-literal">nil</span>)
+  <span class="symbol">IEmptyableCollection</span>
+  <span class="s-exp">(</span><span class="symbol">-empty</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="nil">nil</span><span class="s-exp">)</span>
 
-  ISequential
-  ISeqable
-  (<span class="hljs-name">-seq</span> [node] (<span class="hljs-name">IndexedSeq.</span> #js [key val] <span class="hljs-number">0</span> <span class="hljs-literal">nil</span>))
+  <span class="symbol">ISequential</span>
+  <span class="symbol">ISeqable</span>
+  <span class="s-exp">(</span><span class="symbol">-seq</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">IndexedSeq.</span> <span class="reader-char">#</span><span class="symbol">js</span> <span class="s-exp">[</span><span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">]</span> <span class="number">0</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IReversible
-  (<span class="hljs-name">-rseq</span> [node] (<span class="hljs-name">IndexedSeq.</span> #js [val key] <span class="hljs-number">0</span> <span class="hljs-literal">nil</span>))
+  <span class="symbol">IReversible</span>
+  <span class="s-exp">(</span><span class="symbol">-rseq</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">IndexedSeq.</span> <span class="reader-char">#</span><span class="symbol">js</span> <span class="s-exp">[</span><span class="core-fn">val</span> <span class="core-fn">key</span><span class="s-exp">]</span> <span class="number">0</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ICounted
-  (<span class="hljs-name">-count</span> [node] <span class="hljs-number">2</span>)
+  <span class="symbol">ICounted</span>
+  <span class="s-exp">(</span><span class="symbol">-count</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span> <span class="number">2</span><span class="s-exp">)</span>
 
-  IIndexed
-  (<span class="hljs-name">-nth</span> [node n]
-    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">0</span>) key
-          (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">1</span>) val
-          <span class="hljs-symbol">:else</span>    (<span class="hljs-name"><span class="hljs-builtin-name">throw</span></span> (<span class="hljs-name">js/Error.</span> <span class="hljs-string">"Index out of bounds"</span>))))
+  <span class="symbol">IIndexed</span>
+  <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">n</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">cond</span> <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">n</span> <span class="number">0</span><span class="s-exp">)</span> <span class="core-fn">key</span>
+          <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">n</span> <span class="number">1</span><span class="s-exp">)</span> <span class="core-fn">val</span>
+          <span class="keyword">:else</span>    <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"Index out of bounds"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-nth</span> [node n not-found]
-    (<span class="hljs-name"><span class="hljs-builtin-name">cond</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">0</span>) key
-          (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> n <span class="hljs-number">1</span>) val
-          <span class="hljs-symbol">:else</span>    not-found))
+  <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">n</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">cond</span> <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">n</span> <span class="number">0</span><span class="s-exp">)</span> <span class="core-fn">key</span>
+          <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">n</span> <span class="number">1</span><span class="s-exp">)</span> <span class="core-fn">val</span>
+          <span class="keyword">:else</span>    <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  ILookup
-  (<span class="hljs-name">-lookup</span> [node k] (<span class="hljs-name">-nth</span> node k <span class="hljs-literal">nil</span>))
-  (<span class="hljs-name">-lookup</span> [node k not-found] (<span class="hljs-name">-nth</span> node k not-found))
+  <span class="symbol">ILookup</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">k</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">node</span> <span class="symbol">k</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-lookup</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">node</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IAssociative
-  (<span class="hljs-name">-assoc</span> [node k v]
-    (<span class="hljs-name"><span class="hljs-builtin-name">assoc</span></span> [key val] k v))
-  (<span class="hljs-name">-contains-key?</span> [node k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">or</span></span> (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> k <span class="hljs-number">0</span>) (<span class="hljs-name"><span class="hljs-builtin-name">==</span></span> k <span class="hljs-number">1</span>)))
+  <span class="symbol">IAssociative</span>
+  <span class="s-exp">(</span><span class="symbol">-assoc</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="s-exp">[</span><span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">]</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span>
+  <span class="s-exp">(</span><span class="symbol">-contains-key?</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">k</span> <span class="number">0</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">==</span> <span class="symbol">k</span> <span class="number">1</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IFind
-  (<span class="hljs-name">-find</span> [node k]
-    (<span class="hljs-name"><span class="hljs-builtin-name">case</span></span> k
-      <span class="hljs-number">0</span> (<span class="hljs-name">MapEntry.</span> <span class="hljs-number">0</span> key <span class="hljs-literal">nil</span>)
-      <span class="hljs-number">1</span> (<span class="hljs-name">MapEntry.</span> <span class="hljs-number">1</span> val <span class="hljs-literal">nil</span>)
-      <span class="hljs-literal">nil</span>))
+  <span class="symbol">IFind</span>
+  <span class="s-exp">(</span><span class="symbol">-find</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="conditional">case</span> <span class="symbol">k</span>
+      <span class="number">0</span> <span class="s-exp">(</span><span class="symbol">MapEntry.</span> <span class="number">0</span> <span class="core-fn">key</span> <span class="nil">nil</span><span class="s-exp">)</span>
+      <span class="number">1</span> <span class="s-exp">(</span><span class="symbol">MapEntry.</span> <span class="number">1</span> <span class="core-fn">val</span> <span class="nil">nil</span><span class="s-exp">)</span>
+      <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IVector
-  (<span class="hljs-name">-assoc-n</span> [node n v]
-    (<span class="hljs-name">-assoc-n</span> [key val] n v))
+  <span class="symbol">IVector</span>
+  <span class="s-exp">(</span><span class="symbol">-assoc-n</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">n</span> <span class="symbol">v</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-assoc-n</span> <span class="s-exp">[</span><span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">]</span> <span class="symbol">n</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IReduce
-  (<span class="hljs-name">-reduce</span> [node f]
-    (<span class="hljs-name">ci-reduce</span> node f))
+  <span class="symbol">IReduce</span>
+  <span class="s-exp">(</span><span class="symbol">-reduce</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">f</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">ci-reduce</span> <span class="symbol">node</span> <span class="symbol">f</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-reduce</span> [node f start]
-    (<span class="hljs-name">ci-reduce</span> node f start))
+  <span class="s-exp">(</span><span class="symbol">-reduce</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">f</span> <span class="symbol">start</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">ci-reduce</span> <span class="symbol">node</span> <span class="symbol">f</span> <span class="symbol">start</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  IFn
-  (<span class="hljs-name">-invoke</span> [node k]
-    (<span class="hljs-name">-nth</span> node k))
+  <span class="symbol">IFn</span>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">k</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">node</span> <span class="symbol">k</span><span class="s-exp">)</span><span class="s-exp">)</span>
 
-  (<span class="hljs-name">-invoke</span> [node k not-found]
-    (<span class="hljs-name">-nth</span> node k not-found)))</code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
+  <span class="s-exp">(</span><span class="symbol">-invoke</span> <span class="s-exp">[</span><span class="symbol">node</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">]</span>
+    <span class="s-exp">(</span><span class="symbol">-nth</span> <span class="symbol">node</span> <span class="symbol">k</span> <span class="symbol">not-found</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
