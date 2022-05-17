@@ -2,8 +2,8 @@
 <p>When applied to a map, returns a new map that contains the mapping of key(s) to
 val(s).</p>
 <p>Has no effect on the map type (hashed/sorted).</p>
-<p>When applied to a vector, returns a new vector that contains value <code class="syntax"><span class="symbol">v</span></code> at index
-<code class="syntax"><span class="symbol">k</span></code>.</p>
+<p>When applied to a vector, returns a new vector that contains value <code>v</code> at index
+<code>k</code>.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">my-map</span> <span class="s-exp">{</span><span class="keyword">:foo</span> <span class="number">1</span><span class="s-exp">}</span><span class="s-exp">)</span>
 
 <span class="s-exp">(</span><span class="core-fn">assoc</span> <span class="symbol">my-map</span> <span class="keyword">:foo</span> <span class="number">2</span><span class="s-exp">)</span>
@@ -30,7 +30,7 @@ val(s).</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/assoc-in">assoc-in</a></li><li><a href="/api/cljs.core/dissoc">dissoc</a></li><li><a href="/api/cljs.core/merge">merge</a></li></ul><hr />Source docstring:<pre>assoc[iate]. When applied to a map, returns a new map of the
 same (hashed/sorted) type, that contains the mapping of key(s) to
 val(s). When applied to a vector, returns a new vector that
-contains val at index. Note - index must be <= (count vector).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/cljs/cljs/core.cljs#L1998-L2013">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">assoc</span>
+contains val at index. Note - index must be <= (count vector).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/cljs/cljs/core.cljs#L1998-L2013">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">assoc</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="symbol">implements?</span> <span class="symbol">IAssociative</span> <span class="symbol">coll</span><span class="s-exp">)</span>
      <span class="s-exp">(</span><span class="symbol">-assoc</span> <span class="symbol">coll</span> <span class="symbol">k</span> <span class="symbol">v</span><span class="s-exp">)</span>

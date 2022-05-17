@@ -3,7 +3,7 @@
 by zero or more modifiers, and yields a lazy sequence of evaluations of expr.</p>
 <p>Collections are iterated in a nested fashion, rightmost fastest, and nested
 coll-exprs can refer to bindings created in prior binding-forms. Supported
-modifiers are: <code class="syntax"><span class="keyword">:let</span> <span class="s-exp">[</span><span class="symbol">binding-form</span> <span class="symbol">expr</span> <span class="symbol">...</span><span class="s-exp">]</span></code>, <code class="syntax"><span class="keyword">:while</span> <span class="core-fn">test</span></code>, <code class="syntax"><span class="keyword">:when</span> <span class="core-fn">test</span></code>.</p>
+modifiers are: <code>:let [binding-form expr ...]</code>, <code>:while test</code>, <code>:when test</code>.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/doseq">doseq</a></li><li><a href="/api/cljs.core/doall">doall</a></li><li><a href="/api/cljs.core/recur">recur</a></li></ul><hr />Source docstring:<pre>List comprehension. Takes a vector of one or more
  binding-form/collection-expr pairs, each followed by zero or more
  modifiers, and yields a lazy sequence of evaluations of expr.
@@ -12,7 +12,7 @@ modifiers are: <code class="syntax"><span class="keyword">:let</span> <span clas
  binding-forms.  Supported modifiers are: :let [binding-form expr ...],
  :while test, :when test.
 
-(take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)]  [x y]))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/clojure/cljs/core.cljc#L2439-L2524">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">for</span>
+(take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)]  [x y]))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/core.cljc#L2439-L2524">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">for</span>
   <span class="s-exp">[</span><span class="symbol">seq-exprs</span> <span class="symbol">body-expr</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">assert-args</span> <span class="macro">for</span>
     <span class="s-exp">(</span><span class="core-fn">vector?</span> <span class="symbol">seq-exprs</span><span class="s-exp">)</span> <span class="string">"a vector for its binding"</span>

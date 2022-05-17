@@ -1,17 +1,17 @@
 <html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>destructure {}</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="g">destructure {}</h1><table><tr><td>binding</td><td>since v0.0-927</td><td><a href="http://clojure.org/reference/special_forms#_map_binding_destructuring"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> in clojure</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/syntax/destructure-map.md">Edit</a></td></tr></table><div><p>Shorthand for destructuring a map into multiple names. Allows you to use a
-<code class="syntax"><span class="s-exp">{</span><span class="symbol">...</span><span class="s-exp">}</span></code> pattern instead of a usual <code class="syntax"><span class="core-fn">name</span></code> in the following examples:</p>
+<code>{...}</code> pattern instead of a usual <code>name</code> in the following examples:</p>
 <ul>
-<li><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="s-exp">[</span><span class="core-fn">name</span><span class="s-exp">]</span><span class="s-exp">)</span></code> -&gt; <code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="s-exp">[</span><span class="s-exp">{</span><span class="symbol">...</span><span class="s-exp">}</span><span class="s-exp">]</span><span class="s-exp">)</span></code></li>
-<li><code class="syntax"><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="core-fn">name</span> <span class="core-fn">map</span><span class="s-exp">]</span><span class="s-exp">)</span></code> -&gt; <code class="syntax"><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="s-exp">{</span><span class="symbol">...</span><span class="s-exp">}</span> <span class="core-fn">map</span><span class="s-exp">]</span><span class="s-exp">)</span></code></li>
-<li><code class="syntax"><span class="s-exp">(</span><span class="macro">for</span> <span class="s-exp">[</span><span class="core-fn">name</span> <span class="symbol">maps</span><span class="s-exp">]</span><span class="s-exp">)</span></code> -&gt; <code class="syntax"><span class="s-exp">(</span><span class="macro">for</span> <span class="s-exp">[</span><span class="s-exp">{</span><span class="symbol">...</span><span class="s-exp">}</span> <span class="symbol">maps</span><span class="s-exp">]</span><span class="s-exp">)</span></code></li>
+<li><code>(defn [name])</code> -&gt; <code>(defn [{...}])</code></li>
+<li><code>(let [name map])</code> -&gt; <code>(let [{...} map])</code></li>
+<li><code>(for [name maps])</code> -&gt; <code>(for [{...} maps])</code></li>
 </ul>
 <p>Quick pattern reference:</p>
 <ul>
-<li><code class="syntax"><span class="s-exp">{</span><span class="core-fn">name</span> <span class="symbol">lookup</span><span class="s-exp">}</span></code> - name is bound using the lookup key</li>
-<li><code class="syntax"><span class="s-exp">{</span><span class="keyword">:keys</span> <span class="s-exp">[</span><span class="symbol">...</span><span class="s-exp">]</span><span class="s-exp">}</span></code> - names bound using keywords as lookup keys</li>
-<li><code class="syntax"><span class="s-exp">{</span><span class="keyword">:strs</span> <span class="s-exp">[</span><span class="symbol">...</span><span class="s-exp">]</span><span class="s-exp">}</span></code> - names bound using strings as lookup keys</li>
-<li><code class="syntax"><span class="s-exp">{</span><span class="keyword">:syms</span> <span class="s-exp">[</span><span class="symbol">...</span><span class="s-exp">]</span><span class="s-exp">}</span></code> - names bound using symbols as lookup keys</li>
-<li><code class="syntax"><span class="s-exp">{</span><span class="keyword">:as</span> <span class="core-fn">name</span><span class="s-exp">}</span></code> - name is bound to whole value</li>
+<li><code>{name lookup}</code> - name is bound using the lookup key</li>
+<li><code>{:keys [...]}</code> - names bound using keywords as lookup keys</li>
+<li><code>{:strs [...]}</code> - names bound using strings as lookup keys</li>
+<li><code>{:syms [...]}</code> - names bound using symbols as lookup keys</li>
+<li><code>{:as name}</code> - name is bound to whole value</li>
 </ul>
 </div><hr /><h3>Details:</h3><div><p>A helpful shorthand for binding names to values inside a map.</p>
 <p>The destructure map can be a map from a symbol to a lookup value:</p>
@@ -32,20 +32,20 @@
   <span class="s-exp">(</span><span class="core-fn">println</span> <span class="symbol">foo</span> <span class="symbol">bar</span><span class="s-exp">)</span><span class="s-exp">)</span>
 <span class="comment">;; 1 2
 </span></code></pre>
-<p>Different key types are supported using <code class="syntax"><span class="keyword">:keys</span></code>, <code class="syntax"><span class="keyword">:strs</span></code>, or <code class="syntax"><span class="keyword">:syms</span></code>, which
+<p>Different key types are supported using <code>:keys</code>, <code>:strs</code>, or <code>:syms</code>, which
 map to the manual destructuring forms below:</p>
 <ul>
-<li><code class="syntax"><span class="s-exp">{</span><span class="keyword">:keys</span> <span class="s-exp">[</span><span class="symbol">foo</span><span class="s-exp">]</span><span class="s-exp">}</span></code> -&gt; <code class="syntax"><span class="s-exp">{</span><span class="symbol">foo</span> <span class="keyword">:foo</span> <span class="s-exp">}</span></code></li>
-<li><code class="syntax"><span class="s-exp">{</span><span class="keyword">:strs</span> <span class="s-exp">[</span><span class="symbol">foo</span><span class="s-exp">]</span><span class="s-exp">}</span></code> -&gt; <code class="syntax"><span class="s-exp">{</span><span class="symbol">foo</span> <span class="string">"foo"</span><span class="s-exp">}</span></code></li>
-<li><code class="syntax"><span class="s-exp">{</span><span class="keyword">:syms</span> <span class="s-exp">[</span><span class="symbol">foo</span><span class="s-exp">]</span><span class="s-exp">}</span></code> -&gt; <code class="syntax"><span class="s-exp">{</span><span class="symbol">foo</span> <span class="reader-char">'</span><span class="symbol">foo</span> <span class="s-exp">}</span></code></li>
+<li><code>{:keys [foo]}</code> -&gt; <code>{foo :foo }</code></li>
+<li><code>{:strs [foo]}</code> -&gt; <code>{foo &quot;foo&quot;}</code></li>
+<li><code>{:syms [foo]}</code> -&gt; <code>{foo 'foo }</code></li>
 </ul>
-<p>Use <code class="syntax"><span class="keyword">:as</span> <span class="symbol">foo</span></code> to name the original value:</p>
+<p>Use <code>:as foo</code> to name the original value:</p>
 <pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span> <span class="s-exp">{</span><span class="keyword">:keys</span> <span class="s-exp">[</span><span class="symbol">foo</span> <span class="symbol">bar</span><span class="s-exp">]</span> <span class="keyword">:as</span> <span class="symbol">whole</span><span class="s-exp">}</span>
        <span class="s-exp">{</span><span class="keyword">:foo</span> <span class="number">1</span>, <span class="keyword">:bar</span> <span class="number">2</span><span class="s-exp">}</span> <span class="s-exp">]</span>
   <span class="symbol">whole</span><span class="s-exp">)</span>
 <span class="comment">;;=> {:foo 1, :bar 2}
 </span></code></pre>
-<p>Use <code class="syntax"><span class="keyword">:or</span> <span class="s-exp">{</span><span class="s-exp">}</span></code> to provide default values if missing:</p>
+<p>Use <code>:or {}</code> to provide default values if missing:</p>
 <pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span> <span class="s-exp">{</span><span class="keyword">:keys</span> <span class="s-exp">[</span><span class="symbol">foo</span> <span class="symbol">bar</span><span class="s-exp">]</span> <span class="keyword">:or</span> <span class="s-exp">{</span><span class="symbol">bar</span> <span class="number">0</span><span class="s-exp">}</span> <span class="s-exp">}</span>
        <span class="s-exp">{</span><span class="keyword">:foo</span> <span class="number">1</span><span class="s-exp">}</span> <span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="core-fn">println</span> <span class="symbol">foo</span> <span class="symbol">bar</span><span class="s-exp">)</span><span class="s-exp">)</span>
@@ -54,9 +54,9 @@ map to the manual destructuring forms below:</p>
 <p>Use the special destructuring map in place of any local name binding in the
 following forms:</p>
 <ul>
-<li><code class="syntax"><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">...</span><span class="s-exp">]</span><span class="s-exp">)</span></code></li>
-<li><code class="syntax"><span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="symbol">...</span><span class="s-exp">]</span><span class="s-exp">)</span></code></li>
-<li><code class="syntax"><span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">...</span><span class="s-exp">]</span><span class="s-exp">)</span></code></li>
+<li><code>(let [...])</code></li>
+<li><code>(fn [...])</code></li>
+<li><code>(loop [...])</code></li>
 </ul>
 <p>Destructure maps can be nested, even in place of names in <a href="/api/syntax/destructure-vector">destructure
 vectors</a>.</p>
@@ -74,7 +74,7 @@ vectors</a>.</p>
   <span class="s-exp">(</span><span class="core-fn">println</span> <span class="symbol">a</span> <span class="symbol">b</span><span class="s-exp">)</span><span class="s-exp">)</span>
 <span class="comment">;; 1 2
 </span></code></pre>
-</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/destructure-vector">destructure []</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/clojure/cljs/core.cljc#L629-L730">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defn</span> <span class="core-fn">destructure</span> <span class="s-exp">[</span><span class="symbol">bindings</span><span class="s-exp">]</span>
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/destructure-vector">destructure []</a></li></ul><hr /><div>Parser code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/core.cljc#L629-L730">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defn</span> <span class="core-fn">destructure</span> <span class="s-exp">[</span><span class="symbol">bindings</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">bents</span> <span class="s-exp">(</span><span class="core-fn">partition</span> <span class="number">2</span> <span class="symbol">bindings</span><span class="s-exp">)</span>
              <span class="symbol">pb</span> <span class="s-exp">(</span><span class="symbol">core/fn</span> <span class="symbol">pb</span> <span class="s-exp">[</span><span class="symbol">bvec</span> <span class="symbol">b</span> <span class="symbol">v</span><span class="s-exp">]</span>
                   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">pvec</span>

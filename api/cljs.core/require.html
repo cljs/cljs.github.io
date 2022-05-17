@@ -7,20 +7,20 @@ libs are loaded.</p>
 options expressed as sequential keywords and arguments.</p>
 <p>Recognized options:</p>
 <ul>
-<li><code class="syntax"><span class="keyword">:as</span></code> takes a symbol as its argument and makes that symbol an alias to the
+<li><code>:as</code> takes a symbol as its argument and makes that symbol an alias to the
 lib's namespace in the current namespace.</li>
-<li><code class="syntax"><span class="keyword">:refer</span></code> takes a list of symbols to refer from the namespace..</li>
-<li><code class="syntax"><span class="keyword">:refer-macros</span></code> takes a list of macro symbols to refer from the namespace.</li>
-<li><code class="syntax"><span class="keyword">:include-macros</span></code> takes a list of macro symbols to refer from the namespace.</li>
+<li><code>:refer</code> takes a list of symbols to refer from the namespace..</li>
+<li><code>:refer-macros</code> takes a list of macro symbols to refer from the namespace.</li>
+<li><code>:include-macros</code> takes a list of macro symbols to refer from the namespace.</li>
 </ul>
 <h3>Flags</h3>
 <p>A flag is a keyword. Recognized flags:</p>
 <ul>
-<li><code class="syntax"><span class="keyword">:reload</span></code> forces loading of all the identified libs even if they are
+<li><code>:reload</code> forces loading of all the identified libs even if they are
 already loaded</li>
-<li><code class="syntax"><span class="keyword">:reload-all</span></code> implies :reload and also forces loading of all libs that the
+<li><code>:reload-all</code> implies :reload and also forces loading of all libs that the
 identified libs directly or indirectly load via require or use</li>
-<li><code class="syntax"><span class="keyword">:verbose</span></code> triggers printing information about each load, alias, and refer</li>
+<li><code>:verbose</code> triggers printing information about each load, alias, and refer</li>
 </ul>
 </div><hr /><h3>Examples:</h3><div><pre><code class="syntax"><span class="s-exp">(</span><span class="core-fn">require</span> <span class="reader-char">'</span><span class="s-exp">[</span><span class="symbol">clojure.string</span> <span class="keyword">:as</span> <span class="symbol">string</span><span class="s-exp">]</span><span class="s-exp">)</span>
 </code></pre>
@@ -74,6 +74,6 @@ Example:
 
 The following would load the library clojure.string :as string.
 
-(require '[clojure.string :as string])</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/clojure/cljs/core.cljc#L2982-L3035">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="core-fn">require</span>
+(require '[clojure.string :as string])</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/core.cljc#L2982-L3035">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="core-fn">require</span>
   <span class="s-exp">[</span><span class="reader-char">&</span> <span class="symbol">args</span><span class="s-exp">]</span>
   <span class="reader-char">`</span><span class="s-exp">(</span><span class="reader-char">~</span><span class="reader-char">'</span><span class="symbol">ns*</span> <span class="reader-char">~</span><span class="s-exp">(</span><span class="core-fn">cons</span> <span class="keyword">:require</span> <span class="symbol">args</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

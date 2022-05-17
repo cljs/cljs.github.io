@@ -1,14 +1,14 @@
 <html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>\ character</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="g">\ character</h1><table><tr><td>syntax</td><td>since v0.0-1853</td><td><a href="http://clojure.org/reference/reader#_literals"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> in clojure</a></td><td><a href="https://github.com/edn-format/edn#characters"> in edn</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/syntax/character.md">Edit</a></td></tr></table><div><p>A single character string.</p>
 <ul>
-<li><code class="syntax"><span class="character">\c</span></code> =&gt; <code class="syntax"><span class="string">"c"</span></code></li>
-<li><code class="syntax"><span class="character">\A</span></code> =&gt; <code class="syntax"><span class="string">"A"</span></code></li>
-<li><code class="syntax"><span class="character">\newline</span></code> =&gt; <code class="syntax"><span class="string">"\n"</span></code></li>
-<li><code class="syntax"><span class="character">\u00a1</span></code> =&gt; <code class="syntax"><span class="string">"¡"</span></code></li>
-<li><code class="syntax"><span class="character">\o</span><span class="number">256</span></code> =&gt; <code class="syntax"><span class="string">"®"</span></code></li>
+<li><code>\c</code> =&gt; <code>&quot;c&quot;</code></li>
+<li><code>\A</code> =&gt; <code>&quot;A&quot;</code></li>
+<li><code>\newline</code> =&gt; <code>&quot;\n&quot;</code></li>
+<li><code>\u00a1</code> =&gt; <code>&quot;¡&quot;</code></li>
+<li><code>\o256</code> =&gt; <code>&quot;®&quot;</code></li>
 </ul>
 </div><hr /><h3>Details:</h3><div><p>A single character string.  Carried over from Clojure for
 compatibility.  They are represented as single character JavaScript strings.</p>
-<p><code class="syntax"><span class="character">\c</span></code> = <code class="syntax"><span class="string">"c"</span></code></p>
+<p><code>\c</code> = <code>&quot;c&quot;</code></p>
 <table>
 <thead>
 <tr>
@@ -18,11 +18,11 @@ compatibility.  They are represented as single character JavaScript strings.</p>
 </thead>
 <tbody>
 <tr>
-<td><code class="syntax"><span class="character">\u</span><span class="symbol">XXXX</span></code></td>
+<td><code>\uXXXX</code></td>
 <td>XXXX must have 4 digits outside 0xD7FF-0xE000</td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="character">\o</span><span class="symbol">XXX</span></code></td>
+<td><code>\oXXX</code></td>
 <td>XXX is octal between 0 and 0377</td>
 </tr>
 </tbody>
@@ -36,28 +36,28 @@ compatibility.  They are represented as single character JavaScript strings.</p>
 </thead>
 <tbody>
 <tr>
-<td><code class="syntax"><span class="character">\newline</span></code></td>
-<td><code class="syntax"><span class="string">"\n"</span></code></td>
+<td><code>\newline</code></td>
+<td><code>&quot;\n&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="character">\space</span></code></td>
-<td><code class="syntax"><span class="string">" "</span></code></td>
+<td><code>\space</code></td>
+<td><code>&quot; &quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="character">\tab</span></code></td>
-<td><code class="syntax"><span class="string">"\t"</span></code></td>
+<td><code>\tab</code></td>
+<td><code>&quot;\t&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="character">\formfeed</span></code></td>
-<td><code class="syntax"><span class="string">"\f"</span></code></td>
+<td><code>\formfeed</code></td>
+<td><code>&quot;\f&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="character">\backspace</span></code></td>
-<td><code class="syntax"><span class="string">"\b"</span></code></td>
+<td><code>\backspace</code></td>
+<td><code>&quot;\b&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="character">\return</span></code></td>
-<td><code class="syntax"><span class="string">"\r"</span></code></td>
+<td><code>\return</code></td>
+<td><code>&quot;\r&quot;</code></td>
 </tr>
 </tbody>
 </table>

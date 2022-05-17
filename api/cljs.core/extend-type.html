@@ -1,47 +1,47 @@
 <html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>extend-type</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="y">extend-type</h1><table><tr><td>macro</td><td>since v0.0-927</td><td><a href="http://clojure.github.io/clojure/branch-master/clojure.core-api.html#clojure.core/extend-type"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> clojure.core/extend-type</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/cljs.core/extend-type.md">Edit</a></td></tr></table><div><code>(extend-type type-sym & impls)</code></div><hr /><h3>Details:</h3><div><p>Extend a [type] to implement one or more [protocols].</p>
-<p><code class="syntax"><span class="symbol">type-sym</span></code> can be the result of a <a href="/api/cljs.core/deftype"><code class="syntax"><span class="definition">deftype</span></code></a> or any JS constructor
-function (e.g. <code class="syntax"><span class="symbol">js/Date</span></code>).  But when targetting JS base types (e.g.
-<code class="syntax"><span class="symbol">js/Number</span></code>, <code class="syntax"><span class="symbol">js/String</span></code>), you must use special <em>type symbols</em> instead.  These
-type symbols are associated with type strings deduced by <a href="http://google.github.io/closure-library/api/namespace_goog.html#typeOf"><code class="syntax"><span class="symbol">goog/typeOf</span></code></a>:</p>
+<p><code>type-sym</code> can be the result of a <a href="/api/cljs.core/deftype"><code>deftype</code></a> or any JS constructor
+function (e.g. <code>js/Date</code>).  But when targetting JS base types (e.g.
+<code>js/Number</code>, <code>js/String</code>), you must use special <em>type symbols</em> instead.  These
+type symbols are associated with type strings deduced by <a href="http://google.github.io/closure-library/api/namespace_goog.html#typeOf"><code>goog/typeOf</code></a>:</p>
 <table>
 <thead>
 <tr>
 <th>type symbol</th>
-<th>corresponding <code class="syntax"><span class="symbol">goog/typeOf</span></code> value</th>
+<th>corresponding <code>goog/typeOf</code> value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code class="syntax"><span class="nil">nil</span></code></td>
-<td><code class="syntax"><span class="string">"null"</span></code></td>
+<td><code>nil</code></td>
+<td><code>&quot;null&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="symbol">object</span></code></td>
-<td><code class="syntax"><span class="string">"object"</span></code></td>
+<td><code>object</code></td>
+<td><code>&quot;object&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="symbol">string</span></code></td>
-<td><code class="syntax"><span class="string">"string"</span></code></td>
+<td><code>string</code></td>
+<td><code>&quot;string&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="symbol">number</span></code></td>
-<td><code class="syntax"><span class="string">"number"</span></code></td>
+<td><code>number</code></td>
+<td><code>&quot;number&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="symbol">array</span></code></td>
-<td><code class="syntax"><span class="string">"array"</span></code></td>
+<td><code>array</code></td>
+<td><code>&quot;array&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="symbol">function</span></code></td>
-<td><code class="syntax"><span class="string">"function"</span></code></td>
+<td><code>function</code></td>
+<td><code>&quot;function&quot;</code></td>
 </tr>
 <tr>
-<td><code class="syntax"><span class="core-fn">boolean</span></code></td>
-<td><code class="syntax"><span class="string">"boolean"</span></code></td>
+<td><code>boolean</code></td>
+<td><code>&quot;boolean&quot;</code></td>
 </tr>
 </tbody>
 </table>
-<p><code class="syntax"><span class="symbol">type-sym</span></code> can also be specified as <code class="syntax"><span class="symbol">default</span></code> in order to provide default
+<p><code>type-sym</code> can also be specified as <code>default</code> in order to provide default
 implementations for protocols.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/extend-protocol">extend-protocol</a></li></ul><hr />Source docstring:<pre>Extend a type to a series of protocols. Useful when you are
 supplying the definitions explicitly inline. Propagates the
@@ -66,7 +66,7 @@ type-sym may be
   (-count [c] ...)
   Foo
   (bar [x y] ...)
-  (baz ([x] ...) ([x y] ...) ...)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/clojure/cljs/core.cljc#L1624-L1664">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">extend-type</span>
+  (baz ([x] ...) ([x y] ...) ...)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/core.cljc#L1624-L1664">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">extend-type</span>
   <span class="s-exp">[</span><span class="symbol">type-sym</span> <span class="reader-char">&</span> <span class="symbol">impls</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">env</span> <span class="symbol">&env</span>
              <span class="symbol">_</span> <span class="s-exp">(</span><span class="symbol">validate-impls</span> <span class="symbol">env</span> <span class="symbol">impls</span><span class="s-exp">)</span>

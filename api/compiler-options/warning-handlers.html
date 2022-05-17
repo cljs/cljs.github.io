@@ -4,9 +4,9 @@ a single function which prints to stderr.</p>
 </code></pre>
 </div><hr /><h3>Details:</h3><div><p>A warning handler function receives three args:</p>
 <ul>
-<li><code class="syntax"><span class="symbol">warning-type</span></code> - a keyword id (one of <a href="/api/compiler-options/warnings"><code class="syntax"><span class="keyword">:warnings</span></code></a>)</li>
-<li><code class="syntax"><span class="symbol">env</span></code> - compiler environment map</li>
-<li><code class="syntax"><span class="symbol">extra</span></code> - map containing extra data specific to the warning</li>
+<li><code>warning-type</code> - a keyword id (one of <a href="/api/compiler-options/warnings"><code>:warnings</code></a>)</li>
+<li><code>env</code> - compiler environment map</li>
+<li><code>extra</code> - map containing extra data specific to the warning</li>
 </ul>
 </div><hr /><h3>Examples:</h3><div><p>To make warnings fail the build:</p>
 <pre><code class="syntax"><span class="keyword">:warning-handlers</span>

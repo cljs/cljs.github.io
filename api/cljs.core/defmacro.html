@@ -5,15 +5,15 @@ primitives or built-in support in other languages.</p>
 difficult.  Also, creating macros is generally discouraged if you can
 accomplish the same goal with a function.</p>
 <h3>Rules and Details</h3>
-<p>There is a strict rule for when you can use <code class="syntax"><span class="definition">defmacro</span></code> -- you can only use it
+<p>There is a strict rule for when you can use <code>defmacro</code> -- you can only use it
 in what we call a <em>macro namespace</em>, effectively forcing you to separate your
 compile time and runtime code.</p>
-<p>A side effect of this is that you cannot use <code class="syntax"><span class="definition">defmacro</span></code> from a REPL.  Sorry!</p>
+<p>A side effect of this is that you cannot use <code>defmacro</code> from a REPL.  Sorry!</p>
 <p>This strict rule is due to the nature of differing compile time environments
 for the optimized &quot;ClojureScript JVM&quot; compiler and the newer bootstrapped
 &quot;ClojureScript JS&quot; compiler.</p>
 <p>In order to create macros that are portable between either compiler version,
-you must place macros in a <code class="syntax"><span class="symbol">.cljc</span></code> file, but a <code class="syntax"><span class="symbol">.clj</span></code> file is sufficient if no
+you must place macros in a <code>.cljc</code> file, but a <code>.clj</code> file is sufficient if no
 <a href="/api/syntax/cond">reader conditionals</a> are needed.  Why would they be needed?
 Because ClojureScript macro namespaces may be handed off to Clojure for
 evaluation, depending on the compiler version:</p>
@@ -36,8 +36,8 @@ evaluation, depending on the compiler version:</p>
 </tbody>
 </table>
 <p>Please see the examples section below for a more concrete look.</p>
-</div><hr /><h3>Examples:</h3><div><p>Here is a <code class="syntax"><span class="symbol">str->int</span></code> macro that works for either ClojureScript compiler
-version.  It simply expands to a <code class="syntax"><span class="symbol">js/parseInt</span></code> call:</p>
+</div><hr /><h3>Examples:</h3><div><p>Here is a <code>str-&gt;int</code> macro that works for either ClojureScript compiler
+version.  It simply expands to a <code>js/parseInt</code> call:</p>
 <pre><code class="syntax"><span class="comment">;; in macros.clj
 </span><span class="s-exp">(</span><span class="macro">ns</span> <span class="symbol">foo.macros</span><span class="s-exp">)</span>
 
@@ -46,7 +46,7 @@ version.  It simply expands to a <code class="syntax"><span class="symbol">js/pa
   <span class="reader-char">`</span><span class="s-exp">(</span><span class="symbol">js/parseInt</span> <span class="symbol">s</span><span class="s-exp">)</span><span class="s-exp">)</span>
 </code></pre>
 <p>If we want to evaluate the conversion at <em>compile time</em> instead of expanding it
-to a runtime call, we must use reader conditionals (in a <code class="syntax"><span class="symbol">.cljc</span></code> file) to
+to a runtime call, we must use reader conditionals (in a <code>.cljc</code> file) to
 choose the function appropriate for each compiler's evaluation environment.</p>
 <pre><code class="syntax"><span class="comment">;; in macros.cljc
 </span><span class="s-exp">(</span><span class="macro">ns</span> <span class="symbol">foo.macros</span><span class="s-exp">)</span>
@@ -58,7 +58,7 @@ choose the function appropriate for each compiler's evaluation environment.</p>
 </code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/syntax-quote">` syntax quote</a></li><li><a href="/api/syntax/unquote">~ unquote</a></li><li><a href="/api/cljs.core/macroexpand">macroexpand</a></li><li><a href="/api/cljs.core/macroexpand-1">macroexpand-1</a></li></ul><hr />Source docstring:<pre>Like defn, but the resulting function name is declared as a
 macro and will be used as a macro by the compiler when it is
-called.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.51/src/main/clojure/cljs/core.cljc#L3372-L3413">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defn</span> <span class="definition">defmacro</span>
+called.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/core.cljc#L3372-L3413">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defn</span> <span class="definition">defmacro</span>
   <span class="s-exp">[</span><span class="symbol">&form</span> <span class="symbol">&env</span> <span class="core-fn">name</span> <span class="reader-char">&</span> <span class="symbol">args</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">prefix</span> <span class="s-exp">(</span><span class="symbol">core/loop</span> <span class="s-exp">[</span><span class="symbol">p</span> <span class="s-exp">(</span><span class="symbol">core/list</span> <span class="s-exp">(</span><span class="core-fn">vary-meta</span> <span class="core-fn">name</span> <span class="core-fn">assoc</span> <span class="keyword">:macro</span> <span class="boolean">true</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="symbol">args</span> <span class="symbol">args</span><span class="s-exp">]</span>
                       <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">f</span> <span class="s-exp">(</span><span class="core-fn">first</span> <span class="symbol">args</span><span class="s-exp">)</span><span class="s-exp">]</span>
