@@ -7,7 +7,7 @@ It can also use <code>idx</code> to get the current index.</p>
 </span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/reduce">reduce</a></li></ul><hr />Source docstring:<pre>Reduces an expression across an array a, using an index named idx,
 and return value named ret, initialized to init, setting ret to the
-evaluation of expr at each step, returning ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/core.cljc#L2716-L2726">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">areduce</span>
+evaluation of expr at each step, returning ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/clojure/cljs/core.cljc#L2717-L2727">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">areduce</span>
   <span class="s-exp">[</span><span class="symbol">a</span> <span class="symbol">idx</span> <span class="symbol">ret</span> <span class="symbol">init</span> <span class="symbol">expr</span><span class="s-exp">]</span>
   <span class="reader-char">`</span><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span>a<span class="reader-char">#</span> <span class="reader-char">~</span><span class="symbol">a</span>
          l<span class="reader-char">#</span> <span class="s-exp">(</span><span class="core-fn">alength</span> a<span class="reader-char">#</span><span class="s-exp">)</span><span class="s-exp">]</span>

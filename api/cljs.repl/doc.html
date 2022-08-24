@@ -14,7 +14,7 @@
 </span><span class="comment">;;=> nil
 </span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.repl/find-doc">cljs.repl/find-doc</a></li><li><a href="/api/cljs.core/meta">meta</a></li><li><a href="/api/cljs.core/var">var</a></li></ul><hr />Source docstring:<pre>Prints documentation for a var or special form given its name,
-or for a spec if given a keyword</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/repl.cljc#L1431-L1469">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">doc</span>
+or for a spec if given a keyword</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/clojure/cljs/repl.cljc#L1431-L1469">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">doc</span>
   <span class="s-exp">[</span><span class="core-fn">name</span><span class="s-exp">]</span>
   <span class="reader-char">`</span><span class="s-exp">(</span><span class="core-fn">print</span>
      <span class="s-exp">(</span><span class="macro">binding</span> <span class="s-exp">[</span><span class="symbol">cljs.core/*print-newline*</span> <span class="boolean">true</span><span class="s-exp">]</span>

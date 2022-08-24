@@ -3,7 +3,7 @@
  :infinite? - whether +/- infinity allowed (default true)
  :NaN?      - whether NaN allowed (default true)
  :min       - minimum value (inclusive, default none)
- :max       - maximum value (inclusive, default none)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/cljs/cljs/spec/alpha.cljc#L495-L510">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">double-in</span>
+ :max       - maximum value (inclusive, default none)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/spec/alpha.cljc#L495-L510">clojurescript:src/main/cljs/cljs/spec/alpha.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">double-in</span>
   <span class="s-exp">[</span><span class="reader-char">&</span> <span class="s-exp">{</span><span class="keyword">:keys</span> <span class="s-exp">[</span><span class="symbol">infinite?</span> <span class="symbol">NaN?</span> <span class="core-fn">min</span> <span class="core-fn">max</span><span class="s-exp">]</span>
       <span class="keyword">:or</span> <span class="s-exp">{</span><span class="symbol">infinite?</span> <span class="boolean">true</span> <span class="symbol">NaN?</span> <span class="boolean">true</span><span class="s-exp">}</span>
       <span class="keyword">:as</span> <span class="symbol">m</span><span class="s-exp">}</span><span class="s-exp">]</span>

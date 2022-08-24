@@ -4,7 +4,7 @@ groups if the regular expression contains capturing groups.</p>
 </div><hr />Source docstring:<pre>Returns the first regex match, if any, of s to re, using
 re.exec(s). Returns a vector, containing first the matching
 substring, then any capturing groups if the regular expression contains
-capturing groups.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/cljs/cljs/core.cljs#L10236-L10248">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">re-find</span>
+capturing groups.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/core.cljs#L10236-L10248">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">re-find</span>
   <span class="s-exp">[</span><span class="symbol">re</span> <span class="symbol">s</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">string?</span> <span class="symbol">s</span><span class="s-exp">)</span>
     <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">matches</span> <span class="s-exp">(</span><span class="symbol">.exec</span> <span class="symbol">re</span> <span class="symbol">s</span><span class="s-exp">)</span><span class="s-exp">]</span>

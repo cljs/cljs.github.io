@@ -2,7 +2,7 @@
 <p>Load file at <code>filename</code>, then compiles and evaluates its code.</p>
 </div><hr /><h3>Examples:</h3><div><pre><code class="syntax"><span class="s-exp">(</span><span class="core-fn">load-file</span> <span class="string">"path/to/foo.cljs"</span><span class="s-exp">)</span>
 </code></pre>
-</div><hr />Source docstring:<pre>Sequentially read and evaluate the set of forms contained in the file.</pre><div>repl specials table @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/repl.cljc#L754-L793">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">default-special-fns</span>
+</div><hr />Source docstring:<pre>Sequentially read and evaluate the set of forms contained in the file.</pre><div>repl specials table @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/clojure/cljs/repl.cljc#L754-L793">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">default-special-fns</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">load-file-fn</span>
         <span class="s-exp">(</span><span class="special-form">fn</span> <span class="symbol">self</span>
           <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">repl-env</span> <span class="symbol">env</span> <span class="symbol">form</span><span class="s-exp">]</span>

@@ -5,7 +5,7 @@ Does not interpret #! as comment to end of line because only one
 character of lookahead is available. The stream must either be an
 instance of LineNumberingPushbackReader or duplicate its behavior of both
 supporting .unread and collapsing all of CR, LF, and CRLF to a single
-\newline.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/clojure/cljs/repl.cljc#L66-L83">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">skip-whitespace</span>
+\newline.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/clojure/cljs/repl.cljc#L66-L83">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">skip-whitespace</span>
   <span class="s-exp">[</span><span class="symbol">s</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">c</span> <span class="s-exp">(</span><span class="symbol">readers/read-char</span> <span class="symbol">s</span><span class="s-exp">)</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="conditional">case</span> <span class="symbol">c</span>

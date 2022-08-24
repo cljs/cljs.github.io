@@ -40,7 +40,7 @@ parenthesized group in the pattern.
 
 Example:
 (clojure.string/replace "Almost Pig Latin" #"\b(\w)(\w+)\b" "$2$1ay")
--> "lmostAay igPay atinLay"</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/cljs/clojure/string.cljs#L44-L74">clojurescript:src/main/cljs/clojure/string.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">string</span> <span class="core-fn">replace</span>
+-> "lmostAay igPay atinLay"</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/clojure/string.cljs#L44-L74">clojurescript:src/main/cljs/clojure/string.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">string</span> <span class="core-fn">replace</span>
   <span class="s-exp">[</span><span class="symbol">s</span> <span class="symbol">match</span> <span class="symbol">replacement</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">cond</span>
     <span class="s-exp">(</span><span class="core-fn">string?</span> <span class="symbol">match</span><span class="s-exp">)</span>

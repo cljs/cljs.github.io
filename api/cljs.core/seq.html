@@ -3,7 +3,7 @@
 <p><code>seq</code> also works on strings.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/seqQMARK">seq?</a></li><li><a href="/api/cljs.core/emptyQMARK">empty?</a></li></ul><hr />Source docstring:<pre>Returns a seq on the collection. If the collection is
 empty, returns nil.  (seq nil) returns nil. seq also works on
-Strings.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/cljs/cljs/core.cljs#L1228-L1253">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="core-fn">seq</span> <span class="core-fn">seq</span>
+Strings.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/core.cljs#L1228-L1253">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="core-fn">seq</span> <span class="core-fn">seq</span>
   <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">when-not</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">coll</span><span class="s-exp">)</span>
     <span class="s-exp">(</span><span class="conditional">cond</span>

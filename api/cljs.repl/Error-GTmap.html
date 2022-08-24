@@ -6,7 +6,7 @@
           :message - exception message
           :data - ex-data
           :at - top stack element
- :trace - root cause stack elements</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.54/src/main/cljs/cljs/repl.cljs#L62-L97">clojurescript:src/main/cljs/cljs/repl.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">Error->map</span>
+ :trace - root cause stack elements</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/repl.cljs#L62-L97">clojurescript:src/main/cljs/cljs/repl.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">Error->map</span>
   <span class="s-exp">[</span><span class="symbol">o</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">base</span> <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="symbol">t</span><span class="s-exp">]</span>
                <span class="s-exp">(</span><span class="core-fn">merge</span> <span class="s-exp">{</span><span class="keyword">:type</span> <span class="s-exp">(</span><span class="conditional">cond</span>
