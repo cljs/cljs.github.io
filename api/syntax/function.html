@@ -13,7 +13,11 @@ to the arguments.</p>
 reason that <code>(1)</code> does evaluate to <code>1</code>.</p>
 <p><code>#()</code> forms cannot be nested, since this would create an ambiguity between the
 automatically assigned <code>%</code> argument names.</p>
-</div><hr /><h3>Examples:</h3><div><pre><code class="syntax"><span class="s-exp">(</span><span class="core-fn">map</span> <span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">*</span> <span class="number">2</span> <span class="keyword">%</span><span class="s-exp">)</span> <span class="s-exp">[</span><span class="number">1</span> <span class="number">2</span> <span class="number">3</span><span class="s-exp">]</span><span class="s-exp">)</span>
+</div><hr /><h3>Examples:</h3><div><p>Quote the form to see how the reader expands it:</p>
+<pre><code class="syntax"><span class="reader-char">'</span><span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">+</span> <span class="keyword">%1</span> <span class="keyword">%2</span><span class="s-exp">)</span>
+<span class="comment">;;=> (fn* [p1__11# p2__12#] (+ p1__11# p2__12#))
+</span></code></pre>
+<pre><code class="syntax"><span class="s-exp">(</span><span class="core-fn">map</span> <span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">*</span> <span class="number">2</span> <span class="keyword">%</span><span class="s-exp">)</span> <span class="s-exp">[</span><span class="number">1</span> <span class="number">2</span> <span class="number">3</span><span class="s-exp">]</span><span class="s-exp">)</span>
 <span class="comment">;;=> (2 4 6)
 </span>
 <span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">f</span> <span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">println</span> <span class="keyword">%1</span> <span class="keyword">%2</span> <span class="keyword">%&</span><span class="s-exp">)</span><span class="s-exp">)</span>

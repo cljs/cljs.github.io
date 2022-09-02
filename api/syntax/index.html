@@ -301,7 +301,7 @@ itself.  It is therefore helpful to be aware of the following subtle differences
 </div></div><hr /><div style="position: relative;"><div class="g" id="deref"><strong>@ deref</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/deref">full details ></a></div><div class="sep"></div><div><p>Get the value that a reference is currently referring to.  A &quot;reference&quot; can
 be a <a href="/api/cljs.core#atom"><code>atom</code></a>, <a href="/api/cljs.core#delay"><code>delay</code></a>, or <a href="/api/cljs.core#var"><code>var</code></a>.</p>
 <ul>
-<li><code>@foo</code> - returns value at reference <code>foo</code></li>
+<li><code>@foo</code> - <code>(deref foo)</code></li>
 </ul>
 </div></div><hr /><h4>Reader Conditionals</h4><div style="position: relative;"><div class="g" id="cond"><strong>#? reader conditional</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/cond">full details ></a></div><div class="sep"></div><div><p>Use a different expression depending on the compiler (e.g. Clojure vs ClojureScript).</p>
 <ul>

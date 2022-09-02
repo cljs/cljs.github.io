@@ -7,7 +7,11 @@ itself.  It is therefore helpful to be aware of the following subtle differences
 </ul>
 </div><hr /><h3>Details:</h3><div><p><code>#'foo</code> is sugar for <a href="/api/cljs.core/var"><code>(var foo)</code></a>.</p>
 <p>Mainly used in conjunction with <a href="/api/cljs.core/meta"><code>meta</code></a>.</p>
-</div><hr /><h3>Examples:</h3><div><p>Access the metadata of a var:</p>
+</div><hr /><h3>Examples:</h3><div><p>Quote the form to see how the reader expands it:</p>
+<pre><code class="syntax"><span class="reader-char">'</span><span class="reader-char">#'</span><span class="symbol">foo</span>
+<span class="comment">;;=> (var foo)
+</span></code></pre>
+<p>Access the metadata of a var:</p>
 <pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">x</span> <span class="number">123</span><span class="s-exp">)</span>
 <span class="s-exp">(</span><span class="core-fn">meta</span> <span class="reader-char">#'</span><span class="symbol">x</span><span class="s-exp">)</span>
 <span class="comment">;;=> {:arglists (), :test nil, :name x, :column 1, :line 1, :file "<cljs repl>", :doc nil, :ns cljs.user}
