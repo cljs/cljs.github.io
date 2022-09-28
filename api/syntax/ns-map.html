@@ -2,10 +2,9 @@
 <pre><code class="syntax">#:a {1 nil, :b nil, :b/c nil, :_/d nil}
 ;;=> {1 nil, :a/b nil, :b/c nil, :d nil}
 </code></pre>
-</div><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.6/src/main/clojure/clojure/tools/reader.clj#L753-L786">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code class="syntax">(defn- read-namespaced-map
+</div><hr /><div>Reader code @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.6/src/main/clojure/clojure/tools/reader.clj#L753-L776">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code class="syntax">(defn- read-namespaced-map
   [rdr _ opts pending-forms]
-  (let [[start-line start-column] (starting-line-col-info rdr)
-        token (read-token rdr :namespaced-map (read-char rdr))]
+  (let [token (read-token rdr :namespaced-map (read-char rdr))]
     (if-let [ns (cond
                   (= token ":")
                   (ns-name *ns*)
@@ -18,24 +17,15 @@
 
       (let [ch (read-past whitespace? rdr)]
         (if (identical? ch \{)
-          (let [items (read-delimited :namespaced-map \} rdr opts pending-forms)
-                [end-line end-column] (ending-line-col-info rdr)]
+          (let [items (read-delimited :namespaced-map \} rdr opts pending-forms)]
             (when (odd? (count items))
               (err/throw-odd-map rdr nil nil items))
             (let [keys (take-nth 2 items)
                   vals (take-nth 2 (rest items))]
-              (with-meta
-                (RT/map (to-array (mapcat list (namespace-keys (str ns) keys) vals)))
-                (when start-line
-                  (merge
-                   (when-let [file (get-file-name rdr)]
-                     {:file file})
-                   {:line start-line
-                    :column start-column
-                    :end-line end-line
-                    :end-column end-column})))))
+
+              (RT/map (to-array (mapcat list (namespace-keys (str ns) keys) vals)))))
           (err/throw-ns-map-no-map rdr token)))
-      (err/throw-bad-ns rdr token))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.6/src/main/clojure/clojure/tools/reader.clj#L809-L823">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn-</span> <span class="symbol">dispatch-macros</span> <span class="s-exp">[</span><span class="symbol">ch</span><span class="s-exp">]</span>
+      (err/throw-bad-ns rdr token))))</code></pre><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.6/src/main/clojure/clojure/tools/reader.clj#L799-L813">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn-</span> <span class="symbol">dispatch-macros</span> <span class="s-exp">[</span><span class="symbol">ch</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">case</span> <span class="symbol">ch</span>
     <span class="character">\^</span> <span class="symbol">read-meta</span>                <span class="comment">;deprecated
 </span>    <span class="character">\'</span> <span class="s-exp">(</span><span class="symbol">wrapping-reader</span> <span class="reader-char">'</span><span class="special-form">var</span><span class="s-exp">)</span>

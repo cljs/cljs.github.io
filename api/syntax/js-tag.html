@@ -1,0 +1,42 @@
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>^js</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="g">^js</h1><table><tr><td>special tag</td><td>since v1.10.238</td><td><a href="https://github.com/cljs/api/blob/master/docfiles/syntax/js-tag.md">Edit</a></td></tr></table><div><p>Add a type hint to a local binding name to prevent advanced compilation from munging property names on <a href="/api/syntax/dot"><code>. dot</code></a> calls—
+only if <a href="/api/compiler-options/infer-externs"><code>:infer-externs</code></a> is enabled.</p>
+<ul>
+<li><code>^js</code> - short form</li>
+<li><code>^js/React.Element</code> - long form (purely for documentation, see details)</li>
+</ul>
+</div><hr /><h3>Details:</h3><div><p>A <code>^js</code> type hint on a local binding causes the ClojureScript compiler to generate externs for all subsequent property name accesses.</p>
+<p>Technically, <code>^js</code> is just as effective as the more specific <code>^js/Foo.Bar</code>— because the full name is not actually a real Closure type.
+Closure plays it safe by refusing to mangle recognized property names (belonging to <em>any</em> type) being accessed on untyped objects.</p>
+<p>Thus, the extra type info can be used for documentation, but has no real effect on your program.</p>
+<p>Below is a table of the different externs that can be generated, depending on your usage and compiler choice:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>added to cljs externs</th>
+<th>added to shadow-cljs externs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^js</code> =&gt;</td>
+<td><code>Object.*</code></td>
+<td><code>ShadowJS.prototype.*</code></td>
+</tr>
+<tr>
+<td><code>^js/React.Element</code> =&gt;</td>
+<td><code>React.Element.prototype.*</code></td>
+<td><code>ShadowJS.prototype.*</code> (React.Element is ignored)</td>
+</tr>
+</tbody>
+</table>
+</div><hr /><h3>Examples:</h3><div><p>Given the following cljs code</p>
+<pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">wrap-baz</span> <span class="s-exp">[</span><span class="reader-char">^</span><span class="symbol">js/Foo.Bar</span> <span class="symbol">x</span><span class="s-exp">]</span>
+  <span class="s-exp">(</span><span class="symbol">.baz</span> <span class="symbol">x</span><span class="s-exp">)</span><span class="s-exp">)</span>
+</code></pre>
+<p>these externs will be created in <code>inferred_externs.js</code>:</p>
+<pre><code class="syntax">var Foo = {};
+Foo.Bar = function() {};
+Foo.Bar.prototype.baz = function() {};
+</code></pre>
+</div><hr /><h3>See Also:</h3><ul><li><a href="/api/syntax/meta">^ meta</a></li><li><a href="/api/syntax/js-namespace">js/ namespace</a></li><li><a href="/api/compiler-options/infer-externs">:infer-externs</a></li></ul><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
