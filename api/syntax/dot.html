@@ -16,7 +16,9 @@
 <li><code>foo.bar.baz</code> =&gt; <code>foo.bar.baz</code> (not recommended)</li>
 <li><code>(foo.bar.baz)</code> =&gt; <code>foo.bar.baz()</code> (not recommended)</li>
 </ul>
-<p>The compiler will not <a href="/api/compiler-options/infer-externs"><code>:infer-externs</code></a> on the above forms, even if <a href="/api/syntax/js-tag"><code>^js foo</code></a> is annotated.</p>
+<p>Dots inside symbols are not recommended, as they are not detected by
+<a href="/api/compiler-options/infer-externs"><code>:infer-externs</code></a>. For example, no externs are generated for
+<code>(foo.bar)</code> if <a href="/api/syntax/js-tag"><code>^js foo</code></a> is annotated.</p>
 </div><hr /><h3>Examples:</h3><div><p>For interop:</p>
 <pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">obj</span> <span class="reader-char">#</span><span class="symbol">js</span> <span class="s-exp">{</span><span class="keyword">:age</span> <span class="number">28</span>, <span class="keyword">:greet</span> <span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">str</span> <span class="string">"Hi "</span> <span class="keyword">%</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span>
 
