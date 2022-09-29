@@ -8,28 +8,12 @@ only if <a href="/api/compiler-options/infer-externs"><code>:infer-externs</code
 <p>Technically, <code>^js</code> is just as effective as the more specific <code>^js/Foo.Bar</code>— because the full name is not actually a real Closure type.
 Closure plays it safe by refusing to mangle recognized property names (belonging to <em>any</em> type) being accessed on untyped objects.</p>
 <p>Thus, the extra type info can be used for documentation, but has no real effect on your program.</p>
-<p>Below is a table of the different externs that can be generated, depending on your usage and compiler choice:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>added to cljs externs</th>
-<th>added to shadow-cljs externs</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>^js</code> =&gt;</td>
-<td><code>Object.*</code></td>
-<td><code>ShadowJS.prototype.*</code></td>
-</tr>
-<tr>
-<td><code>^js/React.Element</code> =&gt;</td>
-<td><code>React.Element.prototype.*</code></td>
-<td><code>ShadowJS.prototype.*</code> (React.Element is ignored)</td>
-</tr>
-</tbody>
-</table>
+<p>Internally, externs are generated as follows:</p>
+<ul>
+<li><code>^js</code> externs are added to <code>Object.*</code></li>
+<li><code>^js/Foo.Bar</code> externs are added to <code>Foo.Bar.prototype.*</code></li>
+<li>(in shadow-cljs all externs are added to <code>ShadowJS.prototype.*</code>)</li>
+</ul>
 </div><hr /><h3>Examples:</h3><div><p>Given the following cljs code</p>
 <pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">wrap-baz</span> <span class="s-exp">[</span><span class="reader-char">^</span><span class="symbol">js/Foo.Bar</span> <span class="symbol">x</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">.baz</span> <span class="symbol">x</span><span class="s-exp">)</span><span class="s-exp">)</span>

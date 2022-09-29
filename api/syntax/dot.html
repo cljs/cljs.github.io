@@ -4,11 +4,6 @@
 <li><code>(.-foo bar)</code> =&gt; <code>bar.foo</code></li>
 <li><code>(foo.)</code> =&gt; <code>new foo()</code></li>
 </ul>
-<p>The following are also supported (though not valid in Clojure)</p>
-<ul>
-<li><code>foo.bar.baz</code> =&gt; <code>foo.bar.baz</code></li>
-<li><code>(foo.bar.baz)</code> =&gt; <code>foo.bar.baz()</code></li>
-</ul>
 </div><hr /><h3>Details:</h3><div><p>A dot's meaning depends on its position in the symbol:</p>
 <ul>
 <li><code>.</code> (by itself), <code>.-foo</code>, <code>.foo</code> all refer to the interop <a href="/api/cljs.core/DOT"><code>. (special form)</code></a>.</li>
@@ -16,6 +11,12 @@
 <li><code>(ns foo.bar)</code> and <code>foo.bar/baz</code> means that <code>foo.bar</code> is a nested namespace.</li>
 <li><code>foo/bar.baz</code> or <code>bar.baz</code> means <code>bar.baz</code> is nested JS property access (<strong>not allowed in clojure</strong>).</li>
 </ul>
+<p>Dots inside symbols <em>accidentally</em> work as a technical shortcut in ClojureScript, but this is not valid in Clojure.</p>
+<ul>
+<li><code>foo.bar.baz</code> =&gt; <code>foo.bar.baz</code> (not recommended)</li>
+<li><code>(foo.bar.baz)</code> =&gt; <code>foo.bar.baz()</code> (not recommended)</li>
+</ul>
+<p>The compiler will not <a href="/api/compiler-options/infer-externs"><code>:infer-externs</code></a> on the above forms, even if <a href="/api/syntax/js-tag"><code>^js foo</code></a> is annotated.</p>
 </div><hr /><h3>Examples:</h3><div><p>For interop:</p>
 <pre><code class="syntax"><span class="s-exp">(</span><span class="special-form">def</span> <span class="symbol">obj</span> <span class="reader-char">#</span><span class="symbol">js</span> <span class="s-exp">{</span><span class="keyword">:age</span> <span class="number">28</span>, <span class="keyword">:greet</span> <span class="reader-char">#</span><span class="s-exp">(</span><span class="core-fn">str</span> <span class="string">"Hi "</span> <span class="keyword">%</span><span class="s-exp">)</span><span class="s-exp">}</span><span class="s-exp">)</span>
 
