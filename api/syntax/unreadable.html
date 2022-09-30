@@ -33,7 +33,7 @@ of its <code>.toString</code> method inside the unreadable form <code>#&lt;&gt;<
 <span class="symbol">js/console</span>
 <span class="comment">;;=> #<[object Object]>
 </span></code></pre>
-</div><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/tools.reader-1.3.6/src/main/clojure/clojure/tools/reader.clj#L799-L813">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn-</span> <span class="symbol">dispatch-macros</span> <span class="s-exp">[</span><span class="symbol">ch</span><span class="s-exp">]</span>
+</div><hr /><div>Reader table @ <a href="https://github.com/clojure/tools.reader/blob/v1.3.6/src/main/clojure/clojure/tools/reader.clj#L809-L823">tools.reader:src/main/clojure/clojure/tools/reader.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn-</span> <span class="symbol">dispatch-macros</span> <span class="s-exp">[</span><span class="symbol">ch</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">case</span> <span class="symbol">ch</span>
     <span class="character">\^</span> <span class="symbol">read-meta</span>                <span class="comment">;deprecated
 </span>    <span class="character">\'</span> <span class="s-exp">(</span><span class="symbol">wrapping-reader</span> <span class="reader-char">'</span><span class="special-form">var</span><span class="s-exp">)</span>
