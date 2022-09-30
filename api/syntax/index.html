@@ -265,8 +265,7 @@ easier to read at the REPL.</p>
 <li><code>'foo</code> =&gt; <code>foo</code></li>
 <li><code>'(foo)</code> =&gt; <code>(foo)</code></li>
 </ul>
-</div></div><hr /><div style="position: relative;"><div class="g" id="syntax-quote"><strong>` syntax quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/syntax-quote">full details ></a></div><div class="sep"></div><div><p>A template facility for easier code generation inside macros.  Like <a href="/api/syntax#quote"><code>' quote</code></a>,
-but with more features to help resolve symbols and interpolate values.</p>
+</div></div><hr /><div style="position: relative;"><div class="g" id="syntax-quote"><strong>` syntax quote</strong> - syntax</div><div style="position: absolute; right: 0; top: 0;"><a href="/api/syntax/syntax-quote">full details ></a></div><div class="sep"></div><div><p>Expands to a <em>clojure expression</em> (at read time) which—when evaluated—produces the literal structure described by the template inside.</p>
 <ul>
 <li><code>`(foo 123)</code> =&gt; <code>(cljs.user/foo 123)</code> - symbols become fully-qualified</li>
 <li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> - interpolates the value of <code>x</code></li>

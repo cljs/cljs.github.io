@@ -1,14 +1,11 @@
-<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>` syntax quote</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="g">` syntax quote</h1><table><tr><td>syntax</td><td>since v0.0-1853</td><td><a href="http://clojure.org/reference/reader#syntax-quote"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> in clojure</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/syntax/syntax-quote.md">Edit</a></td></tr></table><div><p>A template facility for easier code generation inside macros.  Like <a href="/api/syntax/quote"><code>' quote</code></a>,
-but with more features to help resolve symbols and interpolate values.</p>
+<html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>` syntax quote</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/normalize.css" rel="stylesheet" /><link href="/css/skeleton.css" rel="stylesheet" /><link href="/css/custom.css" rel="stylesheet" /><link href="/css/github-theme.css" rel="stylesheet" /><link href="/img/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" /><link href="/img/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" /><link href="/img/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" /><link href="/img/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" /><link href="/img/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" /><link href="/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" /><link href="/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" /><link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" /><link href="/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" /><link href="/img/icons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png" /><link href="/img/icons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png" /><link href="/img/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" /><link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /></head><body><div class="container"><nav class="navbar"><div class="container"><ul class="navbar-list"><li class="navbar-item"><a class="navbar-link-logo"><img class="navbar-logo" src="/img/cljs-white.svg" /></a></li><li class="navbar-item"><a class="navbar-title">ClojureScript</a></li><li class="navbar-item"><a class="navbar-link" href="/api">API</a></li><li class="navbar-item"><a class="navbar-link" href="https://github.com/clojure/clojurescript" target="_blank">GitHub</a></li></ul></div></nav><div><h1 class="g">` syntax quote</h1><table><tr><td>syntax</td><td>since v0.0-1853</td><td><a href="http://clojure.org/reference/reader#syntax-quote"><img height="24px" src="/img/clojure-icon.gif" valign="middle" /> in clojure</a></td><td><a href="https://github.com/cljs/api/blob/master/docfiles/syntax/syntax-quote.md">Edit</a></td></tr></table><div><p>Expands to a <em>clojure expression</em> (at read time) which—when evaluated—produces the literal structure described by the template inside.</p>
 <ul>
 <li><code>`(foo 123)</code> =&gt; <code>(cljs.user/foo 123)</code> - symbols become fully-qualified</li>
 <li><code>`(foo ~x)</code> =&gt; <code>(cljs.user/foo 123)</code> - interpolates the value of <code>x</code></li>
 <li><code>`(foo ~@y)</code> =&gt; <code>(cljs.user/foo 1 2 3)</code> - interpolates and splices the sequence of <code>y</code></li>
 <li><code>`(foo bar#)</code> =&gt; <code>(cljs.user/foo bar__20418__auto__)</code> - make symbols ending in <code>#</code> unique</li>
 </ul>
-</div><hr /><h3>Details:</h3><div><p>(Only intended for use in Clojure macros, which can be used from but not
-written in ClojureScript.)</p>
-<p>Like <a href="/api/syntax/quote"><code>' quote</code></a>, but with important differences:</p>
+</div><hr /><h3>Details:</h3><div><p>Produces a similar structure to that produced by <a href="/api/syntax/quote"><code>' quote</code></a>, but with important differences:</p>
 <ul>
 <li>Symbols are auto-resolved to include their namespace, preventing ambiguous
 symbols at the time of evaluation.</li>
@@ -16,6 +13,33 @@ symbols at the time of evaluation.</li>
 <li>Any non-namespaced symbols ending with <code>#</code> are replaced with unique symbols.
 See <a href="/api/syntax/auto-gensym"><code># auto-gensym</code></a>.</li>
 </ul>
+<p>Though it is often used for code-generation at macro-expansion time, it is very
+useful at runtime for constructing collections without requiring the usual API
+ceremony:</p>
+<pre><code class="syntax">(def foo [2 3 4])
+(def bar 7)
+(def baz `[1 ~@foo 5 6 ~bar])
+baz
+;;=> [1 2 3 4 5 6 7]
+</code></pre>
+<p>You can peek at the code generated to construct the vector by quoting it:</p>
+<pre><code class="syntax">(def foo [2 3 4])
+(def bar 7)
+(quote `[1 ~@foo 5 6 ~bar])
+;;=> (clojure.core/vec (clojure.core/sequence (clojure.core/seq (clojure.core/concat (clojure.core/list 1) foo (clojure.core/list 5) (clojure.core/list 6) (clojure.core/list bar)))))
+
+;; pretty-print it!
+(pp)
+;; (clojure.core/vec
+;;  (clojure.core/sequence
+;;   (clojure.core/seq
+;;    (clojure.core/concat
+;;     (clojure.core/list 1)
+;;     foo
+;;     (clojure.core/list 5)
+;;     (clojure.core/list 6)
+;;     (clojure.core/list bar)))))
+</code></pre>
 </div><hr /><h3>Examples:</h3><div><pre><code class="syntax"><span class="reader-char">`</span><span class="symbol">foo</span>
 <span class="comment">;;=> cljs.user/foo
 </span>
