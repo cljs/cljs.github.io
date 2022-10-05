@@ -3,6 +3,7 @@
 
 When test is not nil, evaluates body with binding-form bound to the
 value of test</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/clj/clojure/core.clj#L1896-L1911">clojure:src/clj/clojure/core.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="conditional">when-some</span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.6"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">bindings</span> <span class="reader-char">&</span> <span class="symbol">body</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">assert-args</span>
      <span class="s-exp">(</span><span class="core-fn">vector?</span> <span class="symbol">bindings</span><span class="s-exp">)</span> <span class="string">"a vector for its binding"</span>

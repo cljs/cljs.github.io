@@ -62,6 +62,7 @@ data structures:</p>
 second item in the first form, making a list of it if it is not a
 list already. If there are more forms, inserts the first form as the
 second item in second form, etc.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/clj/clojure/core.clj#L1677-L1691">clojure:src/clj/clojure/core.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="macro">-></span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.0"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">x</span> <span class="reader-char">&</span> <span class="symbol">forms</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">x</span> <span class="symbol">x</span>, <span class="symbol">forms</span> <span class="symbol">forms</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">forms</span>

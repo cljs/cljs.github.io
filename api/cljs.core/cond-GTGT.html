@@ -14,6 +14,7 @@ after the first true test expression.</p>
 through each form for which the corresponding test expression
 is true.  Note that, unlike cond branching, cond->> threading does not short circuit
 after the first true test expression.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/clj/clojure/core.clj#L7555-L7570">clojure:src/clj/clojure/core.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="conditional">cond->></span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.5"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">expr</span> <span class="reader-char">&</span> <span class="symbol">clauses</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="macro">assert</span> <span class="s-exp">(</span><span class="core-fn">even?</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">clauses</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">g</span> <span class="s-exp">(</span><span class="core-fn">gensym</span><span class="s-exp">)</span>

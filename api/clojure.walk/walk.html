@@ -2,6 +2,7 @@
 functions.  Applies inner to each element of form, building up a
 data structure of the same type, then applies outer to the result.
 Recognizes all Clojure data structures. Consumes seqs as with doall.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/clojure/walk.cljs#L37-L52">clojurescript:src/main/cljs/clojure/walk.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">walk</span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.1"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">inner</span> <span class="symbol">outer</span> <span class="symbol">form</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">cond</span>
     <span class="s-exp">(</span><span class="core-fn">list?</span> <span class="symbol">form</span><span class="s-exp">)</span>      <span class="s-exp">(</span><span class="symbol">outer</span> <span class="s-exp">(</span><span class="core-fn">apply</span> <span class="core-fn">list</span> <span class="s-exp">(</span><span class="core-fn">map</span> <span class="symbol">inner</span> <span class="symbol">form</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>

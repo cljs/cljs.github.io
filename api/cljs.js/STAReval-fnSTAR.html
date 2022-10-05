@@ -8,17 +8,6 @@ containing the following keys:
           analysis cache.
 
 The result of evaluation should be the return value.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/js.cljs#L105-L119">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defonce</span>
-  <span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:doc</span> <span class="string">"Each runtime environment provides various ways to eval JavaScript
-  source. Whatever function *eval-fn* is bound to will be passed a map
-  containing the following keys:
-
-  :source - the source of the library (string)
-  :name   - used to unique identify the script (symbol)
-  :cache  - if the source was originally ClojureScript, will be given the
-            analysis cache.
-
-  The result of evaluation should be the return value."</span>
-    <span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span>
-  <span class="symbol">*eval-fn*</span>
+  <span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span> <span class="symbol">*eval-fn*</span>
   <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="symbol">m</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"No *eval-fn* set"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

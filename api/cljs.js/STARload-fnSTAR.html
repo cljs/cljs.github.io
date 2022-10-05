@@ -23,32 +23,6 @@ containing the following keys:
 
 If the resource could not be resolved, the callback should be invoked with
 nil.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/js.cljs#L74-L103">clojurescript:src/main/cljs/cljs/js.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defonce</span>
-  <span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:doc</span> <span class="string">"Each runtime environment provides a different way to load a library.
-  Whatever function *load-fn* is bound to will be passed two arguments - a
-  map and a callback function: The map will have the following keys:
-
-  :name   - the name of the library (a symbol)
-  :macros - modifier signaling a macros namespace load
-  :path   - munged relative library path (a string)
-
-  It is up to the implementor to correctly resolve the corresponding .cljs,
-  .cljc, or .js resource (the order must be respected). If :macros is true
-  resolution should only consider .clj or .cljc resources (the order must be
-  respected). Upon resolution the callback should be invoked with a map
-  containing the following keys:
-
-  :lang       - the language, :clj or :js
-  :source     - the source of the library (a string)
-  :file       - optional, the file path, it will be added to AST's :file keyword
-                (but not in :meta)
-  :cache      - optional, if a :clj namespace has been precompiled to :js, can
-                give an analysis cache for faster loads.
-  :source-map - optional, if a :clj namespace has been precompiled to :js, can
-                give a V3 source map JSON
-
-  If the resource could not be resolved, the callback should be invoked with
-  nil."</span>
-    <span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span>
-  <span class="symbol">*load-fn*</span>
+  <span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span> <span class="symbol">*load-fn*</span>
   <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="symbol">m</span> <span class="symbol">cb</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="exception">throw</span> <span class="s-exp">(</span><span class="symbol">js/Error.</span> <span class="string">"No *load-fn* set"</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>

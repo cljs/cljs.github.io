@@ -11,7 +11,7 @@ that can have children (but may not).  children must be a fn of one
 arg that returns a sequence of the children. Will only be called on
 nodes for which branch? returns true. Root is the root node of the
 tree.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/core.cljs#L5235-L5248">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">tree-seq</span>
-   <span class="s-exp">[</span><span class="symbol">branch?</span> <span class="symbol">children</span> <span class="symbol">root</span><span class="s-exp">]</span>
+  <span class="s-exp">[</span><span class="symbol">branch?</span> <span class="symbol">children</span> <span class="symbol">root</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">walk</span> <span class="s-exp">(</span><span class="special-form">fn</span> <span class="symbol">walk</span> <span class="s-exp">[</span><span class="symbol">node</span><span class="s-exp">]</span>
                 <span class="s-exp">(</span><span class="macro">lazy-seq</span>
                  <span class="s-exp">(</span><span class="core-fn">cons</span> <span class="symbol">node</span>

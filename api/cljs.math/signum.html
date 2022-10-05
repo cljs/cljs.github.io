@@ -2,11 +2,7 @@
 If d is ##NaN => ##NaN
 If d is ##Inf or ##-Inf => sign of d
 See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#signum-double-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/math.cljs#L661-L670">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="symbol">signum</span>
-  <span class="s-exp">{</span><span class="keyword">:doc</span> <span class="string">"Returns the signum function of d - zero for zero, 1.0 if >0, -1.0 if <0.
-  If d is ##NaN => ##NaN
-  If d is ##Inf or ##-Inf => sign of d
-  See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#signum-double-"</span>
-   <span class="keyword">:added</span> <span class="string">"1.11.10"</span><span class="s-exp">}</span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.11.10"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">d</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="core-fn">zero?</span> <span class="symbol">d</span><span class="s-exp">)</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="s-exp">(</span><span class="symbol">js/isNaN</span> <span class="symbol">d</span><span class="s-exp">)</span><span class="s-exp">)</span>
     <span class="symbol">d</span>

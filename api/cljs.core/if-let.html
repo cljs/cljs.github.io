@@ -5,6 +5,7 @@
 
 If test is true, evaluates then with binding-form bound to the value of 
 test, if not, yields else</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/clj/clojure/core.clj#L1841-L1859">clojure:src/clj/clojure/core.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="conditional">if-let</span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.0"</span><span class="s-exp">}</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">bindings</span> <span class="symbol">then</span><span class="s-exp">]</span>
    <span class="reader-char">`</span><span class="s-exp">(</span><span class="conditional">if-let</span> <span class="reader-char">~</span><span class="symbol">bindings</span> <span class="reader-char">~</span><span class="symbol">then</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">bindings</span> <span class="symbol">then</span> <span class="symbol">else</span> <span class="reader-char">&</span> <span class="symbol">oldform</span><span class="s-exp">]</span>

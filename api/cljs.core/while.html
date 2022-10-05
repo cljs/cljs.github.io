@@ -3,6 +3,7 @@ side-effect will cause <code>test</code> to become false or nil.</p>
 <p>Returns nil.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/loop">loop</a></li></ul><hr />Source docstring:<pre>Repeatedly executes body while test expression is true. Presumes
 some side-effect will cause test to become false/nil. Returns nil</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/clj/clojure/core.clj#L6333-L6341">clojure:src/clj/clojure/core.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="repeat">while</span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.0"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="core-fn">test</span> <span class="reader-char">&</span> <span class="symbol">body</span><span class="s-exp">]</span>
   <span class="reader-char">`</span><span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="s-exp">]</span>
      <span class="s-exp">(</span><span class="conditional">when</span> <span class="reader-char">~</span><span class="core-fn">test</span>

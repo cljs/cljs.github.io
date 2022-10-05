@@ -2,6 +2,7 @@
 </div><hr />Source docstring:<pre>bindings => x xs
 
 Roughly the same as (when (seq xs) (let [x (first xs)] body)) but xs is evaluated only once</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/clj/clojure/core.clj#L4600-L4612">clojure:src/clj/clojure/core.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="conditional">when-first</span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.0"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">bindings</span> <span class="reader-char">&</span> <span class="symbol">body</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">assert-args</span>
      <span class="s-exp">(</span><span class="core-fn">vector?</span> <span class="symbol">bindings</span><span class="s-exp">)</span> <span class="string">"a vector for its binding"</span>

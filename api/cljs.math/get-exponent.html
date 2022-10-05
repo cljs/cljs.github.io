@@ -2,11 +2,7 @@
 If d is ##NaN, ##Inf, ##-Inf => max_Float64_exponent + 1
 If d is zero or subnormal => min_Float64_exponent - 1
 See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#getExponent-double-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/math.cljs#L599-L614">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="symbol">get-exponent</span>
-  <span class="s-exp">{</span><span class="keyword">:doc</span> <span class="string">"Returns the exponent of d.
-  If d is ##NaN, ##Inf, ##-Inf => max_Float64_exponent + 1
-  If d is zero or subnormal => min_Float64_exponent - 1
-  See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#getExponent-double-"</span>
-   <span class="keyword">:added</span> <span class="string">"1.11.10"</span><span class="s-exp">}</span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.11.10"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">d</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">cond</span>
     <span class="s-exp">(</span><span class="macro">or</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="s-exp">(</span><span class="symbol">js/isNaN</span> <span class="symbol">d</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">not</span> <span class="reader-char">^</span><span class="core-fn">boolean</span> <span class="s-exp">(</span><span class="symbol">js/isFinite</span> <span class="symbol">d</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="core-fn">inc</span> <span class="symbol">EXP-MAX</span><span class="s-exp">)</span>

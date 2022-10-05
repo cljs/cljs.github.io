@@ -39,6 +39,7 @@ of the first 10 even squares:</p>
 last item in the first form, making a list of it if it is not a
 list already. If there are more forms, inserts the first form as the
 last item in second form, etc.</pre><div>Source code @ <a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/clj/clojure/core.clj#L1693-L1707">clojure:src/clj/clojure/core.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="macro">->></span>
+  <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.1"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">x</span> <span class="reader-char">&</span> <span class="symbol">forms</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">x</span> <span class="symbol">x</span>, <span class="symbol">forms</span> <span class="symbol">forms</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="special-form">if</span> <span class="symbol">forms</span>
