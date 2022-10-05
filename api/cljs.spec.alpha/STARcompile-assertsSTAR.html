@@ -3,5 +3,6 @@ subject to runtime control via check-asserts? If false, compiler
 will eliminate all spec assert overhead. See 'assert'.
 Initially set to the negation of the ':elide-asserts' compiler option.
 Defaults to true.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/spec/alpha.cljs#L1470-L1478">clojurescript:src/main/cljs/cljs/spec/alpha.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defonce</span>
-  <span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span> <span class="symbol">*compile-asserts*</span>
+  <span class="reader-char">^</span><span class="s-exp">{</span><span class="keyword">:dynamic</span> <span class="boolean">true</span><span class="s-exp">}</span>
+  <span class="symbol">*compile-asserts*</span>
   <span class="s-exp">(</span><span class="symbol">s/init-compile-asserts</span><span class="s-exp">)</span><span class="s-exp">)</span></code></pre><hr /></div><footer class="site-footer"><div class="wrapper"><hr /><div class="cljs-legal">ClojureScript is licensed <a href="http://opensource.org/licenses/eclipse-1.0.php">EPL 1.0</a><br />Copyright © Rich Hickey</div></div></footer></div><script src="/js/client.js"></script></body></html>
