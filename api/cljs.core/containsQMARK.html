@@ -37,7 +37,7 @@ used for this purpose:</p>
 returns false.  Note that for numerically indexed collections like
 vectors and arrays, this tests if the numeric key is within the
 range of indexes. 'contains?' operates constant or logarithmic time;
-it will not perform a linear search for a value.  See also 'some'.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/core.cljs#L2361-L2379">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">contains?</span>
+it will not perform a linear search for a value.  See also 'some'.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L2404-L2422">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">contains?</span>
   <span class="s-exp">[</span><span class="symbol">coll</span> <span class="symbol">v</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">cond</span>
     <span class="s-exp">(</span><span class="symbol">implements?</span> <span class="symbol">IAssociative</span> <span class="symbol">coll</span><span class="s-exp">)</span>

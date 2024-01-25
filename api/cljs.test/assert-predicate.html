@@ -2,7 +2,7 @@
 'expected' argument to 'report' will contains the original form, the
 'actual' argument will contain the form with all its sub-forms
 evaluated.  If the predicate returns false, the 'actual' form will
-be wrapped in (not...).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/test.cljc#L25-L46">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">assert-predicate</span>
+be wrapped in (not...).</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/test.cljc#L25-L46">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">assert-predicate</span>
   <span class="s-exp">[</span><span class="symbol">msg</span> <span class="symbol">form</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">args</span> <span class="s-exp">(</span><span class="core-fn">rest</span> <span class="symbol">form</span><span class="s-exp">)</span>
         <span class="symbol">pred</span> <span class="s-exp">(</span><span class="core-fn">first</span> <span class="symbol">form</span><span class="s-exp">)</span>

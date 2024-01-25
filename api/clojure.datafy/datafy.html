@@ -2,7 +2,7 @@
 datafy will return the value of clojure.protocols/datafy. If
 the value has been transformed and the result supports
 metadata, :clojure.datafy/obj will be set on the metadata to the
-original value of x.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/clojure/datafy.cljs#L14-L29">clojurescript:src/main/cljs/clojure/datafy.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">datafy</span>
+original value of x.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/clojure/datafy.cljs#L14-L29">clojurescript:src/main/cljs/clojure/datafy.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">datafy</span>
   <span class="s-exp">[</span><span class="symbol">x</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">v</span> <span class="s-exp">(</span><span class="symbol">p/datafy</span> <span class="symbol">x</span><span class="s-exp">)</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">identical?</span> <span class="symbol">v</span> <span class="symbol">x</span><span class="s-exp">)</span>

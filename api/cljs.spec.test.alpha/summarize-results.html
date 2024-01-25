@@ -2,7 +2,7 @@
 prints the summary-result (default abbrev-result) of each.
 
 Returns a map with :total, the total number of results, plus a
-key with a count for each different :type of result.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/spec/test/alpha.cljs#L288-L303">clojurescript:src/main/cljs/cljs/spec/test/alpha.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">summarize-results</span>
+key with a count for each different :type of result.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/spec/test/alpha.cljs#L288-L303">clojurescript:src/main/cljs/cljs/spec/test/alpha.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">summarize-results</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">check-results</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">summarize-results</span> <span class="symbol">check-results</span> <span class="symbol">abbrev-result</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">check-results</span> <span class="symbol">summary-result</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="core-fn">reduce</span>

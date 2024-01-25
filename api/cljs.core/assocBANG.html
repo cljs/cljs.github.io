@@ -21,7 +21,7 @@ be &lt;= (count vector).</p>
 </span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/transient">transient</a></li><li><a href="/api/cljs.core/persistentBANG">persistent!</a></li></ul><hr />Source docstring:<pre>When applied to a transient map, adds mapping of key(s) to
 val(s). When applied to a transient vector, sets the val at index.
-Note - index must be <= (count vector). Returns coll.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/core.cljs#L3874-L3884">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">assoc!</span>
+Note - index must be <= (count vector). Returns coll.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L3923-L3933">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">assoc!</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="symbol">-assoc!</span> <span class="symbol">tcoll</span> <span class="core-fn">key</span> <span class="core-fn">val</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">tcoll</span> <span class="core-fn">key</span> <span class="core-fn">val</span> <span class="reader-char">&</span> <span class="symbol">kvs</span><span class="s-exp">]</span>

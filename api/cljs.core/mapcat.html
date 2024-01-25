@@ -4,7 +4,7 @@ and <code>colls</code>.</p>
 <p>Returns a transducer when no collections are provided.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/map">map</a></li><li><a href="/api/cljs.core/concat">concat</a></li></ul><hr />Source docstring:<pre>Returns the result of applying concat to the result of applying map
 to f and colls.  Thus function f should return a collection. Returns
-a transducer when no collections are provided</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/core.cljs#L5188-L5196">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">mapcat</span>
+a transducer when no collections are provided</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L5261-L5269">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">mapcat</span>
   <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.0"</span>
    <span class="keyword">:static</span> <span class="boolean">true</span><span class="s-exp">}</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">f</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="core-fn">comp</span> <span class="s-exp">(</span><span class="core-fn">map</span> <span class="symbol">f</span><span class="s-exp">)</span> <span class="symbol">cat</span><span class="s-exp">)</span><span class="s-exp">)</span>

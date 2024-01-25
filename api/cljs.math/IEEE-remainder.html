@@ -8,7 +8,7 @@ If dividend is finite and divisor is infinite => dividend
 
 Method: based on fmod return x-[x/p]chopped*p exactlp.
 Ported from: https://github.com/openjdk/jdk/blob/master/src/java.base/share/native/libfdlibm/e_remainder.c
-See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#IEEEremainder-double-double-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/math.cljs#L335-L411">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax">(defn ^number IEEE-remainder
+See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#IEEEremainder-double-double-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/math.cljs#L335-L411">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax">(defn ^number IEEE-remainder
   {:added "1.11.10"}
   [dividend divisor]
   ;; check for exception values

@@ -9,7 +9,7 @@ JavaScript.</p>
 <span class="s-exp">(</span><span class="core-fn">char</span> <span class="string">"foo"</span><span class="s-exp">)</span>
 <span class="comment">;; Error: Argument to char must be a character or number
 </span></code></pre>
-</div><hr />Source docstring:<pre>Coerce to char</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.60/src/main/cljs/cljs/core.cljs#L2736-L2742">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">char</span>
+</div><hr />Source docstring:<pre>Coerce to char</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L2781-L2787">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">char</span>
   <span class="s-exp">[</span><span class="symbol">x</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">cond</span>
     <span class="s-exp">(</span><span class="core-fn">number?</span> <span class="symbol">x</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">.fromCharCode</span> <span class="symbol">js/String</span> <span class="symbol">x</span><span class="s-exp">)</span>
