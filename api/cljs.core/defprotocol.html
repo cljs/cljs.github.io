@@ -36,7 +36,7 @@ effect, and defines no new types.
       (foo [this] 17)
       (bar-me [this] x)
       (bar-me [this y] x))))
-=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/clojure/cljs/core.cljc#L1998-L2182">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="definition">defprotocol</span>
+=> 17</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/core.cljc#L1998-L2182">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="definition">defprotocol</span>
   <span class="s-exp">[</span><span class="symbol">psym</span> <span class="reader-char">&</span> <span class="symbol">doc+methods</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">p</span> <span class="s-exp">(</span><span class="keyword">:name</span> <span class="s-exp">(</span><span class="symbol">cljs.analyzer/resolve-var</span> <span class="s-exp">(</span><span class="core-fn">dissoc</span> <span class="symbol">&env</span> <span class="keyword">:locals</span><span class="s-exp">)</span> <span class="symbol">psym</span><span class="s-exp">)</span><span class="s-exp">)</span>
              <span class="s-exp">[</span><span class="symbol">opts</span> <span class="core-fn">methods</span><span class="s-exp">]</span>

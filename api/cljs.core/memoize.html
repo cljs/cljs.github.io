@@ -5,7 +5,7 @@ memoized function has higher performance at the expense of higher memory usage.<
 </div><hr />Source docstring:<pre>Returns a memoized version of a referentially transparent function. The
 memoized version of the function keeps a cache of the mapping from arguments
 to results and, when calls with the same arguments are repeated often, has
-higher performance at the expense of higher memory use.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L11237-L11250">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">memoize</span>
+higher performance at the expense of higher memory use.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L11240-L11253">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">memoize</span>
   <span class="s-exp">[</span><span class="symbol">f</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">mem</span> <span class="s-exp">(</span><span class="core-fn">atom</span> <span class="s-exp">{</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="reader-char">&</span> <span class="symbol">args</span><span class="s-exp">]</span>

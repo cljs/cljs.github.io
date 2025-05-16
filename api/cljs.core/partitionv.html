@@ -2,7 +2,7 @@
 apart. If step is not supplied, defaults to n, i.e. the partitions
 do not overlap. If a pad collection is supplied, use its elements as
 necessary to complete last partition upto n items. In case there are
-not enough padding elements, return a partition with less than n items.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L9822-L9842">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">partitionv</span>
+not enough padding elements, return a partition with less than n items.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L9825-L9845">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">partitionv</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">n</span> <span class="symbol">coll</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="symbol">partitionv</span> <span class="symbol">n</span> <span class="symbol">n</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">n</span> <span class="symbol">step</span> <span class="symbol">coll</span><span class="s-exp">]</span>

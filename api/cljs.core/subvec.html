@@ -7,7 +7,7 @@ with the original and no trimming is done.</p>
 start (inclusive) to end (exclusive).  If end is not supplied,
 defaults to (count vector). This operation is O(1) and very fast, as
 the resulting vector shares structure with the original and no
-trimming is done.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L6127-L6137">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">subvec</span>
+trimming is done.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L6132-L6142">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">subvec</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">v</span> <span class="symbol">start</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="core-fn">subvec</span> <span class="symbol">v</span> <span class="symbol">start</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">v</span> <span class="symbol">start</span> <span class="symbol">end</span><span class="s-exp">]</span>

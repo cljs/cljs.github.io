@@ -13,7 +13,7 @@
 <span class="comment">;;=> {:foo true, :bar true}
 </span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/alter-metaBANG">alter-meta!</a></li><li><a href="/api/cljs.core/with-meta">with-meta</a></li></ul><hr />Source docstring:<pre>Returns an object of the same type and value as obj, with
-(apply f (meta obj) args) as its metadata.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/core.cljs#L4072-L4086">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">vary-meta</span>
+(apply f (meta obj) args) as its metadata.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L4077-L4091">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">vary-meta</span>
  <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">obj</span> <span class="symbol">f</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="core-fn">with-meta</span> <span class="symbol">obj</span> <span class="s-exp">(</span><span class="symbol">f</span> <span class="s-exp">(</span><span class="core-fn">meta</span> <span class="symbol">obj</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">obj</span> <span class="symbol">f</span> <span class="symbol">a</span><span class="s-exp">]</span>

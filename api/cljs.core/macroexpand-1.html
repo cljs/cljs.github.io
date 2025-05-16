@@ -17,7 +17,7 @@
 <span class="comment">;;=> (cljs.core/+ (inc 2) 1)
 </span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/macroexpand">macroexpand</a></li><li><a href="/api/cljs.core/defmacro">defmacro</a></li></ul><hr />Source docstring:<pre>If form represents a macro form, returns its expansion,
-else returns form.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/clojure/cljs/core.cljc#L3096-L3105">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="core-fn">macroexpand-1</span>
+else returns form.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/core.cljc#L3096-L3105">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="core-fn">macroexpand-1</span>
   <span class="s-exp">[</span><span class="symbol">quoted</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/assert</span> <span class="s-exp">(</span><span class="symbol">core/=</span> <span class="s-exp">(</span><span class="symbol">core/first</span> <span class="symbol">quoted</span><span class="s-exp">)</span> <span class="reader-char">'</span><span class="special-form">quote</span><span class="s-exp">)</span>
     <span class="string">"Argument to macroexpand-1 must be quoted"</span><span class="s-exp">)</span>

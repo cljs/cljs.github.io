@@ -2,7 +2,7 @@
 Defaults to current namespace if none given. Does not return a meaningful
 value due to the possiblity of asynchronous execution. To detect test
 completion add a :end-run-tests method case to the cljs.test/report
-multimethod.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/cljs/test.cljc#L308-L320">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">run-tests</span>
+multimethod.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/test.cljc#L308-L320">clojurescript:src/main/cljs/cljs/test.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">run-tests</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="s-exp">]</span> <span class="reader-char">`</span><span class="s-exp">(</span><span class="symbol">run-tests</span> <span class="s-exp">(</span><span class="symbol">empty-env</span><span class="s-exp">)</span> <span class="reader-char">'</span><span class="reader-char">~</span><span class="symbol">ana/*cljs-ns*</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">env-or-ns</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="symbol">ns?</span> <span class="symbol">env-or-ns</span><span class="s-exp">)</span>

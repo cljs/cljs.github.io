@@ -5,7 +5,7 @@
 from s as follows:
 
 If (cmap ch) is nil, append ch to the new string.
-If (cmap ch) is non-nil, append (str (cmap ch)) instead.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.11.132/src/main/cljs/clojure/string.cljs#L230-L247">clojurescript:src/main/cljs/clojure/string.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">string</span> <span class="symbol">escape</span>
+If (cmap ch) is non-nil, append (str (cmap ch)) instead.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/clojure/string.cljs#L230-L247">clojurescript:src/main/cljs/clojure/string.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">string</span> <span class="symbol">escape</span>
   <span class="s-exp">[</span><span class="symbol">s</span> <span class="symbol">cmap</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">buffer</span> <span class="s-exp">(</span><span class="symbol">StringBuffer.</span><span class="s-exp">)</span>
         <span class="symbol">length</span> <span class="s-exp">(</span><span class="symbol">.-length</span> <span class="symbol">s</span><span class="s-exp">)</span><span class="s-exp">]</span>
