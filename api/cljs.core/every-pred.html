@@ -6,7 +6,7 @@ argument that triggers a logical false result against the original predicates.</
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/some-fn">some-fn</a></li><li><a href="/api/cljs.core/and">and</a></li></ul><hr />Source docstring:<pre>Takes a set of predicates and returns a function f that returns true if all of its
 composing predicates return a logical true value against all of its arguments, else it returns
 false. Note that f is short-circuiting in that it will stop execution on the first
-argument that triggers a logical false result against the original predicates.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L4730-L4767">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">every-pred</span>
+argument that triggers a logical false result against the original predicates.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L4816-L4853">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">every-pred</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">p</span><span class="s-exp">]</span>
      <span class="s-exp">(</span><span class="special-form">fn</span> <span class="symbol">ep1</span>
        <span class="s-exp">(</span><span class="s-exp">[</span><span class="s-exp">]</span> <span class="boolean">true</span><span class="s-exp">)</span>

@@ -5,7 +5,7 @@ effects.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/atom">atom</a></li><li><a href="/api/cljs.core/resetBANG">reset!</a></li></ul><hr />Source docstring:<pre>Atomically swaps the value of atom to be:
 (apply f current-value-of-atom args). Note that f may be called
 multiple times, and thus should be free of side effects.  Returns
-the value that was swapped in.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L4600-L4620">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">swap!</span>
+the value that was swapped in.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L4686-L4706">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">swap!</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">a</span> <span class="symbol">f</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">instance?</span> <span class="symbol">Atom</span> <span class="symbol">a</span><span class="s-exp">)</span>
      <span class="s-exp">(</span><span class="core-fn">reset!</span> <span class="symbol">a</span> <span class="s-exp">(</span><span class="symbol">f</span> <span class="s-exp">(</span><span class="symbol">.-state</span> <span class="symbol">a</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>

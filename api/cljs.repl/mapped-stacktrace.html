@@ -10,7 +10,7 @@ in the form:
 :file must be a URL path (without protocol) relative to :output-dir or a
 identifier delimited by angle brackets. The returned mapped stacktrace will
 also contain :url entries to the original sources if it can be determined
-from the classpath.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/repl.cljc#L364-L392">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">mapped-stacktrace</span>
+from the classpath.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/repl.cljc#L369-L397">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">mapped-stacktrace</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">stacktrace</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">mapped-stacktrace</span> <span class="symbol">stacktrace</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">stacktrace</span> <span class="symbol">opts</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="core-fn">vec</span>

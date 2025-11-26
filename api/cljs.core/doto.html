@@ -2,7 +2,7 @@
 value of x supplied at the front of the given arguments.  The forms
 are evaluated in order.  Returns x.
 
-(doto (new js/Map) (.set "a" 1) (.set "b" 2))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/core.cljc#L178-L192">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">doto</span>
+(doto (new js/Map) (.set "a" 1) (.set "b" 2))</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/core.cljc#L178-L192">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">doto</span>
   <span class="s-exp">[</span><span class="symbol">x</span> <span class="reader-char">&</span> <span class="symbol">forms</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">gx</span> <span class="s-exp">(</span><span class="core-fn">gensym</span><span class="s-exp">)</span><span class="s-exp">]</span>
     <span class="reader-char">`</span><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="reader-char">~</span><span class="symbol">gx</span> <span class="reader-char">~</span><span class="symbol">x</span><span class="s-exp">]</span>

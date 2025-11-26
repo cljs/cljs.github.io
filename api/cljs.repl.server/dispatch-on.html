@@ -3,7 +3,7 @@ predicate.
 
 pred should be a function that accepts an options map, a connection,
 and a request map and returns a boolean value based on whether or not
-that request should be dispatched to the related handler.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/repl/server.clj#L48-L60">clojurescript:src/main/clojure/cljs/repl/server.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">dispatch-on</span>
+that request should be dispatched to the related handler.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/repl/server.clj#L48-L60">clojurescript:src/main/clojure/cljs/repl/server.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">dispatch-on</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">method</span> <span class="symbol">pred</span> <span class="symbol">handler</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="symbol">dispatch-on</span> <span class="symbol">method</span> <span class="s-exp">{</span><span class="keyword">:pred</span> <span class="symbol">pred</span> <span class="keyword">:handler</span> <span class="symbol">handler</span><span class="s-exp">}</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">method</span> <span class="s-exp">{</span><span class="keyword">:as</span> <span class="symbol">m</span><span class="s-exp">}</span><span class="s-exp">]</span>

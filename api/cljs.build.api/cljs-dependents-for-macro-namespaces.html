@@ -7,7 +7,7 @@ For example where example.macros is defined in the clojure file
 ClojureScript namespaces that require and use the macros from
 'example.macros :
 (cljs-dependents-for-macro-namespaces 'example.macros) ->
-('example.core 'example.util)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/build/api.clj#L42-L57">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">cljs-dependents-for-macro-namespaces</span>
+('example.core 'example.util)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/build/api.clj#L42-L57">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">cljs-dependents-for-macro-namespaces</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">namespaces</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="symbol">closure/cljs-dependents-for-macro-namespaces</span>
      <span class="s-exp">(</span><span class="macro">or</span> <span class="s-exp">(</span><span class="symbol">ana-api/current-state</span><span class="s-exp">)</span> <span class="s-exp">(</span><span class="symbol">ana-api/empty-state</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="symbol">namespaces</span><span class="s-exp">)</span><span class="s-exp">)</span>

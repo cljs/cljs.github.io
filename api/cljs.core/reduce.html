@@ -15,7 +15,7 @@ result of calling f with no arguments.  If coll has only 1 item, it
 is returned and f is not called.  If val is supplied, returns the
 result of applying f to val and the first item in coll, then
 applying f to that result and the 2nd item, etc. If coll contains no
-items, returns val and f is not called.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L2587-L2634">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">reduce</span>
+items, returns val and f is not called.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L2620-L2667">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">reduce</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">f</span> <span class="symbol">coll</span><span class="s-exp">]</span>
      <span class="s-exp">(</span><span class="conditional">cond</span>
        <span class="s-exp">(</span><span class="symbol">implements?</span> <span class="symbol">IReduce</span> <span class="symbol">coll</span><span class="s-exp">)</span>

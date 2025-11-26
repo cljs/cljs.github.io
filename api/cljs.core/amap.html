@@ -18,7 +18,7 @@ current result:</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/map">map</a></li></ul><hr />Source docstring:<pre>Maps an expression across an array a, using an index named idx, and
 return value named ret, initialized to a clone of a, then setting
 each element of ret to the evaluation of expr, returning the new
-array ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/core.cljc#L2710-L2724">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">amap</span>
+array ret.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/core.cljc#L2752-L2766">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">amap</span>
   <span class="s-exp">[</span><span class="symbol">a</span> <span class="symbol">idx</span> <span class="symbol">ret</span> <span class="symbol">expr</span><span class="s-exp">]</span>
   <span class="reader-char">`</span><span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span>a<span class="reader-char">#</span> <span class="reader-char">~</span><span class="symbol">a</span>
          l<span class="reader-char">#</span> <span class="s-exp">(</span><span class="core-fn">alength</span> a<span class="reader-char">#</span><span class="s-exp">)</span>

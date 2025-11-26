@@ -5,7 +5,7 @@ triggered the predicate, and its return value (if it does not throw
 an exception) will be the return value of the transducer. If retf
 is not supplied, the input that triggered the predicate will be
 returned. If the predicate never returns true the transduction is
-unaffected.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L11016-L11038">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">halt-when</span>
+unaffected.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L10964-L10986">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">halt-when</span>
   <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.9"</span><span class="s-exp">}</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">pred</span><span class="s-exp">]</span> <span class="s-exp">(</span><span class="symbol">halt-when</span> <span class="symbol">pred</span> <span class="nil">nil</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">pred</span> <span class="symbol">retf</span><span class="s-exp">]</span>

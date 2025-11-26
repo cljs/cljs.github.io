@@ -7,7 +7,7 @@ supporting .unread and collapsing all of CR, LF, and CRLF into a single
     - returns request-exit on end of stream, or
     - reads an object from the input stream, then
       - skips the next input character if it's end of line, then
-      - returns the object.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/repl.cljc#L85-L110">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">repl-read</span>
+      - returns the object.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/repl.cljc#L85-L110">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">repl-read</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">request-prompt</span> <span class="symbol">request-exit</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="symbol">repl-read</span> <span class="symbol">request-prompt</span> <span class="symbol">request-exit</span> <span class="symbol">*repl-opts*</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">request-prompt</span> <span class="symbol">request-exit</span> <span class="symbol">opts</span><span class="s-exp">]</span>

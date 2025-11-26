@@ -19,7 +19,7 @@ The following keyword arguments can be passed with values:
   :suppress-namespaces If true, no namespaces in symbols    Current value of *print-suppress-namespaces*
 
   * = not yet supported
-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/pprint.cljs#L751-L812">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">write</span>
+</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/pprint.cljs#L751-L812">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">write</span>
   <span class="s-exp">[</span><span class="symbol">object</span> <span class="reader-char">&</span> <span class="symbol">kw-args</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">options</span> <span class="s-exp">(</span><span class="core-fn">merge</span> <span class="s-exp">{</span><span class="keyword">:stream</span> <span class="boolean">true</span><span class="s-exp">}</span> <span class="s-exp">(</span><span class="core-fn">apply</span> <span class="core-fn">hash-map</span> <span class="symbol">kw-args</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">]</span>
     <span class="comment">;;TODO rewrite this as a macro

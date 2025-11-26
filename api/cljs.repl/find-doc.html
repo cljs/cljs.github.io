@@ -18,7 +18,7 @@ contains a match for <code>re-string-or-pattern</code>.</p>
 </span><span class="comment">;;=> nil
 </span></code></pre>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.repl/doc">cljs.repl/doc</a></li></ul><hr />Source docstring:<pre>Prints documentation for any var whose documentation or name
-contains a match for re-string-or-pattern</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/repl.cljc#L1471-L1493">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">find-doc</span>
+contains a match for re-string-or-pattern</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/repl.cljc#L1484-L1506">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defmacro</span> <span class="symbol">find-doc</span>
   <span class="s-exp">[</span><span class="symbol">re-string-or-pattern</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">re</span> <span class="s-exp">(</span><span class="core-fn">re-pattern</span> <span class="symbol">re-string-or-pattern</span><span class="s-exp">)</span>
         <span class="symbol">ms</span> <span class="s-exp">(</span><span class="core-fn">concat</span>

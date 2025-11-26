@@ -5,7 +5,7 @@ means false return values will be included.</p>
 </div><hr /><h3>See Also:</h3><ul><li><a href="/api/cljs.core/map-indexed">map-indexed</a></li><li><a href="/api/cljs.core/keep">keep</a></li></ul><hr />Source docstring:<pre>Returns a lazy sequence of the non-nil results of (f index item). Note,
 this means false return values will be included.  f must be free of
 side-effects.  Returns a stateful transducer when no collection is
-provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L4694-L4728">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">keep-indexed</span>
+provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L4780-L4814">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">keep-indexed</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">f</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="symbol">rf</span><span class="s-exp">]</span>
      <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">ia</span> <span class="s-exp">(</span><span class="symbol">volatile!</span> <span class="number">-1</span><span class="s-exp">)</span><span class="s-exp">]</span>

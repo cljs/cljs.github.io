@@ -2,7 +2,7 @@
 collection implementing Iterable. For maps, the iterator should
 return map entries whose hash is computed as
   (hash-ordered-coll [k v]).
-See http://clojure.org/data_structures#hash for full algorithms.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/core.cljs#L1390-L1400">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="core-fn">hash-unordered-coll</span>
+See http://clojure.org/data_structures#hash for full algorithms.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L1420-L1430">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="core-fn">hash-unordered-coll</span>
   <span class="s-exp">[</span><span class="symbol">coll</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">loop</span> <span class="s-exp">[</span><span class="symbol">n</span> <span class="number">0</span> <span class="symbol">hash-code</span> <span class="number">0</span> <span class="symbol">coll</span> <span class="s-exp">(</span><span class="core-fn">seq</span> <span class="symbol">coll</span><span class="s-exp">)</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="conditional">if-not</span> <span class="s-exp">(</span><span class="core-fn">nil?</span> <span class="symbol">coll</span><span class="s-exp">)</span>

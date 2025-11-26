@@ -8,7 +8,7 @@ old values. Useful for mocking out functions during testing.
 
 Note that under advanced compilation vars are statically resolved,
 preventing with-redef usage.  If var redefinition is desired in a production
-setting then the var to be redefined must be declared ^:dynamic.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/core.cljc#L2258-L2284">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">with-redefs</span>
+setting then the var to be redefined must be declared ^:dynamic.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/core.cljc#L2300-L2326">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="macro">with-redefs</span>
   <span class="s-exp">[</span><span class="symbol">bindings</span> <span class="reader-char">&</span> <span class="symbol">body</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">names</span> <span class="s-exp">(</span><span class="core-fn">take-nth</span> <span class="number">2</span> <span class="symbol">bindings</span><span class="s-exp">)</span>
              <span class="core-fn">vals</span> <span class="s-exp">(</span><span class="core-fn">take-nth</span> <span class="number">2</span> <span class="s-exp">(</span><span class="core-fn">drop</span> <span class="number">1</span> <span class="symbol">bindings</span><span class="s-exp">)</span><span class="s-exp">)</span>

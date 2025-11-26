@@ -3,7 +3,7 @@ mathematical integer.
 If a is ##NaN or ##Inf or ##-Inf or already equal to an integer => a
 If a is less than zero but greater than -1.0 => -0.0
 Note that if a is `nil` then an exception will be thrown. This matches Clojure, rather than js/Math.floor
-See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/cljs/cljs/math.cljs#L425-L436">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="symbol">floor</span>
+See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/math.cljs#L425-L436">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="symbol">floor</span>
   <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.11.10"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">a</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">some?</span> <span class="symbol">a</span><span class="s-exp">)</span>

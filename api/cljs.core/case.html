@@ -54,7 +54,7 @@ expressions are acceptable in case, including numbers, strings,
 symbols, keywords, and (ClojureScript) composites thereof. Note that since
 lists are used to group multiple constants that map to the same
 expression, a vector can be used to match a list if needed. The
-test-constants need not be all of the same type.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/core.cljc#L2362-L2431">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="conditional">case</span>
+test-constants need not be all of the same type.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/core.cljc#L2404-L2473">clojurescript:src/main/clojure/cljs/core.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="symbol">core/defmacro</span> <span class="conditional">case</span>
   <span class="s-exp">[</span><span class="symbol">e</span> <span class="reader-char">&</span> <span class="symbol">clauses</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="symbol">core/let</span> <span class="s-exp">[</span><span class="symbol">esym</span>    <span class="s-exp">(</span><span class="core-fn">gensym</span><span class="s-exp">)</span>
              <span class="symbol">default</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">odd?</span> <span class="s-exp">(</span><span class="core-fn">count</span> <span class="symbol">clauses</span><span class="s-exp">)</span><span class="s-exp">)</span>

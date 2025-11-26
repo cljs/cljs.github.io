@@ -3,7 +3,7 @@ Dependencies must be a sequence of strings or symbols naming packages or paths
 within packages (e.g. [react "react-dom/server"] or a valid compiler options
 map. Assumes dependencies have been been previously installed, either by
 `cljs.build.api/install-node-deps!` or by an NPM client, and reside in the
-`node_modules` directory.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.42/src/main/clojure/cljs/build/api.clj#L273-L290">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">get-node-deps</span>
+`node_modules` directory.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/build/api.clj#L273-L290">clojurescript:src/main/clojure/cljs/build/api.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">get-node-deps</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">dependencies</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="symbol">compiler-opts?</span> <span class="symbol">dependencies</span><span class="s-exp">)</span>
      <span class="s-exp">(</span><span class="symbol">get-node-deps</span> <span class="s-exp">(</span><span class="core-fn">keys</span> <span class="s-exp">(</span><span class="keyword">:npm-deps</span> <span class="symbol">dependencies</span><span class="s-exp">)</span><span class="s-exp">)</span> <span class="symbol">dependencies</span><span class="s-exp">)</span>
