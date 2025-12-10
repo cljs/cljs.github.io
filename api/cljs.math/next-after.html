@@ -8,7 +8,7 @@ If start is ##Inf or ##-Inf and direction would cause a smaller magnitude
   => Number/MAX_VALUE with same sign as start
 If start is equal to +=Number/MAX_VALUE and direction would cause a larger magnitude
   => ##Inf or ##-Inf with sign matching start
-See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#nextAfter-double-double-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/math.cljs#L742-L788">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="symbol">next-after</span>
+See: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#nextAfter-double-double-</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/cljs/math.cljs#L742-L788">clojurescript:src/main/cljs/cljs/math.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="reader-char">^</span><span class="symbol">number</span> <span class="symbol">next-after</span>
   <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.11.10"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">start</span> <span class="symbol">direction</span><span class="s-exp">]</span>
   <span class="comment">; Branch to descending case first as it is more costly than ascending

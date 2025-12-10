@@ -4,7 +4,7 @@ Returns nil when s is nil or empty.
 Reads data in the edn format (subset of Clojure data):
 http://edn-format.org
 
-opts is a map as per cljs.tools.reader.edn/read</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/reader.cljs#L174-L190">clojurescript:src/main/cljs/cljs/reader.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">read-string</span>
+opts is a map as per cljs.tools.reader.edn/read</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/cljs/reader.cljs#L174-L190">clojurescript:src/main/cljs/cljs/reader.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">read-string</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">s</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="symbol">edn/read-string</span>
      <span class="s-exp">{</span><span class="keyword">:readers</span> <span class="reader-char">@</span><span class="symbol">*tag-table*</span>

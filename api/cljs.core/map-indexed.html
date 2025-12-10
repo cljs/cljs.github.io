@@ -6,7 +6,7 @@ first item of <code>coll</code>, followed by applying <code>f</code> to 1 and th
 and the first item of coll, followed by applying f to 1 and the second
 item in coll, etc, until coll is exhausted. Thus function f should
 accept 2 arguments, index and item. Returns a stateful transducer when
-no collection is provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L4543-L4569">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">map-indexed</span>
+no collection is provided.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/cljs/core.cljs#L4551-L4577">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">map-indexed</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">f</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="special-form">fn</span> <span class="s-exp">[</span><span class="symbol">rf</span><span class="s-exp">]</span>
       <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">i</span> <span class="s-exp">(</span><span class="symbol">volatile!</span> <span class="number">-1</span><span class="s-exp">)</span><span class="s-exp">]</span>

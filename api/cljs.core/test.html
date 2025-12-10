@@ -4,7 +4,7 @@ special test property. Calls it, presuming failure will throw exception.
 Examples:
 
 (test my-fn) ;; :ok
-(test #'my-fn) ;; :ok</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L11836-L11850">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">test</span>
+(test #'my-fn) ;; :ok</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/cljs/core.cljs#L11876-L11890">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="core-fn">test</span>
   <span class="s-exp">[</span><span class="symbol">v</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">f</span> <span class="s-exp">(</span><span class="special-form">if</span> <span class="s-exp">(</span><span class="core-fn">instance?</span> <span class="symbol">Var</span> <span class="symbol">v</span><span class="s-exp">)</span>
             <span class="s-exp">(</span><span class="macro">-></span> <span class="symbol">v</span> <span class="core-fn">meta</span> <span class="keyword">:test</span><span class="s-exp">)</span>

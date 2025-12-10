@@ -7,7 +7,7 @@ of the caller.
 
 This method is primarily intended for use by pretty print dispatch functions that
 already know that the pretty printer will have set up their environment appropriately.
-Normal library clients should use the standard "write" interface. </pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/pprint.cljs#L727-L749">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">write-out</span>
+Normal library clients should use the standard "write" interface. </pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/cljs/pprint.cljs#L727-L749">clojurescript:src/main/cljs/cljs/pprint.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">write-out</span>
   <span class="s-exp">[</span><span class="symbol">object</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="special-form">let</span> <span class="s-exp">[</span><span class="symbol">length-reached</span> <span class="s-exp">(</span><span class="macro">and</span> <span class="symbol">*current-length*</span>
                             <span class="variable">*print-length*</span>

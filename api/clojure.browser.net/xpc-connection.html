@@ -6,7 +6,7 @@ hash.
 
 When passed with no args, creates a child CrossPageChannel object,
 and the config is automatically taken from the URL param 'xpc', as
-per the CrossPageChannel API.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/clojure/browser/net.cljs#L117-L139">clojurescript:src/main/cljs/clojure/browser/net.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">xpc-connection</span>
+per the CrossPageChannel API.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/clojure/browser/net.cljs#L117-L139">clojurescript:src/main/cljs/clojure/browser/net.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">xpc-connection</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="s-exp">]</span>
      <span class="s-exp">(</span><span class="conditional">when-let</span> <span class="s-exp">[</span><span class="symbol">config</span> <span class="s-exp">(</span><span class="symbol">.getParameterValue</span>
                         <span class="s-exp">(</span><span class="symbol">Uri.</span> <span class="s-exp">(</span><span class="symbol">.-href</span> <span class="s-exp">(</span><span class="symbol">.-location</span> <span class="symbol">js/window</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>

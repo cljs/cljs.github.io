@@ -9,7 +9,7 @@ the dest file has an older modification time.
 Both src and dest may be either a String or a File.
 
 Returns a map containing {:ns .. :provides .. :requires .. :file ..}.
-If the file was not compiled returns only {:file ...}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/compiler/api.clj#L59-L81">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">compile-file</span>
+If the file was not compiled returns only {:file ...}</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/clojure/cljs/compiler/api.clj#L59-L81">clojurescript:src/main/clojure/cljs/compiler/api.clj</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">compile-file</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">src</span><span class="s-exp">]</span>
    <span class="s-exp">(</span><span class="symbol">compile-file</span> <span class="symbol">src</span> <span class="s-exp">(</span><span class="symbol">closure/src-file->target-file</span> <span class="symbol">src</span><span class="s-exp">)</span><span class="s-exp">)</span><span class="s-exp">)</span>
   <span class="s-exp">(</span><span class="s-exp">[</span><span class="symbol">src</span> <span class="symbol">dest</span><span class="s-exp">]</span>

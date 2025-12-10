@@ -4,7 +4,7 @@ a namespace for which the .clj is in the classpath.  Returns nil if
 it can't find the source.  For most REPL usage, 'source' is more
 convenient.
 
-Example: (source-fn 'filter)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/clojure/cljs/repl.cljc#L1508-L1531">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">source-fn</span>
+Example: (source-fn 'filter)</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/clojure/cljs/repl.cljc#L1508-L1531">clojurescript:src/main/clojure/cljs/repl.cljc</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">source-fn</span>
   <span class="s-exp">[</span><span class="symbol">env</span> <span class="symbol">x</span><span class="s-exp">]</span>
   <span class="s-exp">(</span><span class="conditional">when-let</span> <span class="s-exp">[</span><span class="symbol">v</span> <span class="s-exp">(</span><span class="symbol">ana-api/resolve</span> <span class="symbol">env</span> <span class="symbol">x</span><span class="s-exp">)</span><span class="s-exp">]</span>
     <span class="s-exp">(</span><span class="conditional">when-let</span> <span class="s-exp">[</span><span class="symbol">filepath</span> <span class="s-exp">(</span><span class="keyword">:file</span> <span class="symbol">v</span><span class="s-exp">)</span><span class="s-exp">]</span>

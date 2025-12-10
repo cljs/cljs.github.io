@@ -2,7 +2,7 @@
 
 - Replaces '..' with '_DOT__DOT_'.
 - Appends '$' to JavaScript reserved keywords.
-- Returns a symbol if `name` was a symbol, otherwise a string.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L11954-L11968">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax">(defn munge
+- Returns a symbol if `name` was a symbol, otherwise a string.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/cljs/core.cljs#L11994-L12008">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax">(defn munge
   [name]
   (let [name' (munge-str (str_ name))
         name' (cond

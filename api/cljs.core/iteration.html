@@ -11,7 +11,7 @@ This can be used e.g. to consume APIs that return paginated or batched data.
  :kf - fn of 'ret' -> 'next-k' or nil (signaling 'do not continue'), default 'identity'
  :initk - the first value passed to step, default 'nil'
 It is presumed that step with non-initk is unreproducible/non-idempotent.
-If step with initk is unreproducible it is on the consumer to not consume twice.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.116/src/main/cljs/cljs/core.cljs#L11061-L11102">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">iteration</span>
+If step with initk is unreproducible it is on the consumer to not consume twice.</pre><div>Source code @ <a href="https://github.com/clojure/clojurescript/blob/r1.12.134/src/main/cljs/cljs/core.cljs#L11069-L11110">clojurescript:src/main/cljs/cljs/core.cljs</a></div><pre><code class="syntax"><span class="s-exp">(</span><span class="definition">defn</span> <span class="symbol">iteration</span>
   <span class="s-exp">{</span><span class="keyword">:added</span> <span class="string">"1.11"</span><span class="s-exp">}</span>
   <span class="s-exp">[</span><span class="symbol">step</span> <span class="reader-char">&</span> <span class="s-exp">{</span><span class="keyword">:keys</span> <span class="s-exp">[</span><span class="symbol">somef</span> <span class="symbol">vf</span> <span class="symbol">kf</span> <span class="symbol">initk</span><span class="s-exp">]</span>
            <span class="keyword">:or</span> <span class="s-exp">{</span><span class="symbol">vf</span> <span class="core-fn">identity</span>
